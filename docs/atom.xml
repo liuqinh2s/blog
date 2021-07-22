@@ -37,6 +37,30 @@
   </entry>
   
   <entry>
+    <title>快速排序最坏的情况啥时候出现</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
+    <published>2021-06-27T16:00:00.000Z</published>
+    <updated>2021-07-22T07:34:50.686Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：O(N*logN)，N代表单次排序的时间花销，logN代表递归次数。我们知道最坏情况是O(N^2)，也就是说logN退化成了N
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>leetcode每日一题：474. 一和零</title>
     <link href="https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-%E4%B8%80%E5%92%8C%E9%9B%B6/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-一和零/</id>
@@ -431,29 +455,6 @@
     
       &lt;p&gt;快速排序算法是一个原理非常简单易懂的算法，但如果现场手写的话又有多少人能写得出来呢？我今天又试了一下，发现还是存在一些认知上的问题。首先我明白快排的核心操作是：&lt;strong&gt;选取一个中枢，然后把小于中枢的放到左边，大于中枢的放到右边&lt;/strong&gt;。但我发现时隔仅仅一年多，我居然已经忘了这个操作的英文名字了。直到我在写这篇文章的时候才突然想起来：partition操作。&lt;/p&gt;
 &lt;p&gt;在使用partition操作的前提下，递归解决问题就OK了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="https://liuqinh2s.github.io/blog/categories/Algorithm/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>并查集</title>
-    <link href="https://liuqinh2s.github.io/blog/2019/01/19/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    <id>https://liuqinh2s.github.io/blog/2019/01/19/并查集/</id>
-    <published>2019-01-18T16:00:00.000Z</published>
-    <updated>2021-06-28T06:33:45.998Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;并查集&quot;&gt;&lt;a href=&quot;#并查集&quot; class=&quot;headerlink&quot; title=&quot;并查集&quot;&gt;&lt;/a&gt;并查集&lt;/h2&gt;&lt;h3 id=&quot;什么是并查集&quot;&gt;&lt;a href=&quot;#什么是并查集&quot; class=&quot;headerlink&quot; title=&quot;什么是并查集&quot;&gt;&lt;/a&gt;什么是并查集&lt;/h3&gt;&lt;p&gt;并查集的核心是&lt;code&gt;parent&lt;/code&gt;指针，一个结点可以找到自己所属的结点。从而把结点&lt;strong&gt;归类&lt;/strong&gt;。有两个核心操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Union（用来合并两个并查集）&lt;/li&gt;
-&lt;li&gt;Find（用于查找一个结点的&lt;code&gt;parent&lt;/code&gt;）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;所以并查集可以叫做：union-find data structure。&lt;/p&gt;
     
     </summary>
     
