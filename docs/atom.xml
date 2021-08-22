@@ -188,27 +188,6 @@
   </entry>
   
   <entry>
-    <title>leetcode： 560. 和为K的子数组</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-和为K的子数组/</id>
-    <published>2021-05-28T16:00:00.000Z</published>
-    <updated>2021-06-06T02:52:49.178Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这题是在做每日一题中遇到的问题的子问题：&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;560-和为K的子数组&quot;&gt;&lt;a href=&quot;#560-和为K的子数组&quot; class=&quot;headerlink&quot; title=&quot;560. 和为K的子数组&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/subarray-sum-equals-k/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;560. 和为K的子数组&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>leetcode： 1074. 元素和为目标值的子矩阵数量</title>
     <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E5%AD%90%E7%9F%A9%E9%98%B5%E6%95%B0%E9%87%8F/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/</id>
@@ -222,6 +201,27 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;1074-元素和为目标值的子矩阵数量&quot;&gt;&lt;a href=&quot;#1074-元素和为目标值的子矩阵数量&quot; class=&quot;headerlink&quot; title=&quot;1074. 元素和为目标值的子矩阵数量&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？&lt;/p&gt;
 &lt;p&gt;我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode： 560. 和为K的子数组</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-和为K的子数组/</id>
+    <published>2021-05-28T16:00:00.000Z</published>
+    <updated>2021-06-06T02:52:49.178Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这题是在做每日一题中遇到的问题的子问题：&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;560-和为K的子数组&quot;&gt;&lt;a href=&quot;#560-和为K的子数组&quot; class=&quot;headerlink&quot; title=&quot;560. 和为K的子数组&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/subarray-sum-equals-k/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;560. 和为K的子数组&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：&lt;/p&gt;
     
     </summary>
     

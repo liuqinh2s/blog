@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/C++对象模型.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/虚基类.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/虚拟多重继承.jpg">
-<meta property="og:updated_time" content="2021-08-22T06:16:55.452Z">
+<meta property="og:updated_time" content="2021-08-22T08:49:32.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 一 -- Object Lessons">
 <meta name="twitter:description" content="多态：统一的接口，不同的实现  C++多态（polymorphism） 表示“以一个 public base class 的指针（或者 reference），寻址出一个 derived class object” Layout Costs for Adding Encapsulation(封装) 意思是：为了添加封装所需要付出的内存布局花销  第一章 Object Lessons 介绍了 C++">
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,263
+                  2,198
                 </span>
               
 
@@ -491,12 +491,6 @@
 <li>指针的类型是编译器的概念，对于硬件来说，并没有什么指针类型的概念;</li>
 <li>转型操作也只是一种编译器的指令，它改变的是编译器对被指内存的解释方式而已!</li>
 <li><code>void*</code>指针只能够持有一个地址（一个字节），而不能通过它操作所指向的 object</li>
-</ul>
-<h2 id="Inside-the-C-Object-Model-系列笔记向导"><a href="#Inside-the-C-Object-Model-系列笔记向导" class="headerlink" title="Inside the C++ Object Model 系列笔记向导"></a>Inside the C++ Object Model 系列笔记向导</h2><ul>
-<li><a href="./">Inside the C++ Object Model 系列笔记 一 -- Object Lessons</a></li>
-<li><a href="../Inside-the-C++-Object-Model-系列笔记二--The-Semantics-of-constructors">Inside the C++ Object Model 系列笔记 二 -- The Semantics of constructors</a></li>
-<li><a href="../../21/Inside-the-C++-Object-Model-系列笔记三--The-Semantics-of-Data">Inside the C++ Object Model 系列笔记 三 -- The Semantics of Data</a></li>
-<li><a href="../../23/Inside-the-C++-Object-Model-系列笔记四--The-Semantics-of-Function">Inside the C++ Object Model 系列笔记 四 -- The Semantics of Function</a></li>
 </ul>
 
       
@@ -712,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout-Costs-for-Adding-Encapsulation-封装"><span class="nav-number">1.</span> <span class="nav-text">Layout Costs for Adding Encapsulation(封装)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种对象实现模式"><span class="nav-number">1.1.</span> <span class="nav-text">三种对象实现模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Simple-Object-Model"><span class="nav-number">1.1.1.</span> <span class="nav-text">A Simple Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Table-driven-Object-Model"><span class="nav-number">1.1.2.</span> <span class="nav-text">A Table-driven Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-C-Object-Model"><span class="nav-number">1.1.3.</span> <span class="nav-text">The C++ Object Model</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-members-在内存中的布局"><span class="nav-number">1.2.</span> <span class="nav-text">data members 在内存中的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-Table-vtbl-vtable-和-vptr"><span class="nav-number">1.3.</span> <span class="nav-text">Virtual Table(vtbl, vtable) 和 vptr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入继承后的对象模型成本"><span class="nav-number">1.4.</span> <span class="nav-text">引入继承后的对象模型成本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct-和-class-关键字的区别"><span class="nav-number">2.</span> <span class="nav-text">struct 和 class 关键字的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#programming-paradigms"><span class="nav-number">3.</span> <span class="nav-text">programming paradigms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针的类型"><span class="nav-number">4.</span> <span class="nav-text">指针的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inside-the-C-Object-Model-系列笔记向导"><span class="nav-number">5.</span> <span class="nav-text">Inside the C++ Object Model 系列笔记向导</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout-Costs-for-Adding-Encapsulation-封装"><span class="nav-number">1.</span> <span class="nav-text">Layout Costs for Adding Encapsulation(封装)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种对象实现模式"><span class="nav-number">1.1.</span> <span class="nav-text">三种对象实现模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Simple-Object-Model"><span class="nav-number">1.1.1.</span> <span class="nav-text">A Simple Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Table-driven-Object-Model"><span class="nav-number">1.1.2.</span> <span class="nav-text">A Table-driven Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-C-Object-Model"><span class="nav-number">1.1.3.</span> <span class="nav-text">The C++ Object Model</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-members-在内存中的布局"><span class="nav-number">1.2.</span> <span class="nav-text">data members 在内存中的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-Table-vtbl-vtable-和-vptr"><span class="nav-number">1.3.</span> <span class="nav-text">Virtual Table(vtbl, vtable) 和 vptr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入继承后的对象模型成本"><span class="nav-number">1.4.</span> <span class="nav-text">引入继承后的对象模型成本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct-和-class-关键字的区别"><span class="nav-number">2.</span> <span class="nav-text">struct 和 class 关键字的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#programming-paradigms"><span class="nav-number">3.</span> <span class="nav-text">programming paradigms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针的类型"><span class="nav-number">4.</span> <span class="nav-text">指针的类型</span></a></li></ol></div>
             
 
           </div>
@@ -746,7 +740,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.9k</span>
+    <span title="Site words total count">67.8k</span>
   
 </div>
 
