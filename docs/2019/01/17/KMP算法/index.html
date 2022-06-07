@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="KMP算法KMP算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动到：最">
+<meta name="description" content="KMP 算法KMP 算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP 算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP算法">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/2019/01/17/KMP算法/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="KMP算法KMP算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动到：最">
+<meta property="og:description" content="KMP 算法KMP 算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP 算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/02/01/5c545a0ceea57.jpg#align=left&display=inline&height=78&linkTarget=_blank&originHeight=78&originWidth=392&width=392">
 <meta property="og:image" content="https://i.loli.net/2019/02/01/5c545a0d27686.jpg#align=left&display=inline&height=100&linkTarget=_blank&originHeight=100&originWidth=418&width=418">
 <meta property="og:image" content="https://i.loli.net/2019/02/01/5c545a0cf058c.jpg#align=left&display=inline&height=90&linkTarget=_blank&originHeight=90&originWidth=410&width=410">
-<meta property="og:updated_time" content="2022-06-07T01:21:09.958Z">
+<meta property="og:updated_time" content="2022-06-07T15:07:03.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KMP算法">
-<meta name="twitter:description" content="KMP算法KMP算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动到：最">
+<meta name="twitter:description" content="KMP 算法KMP 算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP 算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动">
 <meta name="twitter:image" content="https://i.loli.net/2019/02/01/5c545a0ceea57.jpg#align=left&display=inline&height=78&linkTarget=_blank&originHeight=78&originWidth=392&width=392">
 
 
@@ -342,8 +342,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/blog/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,882
+                  1,884
                 </span>
               
 
@@ -403,7 +403,7 @@
       
 
       
-        <h2 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h2><p>KMP算法用来在一个文本中查找模式串，如下图所示：</p>
+        <h2 id="KMP-算法"><a href="#KMP-算法" class="headerlink" title="KMP 算法"></a>KMP 算法</h2><p>KMP 算法用来在一个文本中查找模式串，如下图所示：</p>
 <p>文本匹配例子：</p>
 <p><img src="https://i.loli.net/2019/02/01/5c545a0ceea57.jpg#align=left&amp;display=inline&amp;height=78&amp;linkTarget=_blank&amp;originHeight=78&amp;originWidth=392&amp;width=392" alt></p>
 <p>我们把上面那个长字符串的称为<strong>文本</strong>，下面这个短的称为<strong>模式串</strong>。我们的目的是查看<code>ABADABAD</code>是否出现在文本中。</p>
@@ -411,16 +411,16 @@
 <p><img src="https://i.loli.net/2019/02/01/5c545a0d27686.jpg#align=left&amp;display=inline&amp;height=100&amp;linkTarget=_blank&amp;originHeight=100&amp;originWidth=418&amp;width=418" alt></p>
 <p>跳过不必要的比较：</p>
 <p><img src="https://i.loli.net/2019/02/01/5c545a0cf058c.jpg#align=left&amp;display=inline&amp;height=90&amp;linkTarget=_blank&amp;originHeight=90&amp;originWidth=410&amp;width=410" alt></p>
-<p>KMP算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动到：最长真前后缀匹配的位置，如上图所示的<code>ABA</code>。</p>
+<p>KMP 算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动到：最长真前后缀匹配的位置，如上图所示的<code>ABA</code>。</p>
 <a id="more"></a>
 <h3 id="什么是真前后缀"><a href="#什么是真前后缀" class="headerlink" title="什么是真前后缀"></a>什么是真前后缀</h3><p>前缀和后缀我们都不陌生，比如单词<code>ABA</code>，它有三个前缀：<code>A</code>、<code>AB</code>、<code>ABA</code>，和三个后缀：<code>A</code>、<code>BA</code>、<code>ABA</code>。</p>
 <p>真前后缀的意思是，前后缀必须是单词的<strong>真子集</strong>，也就是说不能是单词本身。所以上面那个单词<code>ABA</code>的真前缀是：<code>A</code>、<code>AB</code>，真后缀是：<code>A</code>、<code>BA</code>。</p>
 <p>那么单词<code>ABA</code>真前后缀的最长匹配是：<code>A</code>。</p>
 <h4 id="那么真前后缀是否匹配有什么用？"><a href="#那么真前后缀是否匹配有什么用？" class="headerlink" title="那么真前后缀是否匹配有什么用？"></a>那么真前后缀是否匹配有什么用？</h4><p>我们仔细观察文章最开头的文本匹配例子。在不必要的比较中，我们拿<code>BADABA</code>和<code>ABADAB</code>比较。而这两个，前者是模式串<code>ABADABA</code>部分的后缀，后者则是前缀。如果我们算得了<code>ABADABA</code>的真前后缀的最长匹配，就已经知道了<code>BADABA</code>和<code>ABADAB</code>不相等。而且还知道<code>ADABA</code>和<code>ABADA</code>也不相等，等等。</p>
 <p><strong>只要我们知道了真前后缀的最长匹配是什么，我们可以直接跳过所有这些没必要的比较。</strong></p>
-<p>KMP的核心就是：<strong>在每一次失配的时候</strong>，利用最长真前后缀匹配长度，直接跳过不必要的比较。</p>
-<h3 id="next数组"><a href="#next数组" class="headerlink" title="next数组"></a>next数组</h3><p>next数组也就是：部分匹配表（Partial Match Table）。<strong>就是一个最长真前后缀匹配长度表。</strong></p>
-<p><strong>首先next数组只需要用模式串得出，它是对模式串的解析，跟要匹配的文本没有半毛钱关系。</strong>其次next数组记录的其实就是<strong>最长真前后缀匹配长度</strong>，但错开了一位。</p>
+<p>KMP 的核心就是：<strong>在每一次失配的时候</strong>，利用最长真前后缀匹配长度，直接跳过不必要的比较。</p>
+<h3 id="next-数组"><a href="#next-数组" class="headerlink" title="next 数组"></a>next 数组</h3><p>next 数组也就是：部分匹配表（Partial Match Table）。<strong>就是一个最长真前后缀匹配长度表。</strong></p>
+<p><strong>首先 next 数组只需要用模式串得出，它是对模式串的解析，跟要匹配的文本没有半毛钱关系。</strong>其次 next 数组记录的其实就是<strong>最长真前后缀匹配长度</strong>，但错开了一位。</p>
 <blockquote>
 <p>真前后缀的意思是，前后缀不能是字符串本身，只能是字符串的真子集</p>
 </blockquote>
@@ -468,19 +468,19 @@
 </table>
 <ol>
 <li>i = 0，<code>next[0]</code>，我们填-1；</li>
-<li>i = 1，前面的字符串为<code>A</code>，其最长相同真前后缀长度为0，即<code>next[1] = 0</code>；</li>
-<li>i = 2，前面的字符串为<code>AB</code>，其最长相同真前后缀长度为0，即<code>next[2] = 0</code>；</li>
+<li>i = 1，前面的字符串为<code>A</code>，其最长相同真前后缀长度为 0，即<code>next[1] = 0</code>；</li>
+<li>i = 2，前面的字符串为<code>AB</code>，其最长相同真前后缀长度为 0，即<code>next[2] = 0</code>；</li>
 <li>i = 3，前面的字符串为<code>ABA</code>，其最长相同真前后缀为<code>A</code>，即<code>next[3] = 1</code>；</li>
-<li>i = 4，前面的字符串为<code>ABAD</code>，其最长相同真前后缀长度为0，即<code>next[4] = 0</code>；</li>
+<li>i = 4，前面的字符串为<code>ABAD</code>，其最长相同真前后缀长度为 0，即<code>next[4] = 0</code>；</li>
 <li>i = 5，前面的字符串为<code>ABADA</code>，其最长相同真前后缀长度为<code>A</code>，即<code>next[5] = 1</code>；</li>
 <li>i = 6，前面的字符串为<code>ABADAB</code>，其最长相同真前后缀长度为<code>AB</code>，即<code>next[6] = 2</code>；</li>
 <li>i = 7，前面的字符串为<code>ABADABA</code>，其最长相同真前后缀为<code>ABA</code>，即<code>next[7] = 3</code>；</li>
 <li>i = 8，前面的字符串为<code>ABADABAD</code>，其最长相同真前后缀为<code>ABAD</code>，即<code>next[8]=4</code>；</li>
 </ol>
-<p>这张next表及其有用，前面说了，在字符串匹配的每一次失配的时候，我们都可以用已经匹配上的这段字符串的最长真前后缀匹配长度来定位将要跳转的位置。还是拿最开始的文本匹配例子：</p>
-<p>当图一失配的时候，我们查<code>ABADABAD</code>的失配位置的next数组，也就是<code>next[7]</code>，得到<code>ABADABA</code>的最长真前后缀匹配长度<code>3</code>，然后拿<code>&quot;ABADABAD&quot;.charAt(3)</code>也就是<code>D</code>跟文本中失配处的字符<code>&#39; &#39;</code>继续匹配。如果又失配，那么递归处理。递归的边界是什么？答案是<code>next[0]</code>。</p>
+<p>这张 next 表及其有用，前面说了，在字符串匹配的每一次失配的时候，我们都可以用已经匹配上的这段字符串的最长真前后缀匹配长度来定位将要跳转的位置。还是拿最开始的文本匹配例子：</p>
+<p>当图一失配的时候，我们查<code>ABADABAD</code>的失配位置的 next 数组，也就是<code>next[7]</code>，得到<code>ABADABA</code>的最长真前后缀匹配长度<code>3</code>，然后拿<code>&quot;ABADABAD&quot;.charAt(3)</code>也就是<code>D</code>跟文本中失配处的字符<code>&#39; &#39;</code>继续匹配。如果又失配，那么递归处理。递归的边界是什么？答案是<code>next[0]</code>。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>这个代码并不难写，我简单讲一下。</p>
-<p>首先我们需要构造next数组，需要的参数只有一个：模式串。</p>
+<p>首先我们需要构造 next 数组，需要的参数只有一个：模式串。</p>
 <p>然后我们使用一个指针遍历模式串，另一个指针负责记录匹配深度。</p>
 <p>分支只有两个，一个是<strong>递归的边界</strong>或者<strong>匹配的时候</strong>：i++，j++，next[i]=j。一个是<strong>非递归边界且不匹配的时候</strong>，递归查找下一个必要的匹配：j=next[j]。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] getNextArray(String pattern)&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()+<span class="number">1</span>];</span><br><span class="line">    nextArray[<span class="number">0</span>]=-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j=-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==-<span class="number">1</span> || pattern.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">            nextArray[i]=j;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = nextArray[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nextArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">KMP</span><span class="params">(String text, String pattern)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = getNextArray(pattern);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j=-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;text.length() &amp;&amp; j&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">if</span>(j==-<span class="number">1</span> || text.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = nextArray[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j==pattern.length())&#123;</span><br><span class="line">        <span class="keyword">return</span> i-j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -528,15 +528,15 @@
 </tr>
 </tbody>
 </table>
-<p>这样一一对应就行了，next数组也与模式串等长。</p>
-<p>这种next表的代码如下：</p>
+<p>这样一一对应就行了，next 数组也与模式串等长。</p>
+<p>这种 next 表的代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] getNextArray(String pattern)&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()];</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span> &amp;&amp; pattern.charAt(i)!=pattern.charAt(j))&#123;</span><br><span class="line">            j = nextArray[j-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;pattern.length() &amp;&amp; pattern.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            nextArray[i++] = ++j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">            nextArray[i++] = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nextArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">KMP</span><span class="params">(String text, String pattern)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = getNextArray(pattern);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;text.length() &amp;&amp; j&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span> &amp;&amp; text.charAt(i)!=pattern.charAt(j))&#123;</span><br><span class="line">            j = nextArray[j-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;text.length() &amp;&amp; j&lt;pattern.length() &amp;&amp; text.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j==pattern.length())&#123;</span><br><span class="line">        <span class="keyword">return</span> i-j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这段代码看起来远不如上面第一种next表的代码简洁清晰。下面做一个简化，去掉内部的循环：</p>
+<p>这段代码看起来远不如上面第一种 next 表的代码简洁清晰。下面做一个简化，去掉内部的循环：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] getNextArray(String pattern)&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()];</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;<span class="number">0</span> &amp;&amp; pattern.charAt(i)!=pattern.charAt(j))&#123;</span><br><span class="line">            j = nextArray[j-<span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(pattern.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            nextArray[i++] = ++j;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">            nextArray[i++] = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nextArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">KMP</span><span class="params">(String text, String pattern)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = getNextArray(pattern);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;text.length() &amp;&amp; j&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;<span class="number">0</span> &amp;&amp; text.charAt(i)!=pattern.charAt(j))&#123;</span><br><span class="line">            j = nextArray[j-<span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(text.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j==pattern.length())&#123;</span><br><span class="line">        <span class="keyword">return</span> i-j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>看代码很容易知道，文本的指针是只增不减的，而且只在<strong>失配且匹配深度大于0</strong>的时候递归处理失配情况。但如何精确分析算法复杂度呢？</p>
-<h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><p>这个算法的分析属于平摊分析。引入一个变量k，<code>k=2*i-j</code>。观察下面的代码：</p>
+<p>看代码很容易知道，文本的指针是只增不减的，而且只在<strong>失配且匹配深度大于 0</strong>的时候递归处理失配情况。但如何精确分析算法复杂度呢？</p>
+<h2 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h2><p>这个算法的分析属于平摊分析。引入一个变量 k，<code>k=2*i-j</code>。观察下面的代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(j&lt;m &amp;&amp; i&lt;n)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">0</span>&gt;j || T[i]==P[j])&#123;</span><br><span class="line">        i++;j++;    <span class="comment">// k加1</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        j = next[j];    <span class="comment">// j至少减一，i不变，那么k至少加1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由上述注释分析得出：k单调递增。k的最大值是<code>2*n+1</code>，而k是迭代次数的上界，所以算法最坏时间是：<code>2*n+1</code>，所以这是一个<code>O(n)</code>的算法。同理可得算出<code>next</code>表的时间复杂度是<code>O(m)</code>。所以总的算法复杂度是<code>O(m+n)</code>。</p>
+<p>由上述注释分析得出：k 单调递增。k 的最大值是<code>2*n+1</code>，而 k 是迭代次数的上界，所以算法最坏时间是：<code>2*n+1</code>，所以这是一个<code>O(n)</code>的算法。同理可得算出<code>next</code>表的时间复杂度是<code>O(m)</code>。所以总的算法复杂度是<code>O(m+n)</code>。</p>
 
       
     </div>
@@ -657,7 +657,7 @@
               
                 <a href="/blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -668,7 +668,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -679,7 +679,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -755,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP算法"><span class="nav-number">1.</span> <span class="nav-text">KMP算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是真前后缀"><span class="nav-number">1.1.</span> <span class="nav-text">什么是真前后缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#那么真前后缀是否匹配有什么用？"><span class="nav-number">1.1.1.</span> <span class="nav-text">那么真前后缀是否匹配有什么用？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next数组"><span class="nav-number">1.2.</span> <span class="nav-text">next数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法复杂度分析"><span class="nav-number">2.</span> <span class="nav-text">算法复杂度分析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP-算法"><span class="nav-number">1.</span> <span class="nav-text">KMP 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是真前后缀"><span class="nav-number">1.1.</span> <span class="nav-text">什么是真前后缀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#那么真前后缀是否匹配有什么用？"><span class="nav-number">1.1.1.</span> <span class="nav-text">那么真前后缀是否匹配有什么用？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next-数组"><span class="nav-number">1.2.</span> <span class="nav-text">next 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法复杂度分析"><span class="nav-number">2.</span> <span class="nav-text">算法复杂度分析</span></a></li></ol></div>
             
 
           </div>
@@ -789,7 +789,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.9k</span>
+    <span title="Site words total count">69.8k</span>
   
 </div>
 

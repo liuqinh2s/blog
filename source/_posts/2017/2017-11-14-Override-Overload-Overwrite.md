@@ -1,7 +1,7 @@
 ---
 title: Override Overload Overwrite
 date: 2017-11-14
-categories: [Knowledge of CS]
+categories: [计算机基础]
 comments: true
 ---
 
@@ -98,13 +98,13 @@ class Test{
 
 我们应该记住只有 Override 才跟多态有关。
 
-Overload 是本class 里面的不同函数（只不过函数名一样罢了，其实是两个不同的函数，看两个函数是否是同一个函数就看函数签名就行了），其实没啥稀奇的，不就是函数名一样嘛。函数签名一样，区分出是用父类还是子类的函数，这才是面向对象和多态要解决的问题。
+Overload 是本 class 里面的不同函数（只不过函数名一样罢了，其实是两个不同的函数，看两个函数是否是同一个函数就看函数签名就行了），其实没啥稀奇的，不就是函数名一样嘛。函数签名一样，区分出是用父类还是子类的函数，这才是面向对象和多态要解决的问题。
 
 ## Override 和 Overwrite 的区别
 
->比较容易混淆的其实是 Override 和 Overwrite，但你只要死记住：Override 必须函数签名要一样，而 Overwrite 只需函数名一样即可。另外 C++ 中一定要用virtual才算 Override，而 Java 默认就是 Override，不需要修饰词。
+> 比较容易混淆的其实是 Override 和 Overwrite，但你只要死记住：Override 必须函数签名要一样，而 Overwrite 只需函数名一样即可。另外 C++ 中一定要用 virtual 才算 Override，而 Java 默认就是 Override，不需要修饰词。
 
->这里关于 Java 和 C++ 面向对象的细节区别可以写一大堆，比如：C++ class 后面是要加分号的，而 Java 不需要；但 Java 的类名是和文件名要一致的，而且只能有一个 public 类，而 C++不需要；Java 直接就能用 Override，而 C++必须要使用 virtual 关键字才能使用 Override（虚函数）；Java 的抽象方法跟 C++的纯虚函数对应。Java 是单继承，由接口来实现“多继承”，C++是多继承，没有接口，只有抽象类。C++还有个虚基类的概念。具体的写法上还有很多的不同，多用这两种语言写面向对象的代码，就慢慢会知道了。
+> 这里关于 Java 和 C++ 面向对象的细节区别可以写一大堆，比如：C++ class 后面是要加分号的，而 Java 不需要；但 Java 的类名是和文件名要一致的，而且只能有一个 public 类，而 C++不需要；Java 直接就能用 Override，而 C++必须要使用 virtual 关键字才能使用 Override（虚函数）；Java 的抽象方法跟 C++的纯虚函数对应。Java 是单继承，由接口来实现“多继承”，C++是多继承，没有接口，只有抽象类。C++还有个虚基类的概念。具体的写法上还有很多的不同，多用这两种语言写面向对象的代码，就慢慢会知道了。
 
 C++ 有一个 virtual 关键字和 virtual table 这个概念，没有加 virtual 的父类函数是不可能形成多态的，如果这时候你碰到父类和子类两个里面有同名的函数，那么就属于 Overwrite 这个概念了，你其实也可以称这种覆盖掉父类函数的行为为：hide 隐藏。Java 这种语言里面没有 virtual 这一套，Java 也可以表现出 Overwrite，但要注意函数签名如果一样的话，那又不叫 Overwrite 了，应该叫 Override 了（Java 如果要在子类中使用父类的同函数签名方法，则必须使用 super 关键字）。而 C++ 不一样，即便是函数签名一样，如果前面不加 virtual 是不能叫 Override 的，仍然属于 Overwrite 的概念。请看下面的例子：
 
@@ -145,7 +145,7 @@ A
 B
 ```
 
-可以看到，C++必须要用子类类型的指针才能访问到子类的部分（建议看一本书，叫：Inside the C++ Object Model，中文叫：深入C++对象模型，里面讲对象的内存布局讲的很清楚），java 也一样，必须转成子类型的指针才能访问，否则 IDE 会报错提示你。
+可以看到，C++必须要用子类类型的指针才能访问到子类的部分（建议看一本书，叫：Inside the C++ Object Model，中文叫：深入 C++对象模型，里面讲对象的内存布局讲的很清楚），java 也一样，必须转成子类型的指针才能访问，否则 IDE 会报错提示你。
 
 Java 代码：
 
@@ -179,4 +179,4 @@ A
 B
 ```
 
-为什么 Java 代码里不像 C++ 代码里面那样，使用两个函数签名相同的函数？因为前面说过了，那样的话就变成 Override 了，只有在 C++ 里才能实现函数签名相同的 Overwrite（不使用virtual即可）。
+为什么 Java 代码里不像 C++ 代码里面那样，使用两个函数签名相同的函数？因为前面说过了，那样的话就变成 Override 了，只有在 C++ 里才能实现函数签名相同的 Overwrite（不使用 virtual 即可）。

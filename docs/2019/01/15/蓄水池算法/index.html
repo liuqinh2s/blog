@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为n的样本集中随机取k个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
+<meta name="description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓄水池算法">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/2019/01/15/蓄水池算法/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为n的样本集中随机取k个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
+<meta property="og:description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-06-07T01:21:09.958Z">
+<meta property="og:updated_time" content="2022-06-07T15:06:57.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蓄水池算法">
-<meta name="twitter:description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为n的样本集中随机取k个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
+<meta name="twitter:description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
 
 
 
@@ -338,8 +338,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/blog/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  851
+                  852
                 </span>
               
 
@@ -401,7 +401,7 @@
       
         <h2 id="蓄水池算法-Reservoir-Sampling"><a href="#蓄水池算法-Reservoir-Sampling" class="headerlink" title="蓄水池算法(Reservoir Sampling)"></a>蓄水池算法(Reservoir Sampling)</h2><p>这个算法真的很奇妙，它的核心是一个<strong>数学证明</strong>。外延，或者说应用场景是：</p>
 <ol>
-<li>$C_n^k$，也就是从大小为n的样本集中随机取k个不同的样本</li>
+<li>$C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本</li>
 <li>流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）</li>
 </ol>
 <a id="more"></a>
@@ -411,7 +411,7 @@
 <p>单看算法，你肯定不知道为什么是等概率，其实数学证明并不难，请看下面的证明：</p>
 <h3 id="数学证明"><a href="#数学证明" class="headerlink" title="数学证明"></a>数学证明</h3><p>我们把样本分为两类：</p>
 <ol>
-<li>一类是首k个，它们一开始就在水塘中</li>
+<li>一类是首 k 个，它们一开始就在水塘中</li>
 <li>一类是其他，它们一开始并不在水塘中</li>
 </ol>
 <p>我们发现两个简单的逻辑：</p>
@@ -419,14 +419,15 @@
 <li><strong>对于水塘中的样本，只要随机数不选到该样本，该样本就不会被替换</strong></li>
 <li><strong>水塘的某个项一旦被替换，就不可能再回到水塘</strong>，不会出现被替换掉，然后再回到水塘的局面，这样就保证了问题不会进一步变得复杂。所以：<strong>某个项被保留的概率 = 被选中到水塘的概率 * 后续不被替换的概率</strong></li>
 </ol>
-<p>分类讨论，首k个样本最终存在于水塘中的概率，和其余样本最终存在于水塘中的概率：</p>
+<p>分类讨论，首 k 个样本最终存在于水塘中的概率，和其余样本最终存在于水塘中的概率：</p>
 <ol>
-<li>首k个样本，随便选一个做研究对象。被选中到水塘的概率为：1。（数组从1开始）从j=k+1开始考虑替换，第一次不被替换的概率是$\frac{k}{k+1}$，第二次不被替换的概率是$\frac{k+1}{k+2}$，第三次...，一直到最后一次不被替换的概率是$\frac{n-1}{n}$。<br><br>所以该项被保留的概率 = $1\times\frac{k}{k+1}\times\frac{k+1}{k+2}\times\frac{k+2}{k+3}\times\cdots\times\frac{n-1}{n}=\frac{k}{n}$</li>
+<li>首 k 个样本，随便选一个做研究对象。被选中到水塘的概率为：1。（数组从 1 开始）从 j=k+1 开始考虑替换，第一次不被替换的概率是$\frac{k}{k+1}$，第二次不被替换的概率是$\frac{k+1}{k+2}$，第三次...，一直到最后一次不被替换的概率是$\frac{n-1}{n}$。<br><br>所以该项被保留的概率 = $1\times\frac{k}{k+1}\times\frac{k+1}{k+2}\times\frac{k+2}{k+3}\times\cdots\times\frac{n-1}{n}=\frac{k}{n}$</li>
 <li>一开始不在水塘中的那一部分，随便选一个做研究对象。被选中到水塘的概率为：$\frac{k}{j}$，后续不被替换的概率$\frac{j}{j+1}$，一直到$\frac{n-1}{n}$。<br><br>所以该项被保留的概率 = $\frac{k}{j}\times\frac{j}{j+1}\times\cdots\frac{n-1}{n}=\frac{k}{n}$</li>
 </ol>
 <p>到此我们就证明了所以样本最终存在于水塘中的概率都是$\frac{k}{n}$，这也完全符合了我们的数学期望。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>弄个流式数据我们这里没有条件，只能用伪代码模拟一下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Data[] reservoirSampling(<span class="keyword">int</span> k, DataStream dataStream)&#123;</span><br><span class="line">    Data[] reservoir = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// init pool</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;reservoir.length;i++)&#123;</span><br><span class="line">        reservoir[i] = dataStream.getCurrentData();</span><br><span class="line">        dataStream.toNext();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k;!dataStream.isFinish();i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> d = random.nextInt(i+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(d&lt;k)&#123;</span><br><span class="line">            reservoir[d] = dataStream.getCurrentData();</span><br><span class="line">        &#125;</span><br><span class="line">        dataStream.toNext();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> reservoir;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Data[] reservoirSampling(<span class="keyword">int</span> k, DataStream dataStream)&#123;</span><br><span class="line">    Data[] reservoir = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// init pool</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;reservoir.length;i++)&#123;</span><br><span class="line">        reservoir[i] = dataStream.getCurrentData();</span><br><span class="line">        dataStream.toNext();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k;!dataStream.isFinish();i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> d = random.nextInt(i+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(d&lt;k)&#123;</span><br><span class="line">            reservoir[d] = dataStream.getCurrentData();</span><br><span class="line">        &#125;</span><br><span class="line">        dataStream.toNext();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> reservoir;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -546,7 +547,7 @@
               
                 <a href="/blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -557,7 +558,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -568,7 +569,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -678,7 +679,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.9k</span>
+    <span title="Site words total count">69.8k</span>
   
 </div>
 

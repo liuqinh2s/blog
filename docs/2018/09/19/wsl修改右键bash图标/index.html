@@ -81,22 +81,22 @@
 
 
 
-<meta name="description" content="使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出bash，发现图标不对：">
+<meta name="description" content="使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出 bash，发现图标不对：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wsl修改右键bash图标">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/2018/09/19/wsl修改右键bash图标/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出bash，发现图标不对：">
+<meta property="og:description" content="使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出 bash，发现图标不对：">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2018/09/19/5ba25208ca7de.png">
 <meta property="og:image" content="https://i.loli.net/2018/09/19/5ba254dbe66ea.png">
 <meta property="og:image" content="https://i.loli.net/2018/09/19/5ba255cbd964f.png">
 <meta property="og:image" content="https://i.loli.net/2018/09/20/5ba2ffde07591.png">
 <meta property="og:image" content="https://i.loli.net/2018/09/20/5ba301516885f.png">
-<meta property="og:updated_time" content="2022-06-07T01:21:09.954Z">
+<meta property="og:updated_time" content="2022-06-07T15:11:16.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wsl修改右键bash图标">
-<meta name="twitter:description" content="使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出bash，发现图标不对：">
+<meta name="twitter:description" content="使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出 bash，发现图标不对：">
 <meta name="twitter:image" content="https://i.loli.net/2018/09/19/5ba25208ca7de.png">
 
 
@@ -344,8 +344,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Fixed-Issues/" itemprop="url" rel="index">
-                    <span itemprop="name">Fixed Issues</span>
+                  <a href="/blog/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -405,20 +405,20 @@
       
 
       
-        <p>使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出bash，发现图标不对：</p>
+        <p>使用 windows subsystem for linux (简称：WSL) 的时候，遇到一个小问题，在文件管理器中右键，唤出 bash，发现图标不对：</p>
 <p><img src="https://i.loli.net/2018/09/19/5ba25208ca7de.png" alt="截图1"></p>
 <a id="more"></a>
 <p>点击之后可以看到调用的是哪个程序：</p>
 <p><img src="https://i.loli.net/2018/09/19/5ba254dbe66ea.png" alt="截图2"></p>
-<p>google一下：<code>windows 右键图标</code>，搜到百度经验：<a href="https://jingyan.baidu.com/article/7c6fb428321b4a80642c90fd.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/7c6fb428321b4a80642c90fd.html</a>，照着修改就行了。</p>
+<p>google 一下：<code>windows 右键图标</code>，搜到百度经验：<a href="https://jingyan.baidu.com/article/7c6fb428321b4a80642c90fd.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/7c6fb428321b4a80642c90fd.html</a>，照着修改就行了。</p>
 <p>如图：</p>
 <p><img src="https://i.loli.net/2018/09/19/5ba255cbd964f.png" alt="截图3"></p>
-<p>那么改成什么呢？google一下：<code>wsl bash icon</code>，搜到：<a href="https://github.com/Microsoft/WSL/issues/1269" target="_blank" rel="noopener">https://github.com/Microsoft/WSL/issues/1269</a>，然后又在这个页面找到了这个：<a href="https://github.com/cmderdev/cmder/issues/1063#issuecomment-401947209" target="_blank" rel="noopener">https://github.com/cmderdev/cmder/issues/1063#issuecomment-401947209</a></p>
+<p>那么改成什么呢？google 一下：<code>wsl bash icon</code>，搜到：<a href="https://github.com/Microsoft/WSL/issues/1269" target="_blank" rel="noopener">https://github.com/Microsoft/WSL/issues/1269</a>，然后又在这个页面找到了这个：<a href="https://github.com/cmderdev/cmder/issues/1063#issuecomment-401947209" target="_blank" rel="noopener">https://github.com/cmderdev/cmder/issues/1063#issuecomment-401947209</a></p>
 <p><img src="https://i.loli.net/2018/09/20/5ba2ffde07591.png" alt="截图4"></p>
-<p>把icon换成：</p>
+<p>把 icon 换成：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\WindowsApps\CanonicalGroupLimited.UbuntuonWindows_1804.2018.817.0_x64__79rhkp1fndgsc\ubuntu.exe</span><br></pre></td></tr></table></figure>
 <p>再点击右键，就能看到这个图标了。</p>
-<p>除了修改右键显示的icon，还可以修改右键显示的名字，以及运行的目标程序。</p>
+<p>除了修改右键显示的 icon，还可以修改右键显示的名字，以及运行的目标程序。</p>
 <p><img src="https://i.loli.net/2018/09/20/5ba301516885f.png" alt="TIM图片20180920100903.png"></p>
 <p>改为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\WindowsApps\CanonicalGroupLimited.UbuntuonWindows_1804.2018.817.0_x64__79rhkp1fndgsc\ubuntu.exe</span><br></pre></td></tr></table></figure>
@@ -448,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/22/编程珠玑系列笔记 -- 第一章 开篇/" rel="next" title="编程珠玑系列笔记 -- 第一章 开篇">
-                <i class="fa fa-chevron-left"></i> 编程珠玑系列笔记 -- 第一章 开篇
+              <a href="/blog/2018/06/28/编程珠玑第二章/" rel="next" title="编程珠玑系列笔记 -- 第二章 啊哈！算法">
+                <i class="fa fa-chevron-left"></i> 编程珠玑系列笔记 -- 第二章 啊哈！算法
               </a>
             
           </div>
@@ -458,7 +458,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/09/20/wsl oh my zsh 字体问题/" rel="prev" title="wsl oh my zsh 字符乱码问题">
+              <a href="/blog/2018/09/20/wsl-oh-my-zsh字体问题/" rel="prev" title="wsl oh my zsh 字符乱码问题">
                 wsl oh my zsh 字符乱码问题 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -535,7 +535,7 @@
               
                 <a href="/blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -546,7 +546,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -557,7 +557,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -651,7 +651,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.9k</span>
+    <span title="Site words total count">69.8k</span>
   
 </div>
 

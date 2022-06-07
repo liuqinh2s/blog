@@ -89,7 +89,7 @@
 <meta property="og:description" content="冯·诺依曼结构冯·诺伊曼结构与 存储程序型计算机 是互相通用的名词  哈佛结构 是一种将程序数据与普通数据分开存储的设计概念，可以说是冯·诺依曼结构的一种。  存储程序计算机在体系结构上主要特点有：  以运算单元为中心 采用存储程序原理 存储器是按地址访问、线性编址的空间 控制流由指令流产生 指令由 操作码 和 地址码 组成 数据以二进制编码  五个组成部分：  存储器 控制器 运算器（算术逻辑单">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/04/22/5cbd7fbac175d.png">
-<meta property="og:updated_time" content="2022-06-07T01:21:09.965Z">
+<meta property="og:updated_time" content="2022-06-07T15:08:41.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="冯·诺依曼结构">
 <meta name="twitter:description" content="冯·诺依曼结构冯·诺伊曼结构与 存储程序型计算机 是互相通用的名词  哈佛结构 是一种将程序数据与普通数据分开存储的设计概念，可以说是冯·诺依曼结构的一种。  存储程序计算机在体系结构上主要特点有：  以运算单元为中心 采用存储程序原理 存储器是按地址访问、线性编址的空间 控制流由指令流产生 指令由 操作码 和 地址码 组成 数据以二进制编码  五个组成部分：  存储器 控制器 运算器（算术逻辑单">
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Knowledge-of-CS/" itemprop="url" rel="index">
-                    <span itemprop="name">Knowledge of CS</span>
+                  <a href="/blog/categories/计算机基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
                   </a>
                 </span>
 
@@ -376,7 +376,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,424
+                  1,425
                 </span>
               
 
@@ -440,14 +440,14 @@
 <h3 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h3><ol>
 <li><strong>程序可修改很可能是非常具伤害性的</strong>：在一个简单的存储程序型计算机上，一个设计不良的程序可能会伤害自己、其他程序甚或是操作系统，导致死机、缓存溢出就是一个典型例子。而创造或更改其他程序的能力也导致了恶意软件的出现。利用缓存溢出，一个恶意程序可以覆盖调用堆栈（Call stack）并改写代码，并且修改其他程序文件以造成连锁破坏。存储器保护机制及其他形式的访问控制可以保护意外或恶意的代码更动。</li>
 <li><strong>冯·诺伊曼瓶颈（von Neumann bottleneck）</strong>：在内存容量指数级提升以后，CPU 和内存之间的数据传输带宽成为了瓶颈。缓解的办法有：<ol>
-<li>在CPU和内存之间提供cache（缓存，速度比内存快很多倍）</li>
+<li>在 CPU 和内存之间提供 cache（缓存，速度比内存快很多倍）</li>
 <li>将数据和指令分开存储并能够做到同时访问（在一般的冯·诺依曼结构中数据和指令放在同一内存通过同一数据总线访问，取数据和取指令不能同时进行，而哈佛结构则是将数据和指令分开，可同时访问）</li>
 <li>分支预测和流水线</li>
 </ol>
 </li>
 </ol>
 <blockquote>
-<p>实际上，绝大多数现代计算机使用的是所谓的“Modified Harvard Architecture”，指令和数据共享同一个 address space，但缓存是分开的。在内存里，指令和数据是在一起的。而在CPU内的缓存中，还是会区分指令缓存和数据缓存，最终执行的时候，指令和数据是从两个不同的地方出来的。你可以理解为在CPU外部，采用的是冯诺依曼模型，而在CPU内部用的是哈佛结构。</p>
+<p>实际上，绝大多数现代计算机使用的是所谓的“Modified Harvard Architecture”，指令和数据共享同一个 address space，但缓存是分开的。在内存里，指令和数据是在一起的。而在 CPU 内的缓存中，还是会区分指令缓存和数据缓存，最终执行的时候，指令和数据是从两个不同的地方出来的。你可以理解为在 CPU 外部，采用的是冯诺依曼模型，而在 CPU 内部用的是哈佛结构。</p>
 </blockquote>
 <blockquote>
 <p>大部分的<a href="https://zh.wikipedia.org/wiki/%E6%95%B8%E4%BD%8D%E8%A8%8A%E8%99%9F%E8%99%95%E7%90%86%E5%99%A8" target="_blank" rel="noopener">DSP</a>都没有缓存，因而直接就是哈佛结构。</p>
@@ -457,8 +457,8 @@
 <p>我们再来算算时间。这颗 CPU 最大睿频 4.4GHz，就是说 CPU 执行一个指令需要的时间是 0.000000000227273 秒，即 0.22ns（纳秒），而内存的延迟是 68.1ns。换句话说，只要去内存里取一个字节，就需要 CPU 等待 300 个周期，何其的浪费 CPU 的时间啊。</p>
 <p>CPU L1 L2 L3 三级缓存是使用和 CPU 同样的 14 纳米工艺制造的硅半导体，每一个 bit 都使用六个场效应管（通俗解释成三极管）构成，成本高昂且非常占用 CPU 核心面积，故不能做成很大容量。</p>
 <p>除此之外，L1 L2 L3 三级缓存对计算机速度的提升来源于计算机内存的「局部性」，相关内容我们之后会专门讨论。</p>
-<p><a href="https://zh.wikipedia.org/zh-hans/%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%AD%98%E5%82%A8%E5%99%A8" target="_blank" rel="noopener">RAM</a>（Random Access Memory，俗称 <strong>内存</strong>）：内存最大的特点是：<strong>掉电失去数据</strong>。程序是静态的文件存放在外存中，进程正在运行的程序，进程存放在内存中。我们之所以使用内存是因为内存的速度比外存快100倍左右。</p>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%94%AF%E8%AE%80%E8%A8%98%E6%86%B6%E9%AB%94" target="_blank" rel="noopener">ROM</a>（Read-Only Memory，只读存储器）：<strong>ROM掉电不失去数据</strong>。</p>
+<p><a href="https://zh.wikipedia.org/zh-hans/%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%AD%98%E5%82%A8%E5%99%A8" target="_blank" rel="noopener">RAM</a>（Random Access Memory，俗称 <strong>内存</strong>）：内存最大的特点是：<strong>掉电失去数据</strong>。程序是静态的文件存放在外存中，进程正在运行的程序，进程存放在内存中。我们之所以使用内存是因为内存的速度比外存快 100 倍左右。</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%94%AF%E8%AE%80%E8%A8%98%E6%86%B6%E9%AB%94" target="_blank" rel="noopener">ROM</a>（Read-Only Memory，只读存储器）：<strong>ROM 掉电不失去数据</strong>。</p>
 
       
     </div>
@@ -579,7 +579,7 @@
               
                 <a href="/blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -590,7 +590,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -601,7 +601,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -711,7 +711,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.9k</span>
+    <span title="Site words total count">69.8k</span>
   
 </div>
 

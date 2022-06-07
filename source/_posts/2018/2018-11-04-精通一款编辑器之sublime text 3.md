@@ -1,6 +1,6 @@
 ---
 title: 精通一款编辑器之sublime text 3
-categories: [Tools]
+categories: [工具]
 comments: true
 ---
 
@@ -18,17 +18,17 @@ comments: true
 1. `cmd+shift+p`：打开命令板，输入`install`，点击：**Package Control: Install Package**选项，然后搜索你想要的插件。
 2. 卸载请在命令板输入：`remove`，点击：**Package Control: Remove Package**选项。其实卸载无非就是两个词：`remove`和`uninstall`，多试试就行了。
 
->打开命令板之后什么都不想干，怎么关闭命令板呢？其实很简单，再按一次打开命令板的快捷键就行了，**开关都用同一个键或者按钮（术语叫：toggle，可开可关），这是比较通用设计理念**。
+> 打开命令板之后什么都不想干，怎么关闭命令板呢？其实很简单，再按一次打开命令板的快捷键就行了，**开关都用同一个键或者按钮（术语叫：toggle，可开可关），这是比较通用设计理念**。
 
 ## 基本快捷键
 
 - 显示隐藏菜单栏：alt，如果你不小心把菜单栏隐藏了，除了用快捷键唤出，还真不知道有什么其他办法。
-- 显示隐藏目录树：ctrl+k+b，这个功能可以在菜单栏中的view中找到，所以我觉得记不记无所谓
+- 显示隐藏目录树：ctrl+k+b，这个功能可以在菜单栏中的 view 中找到，所以我觉得记不记无所谓
 
 ## vue 插件
 
 1. **vue-syntax-highlight**：可以让`.vue`文件高亮。
-2. **HTML-CSS-JS Prettify**：可以格式化这三种语言的代码，特别是单文件的vue，非常需要这个来同时格式化三种语言。不过需要配置一下。工具栏路径：`Sublime Text -> Preferences -> Package Settings -> HTML/CSS/JS Prettify -> Plugin Options - Default`，然后搜索：`allowed_file_extensions`，给这个配置项添加一个`vue`即可，要注意的是有四处有这个配置项，分别是`html`、`css`、`js`、`json`，如果你想它们全都能格式化，自然是要全都添加`vue`，但实验证明只加html里面就行了，如果在其他几个里面加反而引起了冲突。然后格式化代码的快捷键是什么呢？同样也有配置文件的，工具栏路径：`Sublime Text -> Preferences -> Package Settings -> HTML/CSS/JS Prettify -> Keyboard Shortcuts - Default`，可以看到：
+2. **HTML-CSS-JS Prettify**：可以格式化这三种语言的代码，特别是单文件的 vue，非常需要这个来同时格式化三种语言。不过需要配置一下。工具栏路径：`Sublime Text -> Preferences -> Package Settings -> HTML/CSS/JS Prettify -> Plugin Options - Default`，然后搜索：`allowed_file_extensions`，给这个配置项添加一个`vue`即可，要注意的是有四处有这个配置项，分别是`html`、`css`、`js`、`json`，如果你想它们全都能格式化，自然是要全都添加`vue`，但实验证明只加 html 里面就行了，如果在其他几个里面加反而引起了冲突。然后格式化代码的快捷键是什么呢？同样也有配置文件的，工具栏路径：`Sublime Text -> Preferences -> Package Settings -> HTML/CSS/JS Prettify -> Keyboard Shortcuts - Default`，可以看到：
 
 ```
 [{
@@ -53,7 +53,7 @@ comments: true
 
 ## 底栏设置显示文件编码
 
-在mac osx上一不小心按了cmd+shift+c，文件的存储格式现在变成了GBK格式，当我再按下cmd+s保存时，提示我UTF-8格式的文件不能用GBK格式来保存。怎么解决这个问题呢？首先我想查看这个文件是什么编码，Sublime Text的默认设置是不开启显示编码的，如果想开启，可通过菜单Perference → Settings – User，在打开的配置文件里 ，在大括号后面，增加以下内容：
+在 mac osx 上一不小心按了 cmd+shift+c，文件的存储格式现在变成了 GBK 格式，当我再按下 cmd+s 保存时，提示我 UTF-8 格式的文件不能用 GBK 格式来保存。怎么解决这个问题呢？首先我想查看这个文件是什么编码，Sublime Text 的默认设置是不开启显示编码的，如果想开启，可通过菜单 Perference → Settings – User，在打开的配置文件里 ，在大括号后面，增加以下内容：
 
 ```
 // Display file encoding in the status bar
@@ -62,6 +62,6 @@ comments: true
 "show_line_endings": true,
 ```
 
-此时保存该配置文件，就能够看到sublime最底下一行会显示文件编码格式了。以上的配置内容在Perference → Setting─Default都是false的。
+此时保存该配置文件，就能够看到 sublime 最底下一行会显示文件编码格式了。以上的配置内容在 Perference → Setting─Default 都是 false 的。
 
-然后在底栏点击文件编码，点击reopen with encoding，然后选择utf-8，然后cmd+w关闭窗口，然后cmd+shift+t重新打开刚刚关闭的窗口，就一切恢复正常了。
+然后在底栏点击文件编码，点击 reopen with encoding，然后选择 utf-8，然后 cmd+w 关闭窗口，然后 cmd+shift+t 重新打开刚刚关闭的窗口，就一切恢复正常了。

@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-06-07T01:35:49.705Z</updated>
+  <updated>2022-06-07T14:14:52.793Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/08/22/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"/>
     <id>https://liuqinh2s.github.io/blog/2021/08/22/如何学习/</id>
     <published>2021-08-21T16:00:00.000Z</published>
-    <updated>2022-06-07T01:35:49.705Z</updated>
+    <updated>2022-06-07T14:14:52.793Z</updated>
     
     <summary type="html">
     
@@ -43,45 +43,45 @@
   </entry>
   
   <entry>
-    <title>快速排序最坏的情况啥时候出现</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
+    <title>智能合约入门</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/</id>
     <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.972Z</updated>
+    <updated>2022-06-07T15:06:42.575Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N代表单次排序的时间花销，logN代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN
-        
-      
+      &lt;blockquote&gt;
+&lt;p&gt;前言&lt;br&gt;从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
-      <category term="Algorithm" scheme="https://liuqinh2s.github.io/blog/categories/Algorithm/"/>
+      <category term="币圈" scheme="https://liuqinh2s.github.io/blog/categories/%E5%B8%81%E5%9C%88/"/>
     
     
   </entry>
   
   <entry>
-    <title>智能合约入门</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/</id>
+    <title>快速排序最坏的情况啥时候出现</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
     <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.973Z</updated>
+    <updated>2022-06-07T15:05:55.195Z</updated>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;前言&lt;br&gt;从2017年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是4年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在OTC入金的傻子，库币的OTC定价那么不合理都只会用OTC入金，后来我才发现原来USDT可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。&lt;/p&gt;
-&lt;/blockquote&gt;
+      
+      
+        
+        
+          &lt;p&gt;在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN
+        
+      
     
     </summary>
     
-      <category term="BlockChain" scheme="https://liuqinh2s.github.io/blog/categories/BlockChain/"/>
+      <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
     
   </entry>
@@ -91,7 +91,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-%E4%B8%80%E5%92%8C%E9%9B%B6/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-一和零/</id>
     <published>2021-06-05T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.972Z</updated>
+    <updated>2022-06-07T14:14:52.792Z</updated>
     
     <summary type="html">
     
@@ -110,7 +110,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/05/leetcode-230-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/05/leetcode-230-移除链表元素/</id>
     <published>2021-06-04T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.972Z</updated>
+    <updated>2022-06-07T14:14:52.792Z</updated>
     
     <summary type="html">
     
@@ -128,7 +128,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/04/leetcode-160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/04/leetcode-160-相交链表/</id>
     <published>2021-06-03T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.971Z</updated>
+    <updated>2022-06-07T14:14:52.792Z</updated>
     
     <summary type="html">
     
@@ -150,7 +150,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/03/leetcode-525-%E8%BF%9E%E7%BB%AD%E6%95%B0%E7%BB%84/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/03/leetcode-525-连续数组/</id>
     <published>2021-06-02T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.971Z</updated>
+    <updated>2022-06-07T14:14:52.792Z</updated>
     
     <summary type="html">
     
@@ -172,7 +172,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/05/31/leetcode-342-4%E7%9A%84%E5%B9%82/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/31/leetcode-342-4的幂/</id>
     <published>2021-05-30T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.970Z</updated>
+    <updated>2022-06-07T14:14:52.792Z</updated>
     
     <summary type="html">
     
@@ -193,7 +193,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E5%AD%90%E7%9F%A9%E9%98%B5%E6%95%B0%E9%87%8F/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/</id>
     <published>2021-05-28T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.970Z</updated>
+    <updated>2022-06-07T14:14:52.791Z</updated>
     
     <summary type="html">
     
@@ -215,7 +215,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-和为K的子数组/</id>
     <published>2021-05-28T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.970Z</updated>
+    <updated>2022-06-07T14:14:52.792Z</updated>
     
     <summary type="html">
     
@@ -232,36 +232,11 @@
   </entry>
   
   <entry>
-    <title>position sticky</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/28/position-sticky/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/28/position-sticky/</id>
-    <published>2021-05-27T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.969Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用fixed，可以固定但是宽度无法撑开。最终用&lt;code&gt;position: sticky&lt;/code&gt;解决了问题。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;杀了个回马枪，还是说说position:sticky吧« 张鑫旭-鑫空间-鑫生活&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/CSS/position&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;position - CSS（层叠样式表） | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>leetcode每日一题： 477. 汉明距离总和</title>
     <link href="https://liuqinh2s.github.io/blog/2021/05/28/leetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/28/leetcode-477-汉明距离总和/</id>
     <published>2021-05-27T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.967Z</updated>
+    <updated>2022-06-07T14:14:52.791Z</updated>
     
     <summary type="html">
     
@@ -278,11 +253,36 @@
   </entry>
   
   <entry>
+    <title>position sticky</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/05/28/position-sticky/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/05/28/position-sticky/</id>
+    <published>2021-05-27T16:00:00.000Z</published>
+    <updated>2022-06-07T15:05:28.823Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用&lt;code&gt;position: sticky&lt;/code&gt;解决了问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/CSS/position&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;position - CSS（层叠样式表） | MDN&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="css" scheme="https://liuqinh2s.github.io/blog/categories/css/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>leetcode每日一题： 1190. 反转每对括号间的子串</title>
     <link href="https://liuqinh2s.github.io/blog/2021/05/27/leetcode-1190-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/27/leetcode-1190-反转每对括号间的子串/</id>
     <published>2021-05-26T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.967Z</updated>
+    <updated>2022-06-07T14:14:52.791Z</updated>
     
     <summary type="html">
     
@@ -303,7 +303,7 @@
     <link href="https://liuqinh2s.github.io/blog/2019/12/30/%E7%82%92%E5%B8%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/"/>
     <id>https://liuqinh2s.github.io/blog/2019/12/30/炒币的基本知识/</id>
     <published>2019-12-29T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.966Z</updated>
+    <updated>2022-06-07T15:08:15.382Z</updated>
     
     <summary type="html">
     
@@ -312,7 +312,7 @@
     
     </summary>
     
-      <category term="百科知识" scheme="https://liuqinh2s.github.io/blog/categories/%E7%99%BE%E7%A7%91%E7%9F%A5%E8%AF%86/"/>
+      <category term="币圈" scheme="https://liuqinh2s.github.io/blog/categories/%E5%B8%81%E5%9C%88/"/>
     
     
   </entry>
@@ -322,11 +322,11 @@
     <link href="https://liuqinh2s.github.io/blog/2019/04/26/%E5%9B%BE%E7%81%B5%E6%9C%BA/"/>
     <id>https://liuqinh2s.github.io/blog/2019/04/26/图灵机/</id>
     <published>2019-04-25T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.966Z</updated>
+    <updated>2022-06-07T15:08:26.611Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;图灵机&quot;&gt;&lt;a href=&quot;#图灵机&quot; class=&quot;headerlink&quot; title=&quot;图灵机&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9B%BE%E7%81%B5%E6%9C%BA&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图灵机&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;图灵机（Turing Machine）是 &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%89%BE%E4%BC%A6%C2%B7%E5%9B%BE%E7%81%B5&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;英国数学家艾伦·图灵&lt;/a&gt; 在1936年发表的 &amp;quot;&lt;a href=&quot;https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;On Computable Numbers, with an Application to the Entscheidungsproblem&lt;/a&gt;&amp;quot;（《论可计算数及其在判定性问题上的应用》）中提出的数学模型。在文章中图灵描述了它是什么，并且证明了，只要图灵机可以被实现，就可以用来解决任何可计算问题。&lt;/p&gt;
+      &lt;h2 id=&quot;图灵机&quot;&gt;&lt;a href=&quot;#图灵机&quot; class=&quot;headerlink&quot; title=&quot;图灵机&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9B%BE%E7%81%B5%E6%9C%BA&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图灵机&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;图灵机（Turing Machine）是 &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%89%BE%E4%BC%A6%C2%B7%E5%9B%BE%E7%81%B5&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;英国数学家艾伦·图灵&lt;/a&gt; 在 1936 年发表的 &amp;quot;&lt;a href=&quot;https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;On Computable Numbers, with an Application to the Entscheidungsproblem&lt;/a&gt;&amp;quot;（《论可计算数及其在判定性问题上的应用》）中提出的数学模型。在文章中图灵描述了它是什么，并且证明了，只要图灵机可以被实现，就可以用来解决任何可计算问题。&lt;/p&gt;
 &lt;h3 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/av30479683?from=search&amp;amp;seid=11735601712045998475&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;妈咪说：图灵&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://movie.douban.com/subject/10463953/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;模仿游戏&lt;/a&gt;&lt;/li&gt;
@@ -334,7 +334,7 @@
     
     </summary>
     
-      <category term="Knowledge of CS" scheme="https://liuqinh2s.github.io/blog/categories/Knowledge-of-CS/"/>
+      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
@@ -344,7 +344,7 @@
     <link href="https://liuqinh2s.github.io/blog/2019/04/22/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84/"/>
     <id>https://liuqinh2s.github.io/blog/2019/04/22/冯·诺依曼结构/</id>
     <published>2019-04-21T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.965Z</updated>
+    <updated>2022-06-07T15:08:41.086Z</updated>
     
     <summary type="html">
     
@@ -372,7 +372,7 @@
     
     </summary>
     
-      <category term="Knowledge of CS" scheme="https://liuqinh2s.github.io/blog/categories/Knowledge-of-CS/"/>
+      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
@@ -382,7 +382,7 @@
     <link href="https://liuqinh2s.github.io/blog/2019/04/21/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/"/>
     <id>https://liuqinh2s.github.io/blog/2019/04/21/什么是字符集和编码/</id>
     <published>2019-04-20T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.965Z</updated>
+    <updated>2022-06-07T15:08:50.840Z</updated>
     
     <summary type="html">
     
@@ -394,13 +394,13 @@
 &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/GB_2312&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GB2312&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B1%89%E5%AD%97%E5%86%85%E7%A0%81%E6%89%A9%E5%B1%95%E8%A7%84%E8%8C%83&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GBK&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Unicode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Unicode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh/UTF-8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UTF-8&lt;/a&gt; （严格来说UTF-8只是Unicode的一种编码方式）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/ANSI%E7%BC%96%E7%A0%81&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ANSI编码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh/UTF-8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UTF-8&lt;/a&gt; （严格来说 UTF-8 只是 Unicode 的一种编码方式）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/ANSI%E7%BC%96%E7%A0%81&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ANSI 编码&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
     
-      <category term="Knowledge of CS" scheme="https://liuqinh2s.github.io/blog/categories/Knowledge-of-CS/"/>
+      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
@@ -410,28 +410,28 @@
     <link href="https://liuqinh2s.github.io/blog/2019/04/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E7%9A%84%E4%BF%A1%E6%81%AF/"/>
     <id>https://liuqinh2s.github.io/blog/2019/04/20/计算机中的信息/</id>
     <published>2019-04-19T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.964Z</updated>
+    <updated>2022-06-07T15:08:59.390Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;信息的本质&quot;&gt;&lt;a href=&quot;#信息的本质&quot; class=&quot;headerlink&quot; title=&quot;信息的本质&quot;&gt;&lt;/a&gt;信息的本质&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;信息的本质是消除不确定性&lt;/strong&gt;：我们抛掷一枚硬币，然后用手盖住，出现正面朝上和反面朝上的概率都是二分之一。当我们偷看了结果，确定了是正面还是反面朝上，也就获得了信息。在这个例子中，我们消除的不确定性是一个二分之一的概率。在 &lt;strong&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E5%85%8B%E5%8A%B3%E5%BE%B7%C2%B7%E9%A6%99%E5%86%9C&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;香农&lt;/a&gt;&lt;/strong&gt; 划时代的论文 &lt;strong&gt;&lt;a href=&quot;http://math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;通信的数学原理&lt;/a&gt;&lt;/strong&gt; 中，首次提出了信息是可量化的，以及如何量化信息。我们以bit为信息的度量单位，一个bit可以是0或者1，我们每获得一个bit的信息，就会消除一个二分之一的不确定性。&lt;/p&gt;
+      &lt;h2 id=&quot;信息的本质&quot;&gt;&lt;a href=&quot;#信息的本质&quot; class=&quot;headerlink&quot; title=&quot;信息的本质&quot;&gt;&lt;/a&gt;信息的本质&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;信息的本质是消除不确定性&lt;/strong&gt;：我们抛掷一枚硬币，然后用手盖住，出现正面朝上和反面朝上的概率都是二分之一。当我们偷看了结果，确定了是正面还是反面朝上，也就获得了信息。在这个例子中，我们消除的不确定性是一个二分之一的概率。在 &lt;strong&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E5%85%8B%E5%8A%B3%E5%BE%B7%C2%B7%E9%A6%99%E5%86%9C&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;香农&lt;/a&gt;&lt;/strong&gt; 划时代的论文 &lt;strong&gt;&lt;a href=&quot;http://math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;通信的数学原理&lt;/a&gt;&lt;/strong&gt; 中，首次提出了信息是可量化的，以及如何量化信息。我们以 bit 为信息的度量单位，一个 bit 可以是 0 或者 1，我们每获得一个 bit 的信息，就会消除一个二分之一的不确定性。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;小思考题：如果我们抛掷的是一个骰子呢，当我们确定了一次投掷结果，我们获得多少信息（用bit为单位衡量）？&lt;br&gt;我们都知道，骰子有6个面，分别刻有1~6，我们有六分之一的概率得到其中任意一个面朝上。那么我们获得的信息应该是：$\log_2 6$。&lt;/p&gt;
+&lt;p&gt;小思考题：如果我们抛掷的是一个骰子呢，当我们确定了一次投掷结果，我们获得多少信息（用 bit 为单位衡量）？&lt;br&gt;我们都知道，骰子有 6 个面，分别刻有 1~6，我们有六分之一的概率得到其中任意一个面朝上。那么我们获得的信息应该是：$\log_2 6$。&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
-      <category term="Knowledge of CS" scheme="https://liuqinh2s.github.io/blog/categories/Knowledge-of-CS/"/>
+      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
   
   <entry>
     <title>C++ map的remove函数实现</title>
-    <link href="https://liuqinh2s.github.io/blog/2019/04/15/C++%20map%E7%9A%84remove%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://liuqinh2s.github.io/blog/2019/04/15/C++ map的remove函数实现/</id>
+    <link href="https://liuqinh2s.github.io/blog/2019/04/15/C++%E7%9A%84map%E7%9A%84remove%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://liuqinh2s.github.io/blog/2019/04/15/C++的map的remove函数实现/</id>
     <published>2019-04-14T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.964Z</updated>
+    <updated>2022-06-07T14:14:52.789Z</updated>
     
     <summary type="html">
     
@@ -449,19 +449,19 @@
     <link href="https://liuqinh2s.github.io/blog/2019/04/15/hexo%E6%8A%8A%E8%8B%B1%E6%96%87%E5%BC%95%E5%8F%B7%E6%B8%B2%E6%9F%93%E6%88%90%E4%B8%AD%E6%96%87%E5%BC%95%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://liuqinh2s.github.io/blog/2019/04/15/hexo把英文引号渲染成中文引号的问题/</id>
     <published>2019-04-14T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.964Z</updated>
+    <updated>2022-06-07T15:07:46.116Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。&lt;/p&gt;
-&lt;p&gt;首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo的渲染结果到底是不是一样。&lt;/p&gt;
-&lt;p&gt;打开chrome开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。&lt;/p&gt;
+&lt;p&gt;首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。&lt;/p&gt;
+&lt;p&gt;打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。&lt;/p&gt;
 &lt;p&gt;然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。&lt;/p&gt;
-&lt;p&gt;那么问题就确定了：hexo把英文引号渲染成了中文引号。&lt;/p&gt;
+&lt;p&gt;那么问题就确定了：hexo 把英文引号渲染成了中文引号。&lt;/p&gt;
     
     </summary>
     
-      <category term="Fixed Issues" scheme="https://liuqinh2s.github.io/blog/categories/Fixed-Issues/"/>
+      <category term="debug" scheme="https://liuqinh2s.github.io/blog/categories/debug/"/>
     
     
   </entry>

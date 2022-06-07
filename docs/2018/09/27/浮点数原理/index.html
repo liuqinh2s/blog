@@ -81,12 +81,12 @@
 
 
 
-<meta name="description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近0的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format and">
+<meta name="description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近 0 的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浮点数原理">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/2018/09/27/浮点数原理/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近0的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format and">
+<meta property="og:description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近 0 的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format a">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/浮点数内存模型.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/浮点数三种类型.png">
@@ -94,10 +94,10 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/舍入四种策略.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/浮点数加减流程图.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/10的19次方的二进制.png">
-<meta property="og:updated_time" content="2022-06-07T01:21:09.955Z">
+<meta property="og:updated_time" content="2022-06-07T15:11:31.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浮点数原理">
-<meta name="twitter:description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近0的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format and">
+<meta name="twitter:description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近 0 的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format a">
 <meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/浮点数内存模型.png">
 
 
@@ -345,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/Knowledge-of-CS/" itemprop="url" rel="index">
-                    <span itemprop="name">Knowledge of CS</span>
+                  <a href="/blog/categories/计算机基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
                   </a>
                 </span>
 
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3,459
+                  3,472
                 </span>
               
 
@@ -406,7 +406,7 @@
       
 
       
-        <p><strong>浮点数的作用</strong>：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近0的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。</p>
+        <p><strong>浮点数的作用</strong>：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近 0 的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。</p>
 <blockquote>
 <p><strong>IEEE（pronounced “Eye-Triple-Eee”）浮点数标准</strong> 是行业内公认的标准。</p>
 </blockquote>
@@ -416,54 +416,54 @@
 <p>相应的，二进制也可以写成这种形式：</p>
 <p>$$<br>b = \sum_{i=-n}^m 2^i \times b_i<br>$$</p>
 <a id="more"></a>
-<h1 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h1><p>IEEE浮点数的格式：$V = (-1)^s \times M \times 2^E$</p>
+<h1 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h1><p>IEEE 浮点数的格式：$V = (-1)^s \times M \times 2^E$</p>
 <ul>
-<li>s是符号（Sign），s为0时是正，s为1时是负</li>
-<li>M是有效数字（Significand，即 <strong>尾数</strong>）</li>
-<li>E是 <strong>指数</strong>，Exponent，也叫 <strong>幂数</strong>，<strong>阶码</strong></li>
+<li>s 是符号（Sign），s 为 0 时是正，s 为 1 时是负</li>
+<li>M 是有效数字（Significand，即 <strong>尾数</strong>）</li>
+<li>E 是 <strong>指数</strong>，Exponent，也叫 <strong>幂数</strong>，<strong>阶码</strong></li>
 <li>隐含的 <strong>基数</strong> 是 2</li>
 </ul>
 <p>下图是浮点数的内存分布模型，首先是符号域，然后是指数域，最后是分数域：</p>
 <p><img src="../../../../images/浮点数内存模型.png" alt="浮点数内存模型"></p>
 <ul>
-<li>符号位s个，符号位只需要一位，s=1</li>
-<li>指数位k个，指数域 $exp=e_{k-1}\cdots e_1 e_0$，用来计算指数E</li>
-<li>分数为n个，分数域 $frac=f_{n-1}\cdots f_1 f_0$，用来计算有效数字M</li>
+<li>符号位 s 个，符号位只需要一位，s=1</li>
+<li>指数位 k 个，指数域 $exp=e_{k-1}\cdots e_1 e_0$，用来计算指数 E</li>
+<li>分数为 n 个，分数域 $frac=f_{n-1}\cdots f_1 f_0$，用来计算有效数字 M</li>
 </ul>
-<p>32位浮点数（单精度，float型）中，s=1，k=8，n=23；64位浮点数（双精度，double型）中，s=1，k=11，n=52。</p>
-<h2 id="正常化值（Normalized-Values）"><a href="#正常化值（Normalized-Values）" class="headerlink" title="正常化值（Normalized Values）"></a>正常化值（Normalized Values）</h2><p>当 $exp$ 域既不是全0，也不是全1的时候，就是正常化值。</p>
-<p>$E = e - Bias$，其中 $e$ 就是 $exp$ 域：$e_{k-1}\cdots e_1e_0$ 的值（除去全0和全1之后，取值范围是1到$2^k-2$），$Bias=2^{k-1}-1$（单精度的时候是127，双精度的时候是1023），那么 $E$ 的取值范围，单精度的时候是：<code>-126 ~ +127</code>，双精度的时候是：<code>-1022 ~ +1023</code>，其实 $E$ 的算法就是 <strong>移码</strong> 的计算方法。</p>
-<p>$M = 1+f$，$0\le f\lt 1$，内存里只记录f，而1作为一个前导值计算时候再加上，所以f是分数域 $frac$ 的 $0.f_{n-1}\cdots f_1f_0$ 这种形式</p>
-<h2 id="非正常化值（Denormalized-Values）"><a href="#非正常化值（Denormalized-Values）" class="headerlink" title="非正常化值（Denormalized Values）"></a>非正常化值（Denormalized Values）</h2><p>当指数域全0，就是非正常化格式。</p>
-<p>在这种情况下，指数值是 $E = 1-Bias$，也就是固定了，有效数字值 $M = f$ 也就是没有前导1了。这个格式下可以表示0，因为正常化值中，一定有： $M\ge 1$，所以我们无法在正常化值格式下表示0。当符号位是0，有效数字 $M=f=0$，我们得到的就是<code>+0.0</code>，当符号位是1的时候就是<code>-0.0</code>。</p>
-<p>除了可以表示0，这个格式的另一个作用就是用来表示非常接近0的数。</p>
-<h2 id="特殊值（Special-Values）"><a href="#特殊值（Special-Values）" class="headerlink" title="特殊值（Special Values）"></a>特殊值（Special Values）</h2><p>当指数域全1的时候，且分数域是全0，就表示无穷大，如果符号域为0，表示 $+\infty$，如果符号位是1，则表示 $-\infty$。无穷大可以作为溢出的结果，当我们用两个很大的数相乘，或者除以0；</p>
-<p>当指数域全1，且分数域并非全0的时候，结果可以叫做：<code>NaN</code>（Not a Number的简写），这种值用来表示不能用实数或者无穷大表示的计算结果，比如计算：$\sqrt{-1}$ 或者 $\infty - \infty$。</p>
+<p>32 位浮点数（单精度，float 型）中，s=1，k=8，n=23；64 位浮点数（双精度，double 型）中，s=1，k=11，n=52。</p>
+<h2 id="正常化值（Normalized-Values）"><a href="#正常化值（Normalized-Values）" class="headerlink" title="正常化值（Normalized Values）"></a>正常化值（Normalized Values）</h2><p>当 $exp$ 域既不是全 0，也不是全 1 的时候，就是正常化值。</p>
+<p>$E = e - Bias$，其中 $e$ 就是 $exp$ 域：$e_{k-1}\cdots e_1e_0$ 的值（除去全 0 和全 1 之后，取值范围是 1 到$2^k-2$），$Bias=2^{k-1}-1$（单精度的时候是 127，双精度的时候是 1023），那么 $E$ 的取值范围，单精度的时候是：<code>-126 ~ +127</code>，双精度的时候是：<code>-1022 ~ +1023</code>，其实 $E$ 的算法就是 <strong>移码</strong> 的计算方法。</p>
+<p>$M = 1+f$，$0\le f\lt 1$，内存里只记录 f，而 1 作为一个前导值计算时候再加上，所以 f 是分数域 $frac$ 的 $0.f_{n-1}\cdots f_1f_0$ 这种形式</p>
+<h2 id="非正常化值（Denormalized-Values）"><a href="#非正常化值（Denormalized-Values）" class="headerlink" title="非正常化值（Denormalized Values）"></a>非正常化值（Denormalized Values）</h2><p>当指数域全 0，就是非正常化格式。</p>
+<p>在这种情况下，指数值是 $E = 1-Bias$，也就是固定了，有效数字值 $M = f$ 也就是没有前导 1 了。这个格式下可以表示 0，因为正常化值中，一定有： $M\ge 1$，所以我们无法在正常化值格式下表示 0。当符号位是 0，有效数字 $M=f=0$，我们得到的就是<code>+0.0</code>，当符号位是 1 的时候就是<code>-0.0</code>。</p>
+<p>除了可以表示 0，这个格式的另一个作用就是用来表示非常接近 0 的数。</p>
+<h2 id="特殊值（Special-Values）"><a href="#特殊值（Special-Values）" class="headerlink" title="特殊值（Special Values）"></a>特殊值（Special Values）</h2><p>当指数域全 1 的时候，且分数域是全 0，就表示无穷大，如果符号域为 0，表示 $+\infty$，如果符号位是 1，则表示 $-\infty$。无穷大可以作为溢出的结果，当我们用两个很大的数相乘，或者除以 0；</p>
+<p>当指数域全 1，且分数域并非全 0 的时候，结果可以叫做：<code>NaN</code>（Not a Number 的简写），这种值用来表示不能用实数或者无穷大表示的计算结果，比如计算：$\sqrt{-1}$ 或者 $\infty - \infty$。</p>
 <h2 id="综合理解"><a href="#综合理解" class="headerlink" title="综合理解"></a>综合理解</h2><p>下图是三类浮点数在数轴上的显示：</p>
 <p><img src="../../../../images/浮点数三种类型.png" alt="浮点数三种类型"></p>
-<p>可以看到非正常化值集中在0附近，正常化值散布在整个数轴的空间，特殊值则只表示两个无穷值。</p>
+<p>可以看到非正常化值集中在 0 附近，正常化值散布在整个数轴的空间，特殊值则只表示两个无穷值。</p>
 <p>下图是浮点数三种类型的光滑衔接：</p>
 <p><img src="../../../../images/浮点数三种类型光滑衔接.png" alt="浮点数三种类型光滑衔接"></p>
 <p>看完浮点数的设计和构造我们可以发现以下这些特点：</p>
 <ul>
 <li><strong>从编码上有效数字域采用了无符号整数编码，而指数域采用了移码编码</strong></li>
-<li><strong>非正常化值均匀分布在0附近</strong></li>
+<li><strong>非正常化值均匀分布在 0 附近</strong></li>
 <li><strong>正常化值的间隔随着 $2^E$ 变大而逐渐变大，也就是精度逐渐降低</strong></li>
-<li><strong>精度是分组的，以 $2^E$ 增加1为一组，每组有 $2^n$ 个数（n是有效数字域的位数）</strong></li>
+<li><strong>精度是分组的，以 $2^E$ 增加 1 为一组，每组有 $2^n$ 个数（n 是有效数字域的位数）</strong></li>
 <li><strong>最高精度就是两个非正常化值的间隔，最低精度是最大的一组正常化值的相邻两数的间隔。</strong></li>
 <li><strong>非正常化值按照精度只占一组，正常化值的数量是非正常化值数量的 $2^{k}-2$ 倍</strong></li>
 <li><strong>正常化值的第一组的精度和非正常化值的精度一样，也就是实现了无缝衔接</strong></li>
 </ul>
 <h1 id="浮点数的计算"><a href="#浮点数的计算" class="headerlink" title="浮点数的计算"></a>浮点数的计算</h1><h2 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h2><p><img src="../../../../images/舍入四种策略.png" alt="舍入四种策略"></p>
-<p><a href="https://en.wikipedia.org/wiki/Rounding" target="_blank" rel="noopener">Rounding维基百科</a></p>
-<p><a href="https://upload.wikimedia.org/wikipedia/commons/8/8a/Comparison_rounding_graphs_SMIL.svg" target="_blank" rel="noopener">各种Rounding合集图</a></p>
-<p>浮点数中使用的是：舍入到最近的偶数，因为舍入结果放大和缩小各占50%的概率，这样就可以防止最终结果偏大或者偏小。</p>
+<p><a href="https://en.wikipedia.org/wiki/Rounding" target="_blank" rel="noopener">Rounding 维基百科</a></p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/8/8a/Comparison_rounding_graphs_SMIL.svg" target="_blank" rel="noopener">各种 Rounding 合集图</a></p>
+<p>浮点数中使用的是：舍入到最近的偶数，因为舍入结果放大和缩小各占 50%的概率，这样就可以防止最终结果偏大或者偏小。</p>
 <p>下面是把浮点数舍入到小数点后两位数：</p>
 <p>$10.00011_2(2\frac{3}{32})$ -&gt; $10.00_2(2)$ 不到一半，正常四舍五入<br>$10.00110_2(2\frac{3}{16})$ -&gt; $10.01_2(2\frac{1}{4})$ 超过一半，正常四舍五入<br>$10.11100_2(2\frac{7}{8})$ -&gt; $11.00_2(3)$ 正好一半，保证最后一位是偶数，所以向上舍入<br>$10.10100_2(2\frac{5}{8})$ -&gt; $10.10_2(2\frac{1}{2})$ 正好一半，保证最后一位是偶数，所以向下舍入</p>
 <h2 id="浮点数加减运算"><a href="#浮点数加减运算" class="headerlink" title="浮点数加减运算"></a>浮点数加减运算</h2><h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><ul>
 <li>相加可能产生 infinity 或者 NaN</li>
 <li>不满足交换律，不满足结合律（因为舍入会造成精度上的损失）</li>
-<li>加上0等于原来的数</li>
+<li>加上 0 等于原来的数</li>
 <li>除了 infinity 和 NaN，每个元素都有对应的相反数</li>
 <li>除了 infinity 和 NaN，满足单调性，即 $a\ge b \rightarrow a+c\ge b+c$</li>
 </ul>
@@ -475,9 +475,9 @@
 <p>则浮点数加减运算结果为：</p>
 <p>$$<br>x\pm y = \left((-1)^{s_x}M_x 2^{E_x-E_y} \pm (-1)^{s_y}M_y \right)2^{E_y}<br>$$</p>
 <ol>
-<li><strong>对阶</strong>：首先要把指数位（阶码）调成一样，并相应的使M移位，由于有效域左移会引起最高有效位丢失，误差大，所以采用右移，此时阶码要增加。所以对阶原则是：<strong>小阶向大阶看齐</strong>。</li>
+<li><strong>对阶</strong>：首先要把指数位（阶码）调成一样，并相应的使 M 移位，由于有效域左移会引起最高有效位丢失，误差大，所以采用右移，此时阶码要增加。所以对阶原则是：<strong>小阶向大阶看齐</strong>。</li>
 <li><strong>有效数加减</strong>：简单的无符号数字相加减。</li>
-<li><strong>规格化</strong>：有效数求和结果可能大于1，那么就向右规格化：尾数右移1位，阶码加1。</li>
+<li><strong>规格化</strong>：有效数求和结果可能大于 1，那么就向右规格化：尾数右移 1 位，阶码加 1。</li>
 <li><strong>舍入</strong>：对于右移出去的位，采取舍入</li>
 <li><strong>检查阶码是否溢出</strong>：<ul>
 <li><strong>阶码下溢</strong>：运算结果为非规格化数</li>
@@ -487,22 +487,23 @@
 </ol>
 <h3 id="浮点数加减实例"><a href="#浮点数加减实例" class="headerlink" title="浮点数加减实例"></a>浮点数加减实例</h3><p>$x=3.14, y=2.718$ 求 $z=x+y$。</p>
 <p>首先算出 $x$ 和 $y$ 的内存表示：</p>
-<p>$x = 3+0.14$，3的二进制表示是<code>11</code>，0.14的二进制要稍微计算一下，我们让0.14不断的乘以2（也就是左移），得到的整数位部分就是其二进制值的一位：</p>
+<p>$x = 3+0.14$，3 的二进制表示是<code>11</code>，0.14 的二进制要稍微计算一下，我们让 0.14 不断的乘以 2（也就是左移），得到的整数位部分就是其二进制值的一位：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0.14 * 2 = 0.28     0</span><br><span class="line">0.28 * 2 = 0.56     0</span><br><span class="line">0.56 * 2 = 1.12     1</span><br><span class="line">0.12 * 2 = 0.24     0</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
 <p>我们可以写个程序来完成这个计算工作：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取整形数的位数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getDigits</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(num/<span class="number">10</span>&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        num %= <span class="number">10</span>;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取小数的二进制表示</span></span><br><span class="line"><span class="comment"> * @params precision 二进制表示精确到多少位</span></span><br><span class="line"><span class="comment"> * @params num 小数的整数表示</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">getFloatBitset</span><span class="params">(<span class="keyword">int</span> precision, <span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* res = <span class="keyword">new</span> <span class="keyword">char</span>[precision];</span><br><span class="line">    <span class="keyword">int</span> digits = getDigits(num);</span><br><span class="line">    <span class="keyword">int</span> mod = <span class="built_in">pow</span>(<span class="number">10</span>, digits);</span><br><span class="line">    <span class="keyword">char</span> printFormat[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">sprintf</span>(printFormat,<span class="string">"%%0.%df"</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="comment">// cout &lt;&lt; printFormat &lt;&lt;endl;</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;precision;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(printFormat, num*<span class="number">1.0</span>/mod);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" * 2 = "</span>;</span><br><span class="line">        num &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(num &gt;= mod)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num*<span class="number">1.0</span>/mod);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       1"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            num %= mod;</span><br><span class="line">            res[i] = <span class="string">'1'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num*<span class="number">1.0</span>/mod);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            res[i] = <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取小数的二进制表示</span></span><br><span class="line"><span class="comment"> * @params precision 二进制表示精确到多少位</span></span><br><span class="line"><span class="comment"> * @params num 浮点型小数</span></span><br><span class="line"><span class="comment"> * @params digits 输入的时候浮点型小数的位数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">getFloatBitset2</span><span class="params">(<span class="keyword">int</span> precision, <span class="keyword">float</span> num, <span class="keyword">int</span> digits)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* res = <span class="keyword">new</span> <span class="keyword">char</span>[precision];</span><br><span class="line">    <span class="keyword">int</span> mod = <span class="built_in">pow</span>(<span class="number">10</span>,digits);</span><br><span class="line">    <span class="comment">// cout&lt;&lt;mod&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">char</span> printFormat[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">sprintf</span>(printFormat,<span class="string">"%%0.%df"</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;precision;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(printFormat, num);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" * 2 = "</span>;</span><br><span class="line">        num*=<span class="number">2</span>;</span><br><span class="line">        num = round(num*mod)/mod;</span><br><span class="line">        <span class="keyword">if</span>(num &gt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       1"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            num -= <span class="number">1</span>;</span><br><span class="line">            res[i] = <span class="string">'1'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            res[i] = <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span>&#123;</span><br><span class="line">    <span class="comment">// char* res = getFloatBitset(atoi(argv[1]), atoi(argv[2]));</span></span><br><span class="line">    <span class="keyword">char</span>* res = getFloatBitset2(atoi(argv[<span class="number">1</span>]), atof(argv[<span class="number">2</span>]), atoi(argv[<span class="number">3</span>]));</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取整形数的位数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getDigits</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(num/<span class="number">10</span>&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        num %= <span class="number">10</span>;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取小数的二进制表示</span></span><br><span class="line"><span class="comment"> * @params precision 二进制表示精确到多少位</span></span><br><span class="line"><span class="comment"> * @params num 小数的整数表示</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">getFloatBitset</span><span class="params">(<span class="keyword">int</span> precision, <span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* res = <span class="keyword">new</span> <span class="keyword">char</span>[precision];</span><br><span class="line">    <span class="keyword">int</span> digits = getDigits(num);</span><br><span class="line">    <span class="keyword">int</span> mod = <span class="built_in">pow</span>(<span class="number">10</span>, digits);</span><br><span class="line">    <span class="keyword">char</span> printFormat[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">sprintf</span>(printFormat,<span class="string">"%%0.%df"</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="comment">// cout &lt;&lt; printFormat &lt;&lt;endl;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;precision;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(printFormat, num*<span class="number">1.0</span>/mod);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" * 2 = "</span>;</span><br><span class="line">        num &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(num &gt;= mod)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num*<span class="number">1.0</span>/mod);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       1"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            num %= mod;</span><br><span class="line">            res[i] = <span class="string">'1'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num*<span class="number">1.0</span>/mod);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            res[i] = <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取小数的二进制表示</span></span><br><span class="line"><span class="comment"> * @params precision 二进制表示精确到多少位</span></span><br><span class="line"><span class="comment"> * @params num 浮点型小数</span></span><br><span class="line"><span class="comment"> * @params digits 输入的时候浮点型小数的位数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">getFloatBitset2</span><span class="params">(<span class="keyword">int</span> precision, <span class="keyword">float</span> num, <span class="keyword">int</span> digits)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* res = <span class="keyword">new</span> <span class="keyword">char</span>[precision];</span><br><span class="line">    <span class="keyword">int</span> mod = <span class="built_in">pow</span>(<span class="number">10</span>,digits);</span><br><span class="line">    <span class="comment">// cout&lt;&lt;mod&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">char</span> printFormat[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">sprintf</span>(printFormat,<span class="string">"%%0.%df"</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;precision;i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(printFormat, num);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" * 2 = "</span>;</span><br><span class="line">        num*=<span class="number">2</span>;</span><br><span class="line">        num = round(num*mod)/mod;</span><br><span class="line">        <span class="keyword">if</span>(num &gt;= <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       1"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            num -= <span class="number">1</span>;</span><br><span class="line">            res[i] = <span class="string">'1'</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">printf</span>(printFormat, num);</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"       0"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            res[i] = <span class="string">'0'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span>&#123;</span><br><span class="line">    <span class="comment">// char* res = getFloatBitset(atoi(argv[1]), atoi(argv[2]));</span></span><br><span class="line">    <span class="keyword">char</span>* res = getFloatBitset2(atoi(argv[<span class="number">1</span>]), atof(argv[<span class="number">2</span>]), atoi(argv[<span class="number">3</span>]));</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面代码保存成：<code>float2Bitset.cpp</code>文件，然后编译，并使用：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ g++ -o float2Bitset float2Bitset.cpp</span><br><span class="line">$ ./float2Bitset 23 0.14 2</span><br></pre></td></tr></table></figure>
-<p>小数位精确到23位的话，3.14的定点浮点数表示是：<code>11.00100011110101110000101</code>。</p>
-<p>转成浮点数，首先规格化M，那么整体要右移1位，指数是1，由 $E = e-Bias$，$E=1$, $Bias=127$ 得 $e=128$，也就是：<code>1000 0000</code>。</p>
-<p>最终3.14的内存表示是：<br>$$<br>\underbrace{0}_{Sign}~\underbrace{10000000}_{Exponent}~~\underbrace{10010001111010111000011}_{Significand}<br>$$</p>
-<p>同样的方法得到2.718的内存表示：</p>
+<p>小数位精确到 23 位的话，3.14 的定点浮点数表示是：<code>11.00100011110101110000101</code>。</p>
+<p>转成浮点数，首先规格化 M，那么整体要右移 1 位，指数是 1，由 $E = e-Bias$，$E=1$, $Bias=127$ 得 $e=128$，也就是：<code>1000 0000</code>。</p>
+<p>最终 3.14 的内存表示是：</p>
+<p>$$<br>\underbrace{0}_{Sign}~\underbrace{10000000}_{Exponent}~~\underbrace{10010001111010111000011}_{Significand}<br>$$</p>
+<p>同样的方法得到 2.718 的内存表示：</p>
 <p>$$<br>\underbrace{0}_{Sign}~\underbrace{10000000}_{Exponent}~~\underbrace{01011011111001110110110}_{Significand}<br>$$</p>
-<p>这两个数恰好是同阶的，那么就不需要对阶操作了。将M相加，但这个数太长了看着眼花，我们写个加法程序：</p>
+<p>这两个数恰好是同阶的，那么就不需要对阶操作了。将 M 相加，但这个数太长了看着眼花，我们写个加法程序：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将两个相同位数的二进制数相加</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">addBitset</span><span class="params">(<span class="keyword">char</span> num1[], <span class="keyword">char</span> num2[], <span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* res = <span class="keyword">new</span> <span class="keyword">char</span>[length+<span class="number">2</span>];</span><br><span class="line">    res[length+<span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=length<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)&#123;</span><br><span class="line">        res[i+<span class="number">1</span>] = num1[i]-<span class="string">'0'</span>+num2[i]-<span class="string">'0'</span>+carry+<span class="string">'0'</span>;</span><br><span class="line">        carry = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(res[i+<span class="number">1</span>]&gt;<span class="string">'1'</span>)&#123;</span><br><span class="line">            res[i+<span class="number">1</span>] -= <span class="number">2</span>;</span><br><span class="line">            carry = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(carry)&#123;</span><br><span class="line">        res[<span class="number">0</span>]=<span class="string">'1'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        res[<span class="number">0</span>]=<span class="string">'0'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(argv[<span class="number">1</span>][i]!=<span class="string">'\0'</span>)&#123;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">char</span>* res = addBitset(argv[<span class="number">1</span>], argv[<span class="number">2</span>], i);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上述代码保存成：<code>addBitset.cpp</code>，编译并使用该程序：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ g++ -o addBitset addBitset.cpp</span><br><span class="line">$ ./addBitset 10010001111010111000011 01011011111001110110110</span><br></pre></td></tr></table></figure>
-<p>相加结果等于：<code>0 11101101110100101111001</code>，最高位没有产生进位，这里用了一个0来代替，但两个前导1相加产生了进位，所以还需要对M右归一下，再对指数加1。所以加法结果的浮点数表示是：</p>
+<p>相加结果等于：<code>0 11101101110100101111001</code>，最高位没有产生进位，这里用了一个 0 来代替，但两个前导 1 相加产生了进位，所以还需要对 M 右归一下，再对指数加 1。所以加法结果的浮点数表示是：</p>
 <p>$$<br>\underbrace{0}_{Sign}~\underbrace{10000001}_{Exponent}~~\underbrace{01110110111010010111101}_{Significand}<br>$$</p>
 <p>这个数的十进制表示的计算方法是：$$2^2 \times (1+0\times (\frac{1}{2})^1 + 1\times (\frac{1}{2})^2 + 1\times (\frac{1}{2})^3 +1\times (\frac{1}{2})^4+0\times(\frac{1}{2})^5+\cdots)$$</p>
 <p>我们依然采用程序来计算这一长串二进制对应的十进制小数：</p>
@@ -511,18 +512,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ g++ -o Bitset2float Bitset2float.cpp</span><br><span class="line">$ ./Bitset2float 01110110111010010111101</span><br></pre></td></tr></table></figure>
 <p>对得到结果：<code>0.4645</code>，$1.4645\times 2^2 = 5.858$，而 $3.14+2.718=5.858$，这就说明我们的计算无误。</p>
 <h3 id="算法流程图"><a href="#算法流程图" class="headerlink" title="算法流程图"></a>算法流程图</h3><p><img src="../../../../images/浮点数加减流程图.jpg" alt="浮点数加减流程图"></p>
-<p>这个流程图并不是完美的，真实的浮点数流程图和浮点数计算电路比这个复杂。另外我忘画了一个东西，这个图最后应该加上溢出处理模块，E可能会上溢（当E加1的时候），也可能会下溢（当E减1的时候）。</p>
+<p>这个流程图并不是完美的，真实的浮点数流程图和浮点数计算电路比这个复杂。另外我忘画了一个东西，这个图最后应该加上溢出处理模块，E 可能会上溢（当 E 加 1 的时候），也可能会下溢（当 E 减 1 的时候）。</p>
 <p>最后这个流程图中没有对特殊值的判断，比如：$\infty - \infty = NaN$, $\infty + \infty = \infty$, $NaN + 任何数 = NaN$。</p>
 <p>了解了浮点数加法的流程之后，最后我们回到最上面说的 <strong>浮点数加减法不满足交换律和结合律</strong>，从计算细节分析为什么不行。</p>
-<p>首先 3.14 的浮点数表示我们已经计算过了，那么 1e20 的浮点数是多少呢？1e20也就是 $10^{20}$，用辗转相除法可以得到其二进制表示。我们这里使用计算器工具</p>
+<p>首先 3.14 的浮点数表示我们已经计算过了，那么 1e20 的浮点数是多少呢？1e20 也就是 $10^{20}$，用辗转相除法可以得到其二进制表示。我们这里使用计算器工具</p>
 <p><img src="../../../../images/10的19次方的二进制.png" alt="10的19次方的二进制"></p>
-<p>很遗憾的是64bit只能摆的下 $10^{19}$。我试了一下把源程序中的 1e20 换成 1e19 也是同样的结果。所以我们就使用 1e19 来分析这道题。</p>
-<p>首先是M规格化，M右移63位，E加63，舍入M，那么 1e19 最终的双精度浮点数表示是：<code>0 10000111110 0001010110001110010001100000100100010011110100000000</code></p>
-<p>小阶向大阶看齐，3.14的阶是1，M需要右移62位，而M的精度才52，可想而知M就是0了。那么 3.14 + 1e19 的结果就是 <strong>1e19</strong>。1e20就更加不用说了。</p>
+<p>很遗憾的是 64bit 只能摆的下 $10^{19}$。我试了一下把源程序中的 1e20 换成 1e19 也是同样的结果。所以我们就使用 1e19 来分析这道题。</p>
+<p>首先是 M 规格化，M 右移 63 位，E 加 63，舍入 M，那么 1e19 最终的双精度浮点数表示是：<code>0 10000111110 0001010110001110010001100000100100010011110100000000</code></p>
+<p>小阶向大阶看齐，3.14 的阶是 1，M 需要右移 62 位，而 M 的精度才 52，可想而知 M 就是 0 了。那么 3.14 + 1e19 的结果就是 <strong>1e19</strong>。1e20 就更加不用说了。</p>
 <h2 id="浮点数乘除"><a href="#浮点数乘除" class="headerlink" title="浮点数乘除"></a>浮点数乘除</h2><h3 id="基本性质-1"><a href="#基本性质-1" class="headerlink" title="基本性质"></a>基本性质</h3><ul>
 <li>相乘可能产生 infinity 或者 NaN</li>
 <li>不满足交换律，结合律，分配率（因为溢出会造成程序无法计算出正确的结果）</li>
-<li>乘以1会等于原来的数</li>
+<li>乘以 1 会等于原来的数</li>
 <li>除了 infinity 和 NaN，满足单调性：$a\ge b \rightarrow a\times c \ge b \times c$</li>
 </ul>
 <h3 id="具体细节-1"><a href="#具体细节-1" class="headerlink" title="具体细节"></a>具体细节</h3><p>设两个浮点数 $x$ 和 $y$ ：</p>
@@ -560,7 +561,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/09/20/wsl oh my zsh 字体问题/" rel="next" title="wsl oh my zsh 字符乱码问题">
+              <a href="/blog/2018/09/20/wsl-oh-my-zsh字体问题/" rel="next" title="wsl oh my zsh 字符乱码问题">
                 <i class="fa fa-chevron-left"></i> wsl oh my zsh 字符乱码问题
               </a>
             
@@ -570,8 +571,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/08/程序的机器级表示/" rel="prev" title="程序的机器级表示">
-                程序的机器级表示 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/10/08/程序的机器级表示/" rel="prev" title="《CSAPP》 -- 程序的机器级表示">
+                《CSAPP》 -- 程序的机器级表示 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -656,7 +657,7 @@
               
                 <a href="/blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -667,7 +668,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -678,7 +679,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -788,7 +789,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.9k</span>
+    <span title="Site words total count">69.8k</span>
   
 </div>
 
