@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[浏览器 storage 事件]]></title>
+    <url>%2Fblog%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释： The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[二分查找]]></title>
     <url>%2Fblog%2F2022%2F06%2F08%2F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。 二分查找的前提：数据有序 二分查找结束的条件：查找区间为空，或者找到元素 二分查找的条件分支： nums[mid]==target nums[mid]&lt;target nums[mid]&gt;target 二分查找的搜索区间表示形式： 左闭右开（区间为空的条件是 left==right） 左闭右闭（区间为空的条件是 left&gt;right） 二分查找有的时候我会写出死循环来，仔细思考了一下：必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能。 习题 leetcode 704. 二分查找 leetcode 34. 在排序数组中查找元素的第一个和最后一个位置（中等） 第一题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length-1; while(left&lt;=right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 左闭右开搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 第二题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [findLeft(nums, target), findRight(nums, target)]&#125;;var findLeft = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[left]==target)&#123; return left &#125; return -1;&#125;var findRight = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); console.log(left, mid, right) if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[right-1]==target)&#123; return right-1; &#125; return -1;&#125; 左闭右闭搜索区间的写法： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [fundLeft(nums, target), fundRight(nums, target)]&#125;;var fundLeft = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[left]==target)&#123; return left; &#125; return -1;&#125;var fundRight = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[right]==target)&#123; return right; &#125; return -1;&#125;]]></content>
@@ -17,19 +25,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[智能合约入门]]></title>
-    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
-      <categories>
-        <category>币圈</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[快速排序最坏的情况啥时候出现]]></title>
     <url>%2Fblog%2F2021%2F06%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN 代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN$退化成了$N$。那么什么情况会退化成$logN$，当然是问题规模缩减得慢的时候，这与我们选中枢有直接的关系。假如我们选的中枢，每次都是最小或者最大，那么问题的缩小速度就会变成线性的了；而假如我们选的中枢，每次恰好是中间那个数，那么问题递归次数就是$log_2^N$了。 由于我们一般都是选第一个或者最后一个元素做中枢，那么最坏的情况对应就是：已经有序（这包括正序，逆序，以及全部元素相等） 由于快速排序的这个特征，所以我们一般的算法库中是结合了好几种排序算法：C++一道深坑面试题：STL 里 sort 算法用的是什么排序算法？ 同时我也在思考为啥快排这种最坏是$O(N^2)$的算法会被使用，而不直接使用最坏是$O(NlogN)$的算法，比如归并排序，堆排序。答案自然是这些排序也有各自的缺点，而且我估计是无法容忍的缺点。比如归并排序，它不是一个原地排序算法，需要额外的存储空间。堆排序，需要构建堆花费额外的时间。堆构建完毕后，借用堆这种结构，每次只能从堆顶取出最大或最小的数，而且取完还要进行堆维护，花费$logN$的时间。构建堆的过程和堆排序的过程类似，只不过构建堆是添加叶节点+上浮堆化的过程，而堆排序是取根节点+下沉堆化的过程，同样的构建堆也要花费$O(NlogN)$的时间。所以堆排序会花费双倍的时间。]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[智能合约入门]]></title>
+    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
+      <categories>
+        <category>币圈</category>
       </categories>
   </entry>
   <entry>
@@ -89,19 +97,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
-    <url>%2Fblog%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
-    <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[position sticky]]></title>
     <url>%2Fblog%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
     <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
       <categories>
         <category>css</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
+    <url>%2Fblog%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
+      <categories>
+        <category>leetcode</category>
       </categories>
   </entry>
   <entry>

@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="Computer Science is not a magic  To be a hacker">
-<meta property="og:type" content="website">
-<meta property="og:title" content="liuqinh2s&#39; blog">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/archives/2021/08/index.html">
+<meta name="description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器 storage 事件">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="Computer Science is not a magic  To be a hacker">
+<meta property="og:description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-06-08T02:56:03.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liuqinh2s&#39; blog">
-<meta name="twitter:description" content="Computer Science is not a magic  To be a hacker">
+<meta name="twitter:title" content="浏览器 storage 事件">
+<meta name="twitter:description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/archives/2021/08/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/">
 
 
 
 
 
-  <title>Archive | liuqinh2s' blog</title>
+  <title>浏览器 storage 事件 | liuqinh2s' blog</title>
   
 
 
@@ -145,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -271,71 +272,199 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 49 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2021">2021</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/08/浏览器storage事件/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/blog/2021/08/22/如何学习/" itemprop="url">
-              
-                <span itemprop="name">如何学习</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">浏览器 storage 事件</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-22T00:00:00+08:00" content="2021-08-22">
-          08-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-06-08T00:00:00+08:00">
+                2022-06-08
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  263
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event</a></p>
+<ol>
+<li>在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效</li>
+<li>必须写入与旧值不同的值，才能监听到</li>
+</ol>
+<p>我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。</p>
+<a id="more"></a>
+<p>英文文档的解释：</p>
+<p>The storage event of the Window interface fires when a storage area (localStorage) has been <strong>modified in the context of another document</strong>.</p>
+<blockquote>
+<p>Note: <strong>This won&#39;t work on the same page that is making the changes</strong> — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects.</p>
+</blockquote>
+<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置监听</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, ()=&gt;&#123;<span class="built_in">console</span>.log(<span class="string">'监听storage'</span>, localStorage.getItem(<span class="string">'abcd'</span>))&#125;);</span><br><span class="line"><span class="comment">// 查看dom有哪些监听事件</span></span><br><span class="line">getEventListeners(<span class="built_in">window</span>);</span><br><span class="line"><span class="comment">// 设置localStorage</span></span><br><span class="line">localStorage.setItem(<span class="string">'abcd'</span>, <span class="string">'1111'</span>);</span><br></pre></td></tr></table></figure>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2022/06/08/二分查找/" rel="next" title="二分查找">
+                <i class="fa fa-chevron-left"></i> 二分查找
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -343,6 +472,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTc5MC8xMjMyNg=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -363,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -475,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#测试代码"><span class="nav-number">1.</span> <span class="nav-text">测试代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -644,6 +807,10 @@
 
 
   
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -672,6 +839,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
