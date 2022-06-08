@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/</loc>
+        <lastmod>2022-06-08T00:36:09.578Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://liuqinh2s.github.io/blog/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
+        <lastmod>2022-06-08T00:29:56.975Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://liuqinh2s.github.io/blog/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2022-06-07T15:16:15.474Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -50,22 +64,8 @@
     </url>
 
     <url>
-        <loc>https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/</loc>
-        <lastmod>2022-06-07T15:07:23.060Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://liuqinh2s.github.io/blog/categories/css/</loc>
         <lastmod>2022-06-07T15:05:28.823Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://liuqinh2s.github.io/blog/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/</loc>
-        <lastmod>2022-06-07T14:14:52.793Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
