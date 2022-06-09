@@ -29,13 +29,6 @@
     </url>
     
     <url>
-        <loc>https://liuqinh2s.github.io/blog/archives/</loc>
-        <lastmod>2022-06-07T01:21:09.975Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://liuqinh2s.github.io/blog/about/</loc>
         <lastmod>2022-06-07T01:21:09.975Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -43,14 +36,21 @@
     </url>
     
     <url>
-        <loc>https://liuqinh2s.github.io/blog/Math/</loc>
-        <lastmod>2022-06-07T01:21:09.943Z</lastmod>
+        <loc>https://liuqinh2s.github.io/blog/archives/</loc>
+        <lastmod>2022-06-07T01:21:09.975Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://liuqinh2s.github.io/blog/Tools/</loc>
+        <lastmod>2022-06-07T01:21:09.943Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuqinh2s.github.io/blog/Math/</loc>
         <lastmod>2022-06-07T01:21:09.943Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
