@@ -35,6 +35,30 @@
   </entry>
   
   <entry>
+    <title>浏览器上的几种xy坐标</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/09/浏览器上的几种xy坐标/</id>
+    <published>2022-06-08T16:00:00.000Z</published>
+    <updated>2022-06-09T06:37:23.843Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有如下几种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/screenX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;screenX&lt;/a&gt;, screenY&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/clientX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;clientX&lt;/a&gt;, clientY&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/pageX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pageX&lt;/a&gt;, pageY&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;offsetX&lt;/a&gt;, offsetY&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>二分查找</title>
     <link href="https://liuqinh2s.github.io/blog/2022/06/08/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/06/08/二分查找/</id>
@@ -442,34 +466,6 @@
 &lt;li&gt;运算器（算术逻辑单元）&lt;/li&gt;
 &lt;li&gt;输入&lt;/li&gt;
 &lt;li&gt;输出&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>什么是字符集和编码</title>
-    <link href="https://liuqinh2s.github.io/blog/2019/04/21/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/"/>
-    <id>https://liuqinh2s.github.io/blog/2019/04/21/什么是字符集和编码/</id>
-    <published>2019-04-20T16:00:00.000Z</published>
-    <updated>2022-06-08T01:09:07.558Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;文本文件中，为了让比特表示文字，我们发明了字符集，让特定的比特序列对应特定的字符。&lt;/p&gt;
-&lt;p&gt;常见的字符集有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/ASCII&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ASCII&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/EASCII&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;EASCII&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/GB_2312&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GB2312&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B1%89%E5%AD%97%E5%86%85%E7%A0%81%E6%89%A9%E5%B1%95%E8%A7%84%E8%8C%83&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GBK&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Unicode&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Unicode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh/UTF-8&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;UTF-8&lt;/a&gt; （严格来说 UTF-8 只是 Unicode 的一种编码方式）&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://baike.baidu.com/item/ANSI%E7%BC%96%E7%A0%81&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;ANSI 编码&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
