@@ -94,15 +94,16 @@ index_with_subtitle: false
 menu:
   Home: / || home
   About: /about/ || user
-  # tags: /tags/ || tags
-  # categories: /categories/ || th
-  # archives: /archives/ || archive
+  tags: /tags/ || tags
+  categories: /categories/ || th
+  archives: /archives/ || archive
   Computer Science: /ComputerScience/ || bug
-  # Life Experience: /LifeExperience/ || bank
-  # Math: /Math/ || coffee
-  # Notes: /notes/ || book
-  # Tools: /Tools/ || wrench
+  Notes: /notes/ || book
   English: /English/ || language
+  Math: /Math/ || coffee
+  Tools: /Tools/ || wrench
+
+  # Life Experience: /LifeExperience/ || bank
   # schedule: /schedule/ || calendar
   # sitemap: /sitemap.xml || sitemap
   # commonweal: /404/ || heartbeat

@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-06-09T01:55:13.781Z</updated>
+  <updated>2022-06-09T06:37:23.843Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -15,24 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>生成固定长度的字符串</title>
-    <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>https://liuqinh2s.github.io/blog/2022/06/09/生成固定长度的字符串/</id>
-    <published>2022-06-08T16:00:00.000Z</published>
-    <updated>2022-06-09T01:55:13.781Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>浏览器上的几种xy坐标</title>
@@ -54,6 +36,24 @@
     </summary>
     
       <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>生成固定长度的字符串</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/09/生成固定长度的字符串/</id>
+    <published>2022-06-08T16:00:00.000Z</published>
+    <updated>2022-06-09T01:55:13.781Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
     
     
   </entry>
@@ -141,26 +141,6 @@
   </entry>
   
   <entry>
-    <title>智能合约入门</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/</id>
-    <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2022-06-08T01:09:07.572Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;前言&lt;br&gt;从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="币圈" scheme="https://liuqinh2s.github.io/blog/categories/%E5%B8%81%E5%9C%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>快速排序最坏的情况啥时候出现</title>
     <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
@@ -180,6 +160,26 @@
     </summary>
     
       <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>智能合约入门</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/</id>
+    <published>2021-06-27T16:00:00.000Z</published>
+    <updated>2022-06-08T01:09:07.572Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;前言&lt;br&gt;从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="币圈" scheme="https://liuqinh2s.github.io/blog/categories/%E5%B8%81%E5%9C%88/"/>
     
     
   </entry>
@@ -287,6 +287,27 @@
   </entry>
   
   <entry>
+    <title>leetcode： 560. 和为K的子数组</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-和为K的子数组/</id>
+    <published>2021-05-28T16:00:00.000Z</published>
+    <updated>2022-06-07T01:21:09.970Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这题是在做每日一题中遇到的问题的子问题：&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;560-和为K的子数组&quot;&gt;&lt;a href=&quot;#560-和为K的子数组&quot; class=&quot;headerlink&quot; title=&quot;560. 和为K的子数组&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/subarray-sum-equals-k/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;560. 和为K的子数组&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>leetcode： 1074. 元素和为目标值的子矩阵数量</title>
     <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E5%AD%90%E7%9F%A9%E9%98%B5%E6%95%B0%E9%87%8F/"/>
     <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/</id>
@@ -300,27 +321,6 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;1074-元素和为目标值的子矩阵数量&quot;&gt;&lt;a href=&quot;#1074-元素和为目标值的子矩阵数量&quot; class=&quot;headerlink&quot; title=&quot;1074. 元素和为目标值的子矩阵数量&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？&lt;/p&gt;
 &lt;p&gt;我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode： 560. 和为K的子数组</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-和为K的子数组/</id>
-    <published>2021-05-28T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.970Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这题是在做每日一题中遇到的问题的子问题：&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;560-和为K的子数组&quot;&gt;&lt;a href=&quot;#560-和为K的子数组&quot; class=&quot;headerlink&quot; title=&quot;560. 和为K的子数组&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/subarray-sum-equals-k/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;560. 和为K的子数组&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：&lt;/p&gt;
     
     </summary>
     
