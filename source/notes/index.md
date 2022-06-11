@@ -247,3 +247,24 @@ JSON.stringify(monitorCandidate)
 我的 leader 写了这段话，我觉得很对：
 
 > 很多糟糕的设计隶属于某个更大的糟糕设计，而这个更大的糟糕设计可以被一两行精妙的代码整个代替掉，你在局部优化半天毫无意义。
+
+# 2022-06-11
+
+最近想把 wordpress 上的文章迁移到 github.io。今天一打开我的 wordpress 博客，突然直接跳到 wordpress 的安装界面，我感觉挺奇怪的，有种不好的预感。打开数据库一看果然又被黑了，除了 wordpress 数据库，顺带其他几个 mysql 的数据库也被黑了。因为我还在我服务器上跑着我自己写的量化交易的脚本，mysql 的某个数据库里面有币安的 api key，吓得我立马去币安删 api。我担心可能 linux 服务器的账号密码都被黑了，而且也有可能在我服务器放了什么其他可怕的病毒，干脆还是重置一下服务器，以及相关的所有账号密码。
+
+上次我的 wordpress 被攻击还是 2016 年的事了，当时我才没用几个月，写了大概三篇文章，就被黑了，当时黑客留下来的是个 QQ，这次是个比特币地址：
+
+```
+readme:
+To recover your lost Database send 0.0115 Bitcoin (BTC) to our Bitcoin address: bc1qtr4px3ngv80tz2j9e49jxcmtqthfnw8xhux4as  After this, contact us by email with your Server IP or Domain Name and a Proof of Payment (Payment ID). Your Database is downloaded and backed up on our servers. Backups that we have right now: chaobi, e_business, stock, wordpress. Any email without your server IP Address or Domain Name and a Proof of Payment together will be ignored. If we dont receive your payment in the next 10 Days, we will delete or leak your sensitive information.
+
+BTC_address:
+bc1qtr4px3ngv80tz2j9e49jxcmtqthfnw8xhux4as
+
+email:
+support@dbrestore2022.to
+```
+
+![image.png](https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png)
+
+可惜我写了这么多文章都还没有备份
