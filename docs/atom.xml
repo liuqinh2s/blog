@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-06-11T04:30:57.063Z</updated>
+  <updated>2022-06-12T00:35:18.904Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>服务器重装系统</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/11/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/11/服务器重装系统/</id>
+    <published>2022-06-10T16:00:00.000Z</published>
+    <updated>2022-06-12T00:35:18.904Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://liuqinh2s.github.io/blog/categories/Linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>浏览器上的几种xy坐标</title>
@@ -428,44 +446,6 @@
 &lt;h3 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/av30479683?from=search&amp;amp;seid=11735601712045998475&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;妈咪说：图灵&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://movie.douban.com/subject/10463953/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;模仿游戏&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>冯·诺依曼结构</title>
-    <link href="https://liuqinh2s.github.io/blog/2019/04/22/%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E7%BB%93%E6%9E%84/"/>
-    <id>https://liuqinh2s.github.io/blog/2019/04/22/冯·诺依曼结构/</id>
-    <published>2019-04-21T16:00:00.000Z</published>
-    <updated>2022-06-07T15:08:41.086Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;冯·诺依曼结构&quot;&gt;&lt;a href=&quot;#冯·诺依曼结构&quot; class=&quot;headerlink&quot; title=&quot;冯·诺依曼结构&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%86%AF%C2%B7%E8%AF%BA%E4%BC%8A%E6%9B%BC%E7%BB%93%E6%9E%84&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;冯·诺依曼结构&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;冯·诺伊曼结构与 &lt;strong&gt;存储程序型计算机&lt;/strong&gt; 是互相通用的名词&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;哈佛结构&lt;/strong&gt; 是一种将程序数据与普通数据分开存储的设计概念，可以说是冯·诺依曼结构的一种。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;存储程序计算机在体系结构上主要特点有：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;以运算单元为中心&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;采用存储程序原理&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;存储器是按地址访问、线性编址的空间&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;控制流由指令流产生&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;指令由 &lt;strong&gt;操作码&lt;/strong&gt; 和 &lt;strong&gt;地址码&lt;/strong&gt; 组成&lt;/li&gt;
-&lt;li&gt;数据以二进制编码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;五个组成部分：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;存储器&lt;/li&gt;
-&lt;li&gt;控制器&lt;/li&gt;
-&lt;li&gt;运算器（算术逻辑单元）&lt;/li&gt;
-&lt;li&gt;输入&lt;/li&gt;
-&lt;li&gt;输出&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>

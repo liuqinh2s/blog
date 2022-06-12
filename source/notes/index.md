@@ -268,3 +268,17 @@ support@dbrestore2022.to
 ![image.png](https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png)
 
 可惜我写了这么多文章都还没有备份
+
+# 2022-06-12
+
+今早上一起来发现服务器居然连不上了，试了一下居然ping不通了，估计是这个ip又被墙了。为了尽快弄好翻墙的，我试了朋友发给我的clashX以及翻墙配置，真的不错，速度非常快。
+
+主要参考了这篇文章：https://github.com/Hackl0us/SS-Rule-Snippet
+
+Clash项目地址：https://github.com/Dreamacro/clash
+
+ClashX项目地址：https://github.com/yichengchen/clashX/
+
+云配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
+
+Clash文档：https://lancellc.gitbook.io/clash/
