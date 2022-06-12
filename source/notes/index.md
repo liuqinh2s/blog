@@ -21,7 +21,7 @@ Clash文档：https://lancellc.gitbook.io/clash/
 
 发现修改ClashX的端口不生效，后来找到了原因，原来必须要修改config.yaml文件才行：https://github.com/yichengchen/clashX/#Advance Config，其实默认配置里的注释也写了这个坑，但是我瞎了没看到：
 
-![ClashX默认配置](../../../../images/2022/ClashX默认配置.jpg)
+![ClashX默认配置](../images/2022/ClashX默认配置.jpg)
 
 我是在github的issue里面搜到的，反正万事解决不了提issue。
 
