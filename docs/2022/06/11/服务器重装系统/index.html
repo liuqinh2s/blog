@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-06-12T00:35:18.904Z">
+<meta property="og:updated_time" content="2022-06-12T01:39:39.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器重装系统">
 <meta name="twitter:description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
@@ -434,7 +434,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  410
+                  480
                 </span>
               
 
@@ -464,17 +464,19 @@
 <blockquote>
 <p>BBR（Bottleneck Bandwidth and RTT）是一种新的拥塞控制算法，由 Google 贡献给 Linux 内核 TCP 堆栈。有了 BBR，Linux 服务器可以显着提高吞吐量并减少连接延迟。此外，部署 BBR 很容易，因为此算法只需要在发送方更新，而无需在网络或接收方更新。</p>
 </blockquote>
-<p>然后首先想到的是要安装 shadowsocks，因为我这个服务器基本上就是用来干这个事的。</p>
+<h1 id="搭建Shadowsocks"><a href="#搭建Shadowsocks" class="headerlink" title="搭建Shadowsocks"></a>搭建Shadowsocks</h1><p>然后首先想到的是要安装 shadowsocks，因为我这个服务器基本上就是用来干这个事的。</p>
 <p>我不想使用网上那种一键安装脚本的方式来弄这个，因为怕不安全（真的怕了怕了）。所以最好要自己搞懂每一步都做了什么。</p>
 <p>主要参考这篇文章：<a href="https://gist.github.com/3013216027/469e7b988edde7e5f806f55a993b9efa" target="_blank" rel="noopener">https://gist.github.com/3013216027/469e7b988edde7e5f806f55a993b9efa</a></p>
 <p>发现安装 shadowsocks 之前先要安装 pip</p>
 <p>安装 pip 则要安装 python3</p>
-<p>我试了一下<code>yum install python3</code>居然真的能安装，终于不用像以前那样从 python 官网下载源码，自己编译，自己配环境变量了。</p>
+<h2 id="安装python3"><a href="#安装python3" class="headerlink" title="安装python3"></a>安装python3</h2><p>我试了一下<code>yum install python3</code>居然真的能安装，终于不用像以前那样从 python 官网下载源码，自己编译，自己配环境变量了。</p>
 <p>安装完后测一下版本<code>python3 --version</code>：Python 3.6.8，测一下安装位置：<code>which python3</code>：/usr/bin/python3</p>
-<p>接下来就是安装 shadowsocks 了：<code>python3 -m pip install shadowsocks</code></p>
+<h2 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h2><p>接下来就是安装 shadowsocks 了：<code>python3 -m pip install shadowsocks</code></p>
 <p>安装完后测一下 ssserver 看能不能用，直接输入这个命令看看效果，能用，定位一下位置：</p>
 <p><code>which ssserver</code>：/usr/local/bin/ssserver。</p>
 <p>卸载 shadowsocks 后就不能用了，所以能确定 ssserver 是跟 shadowsocks 有关的。</p>
+<h2 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;: &quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;local_port&quot;: 1080,</span><br><span class="line">    &quot;port_password&quot;: &#123;</span><br><span class="line">        &quot;10085&quot;: &quot;gagosdfger&quot;,</span><br><span class="line">        &quot;10086&quot;: &quot;gagosdfger&quot;,</span><br><span class="line">        &quot;10010&quot;: &quot;gagosdfger&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;timeout&quot;: 600</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>发现加密方法不支持<code>aes-256-gcm</code>，有什么办法给它加一种加密方式呢</p>
 
       
     </div>
@@ -564,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -676,6 +687,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建Shadowsocks"><span class="nav-number">1.</span> <span class="nav-text">搭建Shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装python3"><span class="nav-number">1.1.</span> <span class="nav-text">安装python3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装shadowsocks"><span class="nav-number">1.2.</span> <span class="nav-text">安装shadowsocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置shadowsocks"><span class="nav-number">1.3.</span> <span class="nav-text">配置shadowsocks</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
