@@ -19,6 +19,12 @@ ClashX项目地址：https://github.com/yichengchen/clashX/
 
 Clash文档：https://lancellc.gitbook.io/clash/
 
+发现修改ClashX的端口不生效，后来找到了原因，原来必须要修改config.yaml文件才行：https://github.com/yichengchen/clashX/#Advance Config，其实默认配置里的注释也写了这个坑，但是我瞎了没看到：
+
+![ClashX默认配置](../../../../images/2022/ClashX默认配置.jpg)
+
+我是在github的issue里面搜到的，反正万事解决不了提issue。
+
 # 2022-06-11
 
 最近想把 wordpress 上的文章迁移到 github.io。今天一打开我的 wordpress 博客，突然直接跳到 wordpress 的安装界面，我感觉挺奇怪的，有种不好的预感。打开数据库一看果然又被黑了，除了 wordpress 数据库，顺带其他几个 mysql 的数据库也被黑了。因为我还在我服务器上跑着我自己写的量化交易的脚本，mysql 的某个数据库里面有币安的 api key，吓得我立马去币安删 api。我担心可能 linux 服务器的账号密码都被黑了，而且也有可能在我服务器放了什么其他可怕的病毒，干脆还是重置一下服务器，以及相关的所有账号密码。
