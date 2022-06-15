@@ -9,3 +9,4 @@ date: 2019-02-20 20:30:09
 - 图床：[sm.ms](https://sm.ms)
 - [gfwlist](https://github.com/gfwlist/gfwlist)：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - 人体构造：[3dbody](https://www.3dbody.com/)
+- 翻墙工具 ClashX：[ClashX](https://github.com/yichengchen/clashX/)，配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032

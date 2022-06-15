@@ -7,27 +7,27 @@ date: 2018-11-03 14:59:45
 
 # 2022-06-12
 
-今早上一起来发现服务器居然连不上了，试了一下居然ping不通了，估计是这个ip又被墙了。为了尽快弄好翻墙的，我试了朋友发给我的clashX以及翻墙配置，真的不错，速度非常快。
+今早上一起来发现服务器居然连不上了，试了一下居然 ping 不通了，估计是这个 ip 又被墙了。为了尽快弄好翻墙的，我试了朋友发给我的 clashX 以及翻墙配置，真的不错，速度非常快。
 
 主要参考了这篇文章：https://github.com/Hackl0us/SS-Rule-Snippet
 
-Clash项目地址：https://github.com/Dreamacro/clash
+Clash 项目地址：https://github.com/Dreamacro/clash
 
-ClashX项目地址：https://github.com/yichengchen/clashX/
+ClashX 项目地址：https://github.com/yichengchen/clashX/
 
 云配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
 
-Clash文档：https://lancellc.gitbook.io/clash/
+Clash 文档：https://lancellc.gitbook.io/clash/
 
-发现修改ClashX的端口不生效，后来找到了原因，原来必须要修改config.yaml文件才行：https://github.com/yichengchen/clashX/#Advance Config，其实默认配置里的注释也写了这个坑，但是我瞎了没看到：
+发现修改 ClashX 的端口不生效，后来找到了原因，原来必须要修改 config.yaml 文件才行：https://github.com/yichengchen/clashX/#Advance Config，其实默认配置里的注释也写了这个坑，但是我瞎了没看到：
 
 ![ClashX默认配置](../images/2022/ClashX默认配置.jpg)
 
-我是在github的issue里面搜到的，反正万事解决不了提issue。
+我是在 github 的 issue 里面搜到的，反正万事解决不了提 issue。
 
 # 2022-06-11
 
-## wordpress博客被黑
+## wordpress 博客被黑
 
 最近想把 wordpress 上的文章迁移到 github.io。今天一打开我的 wordpress 博客，突然直接跳到 wordpress 的安装界面，我感觉挺奇怪的，有种不好的预感。打开数据库一看果然又被黑了，除了 wordpress 数据库，顺带其他几个 mysql 的数据库也被黑了。因为我还在我服务器上跑着我自己写的量化交易的脚本，mysql 的某个数据库里面有币安的 api key，吓得我立马去币安删 api。我担心可能 linux 服务器的账号密码都被黑了，而且也有可能在我服务器放了什么其他可怕的病毒，干脆还是重置一下服务器，以及相关的所有账号密码。
 
@@ -56,7 +56,7 @@ support@dbrestore2022.to
 
 http://m.bendibao.com/bsy616684.html
 
-景田的户政室已经从原来的地方搬到香蜜湖了，在高德地图上可以搜得到香蜜湖的户政室地址：`福田公安分局香蜜湖户政服务中心`，另外他们的办公时间也改了，下午4点就收摊了。
+景田的户政室已经从原来的地方搬到香蜜湖了，在高德地图上可以搜得到香蜜湖的户政室地址：`福田公安分局香蜜湖户政服务中心`，另外他们的办公时间也改了，下午 4 点就收摊了。
 
 # 2022-06-10
 
@@ -199,7 +199,6 @@ func(arr, lengthOfArr);
 
 今天联合查询一个 40 万和 1 万的表，发现弄了索引都没啥效果，最后发现是字符集不同导致的。把两个索引的字符集弄成一样的就行了。还有一个问题，mysql8 没有缓存导致查询很慢，mysql5.7 有缓存第二次查询快的飞起。还有同一个语句 mysql8 花了 100 秒，mysql5.7 只花了 10 秒，原因可能是对语句的解释不一样。在将数据库导入到 mysql5.7 的时候遇到一个错误：`2006: mysql server has gone away`。使用：`set global max_allowed_packet=268435456;`解决了。应该是单笔 insert 太大导致的，把配置设高一点就 OK 了。
 
-
 # 2019-02-19
 
 今天终于解决了一个困扰我一年之久的问题，网易云音乐和知乎账号的登陆异常。我对比了不同的网络环境（IP），不同的账号（别人的知乎账号），不同的浏览器。组合测试最后发现既不是 IP 的单方面的问题，也不是账号的单方面问题，也不是浏览器的单方面的问题。而当我使用无痕浏览的时候并没有任何问题，所以应该是 chrome 浏览器记住了某些东西。最后发现问题出在 chrome 浏览器的账号同步上，可能是因为我的谷歌账号在历史上曾记录了一次知乎异常登陆的 cookie，所以之后的每一次登陆都使用这个 cookie，而且清空都是无效的，在你登陆的时候又会给你自动添加。之后我先登出 chrome 账号，并同时清空所有数据，然后再登陆知乎账号，然后再登陆 chrome 账号同步一次正确的知乎登陆。问题就得到了解决。
@@ -211,11 +210,9 @@ func(arr, lengthOfArr);
 
 答案就是：发现一个在开启 IPFS 伴侣时，知乎的大部分接口都会报请求参数异常的 BUG。。
 
-
 # 2019-01-17
 
 一个奇怪的问题，我配置好了 github 的 ssh key，但每次 push 都跟我索要账号密码。原因是我 clone 的时候用的 http 模式，在项目的.git/config 里面可以修改，改为 ssh 模式即可。感谢 stackoverflow 的小哥：[Why is Github asking for username/password when following the instructions on screen and pushing a new repo?](https://stackoverflow.com/questions/10909221/why-is-github-asking-for-username-password-when-following-the-instructions-on-sc)
-
 
 # 2018-11-28
 
@@ -232,7 +229,6 @@ func(arr, lengthOfArr);
 封装是为了更好的把代码的改动控制在模块内部，从而减少外部的改动需求。API 尽量不变，对外的接口尽量不变。[理解 Java 的三大特性之封装](http://wiki.jikexueyuan.com/project/java-enhancement/java-one.html)
 
 继承则是赤裸裸的在重用代码。
-
 
 # 2018-11-19
 
@@ -281,7 +277,6 @@ public enum ExceptionMsg {
 }
 ```
 
-
 # 2018-11-03
 
 No programming language is perfect. There is not even a single best language; there are only languages well suited or perhaps poorly suited for particular purposes.
@@ -305,4 +300,3 @@ Shell scripting hearkens back to the classic UNIX philosophy of breaking complex
 3. 色彩模型：RGB，CMYK（颜料的三原色：C 青，M 品，Y 黄，+K 黑，应用于印刷工业）。RGB 是加色模型，CMYK 是减色模型。HSV（H 是色相即色调，S 是饱和度（取值 0~100%），V 是亮度值 Value（取值 0~100%））。YUV。
 
 和分治算法比较类似，但不同的是分治算法把原问题划归为几个相互独立的子问题，从而一一解决，而动态规划则是针对子问题有重叠的情况的一种解决方案。
-
