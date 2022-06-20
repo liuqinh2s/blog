@@ -81,19 +81,17 @@
 
 
 
-<meta name="description" content="前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此">
+<meta name="description" content="好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。 先说几个几点结论，然后再说说细节：  TCP 是有链接的，UDP 是无连接的 TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠 TCP 面向字节流，UDP 面向报文 TCP 是一对一全双工，UDP 是 n 对 n TCP 的首">
 <meta property="og:type" content="article">
-<meta property="og:title" content="智能合约入门">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/index.html">
+<meta property="og:title" content="TCP和UDP的区别">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2022/06/20/TCP和UDP的区别/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此">
+<meta property="og:description" content="好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。 先说几个几点结论，然后再说说细节：  TCP 是有链接的，UDP 是无连接的 TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠 TCP 面向字节流，UDP 面向报文 TCP 是一对一全双工，UDP 是 n 对 n TCP 的首">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2021/06/28/NrE2xhpHcPInLAX.png">
-<meta property="og:updated_time" content="2022-06-08T01:09:07.572Z">
+<meta property="og:updated_time" content="2022-06-20T01:34:42.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="智能合约入门">
-<meta name="twitter:description" content="前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此">
-<meta name="twitter:image" content="https://i.loli.net/2021/06/28/NrE2xhpHcPInLAX.png">
+<meta name="twitter:title" content="TCP和UDP的区别">
+<meta name="twitter:description" content="好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。 先说几个几点结论，然后再说说细节：  TCP 是有链接的，UDP 是无连接的 TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠 TCP 面向字节流，UDP 面向报文 TCP 是一对一全双工，UDP 是 n 对 n TCP 的首">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2022/06/20/TCP和UDP的区别/">
 
 
 
 
 
-  <title>智能合约入门 | liuqinh2s' blog</title>
+  <title>TCP和UDP的区别 | liuqinh2s' blog</title>
   
 
 
@@ -358,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2021/06/28/智能合约入门/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/20/TCP和UDP的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -375,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">智能合约入门</h1>
+          <h1 class="post-title" itemprop="name headline">TCP和UDP的区别</h1>
         
 
         <div class="post-meta">
@@ -387,8 +385,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-06-28T00:00:00+08:00">
-                2021-06-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-06-20T00:00:00+08:00">
+                2022-06-20
               </time>
             
 
@@ -410,8 +408,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/币圈/" itemprop="url" rel="index">
-                    <span itemprop="name">币圈</span>
+                  <a href="/blog/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
                   </a>
                 </span>
 
@@ -446,7 +444,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  224
+                  842
                 </span>
               
 
@@ -471,21 +469,31 @@
       
 
       
-        <blockquote>
-<p>前言<br>从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
-<li><a href="https://solidity.tryblockchain.org/Solidity-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D.html" target="_blank" rel="noopener">Solidity 语言</a></li>
-<li><a href="https://solidity-cn.readthedocs.io/zh/develop/index.html" target="_blank" rel="noopener">Solidity 文档</a></li>
-<li><a href="http://remix.ethereum.org/" target="_blank" rel="noopener">Remix</a></li>
-<li><a href="https://www.jianshu.com/p/8e9882f626f0" target="_blank" rel="noopener">Remix 的使用</a></li>
-<li><a href="https://donaldhan.github.io/blockchain/2020/05/19/RemixIDE%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html" target="_blank" rel="noopener">Remix 使用教程</a></li>
-<li><a href="https://juejin.cn/post/6844903679938527246" target="_blank" rel="noopener">发币</a></li>
+        <p>好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。</p>
+<p>先说几个几点结论，然后再说说细节：</p>
+<ul>
+<li>TCP 是有链接的，UDP 是无连接的</li>
+<li>TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠</li>
+<li>TCP 面向字节流，UDP 面向报文</li>
+<li>TCP 是一对一全双工，UDP 是 n 对 n</li>
+<li>TCP 的首部较大为 20 字节，UDP 首部只有 8 字节</li>
 </ul>
-<p>人生中第一段智能合约代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^0.4.0;</span><br><span class="line"></span><br><span class="line">contract addressTest&#123;</span><br><span class="line"></span><br><span class="line">    function getBalance(address addr) public view returns (uint)&#123;</span><br><span class="line">        return addr.balance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2021/06/28/NrE2xhpHcPInLAX.png" alt="运行结果"></p>
+<a id="more"></a>
+<h1 id="TCP-为什么要三次握手四次挥手"><a href="#TCP-为什么要三次握手四次挥手" class="headerlink" title="TCP 为什么要三次握手四次挥手"></a>TCP 为什么要三次握手四次挥手</h1><p>三次握手是因为<strong>双方都要确认对方的发送和接收两种能力</strong>：</p>
+<ol>
+<li>第一次客户端发送 SYN 报文段，服务器接收到了，从服务器的视角看，客户端具备了发送能力。</li>
+<li>第二次服务器端发送 ACK+SYN 报文段，客户端接收到了，从客户端的角度看，服务器具备了接收和发送两种能力。</li>
+<li>第三次客户端接收到了服务器的报文，再发一个 ACK 报文给服务器，服务器接收到这个 ACK 报文就能确认客户端的接受能力正常。</li>
+</ol>
+<p>所以最少需要三次，才能确认双方的收发能力都是正常的。</p>
+<p>四次挥手是因为 TCP 是双工信道，关闭了 A 到 B 的发送渠道，B 到 A 的还没关闭，所以需要四次：</p>
+<ol>
+<li>客户端发送 FIN 报文段给服务器端，服务器收到后发送 ACK 给客户端，客户端收到 ACK 后就会不再发消息。也就是说客户端到服务器端这条信道关闭了。</li>
+<li>服务器发送 FIN 报文段给客户端，客户端收到后发送 ACK 给服务器，服务器收到 ACK 后就不再发消息给客户端了。服务器发送给客户端这条信道就关闭了。</li>
+</ol>
+<p>这里的问题就是为什么服务器不把 ACK 和 FIN 合在一起发，就像三次握手时候那样 ACK+SYN 一起发。因为服务器 → 客户端，客户端 → 服务器这两条信道是互相独立的，<strong>在关闭其中一条的时候，另一条可能还在工作，不应该一起关闭，需要设计成独立关闭</strong>。</p>
+<h1 id="面向报文和面向字节流的区别"><a href="#面向报文和面向字节流的区别" class="headerlink" title="面向报文和面向字节流的区别"></a>面向报文和面向字节流的区别</h1><p>面向报文的传输方式是应用层交给 UDP 多长的报文，UDP 就照样发送，即一次发送一个报文。因此，应用程序必须选择合适大小的报文。若报文太长，则 IP 层需要分片，降低效率。UDP 对应用层交下来的报文，既不合并，也不拆分，而是保留这些报文的边界。</p>
+<p>面向字节流的话，虽然应用程序和 TCP 的交互是一次一个数据块（大小不等），但 TCP 把应用程序看成是一连串的无结构的字节流。TCP 有一个缓冲，当应用程序传送的数据块太长，TCP 就可以把它划分短一些再传送。如果应用程序一次只发送一个字节，TCP 也可以等待积累有足够多的字节后再构成报文段发送出去。</p>
 
       
     </div>
@@ -510,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2021/06/06/leetcode-470-一和零/" rel="next" title="leetcode每日一题：474. 一和零">
-                <i class="fa fa-chevron-left"></i> leetcode每日一题：474. 一和零
+              <a href="/blog/2022/06/11/服务器重装系统/" rel="next" title="服务器重装系统">
+                <i class="fa fa-chevron-left"></i> 服务器重装系统
               </a>
             
           </div>
@@ -519,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2021/06/28/快速排序最坏的情况啥时候出现/" rel="prev" title="快速排序最坏的情况啥时候出现">
-                快速排序最坏的情况啥时候出现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -710,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-number">1.</span> <span class="nav-text">资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-为什么要三次握手四次挥手"><span class="nav-number">1.</span> <span class="nav-text">TCP 为什么要三次握手四次挥手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向报文和面向字节流的区别"><span class="nav-number">2.</span> <span class="nav-text">面向报文和面向字节流的区别</span></a></li></ol></div>
             
 
           </div>

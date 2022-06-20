@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-06-13T01:15:42.545Z</updated>
+  <updated>2022-06-20T01:34:42.740Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP和UDP的区别</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/20/TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/20/TCP和UDP的区别/</id>
+    <published>2022-06-19T16:00:00.000Z</published>
+    <updated>2022-06-20T01:34:42.740Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。&lt;/p&gt;
+&lt;p&gt;先说几个几点结论，然后再说说细节：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP 是有链接的，UDP 是无连接的&lt;/li&gt;
+&lt;li&gt;TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠&lt;/li&gt;
+&lt;li&gt;TCP 面向字节流，UDP 面向报文&lt;/li&gt;
+&lt;li&gt;TCP 是一对一全双工，UDP 是 n 对 n&lt;/li&gt;
+&lt;li&gt;TCP 的首部较大为 20 字节，UDP 首部只有 8 字节&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>服务器重装系统</title>
@@ -429,28 +455,6 @@
     </summary>
     
       <category term="币圈" scheme="https://liuqinh2s.github.io/blog/categories/%E5%B8%81%E5%9C%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>图灵机</title>
-    <link href="https://liuqinh2s.github.io/blog/2019/04/26/%E5%9B%BE%E7%81%B5%E6%9C%BA/"/>
-    <id>https://liuqinh2s.github.io/blog/2019/04/26/图灵机/</id>
-    <published>2019-04-25T16:00:00.000Z</published>
-    <updated>2022-06-08T01:09:07.563Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;图灵机&quot;&gt;&lt;a href=&quot;#图灵机&quot; class=&quot;headerlink&quot; title=&quot;图灵机&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9B%BE%E7%81%B5%E6%9C%BA&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图灵机&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;图灵机（Turing Machine）是 &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%89%BE%E4%BC%A6%C2%B7%E5%9B%BE%E7%81%B5&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;英国数学家艾伦·图灵&lt;/a&gt; 在 1936 年发表的 &amp;quot;&lt;a href=&quot;https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;On Computable Numbers, with an Application to the Entscheidungsproblem&lt;/a&gt;&amp;quot;（《论可计算数及其在判定性问题上的应用》）中提出的数学模型。在文章中图灵描述了它是什么，并且证明了，只要图灵机可以被实现，就可以用来解决任何可计算问题。&lt;/p&gt;
-&lt;h3 id=&quot;历史&quot;&gt;&lt;a href=&quot;#历史&quot; class=&quot;headerlink&quot; title=&quot;历史&quot;&gt;&lt;/a&gt;历史&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/av30479683?from=search&amp;amp;seid=11735601712045998475&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;妈咪说：图灵&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://movie.douban.com/subject/10463953/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;模仿游戏&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
   </entry>
