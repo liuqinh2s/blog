@@ -10,6 +10,10 @@ date: 2019-02-20 20:30:09
 - https://devtool.tech/
 - https://shanyue.tech/
 - https://solstice23.top/
+- https://www.liuchuo.net/about
+- https://www.anishathalye.com/
+- http://mindhacks.cn/
+- https://www.dandyweng.com/
 
 # 我的工具
 
@@ -22,13 +26,20 @@ date: 2019-02-20 20:30:09
 ## 资源获取
 
 - 图片：
-    - 摄影网站：[unsplash](https://unsplash.com/)
-    - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
-    - 卡通图：[project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
+  - 摄影网站：[unsplash](https://unsplash.com/)
+  - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
+  - 卡通图：[project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
+- 图片搜索：
+  - [TinEye Reverse Image Search](https://tineye.com/)
+  - [Anime Scene Search Engine - trace.moe](https://trace.moe/)
 - 影视网站：[努努影视](https://www.nunuyy1.org/)
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
-- [2020年全球森林资源评估](https://www.fao.org/forest-resources-assessment/2020/zh)
+- [2020 年全球森林资源评估](https://www.fao.org/forest-resources-assessment/2020/zh)
+- 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
+- [New Scientist | Science news and science articles from New Scientist](https://www.newscientist.com/)
+- [3058 live iptv channels tested today in 78 different languages from 131 countries around the world.](https://eja.tv/)
+- [十万个为什么 - 在线青少年百科全书](https://10why.net/)
 
 ## 编辑 - 输出
 
@@ -58,12 +69,21 @@ date: 2019-02-20 20:30:09
 - [Provider Migration Guide | MetaMask Docs](https://docs.metamask.io/guide/provider-migration.html#replacing-window-web3)
 - 代码转 PNG 图片（美化）：[Codepng | Create awesome images from your code.](https://www.codepng.app/)
 - JavaScript AST：[Esprima: Parser](https://esprima.org/demo/parse.html#)
-- markdown渲染工具：
-    - [md-block: Render styleable Markdown in your HTML](https://md-block.verou.me/)
-- hexo主题：
-    - [argon](https://github.com/solstice23/argon-theme)
+- markdown 渲染工具：
+  - [md-block: Render styleable Markdown in your HTML](https://md-block.verou.me/)
+- hexo 主题：
+  - [argon](https://github.com/solstice23/argon-theme)
 - 表情混合器：[emojimix by Tikolu](https://tikolu.net/emojimix/)
-- [AI拟声: 5秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
+- [AI 拟声: 5 秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
+- 区块链编程：
+  - [How to Become a Blockchain Engineer | by Patrick Collins | Better Programming](https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f)
+  - 对话机器人：
+    - [对话机器人 - 思知（OwnThink）](https://www.ownthink.com/docs/bot/)
+    - [史上最全面聊天机器人总结，图灵、思知、小爱、小微，作者已接入到自己的开源 IM 项目中使用](http://www.360doc.com/content/21/0119/16/21412_957807865.shtml)
+    - [A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。](https://github.com/littlecodersh/ItChat)
+- 山水画生成：[Grok {Shan, Shui}\*: Advent of understanding the generative art](https://zverok.space/blog/2021-12-28-grok-shan-shui.html)
+- 黑客：
+  - [International Journal of PoC or GTFO (Proof-of-Concept or Get The Fuck Out) | evmn.github.io](https://evmn.github.io/post/2021-12-31-PoC-or-GTFO.html)
 
 ## UI 设计
 
@@ -80,6 +100,7 @@ date: 2019-02-20 20:30:09
 
 ## 其他
 
+- 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
 - macos
   - 壁纸软件：[irvue](https://leonspok.com/irvue/landing/)
   - 翻墙工具 ClashX：[ClashX](https://github.com/yichengchen/clashX/)，配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
@@ -92,4 +113,9 @@ date: 2019-02-20 20:30:09
   - [免费 MarkDown 在线简历-专业简历制作工具-木及简历](https://www.mujicv.com/)
 - [DeFi 知识库](https://tokeninsight-support.gitbook.io/ti_defi/)
 - [根据经纬度定位](https://lbsyun.baidu.com/jsdemo/demo/yLngLatLocation.htm)
-- 日本古建筑：[KAMIKATSU ZERO WASTE CENTER | Hiroshi Nakamura & NAP｜中村拓志＆NAP建築設計事務所](https://www.nakam.info/jp/works/kamikatsu0/)
+- 日本古建筑：[KAMIKATSU ZERO WASTE CENTER | Hiroshi Nakamura & NAP ｜中村拓志＆NAP 建築設計事務所](https://www.nakam.info/jp/works/kamikatsu0/)
+- 管风琴音乐：[My Music Diary](http://my-music-diary.com/)
+- 健身：[DAREBEE 1800+ Workouts](https://darebee.com/workouts.html)
+- 数学：[Doga Tekin's Blog | The Hypnotic World of Degenerate Spirals](https://www.dogatekin.com/blog/hypnotic-degenerate-spirals/)
+- 物理：[Motion](https://landgreen.github.io/physics/notes/motion/motion/)
+- 女优收集网站：[JAV Model listing](https://xslist.org/)
