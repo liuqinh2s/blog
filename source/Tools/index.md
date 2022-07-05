@@ -100,10 +100,10 @@ date: 2019-02-20 20:30:09
 - [AI 拟声: 5 秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
 - 区块链编程：
   - [How to Become a Blockchain Engineer | by Patrick Collins | Better Programming](https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f)
-  - 对话机器人：
-    - [对话机器人 - 思知（OwnThink）](https://www.ownthink.com/docs/bot/)
-    - [史上最全面聊天机器人总结，图灵、思知、小爱、小微，作者已接入到自己的开源 IM 项目中使用](http://www.360doc.com/content/21/0119/16/21412_957807865.shtml)
-    - [A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。](https://github.com/littlecodersh/ItChat)
+- 对话机器人：
+  - [对话机器人 - 思知（OwnThink）](https://www.ownthink.com/docs/bot/)
+  - [史上最全面聊天机器人总结，图灵、思知、小爱、小微，作者已接入到自己的开源 IM 项目中使用](http://www.360doc.com/content/21/0119/16/21412_957807865.shtml)
+  - [A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。](https://github.com/littlecodersh/ItChat)
 - 山水画生成：[Grok {Shan, Shui}\*: Advent of understanding the generative art](https://zverok.space/blog/2021-12-28-grok-shan-shui.html)
 - 黑客：
   - [International Journal of PoC or GTFO (Proof-of-Concept or Get The Fuck Out) | evmn.github.io](https://evmn.github.io/post/2021-12-31-PoC-or-GTFO.html)
@@ -237,6 +237,17 @@ date: 2019-02-20 20:30:09
 
 - 股票数据：[单只股票数据](http://50.push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000597&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&klt=101&fqt=0&end=20500101&lmt=100000)
 
+## 加密货币
+
+- 老币：
+  - [乌龟币(TRTL)矿池](https://turtlecoin.herominers.com/?lang=en#)
+  - [门罗币(XMR)网页钱包](https://wallet.mymonero.com/)
+  - [门罗币矿池](https://monero.herominers.com/)
+- BSC 链项目：
+  - [bunny 矿池](https://pancakebunny.finance/vault)
+  - [pancake](https://pancakeswap.finance/)
+  - [beefy](https://app.beefy.finance/?utm_source=tokenpocket)
+
 ## 其他
 
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
@@ -260,3 +271,4 @@ date: 2019-02-20 20:30:09
 - 女优收集网站：[JAV Model listing](https://xslist.org/)
 - 费曼物理学讲义：[The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)
 - [趣味数据分析 - 出差人 Jason | 豆瓣阅读](https://read.douban.com/ebook/390859043/)
+- [爱发电](https://afdian.net/)
