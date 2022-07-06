@@ -5,6 +5,20 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-07-06
+
+目前 lceda 的原理图和面板项目都还是用的 svg 来做画布，但对于 svg 的很多东西其实我并不熟悉，今天看了一篇文章了解了一下 text 和 tspan 的 dx 和 dy 的用法：
+
+[SVG 文本（一）text、tspan 的基本使用](https://blog.csdn.net/zz00008888/article/details/121099382)
+
+dx 和 dy 可以是一串以空格分界的数字，这样就可以微调每个字符了，每个数字会影响之后的所有字符，而且多个 tspan 的 dx 和 dy 前一个 tspan 会影响后面的。这个设计看起来还不错。
+
+# 2022-07-05
+
+crypto.subtle 在不安全的上下文中是 undefined，比如当网站是 http 的时候。
+
+[How to use SubtleCrypto in chrome (window.crypto.subtle is undefined)](https://stackoverflow.com/questions/46468104/how-to-use-subtlecrypto-in-chrome-window-crypto-subtle-is-undefined)
+
 # 2022-06-30
 
 textarea 中按住 ctrl，alt，shift 以及 win 这几个键，再按 enter，有的能换行有的不能：
