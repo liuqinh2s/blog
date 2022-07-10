@@ -35,6 +35,8 @@ date: 2019-02-20 20:30:09
 - https://catcoding.me/
 - https://journal.stuffwithstuff.com/
 - https://f5.pm/go-21699.html
+- http://tools.liumingye.cn/
+- https://github.com/mqyqingfeng/Blog
 
 # 我的工具
 
@@ -63,6 +65,7 @@ date: 2019-02-20 20:30:09
 - [3058 live iptv channels tested today in 78 different languages from 131 countries around the world.](https://eja.tv/)
 - [十万个为什么 - 在线青少年百科全书](https://10why.net/)
 - [首页 - 合同示范文本库 - 国家市场监督管理总局](https://cont.12315.cn/)
+- 在线听歌：[MyFreeMP3](http://tools.liumingye.cn/music/?page=searchPage)
 
 ## 编辑 - 输出
 
@@ -188,6 +191,7 @@ date: 2019-02-20 20:30:09
   - [专栏介绍 | 前端部署十五篇 | 大厂面试](https://q.shanyue.tech/deploy/)
   - [前言 | 大厂面试题每日一题](https://q.shanyue.tech/engineering/)
   - [理解 js 原型、原型链和继承 | Jiuto's blog](https://jiuto.github.io/jiuto_blog/guide/js/proto.html)
+  - [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog/issues/2)
 - [countercomplex: Algorithmic symphonies from one line of code -- how and why?](https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html)
 - [文件系统介绍](https://mp.weixin.qq.com/s?__biz=MzU3OTc1MDM1Mg==&mid=2247509757&idx=2&sn=44afb2cdc96f85ee55373fed1eed3609&chksm=fd63b642ca143f54eb13b9a5627484c319fd31ba89746e87a15c99c3493d8736c56bd2cc4f2e&scene=132#wechat_redirect)
 - [公式化剖析色彩三要素：色相、饱和度、明度](https://zhuanlan.zhihu.com/p/30409532)
