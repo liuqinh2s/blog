@@ -21,7 +21,13 @@ JavaScript 采用了原型和原型链来实现类和继承。原型和原型链
 ![Javascript Object Hierarchy](http://www.mollypages.org/tutorials/jsobj.jpg)
 
 - 所有对象都有`__proto__`属性，但只有函数对象才有`prototype`属性
-- 实例对象没有`constructor`属性，该属性继承自原型对象
+- 实例对象没有`constructor`属性，该属性继承自原型对象。分别对实例对象和原型对象使用`hasOwnProperty`验证`constructor`属性即可证明
+
+```Javascript
+var a = new Object();
+console.log(a.hasOwnProperty('constructor'));   // false
+console.log(a.__proto__.hasOwnProperty('constructor')); // true
+```
 
 # 参考资料
 

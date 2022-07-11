@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-07-11T02:21:31.018Z</updated>
+  <updated>2022-07-11T03:07:57.609Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript词法作用域</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/11/JavaScript%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/11/JavaScript词法作用域/</id>
+    <published>2022-07-10T16:00:00.000Z</published>
+    <updated>2022-07-11T03:07:57.609Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有两种作用域：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;动态作用域&lt;/li&gt;
+&lt;li&gt;静态作用域（也叫：词法作用域，lexical scoping）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;JavaScript 采用的是词法作用域&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript执行上下文栈</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/11/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/11/JavaScript执行上下文栈/</id>
+    <published>2022-07-10T16:00:00.000Z</published>
+    <updated>2022-07-11T05:42:30.924Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScript 总共有三种可执行的代码：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全局代码&lt;/li&gt;
+&lt;li&gt;函数代码&lt;/li&gt;
+&lt;li&gt;eval 代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
+&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
+&lt;li&gt;this&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript原型和原型链</title>
     <link href="https://liuqinh2s.github.io/blog/2022/07/10/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/10/JavaScript原型和原型链/</id>
     <published>2022-07-09T16:00:00.000Z</published>
-    <updated>2022-07-11T02:21:31.018Z</updated>
+    <updated>2022-07-11T02:46:30.035Z</updated>
     
     <summary type="html">
     
@@ -418,48 +470,6 @@
     </summary>
     
       <category term="css" scheme="https://liuqinh2s.github.io/blog/categories/css/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode每日一题： 477. 汉明距离总和</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/28/leetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/28/leetcode-477-汉明距离总和/</id>
-    <published>2021-05-27T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.967Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;477-汉明距离总和&quot;&gt;&lt;a href=&quot;#477-汉明距离总和&quot; class=&quot;headerlink&quot; title=&quot;477. 汉明距离总和&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/total-hamming-distance/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;477. 汉明距离总和&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode每日一题： 1190. 反转每对括号间的子串</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/27/leetcode-1190-%E5%8F%8D%E8%BD%AC%E6%AF%8F%E5%AF%B9%E6%8B%AC%E5%8F%B7%E9%97%B4%E7%9A%84%E5%AD%90%E4%B8%B2/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/27/leetcode-1190-反转每对括号间的子串/</id>
-    <published>2021-05-26T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.967Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;写之前：&lt;br&gt;2020年整整一年没有写过博客了，沉痛的一年。&lt;br&gt;写博客还是继续下去吧，不管怎样。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1190-反转每对括号间的子串&quot;&gt;&lt;a href=&quot;#1190-反转每对括号间的子串&quot; class=&quot;headerlink&quot; title=&quot;1190. 反转每对括号间的子串&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1190. 反转每对括号间的子串&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这道题一看就知道用栈来解决，但具体到怎么做却依旧不容易想通。直到看过答案后，才发现，实际上真的只需要遍历一遍就能解决问题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
     
     
   </entry>
