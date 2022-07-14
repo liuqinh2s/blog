@@ -103,6 +103,10 @@ checkscope()();
 
 > JavaScript, The Definite Guide
 
+# JavaScript 是如何实现这种词法作用域的
+
+想要了解这种词法作用域是如何实现的，就要了解 JavaScript 的执行上下文栈，具体请看这篇文章：[JavaScript 执行上下文栈](../JavaScript执行上下文栈/index.html)
+
 # 参考
 
 - [JavaScript 深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)

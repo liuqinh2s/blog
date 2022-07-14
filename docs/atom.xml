@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-07-11T03:07:57.609Z</updated>
+  <updated>2022-07-14T03:12:52.111Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -17,11 +17,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JavaScript执行上下文之作用域链</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript执行上下文之作用域链/</id>
+    <published>2022-07-13T16:00:00.000Z</published>
+    <updated>2022-07-14T03:12:52.111Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。&lt;/p&gt;
+&lt;p&gt;函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性&lt;code&gt;[[scope]]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;函数的生命周期分为：&lt;strong&gt;函数创建&lt;/strong&gt; 和 &lt;strong&gt;函数调用&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性&lt;code&gt;[[scope]]&lt;/code&gt;（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的&lt;code&gt;AO&lt;/code&gt;和&lt;code&gt;[[scope]]&lt;/code&gt;合并成新的作用域链：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设要实现动态作用域的话，&lt;code&gt;[[scope]]&lt;/code&gt;就得在调用时去执行上下文栈的上一帧去取。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Scope = [AO].concat([[scope]]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 闭包</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E9%97%AD%E5%8C%85/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript闭包/</id>
+    <published>2022-07-13T16:00:00.000Z</published>
+    <updated>2022-07-14T03:39:20.881Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;闭包是干什么用的&quot;&gt;&lt;a href=&quot;#闭包是干什么用的&quot; class=&quot;headerlink&quot; title=&quot;闭包是干什么用的&quot;&gt;&lt;/a&gt;闭包是干什么用的&lt;/h1&gt;&lt;p&gt;本质上闭包就是为了拓展查找自由变量的范围&lt;/p&gt;
+&lt;p&gt;MDN 对闭包的定义为：&lt;/p&gt;
+&lt;p&gt;A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)&lt;/p&gt;
+&lt;p&gt;一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; name = &lt;span class=&quot;string&quot;&gt;&#39;Mozilla&#39;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// name is a local variable created by init&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;displayName&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// displayName() is the inner function, a closure&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(name); &lt;span class=&quot;comment&quot;&gt;// use variable declared in the parent function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  displayName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;init();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。&lt;/p&gt;
+&lt;p&gt;上面这个例子有点平平无奇了，让我们看一个神奇一点的例子：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript执行上下文之变量对象</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/13/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/13/JavaScript执行上下文之变量对象/</id>
+    <published>2022-07-12T16:00:00.000Z</published>
+    <updated>2022-07-14T03:12:20.833Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;执行上下文中包含哪些东西&quot;&gt;&lt;a href=&quot;#执行上下文中包含哪些东西&quot; class=&quot;headerlink&quot; title=&quot;执行上下文中包含哪些东西&quot;&gt;&lt;/a&gt;执行上下文中包含哪些东西&lt;/h1&gt;&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
+&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
+&lt;li&gt;this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本篇就来讲讲第一个变量对象&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript执行上下文栈</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/12/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/12/JavaScript执行上下文栈/</id>
+    <published>2022-07-11T16:00:00.000Z</published>
+    <updated>2022-07-14T02:49:35.238Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;顺序执行？&quot;&gt;&lt;a href=&quot;#顺序执行？&quot; class=&quot;headerlink&quot; title=&quot;顺序执行？&quot;&gt;&lt;/a&gt;顺序执行？&lt;/h1&gt;&lt;p&gt;代码示例 1：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo1&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo();  &lt;span class=&quot;comment&quot;&gt;// foo1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo2&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo(); &lt;span class=&quot;comment&quot;&gt;// foo2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;代码示例 2：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo1&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo();  &lt;span class=&quot;comment&quot;&gt;// foo2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo2&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo(); &lt;span class=&quot;comment&quot;&gt;// foo2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;第一个例子中用到了变量提升，第二个例子中用到了函数提升。JavaScript 引擎并非一行一行地分析和执行程序，而是一段一段地分析执行。当执行一段代码的时候，会进行一个“准备工作”。到底 JavaScript 引擎遇到一段怎样的代码时才会做“准备工作”呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript词法作用域</title>
     <link href="https://liuqinh2s.github.io/blog/2022/07/11/JavaScript%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/11/JavaScript词法作用域/</id>
     <published>2022-07-10T16:00:00.000Z</published>
-    <updated>2022-07-11T03:07:57.609Z</updated>
+    <updated>2022-07-13T02:52:45.430Z</updated>
     
     <summary type="html">
     
@@ -40,49 +135,23 @@
   </entry>
   
   <entry>
-    <title>JavaScript执行上下文栈</title>
-    <link href="https://liuqinh2s.github.io/blog/2022/07/11/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/"/>
-    <id>https://liuqinh2s.github.io/blog/2022/07/11/JavaScript执行上下文栈/</id>
-    <published>2022-07-10T16:00:00.000Z</published>
-    <updated>2022-07-11T05:42:30.924Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JavaScript 总共有三种可执行的代码：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;全局代码&lt;/li&gt;
-&lt;li&gt;函数代码&lt;/li&gt;
-&lt;li&gt;eval 代码&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
-&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
-&lt;li&gt;this&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript原型和原型链</title>
     <link href="https://liuqinh2s.github.io/blog/2022/07/10/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/10/JavaScript原型和原型链/</id>
     <published>2022-07-09T16:00:00.000Z</published>
-    <updated>2022-07-11T02:46:30.035Z</updated>
+    <updated>2022-07-14T03:24:02.115Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;JavaScript 采用了原型和原型链来实现类和继承。原型和原型链主要由三个指针实现：&lt;/p&gt;
+      &lt;h1 id=&quot;原型链是干什么用的&quot;&gt;&lt;a href=&quot;#原型链是干什么用的&quot; class=&quot;headerlink&quot; title=&quot;原型链是干什么用的&quot;&gt;&lt;/a&gt;原型链是干什么用的&lt;/h1&gt;&lt;p&gt;JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。&lt;/p&gt;
+&lt;p&gt;当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Foo();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Foo.prototype.a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(foo.a);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;原型和原型链主要由三个指针实现：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;prototype&lt;/code&gt;: 构造函数的&lt;code&gt;prototype&lt;/code&gt;属性指向原型对象&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;__proto__&lt;/code&gt;: 实例对象的&lt;code&gt;__proto__&lt;/code&gt;属性指向原型对象&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;constructor&lt;/code&gt;: 原型对象的&lt;code&gt;constructor&lt;/code&gt;属性指向构造函数&lt;/li&gt;
-&lt;li&gt;所有对象都基于&lt;code&gt;Object&lt;/code&gt;，而&lt;code&gt;Object&lt;/code&gt;的&lt;code&gt;__proto__&lt;/code&gt;为 null&lt;/li&gt;
+&lt;li&gt;所有对象都基于&lt;code&gt;Object&lt;/code&gt;，是因为所有原型对象的&lt;code&gt;__proto__&lt;/code&gt;最终都指向&lt;code&gt;Object.prototype&lt;/code&gt;，而&lt;code&gt;Object.prototype&lt;/code&gt;的&lt;code&gt;__proto__&lt;/code&gt;为 null&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -402,74 +471,6 @@
     </summary>
     
       <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode： 1074. 元素和为目标值的子矩阵数量</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E5%AD%90%E7%9F%A9%E9%98%B5%E6%95%B0%E9%87%8F/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/</id>
-    <published>2021-05-28T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.970Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这个问题需要拆分出子问题才好解决，要不然没有思路。它的子问题是：&lt;a href=&quot;https://leetcode-cn.com/problems/subarray-sum-equals-k/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;560. 和为K的子数组&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1074-元素和为目标值的子矩阵数量&quot;&gt;&lt;a href=&quot;#1074-元素和为目标值的子矩阵数量&quot; class=&quot;headerlink&quot; title=&quot;1074. 元素和为目标值的子矩阵数量&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？&lt;/p&gt;
-&lt;p&gt;我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode： 560. 和为K的子数组</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/29/leetcode-560-和为K的子数组/</id>
-    <published>2021-05-28T16:00:00.000Z</published>
-    <updated>2022-06-07T01:21:09.970Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这题是在做每日一题中遇到的问题的子问题：&lt;a href=&quot;https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1074. 元素和为目标值的子矩阵数量&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;560-和为K的子数组&quot;&gt;&lt;a href=&quot;#560-和为K的子数组&quot; class=&quot;headerlink&quot; title=&quot;560. 和为K的子数组&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/subarray-sum-equals-k/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;560. 和为K的子数组&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>position sticky</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/05/28/position-sticky/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/05/28/position-sticky/</id>
-    <published>2021-05-27T16:00:00.000Z</published>
-    <updated>2022-06-08T01:09:07.567Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用&lt;code&gt;position: sticky&lt;/code&gt;解决了问题。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;参考资料：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/CSS/position&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;position - CSS（层叠样式表） | MDN&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="css" scheme="https://liuqinh2s.github.io/blog/categories/css/"/>
     
     
   </entry>

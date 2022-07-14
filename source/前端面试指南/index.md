@@ -4,8 +4,19 @@ title: 前端面试指南
 
 # JavaScript 基础
 
-- Prototype Chain（原型链）
-- closure（闭包）
+最基础的两个知识点：
+
+1. Prototype Chain（原型链）
+   - [JavaScript 原型和原型链](../2022/07/10/JavaScript原型和原型链/)
+2. closure（闭包）
+   - [JavaScript 词法作用域](../2022/07/11/JavaScript词法作用域/)
+   - [JavaScript 执行上下文栈](../2022/07/12/JavaScript执行上下文栈/)
+   - [JavaScript 执行上下文之变量对象](../2022/07/13/JavaScript执行上下文之变量对象/)
+   - [JavaScript 执行上下文之作用域链](../2022/07/14/JavaScript执行上下文之作用域链/)
+   - [JavaScript 闭包](../2022/07/14/JavaScript闭包/)
+
+结合这两个知识点学习，我们发现，**原型链就是用来方便查找对象上的变量，闭包就是方便查找自由变量**，本质上都是为了让 JavaScript 这个个编程语言更加丰富，灵活，好用，方便程序员写出更加短小精悍，易于封装和复用的代码。
+
 - 箭头函数
 - Promise A+ 规范
 - Event Loop（事件循环）

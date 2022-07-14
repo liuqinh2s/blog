@@ -5,12 +5,25 @@ categories: [JavaScript]
 comments: true
 ---
 
-JavaScript 采用了原型和原型链来实现类和继承。原型和原型链主要由三个指针实现：
+# 原型链是干什么用的
+
+JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。
+
+当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：
+
+```javascript
+function Foo() {}
+var foo = new Foo();
+Foo.prototype.a = 1;
+console.log(foo.a);
+```
+
+原型和原型链主要由三个指针实现：
 
 - `prototype`: 构造函数的`prototype`属性指向原型对象
 - `__proto__`: 实例对象的`__proto__`属性指向原型对象
 - `constructor`: 原型对象的`constructor`属性指向构造函数
-- 所有对象都基于`Object`，而`Object`的`__proto__`为 null
+- 所有对象都基于`Object`，是因为所有原型对象的`__proto__`最终都指向`Object.prototype`，而`Object.prototype`的`__proto__`为 null
 
 <!-- more -->
 

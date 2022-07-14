@@ -1,15 +1,11 @@
 ---
-title: JavaScript执行上下文栈
-date: 2022-07-11
+title: JavaScript执行上下文之变量对象
+date: 2022-07-13
 categories: [JavaScript]
 comments: true
 ---
 
-JavaScript 总共有三种可执行的代码：
-
-- 全局代码
-- 函数代码
-- eval 代码
+# 执行上下文中包含哪些东西
 
 对于每个执行上下文，都有三个重要属性：
 
@@ -17,55 +13,9 @@ JavaScript 总共有三种可执行的代码：
 - 作用域链(Scope chain)
 - this
 
+本篇就来讲讲第一个变量对象
+
 <!-- more -->
-
-# 执行上下文栈
-
-JavaScript 引擎创建了执行上下文栈（Execution context stack，ECS）来管理执行上下文
-
-```JavaScript
-var scope = "global scope";
-function checkscope(){
-    var scope = "local scope";
-    function f(){
-        return scope;
-    }
-    return f();
-}
-checkscope();
-```
-
-```JavaScript
-var scope = "global scope";
-function checkscope(){
-    var scope = "local scope";
-    function f(){
-        return scope;
-    }
-    return f;
-}
-checkscope()();
-```
-
-上面这个例子中，执行上下文栈的变化就不一样
-
-让我们模拟第一段代码：
-
-```JavaScript
-ECStack.push(<checkscope> functionContext);
-ECStack.push(<f> functionContext);
-ECStack.pop();
-ECStack.pop();
-```
-
-让我们模拟第二段代码：
-
-```JavaScript
-ECStack.push(<checkscope> functionContext);
-ECStack.pop();
-ECStack.push(<f> functionContext);
-ECStack.pop();
-```
 
 # 全局上下文
 
@@ -155,6 +105,58 @@ AO = {
 
 # 思考题
 
+## 第一题
+
+```Javascript
+function foo() {
+    console.log(a);
+    a = 1;  // 相当于挂在全局对象上
+}
+
+foo(); // ???
+```
+
+会报错，`Uncaught ReferenceError: a is not defined`
+
+这是因为函数中的 "a" 并没有通过 var 关键字声明，所有不会被存放在 AO 中。
+
+第一段执行 console 的时候， AO 的值是：
+
+```json
+AO = {
+    arguments: {
+        length: 0
+    }
+}
+```
+
+没有 a 的值，然后就会到全局去找，全局也没有，所以会报错。
+
+```Javascript
+function foo() {
+    console.log(a);
+    var a = 1;
+}
+
+foo(); // ???
+```
+
+改成这样，有变量提升就不会报错了。打印 undefined
+
+或者先挂在全局对象上
+
+```Javascript
+function bar() {
+    a = 1;
+    console.log(a);
+}
+bar(); // ???
+```
+
+打印 1
+
+## 第二题
+
 ```Javascript
 console.log(foo);
 
@@ -171,5 +173,4 @@ var foo = 1;
 
 # 参考
 
-- [JavaScript 深入之执行上下文栈](https://github.com/mqyqingfeng/Blog/issues/4)
 - [JavaScript 深入之变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
