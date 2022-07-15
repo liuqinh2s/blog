@@ -87,6 +87,7 @@ date: 2019-02-20 20:30:09
 - 无代码：
   - UI 设计稿转前端代码：[CodeFun - UI 设计稿智能生成源代码](https://code.fun/)
   - [The best way to build web apps without code | Bubble](https://bubble.io/)
+  - [Aspect — Build UI, fast](https://aspect.app/)
 - 低代码：
   - [H5DS6.x 四川爱趣五科技有限公司](https://www.h5ds.com/aboutus)
 - HTTPS 证书申请：
@@ -142,6 +143,8 @@ date: 2019-02-20 20:30:09
   - [Software Engineer interviews: Everything you need to prepare | Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
   - [Introduction to Probability for Data Science](https://probability4datascience.com/)
   - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
+  - [Tiny_Python_Projects](http://tinypythonprojects.com/Tiny_Python_Projects.pdf)
+  - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
@@ -238,9 +241,17 @@ date: 2019-02-20 20:30:09
   - Run Python in Your HTML：[PyScript | Run Python in your HTML](https://pyscript.net/)
   - [项目可视化](https://github.com/githubocto/repo-visualizer)
   - [</> htmx - high power tools for html](https://htmx.org/)
+  - [Vexip UI - 创造有趣的开发体验](https://www.vexipui.com/zh-CN)
 - [Tauri 系列 - 知乎](https://www.zhihu.com/column/c_1519079232848785408)
 - [Vue.js 挑战 | 一个 Vue.js 在线挑战平台](https://cn-vuejs-challenges.netlify.app/)
 - [Web Scraping via Javascript Runtime Heap Snapshots - Adrian Cooney's Blog](https://www.adriancooney.ie/blog/web-scraping-via-javascript-heap-snapshots)
+- 把 C++代码转成 Rust：[C2Rust Demonstration](https://c2rust.com/)
+- 一行命令：[Bash-Oneliner](https://github.com/onceupon/Bash-Oneliner)
+- 常用软件的黑色主题：[Dracula — Dark theme for 271+ apps](https://draculatheme.com/)
+- 随机提供一张狗狗图：[place.dog](https://place.dog/)
+- 随机提供一张猫图：[{placekitten} - Placeholder kitten images for developers](https://placekitten.com/)
+- 100 行实现的 react 路由：[ashok-khanna/react-snippets](https://github.com/ashok-khanna/react-snippets/blob/main/Router.js)
+- [OAuth with Cloudflare Workers on a Statically Generated Site](https://abyteofcoding.com/blog/oauth-with-cloudflare-workers-on-a-statically-generated-site/)
 
 ## UI 设计
 
