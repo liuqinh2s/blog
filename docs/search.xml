@@ -81,19 +81,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[浏览器 storage 事件]]></title>
-    <url>%2Fblog%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性： 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[二分查找]]></title>
     <url>%2Fblog%2F2022%2F06%2F08%2F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。 二分查找的前提：数据有序 二分查找结束的条件：查找区间为空，或者找到元素 二分查找的条件分支： nums[mid]==target nums[mid]&lt;target nums[mid]&gt;target 二分查找的搜索区间表示形式： 左闭右开（区间为空的条件是 left==right） 左闭右闭（区间为空的条件是 left&gt;right） 二分查找有的时候我会写出死循环来，仔细思考了一下：必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能。 习题 leetcode 704. 二分查找 leetcode 34. 在排序数组中查找元素的第一个和最后一个位置（中等） 第一题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length-1; while(left&lt;=right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 左闭右开搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 第二题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [findLeft(nums, target), findRight(nums, target)]&#125;;var findLeft = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[left]==target)&#123; return left &#125; return -1;&#125;var findRight = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); console.log(left, mid, right) if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[right-1]==target)&#123; return right-1; &#125; return -1;&#125; 左闭右闭搜索区间的写法： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [fundLeft(nums, target), fundRight(nums, target)]&#125;;var fundLeft = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[left]==target)&#123; return left; &#125; return -1;&#125;var fundRight = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[right]==target)&#123; return right; &#125; return -1;&#125;]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[浏览器 storage 事件]]></title>
+    <url>%2Fblog%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性： 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
+      <categories>
+        <category>前端</category>
       </categories>
   </entry>
   <entry>
@@ -177,19 +177,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[position sticky]]></title>
-    <url>%2Fblog%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
-    <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
-      <categories>
-        <category>css</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
     <url>%2Fblog%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
     <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
       <categories>
         <category>leetcode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[position sticky]]></title>
+    <url>%2Fblog%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
+    <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
+      <categories>
+        <category>css</category>
       </categories>
   </entry>
   <entry>
@@ -241,19 +241,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[C++ map的remove函数实现]]></title>
-    <url>%2Fblog%2F2019%2F04%2F15%2FC%2B%2B%E7%9A%84map%E7%9A%84remove%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。 12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; // mapPeople[3] = "hexu3"; // mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); for (; iter != mapPeople.end(); iter++) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; mapPeople.erase(iter++); std::cout &lt;&lt; (iter != mapPeople.end()) &lt;&lt; std::endl; &#125; &#125; //for (; iter != mapPeople.end();) //&#123; // if (iter-&gt;first == 2) // &#123; // std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; // mapPeople.erase(iter++); // if (iter == mapPeople.end()) // break; // &#125; // iter++; //&#125;// getchar(); return 0;&#125; 说是第一个for循环会崩溃，第二个for循环可以通过。经过分析，主要问题其实是出在对迭代器和erase的不熟悉上，导致错误的使用，这个程序的错误很明显，就是在erase这条分支中，iter++了两次。那么如何写一个正确的remove函数呢？代码如下： 123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; mapPeople[3] = "hexu3"; mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); while (iter != mapPeople.end()) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; iter = mapPeople.erase(iter); continue; &#125; iter++; &#125; return 0;&#125; 另外，碰到删除的时候，要小心，可以这么写：iter = mapPeople.erase(iter);，也可以这么写：mapPeople.erase(iter++);（必须在删除前给迭代器++，否则迭代器会失效，这个问题那位程序员倒是考虑到了）。 最后我想说的一点是，根据指定key删除map中的元素，这个功能在其他语言中都有库函数可以调用，而C++却没有，还要自己动手写，而且需要对map的原理有一定的了解。这就从侧面反映了C++可能并不是一个高效的生产工具。]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[hexo把英文引号渲染成中文引号的问题]]></title>
     <url>%2Fblog%2F2019%2F04%2F15%2Fhexo%E6%8A%8A%E8%8B%B1%E6%96%87%E5%BC%95%E5%8F%B7%E6%B8%B2%E6%9F%93%E6%88%90%E4%B8%AD%E6%96%87%E5%BC%95%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。 首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。 打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。 然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。 那么问题就确定了：hexo 把英文引号渲染成了中文引号。 谷歌搜了一下：hexo 渲染 单引号 中文单引号，得到几条不错的结果： 求助：单引号显示异常 #1981 6.4.0 版本之后的两个问题 #462 对于我所使用的kramed，只需要在_config.yml中配置： 12kramed: smartypants: false 问题的原因是 markdown 渲染器把英文引号渲染成了中文引号，但这其实是可以配置的，所以解决起来比较简单。 在解决这个问题的过程中，如果你想顺利的解决问题，你需要的知识点有： 字符集的知识 Chrome 开发工具使用经验 前端开发知识 好的搜索习惯 一定的英语水平 查阅文档的意识和习惯 如果你已经具备了以上前提，那么就能比较轻松愉快的解决这个问题了。]]></content>
       <categories>
         <category>debug</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[C++ map的remove函数实现]]></title>
+    <url>%2Fblog%2F2019%2F04%2F15%2FC%2B%2B%E7%9A%84map%E7%9A%84remove%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。 12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; // mapPeople[3] = "hexu3"; // mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); for (; iter != mapPeople.end(); iter++) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; mapPeople.erase(iter++); std::cout &lt;&lt; (iter != mapPeople.end()) &lt;&lt; std::endl; &#125; &#125; //for (; iter != mapPeople.end();) //&#123; // if (iter-&gt;first == 2) // &#123; // std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; // mapPeople.erase(iter++); // if (iter == mapPeople.end()) // break; // &#125; // iter++; //&#125;// getchar(); return 0;&#125; 说是第一个for循环会崩溃，第二个for循环可以通过。经过分析，主要问题其实是出在对迭代器和erase的不熟悉上，导致错误的使用，这个程序的错误很明显，就是在erase这条分支中，iter++了两次。那么如何写一个正确的remove函数呢？代码如下： 123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; mapPeople[3] = "hexu3"; mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); while (iter != mapPeople.end()) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; iter = mapPeople.erase(iter); continue; &#125; iter++; &#125; return 0;&#125; 另外，碰到删除的时候，要小心，可以这么写：iter = mapPeople.erase(iter);，也可以这么写：mapPeople.erase(iter++);（必须在删除前给迭代器++，否则迭代器会失效，这个问题那位程序员倒是考虑到了）。 最后我想说的一点是，根据指定key删除map中的元素，这个功能在其他语言中都有库函数可以调用，而C++却没有，还要自己动手写，而且需要对map的原理有一定的了解。这就从侧面反映了C++可能并不是一个高效的生产工具。]]></content>
+      <categories>
+        <category>C++</category>
       </categories>
   </entry>
   <entry>
@@ -305,17 +305,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[精通一款编辑器之sublime text 3]]></title>
-    <url>%2Fblog%2F2018%2F11%2F04%2F%E7%B2%BE%E9%80%9A%E4%B8%80%E6%AC%BE%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%8Bsublime%20text%203%2F</url>
-    <content type="text"><![CDATA[编辑器常用功能 格式化代码：格式化代码可以让你不用管代码的格式，可以放肆的写程序，你可以少敲很多空格，不用关心代码的格式问题，机器给出的代码格式风格统一且漂亮，一键解决你的格式问题，真是提高码代码效率的非常重要的功能。 查找文件：查找文件是在集成开发的时候非常重要的功能，当文件多起来的时候，快速定位到文件可以节省很多时间，甚至有时候文件实在太多，你只能通过查找的方式找到那个文件。 正则全文件查找和替换：轻松让你更改全局变量和配置，这是一个必须的功能，没有它简直无法想象工作量有多大。 代码收缩和扩展：代码太长怎么办，收缩和扩展啊。 安装卸载插件 cmd+shift+p：打开命令板，输入install，点击：Package Control: Install Package选项，然后搜索你想要的插件。 卸载请在命令板输入：remove，点击：Package Control: Remove Package选项。其实卸载无非就是两个词：remove和uninstall，多试试就行了。 打开命令板之后什么都不想干，怎么关闭命令板呢？其实很简单，再按一次打开命令板的快捷键就行了，开关都用同一个键或者按钮（术语叫：toggle，可开可关），这是比较通用设计理念。 基本快捷键 显示隐藏菜单栏：alt，如果你不小心把菜单栏隐藏了，除了用快捷键唤出，还真不知道有什么其他办法。 显示隐藏目录树：ctrl+k+b，这个功能可以在菜单栏中的 view 中找到，所以我觉得记不记无所谓 vue 插件 vue-syntax-highlight：可以让.vue文件高亮。 HTML-CSS-JS Prettify：可以格式化这三种语言的代码，特别是单文件的 vue，非常需要这个来同时格式化三种语言。不过需要配置一下。工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Plugin Options - Default，然后搜索：allowed_file_extensions，给这个配置项添加一个vue即可，要注意的是有四处有这个配置项，分别是html、css、js、json，如果你想它们全都能格式化，自然是要全都添加vue，但实验证明只加 html 里面就行了，如果在其他几个里面加反而引起了冲突。然后格式化代码的快捷键是什么呢？同样也有配置文件的，工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Keyboard Shortcuts - Default，可以看到： 12345678910111213141516[&#123; &quot;keys&quot;: [&quot;super+shift+h&quot;], &quot;command&quot;: &quot;htmlprettify&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;p&quot;], &quot;command&quot;: &quot;htmlprettify_set_prettify_prefs&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;o&quot;], &quot;command&quot;: &quot;htmlprettify_set_plugin_options&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;k&quot;], &quot;command&quot;: &quot;htmlprettify_set_keyboard_shortcuts&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;n&quot;], &quot;command&quot;: &quot;htmlprettify_set_node_path&quot;&#125;] 第一项即为使用这个插件的快捷键，也就是格式化代码的快捷键。 底栏设置显示文件编码在 mac osx 上一不小心按了 cmd+shift+c，文件的存储格式现在变成了 GBK 格式，当我再按下 cmd+s 保存时，提示我 UTF-8 格式的文件不能用 GBK 格式来保存。怎么解决这个问题呢？首先我想查看这个文件是什么编码，Sublime Text 的默认设置是不开启显示编码的，如果想开启，可通过菜单 Perference → Settings – User，在打开的配置文件里 ，在大括号后面，增加以下内容： 1234// Display file encoding in the status bar&quot;show_encoding&quot;: true,// Display line endings in the status bar&quot;show_line_endings&quot;: true, 此时保存该配置文件，就能够看到 sublime 最底下一行会显示文件编码格式了。以上的配置内容在 Perference → Setting─Default 都是 false 的。 然后在底栏点击文件编码，点击 reopen with encoding，然后选择 utf-8，然后 cmd+w 关闭窗口，然后 cmd+shift+t 重新打开刚刚关闭的窗口，就一切恢复正常了。]]></content>
+    <title><![CDATA[熟练使用JetBrains家的IDE]]></title>
+    <url>%2Fblog%2F2018%2F11%2F04%2F%E7%86%9F%E7%BB%83%E4%BD%BF%E7%94%A8JetBrains%E5%AE%B6%E7%9A%84IDE%2F</url>
+    <content type="text"><![CDATA[通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你在方法前输入/**然后一回车，自动帮你生成方法和参数的注释。 Intellj Idea快速打出常用语句： sout：System.out.println(); psvm： 123public static void main(String[] args) &#123;&#125; 使用 IDE 的右键中的生成 Getter Setter 选项自动生成 Getter Setter，使用 toString 自动生成 toString。 跳转到接口：ctrl+b； 跳转到实现类：ctrl + alt +B 上面这个按钮可以快速的在目录树中定位到当前类所在的路径 ctrl+alt+t]]></content>
       <categories>
         <category>工具</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[熟练使用JetBrains家的IDE]]></title>
-    <url>%2Fblog%2F2018%2F11%2F04%2F%E7%86%9F%E7%BB%83%E4%BD%BF%E7%94%A8JetBrains%E5%AE%B6%E7%9A%84IDE%2F</url>
-    <content type="text"><![CDATA[通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你在方法前输入/**然后一回车，自动帮你生成方法和参数的注释。 Intellj Idea快速打出常用语句： sout：System.out.println(); psvm： 123public static void main(String[] args) &#123;&#125; 使用 IDE 的右键中的生成 Getter Setter 选项自动生成 Getter Setter，使用 toString 自动生成 toString。 跳转到接口：ctrl+b； 跳转到实现类：ctrl + alt +B 上面这个按钮可以快速的在目录树中定位到当前类所在的路径 ctrl+alt+t]]></content>
+    <title><![CDATA[精通一款编辑器之sublime text 3]]></title>
+    <url>%2Fblog%2F2018%2F11%2F04%2F%E7%B2%BE%E9%80%9A%E4%B8%80%E6%AC%BE%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%8Bsublime%20text%203%2F</url>
+    <content type="text"><![CDATA[编辑器常用功能 格式化代码：格式化代码可以让你不用管代码的格式，可以放肆的写程序，你可以少敲很多空格，不用关心代码的格式问题，机器给出的代码格式风格统一且漂亮，一键解决你的格式问题，真是提高码代码效率的非常重要的功能。 查找文件：查找文件是在集成开发的时候非常重要的功能，当文件多起来的时候，快速定位到文件可以节省很多时间，甚至有时候文件实在太多，你只能通过查找的方式找到那个文件。 正则全文件查找和替换：轻松让你更改全局变量和配置，这是一个必须的功能，没有它简直无法想象工作量有多大。 代码收缩和扩展：代码太长怎么办，收缩和扩展啊。 安装卸载插件 cmd+shift+p：打开命令板，输入install，点击：Package Control: Install Package选项，然后搜索你想要的插件。 卸载请在命令板输入：remove，点击：Package Control: Remove Package选项。其实卸载无非就是两个词：remove和uninstall，多试试就行了。 打开命令板之后什么都不想干，怎么关闭命令板呢？其实很简单，再按一次打开命令板的快捷键就行了，开关都用同一个键或者按钮（术语叫：toggle，可开可关），这是比较通用设计理念。 基本快捷键 显示隐藏菜单栏：alt，如果你不小心把菜单栏隐藏了，除了用快捷键唤出，还真不知道有什么其他办法。 显示隐藏目录树：ctrl+k+b，这个功能可以在菜单栏中的 view 中找到，所以我觉得记不记无所谓 vue 插件 vue-syntax-highlight：可以让.vue文件高亮。 HTML-CSS-JS Prettify：可以格式化这三种语言的代码，特别是单文件的 vue，非常需要这个来同时格式化三种语言。不过需要配置一下。工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Plugin Options - Default，然后搜索：allowed_file_extensions，给这个配置项添加一个vue即可，要注意的是有四处有这个配置项，分别是html、css、js、json，如果你想它们全都能格式化，自然是要全都添加vue，但实验证明只加 html 里面就行了，如果在其他几个里面加反而引起了冲突。然后格式化代码的快捷键是什么呢？同样也有配置文件的，工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Keyboard Shortcuts - Default，可以看到： 12345678910111213141516[&#123; &quot;keys&quot;: [&quot;super+shift+h&quot;], &quot;command&quot;: &quot;htmlprettify&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;p&quot;], &quot;command&quot;: &quot;htmlprettify_set_prettify_prefs&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;o&quot;], &quot;command&quot;: &quot;htmlprettify_set_plugin_options&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;k&quot;], &quot;command&quot;: &quot;htmlprettify_set_keyboard_shortcuts&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;n&quot;], &quot;command&quot;: &quot;htmlprettify_set_node_path&quot;&#125;] 第一项即为使用这个插件的快捷键，也就是格式化代码的快捷键。 底栏设置显示文件编码在 mac osx 上一不小心按了 cmd+shift+c，文件的存储格式现在变成了 GBK 格式，当我再按下 cmd+s 保存时，提示我 UTF-8 格式的文件不能用 GBK 格式来保存。怎么解决这个问题呢？首先我想查看这个文件是什么编码，Sublime Text 的默认设置是不开启显示编码的，如果想开启，可通过菜单 Perference → Settings – User，在打开的配置文件里 ，在大括号后面，增加以下内容： 1234// Display file encoding in the status bar&quot;show_encoding&quot;: true,// Display line endings in the status bar&quot;show_line_endings&quot;: true, 此时保存该配置文件，就能够看到 sublime 最底下一行会显示文件编码格式了。以上的配置内容在 Perference → Setting─Default 都是 false 的。 然后在底栏点击文件编码，点击 reopen with encoding，然后选择 utf-8，然后 cmd+w 关闭窗口，然后 cmd+shift+t 重新打开刚刚关闭的窗口，就一切恢复正常了。]]></content>
       <categories>
         <category>工具</category>
       </categories>
