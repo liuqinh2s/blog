@@ -253,6 +253,7 @@ date: 2019-02-20 20:30:09
 - 随机提供一张猫图：[{placekitten} - Placeholder kitten images for developers](https://placekitten.com/)
 - 100 行实现的 react 路由：[ashok-khanna/react-snippets](https://github.com/ashok-khanna/react-snippets/blob/main/Router.js)
 - [OAuth with Cloudflare Workers on a Statically Generated Site](https://abyteofcoding.com/blog/oauth-with-cloudflare-workers-on-a-statically-generated-site/)
+- [如何从零开始开发一个 Chrome 插件？](https://mp.weixin.qq.com/s/kqNehDyBlCZ5tDlPSXJpKg)
 
 ## UI 设计
 
