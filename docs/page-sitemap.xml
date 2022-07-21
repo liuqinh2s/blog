@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://liuqinh2s.github.io/blog/notes/</loc>
+        <lastmod>2022-07-21T13:27:00.714Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://liuqinh2s.github.io/blog/Tools/</loc>
         <lastmod>2022-07-21T06:31:11.245Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,13 +24,6 @@
     <url>
         <loc>https://liuqinh2s.github.io/blog/English/</loc>
         <lastmod>2022-07-19T10:52:44.353Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuqinh2s.github.io/blog/notes/</loc>
-        <lastmod>2022-07-18T01:08:04.210Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
