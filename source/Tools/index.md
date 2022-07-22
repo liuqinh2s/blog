@@ -146,6 +146,7 @@ date: 2019-02-20 20:30:09
   - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
   - [Tiny_Python_Projects](http://tinypythonprojects.com/Tiny_Python_Projects.pdf)
   - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
+  - [](https://python-patterns.guide/)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
@@ -254,6 +255,9 @@ date: 2019-02-20 20:30:09
 - 100 行实现的 react 路由：[ashok-khanna/react-snippets](https://github.com/ashok-khanna/react-snippets/blob/main/Router.js)
 - [OAuth with Cloudflare Workers on a Statically Generated Site](https://abyteofcoding.com/blog/oauth-with-cloudflare-workers-on-a-statically-generated-site/)
 - [如何从零开始开发一个 Chrome 插件？](https://mp.weixin.qq.com/s/kqNehDyBlCZ5tDlPSXJpKg)
+- [GitHub 开源项目维护协作指南](https://github.com/eryajf/HowToStartOpenSource)
+- [介绍了一种压缩算法：H.264 is Magic](https://sidbala.com/h-264-is-magic/)
+- [I Spent 2 years Launching Tiny Projects | Tiny Projects](https://tinyprojects.dev/posts/i_spent_two_years_launching_tiny_projects)
 
 ## UI 设计
 
