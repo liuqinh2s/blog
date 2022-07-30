@@ -143,6 +143,12 @@ Clash 项目地址：https://github.com/Dreamacro/clash
 
 ClashX 项目地址：https://github.com/yichengchen/clashX/
 
+ClashX windows下载地址：https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.19.25
+
+ClashX Pro macOS下载地址：https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public
+
+ClashX Android下载地址：https://github.com/Kr328/ClashForAndroid/releases/tag/v2.5.9
+
 云配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
 
 Clash 文档：https://lancellc.gitbook.io/clash/
