@@ -5,6 +5,12 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-08-01
+
+重新做了一遍这个 CSS 选择器训练：[CSS Speedrun | Test your CSS Skills](https://css-speedrun.netlify.app/)
+
+有些我还是用的挺少的，比如`:nth-child(2n+3)`，`img ~ p`，`a + span`，`:enable`，平常用的最多的应该就是属性选择器了，都还是靠加属性来标记的
+
 # 2022-07-25
 
 HTTP3.0 居然都有了，而且居然放弃了 TCP 作为传输层协议：[HTTP 3.0 彻底放弃 TCP，TCP 到底做错了什么？](https://mp.weixin.qq.com/s/LMjVtUshf67i1gbJI2zDSA)
@@ -143,11 +149,11 @@ Clash 项目地址：https://github.com/Dreamacro/clash
 
 ClashX 项目地址：https://github.com/yichengchen/clashX/
 
-ClashX windows下载地址：https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.19.25
+ClashX windows 下载地址：https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.19.25
 
-ClashX Pro macOS下载地址：https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public
+ClashX Pro macOS 下载地址：https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public
 
-ClashX Android下载地址：https://github.com/Kr328/ClashForAndroid/releases/tag/v2.5.9
+ClashX Android 下载地址：https://github.com/Kr328/ClashForAndroid/releases/tag/v2.5.9
 
 云配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
 

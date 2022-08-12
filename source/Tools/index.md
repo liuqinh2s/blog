@@ -258,6 +258,9 @@ date: 2019-02-20 20:30:09
 - [GitHub 开源项目维护协作指南](https://github.com/eryajf/HowToStartOpenSource)
 - [介绍了一种压缩算法：H.264 is Magic](https://sidbala.com/h-264-is-magic/)
 - [I Spent 2 years Launching Tiny Projects | Tiny Projects](https://tinyprojects.dev/posts/i_spent_two_years_launching_tiny_projects)
+- CSS 基本功测试：[CSS Speedrun | Test your CSS Skills](https://css-speedrun.netlify.app/)
+- [推特分析工具](https://github.com/twintproject/twint)
+- [Instagram 分析工具](https://github.com/Datalux/Osintgram)
 
 ## UI 设计
 
@@ -350,3 +353,5 @@ date: 2019-02-20 20:30:09
 - [爱发电](https://afdian.net/)
 - 制乐：[开始 | Learning Synths](https://learningsynths.ableton.com/zh-Hans)
 - [机械表原理](https://ciechanow.ski/mechanical-watch/)
+- 一个展示很多绳子打结的网站：[Complete List - Knots - Knots 3D](https://knots3d.com/knots/en_us/ALL)
+- 根据文本生成声音：[Diffsound: Discrete Diffusion Model for Text-to-sound Generation | text-to-sound-synthesis-demo](http://dongchaoyang.top/text-to-sound-synthesis-demo/)
