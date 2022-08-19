@@ -103,6 +103,8 @@ date: 2019-02-20 20:30:09
 - hexo 主题：
   - [argon](https://github.com/solstice23/argon-theme)
 - 表情混合器：[emojimix by Tikolu](https://tikolu.net/emojimix/)
+- 捏猫咪网站：[【公式】うちのこメーカー | 猫イラストを無料で簡単作成！](https://uchinoko-maker.jp/)
+- 可视化网站：[treevis.net](https://treevis.net/)
 - [AI 拟声: 5 秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
 - 区块链编程：
   - [How to Become a Blockchain Engineer | by Patrick Collins | Better Programming](https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f)
@@ -146,7 +148,8 @@ date: 2019-02-20 20:30:09
   - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
   - [Tiny_Python_Projects](http://tinypythonprojects.com/Tiny_Python_Projects.pdf)
   - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
-  - [](https://python-patterns.guide/)
+  - [python 设计模式](https://python-patterns.guide/)
+  - [Understanding Quantum Technologies](https://www.oezratty.net/wordpress/2021/understanding-quantum-technologies-2021/)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
