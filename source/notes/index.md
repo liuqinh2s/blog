@@ -5,6 +5,31 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-08-25
+
+typescript 的一些常见用法：
+
+## 使用数组中限定的 string
+
+```javascript
+let arr = ['a', 'b'] as const;
+let b: typeof arr = 'c';
+```
+
+上述代码会报错，因为 typeof a 限定了 b 的类型是`'a'|'b'`，`as const`既可以让 a 是 readonly 类型，又可以让 typeof a 类型从 string 缩窄到`'a'|'b'`
+
+## 使用对象中限定的 string
+
+```javascript
+let obj = {
+  'a': 'a',
+  'b': 'b'
+} as const;
+let b: Item<typeof obj> = 'c';
+```
+
+这样可以获取对象的 value，每多一层，就可以多加一个 Item。
+
 # 2022-08-23
 
 没什么用，但用起来很爽的快捷键，Vscode 清除没有用到的 import 语句：
