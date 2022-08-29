@@ -90,7 +90,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2022-08-25T12:00:21.578Z">
+<meta property="og:updated_time" content="2022-08-26T01:31:31.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-08-25typescript 的一些常见用法： 使用数组中限定的 string12let arr = [&apos;a&apos;, &apos;b&apos;] as const;let b: typeof arr = &apos;c&apos;; 上述代码">
@@ -370,6 +370,8 @@
 <p>上述代码会报错，因为 typeof a 限定了 b 的类型是<code>&#39;a&#39;|&#39;b&#39;</code>，<code>as const</code>既可以让 a 是 readonly 类型，又可以让 typeof a 类型从 string 缩窄到<code>&#39;a&#39;|&#39;b&#39;</code></p>
 <h2 id="使用对象中限定的-string"><a href="#使用对象中限定的-string" class="headerlink" title="使用对象中限定的 string"></a>使用对象中限定的 string</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  <span class="string">'a'</span>: <span class="string">'a'</span>,</span><br><span class="line">  <span class="string">'b'</span>: <span class="string">'b'</span></span><br><span class="line">&#125; <span class="keyword">as</span> <span class="keyword">const</span>;</span><br><span class="line"><span class="keyword">let</span> b: Item&lt;<span class="keyword">typeof</span> obj&gt; = <span class="string">'c'</span>;</span><br></pre></td></tr></table></figure>
 <p>这样可以获取对象的 value，每多一层，就可以多加一个 Item。</p>
+<p>那怎么获取对象的 key 呢？代码如下：<code>keyof typeof</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  <span class="string">'a'</span>: <span class="string">'a'</span>,</span><br><span class="line">  <span class="string">'b'</span>: <span class="string">'b'</span></span><br><span class="line">  <span class="string">'c'</span>: &#123;</span><br><span class="line">    <span class="string">'d'</span>: <span class="string">'d'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="keyword">as</span> <span class="keyword">const</span>;</span><br><span class="line"><span class="keyword">let</span> b: keyof <span class="keyword">typeof</span> obj = <span class="string">'d'</span>;</span><br></pre></td></tr></table></figure>
 <h1 id="2022-08-23"><a href="#2022-08-23" class="headerlink" title="2022-08-23"></a>2022-08-23</h1><p>没什么用，但用起来很爽的快捷键，Vscode 清除没有用到的 import 语句：</p>
 <p>Mac:<br>option+shift+O</p>
 <p>windows:<br>Alt+shift+O</p>

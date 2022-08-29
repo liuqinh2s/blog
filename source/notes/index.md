@@ -30,6 +30,21 @@ let b: Item<typeof obj> = 'c';
 
 这样可以获取对象的 value，每多一层，就可以多加一个 Item。
 
+那怎么获取对象的 key 呢？代码如下：`keyof typeof`
+
+```javascript
+let obj = {
+  'a': 'a',
+  'b': 'b'
+  'c': {
+    'd': 'd'
+  }
+} as const;
+let b: keyof typeof obj = 'd';
+```
+
+而且这个是不用 as const 也可以的
+
 # 2022-08-23
 
 没什么用，但用起来很爽的快捷键，Vscode 清除没有用到的 import 语句：
