@@ -5,6 +5,45 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-09-01
+
+当cherry-pick产生冲突，怎么退出cherry-pick？
+
+答案是用：`git cherry-pick --abort`
+
+cherry-pick的参数挺多的，可以自己在命令行看一下：
+
+```
+$ git cherry-pick
+usage: git cherry-pick [<options>] <commit-ish>...
+   or: git cherry-pick <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add Signed-off-by:
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    -x                    append commit name
+    --ff                  allow fast-forward
+    --allow-empty         preserve initially empty commits
+    --allow-empty-message
+                          allow commits with empty messages
+    --keep-redundant-commits
+                          keep redundant, empty commits
+```
+
 # 2022-08-31
 
 git 合并的时候，如果本地代码过旧（比如本地代码是两个月前的），可能会发生一些意想不到的问题，合并的时候抛弃了线上分支的许多代码和文件，但 commit 记录里面却没有体现。这个时候想要 revert 发现报错了：
