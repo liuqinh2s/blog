@@ -5,6 +5,22 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-08-31
+
+git 合并的时候，如果本地代码过旧（比如本地代码是两个月前的），可能会发生一些意想不到的问题，合并的时候抛弃了线上分支的许多代码和文件，但 commit 记录里面却没有体现。这个时候想要 revert 发现报错了：
+
+`git revert is a merge but no -m`
+
+> 因为需要回滚的 commit 是一个 merge 动作，需要显示给出-m（mainline）选择告诉 git 回滚具体哪一个 mainline。
+
+解决办法有两种，一种是 git reset 到合并前，然后 force push（这种办法的好处是不会产生多于的 commit），但如果开了分支保护，无法强推，就只好换另一种办法，还是 git revert，但要多加一个-m 参数：https://blog.csdn.net/yanlaifan/article/details/115761272
+
+先看看用:`git show commitHash`查看 merge 了哪两个 mainline，然后指定回滚到哪个 mainline：
+
+`git revert commitHash -m 2`，回滚到第二个 mainline。
+
+这样的话就能成功 revert 了，虽然找回了之前 mainline2 的代码，但这种做法的缺点是 mainline1 和 mainline2 的所有不同的代码行的 commit 信息全部变成 revert 这个 commit 的信息了
+
 # 2022-08-25
 
 typescript 的一些常见用法：
