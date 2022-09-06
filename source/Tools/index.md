@@ -46,6 +46,7 @@ date: 2019-02-20 20:30:09
 - 图片编辑：[Edit • Photo - The Free Online Photo Editor In Your Browser](https://edit.photo/)
 - 擦除图片中不需要的部分：[Magic Eraser](https://www.magiceraser.io/)
 - 保持图片内容缩放图片：[JS IMAGE CARVER](https://trekhleb.dev/js-image-carver/)
+- 老照片恢复网站：[Baseten](https://app.baseten.co/apps/QPp4nPE/operator_views/RqgOnqV)
 
 ## 资源获取
 
