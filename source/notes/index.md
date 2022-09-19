@@ -5,25 +5,37 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-09-15
+
+最近感觉自己 git 方面的知识还是比较少，今天看到一个--no-track 参数，不懂什么意思。
+
+```
+1. 创建新分支 git checkout -b name/newbranch --no-track origin/pro-xxx/dev
+2. 在远端创建并跟踪分支 git push --set-upstream origin name/newbranch
+```
+
+一开始猜--no-track 是针对后面那个参数`origin/pro-xxx/dev`，但总感觉没要必要不跟踪这个分支呀，应该是要跟踪才对。后来才了解到，--no-track 是指不跟踪当前所在分支，而去跟踪`origin/pro-xxx/dev`
+
 # 2022-09-14
 
-关于git工作流，我们团队推了一个工作流方式，采用：
+关于 git 工作流，我们团队推了一个工作流方式，采用：
+
 1. 新建临时分支
 2. git rebase
 3. merge request
-的方式进行开发。
+   的方式进行开发。
 
-之前一直都没用过git rebase（不了解不敢用），今天抽空看了这篇文章：https://morningspace.github.io/tech/git-merge-stories-6/，对git rebase算是基本理解了。
+之前一直都没用过 git rebase（不了解不敢用），今天抽空看了这篇文章：https://morningspace.github.io/tech/git-merge-stories-6/，对git rebase 算是基本理解了。
 
 # 2022-09-06
 
 看零度解说的时候，他讲到一个语音转文字的网站，我突然想起来微信好像自带了一个这个功能，于是试了一下，真的很方便，在输入语音的时候说完话往右上滑动就能以文字的形式发送出去了。而且微信好像还有自带的翻译，可以翻译英文，韩文什么的。微信都这么方便了，那就没有必要用其他的网站工具了。
 
-## 关于git工作习惯
+## 关于 git 工作习惯
 
-最好的习惯是开自己的分支，合并用merge request。
+最好的习惯是开自己的分支，合并用 merge request。
 
-如果硬要在dev分支开发的话，一定要贯彻远端优先原则，每次准备提交自己的代码了都做如下操作：
+如果硬要在 dev 分支开发的话，一定要贯彻远端优先原则，每次准备提交自己的代码了都做如下操作：
 
 1. git stash
 2. git pull
@@ -32,9 +44,9 @@ date: 2018-11-03 14:59:45
 5. git commit
 6. git push
 
-顺便说一下git revert会产生一条新的提交记录，如果不想产生提交记录就用git reset。
+顺便说一下 git revert 会产生一条新的提交记录，如果不想产生提交记录就用 git reset。
 
-今天发生了一个合并事故，我先git commit，然后pull发现有冲突，但看起来很奇怪（多了100多个文件需要提交），我就想哪里出问题了，就git revert了一下，然后再git pull，git cherry-pick之前的commit，然后git push。最终导致的结果是另一位同事在merge时删除了某位同事的代码。总之这套做法很不好，以后还是用回上面提到的流程。
+今天发生了一个合并事故，我先 git commit，然后 pull 发现有冲突，但看起来很奇怪（多了 100 多个文件需要提交），我就想哪里出问题了，就 git revert 了一下，然后再 git pull，git cherry-pick 之前的 commit，然后 git push。最终导致的结果是另一位同事在 merge 时删除了某位同事的代码。总之这套做法很不好，以后还是用回上面提到的流程。
 
 # 2022-09-01
 
