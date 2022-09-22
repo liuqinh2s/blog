@@ -171,6 +171,20 @@ let b: keyof typeof obj = 'd';
 
 而且这个是不用 as const 也可以的
 
+## 限定一个对象的 key 与另一个对象的 key 完全匹配
+
+```javascript
+const enum DOCTYPE {
+  DEVICE: 1,
+  SYMBOL: 2
+}
+let a: Record<DOCTYPE, string> = {
+  [DOCTYPE.DEVICE]: 'aaaa'
+}
+```
+
+这样写会报错，应该少了一个 key。这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
+
 # 2022-08-23
 
 没什么用，但用起来很爽的快捷键，Vscode 清除没有用到的 import 语句：
