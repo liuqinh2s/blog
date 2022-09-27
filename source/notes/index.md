@@ -29,7 +29,13 @@ git branch -D pro-ui/dev
 2. 在远端创建并跟踪分支 git push --set-upstream origin name/newbranch
 ```
 
-一开始猜--no-track 是针对后面那个参数`origin/pro-xxx/dev`，但总感觉没要必要不跟踪这个分支呀，应该是要跟踪才对。后来才了解到，--no-track 是指不跟踪当前所在分支，而去跟踪`origin/pro-xxx/dev`
+一开始猜--no-track 是针对后面那个参数`origin/pro-xxx/dev`，但总感觉没要必要不跟踪这个分支呀，应该是要跟踪才对。后来才了解到，--no-track 是指不跟踪当前所在分支，而去跟踪`origin/pro-xxx/dev`，另外这个不是远端的分支，而是远端分支在本地对应的分支，因为经过试验，通过这个创建的分支并不是最新的代码，所以在创建新分支之前，最好先拉一下`pro-xxx/dev`的代码。
+
+在不切换分支的情况下，拉指定远端分支的代码到本地指定分支：
+
+```
+git pull origin pro-ui/dev:pro-ui/dev
+```
 
 # 2022-09-14
 
