@@ -358,7 +358,7 @@ ClashX Pro macOS 下载地址：https://install.appcenter.ms/users/clashx/apps/c
 
 ClashX Android 下载地址：https://github.com/Kr328/ClashForAndroid/releases/tag/v2.5.9
 
-云配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
+购买链接：https://portal.shadowsocks.nz/login
 
 Clash 文档：https://lancellc.gitbook.io/clash/
 
