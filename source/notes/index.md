@@ -5,6 +5,16 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-10-10
+
+昨天做了一道 leetcode，最后需要用 eval 来解析四则运算：[856. 括号的分数](https://leetcode.cn/problems/score-of-parentheses/)
+
+那么怎么手写一个四则运算解析器呢？答案是需要用到 AST，在网上看到一篇非常不错的文章：[四则运算表达式如何转换成 AST](https://juejin.cn/post/6844903977667002375)，看完之后感觉我也会了，虽然代码比较多，但非常简单易懂，值得学习其中的编程思维。
+
+解决了一道动态规划题：https://leetcode.cn/problems/minimum-swaps-to-make-sequences-increasing/
+
+了解了一下[window.parent](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/parent)
+
 # 2022-09-21
 
 拉远端分支 git 命令：
