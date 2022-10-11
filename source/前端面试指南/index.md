@@ -25,6 +25,8 @@ title: 前端面试指南
 
 ## 浏览器环境
 
+- [window.parent](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/parent)
+
 ## node 环境
 
 # CSS 基础
