@@ -5,6 +5,19 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-10-13
+
+js 中的字符都是两字节的，怎么查看一个字符的编码呢，用`str.charCodeAt(0)`，从编码变字符用：`String.fromCharCode(code)`
+
+```javascript
+const code = "中".charCodeAt(0);
+console.log(code, code.toString(16), escape("中"));
+const str = String.fromCharCode(code);
+console.log(str);
+```
+
+js 字符编码的故事：[Unicode 与 JavaScript 详解 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2014/12/unicode.html)
+
 # 2022-10-11
 
 正则表达式中，圆括号是捕获里面的匹配项的意思，那么怎么不捕获呢？这样写：
