@@ -5,6 +5,43 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-10-19
+
+AI 作画现在很火，我也小玩了一把：https://6pen.art/
+
+# 2022-10-17
+
+怎么验证，浏览器的 localStorage 是单个字段限制为 5M，还是整个 localStorage 限制为 5M。可以自己写代码验证：
+
+```javascript
+localStorage.setItem(
+  "a",
+  Array(5 * 1024 * 1024 - 1)
+    .fill("0")
+    .join("")
+); // 通过
+localStorage.setItem(
+  "a",
+  Array(5 * 1024 * 1024)
+    .fill("0")
+    .join("")
+); // 不通过
+localStorage.setItem(
+  "aa",
+  Array(5 * 1024 * 1024 - 1)
+    .fill("0")
+    .join("")
+); // 不通过
+```
+
+找到空的 tab 输入上面的代码，再找个有 localStorage 的网站输入上面的代码，得到的验证结果是：
+
+有 localStorage 的网站 tab 三个都通不过，空的 tab 能通过第一个。
+
+由此得到结论，5M 的限制是针对整个 localStorage 而言的（不是单个字段），且是 key+value，而非单纯的 value。
+
+另外我们还顺带验证了 js 的'0'是 1 字节大小。
+
 # 2022-10-13
 
 js 中的字符都是两字节的，怎么查看一个字符的编码呢，用`str.charCodeAt(0)`，从编码变字符用：`String.fromCharCode(code)`
