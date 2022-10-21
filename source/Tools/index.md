@@ -57,6 +57,8 @@ date: 2019-02-20 20:30:09
   - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
   - 卡通图：[project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
   - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
+  - AI 作画：
+    - [AI 作画网站收集](https://github.com/hua1995116/awesome-ai-painting)
 - 图片搜索：
   - [TinEye Reverse Image Search](https://tineye.com/)
   - [Anime Scene Search Engine - trace.moe](https://trace.moe/)

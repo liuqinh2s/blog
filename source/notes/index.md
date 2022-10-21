@@ -9,6 +9,8 @@ date: 2018-11-03 14:59:45
 
 AI 作画现在很火，我也小玩了一把：https://6pen.art/
 
+AI 作画网站收集：https://github.com/hua1995116/awesome-ai-painting
+
 # 2022-10-17
 
 怎么验证，浏览器的 localStorage 是单个字段限制为 5M，还是整个 localStorage 限制为 5M。可以自己写代码验证：
