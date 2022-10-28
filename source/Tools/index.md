@@ -40,6 +40,7 @@ date: 2019-02-20 20:30:09
 - https://github.com/mqyqingfeng/Blog
 - https://tech.meituan.com/
 - https://zhaomenghuan.js.org/
+- https://wangchujiang.com/reference/
 
 # 我的工具
 
@@ -49,6 +50,7 @@ date: 2019-02-20 20:30:09
 - 擦除图片中不需要的部分：[Magic Eraser](https://www.magiceraser.io/)
 - 保持图片内容缩放图片：[JS IMAGE CARVER](https://trekhleb.dev/js-image-carver/)
 - 老照片恢复网站：[Baseten](https://app.baseten.co/apps/QPp4nPE/operator_views/RqgOnqV)
+- [AI 根据照片生成头像](https://www.strmr.com/)
 
 ## 资源获取
 
@@ -73,6 +75,7 @@ date: 2019-02-20 20:30:09
 - [十万个为什么 - 在线青少年百科全书](https://10why.net/)
 - [首页 - 合同示范文本库 - 国家市场监督管理总局](https://cont.12315.cn/)
 - 在线听歌：[MyFreeMP3](http://tools.liumingye.cn/music/?page=searchPage)
+- [折纸网站](https://origami.kosmulski.org/blog/2022-10-23-fujimoto-books-public-domain)
 
 ## 编辑 - 输出
 
@@ -152,7 +155,8 @@ date: 2019-02-20 20:30:09
   - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
   - [Tiny_Python_Projects](http://tinypythonprojects.com/Tiny_Python_Projects.pdf)
   - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
-  - [](https://python-patterns.guide/)
+  - [python 设计模式](https://python-patterns.guide/)
+  - [game math](https://gamemath.com/book/intro.html)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
@@ -264,6 +268,10 @@ date: 2019-02-20 20:30:09
 - [GitHub 开源项目维护协作指南](https://github.com/eryajf/HowToStartOpenSource)
 - [介绍了一种压缩算法：H.264 is Magic](https://sidbala.com/h-264-is-magic/)
 - [I Spent 2 years Launching Tiny Projects | Tiny Projects](https://tinyprojects.dev/posts/i_spent_two_years_launching_tiny_projects)
+- [Building an aircraft radar system in JavaScript](https://charliegerard.dev/blog/aircraft-radar-system-rtl-sdr-web-usb/)
+- [The Illustrated TLS 1.3 Connection](https://tls13.xargs.org/)
+- [Quick Reference](https://wangchujiang.com/reference/)
+- [Three Pillars of Observability | Datadog](https://www.datadoghq.com/three-pillars-of-observability/)
 
 ## UI 设计
 
