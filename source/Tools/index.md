@@ -66,6 +66,7 @@ date: 2019-02-20 20:30:09
   - [Anime Scene Search Engine - trace.moe](https://trace.moe/)
 - 影视网站：[努努影视](https://www.nunuyy1.org/)
 - 图书网站：[ZLibary](https://zh.b-ok.cc/)
+- [首页 | itbox | 专注IT类图书分享](https://itbox.cc/)
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
 - [2020 年全球森林资源评估](https://www.fao.org/forest-resources-assessment/2020/zh)
@@ -87,6 +88,7 @@ date: 2019-02-20 20:30:09
 ## 编程
 
 - Typescript 编译网站：[TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/index.html)
+- [Vue SFC Playground](https://sfc.vuejs.org/)
 - 正则测试网站：[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
 - json 校验：[在线 JSON 校验格式化工具（Be JSON）](https://www.bejson.com/)
 - 弹幕视屏播放器：[Powerful danmaku video player | NPlayer](https://nplayer.js.org/)
