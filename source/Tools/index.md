@@ -61,6 +61,7 @@ date: 2019-02-20 20:30:09
   - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
   - AI 作画：
     - [AI 作画网站收集](https://github.com/hua1995116/awesome-ai-painting)
+    - [Nolibox Creator](https://creator.nolibox.com/guest)
 - 图片搜索：
   - [TinEye Reverse Image Search](https://tineye.com/)
   - [Anime Scene Search Engine - trace.moe](https://trace.moe/)
@@ -160,6 +161,7 @@ date: 2019-02-20 20:30:09
   - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
   - [python 设计模式](https://python-patterns.guide/)
   - [game math](https://gamemath.com/book/intro.html)
+  - [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
