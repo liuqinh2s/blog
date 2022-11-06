@@ -81,20 +81,17 @@
 
 
 
-<meta name="description" content="通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你">
+<meta name="description" content="什么是副作用函数？如果一个函数只是接收输入，然后输出，没有修改外部的变量，那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。 Proxy我们都知道 vue.js 这类框架是声明式的，当数据发生变化，它可以监听到并重新渲染，那么这种响应系统是如何实现的呢？首先一个问题就是怎么监听到数据的变化。答案是 Proxy，vue2 用了Object.def">
 <meta property="og:type" content="article">
-<meta property="og:title" content="熟练使用JetBrains家的IDE">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/2018/11/04/熟练使用JetBrains家的IDE/index.html">
+<meta property="og:title" content="vue.js响应系统的实现">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2022/11/06/vue.js响应系统的实现/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你">
+<meta property="og:description" content="什么是副作用函数？如果一个函数只是接收输入，然后输出，没有修改外部的变量，那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。 Proxy我们都知道 vue.js 这类框架是声明式的，当数据发生变化，它可以监听到并重新渲染，那么这种响应系统是如何实现的呢？首先一个问题就是怎么监听到数据的变化。答案是 Proxy，vue2 用了Object.def">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/idea图解.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/idea-ctrl+alt+t.png">
-<meta property="og:updated_time" content="2022-11-05T15:17:09.676Z">
+<meta property="og:updated_time" content="2022-11-06T14:28:11.951Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="熟练使用JetBrains家的IDE">
-<meta name="twitter:description" content="通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你">
-<meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2018/idea图解.png">
+<meta name="twitter:title" content="vue.js响应系统的实现">
+<meta name="twitter:description" content="什么是副作用函数？如果一个函数只是接收输入，然后输出，没有修改外部的变量，那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。 Proxy我们都知道 vue.js 这类框架是声明式的，当数据发生变化，它可以监听到并重新渲染，那么这种响应系统是如何实现的呢？首先一个问题就是怎么监听到数据的变化。答案是 Proxy，vue2 用了Object.def">
 
 
 
@@ -124,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2018/11/04/熟练使用JetBrains家的IDE/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2022/11/06/vue.js响应系统的实现/">
 
 
 
 
 
-  <title>熟练使用JetBrains家的IDE | liuqinh2s' blog</title>
+  <title>vue.js响应系统的实现 | liuqinh2s' blog</title>
   
 
 
@@ -359,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2018/11/04/熟练使用JetBrains家的IDE/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/11/06/vue.js响应系统的实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -376,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">熟练使用JetBrains家的IDE</h1>
+          <h1 class="post-title" itemprop="name headline">vue.js响应系统的实现</h1>
         
 
         <div class="post-meta">
@@ -388,8 +385,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-04T00:00:00+08:00">
-                2018-11-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-11-06T00:00:00+08:00">
+                2022-11-06
               </time>
             
 
@@ -411,8 +408,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/blog/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -447,7 +444,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  229
+                  180
                 </span>
               
 
@@ -472,33 +469,8 @@
       
 
       
-        <h2 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h2><ol>
-<li>格式化代码（reformat code）:<br>win: ctrl+alt+L<br>mac: command+option+L</li>
-<li>在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。</li>
-<li>善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。</li>
-<li>上下移动代码，ctrl+shift+上下键</li>
-<li>Android Studio 生成函数注释：你在方法前输入/**然后一回车，自动帮你生成方法和参数的注释。</li>
-</ol>
-<a id="more"></a>
-<h2 id="Intellj-Idea"><a href="#Intellj-Idea" class="headerlink" title="Intellj Idea"></a>Intellj Idea</h2><p>快速打出常用语句：</p>
-<ol>
-<li><strong>sout</strong>：<code>System.out.println();</code></li>
-<li><strong>psvm</strong>：</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li><p>使用 IDE 的右键中的生成 Getter Setter 选项自动生成 Getter Setter，使用 toString 自动生成 toString。</p>
-</li>
-<li><p>跳转到接口：<code>ctrl+b</code>； 跳转到实现类：<code>ctrl + alt +B</code></p>
-</li>
-<li><p><img src="../../../../images/2018/idea图解.png" alt></p>
-</li>
-</ol>
-<p>上面这个按钮可以快速的在目录树中定位到当前类所在的路径</p>
-<ol start="6">
-<li>ctrl+alt+t</li>
-</ol>
-<p><img src="../../../../images/2018/idea-ctrl+alt+t.png" alt="idea-ctrl+alt+t.png"></p>
+        <h2 id="什么是副作用函数？"><a href="#什么是副作用函数？" class="headerlink" title="什么是副作用函数？"></a>什么是副作用函数？</h2><p>如果一个函数只是接收输入，然后输出，没有修改外部的变量，那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。</p>
+<h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>我们都知道 vue.js 这类框架是声明式的，当数据发生变化，它可以监听到并重新渲染，那么这种响应系统是如何实现的呢？首先一个问题就是怎么监听到数据的变化。答案是 Proxy，vue2 用了<code>Object.defineProperty()</code>函数，这是 es2015 之前的做法，vue3 则是用了 es2015 带来的新特性：<code>Proxy</code>。</p>
 
       
     </div>
@@ -523,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/11/04/精通一款编辑器之sublime text 3/" rel="next" title="精通一款编辑器之sublime text 3">
-                <i class="fa fa-chevron-left"></i> 精通一款编辑器之sublime text 3
+              <a href="/blog/2022/07/14/JavaScript执行上下文之作用域链/" rel="next" title="JavaScript执行上下文之作用域链">
+                <i class="fa fa-chevron-left"></i> JavaScript执行上下文之作用域链
               </a>
             
           </div>
@@ -532,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2019/01/07/第一个极限的证明/" rel="prev" title="$\lim\limits_{x\rightarrow 0} \frac{\sin x}{x} = 1$的证明">
-                $\lim\limits_{x\rightarrow 0} \frac{\sin x}{x} = 1$的证明 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -723,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用快捷键"><span class="nav-number">1.</span> <span class="nav-text">通用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Intellj-Idea"><span class="nav-number">2.</span> <span class="nav-text">Intellj Idea</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是副作用函数？"><span class="nav-number">1.</span> <span class="nav-text">什么是副作用函数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy"><span class="nav-number">2.</span> <span class="nav-text">Proxy</span></a></li></ol></div>
             
 
           </div>
