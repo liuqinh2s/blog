@@ -5,6 +5,33 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-11-07
+
+github 突然抽风，push 的时候报错：
+
+```bash
+➜  blog git:(master) git push
+kex_exchange_identification: read: Connection reset by peer
+fatal: 无法读取远程仓库。
+
+请确认您有正确的访问权限并且仓库存在。
+```
+
+之前也遇到过一次，主要参考这两篇文章：
+
+- https://getiot.tech/github/github-errata-port-443-connection-refused.html
+- https://www.jianshu.com/p/61b12cc1f818
+
+上次是新建了一个本地配置文件：`~/.ssh/config`：
+
+```
+Host github.com
+Hostname ssh.github.com
+Port 443
+```
+
+当然这次是它自己又好了
+
 # 2022-11-05
 
 [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)，[WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)是什么？
