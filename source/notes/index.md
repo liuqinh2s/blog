@@ -7,6 +7,76 @@ date: 2018-11-03 14:59:45
 
 # 2022-11-07
 
+## clientHeight
+
+最近 eda 项目在进行两个重构，重构完就是 2.0 版了，一个是原理图的数据驱动重构，一个是 UI 的 react 重构，我打算做个 List 组件，需要上虚拟滚动。
+
+先来了解一下：[clientHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight)
+
+clientHeight = CSS height + CSS padding - 水平滚动条高度（如果存在）
+
+## 连续点击鼠标次数
+
+在写 onClick 事件的时候，学到一个东西：`event.detail`，这个是个 number 类型，代表连续点击鼠标的次数，学习资料如下：
+
+- https://bobbyhadz.com/blog/react-double-click-event
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+
+```javascript
+const handleClick = (event) => {
+  console.log(event.detail);
+  switch (event.detail) {
+    case 1: {
+      console.log("single click");
+      break;
+    }
+    case 2: {
+      console.log("double click");
+      break;
+    }
+    case 3: {
+      console.log("triple click");
+      break;
+    }
+    default: {
+      break;
+    }
+  }
+};
+```
+
+## useState 的坑
+
+```javascript
+import React, { useState, useEffect } from "https://esm.sh/react@18";
+import ReactDOM from "https://esm.sh/react-dom@18";
+const obj = { text: "2" };
+const Hello = ({ props }) => {
+  const [bb, setBB] = useState(props);
+  useEffect(() => {
+    // let one = JSON.parse(JSON.stringify(obj))
+    // one.text='3'
+    // setBB(one);
+    setBB((obj) => {
+      if (bb === obj) {
+        console.log(true);
+      }
+      obj.text = "3";
+      return obj;
+    });
+  }, []);
+  return <div>{bb.text}</div>;
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Hello props={obj}></Hello>);
+```
+
+运行地址：https://codepen.io/liuqinh2s/pen/eYKdqeo?editors=0010
+
+如果 useState 传入的对象的引用没有发生变化，它就不会更新。所以修改对象就只能深拷贝了。
+
+# 2022-11-06
+
 github 突然抽风，push 的时候报错：
 
 ```bash
