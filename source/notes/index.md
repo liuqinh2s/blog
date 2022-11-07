@@ -40,6 +40,49 @@ Port 443
 2. 键如果没有被引用的话，会被回收（容器本身的引用不算），防止内存泄露
 3. 键都不可遍历（因为随时会被回收）
 
+# 2022-11-02
+
+同事分享了一个案例，返回的是值类型，但依旧可以修改属性：
+
+```javascript
+const lib = (() => {
+  const profile = {
+    version: "1.0.1",
+    name: "clouser",
+  };
+  return {
+    get(key) {
+      return profile[key];
+    },
+  };
+})();
+```
+
+上例中，如果不动已有的代码，要修改 profile 的 name，怎么修改？
+
+增量代码如下：
+
+```javascript
+const a = Symbol(1);
+Object.defineProperty(Object.prototype, a, {
+  get() {
+    return this;
+  },
+});
+const profile = lib.get(a);
+profile.name = "changed name";
+```
+
+通过在 profile 的原型链上定义一个属性，然后属性的 get 方法中返回 profile 对象本身。
+
+修复这个漏洞，可以这样：
+
+```javascript
+const profile = Object.create(null);
+```
+
+这样就让 profile 的原型是 null 了，要让 profile 的原型是 Object.prototype 则这样写：`const profile = Object.create(Object.prototype);`
+
 # 2022-10-27
 
 遇到一个比较难的题目，看了答案才解出来。先是看了讨论里面的提示说用前缀和+单调队列，但其实跟单调队列没啥关系，毕竟队列本身存的是下标 `i`，却要转换成 `preSum[i]` 再去讨论单调性。而且这题一定要经过精妙的分析才能维护好这个查询队列（用于替代暴力解法中的第二层 for 循环，减少查找范围），最后才勉强发现这个查询队列类似单调队列，如果先直接写好单调队列的数据结构再去解题，怕是根本就想不清题目了。
