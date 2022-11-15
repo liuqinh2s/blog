@@ -5,6 +5,46 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-11-15
+
+try catch 能捕获异步的错误吗，答案是不能。但如果用 await 就可以。
+
+参考资料：https://juejin.cn/post/6850418110907088910
+
+以下代码能捕获到：
+
+```javascript
+async function f() {
+  // 异步，微任务
+  try {
+    await new Promise(() => {
+      throw new Error("gadsgsdg");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+f();
+```
+
+以下代码不能捕获到：
+
+```javascript
+async function f() {
+  // 异步，微任务
+  try {
+    new Promise(() => {
+      throw new Error("gadsgsdg");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+f();
+```
+
 # 2022-11-14
 
 一直以来都只会 import 和 export 的语法，但是不会 require 的。今天学习了一下：
@@ -27,7 +67,7 @@ module.exports = {
 var obj = require("./module.js");
 obj.a(); // exports from module
 let { test } = require("./module.js");
-test ('this is a test');
+test("this is a test");
 ```
 
 # 2022-11-07
@@ -452,6 +492,17 @@ let a: Record<DOCTYPE, string> = {
 ```
 
 这样写会报错，应该少了一个 key。这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
+
+## 怎么获取 enum 的 key 和 value 类型
+
+```typescript
+export const enum Direction {
+  a = "vertical",
+  b = "horizontal",
+}
+type k = keyof typeof Direction;
+type v = `${Direction}`;
+```
 
 # 2022-08-23
 
