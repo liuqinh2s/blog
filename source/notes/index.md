@@ -5,6 +5,31 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-11-14
+
+一直以来都只会 import 和 export 的语法，但是不会 require 的。今天学习了一下：
+
+```javascript
+function test(str) {
+  console.log(str);
+}
+// module.js
+module.exports = {
+  a: function () {
+    console.log("exports from module");
+  },
+  test,
+};
+```
+
+```javascript
+// sample.js
+var obj = require("./module.js");
+obj.a(); // exports from module
+let { test } = require("./module.js");
+test ('this is a test');
+```
+
 # 2022-11-07
 
 ## clientHeight
