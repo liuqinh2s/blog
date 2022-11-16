@@ -343,6 +343,10 @@ date: 2019-02-20 20:30:09
   - [CryptoZombies - 编游戏的同时学习以太坊的智能协议. Loom Network 产品。](https://cryptozombies.io/zh/)
   - [remix](https://remix.ethereum.org/)
 
+## 人物传记
+
+- [37 岁白手起家，干成世界第一，资产 5000 亿，邓小平接见他 9 次！](https://mp.weixin.qq.com/s/wD1TeoqeDB9KLNHnTRWrnQ)
+
 ## 其他
 
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
