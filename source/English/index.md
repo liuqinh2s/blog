@@ -22,6 +22,40 @@ date: 2019-03-03 16:01:26
 
 其实很多年前我也尝试看，但是最后还是没看下去，现在重新拿起，发现生词还是挺多的，这么多年英文真是一点进步都没有。但这个方向还是对的，必须把英文用起来。看这类书应该还是蛮有意思的，不会枯燥，但最好不要在手机或者电脑上看，很容易被打断，用 kindle 或者实体书都可以。但如果因为生词太多很多地方看不懂，还是得拿中文对照一下（查单词效率太低了，而且有些时候每个单词都好像认识，但句子不知道啥意思）。
 
+# 2022-11-20
+
+哈利波特第一本：哈利波特与魔法石（Harry Potter and the Philosopher's Stone）
+
+第二章，消失的玻璃（the vanishing glass）
+
+lit up，点亮，lit 是 light 的过去式和过去分词，也可以用 lighted
+
+light - lit/lighted - lit/lighted 点亮
+creep - crept - crept 爬行
+leap - leapt - leapt 跳跃
+mantelpiece 壁炉架，壁炉台
+bobble 小绒球
+blond 金发
+on a roundabout at the fair 在博览会上乘坐旋转木马
+woke with a start 惊醒
+rapped on 拍打
+screeched 尖叫
+cooker 炉子
+rolled on 翻身
+demanded 追问
+groaned 叹息
+snapped 快速地说，厉声
+hall 走廊
+it had something to do with 和...有关
+knobbly knees 突出的膝盖（形容瘦）
+Sellotape 透明胶带
+a bolt of lightning 一道闪电
+wig 假发
+tantrum 发脾气（名词）
+popkin 宝贝
+sweetums 心肝宝贝
+parcel 礼包
+
 # 2022-07-19
 
 ## 单词
