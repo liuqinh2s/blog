@@ -5,6 +5,40 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-11-17
+
+js 中??是什么表达式
+
+```javascript
+alert(username ?? "Guest");
+```
+
+这里的双引号称为**空值合并运算符**，它是 ES2020 的一个新特性，它的作用是当一个表达式是 null 或者 undefined 时为变量设置一个默认值。
+
+比||更精确一点。像`''`，`0`，`false`这些都是实际值。有的时候是希望使用这些值的。这个语法糖的作用更自己定义的 isUndef 差不多：
+
+```javascript
+alert(isUndef(username) ? "Guest" : username);
+```
+
+终于可以不用自己实现一个函数来做这件事了。
+
+# 2022-11-16
+
+## trigger 和 Event
+
+jquery 写法：
+
+```javascript
+$("xxx").trigger("blur");
+```
+
+原生 js 写法：
+
+```javascript
+dom.dispatchEvent(new Event("blur"));
+```
+
 # 2022-11-15
 
 try catch 能捕获异步的错误吗，答案是不能。但如果用 await 就可以。

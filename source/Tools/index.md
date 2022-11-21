@@ -79,6 +79,12 @@ date: 2019-02-20 20:30:09
 - [首页 - 合同示范文本库 - 国家市场监督管理总局](https://cont.12315.cn/)
 - 在线听歌：[MyFreeMP3](http://tools.liumingye.cn/music/?page=searchPage)
 - [折纸网站](https://origami.kosmulski.org/blog/2022-10-23-fujimoto-books-public-domain)
+- [100 Bytes of CSS to look great everywhere](https://www.swyx.io/css-100-bytes)
+- [VOCALOID - the modern singing synthesizer -](https://www.vocaloid.com/en/)
+- [Aerial - A free and open-source Mac Screen Saver](https://aerialscreensaver.github.io/)
+- [AutoCut: 通过字幕来剪切视频](https://github.com/mli/autocut)
+- [Metaphor](https://metaphor.systems/)
+- [90's Cursor Effects](https://tholman.com/cursor-effects/)
 
 ## 编辑 - 输出
 
@@ -162,6 +168,7 @@ date: 2019-02-20 20:30:09
   - [python 设计模式](https://python-patterns.guide/)
   - [game math](https://gamemath.com/book/intro.html)
   - [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+  - [Effective Shell](https://effective-shell.com/)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
@@ -277,6 +284,7 @@ date: 2019-02-20 20:30:09
 - [The Illustrated TLS 1.3 Connection](https://tls13.xargs.org/)
 - [Quick Reference](https://wangchujiang.com/reference/)
 - [Three Pillars of Observability | Datadog](https://www.datadoghq.com/three-pillars-of-observability/)
+- [What is WebAuthn and why should you care? - FusionAuth](https://fusionauth.io/blog/2022/09/13/what-is-webauthn-why-do-you-care)
 
 ## UI 设计
 
