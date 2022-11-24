@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>liuqinh2s&#39; blog</title>
+  
+  
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="https://liuqinh2s.github.io/blog/"/>
+  <updated>2022-11-14T01:48:16.296Z</updated>
+  <id>https://liuqinh2s.github.io/blog/</id>
+  
+  <author>
+    <name>liuqinh2s</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue.js响应系统的实现 第一篇</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/11/06/vue.js%E5%93%8D%E5%BA%94%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0%20%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/11/06/vue.js响应系统的实现 第一篇/</id>
+    <published>2022-11-05T16:00:00.000Z</published>
+    <updated>2022-11-14T01:48:16.296Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是副作用函数？&quot;&gt;&lt;a href=&quot;#什么是副作用函数？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript执行上下文之作用域链</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript执行上下文之作用域链/</id>
+    <published>2022-07-13T16:00:00.000Z</published>
+    <updated>2022-07-14T03:12:52.111Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。&lt;/p&gt;
+&lt;p&gt;函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性&lt;code&gt;[[scope]]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;函数的生命周期分为：&lt;strong&gt;函数创建&lt;/strong&gt; 和 &lt;strong&gt;函数调用&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性&lt;code&gt;[[scope]]&lt;/code&gt;（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的&lt;code&gt;AO&lt;/code&gt;和&lt;code&gt;[[scope]]&lt;/code&gt;合并成新的作用域链：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设要实现动态作用域的话，&lt;code&gt;[[scope]]&lt;/code&gt;就得在调用时去执行上下文栈的上一帧去取。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Scope = [AO].concat([[scope]]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 闭包</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E9%97%AD%E5%8C%85/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript闭包/</id>
+    <published>2022-07-13T16:00:00.000Z</published>
+    <updated>2022-07-14T03:39:20.881Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;闭包是干什么用的&quot;&gt;&lt;a href=&quot;#闭包是干什么用的&quot; class=&quot;headerlink&quot; title=&quot;闭包是干什么用的&quot;&gt;&lt;/a&gt;闭包是干什么用的&lt;/h1&gt;&lt;p&gt;本质上闭包就是为了拓展查找自由变量的范围&lt;/p&gt;
+&lt;p&gt;MDN 对闭包的定义为：&lt;/p&gt;
+&lt;p&gt;A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)&lt;/p&gt;
+&lt;p&gt;一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; name = &lt;span class=&quot;string&quot;&gt;&#39;Mozilla&#39;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// name is a local variable created by init&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;displayName&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// displayName() is the inner function, a closure&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(name); &lt;span class=&quot;comment&quot;&gt;// use variable declared in the parent function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  displayName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;init();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。&lt;/p&gt;
+&lt;p&gt;上面这个例子有点平平无奇了，让我们看一个神奇一点的例子：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript执行上下文之变量对象</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/13/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/13/JavaScript执行上下文之变量对象/</id>
+    <published>2022-07-12T16:00:00.000Z</published>
+    <updated>2022-07-14T03:12:20.833Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;执行上下文中包含哪些东西&quot;&gt;&lt;a href=&quot;#执行上下文中包含哪些东西&quot; class=&quot;headerlink&quot; title=&quot;执行上下文中包含哪些东西&quot;&gt;&lt;/a&gt;执行上下文中包含哪些东西&lt;/h1&gt;&lt;p&gt;对于每个执行上下文，都有三个重要属性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量对象(Variable object，VO)&lt;/li&gt;
+&lt;li&gt;作用域链(Scope chain)&lt;/li&gt;
+&lt;li&gt;this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本篇就来讲讲第一个变量对象&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript执行上下文栈</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/12/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/12/JavaScript执行上下文栈/</id>
+    <published>2022-07-11T16:00:00.000Z</published>
+    <updated>2022-07-14T02:49:35.238Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;顺序执行？&quot;&gt;&lt;a href=&quot;#顺序执行？&quot; class=&quot;headerlink&quot; title=&quot;顺序执行？&quot;&gt;&lt;/a&gt;顺序执行？&lt;/h1&gt;&lt;p&gt;代码示例 1：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo1&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo();  &lt;span class=&quot;comment&quot;&gt;// foo1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo2&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo(); &lt;span class=&quot;comment&quot;&gt;// foo2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;代码示例 2：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo1&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo();  &lt;span class=&quot;comment&quot;&gt;// foo2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;foo2&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo(); &lt;span class=&quot;comment&quot;&gt;// foo2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;第一个例子中用到了变量提升，第二个例子中用到了函数提升。JavaScript 引擎并非一行一行地分析和执行程序，而是一段一段地分析执行。当执行一段代码的时候，会进行一个“准备工作”。到底 JavaScript 引擎遇到一段怎样的代码时才会做“准备工作”呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript词法作用域</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/11/JavaScript%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/11/JavaScript词法作用域/</id>
+    <published>2022-07-10T16:00:00.000Z</published>
+    <updated>2022-10-09T02:07:21.213Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有两种作用域：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;动态作用域&lt;/li&gt;
+&lt;li&gt;静态作用域（也叫：词法作用域，lexical scoping）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;JavaScript 采用的是词法作用域&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript原型和原型链</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/10/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/10/JavaScript原型和原型链/</id>
+    <published>2022-07-09T16:00:00.000Z</published>
+    <updated>2022-07-14T03:24:02.115Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;原型链是干什么用的&quot;&gt;&lt;a href=&quot;#原型链是干什么用的&quot; class=&quot;headerlink&quot; title=&quot;原型链是干什么用的&quot;&gt;&lt;/a&gt;原型链是干什么用的&lt;/h1&gt;&lt;p&gt;JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。&lt;/p&gt;
+&lt;p&gt;当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Foo&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Foo();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Foo.prototype.a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(foo.a);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;原型和原型链主要由三个指针实现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;prototype&lt;/code&gt;: 构造函数的&lt;code&gt;prototype&lt;/code&gt;属性指向原型对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;__proto__&lt;/code&gt;: 实例对象的&lt;code&gt;__proto__&lt;/code&gt;属性指向原型对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;constructor&lt;/code&gt;: 原型对象的&lt;code&gt;constructor&lt;/code&gt;属性指向构造函数&lt;/li&gt;
+&lt;li&gt;所有对象都基于&lt;code&gt;Object&lt;/code&gt;，是因为所有原型对象的&lt;code&gt;__proto__&lt;/code&gt;最终都指向&lt;code&gt;Object.prototype&lt;/code&gt;，而&lt;code&gt;Object.prototype&lt;/code&gt;的&lt;code&gt;__proto__&lt;/code&gt;为 null&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TCP和UDP的区别</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/20/TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/20/TCP和UDP的区别/</id>
+    <published>2022-06-19T16:00:00.000Z</published>
+    <updated>2022-06-20T01:34:42.740Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。&lt;/p&gt;
+&lt;p&gt;先说几个几点结论，然后再说说细节：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TCP 是有链接的，UDP 是无连接的&lt;/li&gt;
+&lt;li&gt;TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠&lt;/li&gt;
+&lt;li&gt;TCP 面向字节流，UDP 面向报文&lt;/li&gt;
+&lt;li&gt;TCP 是一对一全双工，UDP 是 n 对 n&lt;/li&gt;
+&lt;li&gt;TCP 的首部较大为 20 字节，UDP 首部只有 8 字节&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="https://liuqinh2s.github.io/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>服务器重装系统</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/11/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/11/服务器重装系统/</id>
+    <published>2022-06-10T16:00:00.000Z</published>
+    <updated>2022-06-13T01:15:42.545Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://liuqinh2s.github.io/blog/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器上的几种xy坐标</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/09/浏览器上的几种xy坐标/</id>
+    <published>2022-06-08T16:00:00.000Z</published>
+    <updated>2022-06-09T06:37:23.843Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有如下几种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/screenX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;screenX&lt;/a&gt;, screenY&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/clientX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;clientX&lt;/a&gt;, clientY&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/pageX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pageX&lt;/a&gt;, pageY&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;offsetX&lt;/a&gt;, offsetY&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>生成固定长度的字符串</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/09/生成固定长度的字符串/</id>
+    <published>2022-06-08T16:00:00.000Z</published>
+    <updated>2022-06-09T01:55:13.781Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>二分查找</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/08/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/08/二分查找/</id>
+    <published>2022-06-07T16:00:00.000Z</published>
+    <updated>2022-06-08T01:09:07.575Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。&lt;/p&gt;
+&lt;p&gt;二分查找的前提：&lt;strong&gt;数据有序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;二分查找结束的条件：查找区间为空，或者找到元素&lt;/p&gt;
+&lt;p&gt;二分查找的条件分支：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;nums[mid]==target&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nums[mid]&amp;lt;target&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nums[mid]&amp;gt;target&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;二分查找的搜索区间表示形式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;左闭右开（区间为空的条件是 left==right）&lt;/li&gt;
+&lt;li&gt;左闭右闭（区间为空的条件是 left&amp;gt;right）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;二分查找有的时候我会写出死循环来，仔细思考了一下：&lt;strong&gt;必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器 storage 事件</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/08/%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/</id>
+    <published>2022-06-07T16:00:00.000Z</published>
+    <updated>2022-06-08T03:38:23.317Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;官方文档：&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效&lt;/li&gt;
+&lt;li&gt;必须写入与旧值不同的值，才能监听到&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何学习</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/08/22/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/08/22/如何学习/</id>
+    <published>2021-08-21T16:00:00.000Z</published>
+    <updated>2022-06-07T01:35:49.705Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇文章的思想来自于这位博主：&lt;a href=&quot;https://space.bilibili.com/344849038/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bilibili-YJango&lt;/a&gt;，我觉得很受启发就将其简略写了下来。&lt;/p&gt;
+&lt;h3 id=&quot;什么是学习？&quot;&gt;&lt;a href=&quot;#什么是学习？&quot; class=&quot;headerlink&quot; title=&quot;什么是学习？&quot;&gt;&lt;/a&gt;什么是学习？&lt;/h3&gt;&lt;p&gt;学习 vs 记忆&lt;/p&gt;
+&lt;p&gt;记忆：容量有限、难以集齐&lt;/p&gt;
+&lt;p&gt;学习：从有限的例子中找出问题和答案的规律：知识&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;费曼说：如果你没有办法用简单的语言描述所学的知识，你就没有真正学会它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因为学习是用知识来压缩原本无限的信息&lt;/p&gt;
+&lt;p&gt;学习：找出知识、压缩信息&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="方法论" scheme="https://liuqinh2s.github.io/blog/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>快速排序最坏的情况啥时候出现</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
+    <published>2021-06-27T16:00:00.000Z</published>
+    <updated>2022-06-08T01:09:07.570Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>智能合约入门</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/</id>
+    <published>2021-06-27T16:00:00.000Z</published>
+    <updated>2022-06-08T01:09:07.572Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;前言&lt;br&gt;从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="币圈" scheme="https://liuqinh2s.github.io/blog/categories/%E5%B8%81%E5%9C%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode每日一题：474. 一和零</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-%E4%B8%80%E5%92%8C%E9%9B%B6/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-一和零/</id>
+    <published>2021-06-05T16:00:00.000Z</published>
+    <updated>2022-06-07T01:21:09.972Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;474-一和零&quot;&gt;&lt;a href=&quot;#474-一和零&quot; class=&quot;headerlink&quot; title=&quot;474. 一和零&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/ones-and-zeroes/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;474. 一和零&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;一道动态规划题目。&lt;/p&gt;
+&lt;p&gt;首先要明白这是一道背包问题，而且是双维度的，可以装0和1。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode每日一题：203. 移除链表元素</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/05/leetcode-230-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/05/leetcode-230-移除链表元素/</id>
+    <published>2021-06-04T16:00:00.000Z</published>
+    <updated>2022-06-07T01:21:09.972Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;203-移除链表元素&quot;&gt;&lt;a href=&quot;#203-移除链表元素&quot; class=&quot;headerlink&quot; title=&quot;203. 移除链表元素&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-linked-list-elements/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;203. 移除链表元素&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;很简单的一道删除单链表节点题&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode每日一题：160. 相交链表</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/04/leetcode-160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/04/leetcode-160-相交链表/</id>
+    <published>2021-06-03T16:00:00.000Z</published>
+    <updated>2022-06-07T01:21:09.971Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;160-相交链表&quot;&gt;&lt;a href=&quot;#160-相交链表&quot; class=&quot;headerlink&quot; title=&quot;160. 相交链表&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/intersection-of-two-linked-lists/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;160. 相交链表&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这题有两种解法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;哈希表记录指针&lt;/li&gt;
+&lt;li&gt;双指针&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode每日一题：525. 连续数组</title>
+    <link href="https://liuqinh2s.github.io/blog/2021/06/03/leetcode-525-%E8%BF%9E%E7%BB%AD%E6%95%B0%E7%BB%84/"/>
+    <id>https://liuqinh2s.github.io/blog/2021/06/03/leetcode-525-连续数组/</id>
+    <published>2021-06-02T16:00:00.000Z</published>
+    <updated>2022-06-07T01:21:09.971Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;凡是涉及到连续子数组的，都可以用前缀和+哈希表来解&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;525-连续数组&quot;&gt;&lt;a href=&quot;#525-连续数组&quot; class=&quot;headerlink&quot; title=&quot;525. 连续数组&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/contiguous-array/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;525. 连续数组&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;这题要注意的就是，因为要统计元素个数，所以要使用i+1。&lt;/p&gt;
+&lt;p&gt;哈希表的key的含义是：当前遍历到的1与符合标准（一半是1）之间的差距，而记录的位置则必须是最小位置。所以只在初始化的时候赋值。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
+    
+    
+  </entry>
+  
+</feed>
