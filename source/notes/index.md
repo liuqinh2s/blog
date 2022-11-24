@@ -5,6 +5,24 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-11-23
+
+新买了个surface pro x，发现windows商店挂代理访问不了，解决办法：
+
+https://zhuanlan.zhihu.com/p/55906778
+
+不用其他软件，以管理员权限启动 powershell 敲下面命令即可：
+```
+foreach ($n in (get-appxpackage).packagefamilyname) {checknetisolation loopbackexempt -a -n="$n"}
+```
+如果只想对某个特定 UWP 应用设置代理，用 $n=(get-appxpackage *应用名的独特部分，比如邮件应用是commu*).packagefamilyname | checknetisolation loopbackexempt -a -n="$n"
+
+npm i之后遇到hexo找不到的问题：`bash: hexo: command not found`
+
+其实就是需要全局安装一下hexo：`npm install -g hexo`
+
+还可以使用npx来执行，这样就不用全局安装了：`npx hexo`
+
 # 2022-11-22
 
 如何通过局域网把电子书传输到 kindle 呢？
