@@ -72,6 +72,7 @@ date: 2019-02-20 20:30:09
 - 图书网站：
   - [ZLibary](https://zh.b-ok.cc/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
+  - [PDF 之家](https://homeofpdf.com/index.html)
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
 - [2020 年全球森林资源评估](https://www.fao.org/forest-resources-assessment/2020/zh)
