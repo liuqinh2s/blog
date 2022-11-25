@@ -65,6 +65,8 @@ date: 2019-02-20 20:30:09
   - AI 作画：
     - [AI 作画网站收集](https://github.com/hua1995116/awesome-ai-painting)
     - [Nolibox Creator](https://creator.nolibox.com/guest)
+- 平面设计：
+  - [可画](https://www.canva.cn/)
 - 图片搜索：
   - [TinEye Reverse Image Search](https://tineye.com/)
   - [Anime Scene Search Engine - trace.moe](https://trace.moe/)
