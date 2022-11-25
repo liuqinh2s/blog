@@ -382,6 +382,8 @@ date: 2019-02-20 20:30:09
 - 数学：[Doga Tekin's Blog | The Hypnotic World of Degenerate Spirals](https://www.dogatekin.com/blog/hypnotic-degenerate-spirals/)
 - 物理：[Motion](https://landgreen.github.io/physics/notes/motion/motion/)
 - 女优收集网站：[JAV Model listing](https://xslist.org/)
+- AV资源：[AVHD101](https://avhd101.com)
+- bt资源网站：[bt4g](https://bt4g.org)
 - 费曼物理学讲义：[The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)
 - [趣味数据分析 - 出差人 Jason | 豆瓣阅读](https://read.douban.com/ebook/390859043/)
 - [爱发电](https://afdian.net/)
