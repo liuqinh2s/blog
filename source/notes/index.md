@@ -9,6 +9,28 @@ date: 2018-11-03 14:59:45
 
 安装Android子系统：https://www.cnblogs.com/frank-link/p/16390714.html
 
+安装linux子系统，遇到内核升级的问题，从WSL1升级到WSL2，需要下载一个升级内核的程序：
+
+- https://github.com/microsoft/WSL/issues/5393
+- https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+
+下载地址：https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi
+
+其他相关资料：
+
+- https://www.cnblogs.com/aedjesse/p/14085217.html
+- https://cloud.tencent.com/developer/article/1632713 
+- https://zhuanlan.zhihu.com/p/258563812
+
+安装的kali linux是最小型的，如果想扩充工具库，看这里：
+
+- https://www.kali.org/docs/troubleshooting/common-minimum-setup/
+
+
+
+最后我
+
+
 # 2022-11-24
 
 ## 安装win11 arm64位
