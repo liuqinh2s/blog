@@ -45,6 +45,7 @@ date: 2019-02-20 20:30:09
 # 我的工具
 
 局域网传输：https://landrop.app/
+正版软件下载网站：https://next.itellyou.cn/
 
 ## 图片编辑
 
