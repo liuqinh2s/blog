@@ -5,6 +5,112 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-11-26
+
+最近发现surface上推送的blog，内容居然是空的，经过调查发现，是生成的index.html内容为空，再上网查发现了原来是node版本太高，hexo版本太低，不匹配。我选择了升级hexo到4.2.1。
+
+https://alanlee.fun/2021/02/28/hexo-empty-html/
+
+光改package.json中的版本还不够，生成的内容样式丢了。所以决定用hexo官网推荐的方式来解决：
+
+```javascript
+npm install hexo-cli -g
+hexo init blog
+cd blog
+npm install
+hexo server
+```
+
+在hexo init的时候发现没有权限创建文件夹：
+
+```bash
+$ hexo init
+INFO  Cloning hexo-starter https://github.com/hexojs/hexo-starter.git
+fatal: unable to access 'https://github.com/hexojs/hexo-starter.git/': Failed to connect to github.com port 443 after 21114 ms: Timed out
+WARN  git clone failed. Copying data instead
+FATAL {
+  err: [Error: EPERM: operation not permitted, mkdir 'C:\'] {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'mkdir',
+    path: 'C:\\'
+  }
+} Something's wrong. Maybe you can find the solution here: %s http://hexo.io/docs/troubleshooting.html
+```
+
+在网上查了一圈，没找到合适的答案，不过我自己知道问题的原因，就是因为权限不够需要用管理员身份运行mkdir而已，我试着以管理员方式启动vscode，没想到真的成功了，估计权限向下传递给了vscode的bash，然后又传给了bash中运行的hexo，以及由hexo启动的mkdir。
+
+但是在用了hexo最新版后各种问题，而且next新版主题我也不喜欢，为了避免折腾，还是决定保留hexo旧版，把node切回低版本：12.22.12。使用nvm可以很方便的切换版本，下载node等操作。
+
+# 2022-11-25
+
+安装Android子系统：https://www.cnblogs.com/frank-link/p/16390714.html
+
+安装linux子系统，遇到内核升级的问题，从WSL1升级到WSL2，需要下载一个升级内核的程序：
+
+- https://github.com/microsoft/WSL/issues/5393
+- https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
+
+下载地址：https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi
+
+其他相关资料：
+
+- https://www.cnblogs.com/aedjesse/p/14085217.html
+- https://cloud.tencent.com/developer/article/1632713 
+- https://zhuanlan.zhihu.com/p/258563812
+
+安装的kali linux是最小型的，如果想扩充工具库，看这里：
+
+- https://www.kali.org/docs/troubleshooting/common-minimum-setup/
+
+
+
+最后我
+
+
+# 2022-11-24
+
+## 安装win11 arm64位
+
+我拿到的surface pro x默认装的是win10，但是arm版的win10不支持x64程序，导致很多软件都无法使用，经过一番上网查找发现win11是可以支持x64程序的模拟的，而且还支持安卓模拟，简直太棒。搞了一晚上终于安装好了win11，我没有使用U盘来安装，而是直接下载ISO文件，然后点击setup.exe直接安装。安装完后，原先的程序和设置全都在，非常的方便（这样都不用管驱动的问题了，一直听说surface pro x的驱动不好找）。
+
+windows11 arm64版下载地址：https://next.itellyou.cn/，这么多年一直是在itellyou下载正版软件的，真的非常方便。如果觉得下载慢，可以使用迅雷。
+
+## 激活jetbrains家的软件
+
+- https://www.cnblogs.com/nihaorz/p/16517730.html
+- https://www.binfoo.com/2820
+
+头一次发现激活这么简单，真的强烈推荐。
+
+操作步骤：
+
+1. 打开激活破解官方网站：https://search.censys.io/
+2. 搜索框输入：services.http.response.headers.location: account.jetbrains.com/fls-auth。
+3. 点击搜索，在返回的结果随便找一个点进去，查找到 HTTP/302。
+4. 复制网址到 Jetbrains，选择许可证服务器/License server，粘贴刚刚复制的网址，激活。
+5. 如果发现服务器不可用，可以继续尝试更换一个进行激活。
+
+可以愉快的开始编程了
+
+# 2022-11-23
+
+新买了个surface pro x，发现windows商店挂代理访问不了，解决办法：
+
+https://zhuanlan.zhihu.com/p/55906778
+
+不用其他软件，以管理员权限启动 powershell 敲下面命令即可：
+```
+foreach ($n in (get-appxpackage).packagefamilyname) {checknetisolation loopbackexempt -a -n="$n"}
+```
+如果只想对某个特定 UWP 应用设置代理，用 $n=(get-appxpackage *应用名的独特部分，比如邮件应用是commu*).packagefamilyname | checknetisolation loopbackexempt -a -n="$n"
+
+npm i之后遇到hexo找不到的问题：`bash: hexo: command not found`
+
+其实就是需要全局安装一下hexo：`npm install -g hexo`
+
+还可以使用npx来执行，这样就不用全局安装了：`npx hexo`
+
 # 2022-11-22
 
 如何通过局域网把电子书传输到 kindle 呢？

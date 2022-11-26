@@ -45,6 +45,7 @@ date: 2019-02-20 20:30:09
 # 我的工具
 
 局域网传输：https://landrop.app/
+正版软件下载网站：https://next.itellyou.cn/
 
 ## 图片编辑
 
@@ -64,6 +65,8 @@ date: 2019-02-20 20:30:09
   - AI 作画：
     - [AI 作画网站收集](https://github.com/hua1995116/awesome-ai-painting)
     - [Nolibox Creator](https://creator.nolibox.com/guest)
+- 平面设计：
+  - [可画](https://www.canva.cn/)
 - 图片搜索：
   - [TinEye Reverse Image Search](https://tineye.com/)
   - [Anime Scene Search Engine - trace.moe](https://trace.moe/)
@@ -71,6 +74,7 @@ date: 2019-02-20 20:30:09
 - 图书网站：
   - [ZLibary](https://zh.b-ok.cc/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
+  - [PDF 之家](https://homeofpdf.com/index.html)
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
 - [2020 年全球森林资源评估](https://www.fao.org/forest-resources-assessment/2020/zh)
@@ -378,6 +382,8 @@ date: 2019-02-20 20:30:09
 - 数学：[Doga Tekin's Blog | The Hypnotic World of Degenerate Spirals](https://www.dogatekin.com/blog/hypnotic-degenerate-spirals/)
 - 物理：[Motion](https://landgreen.github.io/physics/notes/motion/motion/)
 - 女优收集网站：[JAV Model listing](https://xslist.org/)
+- AV资源：[AVHD101](https://avhd101.com)
+- bt资源网站：[bt4g](https://bt4g.org)
 - 费曼物理学讲义：[The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)
 - [趣味数据分析 - 出差人 Jason | 豆瓣阅读](https://read.douban.com/ebook/390859043/)
 - [爱发电](https://afdian.net/)
