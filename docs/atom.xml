@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-11-23T13:18:53.950Z</updated>
+  <updated>2022-11-12T02:54:26.770Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/11/06/vue.js%E5%93%8D%E5%BA%94%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AE%9E%E7%8E%B0%20%E7%AC%AC%E4%B8%80%E7%AF%87/"/>
     <id>https://liuqinh2s.github.io/blog/2022/11/06/vue.js响应系统的实现 第一篇/</id>
     <published>2022-11-05T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.950Z</updated>
+    <updated>2022-11-12T02:54:26.770Z</updated>
     
     <summary type="html">
     
@@ -45,7 +45,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript执行上下文之作用域链/</id>
     <published>2022-07-13T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.948Z</updated>
+    <updated>2022-11-05T15:17:09.686Z</updated>
     
     <summary type="html">
     
@@ -70,7 +70,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E9%97%AD%E5%8C%85/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript闭包/</id>
     <published>2022-07-13T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.949Z</updated>
+    <updated>2022-11-05T15:17:09.686Z</updated>
     
     <summary type="html">
     
@@ -94,7 +94,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/07/13/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/13/JavaScript执行上下文之变量对象/</id>
     <published>2022-07-12T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.948Z</updated>
+    <updated>2022-11-05T15:17:09.686Z</updated>
     
     <summary type="html">
     
@@ -118,7 +118,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/07/12/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E6%A0%88/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/12/JavaScript执行上下文栈/</id>
     <published>2022-07-11T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.948Z</updated>
+    <updated>2022-11-05T15:17:09.685Z</updated>
     
     <summary type="html">
     
@@ -140,7 +140,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/07/11/JavaScript%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/11/JavaScript词法作用域/</id>
     <published>2022-07-10T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.947Z</updated>
+    <updated>2022-11-05T15:17:09.685Z</updated>
     
     <summary type="html">
     
@@ -163,7 +163,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/07/10/JavaScript%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/10/JavaScript原型和原型链/</id>
     <published>2022-07-09T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.946Z</updated>
+    <updated>2022-11-05T15:17:09.685Z</updated>
     
     <summary type="html">
     
@@ -190,7 +190,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/06/20/TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://liuqinh2s.github.io/blog/2022/06/20/TCP和UDP的区别/</id>
     <published>2022-06-19T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.946Z</updated>
+    <updated>2022-11-05T15:17:09.685Z</updated>
     
     <summary type="html">
     
@@ -216,7 +216,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/06/11/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"/>
     <id>https://liuqinh2s.github.io/blog/2022/06/11/服务器重装系统/</id>
     <published>2022-06-10T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.946Z</updated>
+    <updated>2022-11-05T15:17:09.684Z</updated>
     
     <summary type="html">
     
@@ -234,7 +234,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87/"/>
     <id>https://liuqinh2s.github.io/blog/2022/06/09/浏览器上的几种xy坐标/</id>
     <published>2022-06-08T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.945Z</updated>
+    <updated>2022-11-05T15:17:09.684Z</updated>
     
     <summary type="html">
     
@@ -258,7 +258,7 @@
     <link href="https://liuqinh2s.github.io/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     <id>https://liuqinh2s.github.io/blog/2022/06/09/生成固定长度的字符串/</id>
     <published>2022-06-08T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.945Z</updated>
+    <updated>2022-11-05T15:17:09.684Z</updated>
     
     <summary type="html">
     
@@ -272,11 +272,35 @@
   </entry>
   
   <entry>
+    <title>浏览器 storage 事件</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/06/08/%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/</id>
+    <published>2022-06-07T16:00:00.000Z</published>
+    <updated>2022-11-05T15:17:09.684Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;官方文档：&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效&lt;/li&gt;
+&lt;li&gt;必须写入与旧值不同的值，才能监听到&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>二分查找</title>
     <link href="https://liuqinh2s.github.io/blog/2022/06/08/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/06/08/二分查找/</id>
     <published>2022-06-07T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.943Z</updated>
+    <updated>2022-11-05T15:17:09.683Z</updated>
     
     <summary type="html">
     
@@ -304,35 +328,11 @@
   </entry>
   
   <entry>
-    <title>浏览器 storage 事件</title>
-    <link href="https://liuqinh2s.github.io/blog/2022/06/08/%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6/"/>
-    <id>https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/</id>
-    <published>2022-06-07T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.944Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;官方文档：&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效&lt;/li&gt;
-&lt;li&gt;必须写入与旧值不同的值，才能监听到&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>如何学习</title>
     <link href="https://liuqinh2s.github.io/blog/2021/08/22/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"/>
     <id>https://liuqinh2s.github.io/blog/2021/08/22/如何学习/</id>
     <published>2021-08-21T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.942Z</updated>
+    <updated>2022-11-05T15:17:09.683Z</updated>
     
     <summary type="html">
     
@@ -358,7 +358,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
     <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.941Z</updated>
+    <updated>2022-11-05T15:17:09.683Z</updated>
     
     <summary type="html">
     
@@ -382,7 +382,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/</id>
     <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.942Z</updated>
+    <updated>2022-11-05T15:17:09.683Z</updated>
     
     <summary type="html">
     
@@ -402,7 +402,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-%E4%B8%80%E5%92%8C%E9%9B%B6/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-一和零/</id>
     <published>2021-06-05T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.941Z</updated>
+    <updated>2022-11-05T15:17:09.682Z</updated>
     
     <summary type="html">
     
@@ -421,7 +421,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/05/leetcode-230-%E7%A7%BB%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/05/leetcode-230-移除链表元素/</id>
     <published>2021-06-04T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.940Z</updated>
+    <updated>2022-11-05T15:17:09.682Z</updated>
     
     <summary type="html">
     
@@ -439,7 +439,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/04/leetcode-160-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/04/leetcode-160-相交链表/</id>
     <published>2021-06-03T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.940Z</updated>
+    <updated>2022-11-05T15:17:09.682Z</updated>
     
     <summary type="html">
     
@@ -461,7 +461,7 @@
     <link href="https://liuqinh2s.github.io/blog/2021/06/03/leetcode-525-%E8%BF%9E%E7%BB%AD%E6%95%B0%E7%BB%84/"/>
     <id>https://liuqinh2s.github.io/blog/2021/06/03/leetcode-525-连续数组/</id>
     <published>2021-06-02T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.940Z</updated>
+    <updated>2022-11-05T15:17:09.682Z</updated>
     
     <summary type="html">
     

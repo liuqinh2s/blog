@@ -101,6 +101,9 @@ date: 2019-02-20 20:30:09
 
 ## 编程
 
+- 编程学习网站：
+  - [leetcode](https://leetcode.cn/)
+  - [IO Wiki](https://oi-wiki.org/)
 - Typescript 编译网站：[TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/index.html)
 - [Vue SFC Playground](https://sfc.vuejs.org/)
 - 正则测试网站：[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
@@ -357,10 +360,6 @@ date: 2019-02-20 20:30:09
   - [CryptoZombies - 编游戏的同时学习以太坊的智能协议. Loom Network 产品。](https://cryptozombies.io/zh/)
   - [remix](https://remix.ethereum.org/)
 
-## 人物传记
-
-- [37 岁白手起家，干成世界第一，资产 5000 亿，邓小平接见他 9 次！](https://mp.weixin.qq.com/s/wD1TeoqeDB9KLNHnTRWrnQ)
-
 ## 其他
 
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
@@ -382,8 +381,8 @@ date: 2019-02-20 20:30:09
 - 数学：[Doga Tekin's Blog | The Hypnotic World of Degenerate Spirals](https://www.dogatekin.com/blog/hypnotic-degenerate-spirals/)
 - 物理：[Motion](https://landgreen.github.io/physics/notes/motion/motion/)
 - 女优收集网站：[JAV Model listing](https://xslist.org/)
-- AV资源：[AVHD101](https://avhd101.com)
-- bt资源网站：[bt4g](https://bt4g.org)
+- AV 资源：[AVHD101](https://avhd101.com)
+- bt 资源网站：[bt4g](https://bt4g.org)
 - 费曼物理学讲义：[The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)
 - [趣味数据分析 - 出差人 Jason | 豆瓣阅读](https://read.douban.com/ebook/390859043/)
 - [爱发电](https://afdian.net/)
