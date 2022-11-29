@@ -374,7 +374,7 @@ date: 2019-02-20 20:30:09
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
 - macos
   - 壁纸软件：[irvue](https://leonspok.com/irvue/landing/)
-  - 翻墙工具 ClashX：[ClashX](https://github.com/yichengchen/clashX/)，配置：https://s.trojanflare.com/clashx/a2558d44-d9ca-4dd6-bdba-118c8b5af032
+  - 翻墙工具：[ClashX pro](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)，购买服务地址：https://portal.shadowsocks.nz/login
 - [gfwlist](https://github.com/gfwlist/gfwlist)：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - 人体构造：[3dbody](https://www.3dbody.com/)
 - 房屋设计网站：[homestyler](https://www.homestyler.com/)

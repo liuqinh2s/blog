@@ -3,11 +3,11 @@ cd $shellScriptFolder
 pwd
 
 # 先部署到github
-hexo clean
+# hexo clean
 hexo g 
 git add .
 git commit -m "update"
-git push origin master
+git push 
 
 # 然后部署到ipfs，需要把部署路径修改一下，包括url和root。
 # idString=`ipfs id`
