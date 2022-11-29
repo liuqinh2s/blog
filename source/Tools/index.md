@@ -44,41 +44,63 @@ date: 2019-02-20 20:30:09
 
 # 我的工具
 
-局域网传输：https://landrop.app/
-正版软件下载网站：https://next.itellyou.cn/
+## 常用资源网站
 
-## 图片编辑
+- [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
 
-- 图片编辑：[Edit • Photo - The Free Online Photo Editor In Your Browser](https://edit.photo/)
-- 擦除图片中不需要的部分：[Magic Eraser](https://www.magiceraser.io/)
-- 保持图片内容缩放图片：[JS IMAGE CARVER](https://trekhleb.dev/js-image-carver/)
-- 老照片恢复网站：[Baseten](https://app.baseten.co/apps/QPp4nPE/operator_views/RqgOnqV)
-- [AI 根据照片生成头像](https://www.strmr.com/)
+### 图片
 
-## 资源获取
+- [unsplash](https://unsplash.com/)
+- [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
+- [project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
+- 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
+- 伊丽莎白植物手绘：[ILLUSTRATIONS of the NATURAL ORDERS of PLANTS](https://www.c82.net/twining/plants/)
 
-- 图片：
-  - 摄影网站：[unsplash](https://unsplash.com/)
-  - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
-  - 卡通图：[project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
-  - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
-  - AI 作画：
-    - [AI 作画网站收集](https://github.com/hua1995116/awesome-ai-painting)
-    - [Nolibox Creator](https://creator.nolibox.com/guest)
+### 视频
+
+- 影视网站：[努努影视](https://www.nunuyy1.org/)
+- 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
+- [抖音网页版](https://www.douyin.com/)
+- 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
+
+### 书籍
+
+- 平台：
+  - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
+  - [技术书在线阅读](https://livebook.manning.com/)
+  - [图灵社区](https://www.ituring.com.cn/)
+  - [PDF 之家](https://homeofpdf.com/index.html)
+- 具体书籍：
+  - 计算机网络电子书：[Computer Networks: A Systems Approach](https://github.com/ruanyf/book-computer-networks)
+  - [SICP - Structure and Interpretation of Computer Programs, 2e](http://sarabander.github.io/sicp/)
+  - [JavaScript Guidebook](https://tsejx.github.io/javascript-guidebook/core-modules/executable-code-and-execution-contexts/memory-management/memory-model/)
+  - python 英文电子书：[Python 3 Module of the Week — PyMOTW 3](https://pymotw.com/3/index.html)
+  - 数据库英文电子书：[Foundations of Databases](http://webdam.inria.fr/Alice/)
+  - 操作系统英文电子书：[Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/)
+  - 计算机组成原理英文电子书：[The Math Behind the Magic - Processor Design](http://www.gamezero.com/team-0/articles/math_magic/micro/index.html)
+  - 算法：[Algorithms by Jeff Erickson](http://jeffe.cs.illinois.edu/teaching/algorithms/)
+  - 一本英文电子书：[The Design of Web APIs](https://livebook.manning.com/book/the-design-of-everyday-apis/chapter-1/)
+  - [Learn CSS](https://web.dev/learn/css/)
+  - [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
+  - [Introduction - Rust and WebAssembly](https://rustwasm.github.io/docs/book/introduction.html)
+  - [Software Engineer interviews: Everything you need to prepare | Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
+  - [Introduction to Probability for Data Science](https://probability4datascience.com/)
+  - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
+  - [Tiny_Python_Projects](http://tinypythonprojects.com/Tiny_Python_Projects.pdf)
+  - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
+  - [python 设计模式](https://python-patterns.guide/)
+  - [game math](https://gamemath.com/book/intro.html)
+  - [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+  - [Effective Shell](https://effective-shell.com/)
+  - 费曼物理学讲义：[The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)
+- AI 作画：
+  - [AI 作画网站收集](https://github.com/hua1995116/awesome-ai-painting)
+  - [Nolibox Creator](https://creator.nolibox.com/guest)
 - 平面设计：
   - [可画](https://www.canva.cn/)
 - 图片搜索：
   - [TinEye Reverse Image Search](https://tineye.com/)
   - [Anime Scene Search Engine - trace.moe](https://trace.moe/)
-- 影视网站：[努努影视](https://www.nunuyy1.org/)
-- 图书网站：
-  - [ZLibary](https://zh.b-ok.cc/)
-  - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
-  - [PDF 之家](https://homeofpdf.com/index.html)
-- 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
-- [抖音网页版](https://www.douyin.com/)
-- [2020 年全球森林资源评估](https://www.fao.org/forest-resources-assessment/2020/zh)
-- 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
 - [New Scientist | Science news and science articles from New Scientist](https://www.newscientist.com/)
 - [3058 live iptv channels tested today in 78 different languages from 131 countries around the world.](https://eja.tv/)
 - [十万个为什么 - 在线青少年百科全书](https://10why.net/)
@@ -91,6 +113,17 @@ date: 2019-02-20 20:30:09
 - [AutoCut: 通过字幕来剪切视频](https://github.com/mli/autocut)
 - [Metaphor](https://metaphor.systems/)
 - [90's Cursor Effects](https://tholman.com/cursor-effects/)
+
+局域网传输：https://landrop.app/
+正版操作系统下载网站：https://next.itellyou.cn/
+
+## 图片编辑
+
+- 图片编辑：[Edit • Photo - The Free Online Photo Editor In Your Browser](https://edit.photo/)
+- 擦除图片中不需要的部分：[Magic Eraser](https://www.magiceraser.io/)
+- 保持图片内容缩放图片：[JS IMAGE CARVER](https://trekhleb.dev/js-image-carver/)
+- 老照片恢复网站：[Baseten](https://app.baseten.co/apps/QPp4nPE/operator_views/RqgOnqV)
+- [AI 根据照片生成头像](https://www.strmr.com/)
 
 ## 编辑 - 输出
 
@@ -154,30 +187,6 @@ date: 2019-02-20 20:30:09
 - [JavaScript 高级程序设计第四版代码 demo](http://mp.ituring.com.cn/editor?bookName=JavaScriptBookV4)
 - [实现一个蚂蚁森林自动收能量辅助工具 | 靛青博客](https://blog.indigo.codes/2019/03/22/_60000002-h5-alipay-app/)
 - [Tweet Photo got acquired | Marc Köhlbrugge](https://marc.io/tweet-photo-acquired)
-- 电子书：
-  - [技术书在线阅读](https://livebook.manning.com/)
-  - [图灵社区](https://www.ituring.com.cn/)
-  - 计算机网络电子书：[Computer Networks: A Systems Approach](https://github.com/ruanyf/book-computer-networks)
-  - [SICP - Structure and Interpretation of Computer Programs, 2e](http://sarabander.github.io/sicp/)
-  - [JavaScript Guidebook](https://tsejx.github.io/javascript-guidebook/core-modules/executable-code-and-execution-contexts/memory-management/memory-model/)
-  - python 英文电子书：[Python 3 Module of the Week — PyMOTW 3](https://pymotw.com/3/index.html)
-  - 数据库英文电子书：[Foundations of Databases](http://webdam.inria.fr/Alice/)
-  - 操作系统英文电子书：[Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/)
-  - 计算机组成原理英文电子书：[The Math Behind the Magic - Processor Design](http://www.gamezero.com/team-0/articles/math_magic/micro/index.html)
-  - 算法：[Algorithms by Jeff Erickson](http://jeffe.cs.illinois.edu/teaching/algorithms/)
-  - 一本英文电子书：[The Design of Web APIs](https://livebook.manning.com/book/the-design-of-everyday-apis/chapter-1/)
-  - [Learn CSS](https://web.dev/learn/css/)
-  - [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
-  - [Introduction - Rust and WebAssembly](https://rustwasm.github.io/docs/book/introduction.html)
-  - [Software Engineer interviews: Everything you need to prepare | Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
-  - [Introduction to Probability for Data Science](https://probability4datascience.com/)
-  - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
-  - [Tiny_Python_Projects](http://tinypythonprojects.com/Tiny_Python_Projects.pdf)
-  - [The Art of Assembly Language Programming](http://www.phatcode.net/res/223/files/html/toc.html)
-  - [python 设计模式](https://python-patterns.guide/)
-  - [game math](https://gamemath.com/book/intro.html)
-  - [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-  - [Effective Shell](https://effective-shell.com/)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
@@ -383,7 +392,7 @@ date: 2019-02-20 20:30:09
 - 女优收集网站：[JAV Model listing](https://xslist.org/)
 - AV 资源：[AVHD101](https://avhd101.com)
 - bt 资源网站：[bt4g](https://bt4g.org)
-- 费曼物理学讲义：[The Feynman Lectures on Physics](https://www.feynmanlectures.caltech.edu/)
+
 - [趣味数据分析 - 出差人 Jason | 豆瓣阅读](https://read.douban.com/ebook/390859043/)
 - [爱发电](https://afdian.net/)
 - 制乐：[开始 | Learning Synths](https://learningsynths.ableton.com/zh-Hans)
