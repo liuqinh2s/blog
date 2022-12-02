@@ -5,6 +5,26 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-12-02
+
+react 怎么获取 children，比如`<Button><span>AA</span></Button>`
+
+https://reactjs.org/docs/glossary.html#propschildren
+
+但问题来了，既然 children 占了 props 的一个键，如果这样写呢：`<Button children="BB"><span>AA</span></Button>`
+
+如果是 ts 的话会报错：`'children' are specified twice. The attribute named 'children' will be overwritten.`
+
+然后 node 控制台也会发出警告，但依旧是可以运行的，且 children 最终结果会是：`<span>AA</span>`
+
+顺带说一句 replit.com 是真好用啊，比 codepen 强太多了。
+
+# 2022-12-01
+
+安装免费的正版的激活的 office，官方提供的白嫖渠道：
+
+https://www.youtube.com/watch?v=VSjRx7Hoa60&t=319s&ab_channel=%E9%9B%B6%E5%BA%A6%E8%A7%A3%E8%AF%B4
+
 # 2022-11-27
 
 用了 7 年的 macbook pro A1398 款，最近想换个屏幕以及键帽，F 键帽被磨掉漆了。尝试自己拆了一下键帽，还真是复杂，开机键的键帽支架差点装不回去了。上淘宝搜了一下价格，单 F 键帽和下面的软垫就要 20 块，F 键帽+开机键键帽要 30，胶水要 5 块。但是一个键盘带 C 壳总成才 130，加上我装回 F 键后，发现这个键的手感和其他键居然不一样。仔细试了一下，F 键的手感最软榻，感觉几乎快要坏了。据说要给软垫下面涂胶水固定，不过我也不清楚是不是涂了胶水，手感就好了，或者换了软垫就好了。

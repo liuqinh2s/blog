@@ -134,18 +134,47 @@ date: 2019-02-20 20:30:09
 
 ## 编程
 
-- 编程学习网站：
-  - [leetcode](https://leetcode.cn/)
-  - [IO Wiki](https://oi-wiki.org/)
-- Typescript 编译网站：[TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/index.html)
-- [Vue SFC Playground](https://sfc.vuejs.org/)
-- 正则测试网站：[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
-- json 校验：[在线 JSON 校验格式化工具（Be JSON）](https://www.bejson.com/)
+### 编程项目
+
+- 电子书阅读器：[KOReader](https://koreader.rocks/)
+- 白板工具：[pointless](https://github.com/kkoomen/pointless)
+- Run Python in Your HTML：[PyScript | Run Python in your HTML](https://pyscript.net/)
+- [项目可视化](https://github.com/githubocto/repo-visualizer)
+- [</> htmx - high power tools for html](https://htmx.org/)
+- [Vexip UI - 创造有趣的开发体验](https://www.vexipui.com/zh-CN)
 - 弹幕视屏播放器：[Powerful danmaku video player | NPlayer](https://nplayer.js.org/)
 - 离线语音识别：[Vosk 离线语音识别](https://alphacephei.com/vosk/index.zh)
-- 在线编程环境：[StackBlitz | Instant Dev Environments | Click. Code. Done. - StackBlitz](https://stackblitz.com/)
-- [教孩子和妻子编程 | 算法和数据结构教程视频](https://zhihua-lai.com/teaching/ch/)
 - macOS 上的一款将系统声音识别成文字的软件：[EngineerDraft - BeMyEars 听·见声音](https://www.engineerdraft.com/bemyears/)
+- [Markdown 向 Tree 目录转化生成器· 开发者工具箱](https://devtool.tech/tree)
+- [网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi/#/)
+- 代码转 PNG 图片（美化）：[Codepng | Create awesome images from your code.](https://www.codepng.app/)
+- markdown 渲染工具：
+  - [md-block: Render styleable Markdown in your HTML](https://md-block.verou.me/)
+- 正则表达式可视化：[Regulex：JavaScript Regular Expression Visualizer](<https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24>)
+- hexo 主题：
+  - [argon](https://github.com/solstice23/argon-theme)
+- 表情混合器：[emojimix by Tikolu](https://tikolu.net/emojimix/)
+- [AI 拟声: 5 秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
+- 对话机器人：
+  - [对话机器人 - 思知（OwnThink）](https://www.ownthink.com/docs/bot/)
+  - [史上最全面聊天机器人总结，图灵、思知、小爱、小微，作者已接入到自己的开源 IM 项目中使用](http://www.360doc.com/content/21/0119/16/21412_957807865.shtml)
+  - [A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。](https://github.com/littlecodersh/ItChat)
+- 山水画生成：[Grok {Shan, Shui}\*: Advent of understanding the generative art](https://zverok.space/blog/2021-12-28-grok-shan-shui.html)
+- [实现一个蚂蚁森林自动收能量辅助工具 | 靛青博客](https://blog.indigo.codes/2019/03/22/_60000002-h5-alipay-app/)
+- [Tweet Photo got acquired | Marc Köhlbrugge](https://marc.io/tweet-photo-acquired)
+- [字符作画，我用字符画个冰墩墩](https://www.wdbyte.com/java/char-image.html#_1-%E5%AD%97%E7%AC%A6%E5%9B%BE%E6%A1%88%E6%80%9D%E8%B7%AF)
+- [countercomplex: Algorithmic symphonies from one line of code -- how and why?](https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html)
+- [Gyroflow v1.1 is out! | Gyroflow](https://gyroflow.xyz/)
+- [Awesome Open Source Games](https://github.com/michelpereira/awesome-open-source-games)
+
+### 编程工具
+
+- Typescript 编译网站：[TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/index.html)
+- [Vue SFC Playground](https://sfc.vuejs.org/)
+- 可视化编程：[Python Tutor: Learn Python, JavaScript, C, C++, and Java by visualizing code](https://pythontutor.com/)
+- 在线编程环境：[StackBlitz | Instant Dev Environments | Click. Code. Done. - StackBlitz](https://stackblitz.com/)
+- 正则测试网站：[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
+- json 校验：[在线 JSON 校验格式化工具（Be JSON）](https://www.bejson.com/)
 - 无代码：
   - UI 设计稿转前端代码：[CodeFun - UI 设计稿智能生成源代码](https://code.fun/)
   - [The best way to build web apps without code | Bubble](https://bubble.io/)
@@ -155,25 +184,15 @@ date: 2019-02-20 20:30:09
 - HTTPS 证书申请：
   - [OHTTPS - 免费 HTTPS 证书、自动更新、自动部署](https://ohttps.com/signin)
   - [FreeSSL 首页 - FreeSSL.cn 一个提供免费 HTTPS 证书申请的网站](https://freessl.cn/)
-- [Markdown 向 Tree 目录转化生成器· 开发者工具箱](https://devtool.tech/tree)
-- [网易云音乐 NodeJS 版 API](https://binaryify.github.io/NeteaseCloudMusicApi/#/)
-- [Provider Migration Guide | MetaMask Docs](https://docs.metamask.io/guide/provider-migration.html#replacing-window-web3)
-- 代码转 PNG 图片（美化）：[Codepng | Create awesome images from your code.](https://www.codepng.app/)
-- markdown 渲染工具：
-  - [md-block: Render styleable Markdown in your HTML](https://md-block.verou.me/)
-- hexo 主题：
-  - [argon](https://github.com/solstice23/argon-theme)
-- 表情混合器：[emojimix by Tikolu](https://tikolu.net/emojimix/)
-- [AI 拟声: 5 秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
-- 区块链编程：
-  - [How to Become a Blockchain Engineer | by Patrick Collins | Better Programming](https://betterprogramming.pub/how-to-become-a-blockchain-engineer-fa4386a0504f)
-- 对话机器人：
-  - [对话机器人 - 思知（OwnThink）](https://www.ownthink.com/docs/bot/)
-  - [史上最全面聊天机器人总结，图灵、思知、小爱、小微，作者已接入到自己的开源 IM 项目中使用](http://www.360doc.com/content/21/0119/16/21412_957807865.shtml)
-  - [A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。](https://github.com/littlecodersh/ItChat)
-- 山水画生成：[Grok {Shan, Shui}\*: Advent of understanding the generative art](https://zverok.space/blog/2021-12-28-grok-shan-shui.html)
-- 黑客：
-  - [International Journal of PoC or GTFO (Proof-of-Concept or Get The Fuck Out) | evmn.github.io](https://evmn.github.io/post/2021-12-31-PoC-or-GTFO.html)
+- [Public API Lists](https://github.com/public-api-lists/public-api-lists)
+- [SolidJS · Reactive Javascript Library](https://www.solidjs.com/)
+
+### 编程学习
+
+- [leetcode](https://leetcode.cn/)
+- [IO Wiki](https://oi-wiki.org/)
+- [教孩子和妻子编程 | 算法和数据结构教程视频](https://zhihua-lai.com/teaching/ch/)
+- [International Journal of PoC or GTFO (Proof-of-Concept or Get The Fuck Out) | evmn.github.io](https://evmn.github.io/post/2021-12-31-PoC-or-GTFO.html)
 - 程序员能力矩阵：[Programmer Competency Matrix | Sijin Joseph](https://sijinjoseph.netlify.app/programmer-competency-matrix/)
 - 自学计算机科学：[Teach Yourself Computer Science](https://teachyourselfcs.com/)
 - 密码学免费课程：[Crypto 101](https://www.crypto101.io/)
@@ -185,64 +204,21 @@ date: 2019-02-20 20:30:09
 - vue 原理解析：[深入浅出 - vue 变化侦测原理](https://github.com/berwin/Blog/issues/17)
 - 深入学习 CSS：[CSS-Tricks - Tips, Tricks, and Techniques on using Cascading Style Sheets.](https://css-tricks.com/)
 - [JavaScript 高级程序设计第四版代码 demo](http://mp.ituring.com.cn/editor?bookName=JavaScriptBookV4)
-- [实现一个蚂蚁森林自动收能量辅助工具 | 靛青博客](https://blog.indigo.codes/2019/03/22/_60000002-h5-alipay-app/)
-- [Tweet Photo got acquired | Marc Köhlbrugge](https://marc.io/tweet-photo-acquired)
 - 开源社区：[LinuxStory - 最新的 Linux 和操作系统资讯](https://linuxstory.org/)
 - 程序员社区：[V2EX](https://www.v2ex.com/)
 - 计算机本科课程体系：[网易云课堂 - 顶尖中文大学计算机专业课程体系](https://study.163.com/curricula/cs.htm)
 - [LABULADONG 的算法网站](https://labuladong.github.io/algo/)
 - [CS 自学指南](https://csdiy.wiki/)
-- 前端面经：
-  - [腾讯 IVWeb（一面）](https://www.yuque.com/tuture/interview/wrzl64)
 - [做题网站](https://www.hackerrank.com/dashboard)
 - [树莓派防吃灰指南](https://github.com/zhaoolee/pi)
-- 正则表达式可视化：[Regulex：JavaScript Regular Expression Visualizer](<https://jex.im/regulex/#!flags=&re=%5E(a%7Cb)*%3F%24>)
-- [字符作画，我用字符画个冰墩墩](https://www.wdbyte.com/java/char-image.html#_1-%E5%AD%97%E7%AC%A6%E5%9B%BE%E6%A1%88%E6%80%9D%E8%B7%AF)
 - [前端开发学习路线（学+测） - 阿里云全球培训中心](https://edu.aliyun.com/roadmap/frontend)
 - [计算机教育中缺失的一课 · the missing semester of your cs education](https://missing-semester-cn.github.io/)
 - [三种前端实现 VR 全景看房的方案！说不定哪天就用得上！ - 掘金](https://juejin.cn/post/6973865268426571784)
-- [Public API Lists](https://github.com/public-api-lists/public-api-lists)
 - [猴子都能懂的 GIT 入门 | 贝格乐（Backlog）](https://backlog.com/git-tutorial/cn/)
 - [Lodash 简介 | Lodash 中文文档 | Lodash 中文网](https://www.lodashjs.com/)
 - [虚拟内存探究，深入理解进程地址空间](http://blog.coderhuo.tech/2017/10/19/Virtual_Memory_summary/)
-- 可视化编程：[Python Tutor: Learn Python, JavaScript, C, C++, and Java by visualizing code](https://pythontutor.com/)
 - [Tutorial - Write a Shell in C • Stephen Brennan](https://brennan.io/2015/01/16/write-a-shell-in-c/)
-- 前端面试：
-  - [九种跨域方式实现原理（完整版） - 掘金](https://juejin.cn/post/6844903767226351623)
-  - [常见前端面试题](https://mp.weixin.qq.com/mp/homepage?__biz=MzIzNjgxNzAzOQ==&hid=1&sn=4e8e6275b659d76fbfa3d3d17a87698a&scene=1&uin=&key=&devicetype=iMac+Macmini8%2C1+OSX+OSX+11.3.1+build)
-  - [做了一份前端面试复习计划，保熟～ - 掘金](https://juejin.cn/post/7061588533214969892)
-  - [浏览器输入 URL 后发生了什么？ - 知乎](https://zhuanlan.zhihu.com/p/43369093)
-  - [让面试官膜拜你的 HTTPS 运行流程（超详细） - 知乎](https://zhuanlan.zhihu.com/p/60033345)
-  - [彻底搞懂 HTTPS 的加密原理 - 知乎](https://zhuanlan.zhihu.com/p/43789231)
-  - [HTTP 相关知识 | 前端工程师成长路线](https://xjl271314.github.io/docs/http/#tls-ssl-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)
-  - [HTTPS 加密（握手）过程 - 简书](https://www.jianshu.com/p/e30a8c4fa329)
-  - [HTTPS 详解一：附带最精美详尽的 HTTPS 原理图 - SegmentFault 思否](https://segmentfault.com/a/1190000021494676)
-  - [HTTPS 加密过程详解 - SegmentFault 思否](https://segmentfault.com/a/1190000019976390)
-  - [高级前端进阶博文 | 木易杨前端进阶](https://muyiy.cn/blog/)
-  - [木易杨前端进阶](https://muyiy.cn/)
-  - [前端面试常见的知识点（四处搜刮）💻 - 掘金](https://juejin.cn/post/6844904078288355341#heading-101)
-  - [可能是最全的 “文本溢出截断省略” 方案合集 - 掘金](https://juejin.cn/post/6844903988081475591)
-  - [Daily-Interview-Question](https://github.com/Advanced-Frontend/Daily-Interview-Question)
-  - [壹题汇总 | 木易杨前端进阶](https://muyiy.cn/question/)
-  - [大揭秘！“恐怖”的阿里一面，我究竟想问什么 - 掘金](https://juejin.cn/post/6844903909194989575)
-  - [挑战一轮大厂后的面试总结 (含六个方向) - javascript 篇(万字长文) - 掘金](https://juejin.cn/post/6844904070579240974#heading-8)
-  - JavaScript 原型链：[Javascript Object Hierarchy](http://www.mollypages.org/tutorials/js.mp)
-  - [「2021」高频前端面试题汇总之 JavaScript 篇（上） - 掘金](https://juejin.cn/post/6940945178899251230)
-  - [2020 最新：100 道有答案的前端面试题（上） - 掘金](https://juejin.cn/post/6847902225423925255)
-  - [2021 年 web 前端开发经典面试题总结整理（建议收藏） - 哔哩哔哩](https://www.bilibili.com/read/cv10115331)
-  - [前端面试每日 3+1，以面试题来驱动学习，提倡每日学习与思考，每天进步一点！](https://github.com/haizlin/fe-interview)
-  - [Web 中高级前端面试题集合（200+） - SegmentFault 思否](https://segmentfault.com/a/1190000021966814)
-  - [大前端面试宝典 - 图解前端](https://lucifer.ren/fe-interview/#/)
-  - [专栏介绍 | 前端部署十五篇 | 大厂面试](https://q.shanyue.tech/deploy/)
-  - [前言 | 大厂面试题每日一题](https://q.shanyue.tech/engineering/)
-  - [理解 js 原型、原型链和继承 | Jiuto's blog](https://jiuto.github.io/jiuto_blog/guide/js/proto.html)
-  - [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog/issues/2)
-- [countercomplex: Algorithmic symphonies from one line of code -- how and why?](https://countercomplex.blogspot.com/2011/10/algorithmic-symphonies-from-one-line-of.html)
 - [文件系统介绍](https://mp.weixin.qq.com/s?__biz=MzU3OTc1MDM1Mg==&mid=2247509757&idx=2&sn=44afb2cdc96f85ee55373fed1eed3609&chksm=fd63b642ca143f54eb13b9a5627484c319fd31ba89746e87a15c99c3493d8736c56bd2cc4f2e&scene=132#wechat_redirect)
-- [公式化剖析色彩三要素：色相、饱和度、明度](https://zhuanlan.zhihu.com/p/30409532)
-- [Getting started | Bitcoin Design](https://bitcoin.design/guide/getting-started/introduction/)
-- [Gyroflow v1.1 is out! | Gyroflow](https://gyroflow.xyz/)
-- [SolidJS · Reactive Javascript Library](https://www.solidjs.com/)
 - [Daryl's TCP/IP Primer](https://www.ipprimer.com/#/)
 - [How Does a Database Work? | Let’s Build a Simple Database](https://cstack.github.io/db_tutorial/)
 - [Althttpd: The Althttpd Webserver](https://sqlite.org/althttpd/doc/trunk/althttpd.md)
@@ -253,7 +229,6 @@ date: 2019-02-20 20:30:09
 - [500lines/web-server at master · aosabook/500lines](https://github.com/aosabook/500lines/tree/master/web-server)
 - [蓝桥云课](https://www.lanqiao.cn/courses/?from_login_page=true)
 - [Introductory HTTP - Beginner-friendly book on HTTP](https://launchschool.com/books/http)
-- [Awesome Open Source Games](https://github.com/michelpereira/awesome-open-source-games)
 - [Web Skills](https://andreasbm.github.io/web-skills/)
 - [Game Programming Patterns](http://gameprogrammingpatterns.com/)
 - 设计模式：
@@ -277,13 +252,6 @@ date: 2019-02-20 20:30:09
 - linux:
   - [An intro to finding things in Linux](https://www.madebygps.com/an-intro-to-finding-things-in-linux/)
 - [Reliably Send an HTTP Request as a User Leaves a Page | CSS-Tricks - CSS-Tricks](https://css-tricks.com/send-an-http-request-on-page-exit/)
-- 开源项目：
-  - 电子书阅读器：[KOReader](https://koreader.rocks/)
-  - 白板工具：[pointless](https://github.com/kkoomen/pointless)
-  - Run Python in Your HTML：[PyScript | Run Python in your HTML](https://pyscript.net/)
-  - [项目可视化](https://github.com/githubocto/repo-visualizer)
-  - [</> htmx - high power tools for html](https://htmx.org/)
-  - [Vexip UI - 创造有趣的开发体验](https://www.vexipui.com/zh-CN)
 - [Tauri 系列 - 知乎](https://www.zhihu.com/column/c_1519079232848785408)
 - [Vue.js 挑战 | 一个 Vue.js 在线挑战平台](https://cn-vuejs-challenges.netlify.app/)
 - [Web Scraping via Javascript Runtime Heap Snapshots - Adrian Cooney's Blog](https://www.adriancooney.ie/blog/web-scraping-via-javascript-heap-snapshots)
@@ -304,6 +272,39 @@ date: 2019-02-20 20:30:09
 - [Three Pillars of Observability | Datadog](https://www.datadoghq.com/three-pillars-of-observability/)
 - [What is WebAuthn and why should you care? - FusionAuth](https://fusionauth.io/blog/2022/09/13/what-is-webauthn-why-do-you-care)
 
+### 前端面试
+
+- [腾讯 IVWeb（一面）](https://www.yuque.com/tuture/interview/wrzl64)
+- [九种跨域方式实现原理（完整版） - 掘金](https://juejin.cn/post/6844903767226351623)
+- [常见前端面试题](https://mp.weixin.qq.com/mp/homepage?__biz=MzIzNjgxNzAzOQ==&hid=1&sn=4e8e6275b659d76fbfa3d3d17a87698a&scene=1&uin=&key=&devicetype=iMac+Macmini8%2C1+OSX+OSX+11.3.1+build)
+- [做了一份前端面试复习计划，保熟～ - 掘金](https://juejin.cn/post/7061588533214969892)
+- [浏览器输入 URL 后发生了什么？ - 知乎](https://zhuanlan.zhihu.com/p/43369093)
+- [让面试官膜拜你的 HTTPS 运行流程（超详细） - 知乎](https://zhuanlan.zhihu.com/p/60033345)
+- [彻底搞懂 HTTPS 的加密原理 - 知乎](https://zhuanlan.zhihu.com/p/43789231)
+- [HTTP 相关知识 | 前端工程师成长路线](https://xjl271314.github.io/docs/http/#tls-ssl-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)
+- [HTTPS 加密（握手）过程 - 简书](https://www.jianshu.com/p/e30a8c4fa329)
+- [HTTPS 详解一：附带最精美详尽的 HTTPS 原理图 - SegmentFault 思否](https://segmentfault.com/a/1190000021494676)
+- [HTTPS 加密过程详解 - SegmentFault 思否](https://segmentfault.com/a/1190000019976390)
+- [高级前端进阶博文 | 木易杨前端进阶](https://muyiy.cn/blog/)
+- [木易杨前端进阶](https://muyiy.cn/)
+- [前端面试常见的知识点（四处搜刮）💻 - 掘金](https://juejin.cn/post/6844904078288355341#heading-101)
+- [可能是最全的 “文本溢出截断省略” 方案合集 - 掘金](https://juejin.cn/post/6844903988081475591)
+- [Daily-Interview-Question](https://github.com/Advanced-Frontend/Daily-Interview-Question)
+- [壹题汇总 | 木易杨前端进阶](https://muyiy.cn/question/)
+- [大揭秘！“恐怖”的阿里一面，我究竟想问什么 - 掘金](https://juejin.cn/post/6844903909194989575)
+- [挑战一轮大厂后的面试总结 (含六个方向) - javascript 篇(万字长文) - 掘金](https://juejin.cn/post/6844904070579240974#heading-8)
+- JavaScript 原型链：[Javascript Object Hierarchy](http://www.mollypages.org/tutorials/js.mp)
+- [「2021」高频前端面试题汇总之 JavaScript 篇（上） - 掘金](https://juejin.cn/post/6940945178899251230)
+- [2020 最新：100 道有答案的前端面试题（上） - 掘金](https://juejin.cn/post/6847902225423925255)
+- [2021 年 web 前端开发经典面试题总结整理（建议收藏） - 哔哩哔哩](https://www.bilibili.com/read/cv10115331)
+- [前端面试每日 3+1，以面试题来驱动学习，提倡每日学习与思考，每天进步一点！](https://github.com/haizlin/fe-interview)
+- [Web 中高级前端面试题集合（200+） - SegmentFault 思否](https://segmentfault.com/a/1190000021966814)
+- [大前端面试宝典 - 图解前端](https://lucifer.ren/fe-interview/#/)
+- [专栏介绍 | 前端部署十五篇 | 大厂面试](https://q.shanyue.tech/deploy/)
+- [前言 | 大厂面试题每日一题](https://q.shanyue.tech/engineering/)
+- [理解 js 原型、原型链和继承 | Jiuto's blog](https://jiuto.github.io/jiuto_blog/guide/js/proto.html)
+- [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog/issues/2)
+
 ## UI 设计
 
 - icon：
@@ -316,58 +317,6 @@ date: 2019-02-20 20:30:09
 ## 数据
 
 - 股票数据：[单只股票数据](http://50.push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000597&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&klt=101&fqt=0&end=20500101&lmt=100000)
-
-## 加密货币
-
-- 老币：
-  - [乌龟币(TRTL)矿池](https://turtlecoin.herominers.com/?lang=en#)
-  - [门罗币(XMR)网页钱包](https://wallet.mymonero.com/)
-  - [门罗币矿池](https://monero.herominers.com/)
-- BSC 链项目：
-  - [bunny 矿池](https://pancakebunny.finance/vault)
-  - [pancake](https://pancakeswap.finance/)
-  - [beefy](https://app.beefy.finance/?utm_source=tokenpocket)
-  - [jetswap](https://jetswap.finance/)
-  - [BNB Smart Chain Explorer](https://bscscan.com/)
-  - [LOWB](https://app.loserswap.com/)
-  - [LOWB 跨链桥](https://loserbridge.org/erc20)
-  - [BSC 桥](https://www.bnbchain.org/en/bridge)
-- KCC 链：
-  - [文档](https://docs.kcc.io/#/zh-cn/?id=%e4%b8%bb%e7%bd%91)
-  - [区块查询](https://explorer.kcc.io/cn/)
-- AxieInfinity：
-  - [axie market](https://marketplace.axieinfinity.com/axie)
-  - [账号中心](https://marketplace.axieinfinity.com/login/)
-  - [白皮书](https://whitepaper.axieinfinity.com/axs)
-  - [axie zone](https://axie.zone/)
-  - [axie tech](https://www.axie.tech/)
-  - [axie world](https://www.axieworld.com/cn/guides)
-  - [axieinfinity github](https://github.com/axieinfinity)
-  - [katana](https://katana.roninchain.com/#/farm)
-  - [AXS Staking](https://stake.axieinfinity.com/)
-- [快乐区块维基](https://happypeter.github.io/binfo/)
-- [【以太坊】深入理解 gas 机制](https://zhuanlan.zhihu.com/p/38333164)
-- [evm-opcode-gas-costs](https://github.com/djrtwo/evm-opcode-gas-costs/blob/master/opcode-gas-costs_EIP-150_revision-1e18248_2017-04-12.csv)
-- 空投：
-  - [airdrops.io](https://airdrops.io/)
-  - [defi llama](https://defillama.com/airdrops)
-- 智能合约：
-  - [HTMoon](https://hecoinfo.com/address/0xb62e3b6a3866f5754fdefcf82e733310e2851043#code)
-  - [DOG](https://hecoinfo.com/address/0xb3863e02d6930762933F672cA134C1CceCd0D413#code)
-  - [区块链技术-智能合约 Solidity 编程语言](https://solidity.tryblockchain.org/Solidity-Type-Integer-%E6%95%B4%E5%9E%8B.html)
-  - [代币 YELD 价格直接跳水归零：PolyYeld Finance 被攻击事件全解析](https://m.jinse.com/blockchain/1135705.html?source=m)
-  - [以太坊智能合约安全入门了解一下（上）](https://paper.seebug.org/601/)
-  - [智能合约入门 1——Remix+合约调用](https://zhuanlan.zhihu.com/p/261690742)
-  - [智能合约入门](https://happypeter.github.io/binfo/smart-c-intro)
-  - [智能合约入门](https://learnblockchain.cn/docs/solidity/introduction-to-smart-contracts.html)
-  - [Ethernaut](https://ethernaut.openzeppelin.com/)
-  - [Security Innovation Blockchain CTF](https://blockchain-ctf.securityinnovation.com/#/)
-  - [智能合约安全入门:ETHERNAUT-WriteUp](https://xzlang.github.io/2020/05/12/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%AE%89%E5%85%A8%E5%85%A5%E9%97%A8-ETHERNAUT-WriteUp/)
-  - [blockchain-ctf 靶场（0-12）](https://www.jianshu.com/p/a25e6b76dc62)
-  - [Ethernaut 靶场刷题（上）](https://blog.csdn.net/rfrder/article/details/115572137)
-  - 免费领取测试网络币：[Rinkeby Authenticated Faucet](https://faucet.rinkeby.io/)
-  - [CryptoZombies - 编游戏的同时学习以太坊的智能协议. Loom Network 产品。](https://cryptozombies.io/zh/)
-  - [remix](https://remix.ethereum.org/)
 
 ## 其他
 
@@ -397,3 +346,4 @@ date: 2019-02-20 20:30:09
 - [爱发电](https://afdian.net/)
 - 制乐：[开始 | Learning Synths](https://learningsynths.ableton.com/zh-Hans)
 - [机械表原理](https://ciechanow.ski/mechanical-watch/)
+- [公式化剖析色彩三要素：色相、饱和度、明度](https://zhuanlan.zhihu.com/p/30409532)

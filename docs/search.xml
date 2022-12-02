@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[加密货币收藏网址]]></title>
+    <url>%2Fblog%2F2022%2F11%2F30%2F%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E6%94%B6%E8%97%8F%E7%BD%91%E5%9D%80%2F</url>
+    <content type="text"><![CDATA[Getting started | Bitcoin Design 老币： 乌龟币(TRTL)矿池 门罗币(XMR)网页钱包 门罗币矿池 BSC 链项目： bunny 矿池 pancake beefy jetswap BNB Smart Chain Explorer LOWB LOWB 跨链桥 BSC 桥 KCC 链： 文档 区块查询 AxieInfinity： axie market 账号中心 白皮书 axie zone axie tech axie world axieinfinity github katana AXS Staking 快乐区块维基 【以太坊】深入理解 gas 机制 evm-opcode-gas-costs 空投： airdrops.io defi llama 智能合约： Provider Migration Guide | MetaMask Docs How to Become a Blockchain Engineer | by Patrick Collins | Better Programming HTMoon DOG 区块链技术-智能合约 Solidity 编程语言 代币 YELD 价格直接跳水归零：PolyYeld Finance 被攻击事件全解析 以太坊智能合约安全入门了解一下（上） 智能合约入门 1——Remix+合约调用 智能合约入门 智能合约入门 Ethernaut Security Innovation Blockchain CTF 智能合约安全入门:ETHERNAUT-WriteUp blockchain-ctf 靶场（0-12） Ethernaut 靶场刷题（上） 免费领取测试网络币：Rinkeby Authenticated Faucet CryptoZombies - 编游戏的同时学习以太坊的智能协议. Loom Network 产品。 remix]]></content>
+      <categories>
+        <category>加密货币</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[leetcode 902. 最大为 N 的数字组合]]></title>
     <url>%2Fblog%2F2022%2F11%2F29%2Fleetcode%20902.%20%E6%9C%80%E5%A4%A7%E4%B8%BA%20N%20%E7%9A%84%E6%95%B0%E5%AD%97%E7%BB%84%E5%90%88%2F</url>
     <content type="text"><![CDATA[这题是数位 dp 类型的题，遍历对象有两个： 遍历 N 的每一位 遍历 digits 问题规模是 N 的位数。 状态转移方程是这样思考得出： 在遍历 digits 时，设当前 digits 的值为 digits[i]： 如果 digits[i]比 N 的第 j 位的数字小，则低位的数字就可以任意，那么由 digits[i]开头所产生的组合数是：digits.length**(j-1)。 如果 digits[i]等于 N 的第 j 位数字，则还要继续对比第 j-1 位才知道能否凑出一个比 N 小的，也即递归，缩小问题规模。产生组合：dp[j-1] 如果 digits[i]大于 N 的第 j 位数字，则后面低位的数字不管是什么，都已经不能产生小于 N 的组合了。产生组合：0 把每个 digits[i]对应的结果加起来，就是当前问题规模（问题规模为：j）的答案。 状态转移方程： 12345if (digits[i] &lt; N[j]) &#123; dp[j] += digits.length ** (j - 1);&#125; else if (digits[i] == N[j]) &#123; dp[j] += dp[j - 1];&#125; 代码： 12345678910111213141516171819function atMostNGivenDigitSet(digits: string[], n: number): number &#123; const nStr = n.toString(); const dp = new Array(nStr.length).fill(0); const memo = []; for (let i = 1, res = 1; i &lt; nStr.length; i++) &#123; memo.push((res = res * digits.length)); &#125; for (let i = 0; i &lt; nStr.length; i++) &#123; for (let j = 0; j &lt; digits.length; j++) &#123; if (digits[j] &lt; nStr[nStr.length - 1 - i]) &#123; dp[i] += i &gt; 0 ? memo[i - 1] : 1; &#125; else if (digits[j] == nStr[nStr.length - 1 - i]) &#123; console.log(digits[j], nStr[nStr.length - 1 - i], dp); dp[i] += i &gt; 0 ? dp[i - 1] : 1; &#125; &#125; &#125; return memo.reduce((a, b) =&gt; a + b, 0) + dp[dp.length - 1];&#125;]]></content>
