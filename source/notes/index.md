@@ -5,6 +5,23 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-12-05
+
+## css 边框是否计入宽高
+
+```css
+box-sizing: border-box; // 这个会把边框的宽度计入width和height
+box-sizing: content-box; // 这个不会把边框的宽度计入width和height，且这个是默认值
+```
+
+## react 受控组件和非受控组件
+
+使用 react 的过程中发现，有的时候需要写很多的更新代码，比如 Input 标签，需要在 onBlur 的时候更新 value，需要在 onKeyUp（按 enter）的时候更新 value，如此会非常麻烦，远不如以前用 jquery 的时候，直接获取 dom 的值。
+
+如果对于一个组件，我们用 useState 来存储状态，并在每个更新事件中更新值，这种我们叫：受控组件
+
+还有一种写法是，直接不使用 useState，也就不用更新值，需要拿值的时候，直接从 dom 获取（怎么获取 dom？用 useRef）。
+
 # 2022-12-02
 
 react 怎么获取 children，比如`<Button><span>AA</span></Button>`
