@@ -824,11 +824,9 @@
 
       
         
-          
-          什么是副作用函数？如果一个函数只是接收输入，然后输出，没有影响外部（比如修改外部变量），那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。
-举个例子：
-123function effect() &#123;  document.body.inne
-          ...
+          <h2 id="什么是副作用函数？"><a href="#什么是副作用函数？" class="headerlink" title="什么是副作用函数？"></a>什么是副作用函数？</h2><p>如果一个函数只是接收输入，然后输出，没有影响外部（比如修改外部变量），那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。</p>
+<p>举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">effect</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.body.innerText = <span class="string">"hello vue3"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/2022/11/06/vue.js响应系统的实现 第一篇/#more" rel="contents">
