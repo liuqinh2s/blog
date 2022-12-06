@@ -22,6 +22,8 @@ box-sizing: content-box; // 这个不会把边框的宽度计入width和height�
 
 还有一种写法是，直接不使用 useState，也就不用更新值，需要拿值的时候，直接从 dom 获取（怎么获取 dom？用 useRef）。
 
+官方文档：https://zh-hans.reactjs.org/docs/uncontrolled-components.html
+
 # 2022-12-02
 
 react 怎么获取 children，比如`<Button><span>AA</span></Button>`

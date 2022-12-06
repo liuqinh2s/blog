@@ -90,7 +90,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2022-12-05T08:59:37.461Z">
+<meta property="og:updated_time" content="2022-12-06T01:17:51.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-05css 边框是否计入宽高12box-sizing: border-box; // 这个会把边框的宽度计入width和heightbox-sizing: content-box; // 这个不会">
@@ -379,6 +379,7 @@
 <h2 id="react-受控组件和非受控组件"><a href="#react-受控组件和非受控组件" class="headerlink" title="react 受控组件和非受控组件"></a>react 受控组件和非受控组件</h2><p>使用 react 的过程中发现，有的时候需要写很多的更新代码，比如 Input 标签，需要在 onBlur 的时候更新 value，需要在 onKeyUp（按 enter）的时候更新 value，如此会非常麻烦，远不如以前用 jquery 的时候，直接获取 dom 的值。</p>
 <p>如果对于一个组件，我们用 useState 来存储状态，并在每个更新事件中更新值，这种我们叫：受控组件</p>
 <p>还有一种写法是，直接不使用 useState，也就不用更新值，需要拿值的时候，直接从 dom 获取（怎么获取 dom？用 useRef）。</p>
+<p>官方文档：<a href="https://zh-hans.reactjs.org/docs/uncontrolled-components.html" target="_blank" rel="noopener">https://zh-hans.reactjs.org/docs/uncontrolled-components.html</a></p>
 <h1 id="2022-12-02"><a href="#2022-12-02" class="headerlink" title="2022-12-02"></a>2022-12-02</h1><p>react 怎么获取 children，比如<code>&lt;Button&gt;&lt;span&gt;AA&lt;/span&gt;&lt;/Button&gt;</code></p>
 <p><a href="https://reactjs.org/docs/glossary.html#propschildren" target="_blank" rel="noopener">https://reactjs.org/docs/glossary.html#propschildren</a></p>
 <p>但问题来了，既然 children 占了 props 的一个键，如果这样写呢：<code>&lt;Button children=&quot;BB&quot;&gt;&lt;span&gt;AA&lt;/span&gt;&lt;/Button&gt;</code></p>
