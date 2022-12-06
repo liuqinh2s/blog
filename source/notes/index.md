@@ -7,18 +7,32 @@ date: 2018-11-03 14:59:45
 
 # 2022-12-06
 
-[react 父组件调用子组件的函数](https://juejin.cn/post/6977367229960552455)：`useImperativeHandle`
+[react 父组件调用子组件的函数](https://juejin.cn/post/6844903937468792846)：`useImperativeHandle`
+
+子组件：
 
 ```javascript
-// 用useImperativeHandle暴露一些外部ref能访问的属性
-useImperativeHandle(props.onRef, () => {
-  // 需要将暴露的接口返回出去
-  return {
-    resetSelectedId: () => {
-      setSelectedId(listData[0]?.id || null);
-    },
-  };
-});
+function children(props, ref) {
+  // 用useImperativeHandle暴露一些外部ref能访问的属性
+  useImperativeHandle(props.onRef, () => {
+    // 需要将暴露的接口返回出去
+    return {
+      xxx: () => {
+        console.log("执行子组件方法xxx()");
+      },
+    };
+  });
+  return <h1>children</h1>;
+}
+export default forwardRef(children);
+```
+
+父组件：
+
+```javascript
+const childrenRef = useRef(null);
+childrenRef.current.xxx();
+return <children ref={childrenRef} />;
 ```
 
 很多时候，父组件需要设置子组件的 state，那么就可以这样做
