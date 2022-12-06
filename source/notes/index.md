@@ -5,6 +5,24 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2022-12-06
+
+[react 父组件调用子组件的函数](https://juejin.cn/post/6977367229960552455)：`useImperativeHandle`
+
+```javascript
+// 用useImperativeHandle暴露一些外部ref能访问的属性
+useImperativeHandle(props.onRef, () => {
+  // 需要将暴露的接口返回出去
+  return {
+    resetSelectedId: () => {
+      setSelectedId(listData[0]?.id || null);
+    },
+  };
+});
+```
+
+很多时候，父组件需要设置子组件的 state，那么就可以这样做
+
 # 2022-12-05
 
 ## css 边框是否计入宽高
