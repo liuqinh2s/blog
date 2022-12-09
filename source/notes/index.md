@@ -11,6 +11,13 @@ date: 2018-11-03 14:59:45
 
 Http 请求中，dataType 和 ContentType 的区别
 
+http 的头其实是可以随意书写的，只要服务器能适配就行，当然大部分是约定的。我只看到 Content-Type，request 和 response 都有，但没有 dataType。dataType 用于客户端通知服务器，客户端需要什么类型的返回数据。说有用也有用，说没用也没啥用，服务器会返回什么类型的数据，客户端肯定是知道的啊，一开始就约定了
+
+常见的数据格式：
+
+1. `application/json`
+2. `application/x-www-form-urlencoded`
+
 ## flex，flex-grow，flex-shrink，flex-basis
 
 这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：

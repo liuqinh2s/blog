@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-09Http 请求的数据格式Http 请求中，dataType 和 ContentType 的区别 flex，flex-grow，flex-shrink，flex-basis这个东西的计算公式官网">
+<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-09Http 请求的数据格式Http 请求中，dataType 和 ContentType 的区别 http 的头其实是可以随意书写的，只要服务器能适配就行，当然大部分是约定的。我只看到 Cont">
 <meta property="og:type" content="website">
 <meta property="og:title" content="札记">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/notes/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-09Http 请求的数据格式Http 请求中，dataType 和 ContentType 的区别 flex，flex-grow，flex-shrink，flex-basis这个东西的计算公式官网">
+<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-09Http 请求的数据格式Http 请求中，dataType 和 ContentType 的区别 http 的头其实是可以随意书写的，只要服务器能适配就行，当然大部分是约定的。我只看到 Cont">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2022-12-09T09:26:35.539Z">
+<meta property="og:updated_time" content="2022-12-09T09:34:47.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
-<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-09Http 请求的数据格式Http 请求中，dataType 和 ContentType 的区别 flex，flex-grow，flex-shrink，flex-basis这个东西的计算公式官网">
+<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-09Http 请求的数据格式Http 请求中，dataType 和 ContentType 的区别 http 的头其实是可以随意书写的，只要服务器能适配就行，当然大部分是约定的。我只看到 Cont">
 <meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 
 
@@ -376,6 +376,12 @@
         
           <p>这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。</p>
 <h1 id="2022-12-09"><a href="#2022-12-09" class="headerlink" title="2022-12-09"></a>2022-12-09</h1><h2 id="Http-请求的数据格式"><a href="#Http-请求的数据格式" class="headerlink" title="Http 请求的数据格式"></a>Http 请求的数据格式</h2><p>Http 请求中，dataType 和 ContentType 的区别</p>
+<p>http 的头其实是可以随意书写的，只要服务器能适配就行，当然大部分是约定的。我只看到 Content-Type，request 和 response 都有，但没有 dataType。dataType 用于客户端通知服务器，客户端需要什么类型的返回数据。说有用也有用，说没用也没啥用，服务器会返回什么类型的数据，客户端肯定是知道的啊，一开始就约定了</p>
+<p>常见的数据格式：</p>
+<ol>
+<li><code>application/json</code></li>
+<li><code>application/x-www-form-urlencoded</code></li>
+</ol>
 <h2 id="flex，flex-grow，flex-shrink，flex-basis"><a href="#flex，flex-grow，flex-shrink，flex-basis" class="headerlink" title="flex，flex-grow，flex-shrink，flex-basis"></a>flex，flex-grow，flex-shrink，flex-basis</h2><p>这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：</p>
 <p>grow 的计算跟自身宽高无关，直接按比例分配剩余的空间，shrink 的计算是跟自身宽高有关的，需要根据自身宽高，按加权比例平摊（缩减）超出的空间。</p>
 <p>假设计算的是水平方向的 flex：</p>
