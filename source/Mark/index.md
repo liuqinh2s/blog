@@ -5,6 +5,29 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2022-12-09
+
+- 一个简单教程，介绍如何写一个 TypeScript 库发布到 NPM 上面。:[How to Write a TypeScript Library](https://www.tsmean.com/articles/how-to-write-a-typescript-library/)
+- 很多音乐服务现在都是收费的，作者使用树莓派，搭建一个自己的音乐服务器，实现随时随地的听歌自由。:[如何搭建一个自己的音乐服务器](https://www.wdbyte.com/music-server.html)
+- 程序员分成两派，一派是"如果东西没有损坏，就不要去修它"，另一派是"尽早更新，并经常发布"。我的想法是，即使"东西没有坏"，你仍然可以改进它。你的客户会喜欢这样，你的竞争对手不会。永远不要停止挑战自己。:[Balancing “If it ain’t broke, don’t fix it” vs. “Release early and often”](https://www.redhat.com/en/blog/balancing-if-it-aint-broke-dont-fix-it-vs-release-early-and-often)
+- 如果从 10 岁开始，一直到 80 岁，你每天浏览 90 个网页，每个网页的加载需要 4 秒，你一共会花费 103.66 天等待网页加载。如果网页加载时间减少 1 秒，你会多出来 27 天的生命！:[How much time do we waste waiting for websites to load?](https://www.datafantic.com/how-much-time-do-we-waste-waiting-for-websites-to-load/)
+- 作者推荐使用 NestJS 作为后端框架，本文介绍他眼中这个框架的几大优点。:[Why Choose NestJS as Your Backend Framework - Amplication](https://amplication.com/blog/why-choose-nestjs-as-your-backend-framework-amplication)
+- 本文介绍如何使用 JavaScript 验证一个 URL 是否合法。:[Secure JavaScript URL validation](https://snyk.io/blog/secure-javascript-url-validation/)
+- Backblaze 是一个存储服务商，Cloudflare 是 CDN 服务商，两者都提供免费服务。将它们结合起来，就能获得免费的存储 + CDN。:[How to setup a practically free CDN](https://gist.github.com/charlesroper/f2da6152d6789fa6f25e9d194a42b889)
+- 作者需要找一个功能完善的云原生应用平台，经过自己筛选和朋友推荐，剩下 KubeSphere 和 Rainbond 这两个产品。:[开源云原生平台 KubeSphere 与 Rainbond 对比](https://mp.weixin.qq.com/s/VIxJNlJHQu91T7ASXg7sAQ)
+- 这是 Markdown 格式的升级版，修正了一些不合理和难用的地方。我很喜欢这个格式，但愿能够推广开来。作者 John MacFarlane 是加州大学的哲学教授，也是程序员。他的主要项目是文档工具 Pandoc，他还参与了 CommonMark 标准的制定。[Djot](https://djot.net/)
+- 一款好用强大的开源建站工具，基于 Spring，最近发布了 2.0 版，在 GitHub 有 24k+ 星，查看 Demo。:[Halo [ˈheɪloʊ] 好用又强大的开源建站工具。](https://halo.run/)
+- 一个数据探索和数据可视化工具，可以与各种数据源很好地集成。:[Apache Superset is a modern data exploration and visualization platform](https://superset.apache.org/)
+- 一个 Node.js 网站框架，特点是结构简单，一个 HTML 页面就是一个路由。:[Enhance Docs](https://enhance.dev/docs/)
+- 平面设计软件 Canva 推出了四款中文字体，可以免费使用（包括商用）。:[Canva 可画原创字体集发布｜江南百味，此刻沉醉](https://mp.weixin.qq.com/s/dDCQxLhxj3tciMWEW2JeqQ)
+- 一个 Node.js 工具，在命令行显示两个方框，一个输入代码，一个显示结果。:[【开源自荐】一个 Node.js 交互式解释器终端](https://github.com/ruanyf/weekly/issues/2776)
+- ChatGPT 的新用途，现在每天都在增加。有人让它解释代码，有人让它写程序和找 Bug，甚至有人让它扮演虚拟机，我说一条命令，你把执行结果告诉我。:[Building A Virtual Machine inside ChatGPT](https://www.engraved.blog/building-a-virtual-machine-inside/)
+- 美国空军正在试验一种"体外骨骼"，士兵穿上这种机械装置以后，会拥有更大的力量，完成各种任务。:[US Air Force tests exoskeleton to give cargo-loading porters a boost](https://www.defensenews.com/air/2022/10/17/us-air-force-tests-exoskeleton-to-give-cargo-loading-porters-a-boost/)
+- 西铁城手表的官网有一个页面，教你怎么用手表作为指南针，（在北半球）找到南方，很实用的小知识。:[如何使用手表作为指南针（以北半球为例）](https://www.citizenwatch-global.com/support/exterior/direction_sc.html)
+- ChatGPT 项目：[Welcome to ChatGPT Log in with your OpenAI account to continue](https://chat.openai.com/auth/login)
+- [ChatGPT 知乎插件](https://github.com/no13bus/chat-gpt-zhihu-extension)
+- [ChatGPT google 插件](https://github.com/wong2/chat-gpt-google-extension)
+
 # 2022-11-27
 
 今天得整理一下 Tools，把里面非工具的部分，挪到 Mark 里面
