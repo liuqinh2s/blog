@@ -90,7 +90,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2022-12-12T03:02:08.452Z">
+<meta property="og:updated_time" content="2022-12-12T09:06:16.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12345NaN === NaN; /">
@@ -395,6 +395,7 @@
 <p>div1 元素需要 shrink 的量：<code>(100*1)/(100*1+200*2+300*3)\*(700-100-200-300)</code></p>
 <p>也就是加权比例，需要用到自身的宽高</p>
 <p>flex-basis 就是宽高的意思，但比宽高优先级高，比如定义了 width: 100px; flex-basis: 0px;那么就是按 0 去进行 flex 的。</p>
+<p>实验地址：<a href="https://replit.com/@liuqinh2s1/css-flex#src/App.tsx" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/css-flex#src/App.tsx</a></p>
 <h1 id="2022-12-08"><a href="#2022-12-08" class="headerlink" title="2022-12-08"></a>2022-12-08</h1><h2 id="react-怎么区分父组件发起的渲染，还是子组件自身发起的渲染"><a href="#react-怎么区分父组件发起的渲染，还是子组件自身发起的渲染" class="headerlink" title="react 怎么区分父组件发起的渲染，还是子组件自身发起的渲染"></a>react 怎么区分父组件发起的渲染，还是子组件自身发起的渲染</h2><p>用 react 的过程中遇到一个需求：子组件渲染的时候，需要知道是父组件发起的，还是子组件自身发起的渲染。如果是父组件发起的，就用父组件传过来的数据，如果是子组件发起的，就用子组件自身的数据。</p>
 <p>那么怎么达到这个目的呢，有两种方案：</p>
 <p>（1）增加一个变量<code>xxx</code>标志父组件的刷新，然后子组件 useEffect 监听这个变量</p>

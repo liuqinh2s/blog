@@ -54,6 +54,8 @@ div1 元素需要 shrink 的量：`(100*1)/(100*1+200*2+300*3)\*(700-100-200-300
 
 flex-basis 就是宽高的意思，但比宽高优先级高，比如定义了 width: 100px; flex-basis: 0px;那么就是按 0 去进行 flex 的。
 
+实验地址：https://replit.com/@liuqinh2s1/css-flex#src/App.tsx
+
 # 2022-12-08
 
 ## react 怎么区分父组件发起的渲染，还是子组件自身发起的渲染
