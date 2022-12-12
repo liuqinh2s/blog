@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12NaN === NaN; // f">
+<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12345NaN === NaN; /">
 <meta property="og:type" content="website">
 <meta property="og:title" content="札记">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/notes/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12NaN === NaN; // f">
+<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12345NaN === NaN; /">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2022-12-12T02:45:43.132Z">
+<meta property="og:updated_time" content="2022-12-12T03:02:08.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
-<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12NaN === NaN; // f">
+<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2022-12-12怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用JSON.stringify。 ===和Object.is()有什么区别？ 12345NaN === NaN; /">
 <meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 
 
@@ -377,7 +377,7 @@
           <p>这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。</p>
 <h1 id="2022-12-12"><a href="#2022-12-12" class="headerlink" title="2022-12-12"></a>2022-12-12</h1><p>怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用<code>JSON.stringify</code>。</p>
 <p><code>===</code>和<code>Object.is()</code>有什么区别？</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="number">-0</span> === +<span class="number">0</span>; <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">-0</span>, +<span class="number">0</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <h1 id="2022-12-09"><a href="#2022-12-09" class="headerlink" title="2022-12-09"></a>2022-12-09</h1><h2 id="Http-请求的数据格式"><a href="#Http-请求的数据格式" class="headerlink" title="Http 请求的数据格式"></a>Http 请求的数据格式</h2><p>Http 请求中，dataType 和 ContentType 的区别</p>
 <p>http 的头其实是可以随意书写的，只要服务器能适配就行，当然大部分是约定的。我只看到 Content-Type，request 和 response 都有，但没有 dataType。dataType 用于客户端通知服务器，客户端需要什么类型的返回数据。说有用也有用，说没用也没啥用，服务器会返回什么类型的数据，客户端肯定是知道的啊，一开始就约定了</p>
 <p>常见的数据格式：</p>

@@ -14,6 +14,9 @@ date: 2018-11-03 14:59:45
 ```javascript
 NaN === NaN; // false
 Object.is(NaN, NaN); // true
+
+-0 === +0; // true
+Object.is(-0, +0); // false
 ```
 
 # 2022-12-09
