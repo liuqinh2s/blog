@@ -43,6 +43,13 @@ Object.is(-0, +0); // false
 
 实验：https://replit.com/@liuqinh2s1/cssTest2#src/App.tsx
 
+用样式可以控制每个字母换行：
+
+```css
+word-break: break-all;
+word-wrap: break-word;
+```
+
 # 2022-12-09
 
 ## Http 请求的数据格式

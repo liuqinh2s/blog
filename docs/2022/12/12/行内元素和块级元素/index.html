@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="行内元素和块级元素算是 css 中最基础，也是最重要的部分了。但我对这部分还没彻底研究透，需要彻底掌握才行。 比如，width 和 height 跟父节点和子节点的关系到底是什么，默认是什么？行内元素的 padding 和 margin 能设置吗？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-12-12T13:32:14.590Z">
+<meta property="og:updated_time" content="2022-12-12T14:11:02.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="行内元素和块级元素">
 <meta name="twitter:description" content="行内元素和块级元素算是 css 中最基础，也是最重要的部分了。但我对这部分还没彻底研究透，需要彻底掌握才行。 比如，width 和 height 跟父节点和子节点的关系到底是什么，默认是什么？行内元素的 padding 和 margin 能设置吗？">
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  864
+                  887
                 </span>
               
 
@@ -501,6 +501,8 @@
 <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>块级元素独占一行，前后都不可以有块级元素或者行内元素（当然 display: flex;可以让几个块级元素放在同一行）。行内元素们可以排列在同一行里，直到这一行放不下才换行。</p>
 <h3 id="一个单词是不会换行的"><a href="#一个单词是不会换行的" class="headerlink" title="一个单词是不会换行的"></a>一个单词是不会换行的</h3><p>发现行内元素居然不会换行，原来是因为被当成一个单词了</p>
 <p>实验：<a href="https://replit.com/@liuqinh2s1/cssTest2#src/App.tsx" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/cssTest2#src/App.tsx</a></p>
+<p>用样式可以控制每个字母换行：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line"><span class="selector-tag">word-wrap</span>: <span class="selector-tag">break-word</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="宽高"><a href="#宽高" class="headerlink" title="宽高"></a>宽高</h2><p>块级元素可以设置宽高，行内元素不能设置宽高（即：width 和 height）。但行内元素可以设置 line-height（没有 line-width）。</p>
 <h2 id="默认宽高"><a href="#默认宽高" class="headerlink" title="默认宽高"></a>默认宽高</h2><p>块级元素默认继承父盒子的宽度，但高度不会继承（想要继承可以设置成<code>height: 100%;</code>），由内容物撑开或者自己设置。行内元素不能设置宽高，也不继承宽高，宽高都由内容物撑开。</p>
 <h2 id="边距"><a href="#边距" class="headerlink" title="边距"></a>边距</h2><p>块级元素的 margin 和 padding 会对外产生边距效果，行内元素的 margin 和 padding 在水平方向上会对外产生效果，垂直方向上不会对外产生效果。实验：<a href="https://replit.com/@liuqinh2s1/css-test1#src/App.tsx" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/css-test1#src/App.tsx</a></p>
