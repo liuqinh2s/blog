@@ -7,6 +7,8 @@ date: 2018-11-03 14:59:45
 
 # 2022-12-12
 
+## 深入对比对象
+
 怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用`JSON.stringify`。
 
 `===`和`Object.is()`有什么区别？
@@ -18,6 +20,22 @@ Object.is(NaN, NaN); // true
 -0 === +0; // true
 Object.is(-0, +0); // false
 ```
+
+## 文本溢出常用处理手段
+
+```css
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```
+
+## width 100%和 auto 的区别
+
+[difference between width auto and width 100 percent](https://stackoverflow.com/questions/17468733/difference-between-width-auto-and-width-100-percent)
+
+实验:https://replit.com/@liuqinh2s1/css-textOverflow#src/App.tsx
 
 # 2022-12-09
 
