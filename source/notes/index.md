@@ -802,9 +802,9 @@ typescript 的一些常见用法：
 
 ## 使用数组中限定的 string
 
-```javascript
-let a = ['a', 'b'] as const;
-let b: typeof a[number] = 'c';
+```typescript
+let a = ["a", "b"] as const;
+let b: typeof a[number] = "c";
 ```
 
 上述代码会报错，因为 `typeof a[number]` 限定了 b 的类型是`'a'|'b'`，`as const`既可以让 a 是 readonly 类型，又可以让 `typeof a[number]` 从 string 类型缩窄到 `'a'|'b'`
@@ -813,28 +813,28 @@ let b: typeof a[number] = 'c';
 
 可以将上面的代码改写为：
 
-```javascript
-let a: readonly ['a', 'b'] = ['a', 'b'];
-let b: typeof a[number] = 'c';
+```typescript
+let a: readonly ["a", "b"] = ["a", "b"];
+let b: typeof a[number] = "c";
 ```
 
 但这个要写两遍数组，看起来不太好看
 
 ## 使用对象中限定的 string
 
-```javascript
+```typescript
 let obj = {
-  'a': 'a',
-  'b': 'b'
+  a: "a",
+  b: "b",
 } as const;
-let b: Item<typeof obj> = 'c';
+let b: Item<typeof obj> = "c";
 ```
 
 这样可以获取对象的 value，每多一层，就可以多加一个 Item。
 
 那怎么获取对象的 key 呢？代码如下：`keyof typeof`
 
-```javascript
+```typescript
 let obj = {
   'a': 'a',
   'b': 'b'
@@ -849,19 +849,34 @@ let b: keyof typeof obj = 'd';
 
 ## 限定一个对象的 key 与另一个对象的 key 完全匹配
 
-```javascript
+```typescript
 const enum DOCTYPE {
   DEVICE = 1,
-  SYMBOL = 2
+  SYMBOL = 2,
 }
 let a: Record<DOCTYPE, string> = {
-  [DOCTYPE.DEVICE]: 'aaaa'
-}
+  [DOCTYPE.DEVICE]: "aaaa",
+};
 ```
 
 这样写会报错，应该少了一个 key。这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
 
-## 如果不想限定完全一致
+## 如果不想限定完全一致，要怎么写
+
+```typescript
+const enum DOCTYPE {
+  DEVICE = 1,
+  SYMBOL = 2,
+}
+type aa = {
+  [key in keyof typeof DOCTYPE]?: string;
+};
+let a: aa = {
+  [DOCTYPE.DEVICE]: "aaaa",
+};
+```
+
+只需要在 key 后面加个问号，就跟其他的任意 key 一样处理（今天被这么一个简单的问题难住了，说明不会举一反三）
 
 ## 怎么获取 enum 的 key 和 value 类型
 
