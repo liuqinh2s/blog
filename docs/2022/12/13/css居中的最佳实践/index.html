@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-12-14T03:26:19.606Z">
+<meta property="og:updated_time" content="2022-12-14T03:35:47.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css居中的最佳实践">
 <meta name="twitter:description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  565
+                  642
                 </span>
               
 
@@ -501,10 +501,11 @@
 <h1 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h1><p>最佳实践，都是通过给父容器设置样式，来使内容达到居中效果。这个设计哲学也是非常正确的，我们确实应该通过操作父容器来让其内容居中，居中并非是子元素需要考虑的事（因为子元素可能有多个，且其自身可能比较复杂）。</p>
 <h2 id="文本居中"><a href="#文本居中" class="headerlink" title="文本居中"></a>文本居中</h2><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p>文本水平居中使用<code>text-align: center;</code>：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;我是文本&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>这个非常好使，单行和多行文本都可以处理。</p>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="_blank" rel="noopener">text-align 文档</a></p>
 <h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>使用 line-height 可以调节文本的垂直间距，从而达到垂直居中的效果，不过如果是多行文本的话，需要知道行数，但大多数情况下都是不知道行数的，所以一般用于单行文本的垂直居中场景。</p>
 <p>实验地址：<a href="https://replit.com/@liuqinh2s1/cssTest3#src/App.css" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/cssTest3#src/App.css</a></p>
-<p>实际上多行文本垂直居中可以用跟容器居中一样的方法：</p>
+<p>实际上多行文本垂直居中可以用跟容器居中一样的方法（同样的也适用于单行）：</p>
 <ul>
 <li><a href="https://replit.com/@liuqinh2s1/css-center2#index.html" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/css-center2#index.html</a></li>
 </ul>
@@ -519,6 +520,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>如果是垂直排布的，设置<code>justify-content: center;</code>：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>所以总结如下：除文本水平居中可以用<code>text-align: center;</code>轻松处理外（flex 布局无法让文本水平居中！），其余情况，全部可以用 flex 布局解决。</p>
 
       
     </div>
@@ -779,7 +781,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">81.3k</span>
+    <span title="Site words total count">81.4k</span>
   
 </div>
 
