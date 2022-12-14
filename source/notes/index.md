@@ -49,6 +49,19 @@ Object.is(-0, +0); // false
 
 实验:https://replit.com/@liuqinh2s1/css-textOverflow#src/App.tsx
 
+## 一个单词是不会换行的
+
+发现行内元素居然不会换行，原来是因为被当成一个单词了
+
+实验：https://replit.com/@liuqinh2s1/cssTest2#src/App.tsx
+
+用样式可以控制每个字母换行：
+
+```css
+word-break: break-all;
+word-wrap: break-word;
+```
+
 # 2022-12-09
 
 ## Http 请求的数据格式
