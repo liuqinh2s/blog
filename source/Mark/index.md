@@ -5,7 +5,16 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2022-12-14
+
+今天主要是总结了 css 居中的最佳实践，工作中应该足够用了，但对于其他很多的 css 特性我掌握得还不够，下面是 grid 布局的知识：
+
+- [CSS Grid 网格布局教程 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
+- [网格布局的基本概念 - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+
 # 2022-12-09
+
+以下内容全部来自每周五的阮一峰周报：
 
 - 一个简单教程，介绍如何写一个 TypeScript 库发布到 NPM 上面。:[How to Write a TypeScript Library](https://www.tsmean.com/articles/how-to-write-a-typescript-library/)
 - 很多音乐服务现在都是收费的，作者使用树莓派，搭建一个自己的音乐服务器，实现随时随地的听歌自由。:[如何搭建一个自己的音乐服务器](https://www.wdbyte.com/music-server.html)
