@@ -851,8 +851,8 @@ let b: keyof typeof obj = 'd';
 
 ```javascript
 const enum DOCTYPE {
-  DEVICE: 1,
-  SYMBOL: 2
+  DEVICE = 1,
+  SYMBOL = 2
 }
 let a: Record<DOCTYPE, string> = {
   [DOCTYPE.DEVICE]: 'aaaa'
@@ -860,6 +860,8 @@ let a: Record<DOCTYPE, string> = {
 ```
 
 这样写会报错，应该少了一个 key。这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
+
+## 如果不想限定完全一致
 
 ## 怎么获取 enum 的 key 和 value 类型
 
