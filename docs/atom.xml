@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2022-12-12T09:06:14.680Z</updated>
+  <updated>2022-12-14T02:24:12.552Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css居中的最佳实践</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/12/13/css%E5%B1%85%E4%B8%AD%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/12/13/css居中的最佳实践/</id>
+    <published>2022-12-13T01:23:44.075Z</published>
+    <updated>2022-12-14T02:24:12.552Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;居中是 css 中很重要的一个基础知识，主要分三个方向讨论：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;水平居中 or 垂直居中&lt;/li&gt;
+&lt;li&gt;文本居中 or 容器居中（块级元素）&lt;/li&gt;
+&lt;li&gt;设置父容器 or 设置自身 or 都需要设置&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+    
+      <category term="css" scheme="https://liuqinh2s.github.io/blog/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>行内元素和块级元素</title>
@@ -465,25 +492,6 @@
     </summary>
     
       <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode每日一题：474. 一和零</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-%E4%B8%80%E5%92%8C%E9%9B%B6/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/06/06/leetcode-470-一和零/</id>
-    <published>2021-06-05T16:00:00.000Z</published>
-    <updated>2022-11-28T01:46:53.301Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;474-一和零&quot;&gt;&lt;a href=&quot;#474-一和零&quot; class=&quot;headerlink&quot; title=&quot;474. 一和零&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/ones-and-zeroes/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;474. 一和零&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;一道动态规划题目。&lt;/p&gt;
-&lt;p&gt;首先要明白这是一道背包问题，而且是双维度的，可以装0和1。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="https://liuqinh2s.github.io/blog/categories/leetcode/"/>
     
     
   </entry>
