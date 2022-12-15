@@ -5,12 +5,19 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2022-12-15
+
+- [2021 家电选购攻略 | 洗衣机 - 知乎](https://zhuanlan.zhihu.com/p/99879416)
+- [深入浅出 CSS 布局\_CSS 布局从入门到精通](http://layout.imweb.io/)
+
 # 2022-12-14
 
 今天主要是总结了 css 居中的最佳实践，工作中应该足够用了，但对于其他很多的 css 特性我掌握得还不够，下面是 grid 布局的知识：
 
 - [CSS Grid 网格布局教程 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 - [网格布局的基本概念 - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+- [grid 布局*网格布局*深入浅出 CSS 布局](http://layout.imweb.io/article/grids.html)
+- [CSS Houdini - Web 开发者指南 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Houdini)
 
 # 2022-12-09
 
