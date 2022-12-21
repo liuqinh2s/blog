@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="liuqinh2s">
+  <meta name="keywords" content="css,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。">
+<meta name="description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ map的remove函数实现">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/2019/04/15/C++的map的remove函数实现/index.html">
+<meta property="og:title" content="css居中的最佳实践">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2022/12/21/css居中的最佳实践/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。">
+<meta property="og:description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-11-23T13:18:53.933Z">
+<meta property="og:updated_time" content="2022-12-21T04:09:42.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++ map的remove函数实现">
-<meta name="twitter:description" content="今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。">
+<meta name="twitter:title" content="css居中的最佳实践">
+<meta name="twitter:description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2019/04/15/C++的map的remove函数实现/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2022/12/21/css居中的最佳实践/">
 
 
 
 
 
-  <title>C++ map的remove函数实现 | liuqinh2s' blog</title>
+  <title>css居中的最佳实践 | liuqinh2s' blog</title>
   
 
 
@@ -366,7 +367,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2019/04/15/C++的map的remove函数实现/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/12/21/css居中的最佳实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -383,7 +384,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C++ map的remove函数实现</h1>
+          <h1 class="post-title" itemprop="name headline">css居中的最佳实践</h1>
         
 
         <div class="post-meta">
@@ -395,8 +396,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-15T00:00:00+08:00">
-                2019-04-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-12-21T12:09:42+08:00">
+                2022-12-21
               </time>
             
 
@@ -418,8 +419,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/前端/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -454,7 +466,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  508
+                  664
                 </span>
               
 
@@ -479,13 +491,39 @@
       
 
       
-        <p>今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。</p>
+        <p>居中是 css 中很重要的一个基础知识，主要分三个方向讨论：</p>
+<ol>
+<li>水平居中 or 垂直居中</li>
+<li>文本居中 or 容器居中（块级元素）</li>
+<li>设置父容器 or 设置自身 or 都需要设置</li>
+</ol>
 <a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">string</span>&gt; mapPeople;</span><br><span class="line">    mapPeople[<span class="number">1</span>] = <span class="string">"hexu1"</span>;</span><br><span class="line">    mapPeople[<span class="number">2</span>] = <span class="string">"hexu2"</span>;</span><br><span class="line">    <span class="comment">// mapPeople[3] = "hexu3";</span></span><br><span class="line">    <span class="comment">// mapPeople[4] = "hexu4";</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">string</span>&gt;::iterator iter = mapPeople.begin();</span><br><span class="line">    <span class="keyword">for</span> (; iter != mapPeople.end(); iter++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (iter-&gt;first == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"id : "</span> &lt;&lt; iter-&gt;first &lt;&lt; <span class="string">", name : "</span> &lt;&lt; iter-&gt;second &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">            mapPeople.erase(iter++);</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; (iter != mapPeople.end()) &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//for (; iter != mapPeople.end();)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//	if (iter-&gt;first == 2)</span></span><br><span class="line">    <span class="comment">//	&#123;</span></span><br><span class="line">    <span class="comment">//		std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl;</span></span><br><span class="line">    <span class="comment">//		mapPeople.erase(iter++);</span></span><br><span class="line">    <span class="comment">//		if (iter == mapPeople.end())</span></span><br><span class="line">    <span class="comment">//			break;</span></span><br><span class="line">    <span class="comment">//	&#125;</span></span><br><span class="line">    <span class="comment">//	iter++;</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    getchar();</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>说是第一个for循环会崩溃，第二个for循环可以通过。经过分析，主要问题其实是出在对迭代器和erase的不熟悉上，导致错误的使用，这个程序的错误很明显，就是在erase这条分支中，iter++了两次。那么如何写一个正确的remove函数呢？代码如下：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">string</span>&gt; mapPeople;</span><br><span class="line">    mapPeople[<span class="number">1</span>] = <span class="string">"hexu1"</span>;</span><br><span class="line">    mapPeople[<span class="number">2</span>] = <span class="string">"hexu2"</span>;</span><br><span class="line">    mapPeople[<span class="number">3</span>] = <span class="string">"hexu3"</span>;</span><br><span class="line">    mapPeople[<span class="number">4</span>] = <span class="string">"hexu4"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">std</span>::<span class="built_in">string</span>&gt;::iterator iter = mapPeople.begin();</span><br><span class="line">    <span class="keyword">while</span> (iter != mapPeople.end())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (iter-&gt;first == <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"id : "</span> &lt;&lt; iter-&gt;first &lt;&lt; <span class="string">", name : "</span> &lt;&lt; iter-&gt;second &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line">            iter = mapPeople.erase(iter);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        iter++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另外，碰到删除的时候，要小心，可以这么写：<code>iter = mapPeople.erase(iter);</code>，也可以这么写：<code>mapPeople.erase(iter++);</code>（必须在删除前给迭代器++，否则迭代器会失效，这个问题那位程序员倒是考虑到了）。</p>
-<p>最后我想说的一点是，根据指定key删除map中的元素，这个功能在其他语言中都有库函数可以调用，而C++却没有，还要自己动手写，而且需要对map的原理有一定的了解。这就从侧面反映了C++可能并不是一个高效的生产工具。</p>
+<h1 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h1><p>最佳实践，都是通过给父容器设置样式，来使内容达到居中效果。这个设计哲学也是非常正确的，我们确实应该通过操作父容器来让其内容居中，居中并非是子元素需要考虑的事（因为子元素可能有多个，且其自身可能比较复杂）。</p>
+<h2 id="文本居中"><a href="#文本居中" class="headerlink" title="文本居中"></a>文本居中</h2><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p>文本水平居中使用<code>text-align: center;</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;我是文本&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>这个非常好使，单行和多行文本都可以处理。</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align" target="_blank" rel="noopener">text-align 文档</a></p>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>使用 line-height 可以调节文本的垂直间距，从而达到垂直居中的效果，不过如果是多行文本的话，需要知道行数，但大多数情况下都是不知道行数的，所以一般用于单行文本的垂直居中场景。</p>
+<p>实验地址：<a href="https://replit.com/@liuqinh2s1/cssTest3#src/App.css" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/cssTest3#src/App.css</a></p>
+<p>实际上多行文本垂直居中可以用跟容器居中一样的方法：flex 布局：</p>
+<ul>
+<li><a href="https://replit.com/@liuqinh2s1/css-center2#index.html" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/css-center2#index.html</a></li>
+</ul>
+<blockquote>
+<p>同样的也适用于单行，甚至单行文本水平居中也可以用 flex 布局，但多行文本水平居中不可以用 flex 布局</p>
+</blockquote>
+<h2 id="容器居中"><a href="#容器居中" class="headerlink" title="容器居中"></a>容器居中</h2><p>容器居中的最佳实践是 flex 布局。如果想看详细的教程，推荐这个：<a href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇 - 阮一峰的网络日志</a></p>
+<p>实验地址：<a href="https://replit.com/@liuqinh2s1/css-center#index.html" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/css-center#index.html</a></p>
+<h3 id="水平居中-1"><a href="#水平居中-1" class="headerlink" title="水平居中"></a>水平居中</h3><p>如果是水平排布的，设置<code>justify-content: center;</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>如果是垂直排布的，设置<code>align-items: center;</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="垂直居中-1"><a href="#垂直居中-1" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>与上面水平居中的写法正好相反</p>
+<p>如果是水平排布的，设置<code>align-items: center;</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>如果是垂直排布的，设置<code>justify-content: center;</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>所以总结如下：除多行文本水平居中必须用<code>text-align: center;</code>外，其余情况，全部可以用 flex 布局解决。</p>
 
       
     </div>
@@ -501,6 +539,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blog/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
 
       
       
@@ -510,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/04/15/hexo把英文引号渲染成中文引号的问题/" rel="next" title="hexo把英文引号渲染成中文引号的问题">
-                <i class="fa fa-chevron-left"></i> hexo把英文引号渲染成中文引号的问题
+              <a href="/blog/2022/12/21/行内元素和块级元素/" rel="next" title="行内元素和块级元素">
+                <i class="fa fa-chevron-left"></i> 行内元素和块级元素
               </a>
             
           </div>
@@ -519,10 +563,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2019/04/20/计算机中的信息/" rel="prev" title="计算机中的信息">
-                计算机中的信息 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,8 +619,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -691,6 +740,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳实践"><span class="nav-number">1.</span> <span class="nav-text">最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本居中"><span class="nav-number">1.1.</span> <span class="nav-text">文本居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.1.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">1.1.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器居中"><span class="nav-number">1.2.</span> <span class="nav-text">容器居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -269,6 +269,10 @@ FATAL {
 
 安装 Android 子系统：https://www.cnblogs.com/frank-link/p/16390714.html
 
+但我升级到win11后，再用这个方法安装的安卓子系统有很大问题，什么应用都打不开，完全不能用。我换了一种安装方式，现在快的飞起了：https://www.sysceo.com/article-article_info-id-1854.html
+
+用这个360的win11安卓助手：https://m.xitongzhijia.net/soft/246638.html
+
 安装 linux 子系统，遇到内核升级的问题，从 WSL1 升级到 WSL2，需要下载一个升级内核的程序：
 
 - https://github.com/microsoft/WSL/issues/5393
