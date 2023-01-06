@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-12-21T04:09:42.794Z">
+<meta property="og:updated_time" content="2023-01-06T12:32:49.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css居中的最佳实践">
 <meta name="twitter:description" content="居中是 css 中很重要的一个基础知识，主要分三个方向讨论：  水平居中 or 垂直居中 文本居中 or 容器居中（块级元素） 设置父容器 or 设置自身 or 都需要设置">
@@ -302,6 +302,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-reading">
+          <a href="/blog/Reading/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-list"></i> <br>
+            
+            Reading
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -466,7 +476,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  664
+                  731
                 </span>
               
 
@@ -524,6 +534,8 @@
 <p>如果是垂直排布的，设置<code>justify-content: center;</code>：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.center</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="center"&gt;</span><br><span class="line">    &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>所以总结如下：除多行文本水平居中必须用<code>text-align: center;</code>外，其余情况，全部可以用 flex 布局解决。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>利用 position，50%和 transform 自身的一半高来达到居中：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> solid red;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(0, -50%);</span><br><span class="line">&#125;</span><br><span class="line">&lt;div class="parent"&gt;</span><br><span class="line">    &lt;div class="child"&gt;1&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -750,7 +762,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳实践"><span class="nav-number">1.</span> <span class="nav-text">最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本居中"><span class="nav-number">1.1.</span> <span class="nav-text">文本居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.1.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">1.1.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器居中"><span class="nav-number">1.2.</span> <span class="nav-text">容器居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳实践"><span class="nav-number">1.</span> <span class="nav-text">最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本居中"><span class="nav-number">1.1.</span> <span class="nav-text">文本居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">1.1.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">1.1.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器居中"><span class="nav-number">1.2.</span> <span class="nav-text">容器居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.3.</span> <span class="nav-text">补充</span></a></li></ol></li></ol></div>
             
 
           </div>
