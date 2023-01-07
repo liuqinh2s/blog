@@ -58,7 +58,7 @@ date: 2019-02-20 20:30:09
 
 ### 视频
 
-- 影视网站：[努努影视](https://www.nunuyy1.org/)
+- 影视网站：[努努影视](https://www.nunuyy5.org/)
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
 - 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
@@ -70,6 +70,7 @@ date: 2019-02-20 20:30:09
   - [技术书在线阅读](https://livebook.manning.com/)
   - [图灵社区](https://www.ituring.com.cn/)
   - [PDF 之家](https://homeofpdf.com/index.html)
+  - [鸠摩搜书](https://www.jiumodiary.com/)
 - 具体书籍：
   - 计算机网络电子书：[Computer Networks: A Systems Approach](https://github.com/ruanyf/book-computer-networks)
   - [SICP - Structure and Interpretation of Computer Programs, 2e](http://sarabander.github.io/sicp/)
