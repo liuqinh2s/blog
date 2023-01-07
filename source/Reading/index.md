@@ -29,12 +29,20 @@ date: 2023-01-06
 - [《西部世界 第一季 Westworld Season 1 (2016)》](https://movie.douban.com/subject/2338055/)：非常好的科幻剧，讲述了 AI 的觉醒
 - [《硅谷》](https://movie.douban.com/subject/20644938/)：互联网行业喜剧
 - [《权力的游戏 第一季 Game of Thrones Season 1 (2011)》](https://movie.douban.com/subject/3016187/)：质量非常好的剧，每一集都像电影一样
+- [《胜者即是正义 リーガル・ハイ (2012)》](https://movie.douban.com/subject/10491666/)：非常好看的律政喜剧
+- [《半泽直树 半沢直樹 (2013)》](https://movie.douban.com/subject/24697949/)：同是堺雅人主演的，非常好看的金融业喜剧，打工人爆锤上司
 
 ## 动漫
 
 - [《刀剑神域 ソードアート・オンライン (2012)》](https://movie.douban.com/subject/6869376/):刀剑神域是一个系列，讲述一个少年进入沉浸式游戏世界的经历，虽然是个后宫漫，但想象力真的不错，算是我非常喜欢的一部科幻动漫
 - [《杀戮都市：O GANTZ:O (2016)》](https://movie.douban.com/subject/26666177/)：这部剧我总觉得印象非常深刻，因为从某种意义上来说，它很像我们的人生，没头没尾的就开始了，也没有任何意义，就仅仅是体验活在当下，未来也不知道发生什么，引起了我强烈的共鸣，存在主义吧
 - [《瑞克和莫蒂 第一季 Rick and Morty Season 1 (2013)》](https://movie.douban.com/subject/11537954/)：披着科幻外衣的，虚无主义哲学剧
+- [《天空之城 天空の城ラピュタ (1986)》](https://movie.douban.com/subject/1291583/)：不知道为什么，看完这部剧让我有种淡淡的忧伤，挥之不去
+
+## 纪录片
+
+- [《小森林 夏秋篇 リトル・フォレスト 夏・秋 (2014)》](https://movie.douban.com/subject/25814705/)：非常好的纪录片，让人感受生活，四季的变化
+- [《美丽中国 Wild China (2008)》](https://movie.douban.com/subject/3077948/)：非常好的风景，风土人情纪录片
 
 # 年度阅读计划
 
