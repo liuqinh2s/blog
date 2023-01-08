@@ -105,6 +105,7 @@ menu:
   Tools: /Tools/ || wrench
   Mark: /Mark/ || star
   Reading: /Reading/ || list
+  leetcode: /leetcode/ || code
 
   # Life Experience: /LifeExperience/ || bank
   # schedule: /schedule/ || calendar
