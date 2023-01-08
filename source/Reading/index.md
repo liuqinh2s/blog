@@ -56,11 +56,12 @@ date: 2023-01-06
 - [《斗破苍穹 第四季 (2021)》](https://movie.douban.com/subject/34851198/)：基本上也是在喜马拉雅上听的，2017 年无聊的时候都在听这个
 - [《斗罗大陆 1 (2018)》](https://movie.douban.com/subject/27040807/)：这个是看的动漫，每一集都没落下
 
-## 纪录片
+## 纪录片，公开课
 
 - [《小森林 夏秋篇 リトル・フォレスト 夏・秋 (2014)》](https://movie.douban.com/subject/25814705/)：非常好的纪录片，让人感受生活，四季的变化
 - [《美丽中国 Wild China (2008)》](https://movie.douban.com/subject/3077948/)：非常好的风景，风土人情纪录片
 - [《激荡·1978-2008 (2008)》](https://movie.douban.com/subject/3817380/)：非常非常好的经济和政治剧，让人了解改革开放的整个过程，收获非常多。
+- [【吴国盛】科学通史 （全 39 讲）](https://www.bilibili.com/video/BV1Ax411E7g5/?spm_id_from=333.337.search-card.all.click&vd_source=07043704e114b7a821e6cbfc71651a89):这个公开课，总结了很多我以前常想的问题的结论，深入对比了中西方文化，我对这方面确实非常感兴趣
 
 # 年度阅读计划
 
@@ -68,7 +69,9 @@ date: 2023-01-06
 
 ### 书籍
 
-- [《CSS 解密》](https://book.douban.com/subject/26745943/)
+- [《CSS 解密》](https://book.douban.com/subject/26745943/)：目前看完了第一章，背景与边框，真的写的很好
+- [沉默的大多数](https://book.douban.com/subject/1054685/):打算重读这本书
+- [书虫.牛津英汉双语读物全套盒装](https://book.douban.com/subject/4894634/)：我自己下了《书虫·牛津英汉双语读物(全套)(套装共 137 册)》，azw3 格式的，打算弥补一下童年没有书读的痛苦
 
 ### 动漫
 
