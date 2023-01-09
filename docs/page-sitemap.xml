@@ -8,6 +8,20 @@
     </url>
     
     <url>
+        <loc>https://liuqinh2s.github.io/blog/notes/</loc>
+        <lastmod>2023-01-09T07:16:25.876Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuqinh2s.github.io/blog/Reading/</loc>
+        <lastmod>2023-01-09T06:04:21.986Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://liuqinh2s.github.io/blog/leetcode/</loc>
         <lastmod>2023-01-09T05:48:04.167Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -15,22 +29,8 @@
     </url>
     
     <url>
-        <loc>https://liuqinh2s.github.io/blog/Reading/</loc>
-        <lastmod>2023-01-09T02:11:14.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://liuqinh2s.github.io/blog/Tools/</loc>
         <lastmod>2023-01-09T02:11:09.598Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuqinh2s.github.io/blog/notes/</loc>
-        <lastmod>2023-01-07T03:15:25.325Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
