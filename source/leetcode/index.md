@@ -11,6 +11,38 @@ date: 2023-01-08
 
 这题很简单，按照题目描述进行运算即可，没有任何技术可言。
 
+```typescript
+function reinitializePermutation(n: number): number {
+  let count = 1;
+  let arr = [];
+  for (let i = 0; i < n; i++) {
+    arr.push(i);
+  }
+  // console.log(arr)
+  while (!action(arr)) {
+    count++;
+  }
+  return count;
+}
+
+function action(arr: number[]): boolean {
+  let res = true;
+  const perm = [...arr];
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 == 0) {
+      arr[i] = perm[i / 2];
+    } else {
+      arr[i] = perm[arr.length / 2 + (i - 1) / 2];
+    }
+    if (arr[i] !== i) {
+      res = false;
+    }
+  }
+  // console.log(arr, res)
+  return res;
+}
+```
+
 # 2023-01-08
 
 [1658. 将 x 减到 0 的最小操作数](https://leetcode.cn/problems/minimum-operations-to-reduce-x-to-zero/description/)
