@@ -44,6 +44,7 @@ date: 2023-01-06
 - [《一人之下 第一季 (2016)》](https://movie.douban.com/subject/26815153/)：每次看那种长生不死的剧，都让我有同样的感触，冯宝宝认识的人死去的时候，我也想哭。又让我想起了《我和僵尸有个约会》，《神话》
 - [《杀戮都市：O GANTZ:O (2016)》](https://movie.douban.com/subject/26666177/)：这部剧我总觉得印象非常深刻，因为从某种意义上来说，它很像我们的人生，没头没尾的就开始了，也没有任何意义，就仅仅是体验活在当下，未来也不知道发生什么，引起了我强烈的共鸣，存在主义吧
 - [《瑞克和莫蒂 第一季 Rick and Morty Season 1 (2013)》](https://movie.douban.com/subject/11537954/)：披着科幻外衣的，虚无主义哲学剧
+- [罗小黑战记 (2011)](https://movie.douban.com/subject/10477598/):这个动漫更新得很慢，但真的非常治愈
 
 ### 宫崎骏
 
@@ -72,6 +73,7 @@ date: 2023-01-06
 - [《美丽中国 Wild China (2008)》](https://movie.douban.com/subject/3077948/)：非常好的风景，风土人情纪录片
 - [《激荡·1978-2008 (2008)》](https://movie.douban.com/subject/3817380/)：非常非常好的经济和政治剧，让人了解改革开放的整个过程，收获非常多。
 - [【吴国盛】科学通史 （全 39 讲）](https://www.bilibili.com/video/BV1Ax411E7g5/?spm_id_from=333.337.search-card.all.click&vd_source=07043704e114b7a821e6cbfc71651a89):这个公开课，总结了很多我以前常想的问题的结论，深入对比了中西方文化，我对这方面确实非常感兴趣
+- [互联网时代 (2014)](https://movie.douban.com/subject/25772505/)：看了三遍的纪录片，每一遍都有新的收获和感悟
 
 # 年度阅读计划
 
