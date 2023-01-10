@@ -88,3 +88,7 @@ date: 2023-01-06
 ### 动漫
 
 - [《中国奇谭 (2023)》](https://movie.douban.com/subject/35674355/):看了前面两集，感觉不怎么样
+
+### 电影
+
+- [赛德克·巴莱](https://www.bilibili.com/bangumi/play/ss10040?bsource=douban)：这部剧真挺好看的
