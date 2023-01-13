@@ -5,6 +5,40 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-01-13
+
+[2287. 重排字符形成目标字符串](https://leetcode.cn/problems/rearrange-characters-to-make-target-string/description/)
+
+这题很简单，不过题目描述和举例不是很清楚。就是我不知道，是不是要连续的字符串去配对。试了一下，结果并不需要连续。
+
+```typescript
+function rearrangeCharacters(s: string, target: string): number {
+  const mapS = getMap(s);
+  const mapTarget = getMap(target);
+  const res = [];
+  for (let k of Object.keys(mapTarget || {})) {
+    if (!mapS[k]) {
+      return 0;
+    } else {
+      res.push(Math.floor(mapS[k] / mapTarget[k]));
+    }
+  }
+  return Math.min(...res);
+}
+
+function getMap(s: string): { [key: string]: number } {
+  let map = {};
+  for (let i = 0; i < s.length; i++) {
+    if (!map[s[i]]) {
+      map[s[i]] = 1;
+    } else {
+      map[s[i]]++;
+    }
+  }
+  return map;
+}
+```
+
 # 2023-01-09
 
 [1806. 还原排列的最少操作步数](https://leetcode.cn/problems/minimum-number-of-operations-to-reinitialize-a-permutation/description/)

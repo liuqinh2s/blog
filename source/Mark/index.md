@@ -5,9 +5,13 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-01-13
+
+- [MLU-Explain(Visual explanations of core machine learning concepts)](https://mlu-explain.github.io/)
+
 # 2022-12-25
 
-- [欢迎来到GitHub最大的开源算法库](https://the-algorithms.com/zh_Hans)
+- [欢迎来到 GitHub 最大的开源算法库](https://the-algorithms.com/zh_Hans)
 
 # 2022-12-15
 
