@@ -51,7 +51,7 @@
     <link href="https://liuqinh2s.github.io/blog/2023/01/29/%E9%87%91%E9%93%B2%E9%93%B2%E4%B9%8B%E6%88%98%E6%94%BB%E7%95%A5/"/>
     <id>https://liuqinh2s.github.io/blog/2023/01/29/金铲铲之战攻略/</id>
     <published>2023-01-29T09:07:26.341Z</published>
-    <updated>2023-02-01T05:35:01.002Z</updated>
+    <updated>2023-02-07T03:08:42.269Z</updated>
     
     <summary type="html">
     
@@ -191,6 +191,30 @@
   </entry>
   
   <entry>
+    <title>JavaScript 闭包</title>
+    <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E9%97%AD%E5%8C%85/"/>
+    <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript闭包/</id>
+    <published>2022-07-13T16:00:00.000Z</published>
+    <updated>2022-11-28T01:46:53.307Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;闭包是干什么用的&quot;&gt;&lt;a href=&quot;#闭包是干什么用的&quot; class=&quot;headerlink&quot; title=&quot;闭包是干什么用的&quot;&gt;&lt;/a&gt;闭包是干什么用的&lt;/h1&gt;&lt;p&gt;本质上闭包就是为了拓展查找自由变量的范围&lt;/p&gt;
+&lt;p&gt;MDN 对闭包的定义为：&lt;/p&gt;
+&lt;p&gt;A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)&lt;/p&gt;
+&lt;p&gt;一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; name = &lt;span class=&quot;string&quot;&gt;&#39;Mozilla&#39;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// name is a local variable created by init&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;displayName&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// displayName() is the inner function, a closure&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(name); &lt;span class=&quot;comment&quot;&gt;// use variable declared in the parent function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  displayName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;init();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。&lt;/p&gt;
+&lt;p&gt;上面这个例子有点平平无奇了，让我们看一个神奇一点的例子：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript执行上下文之作用域链</title>
     <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE/"/>
     <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript执行上下文之作用域链/</id>
@@ -207,30 +231,6 @@
 &lt;p&gt;假设要实现动态作用域的话，&lt;code&gt;[[scope]]&lt;/code&gt;就得在调用时去执行上下文栈的上一帧去取。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Scope = [AO].concat([[scope]]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/blog/categories/JavaScript/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 闭包</title>
-    <link href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript%E9%97%AD%E5%8C%85/"/>
-    <id>https://liuqinh2s.github.io/blog/2022/07/14/JavaScript闭包/</id>
-    <published>2022-07-13T16:00:00.000Z</published>
-    <updated>2022-11-28T01:46:53.307Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;闭包是干什么用的&quot;&gt;&lt;a href=&quot;#闭包是干什么用的&quot; class=&quot;headerlink&quot; title=&quot;闭包是干什么用的&quot;&gt;&lt;/a&gt;闭包是干什么用的&lt;/h1&gt;&lt;p&gt;本质上闭包就是为了拓展查找自由变量的范围&lt;/p&gt;
-&lt;p&gt;MDN 对闭包的定义为：&lt;/p&gt;
-&lt;p&gt;A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)&lt;/p&gt;
-&lt;p&gt;一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; name = &lt;span class=&quot;string&quot;&gt;&#39;Mozilla&#39;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;// name is a local variable created by init&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;displayName&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// displayName() is the inner function, a closure&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(name); &lt;span class=&quot;comment&quot;&gt;// use variable declared in the parent function&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  displayName();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;init();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。&lt;/p&gt;
-&lt;p&gt;上面这个例子有点平平无奇了，让我们看一个神奇一点的例子：&lt;/p&gt;
     
     </summary>
     
