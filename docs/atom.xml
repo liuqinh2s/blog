@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2023-02-01T05:35:01.002Z</updated>
+  <updated>2023-02-06T06:10:44.894Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AI时代来临，有哪些机遇我可以抓住？</title>
+    <link href="https://liuqinh2s.github.io/blog/2023/02/06/AI%E6%97%B6%E4%BB%A3%E6%9D%A5%E4%B8%B4%EF%BC%8C%E6%9C%89%E5%93%AA%E4%BA%9B%E6%9C%BA%E9%81%87%E6%88%91%E5%8F%AF%E4%BB%A5%E6%8A%93%E4%BD%8F%EF%BC%9F/"/>
+    <id>https://liuqinh2s.github.io/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/</id>
+    <published>2023-02-06T05:51:41.344Z</published>
+    <updated>2023-02-06T06:10:44.894Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先什么是 AI 时代，我所认为的 AI 是可以让计算机产生的智力，像类似于人一样工作，做以前简单的逻辑无法完成的事情，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;识别图片里的文字&lt;/li&gt;
+&lt;li&gt;识别图片里有没有猫&lt;/li&gt;
+&lt;li&gt;自动驾驶，识别路况&lt;/li&gt;
+&lt;li&gt;下棋，国际象棋，围棋，击败人类冠军&lt;/li&gt;
+&lt;li&gt;AI 换脸，将图片和视频中的人脸换成另一个人的&lt;/li&gt;
+&lt;li&gt;根据关键词，作画，写小说&lt;/li&gt;
+&lt;li&gt;上网搜集资料整合出摘要&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以上都是 AI 目前已经能完成的事情，传统的代码是无法完成以上这种复杂的工作的。我把传统代码无法完成，又有点类似人才能办到的混沌且复杂的事情（甚至带有一些创造力）称作 AI。AI 不是指像人一样能通用的处理任何智力问题，而是能一个一个攻克具体的智力问题，AI 能做到的事情已经越来越多。其产生的生产力是巨大的，并不比互联网时代低。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="总结" scheme="https://liuqinh2s.github.io/blog/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="总结" scheme="https://liuqinh2s.github.io/blog/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>金铲铲之战攻略</title>
@@ -469,30 +499,6 @@
     </summary>
     
       <category term="方法论" scheme="https://liuqinh2s.github.io/blog/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>快速排序最坏的情况啥时候出现</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/06/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/06/28/快速排序最坏的情况啥时候出现/</id>
-    <published>2021-06-27T16:00:00.000Z</published>
-    <updated>2022-11-28T01:46:53.301Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN
-        
-      
-    
-    </summary>
-    
-      <category term="算法" scheme="https://liuqinh2s.github.io/blog/categories/%E7%AE%97%E6%B3%95/"/>
     
     
   </entry>
