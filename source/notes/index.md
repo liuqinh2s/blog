@@ -5,6 +5,44 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-02-08
+
+切角效果：
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background: #58a;
+  background: linear-gradient(135deg, transparent 15px, red 0) top left, linear-gradient(
+        -135deg,
+        transparent 15px,
+        yellow 0
+      ) top right,
+    linear-gradient(-45deg, transparent 15px, green 0) bottom right, linear-gradient(
+        45deg,
+        transparent 15px,
+        blue 0
+      ) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+}
+```
+
+[效果演示](https://codepen.io/liuqinh2s/pen/XWBKvEe)
+
+# 2023-02-07
+
+一月份的目标：金铲铲之战打上大师段位，并写一份游戏攻略，已经完成了。2 月份我打算看完这本《CSS 揭秘》，因为已经拖了很久了，虽然说前面看的不少内容已经忘了，但是先完整的看完一遍再说。
+
+把一个图片裁剪出菱形：
+
+```css
+clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+```
+
+[效果演示](https://codepen.io/liuqinh2s/pen/mdjOgvz?editors=1111)
+
 # 2023-01-30
 
 遇到一个`cannot access "xxx" before initialization`的问题，xxx 是一个抽象类，如果这个抽象类没有 import 任何其他的东西应该不会报错才对，所以问题是出在它的引用上。最后查到是循环引用了。
