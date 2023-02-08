@@ -118,6 +118,10 @@ for (let i = 0; i < n; i++) {
 }
 ```
 
+## calibre分享电子书到kindle，书名自动变拼音
+
+解决办法：https://bookfere.com/post/1042.html
+
 # 2023-01-06
 
 年度计划基本上是这样：
