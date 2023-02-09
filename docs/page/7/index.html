@@ -386,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2021/05/28/leetcode-477-汉明距离总和/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2021/05/28/position-sticky/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -405,7 +405,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2021/05/28/leetcode-477-汉明距离总和/" itemprop="url">leetcode每日一题： 477. 汉明距离总和</a></h1>
+                <a class="post-title-link" href="/blog/2021/05/28/position-sticky/" itemprop="url">position sticky</a></h1>
         
 
         <div class="post-meta">
@@ -440,8 +440,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
+                  <a href="/blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -471,7 +471,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  237
+                  128
                 </span>
               
 
@@ -498,12 +498,16 @@
       
         
           <blockquote>
-<p>leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。</p>
+<p>在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用<code>position: sticky</code>解决了问题。</p>
 </blockquote>
-<h2 id="477-汉明距离总和"><a href="#477-汉明距离总和" class="headerlink" title="477. 汉明距离总和"></a><a href="https://leetcode-cn.com/problems/total-hamming-distance/" target="_blank" rel="noopener">477. 汉明距离总和</a></h2><p>这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/" target="_blank" rel="noopener">杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position" target="_blank" rel="noopener">position - CSS（层叠样式表） | MDN</a></li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2021/05/28/leetcode-477-汉明距离总和/#more" rel="contents">
+            <a class="btn" href="/blog/2021/05/28/position-sticky/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
