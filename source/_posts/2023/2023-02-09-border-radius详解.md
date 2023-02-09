@@ -15,6 +15,8 @@ border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */
 
 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？
 
+<!-- more -->
+
 查[官方文档](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)，发现讲的很粗糙，但官方文档给出了一个[**specification**](https://w3c.github.io/csswg-drafts/css-backgrounds/#border-radius)（详细说明），这里面有一条[Overlapping Curves](https://w3c.github.io/csswg-drafts/css-backgrounds/#corner-overlap)，专门讲了这种情况怎么处理。
 
 简单来说就是找最大的一处重叠，然后所有的半径都等比例缩小，比例是：重叠处的总长度/原本长度。

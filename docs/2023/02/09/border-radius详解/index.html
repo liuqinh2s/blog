@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-02-09T13:12:59.700Z">
+<meta property="og:updated_time" content="2023-02-09T13:18:21.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="border-radius详解">
 <meta name="twitter:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
@@ -503,6 +503,7 @@
         <p>看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */</span><br><span class="line">border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */</span><br></pre></td></tr></table></figure>
 <p>差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？</p>
+<a id="more"></a>
 <p>查<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius" target="_blank" rel="noopener">官方文档</a>，发现讲的很粗糙，但官方文档给出了一个<a href="https://w3c.github.io/csswg-drafts/css-backgrounds/#border-radius" target="_blank" rel="noopener"><strong>specification</strong></a>（详细说明），这里面有一条<a href="https://w3c.github.io/csswg-drafts/css-backgrounds/#corner-overlap" target="_blank" rel="noopener">Overlapping Curves</a>，专门讲了这种情况怎么处理。</p>
 <p>简单来说就是找最大的一处重叠，然后所有的半径都等比例缩小，比例是：重叠处的总长度/原本长度。</p>
 <p>假如最大重叠处的长度是宽的两倍，那么所有半径都要缩小一半。</p>

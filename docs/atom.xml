@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2023-02-09T13:12:59.700Z</updated>
+  <updated>2023-02-09T13:18:21.492Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -21,18 +21,13 @@
     <link href="https://liuqinh2s.github.io/blog/2023/02/09/border-radius%E8%AF%A6%E8%A7%A3/"/>
     <id>https://liuqinh2s.github.io/blog/2023/02/09/border-radius详解/</id>
     <published>2023-02-09T12:52:04.374Z</published>
-    <updated>2023-02-09T13:12:59.700Z</updated>
+    <updated>2023-02-09T13:18:21.492Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
+      &lt;p&gt;看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？&lt;/p&gt;
     
     </summary>
     

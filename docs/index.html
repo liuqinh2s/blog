@@ -497,10 +497,9 @@
 
       
         
-          
-          看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：
-12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭
-          ...
+          <p>看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */</span><br><span class="line">border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */</span><br></pre></td></tr></table></figure>
+<p>差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/2023/02/09/border-radius详解/#more" rel="contents">
