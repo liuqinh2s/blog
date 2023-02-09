@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-02-09T13:18:21.492Z">
+<meta property="og:updated_time" content="2023-02-09T13:24:08.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="border-radius详解">
 <meta name="twitter:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
@@ -475,7 +475,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  334
+                  380
                 </span>
               
 
@@ -508,6 +508,9 @@
 <p>简单来说就是找最大的一处重叠，然后所有的半径都等比例缩小，比例是：重叠处的总长度/原本长度。</p>
 <p>假如最大重叠处的长度是宽的两倍，那么所有半径都要缩小一半。</p>
 <p><a href="https://codepen.io/liuqinh2s/pen/eYjzqMR" target="_blank" rel="noopener">实验链接</a></p>
+<blockquote>
+<p>通过这件事，我再次感概，最有效，最可靠的信息来自于官方，还有就是一定要熟练英文，不然连答案在哪都找不到。</p>
+</blockquote>
 <h2 id="关于缩写"><a href="#关于缩写" class="headerlink" title="关于缩写"></a>关于缩写</h2><p>缩写1（一个值）：</p>
 <p>这种最简单</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100%;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 100% 100% 100%;</span><br></pre></td></tr></table></figure>
@@ -778,7 +781,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">84.3k</span>
+    <span title="Site words total count">84.4k</span>
   
 </div>
 
