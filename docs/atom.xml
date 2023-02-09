@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/blog/"/>
-  <updated>2023-02-08T11:02:27.096Z</updated>
+  <updated>2023-02-09T13:12:59.700Z</updated>
   <id>https://liuqinh2s.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>border-radius详解</title>
+    <link href="https://liuqinh2s.github.io/blog/2023/02/09/border-radius%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://liuqinh2s.github.io/blog/2023/02/09/border-radius详解/</id>
+    <published>2023-02-09T12:52:04.374Z</published>
+    <updated>2023-02-09T13:12:59.700Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="css" scheme="https://liuqinh2s.github.io/blog/categories/css/"/>
+    
+    
+      <category term="css" scheme="https://liuqinh2s.github.io/blog/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>AI时代来临，有哪些机遇我可以抓住？</title>
@@ -473,32 +500,6 @@
     </summary>
     
       <category term="前端" scheme="https://liuqinh2s.github.io/blog/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何学习</title>
-    <link href="https://liuqinh2s.github.io/blog/2021/08/22/%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://liuqinh2s.github.io/blog/2021/08/22/如何学习/</id>
-    <published>2021-08-21T16:00:00.000Z</published>
-    <updated>2022-11-23T13:18:53.942Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这篇文章的思想来自于这位博主：&lt;a href=&quot;https://space.bilibili.com/344849038/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;bilibili-YJango&lt;/a&gt;，我觉得很受启发就将其简略写了下来。&lt;/p&gt;
-&lt;h3 id=&quot;什么是学习？&quot;&gt;&lt;a href=&quot;#什么是学习？&quot; class=&quot;headerlink&quot; title=&quot;什么是学习？&quot;&gt;&lt;/a&gt;什么是学习？&lt;/h3&gt;&lt;p&gt;学习 vs 记忆&lt;/p&gt;
-&lt;p&gt;记忆：容量有限、难以集齐&lt;/p&gt;
-&lt;p&gt;学习：从有限的例子中找出问题和答案的规律：知识&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;费曼说：如果你没有办法用简单的语言描述所学的知识，你就没有真正学会它。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;因为学习是用知识来压缩原本无限的信息&lt;/p&gt;
-&lt;p&gt;学习：找出知识、压缩信息&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="方法论" scheme="https://liuqinh2s.github.io/blog/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
     
     
   </entry>

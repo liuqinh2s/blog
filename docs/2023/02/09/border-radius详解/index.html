@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="liuqinh2s">
+  <meta name="keywords" content="css,">
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="Computer Science is not a magic  To be a hacker">
-<meta property="og:type" content="website">
-<meta property="og:title" content="liuqinh2s&#39; blog">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/index.html">
+<meta name="description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="border-radius详解">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2023/02/09/border-radius详解/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="Computer Science is not a magic  To be a hacker">
+<meta property="og:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2023-02-09T13:12:59.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liuqinh2s&#39; blog">
-<meta name="twitter:description" content="Computer Science is not a magic  To be a hacker">
+<meta name="twitter:title" content="border-radius详解">
+<meta name="twitter:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2023/02/09/border-radius详解/">
 
 
 
 
 
-  <title>liuqinh2s' blog</title>
+  <title>border-radius详解 | liuqinh2s' blog</title>
   
 
 
@@ -145,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -371,9 +372,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -403,9 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2023/02/09/border-radius详解/" itemprop="url">border-radius详解</a></h1>
+          <h1 class="post-title" itemprop="name headline">border-radius详解</h1>
         
 
         <div class="post-meta">
@@ -459,6 +458,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
             <div class="post-wordcount">
@@ -496,19 +500,24 @@
       
 
       
-        
-          
-          看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：
-12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/02/09/border-radius详解/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */</span><br><span class="line">border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */</span><br></pre></td></tr></table></figure>
+<p>差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？</p>
+<p>查<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius" target="_blank" rel="noopener">官方文档</a>，发现讲的很粗糙，但官方文档给出了一个<a href="https://w3c.github.io/csswg-drafts/css-backgrounds/#border-radius" target="_blank" rel="noopener"><strong>specification</strong></a>（详细说明），这里面有一条<a href="https://w3c.github.io/csswg-drafts/css-backgrounds/#corner-overlap" target="_blank" rel="noopener">Overlapping Curves</a>，专门讲了这种情况怎么处理。</p>
+<p>简单来说就是找最大的一处重叠，然后所有的半径都等比例缩小，比例是：重叠处的总长度/原本长度。</p>
+<p>假如最大重叠处的长度是宽的两倍，那么所有半径都要缩小一半。</p>
+<p><a href="https://codepen.io/liuqinh2s/pen/eYjzqMR" target="_blank" rel="noopener">实验链接</a></p>
+<h2 id="关于缩写"><a href="#关于缩写" class="headerlink" title="关于缩写"></a>关于缩写</h2><p>缩写1（一个值）：</p>
+<p>这种最简单</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100%;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 100% 100% 100%;</span><br></pre></td></tr></table></figure>
+<p>缩写2（两个值）：</p>
+<p>重复自身一遍</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100% 0;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 0 100% 0;</span><br></pre></td></tr></table></figure>
+<p>缩写3（三个值）：</p>
+<p>把中间这个值重复一遍</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100% 50% 100%;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 50% 100% 50%;</span><br></pre></td></tr></table></figure>
+<p>跟margin和padding的缩写是一模一样的</p>
+
       
     </div>
     
@@ -523,355 +532,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/08/AI时代来临，有哪些机遇我可以抓住？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2023/02/08/AI时代来临，有哪些机遇我可以抓住？/" itemprop="url">AI时代来临，有哪些机遇我可以抓住？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-08T19:02:27+08:00">
-                2023-02-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/总结/" itemprop="url" rel="index">
-                    <span itemprop="name">总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/blog/tags/css/" rel="tag"># css</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  539
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>首先什么是 AI 时代，我所认为的 AI 是可以让计算机产生的智力，像类似于人一样工作，做以前简单的逻辑无法完成的事情，比如：</p>
-<ul>
-<li>识别图片里的文字</li>
-<li>识别图片里有没有猫</li>
-<li>自动驾驶，识别路况</li>
-<li>下棋，国际象棋，围棋，击败人类冠军</li>
-<li>AI 换脸，将图片和视频中的人脸换成另一个人的</li>
-<li>根据关键词，作画，写小说</li>
-<li>上网搜集资料整合出摘要</li>
-</ul>
-<p>以上都是 AI 目前已经能完成的事情，传统的代码是无法完成以上这种复杂的工作的。我把传统代码无法完成，又有点类似人才能办到的混沌且复杂的事情（甚至带有一些创造力）称作 AI。AI 不是指像人一样能通用的处理任何智力问题，而是能一个一个攻克具体的智力问题，AI 能做到的事情已经越来越多。其产生的生产力是巨大的，并不比互联网时代低。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/02/08/AI时代来临，有哪些机遇我可以抓住？/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2023/02/08/AI时代来临，有哪些机遇我可以抓住？/" rel="next" title="AI时代来临，有哪些机遇我可以抓住？">
+                <i class="fa fa-chevron-left"></i> AI时代来临，有哪些机遇我可以抓住？
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/08/金铲铲之战攻略/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2023/02/08/金铲铲之战攻略/" itemprop="url">金铲铲之战攻略</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-08T19:02:27+08:00">
-                2023-02-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/游戏攻略/" itemprop="url" rel="index">
-                    <span itemprop="name">游戏攻略</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  1,989
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>这是我写的第一份详细的游戏攻略，里面的东西并非全部原创，也有些是来自我在互联网上的收集和总结。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>金铲铲之战是典型的自走棋游戏，这类游戏都有相同的机制</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/02/08/金铲铲之战攻略/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -881,379 +571,27 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/12/21/css居中的最佳实践/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/12/21/css居中的最佳实践/" itemprop="url">css居中的最佳实践</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-12-21T12:09:42+08:00">
-                2022-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  731
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>居中是 css 中很重要的一个基础知识，主要分三个方向讨论：</p>
-<ol>
-<li>水平居中 or 垂直居中</li>
-<li>文本居中 or 容器居中（块级元素）</li>
-<li>设置父容器 or 设置自身 or 都需要设置</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/12/21/css居中的最佳实践/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/12/21/行内元素和块级元素/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/12/21/行内元素和块级元素/" itemprop="url">行内元素和块级元素</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-12-21T12:09:42+08:00">
-                2022-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  887
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>行内元素和块级元素算是 css 中最基础，也是最重要的部分了。但我对这部分还没彻底研究透，需要彻底掌握才行。</p>
-<p>比如，width 和 height 跟父节点和子节点的关系到底是什么，默认是什么？行内元素的 padding 和 margin 能设置吗？</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/12/21/行内元素和块级元素/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTc5MC8xMjMyNg=="></div>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/14/">14</a><a class="extend next" rel="next" href="/blog/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
 
-
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -1274,8 +612,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1386,6 +733,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于缩写"><span class="nav-number">1.</span> <span class="nav-text">关于缩写</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1555,6 +918,10 @@
 
 
   
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1583,6 +950,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
