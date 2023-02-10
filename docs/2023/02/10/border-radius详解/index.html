@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="liuqinh2s">
+  <meta name="keywords" content="css,">
 
 
 
@@ -81,17 +81,18 @@
 
 
 
-<meta name="description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑">
+<meta name="description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器 storage 事件">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/index.html">
+<meta property="og:title" content="border-radius详解">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2023/02/10/border-radius详解/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑">
+<meta property="og:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-11-28T01:46:53.303Z">
+<meta property="og:updated_time" content="2023-02-10T01:49:29.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器 storage 事件">
-<meta name="twitter:description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑">
+<meta name="twitter:title" content="border-radius详解">
+<meta name="twitter:description" content="看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下： 12border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */ 差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2023/02/10/border-radius详解/">
 
 
 
 
 
-  <title>浏览器 storage 事件 | liuqinh2s' blog</title>
+  <title>border-radius详解 | liuqinh2s' blog</title>
   
 
 
@@ -386,7 +387,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/08/浏览器storage事件/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/10/border-radius详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -403,7 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浏览器 storage 事件</h1>
+          <h1 class="post-title" itemprop="name headline">border-radius详解</h1>
         
 
         <div class="post-meta">
@@ -415,8 +416,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-06-08T00:00:00+08:00">
-                2022-06-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-10T09:49:29+08:00">
+                2023-02-10
               </time>
             
 
@@ -438,8 +439,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -474,7 +475,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  287
+                  380
                 </span>
               
 
@@ -499,19 +500,27 @@
       
 
       
-        <p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event</a></p>
-<p>在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：</p>
-<ol>
-<li>在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效</li>
-<li>必须写入与旧值不同的值，才能监听到</li>
-</ol>
-<p>我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。</p>
+        <p>看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */</span><br><span class="line">border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */</span><br></pre></td></tr></table></figure>
+<p>差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？</p>
 <a id="more"></a>
-<h1 id="英文文档的解释"><a href="#英文文档的解释" class="headerlink" title="英文文档的解释"></a>英文文档的解释</h1><p>The storage event of the Window interface fires when a storage area (localStorage) has been <strong>modified in the context of another document</strong>.</p>
+<p>查<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius" target="_blank" rel="noopener">官方文档</a>，发现讲的很粗糙，但官方文档给出了一个<a href="https://w3c.github.io/csswg-drafts/css-backgrounds/#border-radius" target="_blank" rel="noopener"><strong>specification</strong></a>（详细说明），这里面有一条<a href="https://w3c.github.io/csswg-drafts/css-backgrounds/#corner-overlap" target="_blank" rel="noopener">Overlapping Curves</a>，专门讲了这种情况怎么处理。</p>
+<p>简单来说就是找最大的一处重叠，然后所有的半径都等比例缩小，比例是：重叠处的总长度/原本长度。</p>
+<p>假如最大重叠处的长度是宽的两倍，那么所有半径都要缩小一半。</p>
+<p><a href="https://codepen.io/liuqinh2s/pen/eYjzqMR" target="_blank" rel="noopener">实验链接</a></p>
 <blockquote>
-<p>Note: <strong>This won&#39;t work on the same page that is making the changes</strong> — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects.</p>
+<p>通过这件事，我再次感概，最有效，最可靠的信息来自于官方，还有就是一定要熟练英文，不然连答案在哪都找不到。</p>
 </blockquote>
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置监听</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, ()=&gt;&#123;<span class="built_in">console</span>.log(<span class="string">'监听storage'</span>, localStorage.getItem(<span class="string">'abcd'</span>))&#125;);</span><br><span class="line"><span class="comment">// 查看dom有哪些监听事件</span></span><br><span class="line">getEventListeners(<span class="built_in">window</span>);</span><br><span class="line"><span class="comment">// 设置localStorage</span></span><br><span class="line">localStorage.setItem(<span class="string">'abcd'</span>, <span class="string">'1111'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="关于缩写"><a href="#关于缩写" class="headerlink" title="关于缩写"></a>关于缩写</h2><p>缩写1（一个值）：</p>
+<p>这种最简单</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100%;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 100% 100% 100%;</span><br></pre></td></tr></table></figure>
+<p>缩写2（两个值）：</p>
+<p>重复自身一遍</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100% 0;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 0 100% 0;</span><br></pre></td></tr></table></figure>
+<p>缩写3（三个值）：</p>
+<p>把中间这个值重复一遍</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span>: 100% 50% 100%;</span><br><span class="line"><span class="comment">/*等价于*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 100% 50% 100% 50%;</span><br></pre></td></tr></table></figure>
+<p>跟margin和padding的缩写是一模一样的</p>
 
       
     </div>
@@ -527,6 +536,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/blog/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
 
       
       
@@ -536,8 +551,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/06/08/二分查找/" rel="next" title="二分查找">
-                <i class="fa fa-chevron-left"></i> 二分查找
+              <a href="/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/" rel="next" title="AI时代来临，有哪些机遇我可以抓住？">
+                <i class="fa fa-chevron-left"></i> AI时代来临，有哪些机遇我可以抓住？
               </a>
             
           </div>
@@ -545,10 +560,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2022/06/09/浏览器上的几种xy坐标/" rel="prev" title="浏览器上的几种xy坐标">
-                浏览器上的几种xy坐标 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -736,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#英文文档的解释"><span class="nav-number">1.</span> <span class="nav-text">英文文档的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试代码"><span class="nav-number">2.</span> <span class="nav-text">测试代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于缩写"><span class="nav-number">1.</span> <span class="nav-text">关于缩写</span></a></li></ol></div>
             
 
           </div>
