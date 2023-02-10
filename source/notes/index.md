@@ -19,6 +19,23 @@ date: 2018-11-03 14:59:45
 
 接下来我打算研究一下数独的生成，自己做一个数独小游戏
 
+## useContext 的使用
+
+用起来很简单就是一句：
+
+```javascript
+const context = useContext(xxxContext);
+```
+
+但是准备这个环境变量的写法稍微有点复杂：
+
+```javascript
+// 先定义一个全局变量
+export const xxxContext = React.createContext<xxxType> {};
+// 然后用这个.Provider包裹起来，再传入一个value
+<xxxContext.Provider value={{}}>...</xxxContext.Provider>;
+```
+
 # 2023-02-09
 
 svg use 可以用来复制一个 svg 元素：
