@@ -89,10 +89,12 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-02-12T16:01:01.862Z">
+<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/舞蹈链.png">
+<meta property="og:updated_time" content="2023-02-13T02:36:19.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数独游戏制作过程记录">
 <meta name="twitter:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
+<meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2023/舞蹈链.png">
 
 
 
@@ -416,7 +418,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-10T18:50:59+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-10T11:25:32+08:00">
                 2023-02-10
               </time>
             
@@ -475,7 +477,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  894
+                  925
                 </span>
               
 
@@ -514,7 +516,7 @@
 <p>精确覆盖问题是一个 NP 完全问题，NP 问题的概念我差不多忘光了，得重新看看</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="精确覆盖问题"><a href="#精确覆盖问题" class="headerlink" title="精确覆盖问题"></a>精确覆盖问题</h2><p>简单来说就是给定一个全集X，和若干子集S，从子集中选出N个，它们平凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集X。</p>
+<h2 id="精确覆盖问题"><a href="#精确覆盖问题" class="headerlink" title="精确覆盖问题"></a>精确覆盖问题</h2><p>简单来说就是给定一个全集 X，和若干子集 S，从子集中选出 N 个，它们平凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集 X。</p>
 <h2 id="X-算法"><a href="#X-算法" class="headerlink" title="X 算法"></a>X 算法</h2><p>维基百科的解说我看不懂，还好 OI-Wiki 上讲的足够详细：<a href="https://oi-wiki.org/search/dlx/#x-%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">X 算法</a></p>
 <p>解决精确覆盖问题，简单来说分为以下几个步骤：</p>
 <h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><p>针对问题建模，建模成一个 01 矩阵，每一行代表一个集合，1 代表包含了集合 X 的某个元素（1 的位置，就是该元素在集合 X 中的位置），0 代表没没包含</p>
@@ -522,10 +524,10 @@
 <ol>
 <li>随机选一行</li>
 <li>去掉这一行</li>
-<li>找到这一行的有1的那些列，去掉这些列</li>
-<li>找到与这一行有冲突的那些行（同一列上都有1即为冲突），去掉这些行</li>
+<li>找到这一行的有 1 的那些列，去掉这些列</li>
+<li>找到与这一行有冲突的那些行（同一列上都有 1 即为冲突），去掉这些行</li>
 <li>现已经得到了一个缩小版的矩阵，继续以上这种删减操作</li>
-<li>结束标志：得到一个空矩阵。是否有解：最后一次删除的行全部是1，则说明问题有解，否则问题无解</li>
+<li>结束标志：得到一个空矩阵。是否有解：最后一次删除的行全部是 1，则说明问题有解，否则问题无解</li>
 </ol>
 <blockquote>
 <p>这个算法很好的缩小了问题规模，非常典型的技巧</p>
@@ -533,18 +535,20 @@
 <h3 id="算法含义"><a href="#算法含义" class="headerlink" title="算法含义"></a>算法含义</h3><p>每选择一行，代表着打算用这一行去精确覆盖全集，那么相应的：</p>
 <ol>
 <li>每行只用一次，故删除选择的这一行</li>
-<li>这一行中出现的所有元素（每个1代表一个元素出现），后续都不用再考虑，故删除相关列</li>
-<li>跟它起冲突的行（同一列上有1，代表有相同的元素，不符合精确覆盖），都要放弃，没法纳入解中，所以后续都不用再考虑，故删除这些行</li>
+<li>这一行中出现的所有元素（每个 1 代表一个元素出现），后续都不用再考虑，故删除相关列</li>
+<li>跟它起冲突的行（同一列上有 1，代表有相同的元素，不符合精确覆盖），都要放弃，没法纳入解中，所以后续都不用再考虑，故删除这些行</li>
 </ol>
 <p>以上三步可以保证每次选择的行，行之间是不会出现重复元素的。</p>
-<p>结束标志也很好理解，最后一次删除的行，如果全部是1，则标志着我们所有列都刚好填补上了元素。</p>
+<p>结束标志也很好理解，最后一次删除的行，如果全部是 1，则标志着我们所有列都刚好填补上了元素。</p>
 <p>这样我们就做到了全覆盖+精确覆盖，这两项要求。</p>
 <h3 id="算法的具体实现"><a href="#算法的具体实现" class="headerlink" title="算法的具体实现"></a>算法的具体实现</h3><p>具体代码实现，还有很多细节不清楚，参考资料：</p>
 <ul>
 <li><a href="https://developer.aliyun.com/article/373709" target="_blank" rel="noopener">跳跃的舞者，舞蹈链（Dancing Links）算法——求解精确覆盖问题</a></li>
 </ul>
-<p>我自己实现了一份TypeScript写的代码：</p>
+<p>我自己实现了一份 TypeScript 写的代码：</p>
 <p><a href="https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts</a></p>
+<p>与上面那个实现不同，我这个实现既有列头，又有行头，反正怎么方便怎么来。</p>
+<p><img src="../../../../images/2023/舞蹈链.png" alt="舞蹈链"></p>
 
       
     </div>
@@ -575,7 +579,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2023/02/09/border-radius详解/" rel="next" title="border-radius详解">
+              <a href="/blog/2023/02/10/border-radius详解/" rel="next" title="border-radius详解">
                 <i class="fa fa-chevron-left"></i> border-radius详解
               </a>
             
@@ -805,7 +809,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">85.2k</span>
+    <span title="Site words total count">85.3k</span>
   
 </div>
 
