@@ -90,7 +90,7 @@
 <meta property="og:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/舞蹈链.png">
-<meta property="og:updated_time" content="2023-02-13T07:24:45.491Z">
+<meta property="og:updated_time" content="2023-02-13T12:17:20.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数独游戏制作过程记录">
 <meta name="twitter:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
@@ -477,7 +477,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,493
+                  1,994
                 </span>
               
 
@@ -550,24 +550,53 @@
 <p>与上面那个实现不同，我这个实现既有列头，又有行头，反正怎么方便怎么来。</p>
 <p><img src="../../../../images/2023/舞蹈链.png" alt="舞蹈链"></p>
 <h2 id="数独怎么转化为精确覆盖问题"><a href="#数独怎么转化为精确覆盖问题" class="headerlink" title="数独怎么转化为精确覆盖问题"></a>数独怎么转化为精确覆盖问题</h2><p>在网上查阅了大量资料，但一开始都看不懂，且发现他们讲的基本上一模一样（天下文章一大抄），就跟前面舞蹈链一样，连配图都是一样的。</p>
-<p>无非是说，列代表这约束，约束有四类：</p>
-<ol>
-<li>每个格子填或者不填数字</li>
-<li>每行有没有哪个数字</li>
-<li>每列有没有哪个数字</li>
-<li>每个宫格有没有哪个数字</li>
-</ol>
-<p>我们拿 <code>4*4</code> 的数独来做例子（只用到 1 到 4 四个数，可以称之为 2 阶数独吧，比咱们常玩的三阶数独小一阶）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 4 0 0</span><br><span class="line">1 0 2 0</span><br><span class="line">0 0 0 2</span><br><span class="line">4 0 0 0</span><br></pre></td></tr></table></figure>
+<p>怎么把数独这个矩阵转化为精确覆盖问题的 01 矩阵，其实就是要想清楚，行和列的意义是什么？</p>
+<h3 id="行的意义"><a href="#行的意义" class="headerlink" title="行的意义"></a>行的意义</h3><p>精确覆盖问题的核心要素是：一个全集 X，若干子集 S</p>
+<p>那么我们先来想想全集是什么？</p>
+<p>全集肯定是一幅完整的正确的数独答案</p>
+<p>那每个子集是什么？</p>
+<p>子集应该是单个格子的解，然后我们拿恰好 81 个子集，凑出全集。</p>
+<p>每个格子有 9 种填法，81 个格子有 729 种填法，所以我们需要从 729 个子集中选 81 个出来。</p>
+<h3 id="列的意义"><a href="#列的意义" class="headerlink" title="列的意义"></a>列的意义</h3><p>首先思考一下要往一个数独的格子里填入一个数字受哪些条件约束：</p>
+<p>首先，这个格子里不能有数字，即为空</p>
+<p>其次，同一行不能有相同数字</p>
+<p>再次，同一列不能有相同数字</p>
+<p>最后，同一个九宫格不能有相同数字</p>
+<p>每个格子都有 4 个约束，81 个格子有 324 个约束，所以有 324 列，具体的每一列的含义如下：</p>
+<p>第 0 列表示数独（0,0）位置是否有数字</p>
+<p>第 1 列表示（0,1）位置是否有数字</p>
+<p>……</p>
+<p>第 8 列表示（0,8）是否有数字</p>
+<p>第 9 列表示（1,0）是否有数字</p>
+<p>……</p>
+<p>第 80 列表示（8,8）是否有数字</p>
+<p>以上 81 列表示数独的格子里是否有数字的约束条件，接着</p>
+<p>81 列表示第 0 行是否有数字 1</p>
+<p>82 列表示第 0 行是否有数字 2</p>
+<p>……</p>
+<p>89 列表示第 0 行是否有数字 9</p>
+<p>90 列表示第 1 行是否有数字 1</p>
+<p>91 列表示第 1 行是否有数字 2</p>
+<p>……</p>
+<p>161 列表示第 8 行是否有数字 9</p>
+<p>以上为行的约束条件</p>
+<p>162 列表示第 0 列是否有数字 1</p>
+<p>……</p>
+<p>242 列表示第 8 列是否有数字 9</p>
+<p>最后，是九宫格的约束条件：</p>
+<p>243 列表示第 0 个九宫格是否有数字 1</p>
+<p>244 列表示第 0 个九宫格是否有数字 2</p>
+<p>……</p>
+<p>323 列表示第 8 个九宫格是否有数字 9</p>
+<h3 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h3><p>我们拿 <code>4*4</code> 的数独来做例子（只用到 1 到 4 四个数，可以称之为 2 阶数独吧，比咱们常玩的三阶数独小一阶）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 4 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br></pre></td></tr></table></figure>
 <p>这幅图转化成精确覆盖问题的矩阵是什么样呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 0 | 0 1 0 1 1 1 0 0 0 1 0 0 0 0 0 1 | 1 1 0 1 0 0 0 1 0 1 0 0 0 1 0 0 | 1 1 0 1 0 1 0 0 0 0 0 1 0 1 0 0</span><br></pre></td></tr></table></figure>
-<p>上面用<code>|</code>划分了四个区域，每个区域的含义，详细说明如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第一个区域表示某一个格子里是否填了数字，1表示填了，0表示没填</span><br><span class="line">1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 0</span><br></pre></td></tr></table></figure>
-<p>其实理解的关键在于行：<strong>每一行即一幅数独图</strong>（完成的，未完成的，合法的，不合法的都可），例如下面两个数独图：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 4 0 0</span><br><span class="line">1 0 2 0</span><br><span class="line">0 0 0 2</span><br><span class="line">4 0 0 0</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 0 1 3</span><br><span class="line">0 3 0 4</span><br><span class="line">3 1 4 0</span><br><span class="line">0 2 3 1</span><br></pre></td></tr></table></figure>
-<p>就分别是两行，且他们刚好可以拼凑出全集。那么随便给出一个图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，最后就知道有没有解，解是什么。</p>
-<p>以上只讲了如何解数独，那么如何生成数独呢：<a href="https://www.zhihu.com/question/22043229/answer/44315364" target="_blank" rel="noopener">数独的生成过程是怎样的？ - 单想的回答 - 知乎</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第二个格子里填了数，其他没填    | 第一行填了数字4                  | 第2列填了数字4                  |  第1个九宫格填了数字4</span><br><span class="line">0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+<p>上面用<code>|</code>划分了四个区域，每个区域的含义都详细说明了</p>
+<p>从上述列也能直接推出数独图，它们是可以互相推出的！</p>
+<p>当然也可以用复合数独图，推出复合行，但是复合行可能无法推出单个数独图，因为存在一对多的情况，一个很简单的例子就是全 1 的行，对应的是一个数独解，而数独解是有 N 个的。</p>
+<h3 id="数独求解"><a href="#数独求解" class="headerlink" title="数独求解"></a>数独求解</h3><p>随便给出一个数独图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，解空间是 729，对应的 01 矩阵大小是：<code>729*324</code>，不过还好是个稀疏矩阵。</p>
+<h3 id="数独生成"><a href="#数独生成" class="headerlink" title="数独生成"></a>数独生成</h3><p>以上只讲了如何解数独，那么如何生成数独呢：<a href="https://www.zhihu.com/question/22043229/answer/44315364" target="_blank" rel="noopener">数独的生成过程是怎样的？ - 单想的回答 - 知乎</a></p>
 <p>简单来说就是：随机放入 11 个数，求解出终盘，然后挖洞。</p>
 
       
@@ -795,7 +824,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#精确覆盖问题"><span class="nav-number">1.</span> <span class="nav-text">精确覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-算法"><span class="nav-number">2.</span> <span class="nav-text">X 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建模"><span class="nav-number">2.1.</span> <span class="nav-text">建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法步骤"><span class="nav-number">2.2.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法含义"><span class="nav-number">2.3.</span> <span class="nav-text">算法含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的具体实现"><span class="nav-number">2.4.</span> <span class="nav-text">算法的具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数独怎么转化为精确覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">数独怎么转化为精确覆盖问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#精确覆盖问题"><span class="nav-number">1.</span> <span class="nav-text">精确覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-算法"><span class="nav-number">2.</span> <span class="nav-text">X 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建模"><span class="nav-number">2.1.</span> <span class="nav-text">建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法步骤"><span class="nav-number">2.2.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法含义"><span class="nav-number">2.3.</span> <span class="nav-text">算法含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的具体实现"><span class="nav-number">2.4.</span> <span class="nav-text">算法的具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数独怎么转化为精确覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">数独怎么转化为精确覆盖问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行的意义"><span class="nav-number">3.1.</span> <span class="nav-text">行的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列的意义"><span class="nav-number">3.2.</span> <span class="nav-text">列的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体例子"><span class="nav-number">3.3.</span> <span class="nav-text">具体例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独求解"><span class="nav-number">3.4.</span> <span class="nav-text">数独求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独生成"><span class="nav-number">3.5.</span> <span class="nav-text">数独生成</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -829,7 +858,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">85.8k</span>
+    <span title="Site words total count">86.3k</span>
   
 </div>
 
