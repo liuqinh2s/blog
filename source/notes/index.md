@@ -5,6 +5,18 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-02-14
+
+js 最简单的打包是用 rollup.js：
+
+```bash
+rollup main.js --file bundle.js
+```
+
+[打包工具 rollup.js 入门教程 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2022/05/rollup.html)
+
+比 webpack 简单易用
+
 # 2023-02-10
 
 最近想自己做些软件的想法越来越强烈，感觉一直为公司打工不是出路，必须要另寻出路：
@@ -31,7 +43,7 @@ const context = useContext(xxxContext);
 
 ```javascript
 // 先定义一个全局变量
-export const xxxContext = React.createContext<xxxType> {};
+export const xxxContext = React.createContext < xxxType > {};
 // 然后用这个.Provider包裹起来，再传入一个value
 <xxxContext.Provider value={{}}>...</xxxContext.Provider>;
 ```
