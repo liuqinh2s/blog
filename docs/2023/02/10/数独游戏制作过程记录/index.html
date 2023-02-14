@@ -90,7 +90,7 @@
 <meta property="og:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/舞蹈链.png">
-<meta property="og:updated_time" content="2023-02-14T07:59:12.259Z">
+<meta property="og:updated_time" content="2023-02-14T08:45:26.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数独游戏制作过程记录">
 <meta name="twitter:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
@@ -477,7 +477,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2,182
+                  2,442
                 </span>
               
 
@@ -516,18 +516,17 @@
 <p>精确覆盖问题是一个 NP 完全问题，NP 问题的概念我差不多忘光了，得重新看看</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="精确覆盖问题"><a href="#精确覆盖问题" class="headerlink" title="精确覆盖问题"></a>精确覆盖问题</h2><p>简单来说就是给定一个全集 X，和若干子集 S，从子集中选出 N 个，它们平凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集 X。</p>
+<h2 id="精确覆盖问题"><a href="#精确覆盖问题" class="headerlink" title="精确覆盖问题"></a>精确覆盖问题</h2><p>简单来说就是给定一个全集 X，和若干子集 S，从子集中选出 N 个，它们拼凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集 X。</p>
 <h2 id="X-算法"><a href="#X-算法" class="headerlink" title="X 算法"></a>X 算法</h2><p>维基百科的解说我看不懂，还好 OI-Wiki 上讲的足够详细：<a href="https://oi-wiki.org/search/dlx/#x-%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">X 算法</a></p>
 <p>解决精确覆盖问题，简单来说分为以下几个步骤：</p>
-<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><p>针对问题建模，建模成一个 01 矩阵，每一行代表一个集合，1 代表包含了集合 X 的某个元素（1 的位置，就是该元素在集合 X 中的位置），0 代表没没包含</p>
+<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><p>针对问题建模，建模成一个 01 矩阵，每一行代表一个集合，1 代表包含了集合 X 的某个元素（1 的位置，就是该元素在集合 X 中的位置），0 代表没包含</p>
 <h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><p>简化问题（缩小矩阵，删掉不再考虑的部分），递归解决子问题。</p>
 <ol>
-<li>随机选一行</li>
-<li>去掉这一行</li>
+<li>选 1 出现次数最少的一列，然后从这列是 1 的行中随便选一行</li>
 <li>找到这一行的有 1 的那些列，去掉这些列</li>
-<li>找到与这一行有冲突的那些行（同一列上都有 1 即为冲突），去掉这些行</li>
+<li>找到这些列上是 1 的行，去掉这些行</li>
 <li>现已经得到了一个缩小版的矩阵，继续以上这种删减操作</li>
-<li>结束标志：得到一个空矩阵。是否有解：最后一次删除的行全部是 1，则说明问题有解，否则问题无解</li>
+<li>单次结束标志：得到一个空矩阵。是否有解：最后一次删除的行全部是 1，则说明问题有解，否则问题无解。总程序结束标志：回溯完所有可能的分支</li>
 </ol>
 <blockquote>
 <p>这个算法很好的缩小了问题规模，非常典型的技巧</p>
@@ -536,7 +535,7 @@
 <ol>
 <li>每行只用一次，故删除选择的这一行</li>
 <li>这一行中出现的所有元素（每个 1 代表一个元素出现），后续都不用再考虑，故删除相关列</li>
-<li>跟它起冲突的行（同一列上有 1，代表有相同的元素，不符合精确覆盖），都要放弃，没法纳入解中，所以后续都不用再考虑，故删除这些行</li>
+<li>跟它起冲突的行（同一列上有 1，代表有相同的元素，不符合精确覆盖），没法纳入解中，所以后续都不用再考虑，故删除这些行</li>
 </ol>
 <p>以上三步可以保证每次选择的行，行之间是不会出现重复元素的。</p>
 <p>结束标志也很好理解，最后一次删除的行，如果全部是 1，则标志着我们所有列都刚好填补上了元素。</p>
@@ -545,7 +544,7 @@
 <ul>
 <li><a href="https://developer.aliyun.com/article/373709" target="_blank" rel="noopener">跳跃的舞者，舞蹈链（Dancing Links）算法——求解精确覆盖问题</a></li>
 </ul>
-<p>我自己实现了一份 TypeScript 写的代码：</p>
+<p>经过两天的设计与辛苦调试，我自己实现了一份 TypeScript 写的代码：</p>
 <p><a href="https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts</a></p>
 <p>与上面那个实现不同，我这个实现既有列头，又有行头，反正怎么方便怎么来。</p>
 <p><img src="../../../../images/2023/舞蹈链.png" alt="舞蹈链"></p>
@@ -592,15 +591,22 @@
 <h3 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h3><p>我们拿 <code>4*4</code> 的数独来做例子（只用到 1 到 4 四个数，可以称之为 2 阶数独吧，比咱们常玩的三阶数独小一阶）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 4 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br></pre></td></tr></table></figure>
 <p>这幅图转化成精确覆盖问题的矩阵是什么样呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第二个格子里填了数，其他没填    | 第一行填了数字4                  | 第2列填了数字4                  |  第1个九宫格填了数字4</span><br><span class="line">0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第二个格子里填了数，其他没填    | 第一行填了数字4                  | 第2列填了数字4                  |  第1个4宫格填了数字4</span><br><span class="line">0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
 <p>上面用<code>|</code>划分了四个区域，每个区域的含义都详细说明了</p>
-<p>从上述列也能直接推出数独图，它们是可以互相推出的！</p>
-<p>当然也可以用复合数独图，推出复合行，但是复合行可能无法推出单个数独图，因为存在一对多的情况，一个很简单的例子就是全 1 的行，对应的是一个数独解，而数独解是有 N 个的。</p>
+<p>从上述 01 行也能直接推出数独图，它们是可以互相推出的！</p>
+<p>当然也可以用复合数独图，推出复合行，但是复合行可能无法推出单个具体数独图，因为存在一对多的情况，一个很简单的例子就是全 1 的行，对应的是抽象的数独解，而数独解是有 N 个的。</p>
+<blockquote>
+<p>数独的全部解有多少个？</p>
+</blockquote>
+<blockquote>
+<p>数独的总个数是这么得出来的。9!×722×27× 27,704,267,971=6,670,903,752,021,072,936,960（约有 6.67×10 的 21 次方）种组合，2005 年由 Bertram Felgenhauer 和 Frazer Jarvis 计算出该数字，如果将重复（如数字交换、对称等）不计算，那么有 5,472,730,538 个组合。那么有趣的来了，有个 9!=362880，这个就等于 9 的全排列，是不是可以从这里做突破口呢？如果我可以随机的生成 362880 个完整的数独矩阵，然后随机的每行挖去 4 到 5 个那就是 <code>362880/24/120*9*362880=411505920</code> 个，这个数字够大家有生之年玩的了。--摘录自<a href="https://blog.csdn.net/peng_wu01/article/details/6026103" target="_blank" rel="noopener">数独-- 一个高效率生成数独的算法</a> 真实性有待进一步考证</p>
+</blockquote>
 <h3 id="数独求解"><a href="#数独求解" class="headerlink" title="数独求解"></a>数独求解</h3><p>随便给出一个数独图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，解空间是 729，对应的 01 矩阵大小是：<code>729*324</code>，不过还好是个稀疏矩阵。</p>
 <p>有一个优化必须要说一下：每次选行的时候，选 1 最少的列上的某一行。</p>
-<p>选 1 最少的列意义是：寻找出现在所有子集中次数最少的元素，既然大家都很缺这个元素，那么基本上意味着凑全集合，很需要这个元素，那么就要优先选择这些行</p>
-<p>没加这个优化的时候，我的回溯一直在搞排列组合，无头苍蝇，跑了 60 多万 dance 都没结果，几分钟过去都没结果，加了这个优化直接起飞，1 秒钟不到就解出来了。</p>
+<p>选 1 最少的列的意义是：寻找出现在所有子集中次数最少的元素，既然大家都很缺这个元素，那么基本上意味着凑全集合，很需要这个元素，那么就要优先选择这些元素</p>
+<p>没加这个优化的时候，我的回溯一直在搞排列组合，无头苍蝇，跑了 60 多万次 dance 都没结果（几分钟都过去了），加了这个优化直接起飞，1 秒钟不到就解出来了。</p>
 <p>我的数独求解代码：<a href="https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/SudoKu.ts" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/SudoKu.ts</a></p>
+<p>能直接在浏览器上跑的代码：<a href="https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/bundle.js" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/bundle.js</a></p>
 <h3 id="数独生成"><a href="#数独生成" class="headerlink" title="数独生成"></a>数独生成</h3><p>以上只讲了如何解数独，那么如何生成数独呢：<a href="https://www.zhihu.com/question/22043229/answer/44315364" target="_blank" rel="noopener">数独的生成过程是怎样的？ - 单想的回答 - 知乎</a></p>
 <p>简单来说就是：随机放入 11 个数，求解出终盘，然后挖洞。</p>
 
@@ -863,7 +869,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">86.5k</span>
+    <span title="Site words total count">86.8k</span>
   
 </div>
 
