@@ -420,13 +420,17 @@ useEffect(() => {
 子组件：
 
 ```javascript
+// 必须是个函数，且函数参数是props和ref
 function children(props, ref) {
+  const func = () => {
+    console.log("执行func");
+  };
   // 用useImperativeHandle暴露一些外部ref能访问的属性
-  useImperativeHandle(props.onRef, () => {
+  useImperativeHandle(ref, () => {
     // 需要将暴露的接口返回出去
     return {
       xxx: () => {
-        console.log("执行子组件方法xxx()");
+        func();
       },
     };
   });
