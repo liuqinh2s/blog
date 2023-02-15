@@ -5,6 +5,11 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-02-15
+
+- [计算机教育中缺失的一课](https://missing-semester-cn.github.io/)
+- [LABULADONG 的算法网站](https://labuladong.github.io/algo/)
+
 # 2023-01-13
 
 - [MLU-Explain(Visual explanations of core machine learning concepts)](https://mlu-explain.github.io/)
