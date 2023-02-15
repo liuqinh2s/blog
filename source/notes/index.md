@@ -447,7 +447,7 @@ childrenRef.current.xxx();
 return <children ref={childrenRef} />;
 ```
 
-试验基地：[react-practice](https://replit.com/@liuqinh2s/react-practice#src/Child.tsx)
+试验基地：[react-practice](https://replit.com/@liuqinh2s/react-practice#README.md)
 
 # 2022-12-05
 
