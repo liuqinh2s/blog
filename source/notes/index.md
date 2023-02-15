@@ -447,7 +447,7 @@ childrenRef.current.xxx();
 return <children ref={childrenRef} />;
 ```
 
-很多时候，父组件需要设置子组件的 state，那么就可以这样做
+试验基地：[react-practice](https://replit.com/@liuqinh2s/react-practice#src/Child.tsx)
 
 # 2022-12-05
 
