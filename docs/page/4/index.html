@@ -386,6 +386,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/07/10/JavaScript原型和原型链/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2022/07/10/JavaScript原型和原型链/" itemprop="url">JavaScript原型和原型链</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-07-10T00:00:00+08:00">
+                2022-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  365
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="原型链是干什么用的"><a href="#原型链是干什么用的" class="headerlink" title="原型链是干什么用的"></a>原型链是干什么用的</h1><p>JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。</p>
+<p>当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br><span class="line">Foo.prototype.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo.a);</span><br></pre></td></tr></table></figure>
+<p>原型和原型链主要由三个指针实现：</p>
+<ul>
+<li><code>prototype</code>: 构造函数的<code>prototype</code>属性指向原型对象</li>
+<li><code>__proto__</code>: 实例对象的<code>__proto__</code>属性指向原型对象</li>
+<li><code>constructor</code>: 原型对象的<code>constructor</code>属性指向构造函数</li>
+<li>所有对象都基于<code>Object</code>，是因为所有原型对象的<code>__proto__</code>最终都指向<code>Object.prototype</code>，而<code>Object.prototype</code>的<code>__proto__</code>为 null</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2022/07/10/JavaScript原型和原型链/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/20/TCP和UDP的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -724,171 +898,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/09/生成固定长度的字符串/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/06/09/生成固定长度的字符串/" itemprop="url">生成固定长度的字符串</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-06-09T00:00:00+08:00">
-                2022-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  177
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/06/09/生成固定长度的字符串/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/09/浏览器上的几种xy坐标/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1060,7 +1069,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/08/浏览器storage事件/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2022/06/09/生成固定长度的字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -1079,7 +1088,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/06/08/浏览器storage事件/" itemprop="url">浏览器 storage 事件</a></h1>
+                <a class="post-title-link" href="/blog/2022/06/09/生成固定长度的字符串/" itemprop="url">生成固定长度的字符串</a></h1>
         
 
         <div class="post-meta">
@@ -1091,8 +1100,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-06-08T00:00:00+08:00">
-                2022-06-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-06-09T00:00:00+08:00">
+                2022-06-09
               </time>
             
 
@@ -1114,8 +1123,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/blog/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -1145,7 +1154,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  287
+                  177
                 </span>
               
 
@@ -1171,16 +1180,10 @@
 
       
         
-          <p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event</a></p>
-<p>在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：</p>
-<ol>
-<li>在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效</li>
-<li>必须写入与旧值不同的值，才能监听到</li>
-</ol>
-<p>我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。</p>
+          <p>前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/06/08/浏览器storage事件/#more" rel="contents">
+            <a class="btn" href="/blog/2022/06/09/生成固定长度的字符串/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1270,7 +1273,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1292,7 +1295,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1392,7 +1395,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">86.8k</span>
+    <span title="Site words total count">87.6k</span>
   
 </div>
 
