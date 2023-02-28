@@ -1083,7 +1083,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2019/04/15/C++的map的remove函数实现/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2019/04/15/hexo把英文引号渲染成中文引号的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -1102,7 +1102,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2019/04/15/C++的map的remove函数实现/" itemprop="url">C++ map的remove函数实现</a></h1>
+                <a class="post-title-link" href="/blog/2019/04/15/hexo把英文引号渲染成中文引号的问题/" itemprop="url">hexo把英文引号渲染成中文引号的问题</a></h1>
         
 
         <div class="post-meta">
@@ -1137,8 +1137,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
+                  <a href="/blog/categories/debug/" itemprop="url" rel="index">
+                    <span itemprop="name">debug</span>
                   </a>
                 </span>
 
@@ -1168,7 +1168,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  508
+                  420
                 </span>
               
 
@@ -1194,10 +1194,14 @@
 
       
         
-          <p>今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。</p>
+          <p>其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。</p>
+<p>首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。</p>
+<p>打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。</p>
+<p>然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。</p>
+<p>那么问题就确定了：hexo 把英文引号渲染成了中文引号。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2019/04/15/C++的map的remove函数实现/#more" rel="contents">
+            <a class="btn" href="/blog/2019/04/15/hexo把英文引号渲染成中文引号的问题/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1298,7 +1302,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1309,7 +1313,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
