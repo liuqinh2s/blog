@@ -5,6 +5,10 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-03-02
+
+useRef 今天又学会了一点，对于非原生组件，必须要写 useImperativeHandle，否则拿不到东西，原生组件则不用写这个，默认拿到的 ref.current 就是 dom 对象
+
 # 2023-02-28
 
 一直以来都对 useEffect 有个误解，以为它的作用范围是全局的，我的意思是在组件外部改了某个变量，我可以在组件内监听到，实际上是不行的。
@@ -467,7 +471,7 @@ function children(props, ref) {
   const func = () => {
     console.log("执行func");
   };
-  // 用useImperativeHandle暴露一些外部ref能访问的属性
+  // 用useImperativeHandle暴露一些外部ref能访问的属性，必须要写这个，不然ref什么也拿不到
   useImperativeHandle(ref, () => {
     // 需要将暴露的接口返回出去
     return {
