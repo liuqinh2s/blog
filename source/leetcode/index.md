@@ -5,6 +5,12 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-03-06
+
+[1653. 使字符串平衡的最少删除次数](https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/description/)
+
+随便在一个数组坐标处划一个分界线，左边的b的个数+右边的a的个数之和最小，即为要删除的最少数目。而这个a和b的个数，最好是用前后缀和记下来，不然每次都要遍历一遍数组搜集。那就是O(n^2)的复杂度了。用前缀和记下来，则是O(n)时间复杂度。
+
 # 2023-01-13
 
 [2287. 重排字符形成目标字符串](https://leetcode.cn/problems/rearrange-characters-to-make-target-string/description/)
