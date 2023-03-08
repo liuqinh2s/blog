@@ -5,6 +5,12 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-03-08
+
+怎么获取 window 下的 iframe：`window.frames`
+
+官方文档：[Window.frames](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames)
+
 # 2023-03-02
 
 useRef 今天又学会了一点，对于非原生组件，必须要写 useImperativeHandle，否则拿不到东西，原生组件则不用写这个，默认拿到的 ref.current 就是 dom 对象
