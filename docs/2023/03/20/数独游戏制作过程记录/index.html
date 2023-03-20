@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="游戏攻略,">
+  <meta name="keywords" content="项目,">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="这是我写的第一份详细的游戏攻略，里面的东西并非全部原创，也有些是来自我在互联网上的收集和总结。 基本概念金铲铲之战是典型的自走棋游戏，这类游戏都有相同的机制">
-<meta name="keywords" content="游戏攻略">
+<meta name="description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
+<meta name="keywords" content="项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="金铲铲之战攻略">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/2023/01/29/金铲铲之战攻略/index.html">
+<meta property="og:title" content="数独游戏制作过程记录">
+<meta property="og:url" content="https://liuqinh2s.github.io/blog/2023/03/20/数独游戏制作过程记录/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这是我写的第一份详细的游戏攻略，里面的东西并非全部原创，也有些是来自我在互联网上的收集和总结。 基本概念金铲铲之战是典型的自走棋游戏，这类游戏都有相同的机制">
+<meta property="og:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-02-08T09:32:47.786Z">
+<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/舞蹈链.png">
+<meta property="og:updated_time" content="2023-03-20T00:42:33.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="金铲铲之战攻略">
-<meta name="twitter:description" content="这是我写的第一份详细的游戏攻略，里面的东西并非全部原创，也有些是来自我在互联网上的收集和总结。 基本概念金铲铲之战是典型的自走棋游戏，这类游戏都有相同的机制">
+<meta name="twitter:title" content="数独游戏制作过程记录">
+<meta name="twitter:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
+<meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2023/舞蹈链.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2023/01/29/金铲铲之战攻略/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2023/03/20/数独游戏制作过程记录/">
 
 
 
 
 
-  <title>金铲铲之战攻略 | liuqinh2s' blog</title>
+  <title>数独游戏制作过程记录 | liuqinh2s' blog</title>
   
 
 
@@ -387,7 +389,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/01/29/金铲铲之战攻略/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/03/20/数独游戏制作过程记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -404,7 +406,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">金铲铲之战攻略</h1>
+          <h1 class="post-title" itemprop="name headline">数独游戏制作过程记录</h1>
         
 
         <div class="post-meta">
@@ -416,8 +418,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-01-29T17:07:26+08:00">
-                2023-01-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-03-20T08:42:33+08:00">
+                2023-03-20
               </time>
             
 
@@ -439,8 +441,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/游戏攻略/" itemprop="url" rel="index">
-                    <span itemprop="name">游戏攻略</span>
+                  <a href="/blog/categories/项目/" itemprop="url" rel="index">
+                    <span itemprop="name">项目</span>
                   </a>
                 </span>
 
@@ -475,7 +477,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,989
+                  2,488
                 </span>
               
 
@@ -500,78 +502,114 @@
       
 
       
-        <p>这是我写的第一份详细的游戏攻略，里面的东西并非全部原创，也有些是来自我在互联网上的收集和总结。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>金铲铲之战是典型的自走棋游戏，这类游戏都有相同的机制</p>
-<a id="more"></a>
-<ul>
-<li>金币：<ul>
-<li>可以通过各种渠道得到，每存 10 个金币，每个回合会生一个金币的利息，最多 50 金币生 5 金币利息（假如你有 60 金币，也只会生 5 金币利息，所以多出来的钱要么升人口，要么 D 牌）。赢一次获得一金币（且在本局游戏内就会给你，有利于拿卡，如果恰好差一金币的话），连赢和连输也会获得金币且是相同的金币（2 或 3 连胜连败 1 金币，4 连胜连败：2 金币，5 连胜连败：3 金币）。每局还会自动获得两金币的人口提升（直接充进人口金币池，无法用在商店）</li>
-</ul>
-</li>
-<li>卡牌（别名：弈子，棋子，英雄）：<ul>
-<li>卡牌分为五种品质（官方管这个叫阶），分别需要 1,2,3,4,5 金币购买，在巨龙之巢版本有 7 费（费就是花费 7 金币的意思）的龙。相同的三张卡牌可以合成二星，相同的三个二星可以合成三星，四星在历史上也出现过，不过现在这个版本没有。<strong>每种卡牌在牌库的数量需要了解一下，目前这个版本：1 费卡 29 张，2 费卡 22 张，3 费卡 22 张，4 费卡 18 张，5 费卡 10 张</strong>。所以如果对方锁了两个相同的五费英雄，你是无法合成该英雄的三星的。</li>
-</ul>
-</li>
-<li>备战席：<ul>
-<li>备战席有 9 个格子，可以用来储备棋子，假如棋盘上可以放 5 个棋子，你没有放完五个，就会从你的备战席上自动放一个系统认为合适的上去（一般是高费的或者高星的）。</li>
-</ul>
-</li>
-<li>棋盘：<ul>
-<li>棋盘分为我方和对方，各占一半空间，每个棋盘格是一个正六边形，每一行有 7 个格子，每一方有四行。</li>
-</ul>
-</li>
-<li>商店：<ul>
-<li>商店会根据一定的概率出现卡牌，每一回合开始时会自动刷新商店一次，可以消耗 2 金币刷新商店，也可以锁住商店，防止下一回合自动刷新（俗称 D 牌，D 是键盘快捷键 D，是 PC 端的快捷键）。</li>
-</ul>
-</li>
-<li>装备：<ul>
-<li>每个英雄最多可以放三个成装，每两个散件装备可以合成一件成装。<strong>初学者需要记忆一下合成表，每个装备都有独特的效果</strong>。比如两个暴击拳套可以合成一个秘法手套，秘法手套可以提供两件随机装备，且装了秘法手套的英雄无法再装其他装备（也就相当于只装了两个装备）</li>
-</ul>
-</li>
-<li>人口：<ul>
-<li>一般情况下是从 1 人口升到最多 9 人口，通过某些机制可以扩充到 9 人口以上。不同的人口下，商店的各费棋子的刷新概率是不一样的。<strong>这个刷新概率需要记忆一下</strong>：2 人口（1 费 100%，其他费 0 概率），2 人口（1 费 75%，2 费 25%，其他费 0 概率），3 人口（具体数据等填坑。。。）。总结来说，2 人口适合 D 一费卡，2 到 6 人口适合 D 一费和二费卡，7 人口适合 D 三费卡，8 人口适合 D 四费卡，9 人口适合 D5 费卡，千万不要企图在不适合的人口阶段强 D 其他费的卡，非常费钱！</li>
-</ul>
-</li>
-<li>站位：<ul>
-<li>站位简单来说就是肉放前面，输出放后面。有个小技巧是，刺客阵容最好把所有棋子都放最后一排，这样的话，对方的输出就会往前走一格（一般输出是 6 格距离，恰好竖直距离可以打到敌方的底部第二排），方便刺客跳，而且刺客一般要对直对方的输出放，这样就能直接瞄准对方 C 位（输出，carry）</li>
-</ul>
-</li>
-<li>阵容：<ul>
-<li>一般由一个主 C 和一个主 T （肉，前排）构成，最终的成型阵容，主 C 一般是 3 费，4 费，5 费（低费卡一般输出小，所以不用一费二费卡做主 C）卡的三星，主 T 也是同理。最强的阵容当然还是五费三星，一个子即可对阵。</li>
-</ul>
-</li>
-</ul>
-<h2 id="运营策略"><a href="#运营策略" class="headerlink" title="运营策略"></a>运营策略</h2><p>怎样才能赢呢？首先是经济：<a href="https://zhuanlan.zhihu.com/p/589529517" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/589529517</a></p>
-<p>根据上面这篇文章，每回合最好都留 20 金币。</p>
-<p>关于运营我的见解比较简单，就是要一直连赢，锁血，最后进个前四肯定没问题，当然这是一句屁话，如何能总是赢呢？无非是两条路，升人口或者升星，也就是说，还是回到了，什么时候升人口，什么时候升星的问题。</p>
-<p>我的策略一般是把战力稳定在第一附近，如果战败，一般都会升战力，如果是因为阵容中二星太少而输，则升星，如果都是 2 星还是输，那肯定就是要升人口。</p>
-<p>上网查了一下，什么时候升人口基本上是有固定的结论：3-1 升 6 人口，4-1 升 7 人口，4-5 升 8 人口（注意这是最迟的情况，如果很顺，利息满了，可以先升），这样既吃到了利息，又能抢到卡牌。</p>
-<p>升 9 人口真的无比重要，必须升 9 人口。不然很难第一。</p>
-<h2 id="阵容组合"><a href="#阵容组合" class="headerlink" title="阵容组合"></a>阵容组合</h2><p>阵容组合，基本上是需要这几个部分：</p>
+        <p>我打算自己做一个数独游戏，主要分为两步：</p>
 <ol>
-<li>主 C（输出）</li>
-<li>主 T（承受伤害，肉）</li>
-<li>主控（控制，团控最好）</li>
+<li>生成一个数独</li>
+<li>验证玩家填入的数字是否正确</li>
 </ol>
-<p>输出一般是要 3 费及以上的卡牌，不然输出太低。主 T 也是如此，主控也是如此。</p>
-<p>所以一般来说低费的卡升 2 星即可。</p>
-<p>一般来说优先级：<strong>输出&gt;肉&gt;控制</strong>，一定要先有输出才行，优先考虑输出。</p>
-<h2 id="装备"><a href="#装备" class="headerlink" title="装备"></a>装备</h2><p>输出的话，如果是物理输出，且先打对面前排，则核心装备为：最后的轻语，如果是刺客先打后排的话，需要一件：夜之锋刃，蓝条长的棋子必备：回蓝刀，蓝条短的棋子必备：蓝 buff，魔法输出必备技能暴击：珠光手套或者有强化符文珠光莲花也可以。</p>
-<p>做装备的话，由于肉的最佳装备是固定的（巨龙之爪，反甲，狂徒），所以可以优先考虑做肉的装备：巨龙之爪（效果：回血）&gt;反甲（使部分暴击变得无效）&gt;狂徒（加 800 血量）</p>
-<h2 id="站位"><a href="#站位" class="headerlink" title="站位"></a>站位</h2><p>对阵刺客站位非常重要，一定要把输出（比如厄运小姐）堵在角落，然后用两个不会走动的远程棋子卡住两边的位置，最好是控，比如稻草人，或者风女，或者螃蟹。因为这个站位问题我都输了好多回了（我摆得很开，每次输出都被刺死了，比如妖姬或者劫切后排）。也可以把输出放倒数第二排，倒数第一排放其他的，刺客会优先打最后一排的。</p>
-<p>如果不是应对刺客则棋子一定不要堆放在一起，很容易被团灭，要放两边。综合考虑，就是两边的输出都放倒数第二排，背后各放一个棋子让刺客突。</p>
-<h2 id="怪兽版本"><a href="#怪兽版本" class="headerlink" title="怪兽版本"></a>怪兽版本</h2><p>除五费三星外：</p>
-<p>最强 T：腕豪<br>最强 C：厄运小姐</p>
-<p>常见输出羁绊：精英战士，枪手，情报特工，决斗大师</p>
-<p>控制：</p>
+<p>生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。</p>
+<p>生成数独最高效的算法是：<a href="https://zh.wikipedia.org/wiki/%E8%88%9E%E8%B9%88%E9%93%BE" target="_blank" rel="noopener"><strong>舞蹈链</strong></a>，实际上舞蹈链是一种数据结构，是为了<a href="https://zh.wikipedia.org/wiki/X%E7%AE%97%E6%B3%95" target="_blank" rel="noopener"><strong>X 算法</strong></a>而产生的，而 X 算法是用来解决一类问题：<a href="https://zh.wikipedia.org/zh-hans/%E7%B2%BE%E7%A1%AE%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98" target="_blank" rel="noopener"><strong>精确覆盖问题</strong></a></p>
+<blockquote>
+<p>插个题外话，我朋友说，东野圭吾的小说<a href="https://zh.wikipedia.org/zh-hans/%E5%AB%8C%E7%96%91%E7%8A%AFX%E7%9A%84%E7%8D%BB%E8%BA%AB" target="_blank" rel="noopener">《嫌疑犯 X 的献身》</a>，的凶手就在研究这个问题，有兴趣可以顺带看看，这小说挺有名的。</p>
+</blockquote>
+<blockquote>
+<p>精确覆盖问题是一个 NP 完全问题，NP 问题的概念我差不多忘光了，得重新看看</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="精确覆盖问题"><a href="#精确覆盖问题" class="headerlink" title="精确覆盖问题"></a>精确覆盖问题</h2><p>简单来说就是给定一个全集 X，和若干子集 S，从子集中选出 N 个，它们拼凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集 X。</p>
+<h2 id="X-算法"><a href="#X-算法" class="headerlink" title="X 算法"></a>X 算法</h2><p>维基百科的解说我看不懂，还好 OI-Wiki 上讲的足够详细：<a href="https://oi-wiki.org/search/dlx/#x-%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">X 算法</a></p>
+<p>解决精确覆盖问题，简单来说分为以下几个步骤：</p>
+<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><p>针对问题建模，建模成一个 01 矩阵，每一行代表一个集合，1 代表包含了集合 X 的某个元素（1 的位置，就是该元素在集合 X 中的位置），0 代表没包含</p>
+<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><p>简化问题（缩小矩阵，删掉不再考虑的部分），递归解决子问题。</p>
+<ol>
+<li>选行：选 1 出现次数最少的一列，然后从这列有 1 的行中随便选一行</li>
+<li>删减：找到这一行的有 1 的那些列，去掉这些列，找到这些列上是 1 的行，去掉这些行</li>
+<li>现已经得到了一个缩小版的矩阵，继续以上这种删减操作</li>
+<li>单次深度搜索结束标志：得到一个空矩阵。是否有解：最后一次删除的行全部是 1，则说明问题有解，否则问题无解。总程序结束标志：回溯完所有可能的分支</li>
+</ol>
+<blockquote>
+<p>这个算法很好的缩小了问题规模，非常典型的技巧</p>
+</blockquote>
+<h3 id="算法含义"><a href="#算法含义" class="headerlink" title="算法含义"></a>算法含义</h3><p>每选择一行，代表着打算用这一行去精确覆盖全集，那么相应的：</p>
+<ol>
+<li>每行只用一次，故删除选择的这一行</li>
+<li>这一行中出现的所有元素（每个 1 代表一个元素出现），后续都不用再考虑，故删除相关列</li>
+<li>跟它起冲突的行（同一列上有 1，代表有相同的元素，不符合精确覆盖），没法纳入解中，所以后续都不用再考虑，故删除这些行</li>
+</ol>
+<p>以上三步可以保证每次选择的行，行之间是不会出现重复元素的。</p>
+<p>结束标志也很好理解，最后一次删除的行，如果全部是 1，则标志着我们所有列都刚好填补上了元素。</p>
+<p>这样我们就做到了全覆盖+精确覆盖，这两项要求。</p>
+<h3 id="算法的具体实现"><a href="#算法的具体实现" class="headerlink" title="算法的具体实现"></a>算法的具体实现</h3><p>具体代码实现，还有很多细节不清楚，参考资料：</p>
 <ul>
-<li>2 费：亚索，金克斯</li>
-<li>3 费：龙龟</li>
-<li>4 费：瑟庄妮</li>
-<li>5 费：稻草人，厄加特，风女</li>
+<li><a href="https://developer.aliyun.com/article/373709" target="_blank" rel="noopener">跳跃的舞者，舞蹈链（Dancing Links）算法——求解精确覆盖问题</a></li>
 </ul>
-<p>任何阶段，最好保证自己有控，有肉，有输出</p>
-
+<p>经过两天的设计与辛苦调试，我自己实现了一份 TypeScript 写的代码：</p>
+<p><a href="https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts</a></p>
+<p>与上面那个实现不同，我这个实现既有列头，又有行头，反正怎么方便怎么来。</p>
+<p><img src="../../../../images/2023/舞蹈链.png" alt="舞蹈链"></p>
+<h2 id="数独怎么转化为精确覆盖问题"><a href="#数独怎么转化为精确覆盖问题" class="headerlink" title="数独怎么转化为精确覆盖问题"></a>数独怎么转化为精确覆盖问题</h2><p>参考资料：<a href="https://zhuanlan.zhihu.com/p/67447747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/67447747</a></p>
+<p>在网上查阅了大量资料，但一开始都看不懂，且发现他们讲的基本上一模一样（天下文章一大抄），就跟前面舞蹈链一样，连配图都是一样的。</p>
+<p>怎么把数独这个矩阵转化为精确覆盖问题的 01 矩阵，其实就是要想清楚，行和列的意义是什么？</p>
+<h3 id="行的意义"><a href="#行的意义" class="headerlink" title="行的意义"></a>行的意义</h3><p>精确覆盖问题的核心要素是：一个全集 X，若干子集 S</p>
+<p>那么我们先来想想全集是什么？</p>
+<p>全集肯定是一幅完整的正确的数独答案</p>
+<p>那每个子集是什么？</p>
+<p>子集应该是单个格子的解，然后我们拿恰好 81 个子集，凑出全集。</p>
+<p>每个格子有 9 种填法，81 个格子有 729 种填法，所以我们需要从 729 个子集中选 81 个出来。</p>
+<h3 id="列的意义"><a href="#列的意义" class="headerlink" title="列的意义"></a>列的意义</h3><p>首先思考一下要往一个数独的格子里填入一个数字受哪些条件约束：</p>
+<p>首先，这个格子里不能有数字，即为空</p>
+<p>其次，同一行不能有相同数字</p>
+<p>再次，同一列不能有相同数字</p>
+<p>最后，同一个九宫格不能有相同数字</p>
+<p>每个格子都有 4 个约束，81 个格子有 324 个约束，所以有 324 列，具体的每一列的含义如下：</p>
+<p>第 0 列表示数独（0,0）位置是否有数字</p>
+<p>第 1 列表示（0,1）位置是否有数字</p>
+<p>……</p>
+<p>第 8 列表示（0,8）是否有数字</p>
+<p>第 9 列表示（1,0）是否有数字</p>
+<p>……</p>
+<p>第 80 列表示（8,8）是否有数字</p>
+<p>以上 81 列表示数独的格子里是否有数字的约束条件，接着</p>
+<p>81 列表示第 0 行是否有数字 1</p>
+<p>82 列表示第 0 行是否有数字 2</p>
+<p>……</p>
+<p>89 列表示第 0 行是否有数字 9</p>
+<p>90 列表示第 1 行是否有数字 1</p>
+<p>91 列表示第 1 行是否有数字 2</p>
+<p>……</p>
+<p>161 列表示第 8 行是否有数字 9</p>
+<p>以上为行的约束条件</p>
+<p>162 列表示第 0 列是否有数字 1</p>
+<p>……</p>
+<p>242 列表示第 8 列是否有数字 9</p>
+<p>最后，是九宫格的约束条件：</p>
+<p>243 列表示第 0 个九宫格是否有数字 1</p>
+<p>244 列表示第 0 个九宫格是否有数字 2</p>
+<p>……</p>
+<p>323 列表示第 8 个九宫格是否有数字 9</p>
+<h3 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h3><p>我们拿 <code>4*4</code> 的数独来做例子（只用到 1 到 4 四个数，可以称之为 2 阶数独吧，比咱们常玩的三阶数独小一阶）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 4 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br></pre></td></tr></table></figure>
+<p>这幅图转化成精确覆盖问题的矩阵是什么样呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第二个格子里填了数，其他没填    | 第一行填了数字4                  | 第2列填了数字4                  |  第1个4宫格填了数字4</span><br><span class="line">0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
+<p>上面用<code>|</code>划分了四个区域，每个区域的含义都详细说明了</p>
+<p>从上述 01 行也能直接推出数独图，它们是可以互相推出的！</p>
+<p>当然也可以用复合数独图，推出复合行，但是复合行可能无法推出单个具体数独图，因为存在一对多的情况，一个很简单的例子就是全 1 的行，对应的是抽象的数独解，而数独解是有 N 个的。</p>
+<blockquote>
+<p>数独的全部解有多少个？</p>
+</blockquote>
+<blockquote>
+<p>数独的总个数是这么得出来的。9!×722×27× 27,704,267,971=6,670,903,752,021,072,936,960（约有 6.67×10 的 21 次方）种组合，2005 年由 Bertram Felgenhauer 和 Frazer Jarvis 计算出该数字，如果将重复（如数字交换、对称等）不计算，那么有 5,472,730,538 个组合。那么有趣的来了，有个 9!=362880，这个就等于 9 的全排列，是不是可以从这里做突破口呢？如果我可以随机的生成 362880 个完整的数独矩阵，然后随机的每行挖去 4 到 5 个那就是 <code>362880/24/120*9*362880=411505920</code> 个，这个数字够大家有生之年玩的了。--摘录自<a href="https://blog.csdn.net/peng_wu01/article/details/6026103" target="_blank" rel="noopener">数独-- 一个高效率生成数独的算法</a> 真实性有待进一步考证</p>
+</blockquote>
+<h3 id="数独求解"><a href="#数独求解" class="headerlink" title="数独求解"></a>数独求解</h3><p>随便给出一个数独图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，解空间是 729，对应的 01 矩阵大小是：<code>729*324</code>，不过还好是个稀疏矩阵。</p>
+<p>有一个优化必须要说一下：每次选行的时候，选 1 最少的列上的某一行。</p>
+<p>选 1 最少的列的意义是：寻找出现在所有子集中次数最少的元素，既然大家都很缺这个元素，那么基本上意味着凑全集合，很需要这个元素，那么就要优先选择这些元素</p>
+<p>没加这个优化的时候，我的回溯一直在搞排列组合，无头苍蝇，跑了 60 多万次 dance 都没结果（几分钟都过去了），加了这个优化直接起飞，1 秒钟不到就解出来了。</p>
+<p>我的数独求解代码：<a href="https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/SudoKu.ts" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/SudoKu.ts</a></p>
+<p>能直接在浏览器上跑的代码：<a href="https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/bundle.js" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/bundle.js</a></p>
+<h3 id="数独生成"><a href="#数独生成" class="headerlink" title="数独生成"></a>数独生成</h3><p>以上只讲了如何解数独，那么如何生成数独呢：<a href="https://www.zhihu.com/question/22043229/answer/44315364" target="_blank" rel="noopener">数独的生成过程是怎样的？ - 单想的回答 - 知乎</a></p>
+<p>简单来说就是：随机放入 11 个数，求解出终盘，然后挖洞。</p>
+<h3 id="数独背景知识"><a href="#数独背景知识" class="headerlink" title="数独背景知识"></a>数独背景知识</h3><p><a href="https://www.jianshu.com/p/d77de0dcf792" target="_blank" rel="noopener">初级课堂（3）|数独比你还优美，还有个性！</a><br>比较精美的数独网站：<a href="http://sudoku.com/" target="_blank" rel="noopener">Sudoku.com</a></p>
+<h3 id="数独难易判定"><a href="#数独难易判定" class="headerlink" title="数独难易判定"></a>数独难易判定</h3>
       
     </div>
     
@@ -588,7 +626,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/游戏攻略/" rel="tag"># 游戏攻略</a>
+            <a href="/blog/tags/项目/" rel="tag"># 项目</a>
           
         </div>
       
@@ -601,8 +639,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/12/13/css居中的最佳实践/" rel="next" title="css居中的最佳实践">
-                <i class="fa fa-chevron-left"></i> css居中的最佳实践
+              <a href="/blog/2023/02/10/border-radius详解/" rel="next" title="border-radius详解">
+                <i class="fa fa-chevron-left"></i> border-radius详解
               </a>
             
           </div>
@@ -611,8 +649,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/" rel="prev" title="AI时代来临，有哪些机遇我可以抓住？">
-                AI时代来临，有哪些机遇我可以抓住？ <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2023/03/20/Canvas 入门笔记/" rel="prev" title="Canvas 入门笔记">
+                Canvas 入门笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -719,7 +757,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -801,7 +839,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运营策略"><span class="nav-number">2.</span> <span class="nav-text">运营策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阵容组合"><span class="nav-number">3.</span> <span class="nav-text">阵容组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装备"><span class="nav-number">4.</span> <span class="nav-text">装备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#站位"><span class="nav-number">5.</span> <span class="nav-text">站位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怪兽版本"><span class="nav-number">6.</span> <span class="nav-text">怪兽版本</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#精确覆盖问题"><span class="nav-number">1.</span> <span class="nav-text">精确覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-算法"><span class="nav-number">2.</span> <span class="nav-text">X 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建模"><span class="nav-number">2.1.</span> <span class="nav-text">建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法步骤"><span class="nav-number">2.2.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法含义"><span class="nav-number">2.3.</span> <span class="nav-text">算法含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的具体实现"><span class="nav-number">2.4.</span> <span class="nav-text">算法的具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数独怎么转化为精确覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">数独怎么转化为精确覆盖问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行的意义"><span class="nav-number">3.1.</span> <span class="nav-text">行的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列的意义"><span class="nav-number">3.2.</span> <span class="nav-text">列的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体例子"><span class="nav-number">3.3.</span> <span class="nav-text">具体例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独求解"><span class="nav-number">3.4.</span> <span class="nav-text">数独求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独生成"><span class="nav-number">3.5.</span> <span class="nav-text">数独生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独背景知识"><span class="nav-number">3.6.</span> <span class="nav-text">数独背景知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独难易判定"><span class="nav-number">3.7.</span> <span class="nav-text">数独难易判定</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -835,7 +873,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">86.8k</span>
+    <span title="Site words total count">85.6k</span>
   
 </div>
 
