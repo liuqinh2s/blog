@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="有如下几种：  screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY">
+<meta name="description" content="首先分为两大类：  事件坐标 dom 坐标">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器上的几种xy坐标">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/2022/06/09/浏览器上的几种xy坐标/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="有如下几种：  screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY">
+<meta property="og:description" content="首先分为两大类：  事件坐标 dom 坐标">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://s2.loli.net/2022/06/09/CgevqWi37jV6TwZ.png">
-<meta property="og:updated_time" content="2022-11-05T15:17:09.684Z">
+<meta property="og:updated_time" content="2023-03-31T06:00:27.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器上的几种xy坐标">
-<meta name="twitter:description" content="有如下几种：  screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY">
+<meta name="twitter:description" content="首先分为两大类：  事件坐标 dom 坐标">
 <meta name="twitter:image" content="https://s2.loli.net/2022/06/09/CgevqWi37jV6TwZ.png">
 
 
@@ -476,7 +476,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  104
+                  125
                 </span>
               
 
@@ -501,20 +501,25 @@
       
 
       
-        <p>有如下几种：</p>
+        <p>首先分为两大类：</p>
+<ul>
+<li>事件坐标</li>
+<li>dom 坐标</li>
+</ul>
+<a id="more"></a>
+<h2 id="事件坐标"><a href="#事件坐标" class="headerlink" title="事件坐标"></a>事件坐标</h2><p>有如下几种：</p>
 <ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/screenX" target="_blank" rel="noopener">screenX</a>, screenY</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/clientX" target="_blank" rel="noopener">clientX</a>, clientY</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/pageX" target="_blank" rel="noopener">pageX</a>, pageY</li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/offsetX" target="_blank" rel="noopener">offsetX</a>, offsetY</li>
 </ul>
-<a id="more"></a>
 <p>下面这张图可以很好的对比展示这几种 xy 坐标：</p>
 <p><img src="https://s2.loli.net/2022/06/09/CgevqWi37jV6TwZ.png" alt="image.png"></p>
 <p>那如果是在 iframe 中的 document，clientX 和 screenX 还是符合直觉的值吗？</p>
 <p>答案是 clientX 不是，screenX 是。</p>
 <p>clientX 的值是从 document 的左起始位置算起的，不会考虑 iframe 距离浏览器左边距。screenX 则依然是距离屏幕左边的距离。</p>
-
+<h2 id="dom-坐标"><a href="#dom-坐标" class="headerlink" title="dom 坐标"></a>dom 坐标</h2>
       
     </div>
     
@@ -607,8 +612,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -636,7 +650,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -647,7 +661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -720,6 +734,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件坐标"><span class="nav-number">1.</span> <span class="nav-text">事件坐标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dom-坐标"><span class="nav-number">2.</span> <span class="nav-text">dom 坐标</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -747,7 +777,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">85.6k</span>
+    <span title="Site words total count">85.7k</span>
   
 </div>
 

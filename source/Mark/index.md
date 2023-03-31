@@ -5,6 +5,13 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-03-31
+
+- [这个网站可以导入 GPS 轨迹，在地形图上显示，特别适合生成山地路线图。](https://cubetrek.com/static/join.html)
+- [AI 研究所](https://www.aiyjs.com/)
+- [Deep Learning Do It Yourself!](https://dataflowr.github.io/website/)
+- [这篇长文详细介绍 Web 应用是什么，理清各种概念，比如 SPA（单页应用）、SSR（服务器端渲染）、SSG（静态网站生成）。](https://www.robinwieruch.de/web-applications/)
+
 # 2023-02-24
 
 - [渐构](https://www.modevol.com/): 这个网站我今天又去看了，新增了不少视频和合作方，挺好的一个学习网站
