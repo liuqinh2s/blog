@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-03-061653. 使字符串平衡的最少删除次数 随便在一个数组坐标">
+<meta name="description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-04-02831. 隐藏个人信息 很简单的字符串处理 1234567">
 <meta property="og:type" content="website">
 <meta property="og:title" content="leetcode">
 <meta property="og:url" content="https://liuqinh2s.github.io/blog/leetcode/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-03-061653. 使字符串平衡的最少删除次数 随便在一个数组坐标">
+<meta property="og:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-04-02831. 隐藏个人信息 很简单的字符串处理 1234567">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-03-06T13:37:03.530Z">
+<meta property="og:updated_time" content="2023-04-01T16:41:42.261Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode">
-<meta name="twitter:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-03-061653. 使字符串平衡的最少删除次数 随便在一个数组坐标">
+<meta name="twitter:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-04-02831. 隐藏个人信息 很简单的字符串处理 1234567">
 
 
 
@@ -392,6 +392,9 @@
         
         
           <p>这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。</p>
+<h1 id="2023-04-02"><a href="#2023-04-02" class="headerlink" title="2023-04-02"></a>2023-04-02</h1><p><a href="https://leetcode.cn/problems/masking-personal-information/description/" target="_blank" rel="noopener">831. 隐藏个人信息</a></p>
+<p>很简单的字符串处理</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maskPII</span>(<span class="params">s: <span class="built_in">string</span></span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s.includes(<span class="string">'@'</span>))&#123;</span><br><span class="line">        <span class="keyword">let</span> [a, b] = s.toLocaleLowerCase().split(<span class="string">'@'</span>);</span><br><span class="line">        a = a[<span class="number">0</span>]+<span class="string">'*****'</span> +a[a.length<span class="number">-1</span>];</span><br><span class="line">        <span class="keyword">return</span> a+<span class="string">'@'</span>+b;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> a = s.replace(<span class="regexp">/\D/g</span>, <span class="string">''</span>);</span><br><span class="line">        <span class="keyword">let</span> b = a.split(<span class="string">''</span>).reverse();</span><br><span class="line">        <span class="keyword">let</span> hasPlus = b.length&gt;<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">let</span> res = b.slice(<span class="number">0</span>,<span class="number">4</span>);</span><br><span class="line">        res.push(<span class="string">'-'</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">4</span>;i&lt;b.length;i++)&#123;</span><br><span class="line">            res.push(<span class="string">'*'</span>);</span><br><span class="line">            <span class="keyword">if</span>(i%<span class="number">3</span>==<span class="number">0</span> &amp;&amp; i !== b.length<span class="number">-1</span>)&#123;</span><br><span class="line">                res.push(<span class="string">'-'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(hasPlus)&#123;</span><br><span class="line">            res.push(<span class="string">'+'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.reverse().join(<span class="string">''</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h1 id="2023-03-06"><a href="#2023-03-06" class="headerlink" title="2023-03-06"></a>2023-03-06</h1><p><a href="https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/description/" target="_blank" rel="noopener">1653. 使字符串平衡的最少删除次数</a></p>
 <p>随便在一个数组坐标处划一个分界线，左边的b的个数+右边的a的个数之和最小，即为要删除的最少数目。而这个a和b的个数，最好是用前后缀和记下来，不然每次都要遍历一遍数组搜集。那就是O(n^2)的复杂度了。用前缀和记下来，则是O(n)时间复杂度。</p>
 <h1 id="2023-01-13"><a href="#2023-01-13" class="headerlink" title="2023-01-13"></a>2023-01-13</h1><p><a href="https://leetcode.cn/problems/rearrange-characters-to-make-target-string/description/" target="_blank" rel="noopener">2287. 重排字符形成目标字符串</a></p>
@@ -581,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-03-06"><span class="nav-number">1.</span> <span class="nav-text">2023-03-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-13"><span class="nav-number">2.</span> <span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-09"><span class="nav-number">3.</span> <span class="nav-text">2023-01-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-08"><span class="nav-number">4.</span> <span class="nav-text">2023-01-08</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-02"><span class="nav-number">1.</span> <span class="nav-text">2023-04-02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-03-06"><span class="nav-number">2.</span> <span class="nav-text">2023-03-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-13"><span class="nav-number">3.</span> <span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-09"><span class="nav-number">4.</span> <span class="nav-text">2023-01-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-08"><span class="nav-number">5.</span> <span class="nav-text">2023-01-08</span></a></li></ol></div>
             
 
           </div>

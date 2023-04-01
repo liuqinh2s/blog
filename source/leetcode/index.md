@@ -5,6 +5,38 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-04-02
+
+[831. 隐藏个人信息](https://leetcode.cn/problems/masking-personal-information/description/)
+
+很简单的字符串处理
+
+```typescript
+function maskPII(s: string): string {
+    if(s.includes('@')){
+        let [a, b] = s.toLocaleLowerCase().split('@');
+        a = a[0]+'*****' +a[a.length-1];
+        return a+'@'+b;
+    }else{
+        let a = s.replace(/\D/g, '');
+        let b = a.split('').reverse();
+        let hasPlus = b.length>10;
+        let res = b.slice(0,4);
+        res.push('-');
+        for(let i=4;i<b.length;i++){
+            res.push('*');
+            if(i%3==0 && i !== b.length-1){
+                res.push('-');
+            }
+        }
+        if(hasPlus){
+            res.push('+');
+        }
+        return res.reverse().join('');
+    }
+};
+```
+
 # 2023-03-06
 
 [1653. 使字符串平衡的最少删除次数](https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/description/)
