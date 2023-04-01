@@ -16,6 +16,32 @@ date: 2019-03-03 16:01:26
 
 除了汉译英，还加入了单词学习的计划。学英语还是得坚持。
 
+# 2023-04-01
+
+我打算从现在开始只看ESLPOD了，从这个材料开始精听精学英语。
+
+第 45 期 - A Camping Trip
+
+griping about 抱怨
+
+feeling cooped up 感觉被关起来
+
+road trip 公路之旅
+
+I found everything in one stop 我一站就找到了了所有东西 in one stop means in one place
+
+psyched about the trip 对这次旅行感到兴奋
+
+None of us had a camper 我们都没有露营车
+
+gear 装备
+
+sunscreen 防晒霜
+
+pole 竿
+
+lotion 乳液
+
 # 2022-11-20
 
 哈利波特第一本：哈利波特与魔法石（Harry Potter and the Philosopher's Stone）
