@@ -16,6 +16,24 @@ date: 2019-03-03 16:01:26
 
 除了汉译英，还加入了单词学习的计划。学英语还是得坚持。
 
+# 2023-04-03
+
+I could do without Monday. 我可以没有周一
+
+I can kick back and relax，kick back 是休息的意思
+
+I dread going back to work 我害怕回到工作中
+
+hectic 忙
+
+on the fritz 坏了，broken，not working
+
+alarm didn't go off 闹钟没响
+
+to be frantic 抓狂 means to be very worried, to be very nervous about something
+
+to serve someone right means that someone deserves something, usually deserves something bad.
+
 # 2023-04-01
 
 我打算从现在开始只看ESLPOD了，从这个材料开始精听精学英语。
