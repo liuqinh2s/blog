@@ -5,6 +5,35 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-04-03
+
+[1053. 交换一次的先前排列](https://leetcode.cn/problems/previous-permutation-with-one-swap/submissions/420778464/)
+
+今天这题很简单，我用的快排来找最大元素，速度居然击败了100%
+
+```typescript
+function prevPermOpt1(arr: number[]): number[] {
+    for(let i=arr.length-1;i>=0;i--){
+        let temp = [];
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[j]<arr[i]){
+                temp.push({index: j, num: arr[j]});
+            }
+        }
+        if(temp.length){
+            temp.sort((a,b)=>{
+                return b.num-a.num;
+            });
+            const x = arr[temp[0].index];
+            arr[temp[0].index] = arr[i];
+            arr[i] = x;
+            break;
+        }
+    }
+    return arr;
+};
+```
+
 # 2023-04-02
 
 [831. 隐藏个人信息](https://leetcode.cn/problems/masking-personal-information/description/)
