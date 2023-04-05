@@ -5,6 +5,25 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-04-05
+
+[2427. 公因子的数目](https://leetcode.cn/problems/number-of-common-factors/submissions/421361913/)
+
+简单题，时间复杂度O(n)
+
+```typescript
+function commonFactors(a: number, b: number): number {
+    let res = 0;
+    const min = Math.min(a,b);
+    for(let i=1;i<=min;i++){
+        if(a%i==0 && b%i==0){
+            res++;
+        }
+    }
+    return res;
+};
+```
+
 # 2023-04-03
 
 [1053. 交换一次的先前排列](https://leetcode.cn/problems/previous-permutation-with-one-swap/submissions/420778464/)
