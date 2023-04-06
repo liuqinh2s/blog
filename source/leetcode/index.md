@@ -5,52 +5,74 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-04-06
+
+[1017. 负二进制转换](https://leetcode.cn/problems/convert-to-base-2/description/)
+
+这题可以用通用的进制转换方法，先求余数，然后减去余数，然后除以除数，如此循环往复，得出的余数就是每一位上的值。
+
+```typescript
+function baseNeg2(n: number): string {
+  if (n === 0) {
+    return "0";
+  }
+  let res = [];
+  while (n !== 0) {
+    const remainder = n & 1;
+    res.push(remainder);
+    n -= remainder;
+    n /= -2;
+  }
+  return res.reverse().join("");
+}
+```
+
 # 2023-04-05
 
 [2427. 公因子的数目](https://leetcode.cn/problems/number-of-common-factors/submissions/421361913/)
 
-简单题，时间复杂度O(n)
+简单题，时间复杂度 O(n)
 
 ```typescript
 function commonFactors(a: number, b: number): number {
-    let res = 0;
-    const min = Math.min(a,b);
-    for(let i=1;i<=min;i++){
-        if(a%i==0 && b%i==0){
-            res++;
-        }
+  let res = 0;
+  const min = Math.min(a, b);
+  for (let i = 1; i <= min; i++) {
+    if (a % i == 0 && b % i == 0) {
+      res++;
     }
-    return res;
-};
+  }
+  return res;
+}
 ```
 
 # 2023-04-03
 
 [1053. 交换一次的先前排列](https://leetcode.cn/problems/previous-permutation-with-one-swap/submissions/420778464/)
 
-今天这题很简单，我用的快排来找最大元素，速度居然击败了100%
+今天这题很简单，我用的快排来找最大元素，速度居然击败了 100%
 
 ```typescript
 function prevPermOpt1(arr: number[]): number[] {
-    for(let i=arr.length-1;i>=0;i--){
-        let temp = [];
-        for(let j=i+1;j<arr.length;j++){
-            if(arr[j]<arr[i]){
-                temp.push({index: j, num: arr[j]});
-            }
-        }
-        if(temp.length){
-            temp.sort((a,b)=>{
-                return b.num-a.num;
-            });
-            const x = arr[temp[0].index];
-            arr[temp[0].index] = arr[i];
-            arr[i] = x;
-            break;
-        }
+  for (let i = arr.length - 1; i >= 0; i--) {
+    let temp = [];
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[i]) {
+        temp.push({ index: j, num: arr[j] });
+      }
     }
-    return arr;
-};
+    if (temp.length) {
+      temp.sort((a, b) => {
+        return b.num - a.num;
+      });
+      const x = arr[temp[0].index];
+      arr[temp[0].index] = arr[i];
+      arr[i] = x;
+      break;
+    }
+  }
+  return arr;
+}
 ```
 
 # 2023-04-02
@@ -61,35 +83,35 @@ function prevPermOpt1(arr: number[]): number[] {
 
 ```typescript
 function maskPII(s: string): string {
-    if(s.includes('@')){
-        let [a, b] = s.toLocaleLowerCase().split('@');
-        a = a[0]+'*****' +a[a.length-1];
-        return a+'@'+b;
-    }else{
-        let a = s.replace(/\D/g, '');
-        let b = a.split('').reverse();
-        let hasPlus = b.length>10;
-        let res = b.slice(0,4);
-        res.push('-');
-        for(let i=4;i<b.length;i++){
-            res.push('*');
-            if(i%3==0 && i !== b.length-1){
-                res.push('-');
-            }
-        }
-        if(hasPlus){
-            res.push('+');
-        }
-        return res.reverse().join('');
+  if (s.includes("@")) {
+    let [a, b] = s.toLocaleLowerCase().split("@");
+    a = a[0] + "*****" + a[a.length - 1];
+    return a + "@" + b;
+  } else {
+    let a = s.replace(/\D/g, "");
+    let b = a.split("").reverse();
+    let hasPlus = b.length > 10;
+    let res = b.slice(0, 4);
+    res.push("-");
+    for (let i = 4; i < b.length; i++) {
+      res.push("*");
+      if (i % 3 == 0 && i !== b.length - 1) {
+        res.push("-");
+      }
     }
-};
+    if (hasPlus) {
+      res.push("+");
+    }
+    return res.reverse().join("");
+  }
+}
 ```
 
 # 2023-03-06
 
 [1653. 使字符串平衡的最少删除次数](https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/description/)
 
-随便在一个数组坐标处划一个分界线，左边的b的个数+右边的a的个数之和最小，即为要删除的最少数目。而这个a和b的个数，最好是用前后缀和记下来，不然每次都要遍历一遍数组搜集。那就是O(n^2)的复杂度了。用前缀和记下来，则是O(n)时间复杂度。
+随便在一个数组坐标处划一个分界线，左边的 b 的个数+右边的 a 的个数之和最小，即为要删除的最少数目。而这个 a 和 b 的个数，最好是用前后缀和记下来，不然每次都要遍历一遍数组搜集。那就是 O(n^2)的复杂度了。用前缀和记下来，则是 O(n)时间复杂度。
 
 # 2023-01-13
 
