@@ -5,6 +5,35 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-04-10
+
+[1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/description/)
+
+几乎是简单题
+
+```typescript
+function nextLargerNodes(head: ListNode | null): number[] {
+  let p = head;
+  const arr = [];
+  while (p != null) {
+    let i = p.next;
+    while (i != null) {
+      if (i.val > p.val) {
+        arr.push(i.val);
+        break;
+      } else {
+        i = i.next;
+      }
+    }
+    if (i == null) {
+      arr.push(0);
+    }
+    p = p.next;
+  }
+  return arr;
+}
+```
+
 # 2023-04-06
 
 [1017. 负二进制转换](https://leetcode.cn/problems/convert-to-base-2/description/)
