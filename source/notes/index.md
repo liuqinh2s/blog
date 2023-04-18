@@ -9,18 +9,20 @@ date: 2018-11-03 14:59:45
 
 最近养了多肉，在看多肉的养殖常识的时候，看到多肉必须要照紫外线而非普通的阳光，特别是不能隔着玻璃晒太阳，就在网上搜了一下玻璃隔离紫外线，结果还真涨知识了：
 
-- [透过窗户玻璃照射进来的阳光会把你晒黑么？_中国经济网](http://m.ce.cn/bwzg/202007/16/t20200716_35335869.shtml)
+- [透过窗户玻璃照射进来的阳光会把你晒黑么？\_中国经济网](http://m.ce.cn/bwzg/202007/16/t20200716_35335869.shtml)
 - [紫外线-维基百科](https://zh.wikipedia.org/wiki/%E7%B4%AB%E5%A4%96%E7%BA%BF)
 
-## scrollbar的研究
+## scrollbar 的研究
 
-chrome的scrollbar可定制性比较高：
+chrome 的 scrollbar 可定制性比较高：
 
 https://segmentfault.com/a/1190000012800450
 
-firefox的scrollbar连宽度都无法定制px：
+firefox 的 scrollbar 连宽度都无法定制 px：
 
 https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width
+
+鼠标滚轮横向滚动：https://codepen.io/zxuqian/pen/KKWyxja，就是把deltaY加到scrollLeft上
 
 # 2023-03-20
 
