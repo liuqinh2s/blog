@@ -5,11 +5,20 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-04-28
+
+以前一直是用一个公共的 ChatGPT 账号，由于每次用都要登录很麻烦，今天终于自己创建了一个账号，创建账号有两个必要条件：
+
+1. 国外手机号
+2. 翻墙的梯子
+
+国外手机号我一直没弄过，这次买了一个 2 美元的服务：https://sms-activate.org/
+
 # 2023-04-21
 
 useEffect 的变量监听有什么坑？useEffect 的变量监听是用的 Object.is()，对于对象是没法深入对比的，只比较两个对象的地址
 
-试验demo：[useEffect - Replit](https://replit.com/@liuqinh2s/useEffect#src/App.tsx)
+试验 demo：[useEffect - Replit](https://replit.com/@liuqinh2s/useEffect#src/App.tsx)
 
 # 2023-04-18
 
@@ -1155,7 +1164,7 @@ typescript 的一些常见用法：
 
 ```typescript
 let a = ["a", "b"] as const;
-let b: typeof a[number] = "c";
+let b: (typeof a)[number] = "c";
 ```
 
 上述代码会报错，因为 `typeof a[number]` 限定了 b 的类型是`'a'|'b'`，`as const`既可以让 a 是 readonly 类型，又可以让 `typeof a[number]` 从 string 类型缩窄到 `'a'|'b'`
@@ -1166,7 +1175,7 @@ let b: typeof a[number] = "c";
 
 ```typescript
 let a: readonly ["a", "b"] = ["a", "b"];
-let b: typeof a[number] = "c";
+let b: (typeof a)[number] = "c";
 ```
 
 但这个要写两遍数组，看起来不太好看
