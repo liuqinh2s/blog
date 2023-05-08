@@ -66,6 +66,8 @@ date: 2019-02-20 20:30:09
 ### 书籍
 
 - 平台：
+  - [zlibrary](https://zlibrary-asia.se/)
+  - [zlibrary](https://zlib.app/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
   - [技术书在线阅读](https://livebook.manning.com/)
   - [图灵社区](https://www.ituring.com.cn/)
