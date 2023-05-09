@@ -74,6 +74,7 @@ date: 2019-02-20 20:30:09
   - [PDF 之家](https://homeofpdf.com/index.html)
   - [鸠摩搜书](https://www.jiumodiary.com/)
   - [书伴 – 你的电子书伴侣](https://bookfere.com/)
+  - [古诗文网-古诗文经典传承](https://www.gushiwen.cn/)
 - 具体书籍：
   - 计算机网络电子书：[Computer Networks: A Systems Approach](https://github.com/ruanyf/book-computer-networks)
   - [SICP - Structure and Interpretation of Computer Programs, 2e](http://sarabander.github.io/sicp/)
