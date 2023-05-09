@@ -5,6 +5,33 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-05-09
+
+最近朋友提醒我 leetcode 开了 javascript 专栏，有一道典型的深度判断对象相等的题目，我试了一下
+
+[2628. 完全相等的 JSON 字符串](https://leetcode.cn/problems/json-deep-equal/description/)
+
+代码：
+
+```typescript
+function areDeeplyEqual(o1: any, o2: any): boolean {
+  if (
+    (Array.isArray(o1) && Array.isArray(o2) && o1.length === o2.length) ||
+    (Object.prototype.toString.call(o1) === "[object Object]" &&
+      Object.prototype.toString.call(o2) === "[object Object]" &&
+      Object.keys(o1).length === Object.keys(o2).length)
+  ) {
+    for (let k in o1) {
+      if (!areDeeplyEqual(o1[k], o2[k])) {
+        return false;
+      }
+    }
+    return true;
+  }
+  return Object.is(o1, o2);
+}
+```
+
 # 2023-04-10
 
 [1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/description/)
