@@ -5,9 +5,21 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-05-10
+
+## express use next
+
+前端搭建本地开发环境，一般都用 node 的 express 框架，其中 app use 中的 next 函数的含义是，当对同一个路径定义了多个回调函数，要调用 next()才会执行下一个回调函数。
+
+参考：[What is the use of next() function in Express.js ? - GeeksforGeeks](https://www.geeksforgeeks.org/what-is-the-use-of-next-function-in-express-js/)
+
+## vscode 上移一行代码的快捷键
+
+`alt+up/down`
+
 # 2023-05-02
 
-最近买了一台火影t6a笔记本，性价比很高，重新部署博客的时候遇到报错：`bash: hexo: command not found`，需要安装`hexo-cli`，最好是全局：`npm i hexo-cli -g`
+最近买了一台火影 t6a 笔记本，性价比很高，重新部署博客的时候遇到报错：`bash: hexo: command not found`，需要安装`hexo-cli`，最好是全局：`npm i hexo-cli -g`
 
 # 2023-04-28
 
