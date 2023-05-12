@@ -44,6 +44,10 @@ date: 2019-02-20 20:30:09
 
 # 我的工具
 
+## AI
+
+- [AI 导航](https://ai.nancheng.fun/)
+
 ## 常用资源网站
 
 - [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
@@ -62,6 +66,7 @@ date: 2019-02-20 20:30:09
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
 - 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
+- 剧本桥段：[TV Tropes](https://tvtropes.org/)
 
 ### 书籍
 
@@ -76,6 +81,9 @@ date: 2019-02-20 20:30:09
   - [书伴 – 你的电子书伴侣](https://bookfere.com/)
   - [古诗文网-古诗文经典传承](https://www.gushiwen.cn/)
 - 具体书籍：
+  - [Textbook for Electrical Engineering & Electronics](https://www.allaboutcircuits.com/textbook/)
+  - [HTML with Superpowers | HTML with Superpowers](https://htmlwithsuperpowers.netlify.app/)
+  - [The Illustrated Machine Learning Website](https://illustrated-machine-learning.github.io/index.html)
   - 计算机网络电子书：[Computer Networks: A Systems Approach](https://github.com/ruanyf/book-computer-networks)
   - [SICP - Structure and Interpretation of Computer Programs, 2e](http://sarabander.github.io/sicp/)
   - [JavaScript Guidebook](https://tsejx.github.io/javascript-guidebook/core-modules/executable-code-and-execution-contexts/memory-management/memory-model/)
