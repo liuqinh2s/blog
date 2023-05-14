@@ -17,6 +17,12 @@ date: 2018-11-03 14:59:45
 
 `alt+up/down`
 
+# 2023-05-03
+
+最近开始用 rider 开发 unity 游戏，很多编辑器的习惯跟 vscode 不一样，比如 vscode 打开文件左侧目录树会自动定位到相应的文件，感觉还是很方便的，在 rider 可以进行相应的设置：
+
+![rider目录树自动定位到文件](../images/rider目录树自动定位到文件.jpg)
+
 # 2023-05-02
 
 最近买了一台火影 t6a 笔记本，性价比很高，重新部署博客的时候遇到报错：`bash: hexo: command not found`，需要安装`hexo-cli`，最好是全局：`npm i hexo-cli -g`
@@ -705,7 +711,7 @@ npm i 之后遇到 hexo 找不到的问题：`bash: hexo: command not found`
 
 其实就是需要全局安装一下 hexo：`npm install -g hexo`
 
-还可以使用 npx 来执行，这样就不用全局安装了：`npx hexo`
+还可以使用 npx 来执行，这样就不用全局安装了：`npx hexo`，npx 会自动下载缺失的模块，但是用完就删了，不会留下痕迹，下次再用还是要联网下载该模块。
 
 # 2022-11-22
 
