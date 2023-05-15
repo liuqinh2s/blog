@@ -7,6 +7,10 @@ date: 2018-11-03 14:59:45
 
 # 2023-05-15
 
+有些链接是在本页打开，有些是新开一页，新开一页需要给标签填属性：`target="_blank"`
+
+# 2023-05-14
+
 之前看零度解说的时候，经常看到一个软件：IDM，今天我也下载了这个软件，下载网址：https://www.internetdownloadmanager.cn/download
 
 激活方法：https://www.ygxz.in/idea/1650/
