@@ -119,6 +119,7 @@ date: 2019-02-20 20:30:09
 - [十万个为什么 - 在线青少年百科全书](https://10why.net/)
 - [首页 - 合同示范文本库 - 国家市场监督管理总局](https://cont.12315.cn/)
 - 在线听歌：[MyFreeMP3](http://tools.liumingye.cn/music/?page=searchPage)
+- 听歌软件：[洛雪音乐](https://lxmusic.toside.cn/)
 - [折纸网站](https://origami.kosmulski.org/blog/2022-10-23-fujimoto-books-public-domain)
 - [100 Bytes of CSS to look great everywhere](https://www.swyx.io/css-100-bytes)
 - [VOCALOID - the modern singing synthesizer -](https://www.vocaloid.com/en/)
