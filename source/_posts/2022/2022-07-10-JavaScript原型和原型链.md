@@ -31,7 +31,7 @@ console.log(foo.a);
 
 当我们在实例对象上查找一个属性的时候，如果不存在，则会递归的去原型链上找。
 
-![Javascript Object Hierarchy](http://www.mollypages.org/tutorials/jsobj.jpg)
+![Javascript Object Hierarchy](../../../../images/2023/prototype.jpg)
 
 - 所有对象都有`__proto__`属性，但只有函数对象才有`prototype`属性
 - 实例对象没有`constructor`属性，该属性继承自原型对象。分别对实例对象和原型对象使用`hasOwnProperty`验证`constructor`属性即可证明

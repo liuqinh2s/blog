@@ -88,12 +88,12 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="原型链是干什么用的JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。 当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如： 1234function Foo() &amp;#123;&amp;#125;var foo = new Foo();Foo.prototype.a = 1;console.log(foo.a); 原型和原型链主要由三">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://www.mollypages.org/tutorials/jsobj.jpg">
-<meta property="og:updated_time" content="2023-05-01T17:38:19.545Z">
+<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/prototype.jpg">
+<meta property="og:updated_time" content="2023-05-16T07:24:54.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript原型和原型链">
 <meta name="twitter:description" content="原型链是干什么用的JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。 当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如： 1234function Foo() &amp;#123;&amp;#125;var foo = new Foo();Foo.prototype.a = 1;console.log(foo.a); 原型和原型链主要由三">
-<meta name="twitter:image" content="http://www.mollypages.org/tutorials/jsobj.jpg">
+<meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2023/prototype.jpg">
 
 
 
@@ -536,7 +536,7 @@
 <p>JavaScript 只要前面带 new 就是构造函数，箭头函数和异步函数不可以做构造函数，因为箭头函数没有 this，而异步函数返回的是 Promise 对象</p>
 </blockquote>
 <p>当我们在实例对象上查找一个属性的时候，如果不存在，则会递归的去原型链上找。</p>
-<p><img src="http://www.mollypages.org/tutorials/jsobj.jpg" alt="Javascript Object Hierarchy"></p>
+<p><img src="../../../../images/2023/prototype.jpg" alt="Javascript Object Hierarchy"></p>
 <ul>
 <li>所有对象都有<code>__proto__</code>属性，但只有函数对象才有<code>prototype</code>属性</li>
 <li>实例对象没有<code>constructor</code>属性，该属性继承自原型对象。分别对实例对象和原型对象使用<code>hasOwnProperty</code>验证<code>constructor</code>属性即可证明</li>
