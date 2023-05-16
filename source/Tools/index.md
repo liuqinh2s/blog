@@ -47,6 +47,7 @@ date: 2019-02-20 20:30:09
 ## AI
 
 - [AI 导航](https://ai.nancheng.fun/)
+- [ChatGPT](https://chat.openai.com/)
 
 ## 常用资源网站
 
@@ -179,10 +180,6 @@ date: 2019-02-20 20:30:09
   - [argon](https://github.com/solstice23/argon-theme)
 - 表情混合器：[emojimix by Tikolu](https://tikolu.net/emojimix/)
 - [AI 拟声: 5 秒内克隆您的声音并生成任意语音内容](https://github.com/babysor/MockingBird)
-- 对话机器人：
-  - [对话机器人 - 思知（OwnThink）](https://www.ownthink.com/docs/bot/)
-  - [史上最全面聊天机器人总结，图灵、思知、小爱、小微，作者已接入到自己的开源 IM 项目中使用](http://www.360doc.com/content/21/0119/16/21412_957807865.shtml)
-  - [A complete and graceful API for Wechat. 微信个人号接口、微信机器人及命令行微信，三十行即可自定义个人号机器人。](https://github.com/littlecodersh/ItChat)
 - 山水画生成：[Grok {Shan, Shui}\*: Advent of understanding the generative art](https://zverok.space/blog/2021-12-28-grok-shan-shui.html)
 - [实现一个蚂蚁森林自动收能量辅助工具 | 靛青博客](https://blog.indigo.codes/2019/03/22/_60000002-h5-alipay-app/)
 - [Tweet Photo got acquired | Marc Köhlbrugge](https://marc.io/tweet-photo-acquired)
