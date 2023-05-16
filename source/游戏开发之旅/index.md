@@ -10,7 +10,7 @@ miloyip 的游戏开发推荐书籍：[game-programmer-zh-cn.pdf](https://miloyi
 
 # 2023-05-09
 
-要想做出好的游戏，有一本书可以先看看：[游戏设计艺术（第 2 版）](../assets/游戏设计艺术（第2版）.pdf)
+要想做出好的游戏，有一本书可以先看看：[游戏设计艺术（第 2 版）](https://wwqs.lanzoub.com/iqv8o0uzn41e)
 
 # 2023-04-26
 
