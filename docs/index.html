@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/05/08/Canvas 入门笔记/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/04/07/水贝买黄金攻略/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -425,7 +425,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2023/05/08/Canvas 入门笔记/" itemprop="url">Canvas 入门笔记</a></h1>
+                <a class="post-title-link" href="/blog/2023/04/07/水贝买黄金攻略/" itemprop="url">水贝买黄金攻略</a></h1>
         
 
         <div class="post-meta">
@@ -437,184 +437,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-08T17:24:45+08:00">
-                2023-05-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  792
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><ol>
-<li>默认大小：如果不设置宽高，canvas的默认宽高是：<code>width: 300px; height: 150px;</code>。</li>
-<li><p>替换内容：与<code>&lt;img&gt;</code>元素不同，<strong><code>&lt;canvas&gt;</code>元素需要结束标签<code>&lt;/canvas&gt;</code></strong>，如果结束标签不存在，则文档的其余部分会被认为是替代内容，将不会显示出来。</p>
-<blockquote>
-<p>什么是替换内容，就是在某些东西加载不出来的时候（原因可能多种多样，比如浏览器太老不支持这个东西，比如网络不好加载不出），那么就给这些东西替换成其他内容，比如<code>&lt;img&gt;</code>标签就有alt属性用于在图片加载不出的时候显示文本。<code>canvas</code>标签也有相应的措施，用法是：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"stockGraph"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">  current stock price: $3.15 +0.15</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"clock"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/clock.png"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>渲染上下文（The rendering context）：常用的渲染上下文有2D，3D。2d写法如下:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">if</span> (canvas.getContext)&#123;</span><br><span class="line">  <span class="keyword">const</span> context = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">  <span class="comment">// drawing code here</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// canvas-unsupported code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/05/08/Canvas 入门笔记/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/05/08/水贝买黄金攻略/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2023/05/08/水贝买黄金攻略/" itemprop="url">水贝买黄金攻略</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-08T17:24:45+08:00">
-                2023-05-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-04-07T00:00:00+08:00">
+                2023-04-07
               </time>
             
 
@@ -699,7 +523,7 @@
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/05/08/水贝买黄金攻略/#more" rel="contents">
+            <a class="btn" href="/blog/2023/04/07/水贝买黄金攻略/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -750,7 +574,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/05/08/border-radius详解/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/18/Canvas 入门笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -769,7 +593,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2023/05/08/border-radius详解/" itemprop="url">border-radius详解</a></h1>
+                <a class="post-title-link" href="/blog/2023/02/18/Canvas 入门笔记/" itemprop="url">Canvas 入门笔记</a></h1>
         
 
         <div class="post-meta">
@@ -781,8 +605,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-08T17:24:45+08:00">
-                2023-05-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-18T00:00:00+08:00">
+                2023-02-18
               </time>
             
 
@@ -804,8 +628,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/blog/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -835,7 +659,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  380
+                  794
                 </span>
               
 
@@ -861,12 +685,21 @@
 
       
         
-          <p>看《CSS解密》的时候遇到border-radius不是很懂，有个例子如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 100% 100% 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是半宽高 */</span><br><span class="line">border-radius: 100% 0 0 0 / 100% 0 0 0;  /* 左上角椭圆半径是全宽高 */</span><br></pre></td></tr></table></figure>
-<p>差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？</p>
+          <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><ol>
+<li>默认大小：如果不设置宽高，canvas 的默认宽高是：<code>width: 300px; height: 150px;</code>。</li>
+<li>替换内容：与<code>&lt;img&gt;</code>元素不同，<strong><code>&lt;canvas&gt;</code>元素需要结束标签<code>&lt;/canvas&gt;</code></strong>，如果结束标签不存在，则文档的其余部分会被认为是替代内容，将不会显示出来。<blockquote>
+<p>什么是替换内容，就是在某些东西加载不出来的时候（原因可能多种多样，比如浏览器太老不支持这个东西，比如网络不好加载不出），那么就给这些东西替换成其他内容，比如<code>&lt;img&gt;</code>标签就有 alt 属性用于在图片加载不出的时候显示文本。<code>canvas</code>标签也有相应的措施，用法是：</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"stockGraph"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">  current stock price: $3.15 +0.15</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"clock"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"images/clock.png"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span> <span class="attr">alt</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>渲染上下文（The rendering context）：常用的渲染上下文有 2D，3D。2d 写法如下:</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line"><span class="keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">  <span class="keyword">const</span> context = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  <span class="comment">// drawing code here</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// canvas-unsupported code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/05/08/border-radius详解/#more" rel="contents">
+            <a class="btn" href="/blog/2023/02/18/Canvas 入门笔记/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -917,7 +750,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/05/08/数独游戏制作过程记录/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/10/数独游戏制作过程记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -936,7 +769,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2023/05/08/数独游戏制作过程记录/" itemprop="url">数独游戏制作过程记录</a></h1>
+                <a class="post-title-link" href="/blog/2023/02/10/数独游戏制作过程记录/" itemprop="url">数独游戏制作过程记录</a></h1>
         
 
         <div class="post-meta">
@@ -948,8 +781,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-08T17:24:45+08:00">
-                2023-05-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-10T00:00:00+08:00">
+                2023-02-10
               </time>
             
 
@@ -1043,7 +876,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/05/08/数独游戏制作过程记录/#more" rel="contents">
+            <a class="btn" href="/blog/2023/02/10/数独游戏制作过程记录/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1094,7 +927,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/05/08/AI时代来临，有哪些机遇我可以抓住？/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/09/border-radius详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -1113,7 +946,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2023/05/08/AI时代来临，有哪些机遇我可以抓住？/" itemprop="url">AI时代来临，有哪些机遇我可以抓住？</a></h1>
+                <a class="post-title-link" href="/blog/2023/02/09/border-radius详解/" itemprop="url">border-radius详解</a></h1>
         
 
         <div class="post-meta">
@@ -1125,8 +958,175 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-05-08T17:24:45+08:00">
-                2023-05-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-09T00:00:00+08:00">
+                2023-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  381
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>看《CSS 解密》的时候遇到 border-radius 不是很懂，有个例子如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border-radius: 100% 100% 0 0 / 100% 0 0 0; /* 左上角椭圆半径是半宽高 */</span><br><span class="line">border-radius: 100% 0 0 0 / 100% 0 0 0; /* 左上角椭圆半径是全宽高 */</span><br></pre></td></tr></table></figure>
+<p>差别挺大的对吧，原因就是角与角之间出现了挤兑（或者说重叠），如果遇到了重叠怎么办呢？怎么表现呢？原理是什么？</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2023/02/09/border-radius详解/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/" itemprop="url">AI时代来临，有哪些机遇我可以抓住？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-02-06T00:00:00+08:00">
+                2023-02-06
               </time>
             
 
@@ -1218,7 +1218,7 @@
 <p>以上都是 AI 目前已经能完成的事情，传统的代码是无法完成以上这种复杂的工作的。我把传统代码无法完成，又有点类似人才能办到的混沌且复杂的事情（甚至带有一些创造力）称作 AI。AI 不是指像人一样能通用的处理任何智力问题，而是能一个一个攻克具体的智力问题，AI 能做到的事情已经越来越多。其产生的生产力是巨大的，并不比互联网时代低。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/05/08/AI时代来临，有哪些机遇我可以抓住？/#more" rel="contents">
+            <a class="btn" href="/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
