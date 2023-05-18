@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="顺序执行？代码示例 1： 123456789101112131415var foo = function () &amp;#123;    console.log(&apos;foo1&apos;);&amp;#125;foo();  // foo1var foo = function () &amp;#123;    console.log(&apos;foo2&apos;);&amp;#125;foo(); // foo2 代码示例 2： 123456789101">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-05-01T17:38:19.550Z">
+<meta property="og:updated_time" content="2023-05-18T05:46:45.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript执行上下文栈">
 <meta name="twitter:description" content="顺序执行？代码示例 1： 123456789101112131415var foo = function () &amp;#123;    console.log(&apos;foo1&apos;);&amp;#125;foo();  // foo1var foo = function () &amp;#123;    console.log(&apos;foo2&apos;);&amp;#125;foo(); // foo2 代码示例 2： 123456789101">
@@ -435,7 +435,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-07-12T00:00:00+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-07-12T00:00:00+00:00">
                 2022-07-12
               </time>
             
@@ -536,9 +536,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope = <span class="string">"local scope"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> scope;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f;</span><br><span class="line">&#125;</span><br><span class="line">checkscope()();</span><br></pre></td></tr></table></figure>
 <p>上面这个例子中，执行上下文栈的变化就不一样</p>
 <p>让我们模拟第一段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">checkscope</span>&gt;</span> functionContext);</span></span><br><span class="line">ECStack.push(&lt;f&gt; functionContext);</span><br><span class="line">ECStack.pop();</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(&lt;checkscope&gt; functionContext);</span><br><span class="line">ECStack.push(&lt;f&gt; functionContext);</span><br><span class="line">ECStack.pop();</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
 <p>让我们模拟第二段代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(<span class="xml"><span class="tag">&lt;<span class="name">checkscope</span>&gt;</span> functionContext);</span></span><br><span class="line"><span class="xml">ECStack.pop();</span></span><br><span class="line">ECStack.push(&lt;f&gt; functionContext);</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ECStack.push(&lt;checkscope&gt; functionContext);</span><br><span class="line">ECStack.pop();</span><br><span class="line">ECStack.push(&lt;f&gt; functionContext);</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
 <h1 id="执行上下文中包含哪些东西"><a href="#执行上下文中包含哪些东西" class="headerlink" title="执行上下文中包含哪些东西"></a>执行上下文中包含哪些东西</h1><p>对于每个执行上下文，都有三个重要属性：</p>
 <ul>
 <li>变量对象(Variable object，VO)</li>
