@@ -5,6 +5,13 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-05-19
+
+- [维基大学](https://en.wikiversity.org/wiki/Wikiversity:Main_Page)
+- [一个搜索引擎，查找最热门的免费 3D 打印模型。](https://www.printablesearch.com/)
+- [壁纸网站](https://wallhaven.cc/)
+- [基于 Electron 的桌面壁纸客户端](https://github.com/wangrongding/wallpaper-box)
+
 # 2023-03-31
 
 - [这个网站可以导入 GPS 轨迹，在地形图上显示，特别适合生成山地路线图。](https://cubetrek.com/static/join.html)
