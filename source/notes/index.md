@@ -5,6 +5,12 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-05-20
+
+很少自己搭建项目，我发现我可能连搭建项目都不是很熟练，最近想自己做一个视频app，视频资源用努努的，那么如何搭建一个react+typescript+webpack的应用呢？
+
+[Creating a React app with Webpack](https://jsramblings.com/creating-a-react-app-with-webpack/)
+
 # 2023-05-18
 
 安卓系统可以安装linux啦:aidlux，各大应用商店都有下载。安卓平板配合这个app，生产力甩iPad几条街呀，我这条信息就是用aidlux里面的vscode编辑并发布的。
