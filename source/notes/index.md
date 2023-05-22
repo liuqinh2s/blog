@@ -10,6 +10,7 @@ date: 2018-11-03 14:59:45
 很少自己搭建项目，我发现我可能连搭建项目都不是很熟练，最近想自己做一个视频app，视频资源用努努的，那么如何搭建一个react+typescript+webpack的应用呢？
 
 [Creating a React app with Webpack](https://jsramblings.com/creating-a-react-app-with-webpack/)
+[Create a React and Typescript app with Webpack](https://jsramblings.com/create-a-react-and-typescript-app-with-webpack/)
 
 # 2023-05-18
 
