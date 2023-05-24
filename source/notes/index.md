@@ -7,18 +7,18 @@ date: 2018-11-03 14:59:45
 
 # 2023-05-20
 
-很少自己搭建项目，我发现我可能连搭建项目都不是很熟练，最近想自己做一个视频app，视频资源用努努的，那么如何搭建一个react+typescript+webpack的应用呢？
+很少自己搭建项目，我发现我可能连搭建项目都不是很熟练，最近想自己做一个视频 app，视频资源用努努的，那么如何搭建一个 react+typescript+webpack 的应用呢？
 
 [Creating a React app with Webpack](https://jsramblings.com/creating-a-react-app-with-webpack/)
 [Create a React and Typescript app with Webpack](https://jsramblings.com/create-a-react-and-typescript-app-with-webpack/)
 
 # 2023-05-18
 
-安卓系统可以安装linux啦:aidlux，各大应用商店都有下载。安卓平板配合这个app，生产力甩iPad几条街呀，我这条信息就是用aidlux里面的vscode编辑并发布的。
+安卓系统可以安装 linux 啦:aidlux，各大应用商店都有下载。安卓平板配合这个 app，生产力甩 iPad 几条街呀，我这条信息就是用 aidlux 里面的 vscode 编辑并发布的。
 
 # 2023-05-15
 
-测试replit+githubpages
+测试 replit+githubpages
 
 有些链接是在本页打开，有些是新开一页，新开一页需要给标签填属性：`target="_blank"`
 
@@ -892,17 +892,20 @@ import React, { useState, useEffect } from "https://esm.sh/react@18";
 import ReactDOM from "https://esm.sh/react-dom@18";
 const obj = { text: "2" };
 const Hello = ({ props }) => {
+  console.log("render");
   const [bb, setBB] = useState(props);
   useEffect(() => {
     // let one = JSON.parse(JSON.stringify(obj))
     // one.text='3'
     // setBB(one);
+    // 回调函数会被react调用，react会传入bb给回调函数
     setBB((obj) => {
       if (bb === obj) {
         console.log(true);
       }
       obj.text = "3";
-      return obj;
+      return obj; // 不会引起组件渲染
+      // return JSON.parse(JSON.stringify(obj));  // 会引起组件渲染
     });
   }, []);
   return <div>{bb.text}</div>;
