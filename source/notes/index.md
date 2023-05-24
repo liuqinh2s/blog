@@ -18,7 +18,7 @@ date: 2018-11-03 14:59:45
 
 # 2023-05-15
 
-测试 replit+githubpages
+测试 replit+githubpages，比较难搞，replit 的控制台环境并非完全可用的 linux 环境，连安装软件都不让。
 
 有些链接是在本页打开，有些是新开一页，新开一页需要给标签填属性：`target="_blank"`
 
