@@ -46,7 +46,7 @@ date: 2018-11-03 14:59:45
 
 最近开始用 rider 开发 unity 游戏，很多编辑器的习惯跟 vscode 不一样，比如 vscode 打开文件左侧目录树会自动定位到相应的文件，感觉还是很方便的，在 rider 可以进行相应的设置：
 
-![rider目录树自动定位到文件](../images/rider目录树自动定位到文件.jpg)
+![rider目录树自动定位到文件](../images/2023/rider目录树自动定位到文件.jpg)
 
 # 2023-05-02
 
@@ -95,6 +95,8 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width
 怎么获取 window 下的 iframe：`window.frames`
 
 官方文档：[Window.frames](https://developer.mozilla.org/en-US/docs/Web/API/Window/frames)
+
+怎么判断当前的执行环境是不是在 iframe 里面，如果是，则 `console.log(window.frameElement)` 一定可以打印出当前 iframe 的。
 
 # 2023-03-02
 
@@ -334,12 +336,7 @@ background: repeating-linear-gradient(
 
 green 0 的意思是什么？
 
-> 为了避免每次改动条纹宽度时都要修改两个数字，我们可以再次从规范
-> 那里找到捷径。
-> “如果某个色标的位置值比整个列表中在它之前的色标的位置值都要
-> 小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。”
-> 这意味着，如果我们把第二个色标的位置值设置为 0，那它的位置就
-> 总是会被浏览器调整为前一个色标的位置值，这个结果正是我们想要的。
+> 为了避免每次改动条纹宽度时都要修改两个数字，我们可以再次从规范那里找到捷径。“如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。”这意味着，如果我们把第二个色标的位置值设置为 0，那它的位置就总是会被浏览器调整为前一个色标的位置值，这个结果正是我们想要的。
 
 # 2023-01-05
 
@@ -358,14 +355,14 @@ onKeyUp={e => {
 只好改成这样：
 
 ```javascript
-onKeyUp={e => {
+onKeyDown={e => {
   if(e.key === 'Enter'){
-    onBlur(e as any);
+    e.currentTarget.blur();
   }
 }}
 ```
 
-这个事件类型和 onBlur 并不一样，但只能这么写了
+target 和 currentTarget 的区别：target 是注册事件的 dom，但不一定是真正触发事件的 dom，currentTarget 是真正触发事件的 dom。有一种很常见的做法是在祖先节点上注册事件，然后再在事件里面分辨具体是哪个子节点，这就叫：事件委托，可以有效减少事件注册的数量
 
 # 2023-01-03
 
@@ -488,9 +485,9 @@ grow 的算法如下：
 
 shrink 的算法如下：
 
-假设 div1 是 100px, flex-shrink:1；div2 是 200px, flex-shrink:2；div3 是 300px, flex-shrink: 3。容器宽度 700px
+假设 div1 是 100px, flex-shrink:1；div2 是 200px, flex-shrink:2；div3 是 300px, flex-shrink: 3。容器宽度 400px
 
-div1 元素需要 shrink 的量：`(100*1)/(100*1+200*2+300*3)*(700-100-200-300)`
+div1 元素需要 shrink 的量：`(100*1)/(100*1+200*2+300*3)*(100+200+300-400)`
 
 也就是加权比例，需要用到自身的宽高
 
