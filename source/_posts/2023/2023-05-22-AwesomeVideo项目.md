@@ -13,3 +13,7 @@ comments: true
 3. [p2p-media-loader-core.min.js 和 p2p-media-loader-hlsjs.min.js](https://github.com/Novage/p2p-media-loader/tree/master)
 
 <!-- more -->
+
+用`hls.js`就可以播放 m3u8 视频了，但是要怎么下载视频呢，在网上搜了一下，找到了一个下载器：[Momo707577045/m3u8-downloader](https://github.com/Momo707577045/m3u8-downloader/blob/master/index.html)
+
+他的源码还是值得学习的
