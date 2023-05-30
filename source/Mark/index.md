@@ -5,6 +5,10 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-05-30
+
+- [随机点菜小程序](http://chishenme.xyz/)
+
 # 2023-05-19
 
 - [维基大学](https://en.wikiversity.org/wiki/Wikiversity:Main_Page)

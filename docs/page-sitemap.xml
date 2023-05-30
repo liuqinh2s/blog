@@ -8,6 +8,13 @@
     </url>
     
     <url>
+        <loc>https://liuqinh2s.github.io/blog/Mark/</loc>
+        <lastmod>2023-05-30T05:49:13.240Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://liuqinh2s.github.io/blog/notes/</loc>
         <lastmod>2023-05-30T01:45:05.050Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -24,13 +31,6 @@
     <url>
         <loc>https://liuqinh2s.github.io/blog/Reading/</loc>
         <lastmod>2023-05-22T01:17:16.145Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuqinh2s.github.io/blog/Mark/</loc>
-        <lastmod>2023-05-19T01:39:45.390Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
