@@ -9,6 +9,22 @@ date: 2018-11-03 14:59:45
 
 如何白嫖到免费的 office 官方软件：[Word、Excel、Pointpot 最强免费安装教程！ | 零度解说](https://www.youtube.com/watch?v=VSjRx7Hoa60&ab_channel=%E9%9B%B6%E5%BA%A6%E8%A7%A3%E8%AF%B4)
 
+# 2023-05-29
+
+电脑不够轻巧便携，手机的系统不够有生产力，对于编程开发来说甚至都没有 chrome 调试工具，当然手机屏幕太小也是个问题，但我还是搞了个 aidlux 来折腾一番。想要在 aidlux 里面用上电脑版的 chrome，就要通过 xfce4 来运行，一进去就让选是 wayland 还是 vnc 方式，那么这两个方式有何区别呢？
+
+## Wayland 与 VNC 有什么区别呢
+
+建议在平板和手机上面使用 Wayland，启动的过程需要一点时间，但是启动过后不过是 xfce 本身还是里面的程序运行的速度更快，但是 wayland 也有一些缺点，就是有部分较老的应用程序不支持，例如谷歌拼音需要 fcitx5 以后的版本。
+
+如果是通过电脑端去访问，则使用 VNC 的方式，因为浏览器需要网络协议去或的渲染。
+
+VNC 的速度虽然慢一点,但是兼容性更好，几乎支持所有的 Linux 桌面软件。
+
+至于选择 Wayland 还是 VNC，可以先在 Wayland 中试试你要运行的程序，如果没有运行报错，闪退等情况，那么就可以选择 Wayland 的方式，如果有就需要选用 VNC 的方式。
+
+参考：[AidLux 中正确使用 Wayland 的方式 - 知乎](https://zhuanlan.zhihu.com/p/584177202)
+
 # 2023-05-27
 
 一直都想测一下新买的火影 t6a 的跑分，我朋友写了个奇怪的测试 CPU 的程序：[最小生成树 kruskal 算法 js 实现](http://118.190.10.34/mini-span-tree-kruskal-js/)，测试结果是插电源开 balance 模式，118ms。还行
