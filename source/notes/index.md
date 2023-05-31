@@ -1128,12 +1128,15 @@ js 中的字符都是两字节的，怎么查看一个字符的编码呢，用`s
 
 ```javascript
 const code = "中".charCodeAt(0);
-console.log(code, code.toString(16), escape("中"));
+console.log(code, code.toString(16), escape("中"), unescape("\u4E2D"));
 const str = String.fromCharCode(code);
 console.log(str);
 ```
 
 js 字符编码的故事：[Unicode 与 JavaScript 详解 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2014/12/unicode.html)
+
+> 什么情况下 charCodeAt 和 codePointAt 会得到不一样的值
+> 在 BMP（基本多文种平面）里面的字符就是一样的结果，不在 BMP 里面就不一样
 
 # 2022-10-11
 
