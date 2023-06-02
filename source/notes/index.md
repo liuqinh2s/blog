@@ -5,6 +5,14 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-06-02
+
+react router 用的比较少，参考以下几篇文章：
+
+- [react-router-dom 使用指南（最新 V6.0.1）](https://zhuanlan.zhihu.com/p/431389907)
+- [5 分钟内了解 React Router——初学者教程](https://www.freecodecamp.org/chinese/news/react-router-in-5-minutes-2/)
+- [React 路由使用](https://juejin.cn/post/7102047013818073096)
+
 # 2023-06-01
 
 ## 正则表达式的坑

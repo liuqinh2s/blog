@@ -5,6 +5,11 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-06-02
+
+- [安全训练的 Web 应用](https://owasp.org/www-project-juice-shop/)
+- [计算机专业学习路线](https://hackway.org/docs/cs/intro)
+
 # 2023-06-01
 
 - [Free Music For YouTube Videos & Creators • Uppbeat](https://uppbeat.io/)
