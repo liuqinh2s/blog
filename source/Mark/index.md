@@ -8,6 +8,7 @@ date: 2019-02-20 20:30:09
 # 2023-06-01
 
 - [Free Music For YouTube Videos & Creators • Uppbeat](https://uppbeat.io/)
+- [欢迎来到首页 | Viking Zhang, 一个前端开发工程师以及独立开发者的故事](https://vikingz.me/)
 
 # 2023-05-30
 

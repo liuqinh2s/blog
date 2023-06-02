@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2023-06-01T10:00:28.670Z">
+<meta property="og:updated_time" content="2023-06-02T01:18:24.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-06-01正则表达式的坑 g的作用是全局搜索，不加g的话，匹配到第一个匹配项就停止了匹配，加了g就会匹配上所有匹配项。但我们在用 test 的时候，其实并不需要g，因为匹配到一个就是 true 了。但如">
@@ -421,6 +421,7 @@
 <h1 id="2023-06-01"><a href="#2023-06-01" class="headerlink" title="2023-06-01"></a>2023-06-01</h1><h2 id="正则表达式的坑"><a href="#正则表达式的坑" class="headerlink" title="正则表达式的坑"></a>正则表达式的坑</h2><p><img src="../../../../images/2023/正则表达式的坑1.png" alt="正则表达式的坑1"></p>
 <p><code>g</code>的作用是全局搜索，不加<code>g</code>的话，匹配到第一个匹配项就停止了匹配，加了<code>g</code>就会匹配上所有匹配项。但我们在用 test 的时候，其实并不需要<code>g</code>，因为匹配到一个就是 true 了。但如果加了<code>g</code>的话，正则表达式对象的 lastindex 属性就会编程最后一个匹配项，那你继续再用这个正则表达式对象的话，就是从最后一个匹配项之后开始匹配了，就啥也找不到（啥也找不到之后，就会把 lastindex 又置为 0）</p>
 <p><img src="../../../../images/2023/正则表达式的坑2.png" alt="正则表达式的坑2"></p>
+<p>实际上我觉得 js 应该在使用 test 时，屏蔽掉<code>g</code></p>
 <h2 id="UI-美学"><a href="#UI-美学" class="headerlink" title="UI 美学"></a>UI 美学</h2><p>我发现 UI 就是要匀称才好看，比如要均匀的平铺界面，留足缝隙（padding 和 margin），就是好看的关键要素，挤在一起就不好看了。人体也是如此，可以说匀称是个试金石。</p>
 <h2 id="雪碧图"><a href="#雪碧图" class="headerlink" title="雪碧图"></a>雪碧图</h2><p>根据雪碧图+<code>background-position</code>+固定的图片宽高，可以从雪碧图中抽取某个图片。</p>
 <p>以下来自 chatgpt 的回答（输入：雪碧图）：</p>
