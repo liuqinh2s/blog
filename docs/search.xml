@@ -8,8 +8,8 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>项目</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -183,19 +183,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[生成固定长度的字符串]]></title>
-    <url>%2Fblog%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
-    <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[浏览器上的几种xy坐标]]></title>
     <url>%2Fblog%2F2022%2F06%2F09%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87%2F</url>
     <content type="text"><![CDATA[首先分为两大类： 事件坐标 dom 坐标 事件坐标有如下几种： screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY 下面这张图可以很好的对比展示这几种 xy 坐标： 那如果是在 iframe 中的 document，clientX 和 screenX 还是符合直觉的值吗？ 答案是 clientX 不是，screenX 是。 clientX 的值是从 document 的左起始位置算起的，不会考虑 iframe 距离浏览器左边距。screenX 则依然是距离屏幕左边的距离。 dom 坐标]]></content>
       <categories>
         <category>前端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[生成固定长度的字符串]]></title>
+    <url>%2Fblog%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
+      <categories>
+        <category>JavaScript</category>
       </categories>
   </entry>
   <entry>
@@ -223,19 +223,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[智能合约入门]]></title>
-    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
-      <categories>
-        <category>币圈</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[快速排序最坏的情况啥时候出现]]></title>
     <url>%2Fblog%2F2021%2F06%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN 代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN$退化成了$N$。那么什么情况会退化成$logN$，当然是问题规模缩减得慢的时候，这与我们选中枢有直接的关系。假如我们选的中枢，每次都是最小或者最大，那么问题的缩小速度就会变成线性的了；而假如我们选的中枢，每次恰好是中间那个数，那么问题递归次数就是$log_2^N$了。 由于我们一般都是选第一个或者最后一个元素做中枢，那么最坏的情况对应就是：已经有序（这包括正序，逆序，以及全部元素相等） 由于快速排序的这个特征，所以我们一般的算法库中是结合了好几种排序算法：C++一道深坑面试题：STL 里 sort 算法用的是什么排序算法？ 同时我也在思考为啥快排这种最坏是$O(N^2)$的算法会被使用，而不直接使用最坏是$O(NlogN)$的算法，比如归并排序，堆排序。答案自然是这些排序也有各自的缺点，而且我估计是无法容忍的缺点。比如归并排序，它不是一个原地排序算法，需要额外的存储空间。堆排序，需要构建堆花费额外的时间。堆构建完毕后，借用堆这种结构，每次只能从堆顶取出最大或最小的数，而且取完还要进行堆维护，花费$logN$的时间。构建堆的过程和堆排序的过程类似，只不过构建堆是添加叶节点+上浮堆化的过程，而堆排序是取根节点+下沉堆化的过程，同样的构建堆也要花费$O(NlogN)$的时间。所以堆排序会花费双倍的时间。]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[智能合约入门]]></title>
+    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
+      <categories>
+        <category>币圈</category>
       </categories>
   </entry>
   <entry>
@@ -295,19 +295,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[position sticky]]></title>
-    <url>%2Fblog%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
-    <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
-      <categories>
-        <category>css</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
     <url>%2Fblog%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
     <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
       <categories>
         <category>leetcode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[position sticky]]></title>
+    <url>%2Fblog%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
+    <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
+      <categories>
+        <category>css</category>
       </categories>
   </entry>
   <entry>

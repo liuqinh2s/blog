@@ -5,6 +5,11 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-06-05
+
+- [Every tool you need to work with PDFs in one place](https://www.ilovepdf.com/)
+- [How Clothes Should Fit](https://howclothesshouldfit.com/)
+
 # 2023-06-02
 
 - [安全训练的 Web 应用](https://owasp.org/www-project-juice-shop/)
