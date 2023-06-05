@@ -76,7 +76,7 @@ footer:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -398,13 +398,23 @@ valine:
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
 
+# 整合 utterances 评论
+utterance:
+  enable: true
+  # 仓库名字，格式：[user-name]/[repo-name]，如：lanweihong/utterance_repo
+  repo: liuqinh2s/blog-comment
+  # 主题
+  theme: github-light
+  # 映射配置
+  issue_term: pathname
+
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
 #youyan_uid: your uid
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTAyMC8zNTc5MC8xMjMyNg==
+# livere_uid: MTAyMC8zNTc5MC8xMjMyNg==
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -579,7 +589,7 @@ busuanzi_count:
 # tencent_mta:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page

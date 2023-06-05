@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2023-06-03T03:17:58.491Z">
+<meta property="og:updated_time" content="2023-06-02T09:05:07.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-06-02react router 用的比较少，参考以下几篇文章：  react-router-dom 使用指南（最新 V6.0.1） 5 分钟内了解 React Router——初学者教程 React">
@@ -168,7 +168,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -405,7 +405,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">札记</h1>
+	<h2 class="post-title" itemprop="name headline">札记</h2>
 
 
 
@@ -502,7 +502,7 @@
 <h1 id="2023-02-28"><a href="#2023-02-28" class="headerlink" title="2023-02-28"></a>2023-02-28</h1><p>一直以来都对 useEffect 有个误解，以为它的作用范围是全局的，我的意思是在组件外部改了某个变量，我可以在组件内监听到，实际上是不行的。</p>
 <p><strong>useEffect 的触发前提必须是组件正在 render，如果组件不 render，根本不会触发</strong></p>
 <p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> globalData = &#123; <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">0</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"触发监听"</span>);</span><br><span class="line">  &#125;, [globalData.data]);</span><br><span class="line">  <span class="keyword">return</span> &lt;&gt;&lt;/&gt;;</span><br><span class="line">&#125;;</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">  console.log("由我触发的监听");</span><br><span class="line">  globalData.data = &#123; a: 1 &#125;;</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> globalData = &#123; <span class="attr">data</span>: &#123; <span class="attr">a</span>: <span class="number">0</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"触发监听"</span>);</span><br><span class="line">  &#125;, [globalData.data]);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;&gt;</span><span class="tag">&lt;/&gt;</span>;</span></span><br><span class="line"><span class="xml">&#125;;</span></span><br><span class="line"><span class="xml">setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="xml">  console.log("由我触发的监听");</span></span><br><span class="line"><span class="xml">  globalData.data = &#123; a: 1 &#125;;</span></span><br><span class="line"><span class="xml">&#125;, 1000);</span></span><br></pre></td></tr></table></figure>
 <p>以上代码是不会触发监听的，因为组件没有 render，也就不会执行 useEffect()函数，也就不会对比变量，进监听函数。它不像消息总线和 dom 事件这种全局的监听，它仅限于组件 render 的过程中监听</p>
 <p>如果要实现全局的监听，就要自己实现一个 useWatch 了，自己实现一个 useWatch 比较复杂，先埋个坑，以后再填。</p>
 <h1 id="2023-02-23"><a href="#2023-02-23" class="headerlink" title="2023-02-23"></a>2023-02-23</h1><p>刚 commit 的代码想撤回到工作区：</p>
@@ -652,7 +652,7 @@
 <p>代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  setData(props.data);</span><br><span class="line">&#125;, [props.xxx]); <span class="comment">// 确保每次父组件渲染的时候xxx跟上次不同</span></span><br></pre></td></tr></table></figure>
 <p>（2）还有一个方案是使用不同的 key 去渲染子组件（这样就能强制刷新子组件了）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Child key=&#123;xxx&#125;&gt;&lt;/Child&gt; <span class="comment">// 确保每次父组件渲染的时候xxx跟上次不同</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Child key=&#123;xxx&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span> <span class="comment">// 确保每次父组件渲染的时候xxx跟上次不同</span></span><br></pre></td></tr></table></figure>
 <p>这两种做法，还有本质上的区别，因为第二种方法会导致 react 的虚拟 dom 中直接干掉子组件（以及它的子节点），这会导致整个子节点刷新，而第一种方案则不会，第一种方案比较高效。</p>
 <p>测试案例：<a href="https://replit.com/@liuqinh2s1/whereIsRerenderComeFrom#src/Sub.tsx" target="_blank" rel="noopener">https://replit.com/@liuqinh2s1/whereIsRerenderComeFrom#src/Sub.tsx</a></p>
 <h2 id="如何打包-chrome-扩展程序"><a href="#如何打包-chrome-扩展程序" class="headerlink" title="如何打包 chrome 扩展程序"></a>如何打包 chrome 扩展程序</h2><p>在 chrome 扩展程序管理中找到了，开发者模式-&gt;打包扩展程序，但是提示我：<code>打包扩展程序错误 指定扩展程序的私有密钥已存在。请重复使用该密钥，或者先删除它。</code></p>
@@ -661,9 +661,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">前期吃这个：</span><br><span class="line">1. 四季抗病毒合剂</span><br><span class="line">2. 复方一支蒿颗粒</span><br><span class="line">浑身疼吃：复方氨酚烷胺胶囊</span><br><span class="line">发烧吃：</span><br><span class="line">低于38.5°吃：乙烯氨基酚片</span><br><span class="line">高于38.5°吃：布洛芬缓释胶囊</span><br><span class="line">后期吃：</span><br><span class="line">1. 连花清瘟胶囊</span><br><span class="line">2. 蒲地蓝消炎片</span><br><span class="line">咳嗽吃：消炎止咳片</span><br></pre></td></tr></table></figure>
 <h1 id="2022-12-06"><a href="#2022-12-06" class="headerlink" title="2022-12-06"></a>2022-12-06</h1><p><a href="https://juejin.cn/post/6844903937468792846" target="_blank" rel="noopener">react 父组件调用子组件的函数</a>：<code>useImperativeHandle</code></p>
 <p>子组件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 必须是个函数，且函数参数是props和ref</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">props, ref</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> func = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"执行func"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 用useImperativeHandle暴露一些外部ref能访问的属性，必须要写这个，不然ref什么也拿不到</span></span><br><span class="line">  useImperativeHandle(ref, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// 需要将暴露的接口返回出去</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      xxx: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        func();</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> &lt;h1&gt;children&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> forwardRef(children);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 必须是个函数，且函数参数是props和ref</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">children</span>(<span class="params">props, ref</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> func = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"执行func"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 用useImperativeHandle暴露一些外部ref能访问的属性，必须要写这个，不然ref什么也拿不到</span></span><br><span class="line">  useImperativeHandle(ref, () =&gt; &#123;</span><br><span class="line">    <span class="comment">// 需要将暴露的接口返回出去</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      xxx: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        func();</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>children<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> forwardRef(children);</span><br></pre></td></tr></table></figure>
 <p>父组件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> childrenRef = useRef(<span class="literal">null</span>);</span><br><span class="line">childrenRef.current.xxx();</span><br><span class="line"><span class="keyword">return</span> &lt;children ref=&#123;childrenRef&#125; /&gt;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> childrenRef = useRef(<span class="literal">null</span>);</span><br><span class="line">childrenRef.current.xxx();</span><br><span class="line"><span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">children</span> <span class="attr">ref</span>=<span class="string">&#123;childrenRef&#125;</span> /&gt;</span>;</span></span><br></pre></td></tr></table></figure>
 <p>试验基地：<a href="https://replit.com/@liuqinh2s/react-practice#README.md" target="_blank" rel="noopener">react-practice</a></p>
 <h1 id="2022-12-05"><a href="#2022-12-05" class="headerlink" title="2022-12-05"></a>2022-12-05</h1><h2 id="css-两种盒模型"><a href="#css-两种盒模型" class="headerlink" title="css 两种盒模型"></a>css 两种盒模型</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">box-sizing: border-box; // 这个会把边框的宽度，以及padding计入width和height</span><br><span class="line">box-sizing: content-box; // 这个不会把边框的宽度，以及padding计入width和height，且这个是默认值</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -767,7 +767,7 @@
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event</a></li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handleClick = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.detail);</span><br><span class="line">  <span class="keyword">switch</span> (event.detail) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>: &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"single click"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>: &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"double click"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>: &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"triple click"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">default</span>: &#123;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="useState-的坑"><a href="#useState-的坑" class="headerlink" title="useState 的坑"></a>useState 的坑</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">"https://esm.sh/react@18"</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">"https://esm.sh/react-dom@18"</span>;</span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">text</span>: <span class="string">"2"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> Hello = <span class="function">(<span class="params">&#123; props &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"render"</span>);</span><br><span class="line">  <span class="keyword">const</span> [bb, setBB] = useState(props);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// let one = JSON.parse(JSON.stringify(obj))</span></span><br><span class="line">    <span class="comment">// one.text='3'</span></span><br><span class="line">    <span class="comment">// setBB(one);</span></span><br><span class="line">    <span class="comment">// 回调函数会被react调用，react会传入bb给回调函数</span></span><br><span class="line">    setBB(<span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (bb === obj) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="literal">true</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      obj.text = <span class="string">"3"</span>;</span><br><span class="line">      <span class="keyword">return</span> obj; <span class="comment">// 不会引起组件渲染</span></span><br><span class="line">      <span class="comment">// return JSON.parse(JSON.stringify(obj));  // 会引起组件渲染</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> &lt;div&gt;&#123;bb.text&#125;&lt;/div&gt;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> root = ReactDOM.createRoot(<span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br><span class="line">root.render(&lt;Hello props=&#123;obj&#125;&gt;&lt;/Hello&gt;);</span><br></pre></td></tr></table></figure>
+<h2 id="useState-的坑"><a href="#useState-的坑" class="headerlink" title="useState 的坑"></a>useState 的坑</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">"https://esm.sh/react@18"</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">"https://esm.sh/react-dom@18"</span>;</span><br><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">text</span>: <span class="string">"2"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> Hello = <span class="function">(<span class="params">&#123; props &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"render"</span>);</span><br><span class="line">  <span class="keyword">const</span> [bb, setBB] = useState(props);</span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// let one = JSON.parse(JSON.stringify(obj))</span></span><br><span class="line">    <span class="comment">// one.text='3'</span></span><br><span class="line">    <span class="comment">// setBB(one);</span></span><br><span class="line">    <span class="comment">// 回调函数会被react调用，react会传入bb给回调函数</span></span><br><span class="line">    setBB(<span class="function">(<span class="params">obj</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (bb === obj) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="literal">true</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      obj.text = <span class="string">"3"</span>;</span><br><span class="line">      <span class="keyword">return</span> obj; <span class="comment">// 不会引起组件渲染</span></span><br><span class="line">      <span class="comment">// return JSON.parse(JSON.stringify(obj));  // 会引起组件渲染</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, []);</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;bb.text&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> root = ReactDOM.createRoot(<span class="built_in">document</span>.getElementById(<span class="string">"root"</span>));</span><br><span class="line">root.render(<span class="xml"><span class="tag">&lt;<span class="name">Hello</span> <span class="attr">props</span>=<span class="string">&#123;obj&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">Hello</span>&gt;</span></span>);</span><br></pre></td></tr></table></figure>
 <p>运行地址：<a href="https://codepen.io/liuqinh2s/pen/eYKdqeo?editors=0010" target="_blank" rel="noopener">https://codepen.io/liuqinh2s/pen/eYKdqeo?editors=0010</a></p>
 <p>如果 useState 传入的对象的引用没有发生变化，它就不会更新。所以修改对象就只能深拷贝了。</p>
 <h1 id="2022-11-06"><a href="#2022-11-06" class="headerlink" title="2022-11-06"></a>2022-11-06</h1><p>github 突然抽风，push 的时候报错：</p>
@@ -1096,9 +1096,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTc5MC8xMjMyNg=="></div>
+      <div id="utterance-container"></div>
     </div>
-
+  
   
 
 
@@ -1139,7 +1139,7 @@
               <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/05/20/5ce257002370387784.jpg" alt="liuqinh2s">
             
               <p class="site-author-name" itemprop="name">liuqinh2s</p>
-              <p class="site-description motion-element" itemprop="description">Computer Science is not a magic <br> To be a hacker</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1461,17 +1461,6 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
-  
 
 
 
@@ -1482,6 +1471,10 @@
 
 
 
+
+
+
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","pathname"),e.setAttribute("theme","github-light"),e.setAttribute("repo","liuqinh2s/blog-comment"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("utterance-container").appendChild(e)}()
 
 
   
@@ -1812,6 +1805,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
