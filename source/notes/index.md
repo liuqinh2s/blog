@@ -5,6 +5,43 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-06-05
+
+把博客的评论插件从来必力换成了 github issues，用的是 utterances 插件，主要参考了这篇文章：https://blog.lanweihong.com/posts/24011/，他的文章有一处错误导致我一开始没有成功：
+
+```
+{% if theme.utterance and theme.utterance.enable %}
+
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.setAttribute("issue-term","{{ theme.utterance.issue_term }}"),e.setAttribute("theme","{{ theme.utterance.theme }}"),e.setAttribute("repo","{{ theme.utterance.repo }}"),e.crossorigin="anonymous",e.src="https://utteranc.es/client.js",document.getElementById("utterance-container").appendChild(e)}()
+
+{% endif %}
+```
+
+将如上内容替换为：
+
+```
+{% if theme.utterance and theme.utterance.enable %}
+
+<script type="text/javascript">
+(function(){
+    var e=document.createElement("script");
+    e.type="text/javascript",
+    e.async=!0,
+    e.setAttribute("issue-term","{{ theme.utterance.issue_term }}"),
+    e.setAttribute("theme","{{ theme.utterance.theme }}"),
+    e.setAttribute("repo","{{ theme.utterance.repo }}"),
+    e.crossorigin="anonymous",
+    e.src="https://utteranc.es/client.js",
+    document.getElementById("utterance-container").appendChild(e)
+    })()
+</script>
+{% endif %}
+```
+
+就成功了
+
+我的博客一直是零评论，而且浏览量也不高，这方面需要改善一下了，主要是 SEO 做的不好，还有就是平常也没有宣传过，再就是文章更新的比较少，虽然 notes 更新很频繁。
+
 # 2023-06-02
 
 react router 用的比较少，参考以下几篇文章：
