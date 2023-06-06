@@ -84,46 +84,46 @@
 <meta name="description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《CSAPP》 -- 程序的机器级表示">
-<meta property="og:url" content="https://liuqinh2s.github.io/blog/2018/10/08/程序的机器级表示/index.html">
+<meta property="og:url" content="https://liuqinh2s.xyz/2018/10/08/程序的机器级表示/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/反汇编.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/链接之后的反汇编代码1.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/链接之后的反汇编代码2.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/数据格式.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/IA32寄存器.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/x86-64寄存器.jpg">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/操作数指示符.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/mov指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/汇编栈操作.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/算术和逻辑操作指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/扩展乘除操作.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/流程控制指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/set指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/跳转指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/while的汇编形式.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/状态表达式.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/状态转移指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/switch汇编代码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/switch跳转表1.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/switch跳转表2.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/程序栈内存结构.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/转移控制指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/程序调用模型.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/过程调用内存模型.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/过程调用汇编代码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/gets缓冲区溢出.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/缓冲区溢出内存模型.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/缓冲区攻击范围.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/金丝雀值.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/含金丝雀值汇编码1.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/blog/images/2018/含金丝雀值汇编码2.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/反汇编.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/链接之后的反汇编代码1.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/链接之后的反汇编代码2.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/数据格式.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/IA32寄存器.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/x86-64寄存器.jpg">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/操作数指示符.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/mov指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/汇编栈操作.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/算术和逻辑操作指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/扩展乘除操作.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/流程控制指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/set指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/跳转指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/while的汇编形式.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/状态表达式.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/状态转移指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/switch汇编代码.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/switch跳转表1.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/switch跳转表2.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/程序栈内存结构.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/转移控制指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/程序调用模型.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/过程调用内存模型.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/过程调用汇编代码.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/gets缓冲区溢出.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/缓冲区溢出内存模型.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/缓冲区攻击范围.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/金丝雀值.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/含金丝雀值汇编码1.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/含金丝雀值汇编码2.png">
 <meta property="og:updated_time" content="2023-05-01T17:38:19.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CSAPP》 -- 程序的机器级表示">
 <meta name="twitter:description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
-<meta name="twitter:image" content="https://liuqinh2s.github.io/blog/images/2018/反汇编.png">
+<meta name="twitter:image" content="https://liuqinh2s.xyz/images/2018/反汇编.png">
 
 
 
@@ -153,7 +153,7 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/blog/2018/10/08/程序的机器级表示/">
+  <link rel="canonical" href="https://liuqinh2s.xyz/2018/10/08/程序的机器级表示/">
 
 
 
@@ -438,7 +438,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2018/10/08/程序的机器级表示/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2018/10/08/程序的机器级表示/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
