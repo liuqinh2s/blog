@@ -52,6 +52,16 @@ yum install -y nginx
 
 速度：`30.97MH/s`，效能：`387.07KH/W`
 
+## hexo 部署后，CNAME 会被自动删除，怎么办？
+
+将需要上传至 github 的内容放在 source 文件夹，例如 CNAME、favicon.ico、images 等。
+
+[hexo 部署后，CNAME 会被自动删除，怎么办？ - 沉简的回答 - 知乎](https://www.zhihu.com/question/28814437/answer/44207790)
+
+## 拿图片生成 icon
+
+[免费Favicon.ico图标在线生成器](https://www.logosc.cn/logo/favicon)
+
 # 2023-06-05
 
 ## utterances
