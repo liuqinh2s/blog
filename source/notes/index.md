@@ -48,9 +48,11 @@ yum install -y nginx
 
 币安现在也有矿池了：[币安矿池](https://pool.binance.com/zh-CN)
 
-我用的显卡：`NVIDIA GeForce RTX 4060 Laptop GPU 8GB`，挖矿软件：`GMiner`，挖`ETHW`
+我用的显卡：`NVIDIA GeForce RTX 4060 Laptop GPU 8GB`，挖矿软件：`GMiner`，挖`ETC`
 
-速度：`30.97MH/s`，效能：`387.07KH/W`
+速度：`31.10MH/s`，效能：`403.85KH/W`
+
+电费都收不回来
 
 ## hexo 部署后，CNAME 会被自动删除，怎么办？
 
@@ -60,7 +62,7 @@ yum install -y nginx
 
 ## 拿图片生成 icon
 
-[免费Favicon.ico图标在线生成器](https://www.logosc.cn/logo/favicon)
+[免费 Favicon.ico 图标在线生成器](https://www.logosc.cn/logo/favicon)
 
 # 2023-06-05
 

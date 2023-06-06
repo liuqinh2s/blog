@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2023-06-06T15:24:44.303Z">
+<meta property="og:updated_time" content="2023-06-06T15:55:54.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-06-06centos 安装 nginxyum install 没有可用软件包 nginx。 12345678已加载插件：fastestmirrorLoading mirror speeds from">
@@ -429,11 +429,12 @@
 <p>重新试一下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
 <h2 id="显卡挖矿"><a href="#显卡挖矿" class="headerlink" title="显卡挖矿"></a>显卡挖矿</h2><p>币安现在也有矿池了：<a href="https://pool.binance.com/zh-CN" target="_blank" rel="noopener">币安矿池</a></p>
-<p>我用的显卡：<code>NVIDIA GeForce RTX 4060 Laptop GPU 8GB</code>，挖矿软件：<code>GMiner</code>，挖<code>ETHW</code></p>
-<p>速度：<code>30.97MH/s</code>，效能：<code>387.07KH/W</code></p>
+<p>我用的显卡：<code>NVIDIA GeForce RTX 4060 Laptop GPU 8GB</code>，挖矿软件：<code>GMiner</code>，挖<code>ETC</code></p>
+<p>速度：<code>31.10MH/s</code>，效能：<code>403.85KH/W</code></p>
+<p>电费都收不回来</p>
 <h2 id="hexo-部署后，CNAME-会被自动删除，怎么办？"><a href="#hexo-部署后，CNAME-会被自动删除，怎么办？" class="headerlink" title="hexo 部署后，CNAME 会被自动删除，怎么办？"></a>hexo 部署后，CNAME 会被自动删除，怎么办？</h2><p>将需要上传至 github 的内容放在 source 文件夹，例如 CNAME、favicon.ico、images 等。</p>
 <p><a href="https://www.zhihu.com/question/28814437/answer/44207790" target="_blank" rel="noopener">hexo 部署后，CNAME 会被自动删除，怎么办？ - 沉简的回答 - 知乎</a></p>
-<h2 id="拿图片生成-icon"><a href="#拿图片生成-icon" class="headerlink" title="拿图片生成 icon"></a>拿图片生成 icon</h2><p><a href="https://www.logosc.cn/logo/favicon" target="_blank" rel="noopener">免费Favicon.ico图标在线生成器</a></p>
+<h2 id="拿图片生成-icon"><a href="#拿图片生成-icon" class="headerlink" title="拿图片生成 icon"></a>拿图片生成 icon</h2><p><a href="https://www.logosc.cn/logo/favicon" target="_blank" rel="noopener">免费 Favicon.ico 图标在线生成器</a></p>
 <h1 id="2023-06-05"><a href="#2023-06-05" class="headerlink" title="2023-06-05"></a>2023-06-05</h1><h2 id="utterances"><a href="#utterances" class="headerlink" title="utterances"></a>utterances</h2><p>把博客的评论插件从来必力换成了 github issues，用的是 utterances 插件，主要参考了这篇文章：<a href="https://blog.lanweihong.com/posts/24011/，他的文章有一处错误导致我一开始没有成功：" target="_blank" rel="noopener">https://blog.lanweihong.com/posts/24011/，他的文章有一处错误导致我一开始没有成功：</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.utterance and theme.utterance.enable %&#125;</span><br><span class="line"></span><br><span class="line">!function()&#123;var e=document.createElement(&quot;script&quot;);e.type=&quot;text/javascript&quot;,e.async=!0,e.setAttribute(&quot;issue-term&quot;,&quot;&#123;&#123; theme.utterance.issue_term &#125;&#125;&quot;),e.setAttribute(&quot;theme&quot;,&quot;&#123;&#123; theme.utterance.theme &#125;&#125;&quot;),e.setAttribute(&quot;repo&quot;,&quot;&#123;&#123; theme.utterance.repo &#125;&#125;&quot;),e.crossorigin=&quot;anonymous&quot;,e.src=&quot;https://utteranc.es/client.js&quot;,document.getElementById(&quot;utterance-container&quot;).appendChild(e)&#125;()</span><br><span class="line"></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 <p>将如上内容替换为：</p>
