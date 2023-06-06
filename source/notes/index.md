@@ -5,6 +5,53 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-06-06
+
+## centos 安装 nginx
+
+yum install 没有可用软件包 nginx。
+
+```bash
+
+已加载插件：fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.lzu.edu.cn
+ * extras: mirror.lzu.edu.cn
+ * updates: mirror.lzu.edu.cn
+没有可用软件包 nginx。
+错误：无须任何处理
+```
+
+原因是 nginx 位于第三方的 yum 源里面，而不在 centos 官方 yum 源里面
+
+解决方法：
+
+安装
+
+```bash
+sudo yum install epel-release
+```
+
+更新
+
+```bash
+yum update
+```
+
+重新试一下：
+
+```bash
+yum install -y nginx
+```
+
+## 显卡挖矿
+
+币安现在也有矿池了：[币安矿池](https://pool.binance.com/zh-CN)
+
+我用的显卡：`NVIDIA GeForce RTX 4060 Laptop GPU 8GB`，挖矿软件：`GMiner`，挖`ETHW`
+
+速度：`30.97MH/s`，效能：`387.07KH/W`
+
 # 2023-06-05
 
 ## utterances
