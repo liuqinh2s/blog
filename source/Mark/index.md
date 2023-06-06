@@ -9,6 +9,8 @@ date: 2019-02-20 20:30:09
 
 - [Every tool you need to work with PDFs in one place](https://www.ilovepdf.com/)
 - [How Clothes Should Fit](https://howclothesshouldfit.com/)
+- [首页 | 墨七](https://blog.mo7.cc/)
+- [Artiely](https://artiely.gitee.io/)
 
 # 2023-06-02
 
