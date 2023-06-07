@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux使用手册]]></title>
+    <url>%2F2023%2F06%2F07%2Flinux%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%2F</url>
+    <content type="text"><![CDATA[最近买了一台服务器，太多 linux 命令要上网查询了，已经不适合记在札记里面（札记里面一般是记录比较杂的东西，篇幅尚不能形成文章），所以专门开了一篇文章来讲我在使用 linux 服务器遇到的问题，以及解决办法。 首先要谈的是服务器安全问题 以前搭 wordpress 博客的时候，被盗过两次，跟同事讨论了之后，发现可能是因为我使用了 root 账号远程登录，要论安全性的话，最好的方式是： 禁止 root 账号远程登录（那么别人想要登录，就只能猜你的账号名+密码，如果你开放了 root 登录，别人就只需要猜 root 密码） 把 ssh 端口改为非 22 端口，那黑客想要破解，就需要猜端口 普通账号不给 root 权限，这样即便普通账号被盗，情况也不算严重 设置一个强的 root 密码 这样一套组合拳打下来，黑客想要获取你服务器的最高权限，首先要知道你的 ssh 端口，然后要知道一对普通账号密码，最后要知道 root 的密码，才能最终获得最高权限。相比于只靠 root 密码的强度，安全了许多许多。 发现一个问题是 FinalShell 不能直接编辑并保存文件了，应该是权限的问题。 以下是需要用到的 linux 命令： 新建用户：useradd &lt;yourname&gt; 修改用户密码：passwd &lt;yourname&gt; 修改 ssh 端口号：编辑/etc/ssh/sshd_config文件，修改#Port 22为：Port xxxx 禁止 root 账号远程登录：编辑/etc/ssh/sshd_config文件，修改#PermitRootLogin yes为：PermitRootLogin no 修改完/etc/ssh/sshd_config文件后，需要重启一下服务： 12setenforce 0sudo service sshd restart 修改完端口，还要让防火墙放行此端口： 123456// 放行指定端口firewall-cmd --zone=public --add-port=xxxx/tcp --permanent// 重启防火墙systemctl restart firewalld.service// 重新载入配置firewall-cmd --reload 前因买了国外的域名和服务器，这样就可以避免国内特别麻烦的备案了，话说国外的域名和服务器真是便宜啊： 服务器（VPS）：racknerd.com 域名：name.com 服务器购买参考了一篇文章：https://p3terx.com/archives/cheap-vps-racknerd.html，多亏这篇文章才买到了便宜的。 Windows 平台好用的远程 shell 工具：WindTermMac OS 平台好用的远程 shell 工具：FinalShell 现在 Windows 平台也有 FinalShell 了，体验终于又统一起来了 centos 安装 nginxyum install 没有可用软件包 nginx。 12345678已加载插件：fastestmirrorLoading mirror speeds from cached hostfile * base: mirror.lzu.edu.cn * extras: mirror.lzu.edu.cn * updates: mirror.lzu.edu.cn没有可用软件包 nginx。错误：无须任何处理 原因是 nginx 位于第三方的 yum 源里面，而不在 centos 官方 yum 源里面 解决方法： 安装 1sudo yum install epel-release 更新 1yum update 重新试一下： 1yum install -y nginx nginxnginx 的配置位置：/etc/nginx中，在该目录下，主要的配置文件是 nginx.conf 常见需求和解决办法： ssl 证书怎么搞：Let&#39;s Encrypt 提供的解决方案，按照这个操作：certbot instructions nginx 配置域名：修改 nginx.conf 里面的 server_name 字段 HTTP 跳转到 HTTPS：使用 301 重定向的方式将 http 的请求重定向到 https 上 123456789server &#123; listen 80; #填写绑定证书的域名 server_name www.xxx.com; #把http的域名请求转成https return 301 https://$host$request_uri;&#125; 防火墙查看防火墙开放的端口：firewall-cmd --list-ports 常用命令 创建用户：useradd &lt;用户名&gt;，删除用户：userdel &lt;用户名&gt; 修改密码：passwd &lt;用户名&gt; 创建用户组：groupadd &lt;用户组名&gt;，删除用户组：groupdel &lt;用户组名&gt;，查看所有组：groups 查看端口占用 lsof -i :&lt;端口号&gt; 查看某些应用的端口占用情况，比如 ssh 的端口号：netstat -anp |grep ssh 常见文件位置 hosts 文件位置：/etc/hosts nginx 配置位置：/etc/nginx/nginx.conf vim 编辑常用技巧去除多行注释： 按 ctrl+v 进入 visual block 模式 按上下方向键选择多行 按 d 去掉#]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>服务器运维</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[AwesomeWeb项目]]></title>
     <url>%2F2023%2F05%2F22%2FAwesomeWeb%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[github 仓库：liuqinh2s/AwesomeWeb项目展示：replit - AwesomeWeb 最近想像洛雪音乐一样做一个免费的视频 app，主要学习对象是努努视频，说干就干，先看看努努用了哪些第三方 js 库，打开努努视频网站：nunuyy5.org，然后打开开发者工具，可以看到用了这些： hls.js jquery.js p2p-media-loader-core.min.js 和 p2p-media-loader-hlsjs.min.js 用hls.js就可以播放 m3u8 视频了，但是要怎么下载视频呢，在网上搜了一下，找到了一个下载器：Momo707577045/m3u8-downloader 他的源码还是值得学习的 电子书阅读器epubjs官方文档 官方简单 demo epub.js 核心类 Book 阅读器解析Rendition 阅读器渲染Locations 阅读器定位Navigation 存储目录信息View Manager 阅读器渲染出来的视图管理EpubCFI 利用 EpubCFI 标准进行文字级别定位（可以定位到电子书中任意一个字符）Theme 管理场景切换Spine 指定阅读顺序和管理 SectionSection 指向具体章节（全文检索、章节切换）Contents 管理章节资源内容（为某章节添加自定义字体）Hook 定义钩子函数、管理类的生命周期Annotations 管理标签（文字高亮显示） 这是我朋友做的一个基于 epubjs 的电子书阅读器:http://118.190.10.34/epub-z/#/ 由于 epubjs 在 react 中太难使用，翻页都没实现成功。最终还是采用了更为简单的库：React Reader - an easy way to embed a ePub into your webapp]]></content>
@@ -183,19 +194,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[浏览器上的几种xy坐标]]></title>
-    <url>%2F2022%2F06%2F09%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87%2F</url>
-    <content type="text"><![CDATA[首先分为两大类： 事件坐标 dom 坐标 事件坐标有如下几种： screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY 下面这张图可以很好的对比展示这几种 xy 坐标： 那如果是在 iframe 中的 document，clientX 和 screenX 还是符合直觉的值吗？ 答案是 clientX 不是，screenX 是。 clientX 的值是从 document 的左起始位置算起的，不会考虑 iframe 距离浏览器左边距。screenX 则依然是距离屏幕左边的距离。 dom 坐标]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[生成固定长度的字符串]]></title>
     <url>%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
     <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
       <categories>
         <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[浏览器上的几种xy坐标]]></title>
+    <url>%2F2022%2F06%2F09%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87%2F</url>
+    <content type="text"><![CDATA[首先分为两大类： 事件坐标 dom 坐标 事件坐标有如下几种： screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY 下面这张图可以很好的对比展示这几种 xy 坐标： 那如果是在 iframe 中的 document，clientX 和 screenX 还是符合直觉的值吗？ 答案是 clientX 不是，screenX 是。 clientX 的值是从 document 的左起始位置算起的，不会考虑 iframe 距离浏览器左边距。screenX 则依然是距离屏幕左边的距离。 dom 坐标]]></content>
+      <categories>
+        <category>前端</category>
       </categories>
   </entry>
   <entry>
@@ -295,19 +306,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
-    <url>%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
-    <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[position sticky]]></title>
     <url>%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
     <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
       <categories>
         <category>css</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
+    <url>%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
+      <categories>
+        <category>leetcode</category>
       </categories>
   </entry>
   <entry>
@@ -367,19 +378,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[hexo把英文引号渲染成中文引号的问题]]></title>
-    <url>%2F2019%2F04%2F15%2Fhexo%E6%8A%8A%E8%8B%B1%E6%96%87%E5%BC%95%E5%8F%B7%E6%B8%B2%E6%9F%93%E6%88%90%E4%B8%AD%E6%96%87%E5%BC%95%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。 首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。 打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。 然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。 那么问题就确定了：hexo 把英文引号渲染成了中文引号。 谷歌搜了一下：hexo 渲染 单引号 中文单引号，得到几条不错的结果： 求助：单引号显示异常 #1981 6.4.0 版本之后的两个问题 #462 对于我所使用的kramed，只需要在_config.yml中配置： 12kramed: smartypants: false 问题的原因是 markdown 渲染器把英文引号渲染成了中文引号，但这其实是可以配置的，所以解决起来比较简单。 在解决这个问题的过程中，如果你想顺利的解决问题，你需要的知识点有： 字符集的知识 Chrome 开发工具使用经验 前端开发知识 好的搜索习惯 一定的英语水平 查阅文档的意识和习惯 如果你已经具备了以上前提，那么就能比较轻松愉快的解决这个问题了。]]></content>
-      <categories>
-        <category>debug</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[C++ map的remove函数实现]]></title>
     <url>%2F2019%2F04%2F15%2FC%2B%2B%E7%9A%84map%E7%9A%84remove%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[今天同学群里面讨论了这样一段代码，说是产品出了bug，现场急着修复。 12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; // mapPeople[3] = "hexu3"; // mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); for (; iter != mapPeople.end(); iter++) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; mapPeople.erase(iter++); std::cout &lt;&lt; (iter != mapPeople.end()) &lt;&lt; std::endl; &#125; &#125; //for (; iter != mapPeople.end();) //&#123; // if (iter-&gt;first == 2) // &#123; // std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; // mapPeople.erase(iter++); // if (iter == mapPeople.end()) // break; // &#125; // iter++; //&#125;// getchar(); return 0;&#125; 说是第一个for循环会崩溃，第二个for循环可以通过。经过分析，主要问题其实是出在对迭代器和erase的不熟悉上，导致错误的使用，这个程序的错误很明显，就是在erase这条分支中，iter++了两次。那么如何写一个正确的remove函数呢？代码如下： 123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; mapPeople[3] = "hexu3"; mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); while (iter != mapPeople.end()) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; iter = mapPeople.erase(iter); continue; &#125; iter++; &#125; return 0;&#125; 另外，碰到删除的时候，要小心，可以这么写：iter = mapPeople.erase(iter);，也可以这么写：mapPeople.erase(iter++);（必须在删除前给迭代器++，否则迭代器会失效，这个问题那位程序员倒是考虑到了）。 最后我想说的一点是，根据指定key删除map中的元素，这个功能在其他语言中都有库函数可以调用，而C++却没有，还要自己动手写，而且需要对map的原理有一定的了解。这就从侧面反映了C++可能并不是一个高效的生产工具。]]></content>
       <categories>
         <category>C++</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo把英文引号渲染成中文引号的问题]]></title>
+    <url>%2F2019%2F04%2F15%2Fhexo%E6%8A%8A%E8%8B%B1%E6%96%87%E5%BC%95%E5%8F%B7%E6%B8%B2%E6%9F%93%E6%88%90%E4%B8%AD%E6%96%87%E5%BC%95%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。 首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。 打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。 然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。 那么问题就确定了：hexo 把英文引号渲染成了中文引号。 谷歌搜了一下：hexo 渲染 单引号 中文单引号，得到几条不错的结果： 求助：单引号显示异常 #1981 6.4.0 版本之后的两个问题 #462 对于我所使用的kramed，只需要在_config.yml中配置： 12kramed: smartypants: false 问题的原因是 markdown 渲染器把英文引号渲染成了中文引号，但这其实是可以配置的，所以解决起来比较简单。 在解决这个问题的过程中，如果你想顺利的解决问题，你需要的知识点有： 字符集的知识 Chrome 开发工具使用经验 前端开发知识 好的搜索习惯 一定的英语水平 查阅文档的意识和习惯 如果你已经具备了以上前提，那么就能比较轻松愉快的解决这个问题了。]]></content>
+      <categories>
+        <category>debug</category>
       </categories>
   </entry>
   <entry>
@@ -431,17 +442,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[精通一款编辑器之sublime text 3]]></title>
-    <url>%2F2018%2F11%2F04%2F%E7%B2%BE%E9%80%9A%E4%B8%80%E6%AC%BE%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%8Bsublime%20text%203%2F</url>
-    <content type="text"><![CDATA[编辑器常用功能 格式化代码：格式化代码可以让你不用管代码的格式，可以放肆的写程序，你可以少敲很多空格，不用关心代码的格式问题，机器给出的代码格式风格统一且漂亮，一键解决你的格式问题，真是提高码代码效率的非常重要的功能。 查找文件：查找文件是在集成开发的时候非常重要的功能，当文件多起来的时候，快速定位到文件可以节省很多时间，甚至有时候文件实在太多，你只能通过查找的方式找到那个文件。 正则全文件查找和替换：轻松让你更改全局变量和配置，这是一个必须的功能，没有它简直无法想象工作量有多大。 代码收缩和扩展：代码太长怎么办，收缩和扩展啊。 安装卸载插件 cmd+shift+p：打开命令板，输入install，点击：Package Control: Install Package选项，然后搜索你想要的插件。 卸载请在命令板输入：remove，点击：Package Control: Remove Package选项。其实卸载无非就是两个词：remove和uninstall，多试试就行了。 打开命令板之后什么都不想干，怎么关闭命令板呢？其实很简单，再按一次打开命令板的快捷键就行了，开关都用同一个键或者按钮（术语叫：toggle，可开可关），这是比较通用设计理念。 基本快捷键 显示隐藏菜单栏：alt，如果你不小心把菜单栏隐藏了，除了用快捷键唤出，还真不知道有什么其他办法。 显示隐藏目录树：ctrl+k+b，这个功能可以在菜单栏中的 view 中找到，所以我觉得记不记无所谓 vue 插件 vue-syntax-highlight：可以让.vue文件高亮。 HTML-CSS-JS Prettify：可以格式化这三种语言的代码，特别是单文件的 vue，非常需要这个来同时格式化三种语言。不过需要配置一下。工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Plugin Options - Default，然后搜索：allowed_file_extensions，给这个配置项添加一个vue即可，要注意的是有四处有这个配置项，分别是html、css、js、json，如果你想它们全都能格式化，自然是要全都添加vue，但实验证明只加 html 里面就行了，如果在其他几个里面加反而引起了冲突。然后格式化代码的快捷键是什么呢？同样也有配置文件的，工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Keyboard Shortcuts - Default，可以看到： 12345678910111213141516[&#123; &quot;keys&quot;: [&quot;super+shift+h&quot;], &quot;command&quot;: &quot;htmlprettify&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;p&quot;], &quot;command&quot;: &quot;htmlprettify_set_prettify_prefs&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;o&quot;], &quot;command&quot;: &quot;htmlprettify_set_plugin_options&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;k&quot;], &quot;command&quot;: &quot;htmlprettify_set_keyboard_shortcuts&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;n&quot;], &quot;command&quot;: &quot;htmlprettify_set_node_path&quot;&#125;] 第一项即为使用这个插件的快捷键，也就是格式化代码的快捷键。 底栏设置显示文件编码在 mac osx 上一不小心按了 cmd+shift+c，文件的存储格式现在变成了 GBK 格式，当我再按下 cmd+s 保存时，提示我 UTF-8 格式的文件不能用 GBK 格式来保存。怎么解决这个问题呢？首先我想查看这个文件是什么编码，Sublime Text 的默认设置是不开启显示编码的，如果想开启，可通过菜单 Perference → Settings – User，在打开的配置文件里 ，在大括号后面，增加以下内容： 1234// Display file encoding in the status bar&quot;show_encoding&quot;: true,// Display line endings in the status bar&quot;show_line_endings&quot;: true, 此时保存该配置文件，就能够看到 sublime 最底下一行会显示文件编码格式了。以上的配置内容在 Perference → Setting─Default 都是 false 的。 然后在底栏点击文件编码，点击 reopen with encoding，然后选择 utf-8，然后 cmd+w 关闭窗口，然后 cmd+shift+t 重新打开刚刚关闭的窗口，就一切恢复正常了。]]></content>
+    <title><![CDATA[熟练使用JetBrains家的IDE]]></title>
+    <url>%2F2018%2F11%2F04%2F%E7%86%9F%E7%BB%83%E4%BD%BF%E7%94%A8JetBrains%E5%AE%B6%E7%9A%84IDE%2F</url>
+    <content type="text"><![CDATA[通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你在方法前输入/**然后一回车，自动帮你生成方法和参数的注释。 Intellj Idea快速打出常用语句： sout：System.out.println(); psvm： 123public static void main(String[] args) &#123;&#125; 使用 IDE 的右键中的生成 Getter Setter 选项自动生成 Getter Setter，使用 toString 自动生成 toString。 跳转到接口：ctrl+b； 跳转到实现类：ctrl + alt +B 上面这个按钮可以快速的在目录树中定位到当前类所在的路径 ctrl+alt+t]]></content>
       <categories>
         <category>工具</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[熟练使用JetBrains家的IDE]]></title>
-    <url>%2F2018%2F11%2F04%2F%E7%86%9F%E7%BB%83%E4%BD%BF%E7%94%A8JetBrains%E5%AE%B6%E7%9A%84IDE%2F</url>
-    <content type="text"><![CDATA[通用快捷键 格式化代码（reformat code）:win: ctrl+alt+Lmac: command+option+L 在一行的任意位置使用： shift + enter，新建下一行并跳到下一行。 善用代码自动补全功能，变量名和方法名等可以用 enter 补全。导入包可以用 alt + enter。 上下移动代码，ctrl+shift+上下键 Android Studio 生成函数注释：你在方法前输入/**然后一回车，自动帮你生成方法和参数的注释。 Intellj Idea快速打出常用语句： sout：System.out.println(); psvm： 123public static void main(String[] args) &#123;&#125; 使用 IDE 的右键中的生成 Getter Setter 选项自动生成 Getter Setter，使用 toString 自动生成 toString。 跳转到接口：ctrl+b； 跳转到实现类：ctrl + alt +B 上面这个按钮可以快速的在目录树中定位到当前类所在的路径 ctrl+alt+t]]></content>
+    <title><![CDATA[精通一款编辑器之sublime text 3]]></title>
+    <url>%2F2018%2F11%2F04%2F%E7%B2%BE%E9%80%9A%E4%B8%80%E6%AC%BE%E7%BC%96%E8%BE%91%E5%99%A8%E4%B9%8Bsublime%20text%203%2F</url>
+    <content type="text"><![CDATA[编辑器常用功能 格式化代码：格式化代码可以让你不用管代码的格式，可以放肆的写程序，你可以少敲很多空格，不用关心代码的格式问题，机器给出的代码格式风格统一且漂亮，一键解决你的格式问题，真是提高码代码效率的非常重要的功能。 查找文件：查找文件是在集成开发的时候非常重要的功能，当文件多起来的时候，快速定位到文件可以节省很多时间，甚至有时候文件实在太多，你只能通过查找的方式找到那个文件。 正则全文件查找和替换：轻松让你更改全局变量和配置，这是一个必须的功能，没有它简直无法想象工作量有多大。 代码收缩和扩展：代码太长怎么办，收缩和扩展啊。 安装卸载插件 cmd+shift+p：打开命令板，输入install，点击：Package Control: Install Package选项，然后搜索你想要的插件。 卸载请在命令板输入：remove，点击：Package Control: Remove Package选项。其实卸载无非就是两个词：remove和uninstall，多试试就行了。 打开命令板之后什么都不想干，怎么关闭命令板呢？其实很简单，再按一次打开命令板的快捷键就行了，开关都用同一个键或者按钮（术语叫：toggle，可开可关），这是比较通用设计理念。 基本快捷键 显示隐藏菜单栏：alt，如果你不小心把菜单栏隐藏了，除了用快捷键唤出，还真不知道有什么其他办法。 显示隐藏目录树：ctrl+k+b，这个功能可以在菜单栏中的 view 中找到，所以我觉得记不记无所谓 vue 插件 vue-syntax-highlight：可以让.vue文件高亮。 HTML-CSS-JS Prettify：可以格式化这三种语言的代码，特别是单文件的 vue，非常需要这个来同时格式化三种语言。不过需要配置一下。工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Plugin Options - Default，然后搜索：allowed_file_extensions，给这个配置项添加一个vue即可，要注意的是有四处有这个配置项，分别是html、css、js、json，如果你想它们全都能格式化，自然是要全都添加vue，但实验证明只加 html 里面就行了，如果在其他几个里面加反而引起了冲突。然后格式化代码的快捷键是什么呢？同样也有配置文件的，工具栏路径：Sublime Text -&gt; Preferences -&gt; Package Settings -&gt; HTML/CSS/JS Prettify -&gt; Keyboard Shortcuts - Default，可以看到： 12345678910111213141516[&#123; &quot;keys&quot;: [&quot;super+shift+h&quot;], &quot;command&quot;: &quot;htmlprettify&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;p&quot;], &quot;command&quot;: &quot;htmlprettify_set_prettify_prefs&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;o&quot;], &quot;command&quot;: &quot;htmlprettify_set_plugin_options&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;k&quot;], &quot;command&quot;: &quot;htmlprettify_set_keyboard_shortcuts&quot;&#125;, &#123; &quot;keys&quot;: [&quot;super+alt+h&quot;, &quot;n&quot;], &quot;command&quot;: &quot;htmlprettify_set_node_path&quot;&#125;] 第一项即为使用这个插件的快捷键，也就是格式化代码的快捷键。 底栏设置显示文件编码在 mac osx 上一不小心按了 cmd+shift+c，文件的存储格式现在变成了 GBK 格式，当我再按下 cmd+s 保存时，提示我 UTF-8 格式的文件不能用 GBK 格式来保存。怎么解决这个问题呢？首先我想查看这个文件是什么编码，Sublime Text 的默认设置是不开启显示编码的，如果想开启，可通过菜单 Perference → Settings – User，在打开的配置文件里 ，在大括号后面，增加以下内容： 1234// Display file encoding in the status bar&quot;show_encoding&quot;: true,// Display line endings in the status bar&quot;show_line_endings&quot;: true, 此时保存该配置文件，就能够看到 sublime 最底下一行会显示文件编码格式了。以上的配置内容在 Perference → Setting─Default 都是 false 的。 然后在底栏点击文件编码，点击 reopen with encoding，然后选择 utf-8，然后 cmd+w 关闭窗口，然后 cmd+shift+t 重新打开刚刚关闭的窗口，就一切恢复正常了。]]></content>
       <categories>
         <category>工具</category>
       </categories>
