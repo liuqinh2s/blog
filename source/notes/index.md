@@ -5,7 +5,63 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-06-07
+
+监听 dom 的宽高变化：[ResizeObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver)
+
+比如我做一个 scrollButton 组件（用来替代鼠标滚轮，实现点击触发 scroll），就要监听滚动对象父级的宽高变化来控制这个 scrollButton 组件的显示隐藏
+
+## nginx
+
+nginx 的配置位置：`/etc/nginx`中，在该目录下，主要的配置文件是 nginx.conf
+
 # 2023-06-06
+
+买了国外的域名和服务器，这样就可以避免国内特别麻烦的备案了，话说国外的域名和服务器真是便宜啊：
+
+- 服务器（VPS）：[racknerd.com](https://www.racknerd.com/)
+- 域名：[name.com](https://www.name.com/)
+
+服务器购买参考了一篇文章：https://p3terx.com/archives/cheap-vps-racknerd.html，多亏这篇文章才买到了便宜的。
+
+Windows 平台好用的远程 shell 工具：[WindTerm](https://github.com/kingToolbox/WindTerm)
+Mac OS 平台好用的远程 shell 工具：[FinalShell](http://www.hostbuf.com/t/988.html)
+
+> 现在 Windows 平台也有 FinalShell 了，体验终于又统一起来了
+
+以前搭 wordpress 博客的时候，被盗过两次，跟同事讨论了之后，发现可能是因为我使用了 root 账号远程登录，要论安全性的话，最好的方式是：
+
+1. 禁止 root 账号远程登录（那么别人想要登录，就只能猜你的账号名+密码，如果你开放了 root 登录，别人就只需要猜 root 密码）
+2. 把 ssh 端口改为非 22 端口，那黑客想要破解，就需要猜端口
+3. 普通账号不给 root 权限，这样即便普通账号被盗，情况也不算严重
+4. 设置一个强的 root 密码
+
+这样一套组合拳打下来，黑客想要获取你服务器的最高权限，首先要知道你的 ssh 端口，然后要知道一对普通账号密码，最后要知道 root 的密码，才能最终获得最高权限。相比于只靠 root 密码的强度，安全了许多许多。
+
+以下是需要用到的 linux 命令：
+
+- 新建用户：`useradd <yourname>`
+- 修改用户密码：`passwd <yourname>`
+- 修改 ssh 端口号：编辑`/etc/ssh/sshd_config`文件，修改`#Port 22`为：`Port xxxx`
+- 禁止 root 账号远程登录：编辑`/etc/ssh/sshd_config`文件，修改`#PermitRootLogin yes`为：`PermitRootLogin no`
+
+修改完`/etc/ssh/sshd_config`文件后，需要重启一下服务：
+
+```bash
+setenforce 0
+sudo service sshd restart
+```
+
+修改完端口，还要让防火墙放行此端口：
+
+```bash
+// 放行指定端口
+firewall-cmd --zone=public --add-port=xxxx/tcp --permanent
+// 重启防火墙
+systemctl restart firewalld.service
+// 重新载入配置
+firewall-cmd --reload
+```
 
 ## centos 安装 nginx
 
@@ -379,6 +435,20 @@ git reset --hard HEAD
 ```
 
 对 git 还是不够熟悉，之后抽空再巩固一下
+
+两种方式不清除本地提交和清除本地提交的方法
+
+1、回退到上次提交并清除本地提交的代码
+
+```bash
+git reset --hard HEAD^
+```
+
+2、回退到上次提交不清除本地提交的代码
+
+```bash
+git reset --soft HEAD~1
+```
 
 # 2023-02-14
 
