@@ -7,6 +7,14 @@ date: 2018-11-03 14:59:45
 
 # 2023-06-07
 
+## vite 打包使用相对路径
+
+坑爹的 vite 打包默认使用绝对路径，想要使用相对路径可以在配置中填：`base: './'`
+
+[为什么 vite 打包后 dist 文件无法直接运行](http://www.oceanpresent.art/posts/hard-boiled-wonderland/viteassetpath)
+
+## ResizeObserver
+
 监听 dom 的宽高变化：[ResizeObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver)
 
 比如我做一个 scrollButton 组件（用来替代鼠标滚轮，实现点击触发 scroll），就要监听滚动对象父级的宽高变化来控制这个 scrollButton 组件的显示隐藏

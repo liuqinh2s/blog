@@ -5,6 +5,12 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-06-07
+
+- [Github Actions 备忘清单](https://wangchujiang.com/reference/docs/github-actions.html)
+- [新的脚本，自动部署 Hugo 博客至服务器](https://jyan.wang/tech/new-auto-deploy-hugo-blog/)
+- [阮一峰 - GitHub Actions 入门教程](https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+
 # 2023-06-05
 
 - [Every tool you need to work with PDFs in one place](https://www.ilovepdf.com/)
