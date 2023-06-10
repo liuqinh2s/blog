@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="最近买了一台服务器，太多 linux 命令要上网查询了，已经不适合记在札记里面（札记里面一般是记录比较杂的东西，篇幅尚不能形成文章），所以专门开了一篇文章来讲我在使用 linux 服务器遇到的问题，以及解决办法。 首先要谈的是服务器安全问题 以前搭 wordpress 博客的时候，被盗过两次，跟同事讨论了之后，发现可能是因为我使用了 root 账号远程登录，要论安全性的话，最好的方式是：  禁止">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-10T05:02:58.226Z">
+<meta property="og:updated_time" content="2023-06-10T12:59:48.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux使用手册">
 <meta name="twitter:description" content="最近买了一台服务器，太多 linux 命令要上网查询了，已经不适合记在札记里面（札记里面一般是记录比较杂的东西，篇幅尚不能形成文章），所以专门开了一篇文章来讲我在使用 linux 服务器遇到的问题，以及解决办法。 首先要谈的是服务器安全问题 以前搭 wordpress 博客的时候，被盗过两次，跟同事讨论了之后，发现可能是因为我使用了 root 账号远程登录，要论安全性的话，最好的方式是：  禁止">
@@ -495,7 +495,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,312
+                  1,375
                 </span>
               
 
@@ -576,6 +576,8 @@
 <h3 id="nginx-配置单页应用"><a href="#nginx-配置单页应用" class="headerlink" title="nginx 配置单页应用"></a>nginx 配置单页应用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files $uri $uri/ /index.html?$args;</span><br><span class="line">  index  index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Shadowsocks-搭建"><a href="#Shadowsocks-搭建" class="headerlink" title="Shadowsocks 搭建"></a>Shadowsocks 搭建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</span><br><span class="line">vim /etc/shadowsocks.json</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line"><span class="string">"server_port"</span>:<span class="string">"端口"</span>,</span><br><span class="line"><span class="string">"local_port"</span>:1080,</span><br><span class="line"><span class="string">"password"</span>:<span class="string">"密码"</span>,</span><br><span class="line"><span class="string">"timeout"</span>:300,</span><br><span class="line"><span class="string">"method"</span>:<span class="string">"aes-256-gcm"</span></span><br><span class="line">&#125;</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
 <h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>查看防火墙开放的端口：<code>firewall-cmd --list-ports</code></p>
+<h2 id="把常用的程序做成服务，并开机启动"><a href="#把常用的程序做成服务，并开机启动" class="headerlink" title="把常用的程序做成服务，并开机启动"></a>把常用的程序做成服务，并开机启动</h2><p>新建服务脚本：<code>/etc/systemd/system/shadowsocks.service</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Shadowsocks Server Service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
 <li>创建用户：<code>useradd &lt;用户名&gt;</code>，删除用户：<code>userdel &lt;用户名&gt;</code></li>
 <li>修改密码：<code>passwd &lt;用户名&gt;</code></li>
@@ -822,7 +824,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前因"><span class="nav-number">1.</span> <span class="nav-text">前因</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#centos-安装-nginx"><span class="nav-number">1.1.</span> <span class="nav-text">centos 安装 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">1.2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-配置单页应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">nginx 配置单页应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks-搭建"><span class="nav-number">1.3.</span> <span class="nav-text">Shadowsocks 搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙"><span class="nav-number">1.4.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.5.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见文件位置"><span class="nav-number">1.6.</span> <span class="nav-text">常见文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-编辑常用技巧"><span class="nav-number">1.7.</span> <span class="nav-text">vim 编辑常用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-基础知识"><span class="nav-number">1.8.</span> <span class="nav-text">linux 基础知识</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前因"><span class="nav-number">1.</span> <span class="nav-text">前因</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#centos-安装-nginx"><span class="nav-number">1.1.</span> <span class="nav-text">centos 安装 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">1.2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-配置单页应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">nginx 配置单页应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks-搭建"><span class="nav-number">1.3.</span> <span class="nav-text">Shadowsocks 搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙"><span class="nav-number">1.4.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把常用的程序做成服务，并开机启动"><span class="nav-number">1.5.</span> <span class="nav-text">把常用的程序做成服务，并开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.6.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见文件位置"><span class="nav-number">1.7.</span> <span class="nav-text">常见文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-编辑常用技巧"><span class="nav-number">1.8.</span> <span class="nav-text">vim 编辑常用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-基础知识"><span class="nav-number">1.9.</span> <span class="nav-text">linux 基础知识</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -856,7 +858,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">91.9k</span>
+    <span title="Site words total count">92.0k</span>
   
 </div>
 
