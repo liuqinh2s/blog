@@ -5,6 +5,25 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-06-10
+
+搞了两天 kcptun，最后发现居然更新一下版本就解决了问题
+
+问题描述：
+
+手机上用 kcptun 有问题（纯 shadowsocks 无问题），但电脑上没问题。
+
+我解决问题是主线是把报错信息放到谷歌上面搜，这已经是我惯用的手段了，搜了一大波，把可能的方法都试了一遍，正当我快要放弃的时候，我还是搜到了一个答案：`Upgrading to latest kcptun solve this problem`，但是用其他的报错信息搜到的，一共有两个报错信息，在安卓版 shadowsocks 5.3.3 上是：`unable to resolve host "cp.cloudflare.com": no address associated with hostname`，在安卓版 shadowsocks 4.8.7 上是：`libsslocal exits too fast (exit code 70)`
+
+以下是我试过的办法：
+
+1. 把 shadowsocks 服务端换成 go，https://github.com/shadowsocks/go-shadowsocks2。Python版也试过，shadowsocks-libev也试过
+2. 换客户端版本，安卓版 shadowsocks 5.3.3，5.2.6，5.1.1，4.8.7
+3. 换 kcptun 的端口
+4. 在服务器开放 53 端口，安装 dns 服务
+
+结论，以后出问题，第一解决方案应该是，**确保所有软件版本都是最新的**。
+
 # 2023-06-08
 
 有这样一个 bug，在拖动一个三角图标（专门用于拖拽的组件）的时候，光标要显示`col-resize`：
