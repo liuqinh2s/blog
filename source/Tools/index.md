@@ -329,6 +329,11 @@ date: 2019-02-20 20:30:09
 
 - 股票数据：[单只股票数据](http://50.push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000597&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&klt=101&fqt=0&end=20500101&lmt=100000)
 
+## 加密货币
+
+- [门罗币矿池 - heromiers](https://monero.herominers.com/#)
+- [门罗币网页版钱包 - mymonero](https://wallet.mymonero.com/)
+
 ## 其他
 
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
