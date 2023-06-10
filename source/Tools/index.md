@@ -333,6 +333,8 @@ date: 2019-02-20 20:30:09
 
 - [门罗币矿池 - heromiers](https://monero.herominers.com/#)
 - [门罗币网页版钱包 - mymonero](https://wallet.mymonero.com/)
+- [AXS Staking Dashboard](https://stake.axieinfinity.com/)
+- [axie 市场](https://app.axieinfinity.com/marketplace/axies/)
 
 ## 其他
 
