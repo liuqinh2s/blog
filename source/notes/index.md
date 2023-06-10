@@ -24,6 +24,16 @@ date: 2018-11-03 14:59:45
 
 结论，以后出问题，第一解决方案应该是，**确保所有软件版本都是最新的**。
 
+## 下载 github release 文件
+
+链接格式如下：
+
+```
+wget --no-check-certificate --content-disposition https://github.com/xmrig/xmrig/releases/download/v6.19.3/xmrig-6.19.3-linux-x64.tar.gz
+
+curl -LJO https://github.com/ctripcorp/apollo/releases/download/v1.5.1/apollo-adminservice-1.5.1-github.zip
+```
+
 # 2023-06-08
 
 有这样一个 bug，在拖动一个三角图标（专门用于拖拽的组件）的时候，光标要显示`col-resize`：
