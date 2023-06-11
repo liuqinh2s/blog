@@ -5,6 +5,13 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-06-11
+
+- [Music Player](https://shurlormes.github.io/MusicPlayer/#/)
+- [github - Shurlormes/MusicPlayer](https://github.com/Shurlormes/MusicPlayer/blob/master/README.md)
+- [react-jinke-music-player](https://www.lijinke.cn/react-music-player/)
+- [github - lijinke666/react-music-player](https://github.com/lijinke666/react-music-player)
+
 # 2023-06-09
 
 - [配置使用 Kcptun 来暴力加速 shadowsocks 代理](https://lala.im/1569.html)
