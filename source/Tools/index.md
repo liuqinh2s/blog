@@ -44,6 +44,10 @@ date: 2019-02-20 20:30:09
 
 # 我的工具
 
+## 导航
+
+- [影视导航](https://ys.urlsdh.com/)
+
 ## AI
 
 - [AI 导航](https://ai.nancheng.fun/)
