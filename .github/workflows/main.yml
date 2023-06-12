@@ -1,23 +1,20 @@
-name: Deploy
+name: deploying Hexo project to GitHub pages
 on:
   push:
     branches:
-      - master  # 只在master上push触发部署
-    paths-ignore: # 下列文件的变更不触发部署
-      - README.md
-      - LICENSE
+      - master # master 分支有 push 行为时就触发这个 action
+
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest # 使用ubuntu系统镜像运行自动化脚本
-    steps: # 自动化步骤
-      - name: Checkout  # 第一步，下载代码仓库
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 12.22.12
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm install & npm i hexo-cli -g
-      - name: Build
-        run: hexo clean & hexo g
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Build and Deploy
+        uses: theme-keep/hexo-deploy-github-pages-action@master # 使用专门部署 Hexo 到 GitHub pages 的 action
+        env:
+          PERSONAL_TOKEN: ${{ secrets.HEXO_DEPLOY }} # secret 名
+          PUBLISH_REPOSITORY: liuqinh2s/blog # 公共仓库，格式：GitHub 用户名/仓库名
+          BRANCH: master # 分支，填 gh-pages 就行
+          PUBLISH_DIR: ./docs # 部署 public 目录下的文件
