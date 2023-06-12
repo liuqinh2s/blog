@@ -18,6 +18,6 @@ jobs:
           node-version: 12.22.12
           cache: 'npm'
       - name: Install dependencies
-        run: npm install & npx hexo
+        run: npm install & npm i hexo-cli -g
       - name: Build
-        run: npm run build
+        run: hexo clean & hexo g
