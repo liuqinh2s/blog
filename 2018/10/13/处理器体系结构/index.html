@@ -84,45 +84,45 @@
 <meta name="description" content="阅读这篇文章必须要对汇编码有足够的了解，如果你对 IA32 汇编码还不够了解，可以先看看这篇文章：程序的机器级表示 Y86 指令集体系结构Y86 指令集基本上是 IA32 指令集的一个子集。这个指令集就是我们处理器实现的目标。如下图：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《CSAPP》 -- 处理器体系结构">
-<meta property="og:url" content="https://liuqinh2s.github.io/2018/10/13/处理器体系结构/index.html">
+<meta property="og:url" content="https://liuqinh2s.xyz/2018/10/13/处理器体系结构/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="阅读这篇文章必须要对汇编码有足够的了解，如果你对 IA32 汇编码还不够了解，可以先看看这篇文章：程序的机器级表示 Y86 指令集体系结构Y86 指令集基本上是 IA32 指令集的一个子集。这个指令集就是我们处理器实现的目标。如下图：">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/Y86指令集.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/指令编码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/寄存器编码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/Y86异常.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/IA32对比Y86代码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/Y86汇编代码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/逻辑门.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/组合电路.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/MUX组合电路.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/字级与电路.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/字级异或电路.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/字级多路复用电路.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/四路复用器.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/最小值电路.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/ALU.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/集合关系.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/硬件寄存器.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/寄存器文件.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/随机访问存储器.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/Y86指令阶段解析.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/4-18.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/subl指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/4-19.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/rmmovl指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/4-20.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/pushl指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/4-21.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/je指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/ret指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/SEQ硬件结构.png">
-<meta property="og:updated_time" content="2023-06-13T12:33:40.370Z">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/Y86指令集.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/指令编码.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/寄存器编码.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/Y86异常.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/IA32对比Y86代码.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/Y86汇编代码.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/逻辑门.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/组合电路.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/MUX组合电路.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/字级与电路.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/字级异或电路.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/字级多路复用电路.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/四路复用器.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/最小值电路.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/ALU.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/集合关系.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/硬件寄存器.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/寄存器文件.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/随机访问存储器.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/Y86指令阶段解析.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/4-18.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/subl指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/4-19.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/rmmovl指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/4-20.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/pushl指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/4-21.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/je指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/ret指令.png">
+<meta property="og:image" content="https://liuqinh2s.xyz/images/2018/SEQ硬件结构.png">
+<meta property="og:updated_time" content="2023-06-13T12:47:16.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CSAPP》 -- 处理器体系结构">
 <meta name="twitter:description" content="阅读这篇文章必须要对汇编码有足够的了解，如果你对 IA32 汇编码还不够了解，可以先看看这篇文章：程序的机器级表示 Y86 指令集体系结构Y86 指令集基本上是 IA32 指令集的一个子集。这个指令集就是我们处理器实现的目标。如下图：">
-<meta name="twitter:image" content="https://liuqinh2s.github.io/images/2018/Y86指令集.png">
+<meta name="twitter:image" content="https://liuqinh2s.xyz/images/2018/Y86指令集.png">
 
 
 
@@ -152,7 +152,7 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/2018/10/13/处理器体系结构/">
+  <link rel="canonical" href="https://liuqinh2s.xyz/2018/10/13/处理器体系结构/">
 
 
 
@@ -446,7 +446,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2018/10/13/处理器体系结构/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2018/10/13/处理器体系结构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
