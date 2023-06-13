@@ -9,8 +9,9 @@
     e.setAttribute("theme","{{ theme.utterance.theme }}"),
     e.setAttribute("repo","{{ theme.utterance.repo }}"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 {% endif %}
