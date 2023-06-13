@@ -486,7 +486,7 @@ needmoreshare2:
 # Google Analytics
 google_analytics:
   enable: true
-  id: UA-91674544-1 #谷歌的分析 id
+  id: G-JKEL3MWXN4 #谷歌的分析 id
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
