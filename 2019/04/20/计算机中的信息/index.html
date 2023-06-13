@@ -89,7 +89,7 @@
 <meta property="og:description" content="信息的本质信息的本质是消除不确定性：我们抛掷一枚硬币，然后用手盖住，出现正面朝上和反面朝上的概率都是二分之一。当我们偷看了结果，确定了是正面还是反面朝上，也就获得了信息。在这个例子中，我们消除的不确定性是一个二分之一的概率。在 香农 划时代的论文 通信的数学原理 中，首次提出了信息是可量化的，以及如何量化信息。我们以 bit 为信息的度量单位，一个 bit 可以是 0 或者 1，我们每获得一个 b">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/04/21/5cbbc51c0887c.png">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.191Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机中的信息">
 <meta name="twitter:description" content="信息的本质信息的本质是消除不确定性：我们抛掷一枚硬币，然后用手盖住，出现正面朝上和反面朝上的概率都是二分之一。当我们偷看了结果，确定了是正面还是反面朝上，也就获得了信息。在这个例子中，我们消除的不确定性是一个二分之一的概率。在 香农 划时代的论文 通信的数学原理 中，首次提出了信息是可量化的，以及如何量化信息。我们以 bit 为信息的度量单位，一个 bit 可以是 0 或者 1，我们每获得一个 b">
@@ -1021,8 +1021,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="这个问题看起来是个简单题，其实可以从中学到位运算和一些数学知识。  342. 4的幂我自己的解法很简单易懂，但是不够高效：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.191Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode每日一题： 342. 4的幂">
 <meta name="twitter:description" content="这个问题看起来是个简单题，其实可以从中学到位运算和一些数学知识。  342. 4的幂我自己的解法很简单易懂，但是不够高效：">
@@ -1006,8 +1006,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="闭包是干什么用的本质上闭包就是为了拓展查找自由变量的范围 MDN 对闭包的定义为： A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment) 一个函数和对其周围状态（lexical">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.195Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 闭包">
 <meta name="twitter:description" content="闭包是干什么用的本质上闭包就是为了拓展查找自由变量的范围 MDN 对闭包的定义为： A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment) 一个函数和对其周围状态（lexical">
@@ -1027,8 +1027,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

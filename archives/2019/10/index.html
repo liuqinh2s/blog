@@ -824,8 +824,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

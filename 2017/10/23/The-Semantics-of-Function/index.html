@@ -90,7 +90,7 @@
 <meta property="og:description" content="c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2018/04/25/5ae01bb4b32a9.gif">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.191Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 四 -- The Semantics of Function">
 <meta name="twitter:description" content="c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。">
@@ -1048,8 +1048,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

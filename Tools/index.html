@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="这是我上网冲浪发现的一些好东西，大部分是网站，也有些其他类型的工具，资源。 没事的时候看看这里基本上是个人博客网站：  https://devtool.tech/ https://shanyue.tech/ https://solstice23.top/ https://www.liuchuo.net/about https://www.anishathalye.com/ http://mindh">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.191Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tools">
 <meta name="twitter:description" content="这是我上网冲浪发现的一些好东西，大部分是网站，也有些其他类型的工具，资源。 没事的时候看看这里基本上是个人博客网站：  https://devtool.tech/ https://shanyue.tech/ https://solstice23.top/ https://www.liuchuo.net/about https://www.anishathalye.com/ http://mindh">
@@ -1207,8 +1207,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

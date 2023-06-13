@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.195Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器重装系统">
 <meta name="twitter:description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
@@ -1000,8 +1000,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

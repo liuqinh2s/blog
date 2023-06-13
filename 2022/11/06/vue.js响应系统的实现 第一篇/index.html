@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="什么是副作用函数？如果一个函数只是接收输入，然后输出，没有影响外部（比如修改外部变量），那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。 举个例子： 123function effect() &amp;#123;  document.body.innerText = &quot;hello vue3&quot;;&amp;#125;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.195Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue.js响应系统的实现 第一篇">
 <meta name="twitter:description" content="什么是副作用函数？如果一个函数只是接收输入，然后输出，没有影响外部（比如修改外部变量），那么我们就说这个函数没有副作用，反之就是有副作用。理想的情况下，我们希望所有的函数都很纯粹，没有副作用。 举个例子： 123function effect() &amp;#123;  document.body.innerText = &quot;hello vue3&quot;;&amp;#125;">
@@ -1026,8 +1026,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="Getting started | Bitcoin Design">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.195Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加密货币收藏网址">
 <meta name="twitter:description" content="Getting started | Bitcoin Design">
@@ -1026,8 +1026,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 

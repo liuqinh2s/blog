@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。  参考资料：  杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-06-13T12:47:16.191Z">
+<meta property="og:updated_time" content="2023-06-13T13:00:40.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="position sticky">
 <meta name="twitter:description" content="在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。  参考资料：  杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN">
@@ -992,8 +992,9 @@
     e.setAttribute("theme","github-light"),
     e.setAttribute("repo","liuqinh2s/blog-comment"),
     e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js",
-    document.getElementById("utterance-container").appendChild(e)
+    e.src="https://utteranc.es/client.js";
+    var utterance_container = document.getElementById("utterance-container");
+    utterance_container && utterance_container.appendChild(e);
     })()
 </script>
 
