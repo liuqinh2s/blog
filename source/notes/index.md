@@ -24,7 +24,7 @@ date: 2018-11-03 14:59:45
 {% endif %}
 ```
 
-主题配置文件`_config.yml`中添加变量：
+主题配置文件`_config.yml`中添加变量：`google_analytics: G-xxx`
 
 # 2023-06-10
 
