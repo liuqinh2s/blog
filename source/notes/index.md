@@ -9,7 +9,7 @@ date: 2018-11-03 14:59:45
 
 搞定了obsidian多端同步，通过git插件自动和远端github同步。可以愉快的在手机上码博客了。而且据说obsidian挺好用的，应该比vscode写博客强吧。
 
-添加了google analytics，GA4
+添加了google analytics，GA4。在
 
 # 2023-06-10
 
