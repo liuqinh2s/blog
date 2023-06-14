@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "source/notes/index.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
@@ -132,5 +132,11 @@
     }
   },
   "active": "20750bbdf58493b3",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "/themes/next/layout/_third-party/comments/utterance.swig",
+    "/themes/next/layout/_third-party/analytics/google-analytics.swig",
+    "/themes/next/_config.yml",
+    "/source/notes/index.md",
+    "/_config.yml"
+  ]
 }
