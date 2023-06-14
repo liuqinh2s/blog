@@ -26,7 +26,7 @@ date: 2018-11-03 14:59:45
 
 主题配置文件`_config.yml`中添加变量：`google_analytics: G-xxx`
 
-gu'ge
+[谷歌分析看板](https://analytics.google.com/analytics/web/#/p383781563/reports/intelligenthome)
 
 # 2023-06-10
 
