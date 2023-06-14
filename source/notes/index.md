@@ -26,6 +26,8 @@ date: 2018-11-03 14:59:45
 
 主题配置文件`_config.yml`中添加变量：`google_analytics: G-xxx`
 
+gu'ge
+
 # 2023-06-10
 
 搞了两天 kcptun，最后发现居然更新一下版本就解决了问题
