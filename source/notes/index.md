@@ -9,7 +9,22 @@ date: 2018-11-03 14:59:45
 
 搞定了obsidian多端同步，通过git插件自动和远端github同步。可以愉快的在手机上码博客了。而且据说obsidian挺好用的，应该比vscode写博客强吧。
 
-添加了google analytics，GA4。在
+添加了google analytics，GA4。在主题里面找到`google-analytics.swig`，代码如下：
+
+```
+{% if theme.google_analytics %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ theme.google_analytics }}');
+</script>
+{% endif %}
+```
+
+主题配置文件`_config.yml`中添加变量：
 
 # 2023-06-10
 
