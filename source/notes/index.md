@@ -9,7 +9,7 @@ date: 2018-11-03 14:59:45
 
 [如何在win7上安装obsidian](https://forum-zh.obsidian.md/t/topic/19728/3)
 
-jianer
+简而言之就是去github上下载1.1.x的老版本的obsidian，我下载的是1.1.16
 
 # 2023-06-13
 
