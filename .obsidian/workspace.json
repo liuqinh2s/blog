@@ -153,8 +153,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ab1867aa246ba158",
+  "active": "119cc3edc9cdd007",
   "lastOpenFiles": [
+    "themes/next/layout/_custom/footer.swig",
     "source/Mark/index.md",
     "source/notes/index.md",
     "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
