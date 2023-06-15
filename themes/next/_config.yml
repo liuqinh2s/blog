@@ -66,7 +66,7 @@ footer:
     # site running time
     enable: true
     # birthday of your site
-    birthday: 20181001
+    birthday: 20171001
     # color of number
     color: "#1890ff"
   # -------------------------------------------------------------

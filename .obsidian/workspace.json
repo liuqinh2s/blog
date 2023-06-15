@@ -18,14 +18,6 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "eb8f52aa7ebf05eb",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
           }
         ]
       }
@@ -155,6 +147,7 @@
   },
   "active": "119cc3edc9cdd007",
   "lastOpenFiles": [
+    "source/_posts/2023/2023-06-07-linux使用手册.md",
     "themes/next/layout/_custom/footer.swig",
     "source/Mark/index.md",
     "source/notes/index.md",

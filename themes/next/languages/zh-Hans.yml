@@ -48,6 +48,7 @@ page:
 footer:
   powered: "由 %s 强力驱动"
   theme: 主题
+  age: 本站已运行
 
 counter:
   tag_cloud:
@@ -85,9 +86,9 @@ cheers:
 keep_on: 继续努力。
 
 symbol:
-  comma: '， '
-  period: '。 '
-  colon: '：'
+  comma: "， "
+  period: "。 "
+  colon: "："
 
 reward:
   donate: 打赏
