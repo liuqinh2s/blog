@@ -5,6 +5,10 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-06-15
+
+- [通往AGI之路](http://waytoagi.com)
+
 # 2023-06-11
 
 - [Music Player](https://shurlormes.github.io/MusicPlayer/#/)

@@ -62,6 +62,13 @@ footer:
     enable: true
     # Version info of NexT after scheme info (vX.X.X).
     version: true
+  ages:
+    # site running time
+    enable: true
+    # birthday of your site
+    birthday: 20171001
+    # color of number
+    color: "#1890ff"
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
@@ -236,7 +243,7 @@ auto_excerpt:
 post_meta:
   item_text: true
   created_at: true
-  updated_at: false
+  updated_at: true
   categories: true
 
 # Post wordcount display settings
