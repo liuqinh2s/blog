@@ -9,6 +9,8 @@ date: 2018-11-03 14:59:45
 
 [如何在win7上安装obsidian](https://forum-zh.obsidian.md/t/topic/19728/3)
 
+jianer
+
 # 2023-06-13
 
 搞定了obsidian多端同步，通过git插件自动和远端github同步。可以愉快的在手机上码博客了。而且据说obsidian挺好用的，应该比vscode写博客强吧。
