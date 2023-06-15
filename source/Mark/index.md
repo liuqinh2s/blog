@@ -7,7 +7,7 @@ date: 2019-02-20 20:30:09
 
 # 2023-06-15
 
-- [](**waytoagi.com**)
+- [通往AGI之路](https://waytoagi.com)
 
 # 2023-06-11
 
