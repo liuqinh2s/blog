@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
+                "file": "source/notes/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
+                "file": "source/notes/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
+                "file": "source/notes/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,12 +125,11 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/2023/2023-05-22-AwesomeWeb项目.md"
+                "file": "source/notes/index.md"
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -146,10 +145,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2a79cfbaf53a0b08",
+  "active": "119cc3edc9cdd007",
   "lastOpenFiles": [
-    "source/notes/index.md",
     "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
+    "source/notes/index.md",
     "source/Mark/index.md",
     "README.md"
   ]
