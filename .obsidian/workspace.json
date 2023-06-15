@@ -13,10 +13,18 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/notes/index.md",
+                "file": "source/Mark/index.md",
                 "mode": "source",
                 "source": false
               }
+            }
+          },
+          {
+            "id": "eb8f52aa7ebf05eb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/notes/index.md",
+                "file": "source/Mark/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/notes/index.md",
+                "file": "source/Mark/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/notes/index.md"
+                "file": "source/Mark/index.md"
               }
             }
           }
@@ -147,8 +155,8 @@
   },
   "active": "119cc3edc9cdd007",
   "lastOpenFiles": [
-    "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
     "source/notes/index.md",
+    "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
     "source/Mark/index.md",
     "README.md"
   ]
