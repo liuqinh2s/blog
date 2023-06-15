@@ -129,7 +129,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -145,7 +146,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "119cc3edc9cdd007",
+  "active": "2a79cfbaf53a0b08",
   "lastOpenFiles": [
     "source/notes/index.md",
     "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
