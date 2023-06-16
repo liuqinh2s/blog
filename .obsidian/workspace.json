@@ -25,8 +25,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -148,7 +147,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6b04a7c4fd0cd05e",
+  "active": "119cc3edc9cdd007",
   "lastOpenFiles": [
     "source/资源导航/index.md",
     "source/资源导航",
