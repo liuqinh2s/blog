@@ -11,6 +11,8 @@ date: 2019-02-20 20:30:09
 - [GitHub Actions by Example](https://www.actionsbyexample.com/)
 - [提示工程指南 | Prompt Engineering Guide](https://www.promptingguide.ai/zh)
 - [高等院校三千所 👨‍🎓 助力考生选大学 | Laosheng.top](https://laosheng.top/fuwu/yuanxiao)
+- [Tiny Player | Tiny Player](https://tiny-player.vercel.app/)
+- [zh-lx/code-inspector: 点击页面元素，可以自动定位至编辑器元素对应源代码，支持 webpack 和 vite](https://github.com/zh-lx/code-inspector)
 
 # 2023-06-15
 
