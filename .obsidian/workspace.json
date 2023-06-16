@@ -11,12 +11,8 @@
             "id": "119cc3edc9cdd007",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/Tools/index.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/Tools/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/Tools/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "source/Tools/index.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -147,6 +139,8 @@
   },
   "active": "ab1867aa246ba158",
   "lastOpenFiles": [
+    "source/资源导航/index.md",
+    "source/资源导航",
     "source/友情链接/index.md",
     "source/Tools/index.md",
     "source/notes/index.md",
