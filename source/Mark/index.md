@@ -5,9 +5,16 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-06-16
+
+- [Introduction to Compilers and Language Design](https://www3.nd.edu/~dthain/compilerbook/)
+- [GitHub Actions by Example](https://www.actionsbyexample.com/)
+- [提示工程指南 | Prompt Engineering Guide](https://www.promptingguide.ai/zh)
+- [高等院校三千所 👨‍🎓 助力考生选大学 | Laosheng.top](https://laosheng.top/fuwu/yuanxiao)
+
 # 2023-06-15
 
-- [通往AGI之路](http://waytoagi.com)
+- [通往 AGI 之路](http://waytoagi.com)
 
 # 2023-06-11
 

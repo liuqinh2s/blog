@@ -286,10 +286,6 @@ date: 2019-02-20 20:30:09
 - [The Illustrated TLS 1.3 Connection](https://tls13.xargs.org/)
 - [Three Pillars of Observability | Datadog](https://www.datadoghq.com/three-pillars-of-observability/)
 - [What is WebAuthn and why should you care? - FusionAuth](https://fusionauth.io/blog/2022/09/13/what-is-webauthn-why-do-you-care)
-- [Introduction to Compilers and Language Design](https://www3.nd.edu/~dthain/compilerbook/)
-- [GitHub Actions by Example](https://www.actionsbyexample.com/)
-- [提示工程指南 | Prompt Engineering Guide](https://www.promptingguide.ai/zh)
-- [高等院校三千所 👨‍🎓 助力考生选大学 | Laosheng.top]()
 
 ### 前端面试
 
