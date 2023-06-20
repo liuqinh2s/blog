@@ -11,8 +11,12 @@
             "id": "936b0b32a9939e2a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "source/资源导航/index.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "source/资源导航/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "source/资源导航/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "source/资源导航/index.md"
+              }
             }
           }
         ]
@@ -137,7 +145,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "936b0b32a9939e2a",
+  "active": "ab1867aa246ba158",
   "lastOpenFiles": [
     "source/资源导航/index.md",
     "source/资源导航",
