@@ -105,7 +105,7 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   Computer Science: /ComputerScience/ || bug
-  Notes: /notes/ || book
+  Program Notes: /notes/ || book
   前端面试指南: /前端面试指南/ || bank
   游戏开发之旅: /游戏开发之旅/ || gamepad
   English: /English/ || language
