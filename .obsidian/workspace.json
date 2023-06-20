@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/notes/index.md",
+                "file": "source/资源导航/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/notes/index.md",
+                "file": "source/资源导航/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/notes/index.md",
+                "file": "source/资源导航/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/notes/index.md"
+                "file": "source/资源导航/index.md"
               }
             }
           }
@@ -146,13 +146,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "119cc3edc9cdd007",
+  "active": "ab1867aa246ba158",
   "lastOpenFiles": [
+    "source/notes/index.md",
     "source/资源导航/index.md",
     "source/资源导航",
     "themes/next/layout/_custom/footer.swig",
     "source/Mark/index.md",
-    "source/notes/index.md",
     "README.md"
   ]
 }
