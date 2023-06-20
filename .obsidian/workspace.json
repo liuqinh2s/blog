@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "baf03d6710eb5189",
+        "id": "bef5221d902f2631",
         "type": "tabs",
         "children": [
           {
-            "id": "119cc3edc9cdd007",
+            "id": "936b0b32a9939e2a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/资源导航/index.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/资源导航/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/资源导航/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,35 +118,36 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "source/资源导航/index.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "ab1867aa246ba158",
+  "active": "936b0b32a9939e2a",
   "lastOpenFiles": [
-    "source/notes/index.md",
     "source/资源导航/index.md",
     "source/资源导航",
-    "themes/next/layout/_custom/footer.swig",
+    "source/友情链接/index.md",
+    "source/Tools/index.md",
+    "source/notes/index.md",
     "source/Mark/index.md",
+    "source/_posts/2023/2023-06-07-linux使用手册.md",
+    "themes/next/layout/_custom/footer.swig",
+    "source/_posts/2023/2023-05-22-AwesomeWeb项目.md",
     "README.md"
   ]
 }
