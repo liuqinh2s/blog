@@ -5,6 +5,9 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些好东西，大部分是网站，也有些其他类型的工具，资源。
 
+- [unsplash](https://unsplash.com/)
+- [zlibrary](https://zlibrary-asia.se/)
+
 # 没事的时候看看
 
 这里基本上是个人博客网站：
@@ -63,7 +66,6 @@ date: 2019-02-20 20:30:09
 
 ### 图片
 
-- [unsplash](https://unsplash.com/)
 - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
 - [project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
 - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
