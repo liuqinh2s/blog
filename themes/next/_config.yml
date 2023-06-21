@@ -105,8 +105,8 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   Awesome Project: /Awesome Project/ || star
-  Computer Science: /ComputerScience/ || bug
-  Program Notes: /notes/ || book
+  Computer Science: /ComputerScience/ || code
+  Journal: /notes/ || book
   前端面试指南: /前端面试指南/ || bank
   English: /English/ || language
   资源导航: /资源导航/ || wrench
