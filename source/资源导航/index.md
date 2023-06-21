@@ -7,6 +7,8 @@ date: 2019-02-20 20:30:09
 
 - [unsplash](https://unsplash.com/)
 - [zlibrary](https://zlibrary-asia.se/)
+- 伊丽莎白植物手绘：[ILLUSTRATIONS of the NATURAL ORDERS of PLANTS](https://www.c82.net/twining/plants/)
+- [梗图微缩世界](https://floor796.com/)
 
 # 没事的时候看看
 
