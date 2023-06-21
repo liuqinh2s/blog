@@ -106,12 +106,12 @@ menu:
   archives: /archives/ || archive
   Awesome Project: /Awesome Project/ || star
   Computer Science: /ComputerScience/ || code
-  Journal: /notes/ || book
+  Notes: /notes/ || book
   前端面试指南: /前端面试指南/ || bank
   English: /English/ || language
   资源导航: /资源导航/ || wrench
   Reading: /Reading/ || list
-  leetcode: /leetcode/ || code
+  leetcode: /leetcode/ || coffee
   友情链接: /友情链接/ || link
 
   # Life Experience: /LifeExperience/ || bank
