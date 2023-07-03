@@ -77,7 +77,9 @@ date: 2019-02-20 20:30:09
 
 ### 视频
 
-- 影视网站：[努努影视](https://www.nunuyy5.org/)
+- 影视网站：
+  - [努努影视](https://www.nunuyy5.org/)
+  - [艾旦视频](https://www.lovedan.net/)
 - 云媒体：[老生常谈云媒体，党和人民在一起 ☁️](https://laosheng.top/fly/)
 - [抖音网页版](https://www.douyin.com/)
 - 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
