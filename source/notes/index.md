@@ -7,15 +7,15 @@ date: 2018-11-03 14:59:45
 
 # 2023-06-15
 
-[如何在win7上安装obsidian](https://forum-zh.obsidian.md/t/topic/19728/3)
+[如何在 win7 上安装 obsidian](https://forum-zh.obsidian.md/t/topic/19728/3)
 
-简而言之就是去github上下载1.1.x的老版本的obsidian，我下载的是1.1.16
+简而言之就是去 github 上下载 1.1.x 的老版本的 obsidian，我下载的是 1.1.16
 
 # 2023-06-13
 
-搞定了obsidian多端同步，通过git插件自动和远端github同步。可以愉快的在手机上码博客了。而且据说obsidian挺好用的，应该比vscode写博客强吧。
+搞定了 obsidian 多端同步，通过 git 插件自动和远端 github 同步。可以愉快的在手机上码博客了。而且据说 obsidian 挺好用的，应该比 vscode 写博客强吧。
 
-添加了google analytics，GA4。在主题里面找到`google-analytics.swig`，代码如下：
+添加了 google analytics，GA4。在主题里面找到`google-analytics.swig`，代码如下：
 
 ```
 {% if theme.google_analytics %}
