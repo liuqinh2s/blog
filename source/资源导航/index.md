@@ -5,12 +5,7 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些好东西，大部分是网站，也有些其他类型的工具，资源。
 
-- [unsplash](https://unsplash.com/)
-- [zlibrary](https://zlibrary-asia.se/)
-- 伊丽莎白植物手绘：[ILLUSTRATIONS of the NATURAL ORDERS of PLANTS](https://www.c82.net/twining/plants/)
-- [梗图微缩世界](https://floor796.com/)
-
-# 没事的时候看看
+# 个人博客
 
 这里基本上是个人博客网站：
 
@@ -51,23 +46,21 @@ date: 2019-02-20 20:30:09
 
 # 综合资源
 
-- [居居西](https://jujuxi.xyz)
+- [居居西](https://jujuxi.xyz)：这是我自己制作的资源分享网站，用于分享我喜爱的网络资源，如果有侵权的地方，可以直接联系我删除
+- [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
 
 ## 导航
 
 - [影视导航](https://ys.urlsdh.com/)
+- [AI 导航](https://ai.nancheng.fun/)
 
 ## AI
 
-- [AI 导航](https://ai.nancheng.fun/)
 - [ChatGPT](https://chat.openai.com/)
-
-## 常用资源网站
-
-- [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
 
 ### 图片
 
+- [unsplash](https://unsplash.com/)
 - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
 - [project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
 - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
@@ -89,7 +82,6 @@ date: 2019-02-20 20:30:09
 
 - 平台：
   - [zlibrary](https://zlibrary-asia.se/)
-  - [zlibrary](https://zlib.app/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
   - [技术书在线阅读](https://livebook.manning.com/)
   - [图灵社区](https://www.ituring.com.cn/)
