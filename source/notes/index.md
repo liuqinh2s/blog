@@ -5,6 +5,23 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-07-06
+
+最近同事遇到一个react的坑，他把root缓存了起来，然后发现整个组件不更新：
+
+```typescript
+root = root || ReactDOMClient.createRoot(dom);
+root.render(<App {...props}></App>);
+```
+
+不缓存就可以更新了。
+
+实际上react的useState是只在初始化的时候用参数的值的，而想要让组件重新初始化，可以加key，key改变，就会重新初始化。
+
+父组件render，子组件也会render，但不一定会用useState里面的值（除非子组件重新初始化）
+
+父组件重新初始化，子组件也会重新初始化，且一定会用useState里面的值
+
 # 2023-06-15
 
 [如何在 win7 上安装 obsidian](https://forum-zh.obsidian.md/t/topic/19728/3)
