@@ -104,7 +104,7 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
-  Awesome Project: /Awesome Project/ || star
+  Mark: /Mark/ || star
   Computer Science: /ComputerScience/ || code
   Notes: /notes/ || book
   前端面试指南: /前端面试指南/ || bank

@@ -5,6 +5,10 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-07-07
+
+- [A free API database list for developers](https://apivault.dev/)：这个网站收集了大量公共 API，相当于 API 的搜索引擎，用户可以提交新的 API。
+
 # 2023-06-16
 
 - [Introduction to Compilers and Language Design](https://www3.nd.edu/~dthain/compilerbook/)
