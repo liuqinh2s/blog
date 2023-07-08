@@ -7,40 +7,39 @@ date: 2019-02-20 20:30:09
 
 # 个人博客
 
-这里基本上是个人博客网站：
+## 中文
+
+- [云风的 BLOG](https://blog.codingnow.com/)
+- [拔赤](http://jayli.github.io/)
+- [知乎vczh轮子哥](http://www.cppblog.com/vczh/)
+- [刘未鹏](http://mindhacks.cn/)
+- [翁天信](https://www.dandyweng.com/)
+- [程序员的喵](https://catcoding.me/)
+- [geekplux](https://geekplux.com/)
+- [lcomplete 的技术分享](https://tech.codelc.com/)
+- [Shidenggui](https://shidenggui.com/)
+- [folyd](https://folyd.com/)
+- [Star Rocket Blog](https://blog.starrocket.io/blog/)
+- [t9t](https://blog.t9t.io/)
+- [冴羽的博客](https://github.com/mqyqingfeng/Blog)
+- [匠心博客](https://zhaomenghuan.js.org/)
+- [小弟调调™](https://wangchujiang.com/)
+
+## English
+
+- [meyerweb](https://meyerweb.com/)
+- [dogatekin](https://www.dogatekin.com/)
+- [humanwhocodes](https://humanwhocodes.com/)
+- [standardista](http://www.standardista.com/)
+- [stuffwithstuff](https://journal.stuffwithstuff.com/)
 
 - https://devtool.tech/
 - https://shanyue.tech/
 - https://solstice23.top/
 - https://www.liuchuo.net/about
 - https://www.anishathalye.com/
-- http://mindhacks.cn/
-- https://www.dandyweng.com/
-- http://www.cppblog.com/vczh/
-- https://byvoid.com/zhs/
-- https://humanwhocodes.com/
-- https://www.dogatekin.com/
-- https://wiki.geekplux.com/#/page/GeekPlux%20Wiki
-- https://catcoding.me/2022/01/12/a-book-on-programming-language.html
-- http://jayli.github.io/
-- https://blog.codingnow.com/
-- https://v2.daiwei.site/web_v2/home?v=2.15
-- https://meyerweb.com/
-- https://tech.codelc.com/docs/thinking/quotes.html?utm_campaign=%E9%87%8E%E7%94%9F%E6%9E%B6%E6%9E%84%E5%B8%88&utm_medium=email&utm_source=Revue%20newsletter
-- https://bloghub.fun/?utm_campaign=%E9%87%8E%E7%94%9F%E6%9E%B6%E6%9E%84%E5%B8%88&utm_medium=email&utm_source=Revue%20newsletter
-- https://2d2d.io/?utm_campaign=%E9%87%8E%E7%94%9F%E6%9E%B6%E6%9E%84%E5%B8%88&utm_medium=email&utm_source=Revue%20newsletter
-- https://blog.starrocket.io/blog/
-- http://www.standardista.com/
-- https://www.getrevue.co/profile/lcomplete
-- https://catcoding.me/
-- https://journal.stuffwithstuff.com/
 - https://f5.pm/go-21699.html
 - http://tools.liumingye.cn/
-- https://blog.t9t.io/
-- https://github.com/mqyqingfeng/Blog
-- https://tech.meituan.com/
-- https://zhaomenghuan.js.org/
-- https://wangchujiang.com/reference/
 
 # 我的工具
 
