@@ -11,7 +11,7 @@ date: 2019-02-20 20:30:09
 
 - [云风的 BLOG](https://blog.codingnow.com/)
 - [拔赤](http://jayli.github.io/)
-- [知乎vczh轮子哥](http://www.cppblog.com/vczh/)
+- [知乎 vczh 轮子哥](http://www.cppblog.com/vczh/)
 - [刘未鹏](http://mindhacks.cn/)
 - [翁天信](https://www.dandyweng.com/)
 - [程序员的喵](https://catcoding.me/)
@@ -23,7 +23,9 @@ date: 2019-02-20 20:30:09
 - [t9t](https://blog.t9t.io/)
 - [冴羽的博客](https://github.com/mqyqingfeng/Blog)
 - [匠心博客](https://zhaomenghuan.js.org/)
-- [小弟调调™](https://wangchujiang.com/)
+- [小弟调调 ™](https://wangchujiang.com/)
+- [山月行](https://shanyue.tech/)
+- [柳婼 の blog](https://www.liuchuo.net/)
 
 ## English
 
@@ -32,14 +34,7 @@ date: 2019-02-20 20:30:09
 - [humanwhocodes](https://humanwhocodes.com/)
 - [standardista](http://www.standardista.com/)
 - [stuffwithstuff](https://journal.stuffwithstuff.com/)
-
-- https://devtool.tech/
-- https://shanyue.tech/
-- https://solstice23.top/
-- https://www.liuchuo.net/about
-- https://www.anishathalye.com/
-- https://f5.pm/go-21699.html
-- http://tools.liumingye.cn/
+- [Anish Athalye](https://anishathalye.com/)
 
 # 我的工具
 
