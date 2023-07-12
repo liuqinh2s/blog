@@ -107,12 +107,12 @@ menu:
   Mark: /Mark/ || star
   Computer Science: /ComputerScience/ || code
   Notes: /notes/ || book
-  前端面试指南: /前端面试指南/ || bank
+  Interview: /Interview/ || bank
   English: /English/ || language
-  资源导航: /资源导航/ || wrench
+  Navigation: /Navigation/ || compass
   Reading: /Reading/ || list
   leetcode: /leetcode/ || coffee
-  友情链接: /友情链接/ || link
+  Link: /Link/ || link
 
   # Life Experience: /LifeExperience/ || bank
   # schedule: /schedule/ || calendar
