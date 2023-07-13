@@ -11,7 +11,7 @@ date: 2018-11-03 14:59:45
 
 1. 获取外层window：`window.parent`
 2. 获取顶层window: `window.top`
-3. 获取iframe标签: `window.frameElement`
+3. 获取当前文档所在的iframe元素: `window.frameElement`
 4. 获取当前文档内所有的iframe: `window.frames`，这是个可迭代对象，可以像数组一样使用
 
 # 2023-07-07
