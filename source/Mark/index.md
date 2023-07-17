@@ -8,6 +8,10 @@ date: 2019-02-20 20:30:09
 # 2023-07-17
 
 - [一个独立创造者的五年](https://mp.weixin.qq.com/s/x6PLSIMn_1qcKnXWPT-J-Q)
+- [GifCities](https://gifcities.org/)
+- [FlagWaver](https://krikienoid.github.io/flagwaver/)
+- [LeaferJS](https://www.leaferjs.com/)
+- [原生css scope](https://css.oddbird.net/scope/explainer/)
 
 # 2023-07-12
 
