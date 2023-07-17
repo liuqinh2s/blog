@@ -5,6 +5,44 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-07-17
+
+移动iframe元素会造成iframe重新加载src，所以如果想移动iframe而不引起刷新就只能用css。
+
+> [如何在不丢失状态的情况下在DOM中移动iFrame？](https://cloud.tencent.com/developer/ask/sof/102869)
+> 无论何时附加iframe并应用了src属性，它都会触发一个加载操作，这与通过JS创建Image标记时类似。因此，当您删除并附加它们时，它们是全新的实体，它们会刷新。这就是window.location = window.location重新加载页面的方式。
+> 我所知道的重新定位iframes的唯一方法是通过CSS。
+
+所以最好的方法实际上是弃用iframe，改用div或者canvas。
+
+另外就是我发现移动dom元素只需要appendChild到新的位置即可，并不需要删除原dom。
+
+## importmap
+
+javascript现在支持跨脚本import了：[JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "browser-fs-access": "https://unpkg.com/browser-fs-access@0.33.0/dist/index.modern.js"
+    }
+  }
+</script>
+<button>Select a text file</button>
+<script type="module">
+  import {fileOpen} from 'browser-fs-access';
+
+  const button = document.querySelector('button');
+  button.addEventListener('click', async () => {
+    const file = await fileOpen({
+      mimeTypes: ['text/plain'],
+    });
+    console.log(await file.text());
+  });
+</script>
+```
+
 # 2023-07-08
 
 关于iframe的基本知识：

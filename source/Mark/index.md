@@ -5,6 +5,10 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-07-17
+
+- [一个独立创造者的五年](https://mp.weixin.qq.com/s/x6PLSIMn_1qcKnXWPT-J-Q)
+
 # 2023-07-12
 
 - [RefrainMusic](https://refrain-music.vercel.app/#/musichall/featrued)，我同事做的一款音乐app
