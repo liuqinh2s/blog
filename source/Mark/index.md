@@ -11,7 +11,7 @@ date: 2019-02-20 20:30:09
 - [GifCities](https://gifcities.org/)
 - [FlagWaver](https://krikienoid.github.io/flagwaver/)
 - [LeaferJS](https://www.leaferjs.com/)
-- [原生css scope](https://css.oddbird.net/scope/explainer/)
+- [原生css scope](https://css.oddbird.net/scope/explainer/)：试了一下官方的例子，似乎浏览器还没支持
 
 # 2023-07-12
 
