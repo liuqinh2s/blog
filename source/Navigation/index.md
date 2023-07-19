@@ -75,6 +75,9 @@ date: 2019-02-20 20:30:09
 
 ### 书籍
 
+- 书籍工具：
+  - [Calibre](https://calibre-ebook.com/)
+  - [沉浸式翻译](https://immersivetranslate.com/)
 - 平台：
   - [zlibrary](https://zlibrary-asia.se/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
