@@ -39,7 +39,7 @@ date: 2019-02-20 20:30:09
 
 # 我的工具
 
-# 综合资源
+## 综合资源
 
 - [居居西](https://jujuxi.xyz)：这是我自己制作的资源分享网站，用于分享我喜爱的网络资源，如果有侵权的地方，可以直接联系我删除
 - [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
@@ -53,7 +53,11 @@ date: 2019-02-20 20:30:09
 
 - [ChatGPT](https://chat.openai.com/)
 
-### 图片
+## 软件
+
+- [Everything - 基于名称快速定位文件和文件夹。](https://www.voidtools.com/zh-cn/)
+
+## 图片
 
 - [unsplash](https://unsplash.com/)
 - [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
@@ -63,7 +67,7 @@ date: 2019-02-20 20:30:09
 - [拾光 - 壁纸软件](https://gitee.com/nguaduot/timeline#https://gitee.com/link?target=https%3A%2F%2Fapp.nguaduot.cn%2Ftimeline)
 - [梗图微缩世界](https://floor796.com/)
 
-### 视频
+## 视频
 
 - 影视网站：
   - [努努影视](https://www.nunuyy5.org/)
@@ -73,7 +77,7 @@ date: 2019-02-20 20:30:09
 - 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
 - 剧本桥段：[TV Tropes](https://tvtropes.org/)
 
-### 书籍
+## 书籍
 
 - 书籍工具：
   - [Calibre](https://calibre-ebook.com/)
