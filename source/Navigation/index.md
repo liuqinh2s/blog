@@ -9,6 +9,7 @@ date: 2019-02-20 20:30:09
 
 ## 中文
 
+- [槽边往事](https://www.hecaitou.com/)
 - [云风的 BLOG](https://blog.codingnow.com/)
 - [拔赤](http://jayli.github.io/)
 - [知乎 vczh 轮子哥](http://www.cppblog.com/vczh/)

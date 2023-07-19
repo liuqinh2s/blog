@@ -5,6 +5,14 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-07-19
+
+和菜头最近的文章质量高到爆炸
+
+- [回答：究竟哪一个译本最好？](https://mp.weixin.qq.com/s/x--2-cGJkIXhMoFxn9EzWA)
+- [短视频里什么都有，除了......](https://mp.weixin.qq.com/s?__biz=MjM5MjAzODU2MA==&mid=2652795054&idx=1&sn=2b8963c4cc88cfef3cf5eca13b043483&chksm=bd46bb618a3132777dfc6f04eb72cacbbe01e3ce32f4036b1cd3b639dd02cf8f2d1fecc4ab8e&scene=178&cur_album_id=1883283321711820801#rd)
+- [笨蛋，当然是先选人](https://mp.weixin.qq.com/s?__biz=MjM5MjAzODU2MA==&mid=2652795062&idx=1&sn=0b12c99943846fb0c22f69e04321510d&chksm=bd46bb798a31326f339fb1b72dc9982fedbac61cba7ad3be00781ae19d289b9171d70b943322&scene=178&cur_album_id=1883283321711820801#rd)
+
 # 2023-07-17
 
 - [一个独立创造者的五年](https://mp.weixin.qq.com/s/x6PLSIMn_1qcKnXWPT-J-Q)
