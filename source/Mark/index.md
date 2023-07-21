@@ -5,6 +5,27 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+# 2023-07-21
+
+阮一峰的周报，里面看到四个简单介绍技术原理的文章：
+
+- [Everything You Want To Know About Media Queries and Responsive Design | Kablamo Engineering Blog](https://engineering.kablamo.com.au/posts/2023/media-queries-and-responsive-design/)
+- [A Fast Intro to Git Internals](https://sites.google.com/a/chromium.org/dev/developers/fast-intro-to-git-internals)
+- [Hashing](https://samwho.dev/hashing/)
+- [socket 到底是个啥](https://mp.weixin.qq.com/s/Ebvjy132eRDOmcIL5cmxJw)
+
+一些有意思的工具：
+
+- [迅排设计](https://github.com/palxiao/poster-design)
+- [sniffnet](https://github.com/GyulyVGC/sniffnet)
+- [Triviance! - Free online trivia quizzes](https://triviance.com/)
+- [fastgpt](https://labs.kagi.com/fastgpt)
+- [Discovering the Best Artificial Intelligence Website](https://www.toolai.io/)
+
+免费电子书:
+
+- [Python for Data Analysis, 3E](https://wesmckinney.com/book/)
+
 # 2023-07-19
 
 和菜头最近的文章质量高到爆炸
