@@ -34,17 +34,26 @@ date: 2019-02-20 20:30:09
 - [短视频里什么都有，除了......](https://mp.weixin.qq.com/s?__biz=MjM5MjAzODU2MA==&mid=2652795054&idx=1&sn=2b8963c4cc88cfef3cf5eca13b043483&chksm=bd46bb618a3132777dfc6f04eb72cacbbe01e3ce32f4036b1cd3b639dd02cf8f2d1fecc4ab8e&scene=178&cur_album_id=1883283321711820801#rd)
 - [笨蛋，当然是先选人](https://mp.weixin.qq.com/s?__biz=MjM5MjAzODU2MA==&mid=2652795062&idx=1&sn=0b12c99943846fb0c22f69e04321510d&chksm=bd46bb798a31326f339fb1b72dc9982fedbac61cba7ad3be00781ae19d289b9171d70b943322&scene=178&cur_album_id=1883283321711820801#rd)
 
+发现一个制作非常精美的网站，有点像期刊的感觉，这个 UI 和产品设计很值得学习
+
+- [#UNTAG](https://utgd.net/)
+
+其他比较好的小网站：
+
+- [FancyPig's blog——专注于网络安全与技术分享](https://www.iculture.cc/)
+- [小众软件 - 分享免费、小巧、实用、有趣、绿色的软件](https://www.appinn.com/)
+
 # 2023-07-17
 
 - [一个独立创造者的五年](https://mp.weixin.qq.com/s/x6PLSIMn_1qcKnXWPT-J-Q)
 - [GifCities](https://gifcities.org/)
 - [FlagWaver](https://krikienoid.github.io/flagwaver/)
 - [LeaferJS](https://www.leaferjs.com/)
-- [原生css scope](https://css.oddbird.net/scope/explainer/)：试了一下官方的例子，似乎浏览器还没支持
+- [原生 css scope](https://css.oddbird.net/scope/explainer/)：试了一下官方的例子，似乎浏览器还没支持
 
 # 2023-07-12
 
-- [RefrainMusic](https://refrain-music.vercel.app/#/musichall/featrued)，我同事做的一款音乐app
+- [RefrainMusic](https://refrain-music.vercel.app/#/musichall/featrued)，我同事做的一款音乐 app
 
 # 2023-07-08
 
