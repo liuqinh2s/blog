@@ -9,35 +9,35 @@ date: 2018-11-03 14:59:45
 
 消息总线和函数调用的区别：消息总线用了一个集合来收集事件回调函数，导致了消息总线可以在外部零散的注册回调，而函数调用则相当于是在消息发出的地方集中注册消息监听。**所以消息总线很好的对依赖进行了倒置，因为，是事件回调函数依赖了事件，而不是事件依赖了事件的响应函数**。
 
-> 所以从本质上来说，就是A依赖B，还是B依赖A的问题。你有一段逻辑A和一段逻辑B，其中B要在A之后执行，如果你认为应该是A依赖了B，那么直接调用即可，如果你认为是B依赖了A，那么就用消息总线。
+> 所以从本质上来说，就是 A 依赖 B，还是 B 依赖 A 的问题。你有一段逻辑 A 和一段逻辑 B，其中 B 要在 A 之后执行，如果你认为应该是 A 依赖了 B，那么直接调用即可，如果你认为是 B 依赖了 A，那么就用消息总线。
 
-用浏览器的window.postMessage或者worker.postMessage，可以把消息发到其他的window或者worker来执行事件回调函数。但这样的话就是异步执行了。
+用浏览器的 window.postMessage 或者 worker.postMessage，可以把消息发到其他的 window 或者 worker 来执行事件回调函数。但这样的话就是异步执行了。
 
 ```javascript
-window1.postMessage('hello', "*");
-window2.addEventListener('message', (event)=>{
+window1.postMessage("hello", "*");
+window2.addEventListener("message", (event) => {
   // event.source is window1
   // event.data is "hello"
-})
+});
 ```
 
-异步的不是消息总线，而是postMessage。
+异步的不是消息总线，而是 postMessage。
 
 # 2023-07-17
 
-移动iframe元素会造成iframe重新加载src，所以如果想移动iframe而不引起刷新就只能用css。
+移动 iframe 元素会造成 iframe 重新加载 src，所以如果想移动 iframe 而不引起刷新就只能用 css。
 
-> [如何在不丢失状态的情况下在DOM中移动iFrame？](https://cloud.tencent.com/developer/ask/sof/102869)
-> 无论何时附加iframe并应用了src属性，它都会触发一个加载操作，这与通过JS创建Image标记时类似。因此，当您删除并附加它们时，它们是全新的实体，它们会刷新。这就是window.location = window.location重新加载页面的方式。
-> 我所知道的重新定位iframes的唯一方法是通过CSS。
+> [如何在不丢失状态的情况下在 DOM 中移动 iFrame？](https://cloud.tencent.com/developer/ask/sof/102869)
+> 无论何时附加 iframe 并应用了 src 属性，它都会触发一个加载操作，这与通过 JS 创建 Image 标记时类似。因此，当您删除并附加它们时，它们是全新的实体，它们会刷新。这就是 window.location = window.location 重新加载页面的方式。
+> 我所知道的重新定位 iframes 的唯一方法是通过 CSS。
 
-所以最好的方法实际上是弃用iframe，改用div或者canvas。
+所以最好的方法实际上是弃用 iframe，改用 div 或者 canvas。
 
-另外就是我发现移动dom元素只需要appendChild到新的位置即可，并不需要删除原dom。
+另外就是我发现移动 dom 元素只需要 appendChild 到新的位置即可，并不需要删除原 dom。
 
 ## importmap
 
-javascript现在支持跨脚本import了：[JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
+javascript 现在支持跨脚本 import 了：[JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
 
 ```html
 <script type="importmap">
@@ -49,12 +49,12 @@ javascript现在支持跨脚本import了：[JavaScript import maps are now suppo
 </script>
 <button>Select a text file</button>
 <script type="module">
-  import {fileOpen} from 'browser-fs-access';
+  import { fileOpen } from "browser-fs-access";
 
-  const button = document.querySelector('button');
-  button.addEventListener('click', async () => {
+  const button = document.querySelector("button");
+  button.addEventListener("click", async () => {
     const file = await fileOpen({
-      mimeTypes: ['text/plain'],
+      mimeTypes: ["text/plain"],
     });
     console.log(await file.text());
   });
@@ -63,23 +63,23 @@ javascript现在支持跨脚本import了：[JavaScript import maps are now suppo
 
 # 2023-07-08
 
-关于iframe的基本知识：
+关于 iframe 的基本知识：
 
-1. 获取外层window：`window.parent`
-2. 获取顶层window: `window.top`
-3. 获取当前文档所在的iframe元素: `window.frameElement`
-4. 获取当前文档内所有的iframe: `window.frames`，这是个可迭代对象，可以像数组一样使用
+1. 获取外层 window：`window.parent`
+2. 获取顶层 window: `window.top`
+3. 获取当前文档所在的 iframe 元素: `window.frameElement`
+4. 获取当前文档内所有的 iframe: `window.frames`，这是个可迭代对象，可以像数组一样使用
 
 # 2023-07-07
 
-在立创EDA的编程中经常遇到的问题：
+在立创 EDA 的编程中经常遇到的问题：
 
 1. 公用混乱，代码腐烂（参数无约定，随意修改）
-2. 某些地方没有同步更新（比如修改名称，需要同步更新属性面板，底部库，tab页，画布等等诸多地方）
+2. 某些地方没有同步更新（比如修改名称，需要同步更新属性面板，底部库，tab 页，画布等等诸多地方）
 
 # 2023-07-06
 
-最近同事遇到一个react的坑，他把root缓存了起来，然后发现整个组件不更新：
+最近同事遇到一个 react 的坑，他把 root 缓存了起来，然后发现整个组件不更新：
 
 ```typescript
 root = root || ReactDOMClient.createRoot(dom);
@@ -88,11 +88,11 @@ root.render(<App {...props}></App>);
 
 不缓存就可以更新了。
 
-实际上react的useState是只在初始化的时候用参数的值的，而想要让组件重新初始化，可以加key，key改变，就会重新初始化。
+实际上 react 的 useState 是只在初始化的时候用参数的值的，而想要让组件重新初始化，可以加 key，key 改变，就会重新初始化。
 
-父组件render，子组件也会render，但不一定会用useState里面的值（除非子组件重新初始化）
+父组件 render，子组件也会 render，但不一定会用 useState 里面的值（除非子组件重新初始化）
 
-父组件重新初始化，子组件也会重新初始化，且一定会用useState里面的值
+父组件重新初始化，子组件也会重新初始化，且一定会用 useState 里面的值
 
 # 2023-06-15
 
