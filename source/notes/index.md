@@ -5,6 +5,16 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-07-26
+
+js 自然排序：[localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+
+[用localeCompare实现字符串自然排序](https://idealark.cn/archives/12/)
+
+```typescript
+arr.sort((a,b)=>b.localeCompare(a));
+```
+
 # 2023-07-19
 
 消息总线和函数调用的区别：消息总线用了一个集合来收集事件回调函数，导致了消息总线可以在外部零散的注册回调，而函数调用则相当于是在消息发出的地方集中注册消息监听。**所以消息总线很好的对依赖进行了倒置，因为，是事件回调函数依赖了事件，而不是事件依赖了事件的响应函数**。
