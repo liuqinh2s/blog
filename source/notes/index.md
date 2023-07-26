@@ -7,6 +7,8 @@ date: 2018-11-03 14:59:45
 
 # 2023-07-26
 
+## localeCompare
+
 js 自然排序：[localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
 [用localeCompare实现字符串自然排序](https://idealark.cn/archives/12/)
@@ -14,6 +16,95 @@ js 自然排序：[localeCompare](https://developer.mozilla.org/en-US/docs/Web/J
 ```typescript
 arr.sort((a,b)=>b.localeCompare(a));
 ```
+
+## 对象遍历的速度比较
+
+`Object.keys()`，`Object.values()`，`Object.entries()`的性能差异如何呢？
+
+```JavaScript
+let res = {};
+for(let i=0;i<100_0000;i++){
+    res[i]=i;
+}
+let count=0;
+// console.time('Object.keys()')
+// for(let k of Object.keys(res||{})){
+//     count++;
+// }
+// console.timeEnd('Object.keys()')
+
+// count=0;
+// console.time('Object.values()')
+// for(let v of Object.values(res||{})){
+//     count++;
+// }
+// console.timeEnd('Object.values()')
+
+count=0;
+console.time('Object.entries()')
+for(let [k,v] of Object.entries(res||{})){
+    count++;
+}
+console.timeEnd('Object.entries()')
+```
+
+测试结果是values()速度最快，values()速度>keys()速度>entries()速度
+
+values()大概只有keys()执行时间的十分之一，而keys执行时间大概是entries的一半
+
+## `for of` 和 `for in`
+
+`for of`用于遍历可迭代对象（数组之类的），`for in`用于遍历对象
+
+`for in`速度跟`for of`+`Object.keys()`差不多，区别是in会遍历到prototype上的属性，而后者则不会。所以如果不想遍历到原型上的属性，要么别用`for in`，要么要多写一个obj.hasOwnProperty的判断
+
+```javascript
+class A {
+    a = 'a';
+}
+
+class B extends A {
+    b = 'b';
+}
+
+let bb = new B();
+bb.__proto__.c = 'c'
+for(let k in bb){
+    if(bb.hasOwnProperty(k)){
+        console.log(k)
+    }
+    // console.log(k)
+}
+
+for(let k of Object.keys(bb||{})){
+    console.log(k)
+}
+```
+
+官方文档：
+
+- [for of](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...of)
+- [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+
+## `for of`和C语言语法的遍历速度比较
+
+```javascript
+let res = new Array(100_0000);
+let count = 0;
+console.time('a');
+for(let i=0;i<res.length;i++){
+    count++;
+}
+console.timeEnd('a');
+count = 0;
+console.time('b');
+for(let i of res){
+    count++;
+}
+console.timeEnd('b');
+```
+
+大概有6倍的差距
 
 # 2023-07-19
 
