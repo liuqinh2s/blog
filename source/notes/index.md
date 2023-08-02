@@ -5,6 +5,18 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-08-02
+
+最近想把某个消息放在组件文件中进行监听，但发现消息总线可能还没注册好，这个时候可以用`DOMContentLoaded`这个事件。
+
+官方文档：[Window: DOMContentLoaded event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
+
+1. 默认情况下，脚本只阻塞其后的dom元素解析
+2. deferred告诉浏览器，脚本需要等HTML解析完后执行（多个deferred脚本按出现顺序执行）
+3. async告诉浏览器，脚本异步下载（与HTML解析一起进行），下载完后会立即执行（不会等HTML解析完）
+
+所以一般来说，如果脚本与HTML有关，就用deferred，无关就用async
+
 # 2023-07-26
 
 ## localeCompare
