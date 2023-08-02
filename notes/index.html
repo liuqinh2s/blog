@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2023-08-02T06:12:41.966Z">
+<meta property="og:updated_time" content="2023-08-02T06:40:11.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-08-02最近想把某个消息放在组件文件中进行监听，但发现消息总线可能还没注册好，这个时候可以用DOMContentLoaded这个事件。 官方文档：Window: DOMContentLoaded ev">
@@ -412,10 +412,10 @@
 <p>官方文档：<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event" target="_blank" rel="noopener">Window: DOMContentLoaded event</a></p>
 <ol>
 <li>默认情况下，脚本只阻塞其后的dom元素解析</li>
-<li>deferred告诉浏览器，脚本需要等HTML解析完后执行（多个deferred脚本按出现顺序执行）</li>
+<li>defer告诉浏览器，脚本需要等HTML解析完后执行（多个defer脚本按出现顺序执行）</li>
 <li>async告诉浏览器，脚本异步下载（与HTML解析一起进行），下载完后会立即执行（不会等HTML解析完）</li>
 </ol>
-<p>所以一般来说，如果脚本与HTML有关，就用deferred，无关就用async</p>
+<p>所以一般来说，如果脚本与HTML有关，就用defer，无关就用async</p>
 <h1 id="2023-07-26"><a href="#2023-07-26" class="headerlink" title="2023-07-26"></a>2023-07-26</h1><h2 id="localeCompare"><a href="#localeCompare" class="headerlink" title="localeCompare"></a>localeCompare</h2><p>js 自然排序：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare" target="_blank" rel="noopener">localeCompare</a></p>
 <p><a href="https://idealark.cn/archives/12/" target="_blank" rel="noopener">用localeCompare实现字符串自然排序</a></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>b.localeCompare(a));</span><br></pre></td></tr></table></figure>
