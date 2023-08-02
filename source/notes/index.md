@@ -12,10 +12,10 @@ date: 2018-11-03 14:59:45
 官方文档：[Window: DOMContentLoaded event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
 
 1. 默认情况下，脚本只阻塞其后的dom元素解析
-2. deferred告诉浏览器，脚本需要等HTML解析完后执行（多个deferred脚本按出现顺序执行）
+2. defer告诉浏览器，脚本需要等HTML解析完后执行（多个defer脚本按出现顺序执行）
 3. async告诉浏览器，脚本异步下载（与HTML解析一起进行），下载完后会立即执行（不会等HTML解析完）
 
-所以一般来说，如果脚本与HTML有关，就用deferred，无关就用async
+所以一般来说，如果脚本与HTML有关，就用defer，无关就用async
 
 # 2023-07-26
 
