@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2023-08-07T07:03:14.948Z">
+<meta property="og:updated_time" content="2023-08-09T12:01:22.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-08-07html空格自动合并的问题HTML提供了5种空格实体（space entity），它们拥有不同的宽度，非断行空格(   )是常规空格的宽度，可运行于所有主流浏览器。其他几种空格( &amp;amp;e">
@@ -416,6 +416,9 @@
 <p><code>&amp;zwnj;</code>它叫零宽不连字，全称是Zero Width Non Joiner，简称&quot;ZWNJ&quot;，是一个不打印字符，放在电子文本的两个字符之间，抑制本来会发生的连字，改为以这两个字符原本的字形来绘制。Unicode中的零宽不连字字符映射为<code>&amp;ldquo;&amp;rdquo</code>;（zero width non-joiner，U+200C），HTML字符值引用为:<code>&amp;zwnj</code>;</p>
 <p><code>&amp;zwj;</code>它叫零宽连字，全称是Zero Width Joiner，简称“ZWJ”，是一个不打印字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。零宽连字符的Unicode码位是U+200D(HTML: ‍ <code>&amp;zwj;</code>）。</p>
 <p>此外，浏览器还会把以下字符当作空白进行解析：空格（<code>&amp;#x0020;</code>）、制表位（<code>&amp;#x0009;</code>）、换行（<code>&amp;#x000A;</code>）和回车（ <code>&amp;#x000D;</code>）还有中文全角空格（<code>&amp;#12288;</code>）等等。</p>
+<blockquote>
+<p>用<code>tspan</code>标签和<code>xml:space=&quot;preserve&quot;</code>也可以解决</p>
+</blockquote>
 <h1 id="2023-08-02"><a href="#2023-08-02" class="headerlink" title="2023-08-02"></a>2023-08-02</h1><p>最近想把某个消息放在组件文件中进行监听，但发现消息总线可能还没注册好，这个时候可以用<code>DOMContentLoaded</code>这个事件。</p>
 <p>官方文档：<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event" target="_blank" rel="noopener">Window: DOMContentLoaded event</a></p>
 <ol>
