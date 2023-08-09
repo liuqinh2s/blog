@@ -22,6 +22,8 @@ title: 前端面试指南
 - Event Loop（事件循环）
 - apply, call, bind
 - 内存回收
+- try-catch：
+   - [try-catch 能抛出 promise 的异常吗](https://juejin.cn/post/6850418110907088910)
 
 ## 浏览器环境
 
