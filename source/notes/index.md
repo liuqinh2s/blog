@@ -5,6 +5,18 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-08-11
+
+[Systems, math and explosions (in no particular order)](https://pjonori.blog/posts/systems-math-explosions/)
+
+这篇文章讲系统是怎么变复杂的（因连接而复杂），以及怎么消除复杂和混乱（减少节点）。
+
+[PJ Onori’s blog](https://pjonori.blog/)
+
+# 2023-08-10
+
+[JavaScript 模块的循环加载](https://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)
+
 # 2023-08-07
 
 ## html空格自动合并的问题
