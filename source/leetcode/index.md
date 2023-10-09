@@ -5,6 +5,30 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-10-09
+
+[2578. 最小和分割](https://leetcode.cn/problems/split-with-minimum-sum/description/?envType=daily-question&envId=2023-10-09)
+
+这道题的思路是**把小的数放高位，把大的数放低位**。可以先排序，然后再把数对半分配，分配规则就是：把小的数放高位，把大的数放低位。
+
+代码:
+
+```typescript
+function splitNum(num: number): number {
+    let numStr = (num+'').split('').sort();
+    let num1 = '';
+    let num2 = '';
+    for(let i=0;i<numStr.length;i+=2){
+        num1+=numStr[i];
+        if(i+1<numStr.length){
+            num2+=numStr[i+1];
+        }
+    }
+    console.log(num1, num2)
+    return +num1+(+num2);
+};
+```
+
 # 2023-05-09
 
 最近朋友提醒我 leetcode 开了 javascript 专栏，有一道典型的深度判断对象相等的题目，我试了一下
