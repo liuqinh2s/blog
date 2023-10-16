@@ -5,6 +5,26 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-10-16
+
+在disabled的input上面，右键，父级div的onMouseDown进不了，要怎么办？可以在事件的捕获阶段监听：
+
+```javascript
+elem.addEventListener(..., {capture: true})
+// 或者，用 {capture: true} 的别名 "true"
+elem.addEventListener(..., true)
+```
+
+DOM 事件标准描述了事件传播的 3 个阶段：
+
+捕获阶段（Capturing phase）—— 事件（从 Window）向下走近元素。
+目标阶段（Target phase）—— 事件到达目标元素。
+冒泡阶段（Bubbling phase）—— 事件从元素上开始冒泡。
+
+如果是react的话，就用onMouseDownCapture。
+
+不过最后发现依然不行，要用onPointerDownCapture才可以。
+
 # 2023-08-11
 
 [Systems, math and explosions (in no particular order)](https://pjonori.blog/posts/systems-math-explosions/)
