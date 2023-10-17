@@ -5,6 +5,22 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-10-17
+
+SVG默认开了抗锯齿，会把1像素的线条用2像素显示
+
+SVG如果想展示真实的像素（关闭抗锯齿），可以设置css：`shape-rendering: crispEdges`
+
+但HTML5 canvas不能这样达到目的
+
+[graphics - SVG / Canvas :: shape-rendering="crispEdges" via JavaScript? - Stack Overflow](https://stackoverflow.com/questions/11353499/svg-canvas-shape-rendering-crispedges-via-javascript)
+
+canvas可以通过以下方法来达到目的：
+
+```
+当线宽为偶数时，坐标应指定为整数。否则坐标应指定为整数+0.5px。
+```
+
 # 2023-10-16
 
 在disabled的input上面，右键，父级div的onMouseDown进不了，要怎么办？可以在事件的捕获阶段监听：
