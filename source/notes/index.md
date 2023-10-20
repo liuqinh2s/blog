@@ -5,9 +5,31 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-10-20
+
+发现一个问题 Object.defineProperty 一旦设置了 set 方法，就没办法设置值到该属性上了，只能通过 get 的时候返回对应值来达到不影响原来代码的目的。比如：
+
+```javascript
+var a = { a: 1 };
+Object.defineProperty(a, "a", {
+  set(x) {
+    console.log(x);
+    this.b = x;
+  },
+  get() {
+    return this.b;
+  },
+});
+a.a = 8;
+console.log(a);
+console.log(a.a);
+```
+
+尝试在 set 里面写`this.a = x;`会导致死循环，而写`return x;`则依旧没有设置上 a.a
+
 # 2023-10-18
 
-## 如何发布自己的npm包？
+## 如何发布自己的 npm 包？
 
 1. 到`https://www.npmjs.com/`注册账号
 2. `npm init -y`新建一个项目
@@ -16,31 +38,31 @@ date: 2018-11-03 14:59:45
 
 > 注意事项，新建项目的目录不能是中文会报错，如果没充钱`--access public`是必须的，包名可能会跟已有的包名冲突，可以通过`npm search xxx`查询
 
-## npm依赖包版本号
+## npm 依赖包版本号
 
-[npm语义版本(npm依赖包版本的~、>、^符号各代表什么？)](https://blog.51cto.com/u_15127697/3633383)
+[npm 语义版本(npm 依赖包版本的~、>、^符号各代表什么？)](https://blog.51cto.com/u_15127697/3633383)
 
 # 2023-10-17
 
-SVG默认开了抗锯齿，会把1像素的线条用2像素显示
+SVG 默认开了抗锯齿，会把 1 像素的线条用 2 像素显示
 
-SVG如果想展示真实的像素（关闭抗锯齿），可以设置css：`shape-rendering: crispEdges`
+SVG 如果想展示真实的像素（关闭抗锯齿），可以设置 css：`shape-rendering: crispEdges`
 
-但HTML5 canvas不能这样达到目的
+但 HTML5 canvas 不能这样达到目的
 
 [graphics - SVG / Canvas :: shape-rendering="crispEdges" via JavaScript? - Stack Overflow](https://stackoverflow.com/questions/11353499/svg-canvas-shape-rendering-crispedges-via-javascript)
 
-canvas可以通过以下方法来达到目的：
+canvas 可以通过以下方法来达到目的：
 
 ```
 当线宽为偶数时，坐标应指定为整数。否则坐标应指定为整数+0.5px。
 ```
 
-[canvas图像重叠处理 - Kaiqisan](https://blog.csdn.net/qq_33933205/article/details/107337882)
+[canvas 图像重叠处理 - Kaiqisan](https://blog.csdn.net/qq_33933205/article/details/107337882)
 
 # 2023-10-16
 
-在disabled的input上面，右键，父级div的onMouseDown进不了，要怎么办？可以在事件的捕获阶段监听：
+在 disabled 的 input 上面，右键，父级 div 的 onMouseDown 进不了，要怎么办？可以在事件的捕获阶段监听：
 
 ```javascript
 elem.addEventListener(..., {capture: true})
@@ -54,9 +76,9 @@ DOM 事件标准描述了事件传播的 3 个阶段：
 目标阶段（Target phase）—— 事件到达目标元素。
 冒泡阶段（Bubbling phase）—— 事件从元素上开始冒泡。
 
-如果是react的话，就用onMouseDownCapture。
+如果是 react 的话，就用 onMouseDownCapture。
 
-不过最后发现依然不行，要用onPointerDownCapture才可以。
+不过最后发现依然不行，要用 onPointerDownCapture 才可以。
 
 # 2023-08-11
 
@@ -72,21 +94,21 @@ DOM 事件标准描述了事件传播的 3 个阶段：
 
 # 2023-08-07
 
-## html空格自动合并的问题
+## html 空格自动合并的问题
 
-HTML提供了5种空格实体（space entity），它们拥有不同的宽度，非断行空格(   )是常规空格的宽度，可运行于所有主流浏览器。其他几种空格( `&ensp;&emsp;&thinsp;&zwnj;&zwj;`）在不同浏览器中宽度各异。
+HTML 提供了 5 种空格实体（space entity），它们拥有不同的宽度，非断行空格( )是常规空格的宽度，可运行于所有主流浏览器。其他几种空格( `&ensp;&emsp;&thinsp;&zwnj;&zwj;`）在不同浏览器中宽度各异。
 
-`&nbsp;`它叫不换行空格，全称No-Break Space，它是最常见和我们使用最多的空格，按下space键产生的空格。在HTML中，如果你用空格键产生此空格，空格是不会累加的（只算1个）。要使用html实体表示才可累加，该空格占据宽度受字体影响明显而强烈。
+`&nbsp;`它叫不换行空格，全称 No-Break Space，它是最常见和我们使用最多的空格，按下 space 键产生的空格。在 HTML 中，如果你用空格键产生此空格，空格是不会累加的（只算 1 个）。要使用 html 实体表示才可累加，该空格占据宽度受字体影响明显而强烈。
 
-`&ensp;`它叫"半角空格"，全称是En Space，en是字体排印学的计量单位，为em宽度的一半。根据定义，它等同于字体度的一半（如16px字体中就是8px）。名义上是小写字母n的宽度。此空格传承空格家族一贯的特性：透明的，其占据的宽度正好是1/2个中文宽度，而且基本上不受字体影响。
+`&ensp;`它叫"半角空格"，全称是 En Space，en 是字体排印学的计量单位，为 em 宽度的一半。根据定义，它等同于字体度的一半（如 16px 字体中就是 8px）。名义上是小写字母 n 的宽度。此空格传承空格家族一贯的特性：透明的，其占据的宽度正好是 1/2 个中文宽度，而且基本上不受字体影响。
 
-`&emsp;`它叫“全角空格”，全称是Em Space，em是字体排印学的计量单位，相当于当前指定的点数。例如，1 em在16px的字体中就是16px。此空格也传承空格家族一贯的特性：透明的，其占据的宽度正好是1个中文宽度，而且基本上不受字体影响。
+`&emsp;`它叫“全角空格”，全称是 Em Space，em 是字体排印学的计量单位，相当于当前指定的点数。例如，1 em 在 16px 的字体中就是 16px。此空格也传承空格家族一贯的特性：透明的，其占据的宽度正好是 1 个中文宽度，而且基本上不受字体影响。
 
-`&thinsp;`它叫窄空格，全称是Thin Space。我们不妨称之为"瘦弱空格";，就是该空格占据的宽度比较小。它是em之六分之一宽。
+`&thinsp;`它叫窄空格，全称是 Thin Space。我们不妨称之为"瘦弱空格";，就是该空格占据的宽度比较小。它是 em 之六分之一宽。
 
-`&zwnj;`它叫零宽不连字，全称是Zero Width Non Joiner，简称"ZWNJ"，是一个不打印字符，放在电子文本的两个字符之间，抑制本来会发生的连字，改为以这两个字符原本的字形来绘制。Unicode中的零宽不连字字符映射为`&ldquo;&rdquo`;（zero width non-joiner，U+200C），HTML字符值引用为:`&zwnj`;
+`&zwnj;`它叫零宽不连字，全称是 Zero Width Non Joiner，简称"ZWNJ"，是一个不打印字符，放在电子文本的两个字符之间，抑制本来会发生的连字，改为以这两个字符原本的字形来绘制。Unicode 中的零宽不连字字符映射为`&ldquo;&rdquo`;（zero width non-joiner，U+200C），HTML 字符值引用为:`&zwnj`;
 
-`&zwj;`它叫零宽连字，全称是Zero Width Joiner，简称“ZWJ”，是一个不打印字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。零宽连字符的Unicode码位是U+200D(HTML: ‍ `&zwj;`）。
+`&zwj;`它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。零宽连字符的 Unicode 码位是 U+200D(HTML: ‍ `&zwj;`）。
 
 此外，浏览器还会把以下字符当作空白进行解析：空格（`&#x0020;`）、制表位（`&#x0009;`）、换行（`&#x000A;`）和回车（ `&#x000D;`）还有中文全角空格（`&#12288;`）等等。
 
@@ -98,11 +120,11 @@ HTML提供了5种空格实体（space entity），它们拥有不同的宽度，
 
 官方文档：[Window: DOMContentLoaded event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
 
-1. 默认情况下，脚本只阻塞其后的dom元素解析
-2. defer告诉浏览器，脚本需要等HTML解析完后执行（多个defer脚本按出现顺序执行）
-3. async告诉浏览器，脚本异步下载（与HTML解析一起进行），下载完后会立即执行（不会等HTML解析完）
+1. 默认情况下，脚本只阻塞其后的 dom 元素解析
+2. defer 告诉浏览器，脚本需要等 HTML 解析完后执行（多个 defer 脚本按出现顺序执行）
+3. async 告诉浏览器，脚本异步下载（与 HTML 解析一起进行），下载完后会立即执行（不会等 HTML 解析完）
 
-所以一般来说，如果脚本与HTML有关，就用defer，无关就用async
+所以一般来说，如果脚本与 HTML 有关，就用 defer，无关就用 async
 
 # 2023-07-26
 
@@ -110,10 +132,10 @@ HTML提供了5种空格实体（space entity），它们拥有不同的宽度，
 
 js 自然排序：[localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
-[用localeCompare实现字符串自然排序](https://idealark.cn/archives/12/)
+[用 localeCompare 实现字符串自然排序](https://idealark.cn/archives/12/)
 
 ```typescript
-arr.sort((a,b)=>b.localeCompare(a));
+arr.sort((a, b) => b.localeCompare(a));
 ```
 
 ## 对象遍历的速度比较
@@ -147,36 +169,36 @@ for(let [k,v] of Object.entries(res||{})){
 console.timeEnd('Object.entries()')
 ```
 
-测试结果是values()速度最快，values()速度>keys()速度>entries()速度
+测试结果是 values()速度最快，values()速度>keys()速度>entries()速度
 
-values()大概只有keys()执行时间的十分之一，而keys执行时间大概是entries的一半
+values()大概只有 keys()执行时间的十分之一，而 keys 执行时间大概是 entries 的一半
 
 ## `for of` 和 `for in`
 
 `for of`用于遍历可迭代对象（数组之类的），`for in`用于遍历对象
 
-`for in`速度跟`for of`+`Object.keys()`差不多，区别是in会遍历到prototype上的属性，而后者则不会。所以如果不想遍历到原型上的属性，要么别用`for in`，要么要多写一个obj.hasOwnProperty的判断
+`for in`速度跟`for of`+`Object.keys()`差不多，区别是 in 会遍历到 prototype 上的属性，而后者则不会。所以如果不想遍历到原型上的属性，要么别用`for in`，要么要多写一个 obj.hasOwnProperty 的判断
 
 ```javascript
 class A {
-    a = 'a';
+  a = "a";
 }
 
 class B extends A {
-    b = 'b';
+  b = "b";
 }
 
 let bb = new B();
-bb.__proto__.c = 'c'
-for(let k in bb){
-    if(bb.hasOwnProperty(k)){
-        console.log(k)
-    }
-    // console.log(k)
+bb.__proto__.c = "c";
+for (let k in bb) {
+  if (bb.hasOwnProperty(k)) {
+    console.log(k);
+  }
+  // console.log(k)
 }
 
-for(let k of Object.keys(bb||{})){
-    console.log(k)
+for (let k of Object.keys(bb || {})) {
+  console.log(k);
 }
 ```
 
@@ -185,25 +207,25 @@ for(let k of Object.keys(bb||{})){
 - [for of](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...of)
 - [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
-## `for of`和C语言语法的遍历速度比较
+## `for of`和 C 语言语法的遍历速度比较
 
 ```javascript
 let res = new Array(100_0000);
 let count = 0;
-console.time('a');
-for(let i=0;i<res.length;i++){
-    count++;
+console.time("a");
+for (let i = 0; i < res.length; i++) {
+  count++;
 }
-console.timeEnd('a');
+console.timeEnd("a");
 count = 0;
-console.time('b');
-for(let i of res){
-    count++;
+console.time("b");
+for (let i of res) {
+  count++;
 }
-console.timeEnd('b');
+console.timeEnd("b");
 ```
 
-大概有6倍的差距
+大概有 6 倍的差距
 
 # 2023-07-19
 
