@@ -8,6 +8,7 @@ comments: true
 
 github 仓库：[liuqinh2s/AwesomeWeb](https://github.com/liuqinh2s/AwesomeWeb)
 项目展示：[replit - AwesomeWeb](https://replit.com/@liuqinh2s/AwesomeWeb?v=1)
+项目上线地址：[jujuxi](https://jujuxi.xyz)
 
 最近想像洛雪音乐一样做一个免费的视频 app，主要学习对象是努努视频，说干就干，先看看努努用了哪些第三方 js 库，打开努努视频网站：nunuyy5.org，然后打开开发者工具，可以看到用了这些：
 
