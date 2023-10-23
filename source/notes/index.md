@@ -5,6 +5,34 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-10-23
+
+## ts 项目使用 js 包
+
+ts 项目引入 js 包会报错，我们只需要在项目的任意位置新建一个`xxx.d.ts`文件，内容填入：
+
+```javascript
+declare module '【import 的第三方库名】';
+```
+
+即可解决报错
+
+> TODO: 发布一个 typescript 的 npm 包
+
+## nginx 同一端口不同路径映射到不同项目
+
+```
+location /project1 {
+  alias /xxx/project1
+  index index.html
+}
+
+location /project2 {
+  alias /xxx/project2
+  index index.html
+}
+```
+
 # 2023-10-20
 
 发现一个问题 Object.defineProperty 一旦设置了 set 方法，就没办法设置值到该属性上了，只能通过 get 的时候返回对应值来达到不影响原来代码的目的。比如：
