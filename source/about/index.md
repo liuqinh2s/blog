@@ -15,4 +15,6 @@ date: 2018-04-17 17:00:10
 
 [简历](../assets/liuqinh2s-resume.pdf)
 
-目前在做的：https://pro.lceda.cn/editor
+公司项目：[嘉立创 EDA](https://pro.lceda.cn/editor)
+
+自己的兴趣爱好项目: [jujuxi](https://jujuxi.xyz/)
