@@ -5,109 +5,150 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-10-24
+
+[1155. 掷骰子等于目标和的方法数](https://leetcode.cn/problems/number-of-dice-rolls-with-target-sum/)
+
+这道题一开始没有思路，但简单看了一下答案，发现确实不难，动态规划拿下：
+
+```typescript
+function numRollsToTarget(n: number, k: number, target: number): number {
+  const MOD = 10 ** 9 + 7;
+  const dp = new Array(n + 1).fill(0).map((x) => new Array(target + 1).fill(0));
+  dp[0][0] = 1; // 边界条件是dp[1][j]=1, 1<=j<=k，这里可以更进一步简单归纳为dp[0][0]=1
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= target; j++) {
+      for (let x = 1; x <= k; x++) {
+        if (j - x >= 0) {
+          dp[i][j] = (dp[i][j] + dp[i - 1][j - x]) % MOD; // 每一步都要取模，否则会溢出
+        }
+      }
+    }
+  }
+  return dp[n][target];
+}
+```
+
 # 2023-10-08
 
 [2034. 股票价格波动](https://leetcode.cn/problems/stock-price-fluctuation/description/)
 
-这道题一开始是打算用遍历的方式求max和min，可惜会超时，看了答案知道了要用堆来做。堆更新的时间复杂度是O(logN)
+这道题一开始是打算用遍历的方式求 max 和 min，可惜会超时，看了答案知道了要用堆来做。堆更新的时间复杂度是 O(logN)
 
 ```typescript
 class PriorityQueue1<T> {
-    arr: T[];
-    compare: (a: T, b: T)=>number;
-    constructor(props: {compare: (a: T, b: T)=>number}) {
-        const { compare } = props;
-        this.compare = compare;
-        this.arr = [];
+  arr: T[];
+  compare: (a: T, b: T) => number;
+  constructor(props: { compare: (a: T, b: T) => number }) {
+    const { compare } = props;
+    this.compare = compare;
+    this.arr = [];
+  }
+  swap(arr, index1, index2) {
+    const temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+  }
+  enqueue(a) {
+    this.arr.push(a);
+    this.bubbleUp(this.arr.length - 1);
+  }
+  dequeue() {
+    this.delete(0);
+  }
+  bubbleUp(index) {
+    if (this.arr.length <= 1 || index <= 0) {
+      return;
     }
-    swap(arr, index1, index2) {
-        const temp = arr[index1];
-        arr[index1] = arr[index2];
-        arr[index2] = temp;
+    const pre = Math.floor((index - 1) / 2);
+    if (this.compare(this.arr[index], this.arr[pre]) > 0) {
+      this.swap(this.arr, pre, index);
+      this.bubbleUp(pre);
     }
-    enqueue(a) {
-        this.arr.push(a);
-        this.bubbleUp(this.arr.length - 1);
+  }
+  delete(index) {
+    this.swap(this.arr, index, this.arr.length - 1);
+    this.arr.pop();
+    this.sinkDown(index);
+  }
+  sinkDown(index) {
+    if (this.arr.length <= 1 || index >= this.arr.length - 1) {
+      return;
     }
-    dequeue() {
-        this.delete(0);
+    if (
+      (index * 2 + 1 < this.arr.length &&
+        this.compare(this.arr[index], this.arr[index * 2 + 1]) < 0) ||
+      (index * 2 + 2 < this.arr.length &&
+        this.compare(this.arr[index], this.arr[index * 2 + 2]) < 0)
+    ) {
+      if (
+        index * 2 + 2 >= this.arr.length ||
+        this.compare(this.arr[index * 2 + 1], this.arr[index * 2 + 2]) > 0
+      ) {
+        this.swap(this.arr, index, index * 2 + 1);
+        this.sinkDown(index * 2 + 1);
+      } else {
+        this.swap(this.arr, index, index * 2 + 2);
+        this.sinkDown(index * 2 + 2);
+      }
     }
-    bubbleUp(index) {
-        if (this.arr.length <= 1 || index <= 0) {
-            return;
-        }
-        const pre = Math.floor((index - 1) / 2);
-        if (this.compare(this.arr[index], this.arr[pre]) > 0) {
-            this.swap(this.arr, pre, index);
-            this.bubbleUp(pre);
-        }
-    }
-    delete(index) {
-        this.swap(this.arr, index, this.arr.length - 1);
-        this.arr.pop();
-        this.sinkDown(index);
-    }
-    sinkDown(index) {
-        if (this.arr.length <= 1 || index >= this.arr.length - 1) {
-            return;
-        }
-        if (index * 2 + 1<this.arr.length && this.compare(this.arr[index], this.arr[index * 2 + 1]) < 0 || index * 2 + 2 < this.arr.length && this.compare(this.arr[index], this.arr[index * 2 + 2]) < 0) {
-            if (index * 2 + 2 >= this.arr.length || this.compare(this.arr[index * 2 + 1], this.arr[index * 2 + 2])>0) {
-                this.swap(this.arr, index, index * 2 + 1);
-                this.sinkDown(index * 2 + 1);
-            }
-            else {
-                this.swap(this.arr, index, index * 2 + 2);
-                this.sinkDown(index * 2 + 2);
-            }
-        }
-    }
-    front() {
-        return this.arr[0];
-    }
-    size(){
-        return this.arr.length;
-    }
+  }
+  front() {
+    return this.arr[0];
+  }
+  size() {
+    return this.arr.length;
+  }
 }
 
 interface Data {
-    index: number;
-    value: number;
+  index: number;
+  value: number;
 }
 
 class StockPrice {
-    priceArr: number[];
-    maxPriorityQueue: PriorityQueue1<{index: number, value: number}>;
-    minPriorityQueue: PriorityQueue1<{index: number, value: number}>;
-    constructor() {
-        this.priceArr = [];
-        this.maxPriorityQueue = new PriorityQueue1({compare: (a: Data,b: Data)=>a.value-b.value});
-        this.minPriorityQueue = new PriorityQueue1({compare: (a: Data,b: Data)=>b.value-a.value});
-    }
+  priceArr: number[];
+  maxPriorityQueue: PriorityQueue1<{ index: number; value: number }>;
+  minPriorityQueue: PriorityQueue1<{ index: number; value: number }>;
+  constructor() {
+    this.priceArr = [];
+    this.maxPriorityQueue = new PriorityQueue1({
+      compare: (a: Data, b: Data) => a.value - b.value,
+    });
+    this.minPriorityQueue = new PriorityQueue1({
+      compare: (a: Data, b: Data) => b.value - a.value,
+    });
+  }
 
-    update(timestamp: number, price: number): void {
-        this.priceArr[timestamp] = price;
-        this.maxPriorityQueue.enqueue({index: timestamp, value: price});
-        this.minPriorityQueue.enqueue({index: timestamp, value: price});
-    }
+  update(timestamp: number, price: number): void {
+    this.priceArr[timestamp] = price;
+    this.maxPriorityQueue.enqueue({ index: timestamp, value: price });
+    this.minPriorityQueue.enqueue({ index: timestamp, value: price });
+  }
 
-    current(): number {
-        return this.priceArr[this.priceArr.length-1];
-    }
+  current(): number {
+    return this.priceArr[this.priceArr.length - 1];
+  }
 
-    maximum(): number {
-        while(this.maxPriorityQueue.front().value !== this.priceArr[this.maxPriorityQueue.front().index]){
-            this.maxPriorityQueue.dequeue();
-        }
-        return this.maxPriorityQueue.front().value;
+  maximum(): number {
+    while (
+      this.maxPriorityQueue.front().value !==
+      this.priceArr[this.maxPriorityQueue.front().index]
+    ) {
+      this.maxPriorityQueue.dequeue();
     }
+    return this.maxPriorityQueue.front().value;
+  }
 
-    minimum(): number {
-        while(this.minPriorityQueue.front().value !== this.priceArr[this.minPriorityQueue.front().index]){
-            this.minPriorityQueue.dequeue();
-        }
-        return this.minPriorityQueue.front().value;
+  minimum(): number {
+    while (
+      this.minPriorityQueue.front().value !==
+      this.priceArr[this.minPriorityQueue.front().index]
+    ) {
+      this.minPriorityQueue.dequeue();
     }
+    return this.minPriorityQueue.front().value;
+  }
 }
 
 /**
@@ -130,18 +171,18 @@ class StockPrice {
 
 ```typescript
 function splitNum(num: number): number {
-    let numStr = (num+'').split('').sort();
-    let num1 = '';
-    let num2 = '';
-    for(let i=0;i<numStr.length;i+=2){
-        num1+=numStr[i];
-        if(i+1<numStr.length){
-            num2+=numStr[i+1];
-        }
+  let numStr = (num + "").split("").sort();
+  let num1 = "";
+  let num2 = "";
+  for (let i = 0; i < numStr.length; i += 2) {
+    num1 += numStr[i];
+    if (i + 1 < numStr.length) {
+      num2 += numStr[i + 1];
     }
-    console.log(num1, num2)
-    return +num1+(+num2);
-};
+  }
+  console.log(num1, num2);
+  return +num1 + +num2;
+}
 ```
 
 # 2023-05-09
