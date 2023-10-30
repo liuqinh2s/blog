@@ -52,10 +52,15 @@ date: 2019-02-20 20:30:09
 ## AI
 
 - [ChatGPT](https://chat.openai.com/)
+- [openprompt](https://openprompt.co/)
 
 ## 软件
 
 - [Everything - 基于名称快速定位文件和文件夹。](https://www.voidtools.com/zh-cn/)
+
+## 配色
+
+- [Color Leap - 色彩时光机](https://colorleap.app/home)
 
 ## 图片
 
