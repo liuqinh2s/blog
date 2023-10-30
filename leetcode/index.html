@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-10-241155. 掷骰子等于目标和的方法数 这道题一开始没有思路">
+<meta name="description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-10-262520. 统计能整除数字的位数 简单题 12345678">
 <meta name="keywords" content="Coding Writing Thinking">
 <meta property="og:type" content="website">
 <meta property="og:title" content="leetcode">
 <meta property="og:url" content="https://liuqinh2s.xyz/leetcode/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-10-241155. 掷骰子等于目标和的方法数 这道题一开始没有思路">
+<meta property="og:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-10-262520. 统计能整除数字的位数 简单题 12345678">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-10-24T09:04:04.931Z">
+<meta property="og:updated_time" content="2023-10-30T01:33:27.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode">
-<meta name="twitter:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-10-241155. 掷骰子等于目标和的方法数 这道题一开始没有思路">
+<meta name="twitter:description" content="这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。 2023-10-262520. 统计能整除数字的位数 简单题 12345678">
 
 
 
@@ -402,6 +402,9 @@
         
         
           <p>这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。</p>
+<h1 id="2023-10-26"><a href="#2023-10-26" class="headerlink" title="2023-10-26"></a>2023-10-26</h1><p><a href="https://leetcode.cn/problems/count-the-digits-that-divide-a-number/description/" target="_blank" rel="noopener">2520. 统计能整除数字的位数</a></p>
+<p>简单题</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countDigits</span>(<span class="params">num: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> n = num;</span><br><span class="line">  <span class="keyword">while</span> (n !== <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> a = n % <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> (num % a === <span class="number">0</span>) &#123;</span><br><span class="line">      count++;</span><br><span class="line">    &#125;</span><br><span class="line">    n = <span class="built_in">Math</span>.floor(n / <span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="2023-10-24"><a href="#2023-10-24" class="headerlink" title="2023-10-24"></a>2023-10-24</h1><p><a href="https://leetcode.cn/problems/number-of-dice-rolls-with-target-sum/" target="_blank" rel="noopener">1155. 掷骰子等于目标和的方法数</a></p>
 <p>这道题一开始没有思路，但简单看了一下答案，发现确实不难，动态规划拿下：</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">numRollsToTarget</span>(<span class="params">n: <span class="built_in">number</span>, k: <span class="built_in">number</span>, target: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> MOD = <span class="number">10</span> ** <span class="number">9</span> + <span class="number">7</span>;</span><br><span class="line">  <span class="keyword">const</span> dp = <span class="keyword">new</span> <span class="built_in">Array</span>(n + <span class="number">1</span>).fill(<span class="number">0</span>).map(<span class="function">(<span class="params">x</span>) =&gt;</span> <span class="keyword">new</span> <span class="built_in">Array</span>(target + <span class="number">1</span>).fill(<span class="number">0</span>));</span><br><span class="line">  dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 边界条件是dp[1][j]=1, 1&lt;=j&lt;=k，这里可以更进一步简单归纳为dp[0][0]=1</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;= target; j++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> x = <span class="number">1</span>; x &lt;= k; x++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (j - x &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">          dp[i][j] = (dp[i][j] + dp[i - <span class="number">1</span>][j - x]) % MOD; <span class="comment">// 每一步都要取模，否则会溢出</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[n][target];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -516,7 +519,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -538,7 +541,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -612,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-24"><span class="nav-number">1.</span> <span class="nav-text">2023-10-24</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-08"><span class="nav-number">2.</span> <span class="nav-text">2023-10-08</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-09"><span class="nav-number">3.</span> <span class="nav-text">2023-10-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-05-09"><span class="nav-number">4.</span> <span class="nav-text">2023-05-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-10"><span class="nav-number">5.</span> <span class="nav-text">2023-04-10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-06"><span class="nav-number">6.</span> <span class="nav-text">2023-04-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-05"><span class="nav-number">7.</span> <span class="nav-text">2023-04-05</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-03"><span class="nav-number">8.</span> <span class="nav-text">2023-04-03</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-02"><span class="nav-number">9.</span> <span class="nav-text">2023-04-02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-03-06"><span class="nav-number">10.</span> <span class="nav-text">2023-03-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-13"><span class="nav-number">11.</span> <span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-09"><span class="nav-number">12.</span> <span class="nav-text">2023-01-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-08"><span class="nav-number">13.</span> <span class="nav-text">2023-01-08</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-26"><span class="nav-number">1.</span> <span class="nav-text">2023-10-26</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-24"><span class="nav-number">2.</span> <span class="nav-text">2023-10-24</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-08"><span class="nav-number">3.</span> <span class="nav-text">2023-10-08</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-10-09"><span class="nav-number">4.</span> <span class="nav-text">2023-10-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-05-09"><span class="nav-number">5.</span> <span class="nav-text">2023-05-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-10"><span class="nav-number">6.</span> <span class="nav-text">2023-04-10</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-06"><span class="nav-number">7.</span> <span class="nav-text">2023-04-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-05"><span class="nav-number">8.</span> <span class="nav-text">2023-04-05</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-03"><span class="nav-number">9.</span> <span class="nav-text">2023-04-03</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-04-02"><span class="nav-number">10.</span> <span class="nav-text">2023-04-02</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-03-06"><span class="nav-number">11.</span> <span class="nav-text">2023-03-06</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-13"><span class="nav-number">12.</span> <span class="nav-text">2023-01-13</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-09"><span class="nav-number">13.</span> <span class="nav-text">2023-01-09</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2023-01-08"><span class="nav-number">14.</span> <span class="nav-text">2023-01-08</span></a></li></ol></div>
             
 
           </div>
@@ -646,7 +649,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">94.4k</span>
+    <span title="Site words total count">94.6k</span>
   
 </div>
 
