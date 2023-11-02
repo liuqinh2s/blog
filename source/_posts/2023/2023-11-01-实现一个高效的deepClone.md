@@ -65,20 +65,31 @@ function deepCloneStack(obj) {
     return obj;
   }
   const root = Array.isArray(obj) ? [] : {};
-  const stack = [[root, obj]];
+  const stack = [[{ root }, obj, "root"]];
 
   while (stack.length > 0) {
-    const [target, obj] = stack.pop();
+    let [target, obj, key] = stack.pop();
     if (Array.isArray(obj)) {
-      for (let k = 0; k < obj.length; k++) {
-        target[k] = obj[k];
-        stack.push([target[k], obj[k]]);
+      if (!target[key]) {
+        target[key] = new Array(obj.length);
       }
-    } else if (isObj(obj)) {
-      const keys = Object.keys(obj || {});
-      for (let k = 0; k < keys.length; k++) {
-        target[keys[k]] = obj[keys[k]];
-        stack.push([target[keys[k]], obj[keys[k]]]);
+      for (let k = 0; k < obj.length; k++) {
+        if (isPrim(obj[k])) {
+          target[key][k] = obj[k];
+        } else {
+          stack.push([target[key], obj[k], k]);
+        }
+      }
+    } else {
+      if (!target[key]) {
+        target[key] = {};
+      }
+      for (let k in obj) {
+        if (isPrim(obj[k])) {
+          target[key][k] = obj[k];
+        } else {
+          stack.push([target[key], obj[k], k]);
+        }
       }
     }
   }
