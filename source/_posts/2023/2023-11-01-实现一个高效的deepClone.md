@@ -12,6 +12,8 @@ comments: true
 
 用栈来实现迭代。函数调用栈本身也是栈，但开销肯定比自己写的栈要大一些。
 
+<!-- more -->
+
 ```javascript
 function toString(a) {
   return Object.prototype.toString.call(a).slice(8, -1);
