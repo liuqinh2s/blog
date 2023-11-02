@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[实现一个高效的deepClone]]></title>
+    <url>%2F2023%2F11%2F01%2F%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E9%AB%98%E6%95%88%E7%9A%84deepClone%2F</url>
+    <content type="text"><![CDATA[最近 EDA 项目在解决一些性能上的问题，首当其冲的就是 deepClone，各种地方都在用，且十分卡性能。如何解决这个问题呢？ 由于我们项目中的 deepClone 是一个递归版本的 deepClone，所以应该可以通过把它改成迭代版的 deepClone 来提速。 用栈来实现迭代。函数调用栈本身也是栈，但开销肯定比自己写的栈要大一些。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869function toString(a) &#123; return Object.prototype.toString.call(a).slice(8, -1);&#125;function isObj(a) &#123; return toString(a) === "Object";&#125;function isNum(a) &#123; return toString(a) === "Number";&#125;function isStr(a) &#123; return toString(a) === "String";&#125;function isBool(a) &#123; return toString(a) === "Boolean";&#125;function isSymbol(a) &#123; return toString(a) === "Symbol";&#125;function isBigInt(a) &#123; return toString(a) === "BigInt";&#125;function isFunction(a) &#123; return toString(a) === "Function";&#125;function isPrim(a) &#123; return ( isNum(a) || isStr(a) || isBool(a) || isSymbol(a) || isBigInt(a) || isFunction(a) || a === null || a === void 0 );&#125;function deepCloneStack(obj) &#123; if (isPrim(obj)) &#123; return obj; &#125; const root = Array.isArray(obj) ? [] : &#123;&#125;; const stack = [[root, obj]]; while (stack.length &gt; 0) &#123; const [target, obj] = stack.pop(); if (Array.isArray(obj)) &#123; for (let k = 0; k &lt; obj.length; k++) &#123; target[k] = obj[k]; stack.push([target[k], obj[k]]); &#125; &#125; else if (isObj(obj)) &#123; const keys = Object.keys(obj || &#123;&#125;); for (let k = 0; k &lt; keys.length; k++) &#123; target[keys[k]] = obj[keys[k]]; stack.push([target[keys[k]], obj[keys[k]]]); &#125; &#125; &#125; return root;&#125; 在线运行地址]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[一种速算]]></title>
     <url>%2F2023%2F10%2F30%2F%E4%B8%80%E7%A7%8D%E9%80%9F%E7%AE%97%2F</url>
     <content type="text"><![CDATA[以 5 结尾的数的平方，都有一个很好记的速算方式，就是前面的数乘以比它大一的数然后再拼接上 25，比如 $25\times 25$，就是 $2\times 3$ 等于 6，再拼接上 25，等于 625。 $65\times 65$，就是 $6\times 7$ 等于 42，再拼接上 25，等于 4225。 如何证明这个速算是正确的呢？我们还是用符号系统来把这个计算过程抽象化，设数字为：$(a\times 10+5)$ $$\begin{align}(a\times 10+5)\times(a\times 10+5)&amp;= 100\times a^2+100\times a+25 \newline&amp;= 100\times a(a+1)+25 \newline\end{align}$$ 证明完毕 这个速算方法是我小舅舅教会我的，可惜他英年早逝了。此文用以纪念他]]></content>
