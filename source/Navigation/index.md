@@ -378,7 +378,6 @@ date: 2019-02-20 20:30:09
 - 女优收集网站：[JAV Model listing](https://xslist.org/)
 - AV 资源：[AVHD101](https://avhd101.com)
 - bt 资源网站：[bt4g](https://bt4g.org)
-
 - [趣味数据分析 - 出差人 Jason | 豆瓣阅读](https://read.douban.com/ebook/390859043/)
 - [爱发电](https://afdian.net/)
 - 制乐：[开始 | Learning Synths](https://learningsynths.ableton.com/zh-Hans)
