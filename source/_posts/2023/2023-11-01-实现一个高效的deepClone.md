@@ -98,3 +98,5 @@ function deepCloneStack(obj) {
 ```
 
 [在线运行地址](https://replit.com/@liuqinh2s/deepClone#script.js)
+
+不过很遗憾的是迭代版本速度比递归还要慢，估计是因为 js 的数组性能太差导致的。
