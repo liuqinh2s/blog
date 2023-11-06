@@ -5,6 +5,38 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-11-06
+
+[318. 最大单词长度乘积](https://leetcode.cn/problems/maximum-product-of-word-lengths/)
+
+主要优化点在比较两个字符串，如何在 O(1)时间内完成比较呢？
+
+如果是字符乱序直接比较，那就是 O(n^2)
+
+如果用个 hash 表存下一个字符，那就是 O(n)
+
+用位运算。那就是 O(1)。位运算不仅仅是相当于把字符码好了位置，而且是批量对比（按位与，与一个位和与 N 个位是一个速度），而不是挨个比较。
+
+```typescript
+function maxProduct(words: string[]): number {
+  let char = new Array(words.length).fill(0);
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < words[i].length; j++) {
+      char[i] |= 1 << (words[i].charCodeAt(j) - "a".charCodeAt(0));
+    }
+  }
+  let res = 0;
+  for (let i = 0; i < words.length; i++) {
+    for (let j = 0; j < words.length; j++) {
+      if ((char[i] & char[j]) == 0) {
+        res = Math.max(words[i].length * words[j].length, res);
+      }
+    }
+  }
+  return res;
+}
+```
+
 # 2023-10-26
 
 [2520. 统计能整除数字的位数](https://leetcode.cn/problems/count-the-digits-that-divide-a-number/description/)
