@@ -259,19 +259,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[浏览器 storage 事件]]></title>
-    <url>%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性： 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[二分查找]]></title>
     <url>%2F2022%2F06%2F08%2F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。 二分查找的前提：数据有序 二分查找结束的条件：查找区间为空，或者找到元素 二分查找的条件分支： nums[mid]==target nums[mid]&lt;target nums[mid]&gt;target 二分查找的搜索区间表示形式： 左闭右开（区间为空的条件是 left==right） 左闭右闭（区间为空的条件是 left&gt;right） 二分查找有的时候我会写出死循环来，仔细思考了一下：必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能。 习题 leetcode 704. 二分查找 leetcode 34. 在排序数组中查找元素的第一个和最后一个位置（中等） 第一题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length-1; while(left&lt;=right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 左闭右开搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 第二题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [findLeft(nums, target), findRight(nums, target)]&#125;;var findLeft = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[left]==target)&#123; return left &#125; return -1;&#125;var findRight = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); console.log(left, mid, right) if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[right-1]==target)&#123; return right-1; &#125; return -1;&#125; 左闭右闭搜索区间的写法： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [fundLeft(nums, target), fundRight(nums, target)]&#125;;var fundLeft = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[left]==target)&#123; return left; &#125; return -1;&#125;var fundRight = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[right]==target)&#123; return right; &#125; return -1;&#125;]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[浏览器 storage 事件]]></title>
+    <url>%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性： 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
+      <categories>
+        <category>前端</category>
       </categories>
   </entry>
   <entry>
@@ -355,19 +355,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[position sticky]]></title>
-    <url>%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
-    <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
-      <categories>
-        <category>css</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
     <url>%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
     <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
       <categories>
         <category>leetcode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[position sticky]]></title>
+    <url>%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
+    <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
+      <categories>
+        <category>css</category>
       </categories>
   </entry>
   <entry>
