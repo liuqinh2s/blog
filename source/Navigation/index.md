@@ -250,6 +250,13 @@ date: 2019-02-20 20:30:09
 - [Vue.js 挑战 | 一个 Vue.js 在线挑战平台](https://cn-vuejs-challenges.netlify.app/)
 - [教孩子和妻子编程 | 算法和数据结构教程视频](https://zhihua-lai.com/teaching/ch/)
 - [International Journal of PoC or GTFO (Proof-of-Concept or Get The Fuck Out) | evmn.github.io](https://evmn.github.io/post/2021-12-31-PoC-or-GTFO.html)
+- WebAssembly
+  - [WebAssembly Explorer](https://mbebenita.github.io/WasmExplorer/)
+  - [A TypeScript-like language for WebAssembly](https://www.assemblyscript.org/)
+- 打包
+  - [Parcel 中文网](https://zh.parceljs.org/)
+- WebGL
+  - [WebGL2 理论基础](https://webgl2fundamentals.org/webgl/lessons/zh_cn/)
 - 程序员能力矩阵：[Programmer Competency Matrix | Sijin Joseph](https://sijinjoseph.netlify.app/programmer-competency-matrix/)
 - 自学计算机科学：[Teach Yourself Computer Science](https://teachyourselfcs.com/)
 - 密码学免费课程：[Crypto 101](https://www.crypto101.io/)
