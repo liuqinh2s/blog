@@ -5,6 +5,37 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-11-08
+
+[2609. 最长平衡子字符串](https://leetcode.cn/problems/find-the-longest-balanced-substring-of-a-binary-string/submissions/?envType=daily-question&envId=2023-11-08)
+
+比较简单
+
+```typescript
+function findTheLongestBalancedSubstring(s: string): number {
+  let max = 0;
+  let stack = [];
+  for (let i = 0; i < s.length; ) {
+    while (i < s.length && s[i] === "1") {
+      i++;
+    }
+    while (i < s.length && s[i] === "0") {
+      stack.push(0);
+      i++;
+    }
+    let x = 0;
+    while (i < s.length && s[i] === "1" && stack.length > 0) {
+      stack.pop();
+      x++;
+      i++;
+    }
+    stack.length = 0;
+    max = Math.max(x, max);
+  }
+  return max * 2;
+}
+```
+
 # 2023-11-07
 
 [2586. 统计范围内的元音字符串数](https://leetcode.cn/problems/count-the-number-of-vowel-strings-in-range/description/?envType=daily-question&envId=2023-11-07)
