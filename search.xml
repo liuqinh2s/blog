@@ -68,8 +68,8 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>项目</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -259,19 +259,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[浏览器 storage 事件]]></title>
-    <url>%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性： 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[二分查找]]></title>
     <url>%2F2022%2F06%2F08%2F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。 二分查找的前提：数据有序 二分查找结束的条件：查找区间为空，或者找到元素 二分查找的条件分支： nums[mid]==target nums[mid]&lt;target nums[mid]&gt;target 二分查找的搜索区间表示形式： 左闭右开（区间为空的条件是 left==right） 左闭右闭（区间为空的条件是 left&gt;right） 二分查找有的时候我会写出死循环来，仔细思考了一下：必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能。 习题 leetcode 704. 二分查找 leetcode 34. 在排序数组中查找元素的第一个和最后一个位置（中等） 第一题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length-1; while(left&lt;=right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 左闭右开搜索区间的写法： 1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; const mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; return mid; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125; &#125; return -1;&#125;; 第二题答案：左闭右闭搜索区间的写法： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [findLeft(nums, target), findRight(nums, target)]&#125;;var findLeft = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[left]==target)&#123; return left &#125; return -1;&#125;var findRight = function(nums, target)&#123; let left = 0; let right = nums.length; while(left&lt;right)&#123; let mid = left + Math.floor((right-left)/2); console.log(left, mid, right) if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid; &#125; &#125; if(nums[right-1]==target)&#123; return right-1; &#125; return -1;&#125; 左闭右闭搜索区间的写法： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123; return [fundLeft(nums, target), fundRight(nums, target)]&#125;;var fundLeft = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; right = mid-1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[left]==target)&#123; return left; &#125; return -1;&#125;var fundRight = function(nums, target)&#123; let left = 0; let right = nums.length - 1; while(left&lt;=right)&#123; let mid = left + Math.floor((right-left)/2); if(nums[mid]==target)&#123; left = mid+1; &#125;else if(nums[mid]&lt;target)&#123; left = mid+1; &#125;else if(nums[mid]&gt;target)&#123; right = mid-1; &#125; &#125; if(nums[right]==target)&#123; return right; &#125; return -1;&#125;]]></content>
       <categories>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[浏览器 storage 事件]]></title>
+    <url>%2F2022%2F06%2F08%2F%E6%B5%8F%E8%A7%88%E5%99%A8storage%E4%BA%8B%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性： 在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到 我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。 英文文档的解释The storage event of the Window interface fires when a storage area (localStorage) has been modified in the context of another document. Note: This won&#39;t work on the same page that is making the changes — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects. 测试代码123456// 设置监听window.addEventListener('storage', ()=&gt;&#123;console.log('监听storage', localStorage.getItem('abcd'))&#125;);// 查看dom有哪些监听事件getEventListeners(window);// 设置localStoragelocalStorage.setItem('abcd', '1111');]]></content>
+      <categories>
+        <category>前端</category>
       </categories>
   </entry>
   <entry>
@@ -283,19 +283,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[快速排序最坏的情况啥时候出现]]></title>
-    <url>%2F2021%2F06%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%2F</url>
-    <content type="text"><![CDATA[在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN 代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN$退化成了$N$。那么什么情况会退化成$logN$，当然是问题规模缩减得慢的时候，这与我们选中枢有直接的关系。假如我们选的中枢，每次都是最小或者最大，那么问题的缩小速度就会变成线性的了；而假如我们选的中枢，每次恰好是中间那个数，那么问题递归次数就是$log_2^N$了。 由于我们一般都是选第一个或者最后一个元素做中枢，那么最坏的情况对应就是：已经有序（这包括正序，逆序，以及全部元素相等） 由于快速排序的这个特征，所以我们一般的算法库中是结合了好几种排序算法：C++一道深坑面试题：STL 里 sort 算法用的是什么排序算法？ 同时我也在思考为啥快排这种最坏是$O(N^2)$的算法会被使用，而不直接使用最坏是$O(NlogN)$的算法，比如归并排序，堆排序。答案自然是这些排序也有各自的缺点，而且我估计是无法容忍的缺点。比如归并排序，它不是一个原地排序算法，需要额外的存储空间。堆排序，需要构建堆花费额外的时间。堆构建完毕后，借用堆这种结构，每次只能从堆顶取出最大或最小的数，而且取完还要进行堆维护，花费$logN$的时间。构建堆的过程和堆排序的过程类似，只不过构建堆是添加叶节点+上浮堆化的过程，而堆排序是取根节点+下沉堆化的过程，同样的构建堆也要花费$O(NlogN)$的时间。所以堆排序会花费双倍的时间。]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[智能合约入门]]></title>
     <url>%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
     <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
       <categories>
         <category>币圈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[快速排序最坏的情况啥时候出现]]></title>
+    <url>%2F2021%2F06%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN 代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN$退化成了$N$。那么什么情况会退化成$logN$，当然是问题规模缩减得慢的时候，这与我们选中枢有直接的关系。假如我们选的中枢，每次都是最小或者最大，那么问题的缩小速度就会变成线性的了；而假如我们选的中枢，每次恰好是中间那个数，那么问题递归次数就是$log_2^N$了。 由于我们一般都是选第一个或者最后一个元素做中枢，那么最坏的情况对应就是：已经有序（这包括正序，逆序，以及全部元素相等） 由于快速排序的这个特征，所以我们一般的算法库中是结合了好几种排序算法：C++一道深坑面试题：STL 里 sort 算法用的是什么排序算法？ 同时我也在思考为啥快排这种最坏是$O(N^2)$的算法会被使用，而不直接使用最坏是$O(NlogN)$的算法，比如归并排序，堆排序。答案自然是这些排序也有各自的缺点，而且我估计是无法容忍的缺点。比如归并排序，它不是一个原地排序算法，需要额外的存储空间。堆排序，需要构建堆花费额外的时间。堆构建完毕后，借用堆这种结构，每次只能从堆顶取出最大或最小的数，而且取完还要进行堆维护，花费$logN$的时间。构建堆的过程和堆排序的过程类似，只不过构建堆是添加叶节点+上浮堆化的过程，而堆排序是取根节点+下沉堆化的过程，同样的构建堆也要花费$O(NlogN)$的时间。所以堆排序会花费双倍的时间。]]></content>
+      <categories>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -339,17 +339,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[leetcode： 560. 和为K的子数组]]></title>
-    <url>%2F2021%2F05%2F29%2Fleetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%2F</url>
-    <content type="text"><![CDATA[这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量 560. 和为K的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下： JavaScript代码： 1234567891011121314151617/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var subarraySum = function(nums, k) &#123; let count = 0; for (let start = 0; start &lt; nums.length; ++start) &#123; let sum = 0; for (let end = start; end &gt;= 0; --end) &#123; sum += nums[end]; if (sum == k) &#123; count++; &#125; &#125; &#125; return count;&#125;; 这样的话，算法的时间复杂度是O(n^2)。有没有重复计算的问题呢，似乎不太好说，但结果是：有，像此类问题有统一的规律，就是我们可以记录前缀和。如果我们知道前缀和，那么我们只需要用当前和减去k，看是否等于某个前缀和，如果有，我们不就正好找到一个子数组的和等于k了吗？所以基于前缀和，我们一次遍历即可解决问题。 JavaScript代码： 12345678910111213141516171819202122/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var subarraySum = function(nums, k) &#123; let pre = 0; let preRecord = &#123;0: 1&#125; let count=0; for(let i=0;i&lt;nums.length;i++)&#123; pre += nums[i]; if(preRecord[pre-k])&#123; count += preRecord[pre-k] &#125; if(preRecord[pre])&#123; preRecord[pre]++; &#125;else&#123; preRecord[pre]=1; &#125; &#125; return count;&#125;; 前缀和对过往的遍历总结提取了信息，使我们不用再去进行重复的计算，是非常重要的技巧。]]></content>
+    <title><![CDATA[leetcode： 1074. 元素和为目标值的子矩阵数量]]></title>
+    <url>%2F2021%2F05%2F29%2Fleetcode-1074-%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E5%AD%90%E7%9F%A9%E9%98%B5%E6%95%B0%E9%87%8F%2F</url>
+    <content type="text"><![CDATA[这个问题需要拆分出子问题才好解决，要不然没有思路。它的子问题是：560. 和为K的子数组 1074. 元素和为目标值的子矩阵数量当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？ 我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。 那这样的组合有哪些呢？通过简单的二次遍历，就能得出我们想要的组合： JavaScript代码： 12345for(let i=0;i&lt;n;i++)&#123; for(let j=i;j&lt;n;j++)&#123; &#125;&#125; 每次i到j之间的数就是我们想要的组合，拿这些数的和，组成新的一维数组，然后用一维数组的解法去解。这里有个小技巧是这个和也要避免重复计算，所以要把每次计算所得存下来，下次在这个基础上算，这样可以省下从头开始求和的时间。 JavaScript代码： 123456789101112131415161718192021222324252627282930313233343536/** * @param &#123;number[][]&#125; matrix * @param &#123;number&#125; target * @return &#123;number&#125; */var numSubmatrixSumTarget = function(matrix, target) &#123; let count = 0; for(let i=0;i&lt;matrix.length;i++)&#123; let sum = new Array(matrix[0].length).fill(0) for(let j=i;j&lt;matrix.length;j++)&#123; for(let k=0;k&lt;matrix[0].length;k++)&#123; sum[k] += matrix[j][k] &#125; count += subarraySum(sum, target) &#125; &#125; return count;&#125;;var subarraySum = function(nums, k) &#123; let pre = 0; let preRecord = &#123;0: 1&#125; let count=0; for(let i=0;i&lt;nums.length;i++)&#123; pre += nums[i]; if(preRecord[pre-k])&#123; count += preRecord[pre-k] &#125; if(preRecord[pre])&#123; preRecord[pre]++; &#125;else&#123; preRecord[pre]=1; &#125; &#125; return count;&#125;; 简化问题的办法有很多，比如降低问题规模，降低维度，二维 -&gt; 一维。]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[leetcode： 1074. 元素和为目标值的子矩阵数量]]></title>
-    <url>%2F2021%2F05%2F29%2Fleetcode-1074-%E5%85%83%E7%B4%A0%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E5%AD%90%E7%9F%A9%E9%98%B5%E6%95%B0%E9%87%8F%2F</url>
-    <content type="text"><![CDATA[这个问题需要拆分出子问题才好解决，要不然没有思路。它的子问题是：560. 和为K的子数组 1074. 元素和为目标值的子矩阵数量当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？ 我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。 那这样的组合有哪些呢？通过简单的二次遍历，就能得出我们想要的组合： JavaScript代码： 12345for(let i=0;i&lt;n;i++)&#123; for(let j=i;j&lt;n;j++)&#123; &#125;&#125; 每次i到j之间的数就是我们想要的组合，拿这些数的和，组成新的一维数组，然后用一维数组的解法去解。这里有个小技巧是这个和也要避免重复计算，所以要把每次计算所得存下来，下次在这个基础上算，这样可以省下从头开始求和的时间。 JavaScript代码： 123456789101112131415161718192021222324252627282930313233343536/** * @param &#123;number[][]&#125; matrix * @param &#123;number&#125; target * @return &#123;number&#125; */var numSubmatrixSumTarget = function(matrix, target) &#123; let count = 0; for(let i=0;i&lt;matrix.length;i++)&#123; let sum = new Array(matrix[0].length).fill(0) for(let j=i;j&lt;matrix.length;j++)&#123; for(let k=0;k&lt;matrix[0].length;k++)&#123; sum[k] += matrix[j][k] &#125; count += subarraySum(sum, target) &#125; &#125; return count;&#125;;var subarraySum = function(nums, k) &#123; let pre = 0; let preRecord = &#123;0: 1&#125; let count=0; for(let i=0;i&lt;nums.length;i++)&#123; pre += nums[i]; if(preRecord[pre-k])&#123; count += preRecord[pre-k] &#125; if(preRecord[pre])&#123; preRecord[pre]++; &#125;else&#123; preRecord[pre]=1; &#125; &#125; return count;&#125;; 简化问题的办法有很多，比如降低问题规模，降低维度，二维 -&gt; 一维。]]></content>
+    <title><![CDATA[leetcode： 560. 和为K的子数组]]></title>
+    <url>%2F2021%2F05%2F29%2Fleetcode-560-%E5%92%8C%E4%B8%BAK%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量 560. 和为K的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下： JavaScript代码： 1234567891011121314151617/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var subarraySum = function(nums, k) &#123; let count = 0; for (let start = 0; start &lt; nums.length; ++start) &#123; let sum = 0; for (let end = start; end &gt;= 0; --end) &#123; sum += nums[end]; if (sum == k) &#123; count++; &#125; &#125; &#125; return count;&#125;; 这样的话，算法的时间复杂度是O(n^2)。有没有重复计算的问题呢，似乎不太好说，但结果是：有，像此类问题有统一的规律，就是我们可以记录前缀和。如果我们知道前缀和，那么我们只需要用当前和减去k，看是否等于某个前缀和，如果有，我们不就正好找到一个子数组的和等于k了吗？所以基于前缀和，我们一次遍历即可解决问题。 JavaScript代码： 12345678910111213141516171819202122/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var subarraySum = function(nums, k) &#123; let pre = 0; let preRecord = &#123;0: 1&#125; let count=0; for(let i=0;i&lt;nums.length;i++)&#123; pre += nums[i]; if(preRecord[pre-k])&#123; count += preRecord[pre-k] &#125; if(preRecord[pre])&#123; preRecord[pre]++; &#125;else&#123; preRecord[pre]=1; &#125; &#125; return count;&#125;; 前缀和对过往的遍历总结提取了信息，使我们不用再去进行重复的计算，是非常重要的技巧。]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
