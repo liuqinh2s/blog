@@ -5,6 +5,61 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些有趣的东西，它们的编排方式是按日期倒序来的。
 
+我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
+
+# 2023-11-09
+
+今日话题：
+
+- AI
+- 编译原理 - 语法分析
+- 免费翻墙搭建
+
+一些调教好的 AI，用以回答专门领域的问题：
+[Open Prompt - Create, Use, Share ChatGPT prompts.](https://openprompt.co/)
+
+JavaScript AST Parser：
+
+- Esprima
+  - [Esprima: Parser](https://esprima.org/demo/parse.html#)
+  - [esprima/src at main · jquery/esprima](https://github.com/jquery/esprima/tree/main/src)
+
+很早之前就想自己写个解析器了，但一直没有落实下来，最近看了 Esprima 的源码
+
+如何搞一个免费的翻墙，有人用 Cloudflare 搞了一个：
+
+- [Cloudflare CDN 反代免费 VPN 高速上网，速度超快，千兆节点、解锁奈飞流媒体 - 科技小飞哥](https://www.techxiaofei.com/post/vpn/cdn/)
+- [CloudFlare 的免费 VPN，Warp+ 优选 IP，实现无限的高速流量！ – 零度解说](https://www.freedidi.com/9876.html)
+
+# 2023-11-08
+
+今日话题：
+
+- chrome 插件开发入门
+- vscode 插件开发入门
+- 自己封装常用的 useHooks
+- WebGL 入门
+- 发现一本高分设计书
+- 谷歌官方出的 web 开发教程
+- ChatGPT 提示词
+
+在搜 chrome 插件怎么开发的时候，发现了这篇文章：[Chrome 插件(扩展)开发全攻略-腾讯课堂](https://ke.qq.com/cheese/graphic_9c1952c561e303f378ce03e6a174c046_0-1.html)
+
+然后觉得这个 [涨知识-腾讯课堂](https://ke.qq.com/cheese)，还不错。又在里面看文章，通过这篇[React Hooks 的花样玩法-腾讯课堂](https://ke.qq.com/cheese/graphic_328429a4ceea74ca454293560efcadf9_0-1.html)，发现了一个不错的小网站：[useHooks – The React Hooks Library](https://usehooks.com/)，专门罗列了一些常用的 useHooks，可以学习一下，比如`useClickAway`我就经常用到。
+
+最近想自己开发一款类似 Beecarbonize 的卡牌游戏，于是搜到了一个关于 WebGL 的不错的教程：[WebGL2 理论基础](https://webgl2fundamentals.org/webgl/lessons/zh_cn/)
+
+关于 WebGL 的更多有意思的网站：
+
+- [WebGL playground](http://webglplayground.net/)
+- [WebGL Academy Interactive Tutorials](http://www.webglacademy.com/)
+
+从某人的博客中发现的一本设计书笔记，搜了一下豆瓣，评分还可以：[写给大家看的设计书（第 3 版）](https://book.douban.com/subject/3323633/)
+
+同事自己开发了一款方便工作的 vscode 插件，我也搜了一下 vscode 插件如何开发，发现了这篇文章：[前端 - 从 0 到 1 开发一款自己的 vscode 插件 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000040720760)
+
+谷歌专家写的 web 开发教程：[web.dev](https://web.dev/learn?hl=zh-cn)
+
 # 2023-07-21
 
 阮一峰的周报，里面看到四个简单介绍技术原理的文章：
