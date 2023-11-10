@@ -5,6 +5,152 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-11-09
+
+[2258. 逃离火灾](https://leetcode.cn/problems/escape-the-spreading-fire/description/?envType=daily-question&envId=2023-11-09)
+
+这道题稍微有点复杂，主要设计到两个算法，**广度优先遍历**和**二分搜索**
+
+我封装出了一个扩散方法：`spread`
+
+```typescript
+function maximumMinutes(grid: number[][]): number {
+  grid[0][0] = 3;
+  const fireSpreadTime = getSpreadTime(grid, 1);
+  const peopleSpreadTime = getSpreadTime(grid, 3);
+  if (peopleSpreadTime === 1e9) {
+    return -1;
+  }
+  if (fireSpreadTime === 1e9) {
+    return 1e9;
+  }
+  if (!canGetOut(grid)) {
+    return -1;
+  }
+  const time = fireSpreadTime - peopleSpreadTime;
+  // console.log(fireSpreadTime, peopleSpreadTime)
+  return binarySearch(grid, 0, time);
+}
+
+function binarySearch(grid: number[][], left: number, right: number) {
+  if (left > right) {
+    // console.log('left right', left, right)
+    return right;
+  }
+  const mid = Math.floor((left + right) / 2);
+  if (canGetOut(grid, mid)) {
+    return binarySearch(grid, mid + 1, right);
+  } else {
+    return binarySearch(grid, left, mid - 1);
+  }
+}
+
+function getSpreadTime(g: number[][], flag: number) {
+  const n = g.length;
+  const m = g[0].length;
+  const grid = JSON.parse(JSON.stringify(g));
+  const spreadTimeArr = new Array(n).fill(0).map(() => new Array(m).fill(1e9));
+  let time = 1;
+  // console.log(flag, 1, grid)
+  const qqueue = initQqueue(grid, flag);
+  while (spread(grid, spreadTimeArr, time, flag, qqueue)) {
+    // console.log(flag, 2, grid)
+    time++;
+  }
+  // console.log(flag, 3, grid)
+  return spreadTimeArr[n - 1][m - 1];
+}
+
+function canGetOut(g: number[][], time: number = 0) {
+  const n = g.length;
+  const m = g[0].length;
+  const grid = JSON.parse(JSON.stringify(g));
+  const fireSpreadTimeArr = new Array(grid.length)
+    .fill(0)
+    .map(() => new Array(grid[0].length).fill(1e9));
+  const peopleSpreadTimeArr = new Array(grid.length)
+    .fill(0)
+    .map(() => new Array(grid[0].length).fill(1e9));
+  const fireQqueue = initQqueue(grid, 1);
+  const peopleQqueue = initQqueue(grid, 3);
+  for (let i = 1; i <= time; i++) {
+    spread(grid, fireSpreadTimeArr, i, 1, fireQqueue);
+  }
+  let curTime = time + 1;
+  while (grid[n - 1][m - 1] === 0) {
+    spread(grid, fireSpreadTimeArr, curTime, 1, fireQqueue);
+    spread(grid, peopleSpreadTimeArr, curTime, 3, peopleQqueue);
+    curTime++;
+  }
+  return grid[grid.length - 1][grid[0].length - 1] === 3;
+}
+
+function initQqueue(grid: number[][], flag: number) {
+  const curQueue = [];
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] === flag) {
+        curQueue.push([i, j]);
+      }
+    }
+  }
+  return [curQueue];
+}
+
+function spread(
+  grid: number[][],
+  timeArr: number[][],
+  curTime: number,
+  flag: number,
+  qqueue: number[][][]
+) {
+  if (qqueue.length <= 0) {
+    return false;
+  }
+  const queue = qqueue.shift();
+  const curQueue = [];
+  let spreaded = false;
+  while (queue.length > 0) {
+    const [i, j] = queue.shift();
+    if (i - 1 >= 0) {
+      core(i - 1, j, flag);
+    }
+    if (i + 1 < grid.length) {
+      core(i + 1, j, flag);
+    }
+    if (j - 1 >= 0) {
+      core(i, j - 1, flag);
+    }
+    if (j + 1 < grid[i].length) {
+      core(i, j + 1, flag);
+    }
+    if (grid[grid.length - 1][grid[i].length - 1] === flag) {
+      spreaded = false;
+      break;
+    }
+  }
+  if (queue.length <= 0) {
+    qqueue.push(curQueue);
+  }
+
+  return spreaded;
+
+  function core(i: number, j: number, flag: number) {
+    if (
+      (flag === 1 && ![1, 2].includes(grid[i][j])) ||
+      (flag === 3 &&
+        (grid[i][j] === 0 ||
+          (i === grid.length - 1 && j === grid[0].length - 1)))
+    ) {
+      grid[i][j] = flag;
+      spreaded = true;
+      timeArr[i][j] = curTime;
+      curQueue.push([i, j]);
+    }
+  }
+}
+```
+
 # 2023-11-08
 
 [2609. 最长平衡子字符串](https://leetcode.cn/problems/find-the-longest-balanced-substring-of-a-binary-string/submissions/?envType=daily-question&envId=2023-11-08)
