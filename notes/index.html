@@ -81,23 +81,23 @@
 
 
 
-<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-11-13今日发现的 bug：  在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选 http post 参数传错导致 404  2023-10-23ts 项目使">
+<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-11-13今日发现的 bug：  在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选 http post 参数传错导致 404  朋友提出，可以用useId来避免">
 <meta name="keywords" content="Coding Writing Thinking">
 <meta property="og:type" content="website">
 <meta property="og:title" content="札记">
 <meta property="og:url" content="https://liuqinh2s.xyz/notes/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-11-13今日发现的 bug：  在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选 http post 参数传错导致 404  2023-10-23ts 项目使">
+<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-11-13今日发现的 bug：  在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选 http post 参数传错导致 404  朋友提出，可以用useId来避免">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2023/正则表达式的坑1.png">
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2023/正则表达式的坑2.png">
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.xyz/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2023-11-13T05:38:53.384Z">
+<meta property="og:updated_time" content="2023-11-13T05:41:03.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
-<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-11-13今日发现的 bug：  在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选 http post 参数传错导致 404  2023-10-23ts 项目使">
+<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2023-11-13今日发现的 bug：  在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选 http post 参数传错导致 404  朋友提出，可以用useId来避免">
 <meta name="twitter:image" content="https://liuqinh2s.xyz/images/2023/正则表达式的坑1.png">
 
 
@@ -413,6 +413,7 @@
 <li>在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选</li>
 <li>http post 参数传错导致 404</li>
 </ol>
+<p>朋友提出，可以用<a href="https://zh-hans.react.dev/reference/react/useId" target="_blank" rel="noopener">useId</a>来避免 id 重复</p>
 <h1 id="2023-10-23"><a href="#2023-10-23" class="headerlink" title="2023-10-23"></a>2023-10-23</h1><h2 id="ts-项目使用-js-包"><a href="#ts-项目使用-js-包" class="headerlink" title="ts 项目使用 js 包"></a>ts 项目使用 js 包</h2><p>ts 项目引入 js 包会报错，我们只需要在项目的任意位置新建一个<code>xxx.d.ts</code>文件，内容填入：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare <span class="built_in">module</span> <span class="string">'【import 的第三方库名】'</span>;</span><br></pre></td></tr></table></figure>
 <p>即可解决报错</p>
