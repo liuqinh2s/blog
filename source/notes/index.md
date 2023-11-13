@@ -12,6 +12,8 @@ date: 2018-11-03 14:59:45
 1. 在用 label for 的时候发现 id 重复，导致无法点击触发 checkbox 勾选
 2. http post 参数传错导致 404
 
+朋友提出，可以用[useId](https://zh-hans.react.dev/reference/react/useId)来避免 id 重复
+
 # 2023-10-23
 
 ## ts 项目使用 js 包
