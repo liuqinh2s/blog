@@ -5,6 +5,123 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-11-14
+
+[307. 区域和检索 - 数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/description/?envType=daily-question&envId=2023-11-13)
+
+虽说这是道中等题，但是我是第一次接触线段树，而且离谱的是暴力法居然也能通过（那这题就失去意义了）
+
+线段树是用树的方式存储下区间的一些信息，比如区间和，以空间换时间的方式来优化求区间信息的时间复杂度。构造线段树时间复杂度是 O(n)，更新线段树是 O(logN)，查询是 O(logN)
+
+举个具体的例子来展示一下线段树的原理：
+
+例如我们有个数组：`[10, 11, 12, 13, 14]`，构造成线段树就是如下：
+
+![线段树](https://oi-wiki.org/ds/images/segt1.svg)
+
+用堆来表示线段树那就是如下数组：`[60, 33, 27, 21, 12, 13, 14, 10, 11]`
+
+```typescript
+class NumArray {
+  segementTree: SegmentTree;
+  constructor(nums: number[]) {
+    this.segementTree = new SegmentTree(nums);
+  }
+
+  update(index: number, val: number): void {
+    this.segementTree.update(
+      index,
+      val,
+      0,
+      this.segementTree.rawData.length - 1,
+      0
+    );
+  }
+
+  sumRange(left: number, right: number): number {
+    return this.segementTree.getSum(
+      left,
+      right,
+      0,
+      this.segementTree.rawData.length - 1,
+      0
+    );
+  }
+}
+
+class SegmentTree {
+  data: number[] = [];
+  rawData: number[] = [];
+
+  build(index: number, start: number, end: number) {
+    if (start === end) {
+      this.data[index] = this.rawData[start];
+      return;
+    }
+    const mid = start + ((end - start) >> 1);
+    this.build(index * 2 + 1, start, mid);
+    this.build(index * 2 + 2, mid + 1, end);
+    this.data[index] = this.data[index * 2 + 1] + this.data[index * 2 + 2];
+  }
+
+  constructor(rawData: number[]) {
+    this.rawData = rawData;
+    this.build(0, 0, rawData.length - 1);
+    console.log(rawData, this.data);
+  }
+
+  getSum(
+    searchStart: number,
+    searchEnd: number,
+    curStart: number,
+    curEnd: number,
+    index: number
+  ) {
+    if (searchStart === curStart && searchEnd === curEnd) {
+      return this.data[index];
+    }
+    const mid = curStart + ((curEnd - curStart) >> 1);
+    let sum = 0;
+    if (searchEnd <= mid) {
+      sum += this.getSum(searchStart, searchEnd, curStart, mid, index * 2 + 1);
+    } else if (searchStart > mid) {
+      sum += this.getSum(
+        searchStart,
+        searchEnd,
+        mid + 1,
+        curEnd,
+        index * 2 + 2
+      );
+    } else {
+      sum +=
+        this.getSum(searchStart, mid, curStart, mid, index * 2 + 1) +
+        this.getSum(mid + 1, searchEnd, mid + 1, curEnd, index * 2 + 2);
+    }
+    return sum;
+  }
+
+  update(
+    updateIndex: number,
+    value: number,
+    curStart: number,
+    curEnd: number,
+    index: number
+  ) {
+    if (curStart === curEnd && updateIndex === curStart) {
+      this.rawData[updateIndex] = value;
+      this.data[index] = value;
+      return;
+    }
+    if (updateIndex >= curStart && updateIndex <= curEnd) {
+      const mid = curStart + ((curEnd - curStart) >> 1);
+      this.update(updateIndex, value, curStart, mid, index * 2 + 1);
+      this.update(updateIndex, value, mid + 1, curEnd, index * 2 + 2);
+      this.data[index] = this.data[index * 2 + 1] + this.data[index * 2 + 2];
+    }
+  }
+}
+```
+
 # 2023-11-09
 
 [2258. 逃离火灾](https://leetcode.cn/problems/escape-the-spreading-fire/description/?envType=daily-question&envId=2023-11-09)
