@@ -21,6 +21,8 @@ date: 2023-01-08
 
 用堆来表示线段树那就是如下数组：`[60, 33, 27, 21, 12, 13, 14, 10, 11]`
 
+此 leetcode 题解代码如下：
+
 ```typescript
 class NumArray {
   segementTree: SegmentTree;
