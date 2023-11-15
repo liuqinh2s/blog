@@ -12,8 +12,11 @@ date: 2019-02-20 20:30:09
 今日话题：
 
 - 如何开发一个富文本编辑器
+- vanilla-js
 
 最近有同事在研究富文本编辑器，我也顺带看看：[Building A Rich Text Editor (WYSIWYG) — Smashing Magazine](https://www.smashingmagazine.com/2021/05/building-wysiwyg-editor-javascript-slatejs/)
+
+据说 [vanilla-js](http://vanilla-js.com/) 特别快，但我是第一次听说这个，结果这个项目只是个玩笑：[前端社区的恶趣味之 Vanilla JS](https://cloud.tencent.com/developer/article/1480652)
 
 # 2023-11-09
 
