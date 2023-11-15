@@ -5,6 +5,24 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-11-15
+
+[2656. K 个元素的最大和](https://leetcode.cn/problems/maximum-sum-with-exactly-k-elements/solutions/2524816/k-ge-yuan-su-de-zui-da-he-by-leetcode-so-0ci1/)
+
+这题太简单了，用到了等差数列和
+
+```typescript
+function maximizeSum(nums: number[], k: number): number {
+  let maxIndex = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > nums[maxIndex]) {
+      maxIndex = i;
+    }
+  }
+  return (k * (nums[maxIndex] * 2 + k - 1)) / 2;
+}
+```
+
 # 2023-11-14
 
 [307. 区域和检索 - 数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/description/?envType=daily-question&envId=2023-11-13)
