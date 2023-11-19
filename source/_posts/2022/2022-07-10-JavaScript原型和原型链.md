@@ -46,3 +46,5 @@ console.log(a.__proto__.hasOwnProperty('constructor')); // true
 
 - [JavaScript 深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
 - [Javascript Object Hierarchy](http://www.mollypages.org/tutorials/js.mp)
+- [一文看懂 JS 的继承](https://www.freecodecamp.org/chinese/news/inheritance-in-js/)
+- [面试官问：能否模拟实现 JS 的 new 操作符](https://juejin.cn/post/6844903704663949325)

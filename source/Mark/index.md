@@ -7,6 +7,34 @@ date: 2019-02-20 20:30:09
 
 我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
 
+# 2023-11-19
+
+今日话题：
+
+- 前端面试
+
+最近在看一些面试的常见问题，看看自己的技术底子是否扎实，发现一个很好的东西：[若川 - freeCodeCamp.org](https://www.freecodecamp.org/chinese/news/author/lxchuan12/)
+
+- [使用基本 HTML5 模板，开始你的 Web 开发项目](https://www.freecodecamp.org/chinese/news/basic-html5-template-boilerplate-code-example/)
+- [about:blank 是什么意思？](https://www.freecodecamp.org/chinese/news/about-blank-what-does-about-blank-mean-and-why-is-it-blocked-in-chrome-and-firefox/)
+- [面试官问：能否模拟实现 JS 的 new 操作符](https://juejin.cn/post/6844903704663949325)
+
+如果我来出面试题：如何实现一个 instanceof
+
+```javascript
+function instanceofFunc(instance, A) {
+  let p = instance.__proto__;
+  while (p !== null) {
+    if (p.__proto__ === A.prototype) {
+      return true;
+    } else {
+      p = p.__proto__;
+    }
+  }
+  return false;
+}
+```
+
 # 2023-11-15
 
 今日话题：
