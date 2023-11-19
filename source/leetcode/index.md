@@ -5,6 +5,31 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-11-19
+
+[2625. 扁平化嵌套数组](https://leetcode.cn/classic/problems/flatten-deeply-nested-array/description/)
+
+这题是我在整理前端面试题的时候，为了测试我的代码是否正确找出来的。
+
+```typescript
+type MultiDimensionalArray = (number | MultiDimensionalArray)[];
+
+var flat = function (array:  MultiDimensionalArray, nums: number):  MultiDimensionalArray {
+    if(nums<=0){
+        return array
+    }
+    const res:MultiDimensionalArray = []
+    for (let index = 0; index < array.length; index++) {
+        if (Array.isArray(array[index])) {
+            res.push(...flat(array[index] as MultiDimensionalArray, nums - 1))
+        } else {
+            res.push(array[index])
+        }
+    }
+    return res
+};
+```
+
 # 2023-11-15
 
 [2656. K 个元素的最大和](https://leetcode.cn/problems/maximum-sum-with-exactly-k-elements/solutions/2524816/k-ge-yuan-su-de-zui-da-he-by-leetcode-so-0ci1/)
