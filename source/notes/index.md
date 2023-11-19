@@ -236,6 +236,52 @@ console.timeEnd('Object.entries()')
 
 values()大概只有 keys()执行时间的十分之一，而 keys 执行时间大概是 entries 的一半
 
+而写法上把`Object.keys`写在 for 里面和 for 外面其实是一样的速度：
+
+```javascript
+for(let v of Object.keys(res||{}))
+
+const values = Object.keys(res||{});
+for(let v of values)
+```
+
+for 循环只会在初始化的时候计算一次`Object.keys`，以下代码可以验证：
+
+```javascript
+const a = {};
+for (let i = 0; i < 10; i++) {
+  a[i] = i;
+}
+for (let k of Object.keys(a || {})) {
+  a[k + "a"] = k + "a";
+  console.log("1");
+}
+console.log(a);
+```
+
+`1`只会打印 10 次
+
+以下写法类似：
+
+```javascript
+const a = {};
+for (let i = 0; i < 100_0000; i++) {
+  a[i] = i;
+}
+let count = 0;
+console.time("a");
+for (let k of Object.keys(a || {})) {
+  a[k] = k + "a";
+}
+console.timeEnd("a");
+count = 0;
+console.time("b");
+for (let i = 0, keys = Object.keys(a || {}); i < keys.length; i++) {
+  a[keys[i]] = keys[i] + "a";
+}
+console.timeEnd("b");
+```
+
 ## `for of` 和 `for in`
 
 `for of`用于遍历可迭代对象（数组之类的），`for in`用于遍历对象
