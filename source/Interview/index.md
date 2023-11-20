@@ -130,6 +130,7 @@ console.log(b);
 - try-catch：
   - [try-catch 能抛出 promise 的异常吗](https://juejin.cn/post/6850418110907088910)
 - 怎么判断对象为空？
+- [怎么模拟实现 JavaScript 的 new 操作符](../2023/11/20/怎么模拟实现JavaScript的new操作符/)
 
 ## 浏览器环境
 
