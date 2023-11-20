@@ -14,3 +14,4 @@ title: 友情链接
 - `hexo-next-theme`的作者：[IIssNan's Notes](https://notes.iissnan.com/)
 - [程序员的喵](https://catcoding.me/)
 - [阮一峰的博客](http://www.ruanyifeng.com/blog/)
+- [冴羽](https://github.com/mqyqingfeng)

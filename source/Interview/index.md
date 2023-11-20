@@ -4,6 +4,33 @@ title: 前端面试指南
 
 # 编程题
 
+## 寻找字符串中出现最多的字符怎么实现？
+
+遍历一遍字符串，用个 map 记录每个字符出现的次数，然后遍历一遍 map，取出出现次数最多的字符
+
+```typescript
+function getMaxChar(str: string): string {
+  const map = {};
+  for (let i = 0; i < str.length; i++) {
+    const c = str[i];
+    if (!map[c]) {
+      map[c] = 1;
+    } else {
+      map[c]++;
+    }
+  }
+  let max = 0;
+  let maxChar;
+  for (let k of Object.keys(map || {})) {
+    if (max < map[k]) {
+      max = map[k];
+      maxChar = k;
+    }
+  }
+  return maxChar;
+}
+```
+
 ## 数组扁平化(nest to flat)
 
 实现一个`Array.prototype.flat()`，leetcode 对应题目：[2625. 扁平化嵌套数组](https://leetcode.cn/classic/problems/flatten-deeply-nested-array/description/)
@@ -75,6 +102,10 @@ const b = flat2nest(a);
 console.log(b);
 ```
 
+## 实现一个深拷贝
+
+## 实现 Promise
+
 # JavaScript 基础
 
 最基础的两个知识点：
@@ -98,12 +129,17 @@ console.log(b);
 - 内存回收
 - try-catch：
   - [try-catch 能抛出 promise 的异常吗](https://juejin.cn/post/6850418110907088910)
+- 怎么判断对象为空？
 
 ## 浏览器环境
 
 - [window.parent](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/parent)
 
 ## node 环境
+
+# ES6，ES5 的区别。最新的一些 API
+
+- 知不知道最新的 url 参数获取的 API？
 
 # CSS 基础
 
@@ -112,9 +148,11 @@ console.log(b);
 - 伪类和伪元素
 - CSS 前缀
 - BFC
-- [垂直居中和水平居中](../2022/12/13/css%E5%B1%85%E4%B8%AD%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
+- 垂直居中有几种方式？
+  - [垂直居中和水平居中](../2022/12/13/css%E5%B1%85%E4%B8%AD%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
 - position
 - text-overflow（文本溢出）
+- flex: 2 有用过吗？多列布局怎么实现？
 
 # 前端编程范式
 
@@ -145,3 +183,22 @@ console.log(b);
 # typescript
 
 - type 和 interface 的区别
+
+# react
+
+# vue
+
+- Vue 组件通信方式有哪些，各有什么特点？
+- Vue 项目怎么提高项目性能？举一些例子
+- vue3 在某些场景比 vue2 性能更低，为什么会这样？
+
+# 其他
+
+- 新版本发布后，怎么用技术手段通知用户刷新页面？
+- 性能优化数据怎么上报、分析？
+- element ui table 吸顶怎么做，滚动怎么处理等
+- TS 用的多吗？
+- 工作中解决的最有成就感的事？
+- 在团队协作时，有遇到过什么问题吗，如果有冲突你会怎么做
+- 你有什么想问我的？
+- 低代码、怎么动态加载渲染一个组件，底层怎么实现？
