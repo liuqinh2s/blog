@@ -125,22 +125,30 @@ console.log(b);
 - 箭头函数
 - Promise A+ 规范
 - Event Loop（事件循环）
-- apply, call, bind
 - 内存回收
 - try-catch：
   - [try-catch 能抛出 promise 的异常吗](https://juejin.cn/post/6850418110907088910)
 - 怎么判断对象为空？
-- [怎么模拟实现 JavaScript 的 new 操作符](../2023/11/20/怎么模拟实现JavaScript的new操作符/)
+- 类型判断
+  - JavaScript 有几种基础数据类型？Symbol 和 BigInt 是什么时候引进的？
+  - `typeof`有几种类型？分别是什么？
+  - `Object.prototype.toString()`有几种类型？分别是什么？
+- 模拟 JavaScript 原生方法
+  - [怎么模拟实现 JavaScript 的 new 操作符](../2023/11/20/怎么模拟实现JavaScript的new操作符/)
+  - 模拟实现 apply, call, bind
+- 知不知道最新的 url 参数获取的 API？
+
+## JavaScript 历史
+
+- [5 分钟彻底搞懂 js 的版本演进（ES5,ES6,ES2015 的区别） - 知乎](https://zhuanlan.zhihu.com/p/516325981)
+- ES6 带来了哪些新东西？
+- [ECMAScript 2015 Language Specification – ECMA-262 6th Edition](https://262.ecma-international.org/6.0/)
 
 ## 浏览器环境
 
 - [window.parent](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/parent)
 
 ## node 环境
-
-# ES6，ES5 的区别。最新的一些 API
-
-- 知不知道最新的 url 参数获取的 API？
 
 # CSS 基础
 
