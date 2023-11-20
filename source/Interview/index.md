@@ -81,6 +81,7 @@ console.log(b);
 
 1. Prototype Chain（原型链）
    - [JavaScript 原型和原型链](../2022/07/10/JavaScript原型和原型链/)
+   - [js 对象的继承有哪几种？](../2022/07/10/js对象的继承有哪几种？/)
 2. closure（闭包）
    - [JavaScript 词法作用域](../2022/07/11/JavaScript词法作用域/)
    - [JavaScript 执行上下文栈](../2022/07/12/JavaScript执行上下文栈/)
