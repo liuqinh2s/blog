@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。 如果自己写了返回，那么分两种情况：  返回的是对象或者方法，就返回我们自己写的返回内容 否则返回默认对象 this">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-11-20T12:37:27.641Z">
+<meta property="og:updated_time" content="2023-11-20T12:38:04.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="怎么模拟实现JavaScript的new操作符">
 <meta name="twitter:description" content="JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。 如果自己写了返回，那么分两种情况：  返回的是对象或者方法，就返回我们自己写的返回内容 否则返回默认对象 this">
@@ -441,7 +441,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-11-20T12:37:27+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-11-20T12:38:04+00:00">
                 2023-11-20
               </time>
             
@@ -496,7 +496,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  493
+                  507
                 </span>
               
 
@@ -534,6 +534,9 @@
 <p>也可以自己写<code>Object.create</code>：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">object</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">  F.prototype = obj;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> F();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newOperator</span>(<span class="params">C</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> C !== <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="string">"newOperator function the first param must be a function"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> obj = object(C.prototype);</span><br><span class="line">  <span class="keyword">const</span> args = [].slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">const</span> res = C.apply(obj, args);</span><br><span class="line">  <span class="keyword">if</span> ((<span class="keyword">typeof</span> res === <span class="string">"object"</span> &amp;&amp; res !== <span class="literal">null</span>) || <span class="keyword">typeof</span> res === <span class="string">"function"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = newOperator(A);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
 <p>但是发现，打印出来的是<code>F {}</code>，虽然点开此对象，发现构造函数已经是<code>A</code>了，但确实不如 JavaScript 自带的<code>Object.create</code>干净完美</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.freecodecamp.org/chinese/news/javascript-new-operator/" target="_blank" rel="noopener">如何模拟实现 JS 的 new 操作符</a></li>
+</ul>
 
       
     </div>
@@ -558,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2023/11/20/js对象的继承有哪几种？/" rel="next" title="js对象的继承有哪几种？">
-                <i class="fa fa-chevron-left"></i> js对象的继承有哪几种？
+              <a href="/2023/11/06/策划一款游戏/" rel="next" title="策划一款游戏">
+                <i class="fa fa-chevron-left"></i> 策划一款游戏
               </a>
             
           </div>
@@ -567,6 +570,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/11/20/js对象的继承有哪几种？/" rel="prev" title="js对象的继承有哪几种？">
+                js对象的继承有哪几种？ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -623,8 +630,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -731,6 +747,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[怎么模拟实现JavaScript的new操作符]]></title>
-    <url>%2F2023%2F11%2F20%2F%E6%80%8E%E4%B9%88%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84new%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%9F%2F</url>
-    <content type="text"><![CDATA[JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。 如果自己写了返回，那么分两种情况： 返回的是对象或者方法，就返回我们自己写的返回内容 否则返回默认对象 this 12345678910111213141516171819202122function A() &#123; this.aa = "6"; // 7种基本数据类型，都不能作为构造函数的返回值 // return 1; // Number // return false; // Boolean // return "1"; // String // return Symbol(); // Symbol // return BigInt(1); // BigInt 也可以这么写 return 1n; // return undefined; // Undefined // return null; // Null // 5种常见对象，都可以作为构造函数的返回值 // return &#123;&#125;; // Object // return []; // Array // return new Date(); // Date // return /a/; // RegExp // return new Error(); // Error // 函数，可以作为构造函数的返回值 // return function()&#123;&#125;; // Function&#125;const a = new A();console.log(a, a.aa); new 操作符的模拟实现： 12345678910111213function newOperator(C) &#123; if (typeof C !== "function") &#123; throw "newOperator function the first param must be a function"; &#125; const obj = Object.create(C.prototype); const args = [].slice.call(arguments, 1); // arguments本身没有slice方法，除了这种写法，还可以这样：[...arguments].slice(1);或者Array.from(arguments).slice(1); const res = C.apply(obj, args); // typeof null 的结果是'object'，所以这里要排除掉 if ((typeof res === "object" &amp;&amp; res !== null) || typeof res === "function") &#123; return res; &#125; return obj;&#125; 也可以自己写Object.create： 1234567891011121314151617181920212223function object(obj) &#123; function F() &#123;&#125; F.prototype = obj; return new F();&#125;function newOperator(C) &#123; if (typeof C !== "function") &#123; throw "newOperator function the first param must be a function"; &#125; const obj = object(C.prototype); const args = [].slice.call(arguments, 1); const res = C.apply(obj, args); if ((typeof res === "object" &amp;&amp; res !== null) || typeof res === "function") &#123; return res; &#125; return obj;&#125;function A() &#123;&#125;const a = newOperator(A);console.log(a); 但是发现，打印出来的是F {}，虽然点开此对象，发现构造函数已经是A了，但确实不如 JavaScript 自带的Object.create干净完美]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[js对象的继承有哪几种？]]></title>
     <url>%2F2023%2F11%2F20%2Fjs%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%A7%E6%89%BF%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F%2F</url>
     <content type="text"><![CDATA[javascript 高级程序设计中有写，对象的继承总共有六种: 原型链继承，子原型是父原型的一个实例 借用构造函数继承，子构造函数调用父构造函数 组合式继承(组合 1 和 2) 原型式继承 寄生式继承 寄生式组合继承（组合 3 和 5） 原型链继承12345678910111213141516171819202122function Parent() &#123; // A的非引用属性 this.a = 1; // A的引用属性 this.array = [1, 2, 3];&#125;// A的静态方法Parent.prototype.func1 = () =&gt; &#123; console.log("func1");&#125;;function Child() &#123; this.b = 2;&#125;Child.prototype = new Parent(); // 子原型是父原型的一个实例Child.prototype.func2 = () =&gt; &#123; console.log("func2");&#125;;const child1 = new Child();const child2 = new Child();child1.a = 3;child1.array.push(4);console.log(child1.a, child2.array, child1.func1); 缺点是：由于子原型是父原型的一个实例，所以父级属性在子级的原型上，而不在每个子级的实例上，所以如果属性是引用类型时会互相影响。 借用构造函数继承1234567891011121314151617181920212223function Parent() &#123; // A的非引用属性 this.a = 1; // A的引用属性 this.array = [1, 2, 3];&#125;// A的静态方法Parent.prototype.func1 = () =&gt; &#123; console.log("func1");&#125;;function Child() &#123; // 把父级属性绑定到子实例里面 Parent.call(this); this.b = 2;&#125;Child.prototype.func2 = () =&gt; &#123; console.log("func2");&#125;;const child1 = new Child();const child2 = new Child();child1.a = 3;child1.array.push(4);console.log(child1.a, child2.array, child1.func1); 解决了原型链继承中，属性没绑定到子实例里面的问题，但如果仅这样继承的话，父原型上的东西没有被继承 组合式继承综合了以上两种继承方式，可以既继承原型，又把属性绑定到了子实例（从而覆盖原型的属性） 123456789101112131415161718192021222324function Parent() &#123; // A的非引用属性 this.a = 1; // A的引用属性 this.array = [1, 2, 3];&#125;// A的静态方法Parent.prototype.func1 = () =&gt; &#123; console.log("func1");&#125;;function Child() &#123; // 把父级属性绑定到子实例里面，此处第二次调用父构造函数 Parent.call(this); this.b = 2;&#125;Child.prototype = new Parent(); // 子原型是父原型的一个实例，此处第一次调用父构造函数Child.prototype.func2 = () =&gt; &#123; console.log("func2");&#125;;const child1 = new Child();const child2 = new Child();child1.a = 3;child1.array.push(4);console.log(child1.a, child2.array, child1.func1); 缺点是： 父构造函数执行了两次 父实例上存储了多余的属性（压根用不到），浪费内存 原型式继承创建一个临时的构造函数，并把这个临时的构造函数的 prototype 指向父原型 12345function object(Parent) &#123; function F() &#123;&#125; F.prototype = Parent; return new F();&#125; 相当于Object.create()，ECMAScript 5 通过增加 Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的 object()方法效果相同 寄生式继承在原型式继承的基础上，做了一个封装： 1234567function createAnother(Parent) &#123; const clone = object(Parent); clone.sayHi = function () &#123; console.log("Hi"); &#125;; return clone;&#125; 寄生式组合继承综合了寄生式继承和组合式继承，并克服了组合式继承的缺点 1234567891011121314151617181920212223242526272829303132333435function object(Parent) &#123; function F() &#123;&#125; F.prototype = Parent; return new F();&#125;function inheritPrototype(Child, Parent) &#123; // 拷贝了一份父级的原型，而非生成父级的实例，所以上面没有父级的实例的属性 const p = object(Parent.prototype); p.constructor = Child; Child.prototype = p;&#125;function Parent() &#123; // A的非引用属性 this.a = 1; // A的引用属性 this.array = [1, 2, 3];&#125;// A的静态方法Parent.prototype.func1 = () =&gt; &#123; console.log("func1");&#125;;function Child() &#123; // 把父级属性绑定到子实例里面 Parent.call(this); this.b = 2;&#125;inheritPrototype(Child, Parent);Child.prototype.func2 = () =&gt; &#123; console.log("func2");&#125;;const child1 = new Child();const child2 = new Child();child1.a = 3;child1.array.push(4);console.log(child1.a, child2.array, child1.func1); ES6 的 class 语法糖，就是寄生式组合继承 参考 JavaScript 高级程序设计（第 4 版） 一文看懂 JS 的继承]]></content>
@@ -18,6 +10,14 @@
       <tags>
         <tag>javascript</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[怎么模拟实现JavaScript的new操作符]]></title>
+    <url>%2F2023%2F11%2F20%2F%E6%80%8E%E4%B9%88%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84new%E6%93%8D%E4%BD%9C%E7%AC%A6%EF%BC%9F%2F</url>
+    <content type="text"><![CDATA[JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。 如果自己写了返回，那么分两种情况： 返回的是对象或者方法，就返回我们自己写的返回内容 否则返回默认对象 this 12345678910111213141516171819202122function A() &#123; this.aa = "6"; // 7种基本数据类型，都不能作为构造函数的返回值 // return 1; // Number // return false; // Boolean // return "1"; // String // return Symbol(); // Symbol // return BigInt(1); // BigInt 也可以这么写 return 1n; // return undefined; // Undefined // return null; // Null // 5种常见对象，都可以作为构造函数的返回值 // return &#123;&#125;; // Object // return []; // Array // return new Date(); // Date // return /a/; // RegExp // return new Error(); // Error // 函数，可以作为构造函数的返回值 // return function()&#123;&#125;; // Function&#125;const a = new A();console.log(a, a.aa); new 操作符的模拟实现： 12345678910111213function newOperator(C) &#123; if (typeof C !== "function") &#123; throw "newOperator function the first param must be a function"; &#125; const obj = Object.create(C.prototype); const args = [].slice.call(arguments, 1); // arguments本身没有slice方法，除了这种写法，还可以这样：[...arguments].slice(1);或者Array.from(arguments).slice(1); const res = C.apply(obj, args); // typeof null 的结果是'object'，所以这里要排除掉 if ((typeof res === "object" &amp;&amp; res !== null) || typeof res === "function") &#123; return res; &#125; return obj;&#125; 也可以自己写Object.create： 1234567891011121314151617181920212223function object(obj) &#123; function F() &#123;&#125; F.prototype = obj; return new F();&#125;function newOperator(C) &#123; if (typeof C !== "function") &#123; throw "newOperator function the first param must be a function"; &#125; const obj = object(C.prototype); const args = [].slice.call(arguments, 1); const res = C.apply(obj, args); if ((typeof res === "object" &amp;&amp; res !== null) || typeof res === "function") &#123; return res; &#125; return obj;&#125;function A() &#123;&#125;const a = newOperator(A);console.log(a); 但是发现，打印出来的是F {}，虽然点开此对象，发现构造函数已经是A了，但确实不如 JavaScript 自带的Object.create干净完美 参考 如何模拟实现 JS 的 new 操作符]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[策划一款游戏]]></title>
@@ -98,8 +98,8 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>项目</tag>
         <tag>前端</tag>
+        <tag>项目</tag>
       </tags>
   </entry>
   <entry>
@@ -385,19 +385,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
-    <url>%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
-    <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[position sticky]]></title>
     <url>%2F2021%2F05%2F28%2Fposition-sticky%2F</url>
     <content type="text"><![CDATA[在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用position: sticky解决了问题。 参考资料： 杀了个回马枪，还是说说 position:sticky 吧« 张鑫旭-鑫空间-鑫生活 position - CSS（层叠样式表） | MDN position: sticky 的作用这个坑先放着，等深入研究了再来填，放上 codepen 试验现场：https://codepen.io/liuqinh2s/pen/oNZWbeX]]></content>
       <categories>
         <category>css</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[leetcode每日一题： 477. 汉明距离总和]]></title>
+    <url>%2F2021%2F05%2F28%2Fleetcode-477-%E6%B1%89%E6%98%8E%E8%B7%9D%E7%A6%BB%E6%80%BB%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。 477. 汉明距离总和这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。 JavaScript代码： 123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var totalHammingDistance = function(nums) &#123; let max = Math.max(...nums) let count=0; while(max&gt;0)&#123; count++; max&gt;&gt;=1; &#125; let res = 0; for(let i=0;i&lt;count;i++)&#123; let zero = 0; let one = 0; for(let j=0;j&lt;nums.length;j++)&#123; let temp = nums[j]&gt;&gt;i; if(temp%2)&#123; one++; &#125;else&#123; zero++; &#125; &#125; res += zero*one; &#125; return res;&#125;;]]></content>
+      <categories>
+        <category>leetcode</category>
       </categories>
   </entry>
   <entry>
