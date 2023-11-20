@@ -86,3 +86,7 @@ console.log(a);
 ```
 
 但是发现，打印出来的是`F {}`，虽然点开此对象，发现构造函数已经是`A`了，但确实不如 JavaScript 自带的`Object.create`干净完美
+
+## 参考
+
+- [如何模拟实现 JS 的 new 操作符](https://www.freecodecamp.org/chinese/news/javascript-new-operator/)
