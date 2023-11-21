@@ -127,3 +127,4 @@ test();
 - [void 运算符 - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/void)
 - [为什么用「void 0」代替「undefined」](https://github.com/lessfish/underscore-analysis/issues/1)
 - [undefined - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+- [面试官问：能否模拟实现 JS 的 call 和 apply 方法 - 掘金](https://juejin.cn/post/6844903728147857415)
