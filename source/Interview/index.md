@@ -134,7 +134,7 @@ console.log(b);
   - `typeof`有几种类型？分别是什么？
   - `Object.prototype.toString()`有几种类型？分别是什么？
 - 模拟 JavaScript 原生方法
-  - [怎么模拟实现 JavaScript 的 new 操作符](../2023/11/20/怎么模拟实现JavaScript的new操作符/)
+  - [怎么模拟实现 JavaScript 的 new 操作符？](../2023/11/20/怎么模拟实现JavaScript的new操作符？/)
   - 模拟实现 apply, call, bind
 - 知不知道最新的 url 参数获取的 API？
 
