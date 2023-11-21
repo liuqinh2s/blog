@@ -443,7 +443,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T07:37:16+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T08:03:20+00:00">
                 2023-11-21
               </time>
             
@@ -519,17 +519,16 @@
 
       
         
-          
-          apply 和 call 的相同点是：
-
-都由一个函数调用
-第一个参数都是原函数的执行环境 this
-
-不同点是：
-apply 的第二个参数接收原函数的所有参数，而 call 从第二个参数开始跟原函数一样是打散的
-代码如下：
-123F(arg1, arg2, ...)&#123;&#125;F.ap
-          ...
+          <p>apply 和 call 的相同点是：</p>
+<ol>
+<li>都由一个函数调用</li>
+<li>第一个参数都是原函数的执行环境 this</li>
+</ol>
+<p>不同点是：</p>
+<p>apply 的第二个参数接收原函数的所有参数，而 call 从第二个参数开始跟原函数一样是打散的</p>
+<p>代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F(arg1, arg2, ...)&#123;&#125;</span><br><span class="line">F.apply(thisArg, [arg1, arg2, ...]);</span><br><span class="line">F.call(thisArg, arg1, arg2, ...);</span><br></pre></td></tr></table></figure>
+<p>需要特别注意的是，如果是在非严格模式下，thisArg 如果为 null 或 undefined，就会被替换成全局对象（在浏览器中是 window）；如果为原始值，就会被替换成原始值的的自动包装对象。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2023/11/21/怎么模拟实现JavaScript的apply和call/#more" rel="contents">
@@ -630,7 +629,7 @@ apply 的第二个参数接收原函数的所有参数，而 call 从第二个�
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T07:37:16+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T08:03:20+00:00">
                 2023-11-21
               </time>
             
@@ -815,7 +814,7 @@ apply 的第二个参数接收原函数的所有参数，而 call 从第二个�
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T07:37:16+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T08:03:20+00:00">
                 2023-11-21
               </time>
             
@@ -997,7 +996,7 @@ apply 的第二个参数接收原函数的所有参数，而 call 从第二个�
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T07:37:16+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T08:03:20+00:00">
                 2023-11-21
               </time>
             
@@ -1184,7 +1183,7 @@ apply 的第二个参数接收原函数的所有参数，而 call 从第二个�
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T07:37:16+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-11-21T08:03:20+00:00">
                 2023-11-21
               </time>
             
