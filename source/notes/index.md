@@ -5,6 +5,71 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2023-11-21
+
+今日话题：
+
+- requestAnimationFrame
+- 大量循环重复获取某个值时，如何加速？
+
+[Window: requestAnimationFrame() method - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+
+`requestAnimationFrame(callbackFn)`让浏览器在下次重绘之前调用你的 callback 函数，这个方法是一次性的，如果你想持续用，就要持续调用。
+
+在实际的开发环节，大量循环重复获取某个值时，如何加速？这时候就需要做缓存，但这个缓存不可以太久，否则可能会面临不够新的问题：
+
+```typescript
+function costManyTime() {
+  let count = 0;
+  for (let i = 0; i < 100_0000; i++) {
+    count += Math.random();
+  }
+  return count;
+}
+
+function getValue(key) {
+  const value = costManyTime();
+  return value;
+}
+
+const cache = new Map();
+function getValue2(key) {
+  setTimeout(() => {
+    if (cache.size > 0) {
+      cache.clear();
+    }
+  }, 500);
+  if (cache.has(key)) {
+    return cache.get(key);
+  }
+  const value = costManyTime();
+  cache.set(key, value);
+  return value;
+}
+
+console.time("costManyTime");
+costManyTime();
+console.timeEnd("costManyTime");
+
+console.time("loop getValue");
+let hh = [];
+for (let i = 0; i < 1000; i++) {
+  hh.push(getValue("key"));
+}
+console.timeEnd("loop getValue");
+hh.length = 0;
+console.time("loop getValue2");
+for (let i = 0; i < 1000; i++) {
+  hh.push(getValue2("key"));
+}
+console.timeEnd("loop getValue2");
+```
+
+以上代码，缓存存在 500ms，依旧存在如下两个问题：
+
+1. 如果值在这 500ms 内更新了，那么就会遇到没获取到最新值的问题
+2. 如果`loop getValue`整体时长超过了 500ms，那么缓存会失效并进行重建
+
 # 2023-11-14
 
 今日需求

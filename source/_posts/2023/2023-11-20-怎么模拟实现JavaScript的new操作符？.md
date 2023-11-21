@@ -46,6 +46,8 @@ function newOperator(C) {
   if (typeof C !== "function") {
     throw "newOperator function the first param must be a function";
   }
+  // ES6 new.target 指向构造函数，可以用来标识函数是否被用做构造函数
+  newOperator.target = C;
   const obj = Object.create(C.prototype);
   const args = [].slice.call(arguments, 1); // arguments本身没有slice方法，除了这种写法，还可以这样：[...arguments].slice(1);或者Array.from(arguments).slice(1);
   const res = C.apply(obj, args);
@@ -70,6 +72,8 @@ function newOperator(C) {
   if (typeof C !== "function") {
     throw "newOperator function the first param must be a function";
   }
+  // ES6 new.target 指向构造函数，可以用来标识函数是否被用做构造函数
+  newOperator.target = C;
   const obj = object(C.prototype);
   const args = [].slice.call(arguments, 1);
   const res = C.apply(obj, args);
@@ -90,3 +94,4 @@ console.log(a);
 ## 参考
 
 - [如何模拟实现 JS 的 new 操作符](https://www.freecodecamp.org/chinese/news/javascript-new-operator/)
+- [new.target - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target)
