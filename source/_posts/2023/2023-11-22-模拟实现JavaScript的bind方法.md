@@ -7,6 +7,8 @@ comments: true
 
 bind 函数我们经常用到，主要用于换绑 this。其返回值是一个方法。此外我们还可以把一些参数固定下来，相当于封装了一个简易函数。
 
+<!-- more -->
+
 ## 换绑 this:
 
 ```javascript
