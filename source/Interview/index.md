@@ -112,7 +112,7 @@ console.log(b);
 
 1. Prototype Chain（原型链）
    - [JavaScript 原型和原型链](../2022/07/10/JavaScript原型和原型链/)
-   - [js 对象的继承有哪几种？](../2023/11/20/js对象的继承有哪几种？/)
+   - [JavaScript 对象的继承有哪几种？](../2023/11/20/JavaScript对象的继承有哪几种/)
 2. closure（闭包）
    - [JavaScript 词法作用域](../2022/07/11/JavaScript词法作用域/)
    - [JavaScript 执行上下文栈](../2022/07/12/JavaScript执行上下文栈/)
@@ -134,8 +134,8 @@ console.log(b);
   - `typeof`有几种类型？分别是什么？
   - `Object.prototype.toString()`有几种类型？分别是什么？
 - 模拟 JavaScript 原生方法
-  - [怎么模拟实现 JavaScript 的 new 操作符？](../2023/11/20/怎么模拟实现JavaScript的new操作符？/)
-  - 模拟实现 apply, call, bind
+  - [模拟实现 JavaScript 的 new 操作符](../2023/11/20/模拟实现JavaScript的new操作符/)
+  - [模拟实现 JavaScript 的 apply 和 call 方法](../2023/11/21/模拟实现JavaScript的apply和call方法/)
 - 知不知道最新的 url 参数获取的 API？
 
 ## JavaScript 历史

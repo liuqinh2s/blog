@@ -1,5 +1,5 @@
 ---
-title: js对象的继承有哪几种？
+title: JavaScript对象的继承有哪几种
 date: 2023-11-20
 categories: [javascript]
 tags: [javascript]

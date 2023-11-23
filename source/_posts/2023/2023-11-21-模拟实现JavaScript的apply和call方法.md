@@ -1,5 +1,5 @@
 ---
-title: 怎么模拟实现JavaScript的apply和call
+title: 模拟实现JavaScript的apply和call方法
 date: 2023-11-21
 categories: [JavaScript]
 comments: true

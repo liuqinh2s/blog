@@ -1,5 +1,5 @@
 ---
-title: 怎么模拟实现JavaScript的new操作符
+title: 模拟实现JavaScript的new操作符
 date: 2023-11-20
 categories: [JavaScript]
 comments: true
