@@ -210,3 +210,7 @@ Function.prototype.bindFn = function bind(thisArg) {
   return bound;
 };
 ```
+
+## 参考
+
+- [面试官问：能否模拟实现 JS 的 bind 方法 - 掘金](https://juejin.cn/post/6844903718089916429)
