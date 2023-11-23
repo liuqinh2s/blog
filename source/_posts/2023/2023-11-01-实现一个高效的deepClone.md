@@ -47,6 +47,20 @@ function isFunction(a) {
   return toString(a) === "Function";
 }
 
+function isRegExp(a) {
+  return toString(a) === "RegExp";
+}
+
+function isDate() {
+  return toString(a) === "Date";
+}
+
+function isError() {
+  return toString(a) === "Error";
+}
+
+function
+
 function isPrim(a) {
   return (
     isNum(a) ||

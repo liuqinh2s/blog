@@ -153,6 +153,16 @@ aa.length = 4;
 console.log(aa.name, aa.length);
 ```
 
+原因是`writable: false`，但可以自己配置：
+
+```javascript
+var a = () => {};
+console.log(a.name);
+Object.getOwnPropertyDescriptor(a, "name"); // 输出：{configurable: true, enumerable: false, value: 'a', writable: false}
+Object.defineProperty(a, "name", { writable: true, value: "bb" });
+console.log(a.name);
+```
+
 ## `new.target`的用处
 
 如果用`this instanceof bound`来替代`new.target === bound`会有如下问题：
@@ -172,3 +182,31 @@ console.log(student, "student", notAStudent, "notAStudent");
 ```
 
 可见并非是实例就可以，而必须是用 new 调用才是构造函数
+
+## 最终版本
+
+```javascript
+Function.prototype.bindFn = function bind(thisArg) {
+  if (typeof this !== "function") {
+    throw TypeError(this + "is not a function");
+  }
+  const self = this;
+  const bindArgs = [].slice.call(arguments, 1);
+  function bound() {
+    const boundArgs = [].slice.call(arguments);
+    const finalArgs = bindArgs.concat(boundArgs);
+    if (new.target === bound) {
+      return new self();
+    } else {
+      return self.apply(thisArg, finalArgs);
+    }
+  }
+  const fnName = bound.name + " " + self.name;
+  Object.defineProperty(bound, "name", { writable: true, value: fnName });
+  Object.defineProperty(bound, "name", { writable: false });
+  const fnLength = self.length - bindArgs.length;
+  Object.defineProperty(bound, "length", { writable: true, value: fnLength });
+  Object.defineProperty(bound, "length", { writable: false });
+  return bound;
+};
+```
