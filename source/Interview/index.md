@@ -144,6 +144,7 @@ console.log(b);
 - [5 分钟彻底搞懂 js 的版本演进（ES5,ES6,ES2015 的区别） - 知乎](https://zhuanlan.zhihu.com/p/516325981)
 - ES6 带来了哪些新东西？
 - [ECMAScript 2015 Language Specification – ECMA-262 6th Edition](https://262.ecma-international.org/6.0/)
+- var，let，const 的区别
 
 ## 浏览器环境
 
