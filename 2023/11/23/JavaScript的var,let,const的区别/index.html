@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="原型链是干什么用的JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。 当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如： 1234function Foo() &amp;#123;&amp;#125;var foo = new Foo();Foo.prototype.a = 1;console.log(foo.a); 原型和原型链主要由三">
+<meta name="description" content="首先var,let,const都是用于定义变量，这是它们的共同点，那么它们的区别呢？ 其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）: 12a = 1;console.log(window.a); var 可以提升作用域，var 的作用域在闭包内一下代码不会报错，即便声明 a 在用到 a 后面： 1234console.log(a, b,">
 <meta name="keywords" content="Coding Writing Thinking">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原型和原型链">
-<meta property="og:url" content="https://liuqinh2s.xyz/2022/07/10/JavaScript原型和原型链/index.html">
+<meta property="og:title" content="JavaScript的var,let,const的区别">
+<meta property="og:url" content="https://liuqinh2s.xyz/2023/11/23/JavaScript的var,let,const的区别/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="原型链是干什么用的JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。 当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如： 1234function Foo() &amp;#123;&amp;#125;var foo = new Foo();Foo.prototype.a = 1;console.log(foo.a); 原型和原型链主要由三">
+<meta property="og:description" content="首先var,let,const都是用于定义变量，这是它们的共同点，那么它们的区别呢？ 其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）: 12a = 1;console.log(window.a); var 可以提升作用域，var 的作用域在闭包内一下代码不会报错，即便声明 a 在用到 a 后面： 1234console.log(a, b,">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://liuqinh2s.xyz/images/2023/prototype.jpg">
 <meta property="og:updated_time" content="2023-11-23T10:12:00.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript原型和原型链">
-<meta name="twitter:description" content="原型链是干什么用的JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。 当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如： 1234function Foo() &amp;#123;&amp;#125;var foo = new Foo();Foo.prototype.a = 1;console.log(foo.a); 原型和原型链主要由三">
-<meta name="twitter:image" content="https://liuqinh2s.xyz/images/2023/prototype.jpg">
+<meta name="twitter:title" content="JavaScript的var,let,const的区别">
+<meta name="twitter:description" content="首先var,let,const都是用于定义变量，这是它们的共同点，那么它们的区别呢？ 其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）: 12a = 1;console.log(window.a); var 可以提升作用域，var 的作用域在闭包内一下代码不会报错，即便声明 a 在用到 a 后面： 1234console.log(a, b,">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.xyz/2022/07/10/JavaScript原型和原型链/">
+  <link rel="canonical" href="https://liuqinh2s.xyz/2023/11/23/JavaScript的var,let,const的区别/">
 
 
 
 
 
-  <title>JavaScript原型和原型链 | liuqinh2s' blog</title>
+  <title>JavaScript的var,let,const的区别 | liuqinh2s' blog</title>
   
 
 
@@ -398,7 +396,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2022/07/10/JavaScript原型和原型链/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2023/11/23/JavaScript的var,let,const的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -415,7 +413,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JavaScript原型和原型链</h2>
+          <h2 class="post-title" itemprop="name headline">JavaScript的var,let,const的区别</h2>
         
 
         <div class="post-meta">
@@ -427,8 +425,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2022-07-10T00:00:00+00:00">
-                2022-07-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2023-11-23T00:00:00+00:00">
+                2023-11-23
               </time>
             
 
@@ -498,7 +496,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  389
+                  334
                 </span>
               
 
@@ -523,33 +521,18 @@
       
 
       
-        <h1 id="原型链是干什么用的"><a href="#原型链是干什么用的" class="headerlink" title="原型链是干什么用的"></a>原型链是干什么用的</h1><p>JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。</p>
-<p>当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br><span class="line">Foo.prototype.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo.a);</span><br></pre></td></tr></table></figure>
-<p>原型和原型链主要由三个指针实现：</p>
-<ul>
-<li><code>prototype</code>: 构造函数的<code>prototype</code>属性指向原型对象</li>
-<li><code>__proto__</code>: 实例对象的<code>__proto__</code>属性指向原型对象</li>
-<li><code>constructor</code>: 原型对象的<code>constructor</code>属性指向构造函数</li>
-<li>所有对象都基于<code>Object</code>，是因为所有原型对象的<code>__proto__</code>最终都指向<code>Object.prototype</code>，而<code>Object.prototype</code>的<code>__proto__</code>为 null</li>
-</ul>
-<a id="more"></a>
-<blockquote>
-<p>JavaScript 只要前面带 new 就是构造函数，箭头函数和异步函数不可以做构造函数，因为箭头函数没有 this，而异步函数返回的是 Promise 对象</p>
-</blockquote>
-<p>当我们在实例对象上查找一个属性的时候，如果不存在，则会递归的去原型链上找。</p>
-<p><img src="../../../../images/2023/prototype.jpg" alt="Javascript Object Hierarchy"></p>
-<ul>
-<li>所有对象都有<code>__proto__</code>属性，但只有函数对象才有<code>prototype</code>属性</li>
-<li>实例对象没有<code>constructor</code>属性，该属性继承自原型对象。分别对实例对象和原型对象使用<code>hasOwnProperty</code>验证<code>constructor</code>属性即可证明</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">console</span>.log(a.hasOwnProperty(<span class="string">'constructor'</span>));   <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(a.__proto__.hasOwnProperty(<span class="string">'constructor'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
-<li><a href="https://github.com/mqyqingfeng/Blog/issues/2" target="_blank" rel="noopener">JavaScript 深入之从原型到原型链</a></li>
-<li><a href="http://www.mollypages.org/tutorials/js.mp" target="_blank" rel="noopener">Javascript Object Hierarchy</a></li>
-<li><a href="https://www.freecodecamp.org/chinese/news/inheritance-in-js/" target="_blank" rel="noopener">一文看懂 JS 的继承</a></li>
-<li><a href="https://juejin.cn/post/6844903704663949325" target="_blank" rel="noopener">面试官问：能否模拟实现 JS 的 new 操作符</a></li>
-</ul>
+        <p>首先<code>var</code>,<code>let</code>,<code>const</code>都是用于定义变量，这是它们的共同点，那么它们的区别呢？</p>
+<p>其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a);</span><br></pre></td></tr></table></figure>
+<h2 id="var-可以提升作用域，var-的作用域在闭包内"><a href="#var-可以提升作用域，var-的作用域在闭包内" class="headerlink" title="var 可以提升作用域，var 的作用域在闭包内"></a>var 可以提升作用域，var 的作用域在闭包内</h2><p>一下代码不会报错，即便声明 a 在用到 a 后面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a, b, c);</span><br><span class="line"><span class="keyword">var</span> a;  <span class="comment">// 即便声明在使用之后，也不会报错，因为var变量声明和函数声明会提升到最前面执行</span></span><br><span class="line"><span class="keyword">let</span> b;</span><br><span class="line"><span class="keyword">const</span> c;</span><br></pre></td></tr></table></figure>
+<p>加一个块级作用域，var 依旧不会报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a, b, c);</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> a;</span><br><span class="line">  <span class="keyword">let</span> b;</span><br><span class="line">  <span class="keyword">const</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而且 let 和 const 是块级作用域，写成这样也会报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> a;</span><br><span class="line">  <span class="keyword">const</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a, b);</span><br></pre></td></tr></table></figure>
+<p>var 无法跨闭包，报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line">a();</span><br></pre></td></tr></table></figure>
+<h2 id="通过-var-声明的所有全局变量和函数都会变成-window-对象的属性和方法，而-let-和-const-不会"><a href="#通过-var-声明的所有全局变量和函数都会变成-window-对象的属性和方法，而-let-和-const-不会" class="headerlink" title="通过 var 声明的所有全局变量和函数都会变成 window 对象的属性和方法，而 let 和 const 不会"></a>通过 var 声明的所有全局变量和函数都会变成 window 对象的属性和方法，而 let 和 const 不会</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"b"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 用function声明的也会变成全局对象的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">window</span>.a, <span class="built_in">window</span>.b, <span class="built_in">window</span>.c);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -574,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/06/20/TCP和UDP的区别/" rel="next" title="TCP和UDP的区别">
-                <i class="fa fa-chevron-left"></i> TCP和UDP的区别
+              <a href="/2023/11/22/模拟实现JavaScript的bind方法/" rel="next" title="模拟实现JavaScript的bind方法">
+                <i class="fa fa-chevron-left"></i> 模拟实现JavaScript的bind方法
               </a>
             
           </div>
@@ -583,10 +566,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2022/07/11/JavaScript词法作用域/" rel="prev" title="JavaScript词法作用域">
-                JavaScript词法作用域 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -770,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原型链是干什么用的"><span class="nav-number">1.</span> <span class="nav-text">原型链是干什么用的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#var-可以提升作用域，var-的作用域在闭包内"><span class="nav-number">1.</span> <span class="nav-text">var 可以提升作用域，var 的作用域在闭包内</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-var-声明的所有全局变量和函数都会变成-window-对象的属性和方法，而-let-和-const-不会"><span class="nav-number">2.</span> <span class="nav-text">通过 var 声明的所有全局变量和函数都会变成 window 对象的属性和方法，而 let 和 const 不会</span></a></li></ol></div>
             
 
           </div>
