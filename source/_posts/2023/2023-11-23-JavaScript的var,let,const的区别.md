@@ -73,3 +73,82 @@ function c() {
 }
 console.log(window.a, window.b, window.c);
 ```
+
+## 一个经典的坑
+
+```javascript
+for (var i = 0; i < 6; i++) {
+  setTimeout(() => {
+    console.log(i); // 输出全部是6
+  });
+}
+```
+
+使用 let 可以避免此问题：
+
+```javascript
+for (let i = 0; i < 6; i++) {
+  setTimeout(() => {
+    console.log(i); // 输出全部是6
+  });
+}
+```
+
+也可以用闭包来解决此问题，let 是 es6 引进的，实际上在 es5 一般就是用闭包来解决问题：
+
+```javascript
+function fn(i) {
+  setTimeout(() => {
+    console.log(i);
+  });
+}
+for (let i = 0; i < 6; i++) {
+  fn(i);
+}
+```
+
+顺带说一下 js 怎么实现 sleep，用 setTimeout 和 Promise 可以实现
+
+```javascript
+function sleep(time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(true);
+    }, time);
+  });
+}
+
+for (let i = 0; i < 6; i++) {
+  await sleep(1000);
+  console.log(i);
+}
+```
+
+不过 setTimeout 其实的 sleep 秒数不太准确，它要等所有的微任务都做完，如果微任务很长的话，就要多等一会儿了。
+
+```javascript
+function costManyTime() {
+  let count = 0;
+  for (let i = 0; i < 1000; i++) {
+    for (let j = 0; j < 100_0000; j++) {
+      count = Math.random();
+    }
+  }
+}
+
+function sleep(time) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(true);
+    }, time);
+  });
+}
+
+for (let i = 0; i < 6; i++) {
+  await sleep(1000);
+  console.log(i, new Date());
+  console.time("costManyTime");
+  costManyTime();
+  console.timeEnd("costManyTime");
+}
+```
