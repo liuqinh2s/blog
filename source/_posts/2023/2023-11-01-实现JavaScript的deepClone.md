@@ -6,6 +6,36 @@ tags: [js]
 comments: true
 ---
 
+## 先来实现一个最简版的 deepClone
+
+```javascript
+function deepClone(obj) {
+  if (
+    obj == null ||
+    typeof obj == "string" ||
+    typeof obj == "boolean" ||
+    typeof obj == "number"
+  ) {
+    return obj;
+  }
+  if (Array.isArray(obj)) {
+    let temp = [];
+    for (let i = 0; i < obj.length; i++) {
+      temp[i] = deepClone(obj[i]);
+    }
+    return temp;
+  } else if (typeof obj == "object") {
+    let temp = {};
+    for (let k of Object.keys(obj)) {
+      temp[k] = deepClone(obj[k]);
+    }
+    return temp;
+  }
+}
+```
+
+## 迭代版本的 deepClone
+
 最近 EDA 项目在解决一些性能上的问题，首当其冲的就是 deepClone，各种地方都在用，且十分卡性能。如何解决这个问题呢？
 
 由于我们项目中的 deepClone 是一个递归版本的 deepClone，所以应该可以通过把它改成迭代版的 deepClone 来提速。
