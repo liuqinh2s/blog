@@ -24,6 +24,8 @@ F.call(thisArg, arg1, arg2, ...);
 
 需要特别注意的是，如果是在非严格模式下，thisArg 如果为 null 或 undefined，就会被替换成全局对象（在浏览器中是 window）；如果为原始值，就会被替换成原始值的的自动包装对象。
 
+严格模式下，thisArg 传什么就是什么。
+
 <!-- more -->
 
 ```javascript
