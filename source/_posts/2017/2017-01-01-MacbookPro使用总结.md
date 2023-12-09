@@ -1,7 +1,6 @@
 ---
 title: Macbook Pro 使用总结
-categories: [工具]
-comments: true
+tags: [工具]
 ---
 
 ## 前言
