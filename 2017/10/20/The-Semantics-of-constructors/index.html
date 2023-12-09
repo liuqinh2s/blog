@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="这一章详细的讨论了 constructor 如何工作，讨论构造一个对象的过程以及构造一个对象给程序带来的影响。 区分 trivial 和 notrivial 只有编译器需要的时候(为什么会需要?后面讲的很清楚)，合成操作才是 nontrivial 的， 这样的构造函数才会被真正的合成出来; 如果编译器不需要，而程序员又没有提供，这时的默认构造函数就是 trivial 的。虽然它在概念上存在，但是编">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-12-09T03:36:45.562Z">
+<meta property="og:updated_time" content="2023-12-09T06:59:28.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 二 -- The Semantics of constructors">
 <meta name="twitter:description" content="这一章详细的讨论了 constructor 如何工作，讨论构造一个对象的过程以及构造一个对象给程序带来的影响。 区分 trivial 和 notrivial 只有编译器需要的时候(为什么会需要?后面讲的很清楚)，合成操作才是 nontrivial 的， 这样的构造函数才会被真正的合成出来; 如果编译器不需要，而程序员又没有提供，这时的默认构造函数就是 trivial 的。虽然它在概念上存在，但是编">
@@ -441,34 +441,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T03:36:45+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
                 2023-12-09
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -496,7 +474,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3,477
+                  3,476
                 </span>
               
 
@@ -541,7 +519,7 @@
 <p>例如:成员变量初始化为 0 操作，这个操作就是程序的需要，而不是编译器的需要。</p>
 <p>总结变量的初始化:</p>
 <p>Global objects are guaranteed to have their associated memory “zeroed out” at program start-up. Local objects allocated on the program stack and heap objects allocated on the free-store do not have their associated memory zeroed out; rather, the memory retains the arbitrary bit pattern of its previous use.</p>
-<p>只有全局变量和静态变量才会保证初始化，其中静态变量可以视为全局变量的一种，因为静态变量也是保存在全局变量的存储空间上的。<br>Golbal objects 的内存保证会在程序激活的时候被清 0；Local objects 配置于程序的堆栈中，Heap objects 配置于自由空间中，都不一定会被清为 0,它们的内容将是内存上次被使用后的痕迹!</p>
+<p>只有全局变量和静态变量才会保证初始化，其中静态变量可以视为全局变量的一种，因为静态变量也是保存在全局变量的存储空间上的。<br>Golbal objects 的内存保证会在程序激活的时候被清 0；Local objects 配置于程序的栈中，Heap objects 配置于自由空间中，都不一定会被清为 0,它们的内容将是内存上次被使用后的痕迹!</p>
 <p>全局变量和静态变量都放在 global data Segment 上，且在类被声明的时候就已经分配内存和初始化，也就是 <strong>在任何对象被定义之前静态变量就已经存在了（即使该 class 没有任何 object 实体，static data members 也已经存在）。</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> &#123;</span> <span class="keyword">public</span>: <span class="keyword">int</span> val; Foo *pnext; &#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo_bar</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// Oops:  program needs bar's members zeroed out</span></span><br><span class="line">   Foo bar;</span><br><span class="line">   <span class="keyword">if</span> ( bar.val || bar.pnext )</span><br><span class="line">      <span class="comment">// ... do something</span></span><br><span class="line">   <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>When is a default constructor synthesized, then? Only when the implementation needs it. Moreover, the synthesized constructor performs only those activities required by the implementation. That is, even if there were a need to synthesize a default constructor for class Foo, that constructor would not include code to zero out the two data members val and pnext. For the previous program fragment to execute correctly, the designer of class Foo needs to provide an explicit default constructor that properly initializes the class’s two members.</p>
@@ -553,7 +531,7 @@
 <li>带有虚函数的类</li>
 <li>继承自虚基类的类</li>
 </ol>
-<p>如果 class A 内含一个或以上的 member objects，那么 A 的 constructor 必须调用每一个 member class 的默认构造函数。<br>具体方法是:编译器会扩张 constructors（注意：是所有的构造函数，不仅仅是默认构造函数会被扩张），在其中安插代码使得在 user code 被调用之前先调 用 member objects 的默认构造函数(当然如果需要调用基类的默认构造函数，则放在基类的 默认构造函数调用之后:基类构造函数-&gt;成员构造函数-&gt;user code)。<br>C++要求以“member objects 在 class 中的声明次序”来调用各个 construtors。这就是声明的次序决定了初始化次序(构造函数初始化列表一直要求以声明顺序来初始化)的根本原因!<br>所以你打乱 member initialization list 的顺序根本没有用哦~</p>
+<p>如果 class A 内含一个或以上的 member objects，那么 A 的 constructor 必须调用每一个 member class 的默认构造函数。<br>具体方法是:编译器会扩张 constructors（注意：是所有的构造函数，不仅仅是默认构造函数会被扩张），在其中安插代码使得在 user code 被调用之前先调 用 member objects 的默认构造函数(当然如果需要调用基类的默认构造函数，则放在基类的 默认构造函数调用之后:基类构造函数-&gt;成员构造函数-&gt;user code)。<br>C++要求以“member objects 在 class 中的声明次序”来调用各个 construtors。这就是声明的次序决定了初始化次序的根本原因!(构造函数初始化列表一直要求以声明顺序来初始化)<br>所以你打乱 member initialization list 的顺序根本没有用哦~</p>
 <p>理解了初始化列表中的实际执行顺序中“以 member 声明的次序”来决定的，就可以理解一些很 微妙的错误了。比如:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A() : i(<span class="number">99</span>), j(<span class="number">66</span>), value(foo()) &#123;... &#125;</span><br><span class="line"><span class="keyword">int</span> i, value, j;</span><br></pre></td></tr></table></figure>
 <p>这会不会产生错误取决于成员函数 foo()是依赖于 i 还是 j:<br>如果 foo 依赖于 i，由于 i 声明在 value 之前，所以不会产生错误;<br>如果 foo 依赖于 j，由于 j 声明在 value 之后，就产生了使用未初始化成员的错误。</p>
@@ -735,7 +713,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -847,7 +825,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99.5k</span>
+    <span title="Site words total count">99.6k</span>
   
 </div>
 

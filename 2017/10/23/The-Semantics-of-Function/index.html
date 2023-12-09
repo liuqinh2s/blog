@@ -90,7 +90,7 @@
 <meta property="og:description" content="c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2018/04/25/5ae01bb4b32a9.gif">
-<meta property="og:updated_time" content="2023-12-09T03:36:45.562Z">
+<meta property="og:updated_time" content="2023-12-09T06:59:28.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 四 -- The Semantics of Function">
 <meta name="twitter:description" content="c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。">
@@ -443,34 +443,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T03:36:45+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
                 2023-12-09
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -498,7 +476,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1,566
+                  1,568
                 </span>
               
 
@@ -528,16 +506,16 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="nonstatic-member-function"><a href="#nonstatic-member-function" class="headerlink" title="nonstatic member function"></a>nonstatic member function</h2><p>C++的设计准则之一就是:nonstatic member function 至少必须和一般的 nonmember function 有相同的效率。<br>实际上，nonstatic member function 会被编译器进行如下的转换，变成一个普通函数:</p>
-<p>Type1 X::foo(Type2 arg1) { ... }</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Type1 X::foo(Type2 arg1) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
 <p>会被转换为如下的普通函数:</p>
-<p>void foo(X *const this, Type1 &amp;__result, Type2 arg1) { ... }</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">(X *<span class="keyword">const</span> <span class="keyword">this</span>, Type1 &amp;__result, Type2 arg1)</span> </span>&#123; ... &#125;</span><br></pre></td></tr></table></figure>
 <p>改写函数原型，在参数中增加 this 指针，对每一个”nonstatic data member 的存取操作”改为由 this 指针来存取</p>
 <p>将 member function 重写为一个外部函数，经过”mangling”处理（不需要处理的加上 extern “C”）</p>
 <p>实际上，普通函数、普通成员函数、静态成员函数到最后都会变成与 C 语言函数类似的普通函数，只是编译器在这些不同类型的函数身上做了不同的扩展，并放在不同的 scope 里面而已。</p>
 <p>编译器内部会将成员函数等价转换为非成员函数，具体是这样做的:</p>
 <p>1.改写成员函数的签名，使得其可以接受一个额外参数，这个额外参数即是 this 指针：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> Point::X();</span><br><span class="line"><span class="comment">//成员函数X被插入额外参数this</span></span><br><span class="line"><span class="keyword">float</span> Point:: X(Point* <span class="keyword">this</span> );</span><br></pre></td></tr></table></figure>
-<p>当然如果成员函数是 const 的，插入的参数类型将为 const Point* 类型。</p>
+<p>当然如果成员函数是 const 的，插入的参数类型将为 <code>const Point*</code> 类型。</p>
 <p>2.将每一个对非静态数据成员的操作都改写为经过 this 操作。</p>
 <p>3.将成员函数写成一个外部函数，对函数名进行“mangling”处理，使之成为独一无二的名称。</p>
 <p>可以看出，将一个成员函数改写成一个外部函数的关键在于两点，一是给函数提供一个可以直接读写成员数据的通道；<br>二是解决好有可能带来的名字冲突。第一点通过给函数提供一个额外的指针参数来解决，第二点则是通过一定的规则将名字转换，使之独一无二。</p>
@@ -728,7 +706,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -840,7 +818,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99.5k</span>
+    <span title="Site words total count">99.6k</span>
   
 </div>
 

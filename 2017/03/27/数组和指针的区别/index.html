@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="liuqinh2s">
+  <meta name="keywords" content="C++,">
 
 
 
@@ -82,14 +82,14 @@
 
 
 <meta name="description" content="数组和指针的区别： 123456789101112131415int GetSize(int data[])&amp;#123;    return sizeof(data);&amp;#125;int _tmain(int argc, _TCHAR* argv[])&amp;#123;    int data1[] = &amp;#123;1, 2, 3, 4, 5&amp;#125;;    int size1 = sizeof(d">
-<meta name="keywords" content="Coding Writing Thinking">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组和指针的区别">
 <meta property="og:url" content="https://liuqinh2s.xyz/2017/03/27/数组和指针的区别/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="数组和指针的区别： 123456789101112131415int GetSize(int data[])&amp;#123;    return sizeof(data);&amp;#125;int _tmain(int argc, _TCHAR* argv[])&amp;#123;    int data1[] = &amp;#123;1, 2, 3, 4, 5&amp;#125;;    int size1 = sizeof(d">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-12-09T03:36:45.562Z">
+<meta property="og:updated_time" content="2023-12-09T06:59:28.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组和指针的区别">
 <meta name="twitter:description" content="数组和指针的区别： 123456789101112131415int GetSize(int data[])&amp;#123;    return sizeof(data);&amp;#125;int _tmain(int argc, _TCHAR* argv[])&amp;#123;    int data1[] = &amp;#123;1, 2, 3, 4, 5&amp;#125;;    int size1 = sizeof(d">
@@ -441,34 +441,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T03:36:45+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
                 2023-12-09
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C++</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -496,7 +474,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  224
+                  254
                 </span>
               
 
@@ -525,7 +503,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetSize</span><span class="params">(<span class="keyword">int</span> data[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">sizeof</span>(data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])&#123;</span><br><span class="line">    <span class="keyword">int</span> data1[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> size1 = <span class="keyword">sizeof</span>(data1);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>* data2 = data1;</span><br><span class="line">    <span class="keyword">int</span> size2 = <span class="keyword">sizeof</span>(data2);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> size3 = GetSize(data1);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d, %d, %d\n"</span>, size1, size2, size3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>答案是输出：20, 4, 4</p>
 <a id="more"></a>
-<p>sizeof是个关键字而不是函数，sizeof(data1)是求数组的大小，这里有5个int型元素，所以总共20个字节，data2声明为指针，尽管指向了一个数组，但本质上只是一个指针，所以sizeof(data2)的语义范围收缩了，无法仅通过一个指针得知其所指范围。在32位系统上一个指针是4字节，所以结果就是4。在C/C++中，当数组作为函数的参数进行传递时，数组就自动退化为同类型的指针，因此size3的结果也是4。</p>
+<p>sizeof 是个关键字而不是函数，sizeof(data1)是求数组的大小，这里有 5 个 int 型元素，所以总共 20 个字节，data2 声明为指针，尽管指向了一个数组，但本质上只是一个指针，所以 sizeof(data2)的语义范围收缩了，无法仅通过一个指针得知其所指范围。在 32 位系统上一个指针是 4 字节，所以结果就是 4。在 C/C++中，当数组作为函数的参数进行传递时，数组就自动退化为同类型的指针，因此 size3 的结果也是 4。所以 C++传数组做参数至少两个参数起步，一个指针，一个数组长度。</p>
 
       
     </div>
@@ -540,6 +518,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+        </div>
       
 
       
@@ -659,7 +643,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -755,7 +739,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99.5k</span>
+    <span title="Site words total count">99.6k</span>
   
 </div>
 

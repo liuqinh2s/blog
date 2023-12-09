@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="C++对象模型的细节，讨论了 data members 的处理。 空类在内存中有空间吗">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-12-09T03:36:45.562Z">
+<meta property="og:updated_time" content="2023-12-09T06:59:28.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 三 -- The Semantics of Data">
 <meta name="twitter:description" content="C++对象模型的细节，讨论了 data members 的处理。 空类在内存中有空间吗">
@@ -441,34 +441,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T03:36:45+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
                 2023-12-09
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -559,7 +537,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Point3d</span><br><span class="line">Point3d::translate( <span class="keyword">const</span> Point3d &amp;pt ) &#123;</span><br><span class="line">   x += pt.x;</span><br><span class="line">   y += pt.y;</span><br><span class="line">   z += pt.z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>the seemingly direct access of x, y, and z is actually carried out through an implicit class object represented<br>by the this pointer. Internally, the function is augmented as follows:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// internal augmentation of member function</span></span><br><span class="line">  Point3d</span><br><span class="line">  Point3d::translate( <span class="keyword">const</span> Point3d* <span class="keyword">this</span>, <span class="keyword">const</span> Point3d &amp;pt ) &#123;</span><br><span class="line">     <span class="keyword">this</span>-&gt;x += pt.x;</span><br><span class="line">     <span class="keyword">this</span>-&gt;y += pt.y;</span><br><span class="line">     <span class="keyword">this</span>-&gt;z += pt.z;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>地址：&amp;origin._y;和&amp;origin + ( &amp;Point3d::_y - 1 );是一样的。指向 data member 的指针，其 offset 值总是被加上 1。这样可以使编译系统区分出 “一个指针 data member 的指针，用以指向 class 的第一个 member”和“一个指向 data member 的指针，但是没有指向任何 member”两种情况(成员指针也需要有个表示 NULL 的方式，0 相当于用来表示 NULL 了，其它的就都要加上 1 了)。</p>
+<p>地址：<code>&amp;origin._y;</code>和<code>&amp;origin + ( &amp;Point3d::_y - 1 );</code>是一样的。指向 data member 的指针，其 offset 值总是被加上 1。这样可以使编译系统区分出 “一个指针 data member 的指针，用以指向 class 的第一个 member”和“一个指向 data member 的指针，但是没有指向任何 member”两种情况(成员指针也需要有个表示 NULL 的方式，0 相当于用来表示 NULL 了，其它的就都要加上 1 了)。</p>
 <h2 id="Inheritance-and-the-Data-Member"><a href="#Inheritance-and-the-Data-Member" class="headerlink" title="Inheritance and the Data Member"></a>Inheritance and the Data Member</h2><p>C++ Standard 保证:“出现在派生类中的 base class subobject 有其完整原样性!” 子类会被放在父类的对齐空白字节之后，因为父类的完整性必须得以保证，父类的对齐空白字节 也是父类的一部分，也是不可分割的。</p>
 <p>请看下面例子：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X2</span>:</span><span class="keyword">public</span> X</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">char</span>  c2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -715,7 +693,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -827,7 +805,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99.5k</span>
+    <span title="Site words total count">99.6k</span>
   
 </div>
 
