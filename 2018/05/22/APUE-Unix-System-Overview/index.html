@@ -90,7 +90,7 @@
 <meta property="og:description" content="Preperation Before Classapue 编程环境搭建 Figure 1.3 List all the files in a directory  12345678910111213141516#include &quot;apue.h&quot;#include &amp;lt;dirent.h&amp;gt;int main(int argc, char *argv[])&amp;#123;    DIR *dp;">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2018/05/22/5b03742b0a818.png">
-<meta property="og:updated_time" content="2023-12-08T01:22:05.659Z">
+<meta property="og:updated_time" content="2023-12-09T02:31:33.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《APUE-3rd》 读书笔记 -- Unix System Overview">
 <meta name="twitter:description" content="Preperation Before Classapue 编程环境搭建 Figure 1.3 List all the files in a directory  12345678910111213141516#include &quot;apue.h&quot;#include &amp;lt;dirent.h&amp;gt;int main(int argc, char *argv[])&amp;#123;    DIR *dp;">
@@ -443,8 +443,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-08T01:22:05+00:00">
-                2023-12-08
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T02:31:33+00:00">
+                2023-12-09
               </time>
             
           </span>
@@ -741,7 +741,7 @@
 <li>系统 CPU 时间，是进程进入内核执行的 CPU 使用时间</li>
 </ol>
 <p>It is easy to measure the clock time, user time, and system time of any process: simply execute the time(1) command, with the argument to the time command being the command we want to measure. For example:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd /usr/include</span><br><span class="line"><span class="meta">$</span> time -p grep _POSIX_SOURCE */*.h &gt; /dev/null</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /usr/include</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> time -p grep _POSIX_SOURCE */*.h &gt; /dev/null</span></span><br></pre></td></tr></table></figure>
 <p>结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">real    0m0.81s</span><br><span class="line">user    0m0.11s</span><br><span class="line">sys     0m0.07s</span><br></pre></td></tr></table></figure>
 <p>The output format from the time command depends on the shell being used, because some shells don’t run /usr/bin/time, but instead have a separate built-in function to measure the time it takes commands to run. time 命令的输出格式取决于使用什么 shell，因为有些 shell 并不运行：<code>/usr/bin/time</code>，而是运行自己内置的一个 time 函数。</p>
@@ -999,7 +999,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">99.6k</span>
+    <span title="Site words total count">99.5k</span>
   
 </div>
 
