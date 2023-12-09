@@ -1,8 +1,6 @@
 ---
 title: Override Overload Overwrite
-date: 2017-11-14
-categories: [计算机基础]
-comments: true
+tags: [编程基础]
 ---
 
 我们都知道有些东西容易混淆，在加上中文翻译得乱七八糟，更加让人困惑。今天我要讲的这三位可就真是绝了。
@@ -104,7 +102,7 @@ Overload 是本 class 里面的不同函数（只不过函数名一样罢了，�
 
 > 比较容易混淆的其实是 Override 和 Overwrite，但你只要死记住：Override 必须函数签名要一样，而 Overwrite 只需函数名一样即可。另外 C++ 中一定要用 virtual 才算 Override，而 Java 默认就是 Override，不需要修饰词。
 
-> 这里关于 Java 和 C++ 面向对象的细节区别可以写一大堆，比如：C++ class 后面是要加分号的，而 Java 不需要；但 Java 的类名是和文件名要一致的，而且只能有一个 public 类，而 C++不需要；Java 直接就能用 Override，而 C++必须要使用 virtual 关键字才能使用 Override（虚函数）；Java 的抽象方法跟 C++的纯虚函数对应。Java 是单继承，由接口来实现“多继承”，C++是多继承，没有接口，只有抽象类。C++还有个虚基类的概念。具体的写法上还有很多的不同，多用这两种语言写面向对象的代码，就慢慢会知道了。
+> 这里关于 Java 和 C++ 面向对象的细节区别可以写一大堆，比如：C++ class 后面是要加分号的，而 Java 不需要；但 Java 的类名是和文件名要一致的，而且只能有一个 public 类，而 C++不需要；Java 直接就能用 Override，而 C++必须要使用 virtual 关键字（虚函数）才能使用 Override；Java 的抽象方法跟 C++的纯虚函数对应。Java 是单继承，由接口来实现“多继承”，C++是多继承，没有接口，只有抽象类。C++还有个虚基类的概念。具体的写法上还有很多的不同，多用这两种语言写面向对象的代码，就慢慢会知道了。
 
 C++ 有一个 virtual 关键字和 virtual table 这个概念，没有加 virtual 的父类函数是不可能形成多态的，如果这时候你碰到父类和子类两个里面有同名的函数，那么就属于 Overwrite 这个概念了，你其实也可以称这种覆盖掉父类函数的行为为：hide 隐藏。Java 这种语言里面没有 virtual 这一套，Java 也可以表现出 Overwrite，但要注意函数签名如果一样的话，那又不叫 Overwrite 了，应该叫 Override 了（Java 如果要在子类中使用父类的同函数签名方法，则必须使用 super 关键字）。而 C++ 不一样，即便是函数签名一样，如果前面不加 virtual 是不能叫 Override 的，仍然属于 Overwrite 的概念。请看下面的例子：
 
@@ -149,7 +147,7 @@ B
 
 Java 代码：
 
-```C++
+```java
 public class test {
 
     class A{

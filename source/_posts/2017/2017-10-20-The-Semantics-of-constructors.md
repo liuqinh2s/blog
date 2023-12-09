@@ -1,10 +1,6 @@
 ---
-layout: post
 title: Inside the C++ Object Model 系列笔记 二 -- The Semantics of constructors
-date: 2017-10-20
-categories: [读书笔记]
 tags: [C++]
-comments: true
 ---
 
 这一章详细的讨论了 constructor 如何工作，讨论构造一个对象的过程以及构造一个对象给程序带来的影响。
@@ -44,7 +40,7 @@ C++中对于默认构造函数的解释是:
 Global objects are guaranteed to have their associated memory “zeroed out” at program start-up. Local objects allocated on the program stack and heap objects allocated on the free-store do not have their associated memory zeroed out; rather, the memory retains the arbitrary bit pattern of its previous use.
 
 只有全局变量和静态变量才会保证初始化，其中静态变量可以视为全局变量的一种，因为静态变量也是保存在全局变量的存储空间上的。
-Golbal objects 的内存保证会在程序激活的时候被清 0；Local objects 配置于程序的堆栈中，Heap objects 配置于自由空间中，都不一定会被清为 0,它们的内容将是内存上次被使用后的痕迹!
+Golbal objects 的内存保证会在程序激活的时候被清 0；Local objects 配置于程序的栈中，Heap objects 配置于自由空间中，都不一定会被清为 0,它们的内容将是内存上次被使用后的痕迹!
 
 全局变量和静态变量都放在 global data Segment 上，且在类被声明的时候就已经分配内存和初始化，也就是 **在任何对象被定义之前静态变量就已经存在了（即使该 class 没有任何 object 实体，static data members 也已经存在）。**
 
@@ -75,7 +71,7 @@ When is a default constructor synthesized, then? Only when the implementation ne
 
 如果 class A 内含一个或以上的 member objects，那么 A 的 constructor 必须调用每一个 member class 的默认构造函数。
 具体方法是:编译器会扩张 constructors（注意：是所有的构造函数，不仅仅是默认构造函数会被扩张），在其中安插代码使得在 user code 被调用之前先调 用 member objects 的默认构造函数(当然如果需要调用基类的默认构造函数，则放在基类的 默认构造函数调用之后:基类构造函数->成员构造函数->user code)。
-C++要求以“member objects 在 class 中的声明次序”来调用各个 construtors。这就是声明的次序决定了初始化次序(构造函数初始化列表一直要求以声明顺序来初始化)的根本原因!
+C++要求以“member objects 在 class 中的声明次序”来调用各个 construtors。这就是声明的次序决定了初始化次序的根本原因!(构造函数初始化列表一直要求以声明顺序来初始化)
 所以你打乱 member initialization list 的顺序根本没有用哦~
 
 理解了初始化列表中的实际执行顺序中“以 member 声明的次序”来决定的，就可以理解一些很 微妙的错误了。比如:

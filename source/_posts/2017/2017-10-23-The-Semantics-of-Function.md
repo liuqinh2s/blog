@@ -1,10 +1,6 @@
 ---
-layout: post
 title: Inside the C++ Object Model 系列笔记 四 -- The Semantics of Function
-date: 2017-10-23
-categories: [读书笔记]
 tags: [C++]
-comments: true
 ---
 
 > c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。
@@ -16,11 +12,15 @@ comments: true
 C++的设计准则之一就是:nonstatic member function 至少必须和一般的 nonmember function 有相同的效率。
 实际上，nonstatic member function 会被编译器进行如下的转换，变成一个普通函数:
 
+```C++
 Type1 X::foo(Type2 arg1) { ... }
+```
 
 会被转换为如下的普通函数:
 
-void foo(X \*const this, Type1 &\_\_result, Type2 arg1) { ... }
+```C++
+void foo(X *const this, Type1 &__result, Type2 arg1) { ... }
+```
 
 改写函数原型，在参数中增加 this 指针，对每一个”nonstatic data member 的存取操作”改为由 this 指针来存取
 
@@ -38,7 +38,7 @@ float Point::X();
 float Point:: X(Point* this );
 ```
 
-当然如果成员函数是 const 的，插入的参数类型将为 const Point\* 类型。
+当然如果成员函数是 const 的，插入的参数类型将为 `const Point*` 类型。
 
 2.将每一个对非静态数据成员的操作都改写为经过 this 操作。
 

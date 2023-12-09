@@ -1,10 +1,6 @@
 ---
-layout: post
 title: Inside the C++ Object Model 系列笔记 三 -- The Semantics of Data
-date: 2017-10-21
-categories: [读书笔记]
 tags: [C++]
-comments: true
 ---
 
 C++对象模型的细节，讨论了 data members 的处理。
@@ -162,7 +158,7 @@ by the this pointer. Internally, the function is augmented as follows:
 }
 ```
 
-地址：&origin.\_y;和&origin + ( &Point3d::\_y - 1 );是一样的。指向 data member 的指针，其 offset 值总是被加上 1。这样可以使编译系统区分出 “一个指针 data member 的指针，用以指向 class 的第一个 member”和“一个指向 data member 的指针，但是没有指向任何 member”两种情况(成员指针也需要有个表示 NULL 的方式，0 相当于用来表示 NULL 了，其它的就都要加上 1 了)。
+地址：`&origin._y;`和`&origin + ( &Point3d::_y - 1 );`是一样的。指向 data member 的指针，其 offset 值总是被加上 1。这样可以使编译系统区分出 “一个指针 data member 的指针，用以指向 class 的第一个 member”和“一个指向 data member 的指针，但是没有指向任何 member”两种情况(成员指针也需要有个表示 NULL 的方式，0 相当于用来表示 NULL 了，其它的就都要加上 1 了)。
 
 ## Inheritance and the Data Member
 
