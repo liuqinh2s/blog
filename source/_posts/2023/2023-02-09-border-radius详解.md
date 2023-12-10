@@ -1,9 +1,6 @@
 ---
 title: border-radius详解
-date: 2023-02-09
-categories: [css]
 tags: [css]
-comments: true
 ---
 
 看《CSS 解密》的时候遇到 border-radius 不是很懂，有个例子如下：

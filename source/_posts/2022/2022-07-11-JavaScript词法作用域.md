@@ -1,8 +1,6 @@
 ---
 title: JavaScript词法作用域
-date: 2022-07-11
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 有两种作用域：

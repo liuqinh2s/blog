@@ -1,8 +1,6 @@
 ---
 title: JavaScript如何实现节流和防抖函数
-date: 2023-12-05
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 节流：throttle

@@ -1,8 +1,6 @@
 ---
 title: JavaScript 闭包
-date: 2022-07-14
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 # 闭包是干什么用的

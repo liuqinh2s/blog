@@ -1,8 +1,6 @@
 ---
 title: 模拟实现JavaScript的new操作符
-date: 2023-11-20
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。

@@ -1,8 +1,6 @@
 ---
 title: 《APUE-3rd》 读书笔记 -- Unix System Overview
-date: 2018-05-22
-categories: [读书笔记]
-comments: true
+categories: [操作系统]
 ---
 
 ## Preperation Before Class

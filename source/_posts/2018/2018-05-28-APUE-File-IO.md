@@ -1,8 +1,6 @@
 ---
 title: 《APUE-3rd》 读书笔记 -- File I/O
-date: 2018-05-28
-categories: [读书笔记]
-comments: true
+tags: [操作系统]
 ---
 
 ## 前言

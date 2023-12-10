@@ -1,9 +1,6 @@
 ---
 title: AwesomeWeb项目
-date: 2023-05-22
-categories: [项目]
 tags: [前端, 项目]
-comments: true
 ---
 
 github 仓库：[liuqinh2s/AwesomeWeb](https://github.com/liuqinh2s/AwesomeWeb)

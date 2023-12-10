@@ -102,7 +102,6 @@ menu:
   Home: / || home
   About: /about/ || user
   tags: /tags/ || tags
-  categories: /categories/ || th
   archives: /archives/ || archive
   Mark: /Mark/ || star
   Computer Science: /ComputerScience/ || code
@@ -113,11 +112,6 @@ menu:
   Reading: /Reading/ || list
   leetcode: /leetcode/ || coffee
   Link: /Link/ || link
-
-  # Life Experience: /LifeExperience/ || bank
-  # schedule: /schedule/ || calendar
-  # sitemap: /sitemap.xml || sitemap
-  # commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:

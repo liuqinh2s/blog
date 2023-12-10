@@ -1,8 +1,6 @@
 ---
 title: JavaScript执行上下文之作用域链
-date: 2022-07-14
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。

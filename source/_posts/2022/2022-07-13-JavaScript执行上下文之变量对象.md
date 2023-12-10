@@ -1,8 +1,6 @@
 ---
 title: JavaScript执行上下文之变量对象
-date: 2022-07-13
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 # 执行上下文中包含哪些东西

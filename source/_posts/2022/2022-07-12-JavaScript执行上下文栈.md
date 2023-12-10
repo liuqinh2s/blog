@@ -1,8 +1,6 @@
 ---
 title: JavaScript执行上下文栈
-date: 2022-07-12
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 # 顺序执行？

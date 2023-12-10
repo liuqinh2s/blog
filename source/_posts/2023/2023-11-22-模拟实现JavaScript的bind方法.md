@@ -1,8 +1,6 @@
 ---
 title: 模拟实现JavaScript的bind方法
-date: 2023-11-22
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 bind 函数我们经常用到，主要用于换绑 this。其返回值是一个方法。此外我们还可以把一些参数固定下来，相当于封装了一个简易函数。

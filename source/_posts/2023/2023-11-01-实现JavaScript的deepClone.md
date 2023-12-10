@@ -1,9 +1,6 @@
 ---
 title: 实现一个高效的deepClone
-date: 2023-11-01
-categories: [js]
 tags: [js]
-comments: true
 ---
 
 ## 先来实现一个最简版的 deepClone

@@ -1,8 +1,6 @@
 ---
 title: JavaScript原型和原型链
-date: 2022-07-10
-categories: [JavaScript]
-comments: true
+tags: [JavaScript]
 ---
 
 # 原型链是干什么用的

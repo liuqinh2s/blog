@@ -1,9 +1,6 @@
 ---
 title: JavaScript对象的继承有哪几种
-date: 2023-11-20
-categories: [javascript]
 tags: [javascript]
-comments: true
 ---
 
 javascript 高级程序设计中有写，对象的继承总共有六种:
