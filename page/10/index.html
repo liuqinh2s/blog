@@ -222,16 +222,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -396,7 +386,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2021/05/29/leetcode-560-和为K的子数组/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -415,7 +405,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/05/29/leetcode-560-和为K的子数组/" itemprop="url">leetcode： 560. 和为K的子数组</a></h2>
+                <a class="post-title-link" href="/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/" itemprop="url">leetcode： 1074. 元素和为目标值的子矩阵数量</a></h2>
         
 
         <div class="post-meta">
@@ -443,34 +433,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -493,7 +461,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  478
+                  468
                 </span>
               
 
@@ -520,12 +488,13 @@
       
         
           <blockquote>
-<p>这题是在做每日一题中遇到的问题的子问题：<a href="https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/" target="_blank" rel="noopener">1074. 元素和为目标值的子矩阵数量</a></p>
+<p>这个问题需要拆分出子问题才好解决，要不然没有思路。它的子问题是：<a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">560. 和为 K 的子数组</a></p>
 </blockquote>
-<h2 id="560-和为K的子数组"><a href="#560-和为K的子数组" class="headerlink" title="560. 和为K的子数组"></a><a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">560. 和为K的子数组</a></h2><p>遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：</p>
+<h2 id="1074-元素和为目标值的子矩阵数量"><a href="#1074-元素和为目标值的子矩阵数量" class="headerlink" title="1074. 元素和为目标值的子矩阵数量"></a><a href="https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/" target="_blank" rel="noopener">1074. 元素和为目标值的子矩阵数量</a></h2><p>当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？</p>
+<p>我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2021/05/29/leetcode-560-和为K的子数组/#more" rel="contents">
+            <a class="btn" href="/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -623,34 +592,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -673,7 +620,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  237
+                  240
                 </span>
               
 
@@ -700,9 +647,9 @@
       
         
           <blockquote>
-<p>leetcode每日一题是leetcode中文版官方推出的活动，每日一题锻炼解决问题的思维能力。</p>
+<p>leetcode 每日一题是 leetcode 中文版官方推出的活动，每日一题锻炼解决问题的思维能力。</p>
 </blockquote>
-<h2 id="477-汉明距离总和"><a href="#477-汉明距离总和" class="headerlink" title="477. 汉明距离总和"></a><a href="https://leetcode-cn.com/problems/total-hamming-distance/" target="_blank" rel="noopener">477. 汉明距离总和</a></h2><p>这题初看上去特别简单，就是一个O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是0要么是1，把0和1的个数统计出来，相乘，就是这一位的汉明距离总和。</p>
+<h2 id="477-汉明距离总和"><a href="#477-汉明距离总和" class="headerlink" title="477. 汉明距离总和"></a><a href="https://leetcode-cn.com/problems/total-hamming-distance/" target="_blank" rel="noopener">477. 汉明距离总和</a></h2><p>这题初看上去特别简单，就是一个 O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是 0 要么是 1，把 0 和 1 的个数统计出来，相乘，就是这一位的汉明距离总和。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/05/28/leetcode-477-汉明距离总和/#more" rel="contents">
@@ -803,34 +750,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -987,34 +912,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1064,7 +967,7 @@
       
         
           <blockquote>
-<p>写之前：<br>2020年整整一年没有写过博客了，沉痛的一年。<br>写博客还是继续下去吧，不管怎样。</p>
+<p>写之前：<br>2020 年整整一年没有写过博客了，沉痛的一年。<br>写博客还是继续下去吧，不管怎样。</p>
 </blockquote>
 <h2 id="1190-反转每对括号间的子串"><a href="#1190-反转每对括号间的子串" class="headerlink" title="1190. 反转每对括号间的子串"></a><a href="https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/" target="_blank" rel="noopener">1190. 反转每对括号间的子串</a></h2><p>这道题一看就知道用栈来解决，但具体到怎么做却依旧不容易想通。直到看过答案后，才发现，实际上真的只需要遍历一遍就能解决问题。</p>
           <!--noindex-->
@@ -1167,34 +1070,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/币圈/" itemprop="url" rel="index">
-                    <span itemprop="name">币圈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1347,10 +1228,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
-                </a>
+                
               </div>
             
 
@@ -1359,7 +1240,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

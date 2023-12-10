@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="liuqinh2s">
+  <meta name="keywords" content="leetcode,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="474. 一和零一道动态规划题目。 首先要明白这是一道背包问题，而且是双维度的，可以装0和1。">
-<meta name="keywords" content="Coding Writing Thinking">
+<meta name="description" content="474. 一和零一道动态规划题目。 首先要明白这是一道背包问题，而且是双维度的，可以装 0 和 1。">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode每日一题：474. 一和零">
 <meta property="og:url" content="https://liuqinh2s.xyz/2021/06/06/leetcode-470-一和零/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="474. 一和零一道动态规划题目。 首先要明白这是一道背包问题，而且是双维度的，可以装0和1。">
+<meta property="og:description" content="474. 一和零一道动态规划题目。 首先要明白这是一道背包问题，而且是双维度的，可以装 0 和 1。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-12-09T06:59:28.337Z">
+<meta property="og:updated_time" content="2023-12-10T06:11:37.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode每日一题：474. 一和零">
-<meta name="twitter:description" content="474. 一和零一道动态规划题目。 首先要明白这是一道背包问题，而且是双维度的，可以装0和1。">
+<meta name="twitter:description" content="474. 一和零一道动态规划题目。 首先要明白这是一道背包问题，而且是双维度的，可以装 0 和 1。">
 
 
 
@@ -218,16 +218,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
           </a>
         </li>
       
@@ -441,34 +431,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -496,7 +464,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  427
+                  436
                 </span>
               
 
@@ -522,17 +490,18 @@
 
       
         <h2 id="474-一和零"><a href="#474-一和零" class="headerlink" title="474. 一和零"></a><a href="https://leetcode-cn.com/problems/ones-and-zeroes/" target="_blank" rel="noopener">474. 一和零</a></h2><p>一道动态规划题目。</p>
-<p>首先要明白这是一道背包问题，而且是双维度的，可以装0和1。</p>
+<p>首先要明白这是一道背包问题，而且是双维度的，可以装 0 和 1。</p>
 <a id="more"></a>
-<p>那么我们就需要一个三维数组dp来记录动态规划的子过程的结果，第一个维度代表遍历到第i个字符串，第二个维度代表第j个0的问题规模，第三个维度代表第k个1的问题规模，依次扩展到我们的目标字符串个数，目标问题规模。</p>
+<p>那么我们就需要一个三维数组 dp 来记录动态规划的子过程的结果，第一个维度代表遍历到第 i 个字符串，第二个维度代表第 j 个 0 的问题规模，第三个维度代表第 k 个 1 的问题规模，依次扩展到我们的目标字符串个数，目标问题规模。</p>
 <p>状态转移方程：</p>
 <ol>
 <li>如果加入当前字符串，导致背包溢出，则不加：dp[i][j][k] = dp[i-1][j][k]</li>
 <li>如果不溢出，则有两种可能，取最优解：dp[i][j][k] = Math.max(dp[i-1][j][k], dp[i-1][j-zeros][k-ones]+1)</li>
 </ol>
-<p>这里还需要考虑一些边界问题，比如i=0的时候，dp[0][any][any]应该是0，同理m=0和n=0也是如此。所以我们的数组空间需要每个维度上都加1来存放这些初始值。</p>
-<p>JavaScript代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; m</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; n</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findMaxForm = <span class="function"><span class="keyword">function</span>(<span class="params">strs, m, n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> dp = <span class="keyword">new</span> <span class="built_in">Array</span>(strs.length+<span class="number">1</span>).fill(<span class="number">0</span>).map(<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Array</span>(m+<span class="number">1</span>).fill(<span class="number">0</span>).map(<span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">new</span> <span class="built_in">Array</span>(n+<span class="number">1</span>).fill(<span class="number">0</span>)))</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=strs.length;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> [zeros, ones] = getZeros(strs[i<span class="number">-1</span>])</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;=m;j++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> k=<span class="number">0</span>;k&lt;=n;k++)&#123;</span><br><span class="line">                dp[i][j][k] = dp[i<span class="number">-1</span>][j][k]</span><br><span class="line">                <span class="keyword">if</span>(j&gt;=zeros &amp;&amp; k&gt;=ones)&#123;</span><br><span class="line">                    dp[i][j][k] = <span class="built_in">Math</span>.max(dp[i<span class="number">-1</span>][j][k], dp[i<span class="number">-1</span>][j-zeros][k-ones]+<span class="number">1</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[strs.length][m][n]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getZeros</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> zeros = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</span><br><span class="line">        zeros[str[i]-<span class="string">'0'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> zeros</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里还需要考虑一些边界问题，比如 i=0 的时候，dp[0][any][any]应该是 0，同理 m=0 和 n=0 也是如此。所以我们的数组空间需要每个维度上都加 1 来存放这些初始值。</p>
+<p>JavaScript 代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; m</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; n</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findMaxForm = <span class="function"><span class="keyword">function</span> (<span class="params">strs, m, n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> dp = <span class="keyword">new</span> <span class="built_in">Array</span>(strs.length + <span class="number">1</span>)</span><br><span class="line">    .fill(<span class="number">0</span>)</span><br><span class="line">    .map(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Array</span>(m + <span class="number">1</span>).fill(<span class="number">0</span>).map(<span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Array</span>(n + <span class="number">1</span>).fill(<span class="number">0</span>)));</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= strs.length; i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> [zeros, ones] = getZeros(strs[i - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt;= m; j++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt;= n; k++) &#123;</span><br><span class="line">        dp[i][j][k] = dp[i - <span class="number">1</span>][j][k];</span><br><span class="line">        <span class="keyword">if</span> (j &gt;= zeros &amp;&amp; k &gt;= ones) &#123;</span><br><span class="line">          dp[i][j][k] = <span class="built_in">Math</span>.max(</span><br><span class="line">            dp[i - <span class="number">1</span>][j][k],</span><br><span class="line">            dp[i - <span class="number">1</span>][j - zeros][k - ones] + <span class="number">1</span></span><br><span class="line">          );</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dp[strs.length][m][n];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getZeros</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> zeros = [<span class="number">0</span>, <span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">    zeros[str[i] - <span class="string">"0"</span>]++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> zeros;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -546,6 +515,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
       
 
       
@@ -566,8 +541,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/06/28/智能合约入门/" rel="prev" title="智能合约入门">
-                智能合约入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/06/28/快速排序最坏的情况啥时候出现/" rel="prev" title="快速排序最坏的情况啥时候出现">
+                快速排序最坏的情况啥时候出现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -662,10 +637,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
-                </a>
+                
               </div>
             
 
@@ -674,7 +649,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

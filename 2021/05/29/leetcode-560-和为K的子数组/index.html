@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="liuqinh2s">
+  <meta name="keywords" content="leetcode,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量  560. 和为K的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：">
-<meta name="keywords" content="Coding Writing Thinking">
+<meta name="description" content="这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量  560. 和为 K 的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第 n 这个位置，我们怎么判断从 0 到 n 中有多少个解，进一步的，我们还只要增量数据，n-1 的解不应该去重复计算。第 n 这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体">
+<meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="leetcode： 560. 和为K的子数组">
 <meta property="og:url" content="https://liuqinh2s.xyz/2021/05/29/leetcode-560-和为K的子数组/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量  560. 和为K的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：">
+<meta property="og:description" content="这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量  560. 和为 K 的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第 n 这个位置，我们怎么判断从 0 到 n 中有多少个解，进一步的，我们还只要增量数据，n-1 的解不应该去重复计算。第 n 这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-12-09T06:59:28.337Z">
+<meta property="og:updated_time" content="2023-12-10T06:11:37.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode： 560. 和为K的子数组">
-<meta name="twitter:description" content="这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量  560. 和为K的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：">
+<meta name="twitter:description" content="这题是在做每日一题中遇到的问题的子问题：1074. 元素和为目标值的子矩阵数量  560. 和为 K 的子数组遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第 n 这个位置，我们怎么判断从 0 到 n 中有多少个解，进一步的，我们还只要增量数据，n-1 的解不应该去重复计算。第 n 这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体">
 
 
 
@@ -218,16 +218,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
           </a>
         </li>
       
@@ -441,34 +431,12 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -496,7 +464,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  478
+                  479
                 </span>
               
 
@@ -524,13 +492,13 @@
         <blockquote>
 <p>这题是在做每日一题中遇到的问题的子问题：<a href="https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/" target="_blank" rel="noopener">1074. 元素和为目标值的子矩阵数量</a></p>
 </blockquote>
-<h2 id="560-和为K的子数组"><a href="#560-和为K的子数组" class="headerlink" title="560. 和为K的子数组"></a><a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">560. 和为K的子数组</a></h2><p>遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第n这个位置，我们怎么判断从0到n中有多少个解，进一步的，我们还只要增量数据，n-1的解不应该去重复计算。第n这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：</p>
+<h2 id="560-和为-K-的子数组"><a href="#560-和为-K-的子数组" class="headerlink" title="560. 和为 K 的子数组"></a><a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/" target="_blank" rel="noopener">560. 和为 K 的子数组</a></h2><p>遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第 n 这个位置，我们怎么判断从 0 到 n 中有多少个解，进一步的，我们还只要增量数据，n-1 的解不应该去重复计算。第 n 这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：</p>
 <a id="more"></a>
-<p>JavaScript代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> subarraySum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> start = <span class="number">0</span>; start &lt; nums.length; ++start) &#123;</span><br><span class="line">        <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> end = start; end &gt;= <span class="number">0</span>; --end) &#123;</span><br><span class="line">            sum += nums[end];</span><br><span class="line">            <span class="keyword">if</span> (sum == k) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>这样的话，算法的时间复杂度是O(n^2)。有没有重复计算的问题呢，似乎不太好说，但结果是：有，像此类问题有统一的规律，就是我们可以记录前缀和。如果我们知道前缀和，那么我们只需要用当前和减去k，看是否等于某个前缀和，如果有，我们不就正好找到一个子数组的和等于k了吗？所以基于前缀和，我们一次遍历即可解决问题。</p>
-<p>JavaScript代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; k</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> subarraySum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> pre = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> preRecord = &#123;<span class="number">0</span>: <span class="number">1</span>&#125;</span><br><span class="line">    <span class="keyword">let</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        pre += nums[i];</span><br><span class="line">        <span class="keyword">if</span>(preRecord[pre-k])&#123;</span><br><span class="line">            count += preRecord[pre-k]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(preRecord[pre])&#123;</span><br><span class="line">            preRecord[pre]++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            preRecord[pre]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>JavaScript 代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> subarraySum = <span class="function"><span class="keyword">function</span> (<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> start = <span class="number">0</span>; start &lt; nums.length; ++start) &#123;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> end = start; end &gt;= <span class="number">0</span>; --end) &#123;</span><br><span class="line">      sum += nums[end];</span><br><span class="line">      <span class="keyword">if</span> (sum == k) &#123;</span><br><span class="line">        count++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这样的话，算法的时间复杂度是 O(n^2)。有没有重复计算的问题呢，似乎不太好说，但结果是：有，像此类问题有统一的规律，就是我们可以记录前缀和。如果我们知道前缀和，那么我们只需要用当前和减去 k，看是否等于某个前缀和，如果有，我们不就正好找到一个子数组的和等于 k 了吗？所以基于前缀和，我们一次遍历即可解决问题。</p>
+<p>JavaScript 代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; k</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> subarraySum = <span class="function"><span class="keyword">function</span> (<span class="params">nums, k</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> pre = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> preRecord = &#123; <span class="number">0</span>: <span class="number">1</span> &#125;;</span><br><span class="line">  <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    pre += nums[i];</span><br><span class="line">    <span class="keyword">if</span> (preRecord[pre - k]) &#123;</span><br><span class="line">      count += preRecord[pre - k];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (preRecord[pre]) &#123;</span><br><span class="line">      preRecord[pre]++;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      preRecord[pre] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> count;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>前缀和对过往的遍历总结提取了信息，使我们不用再去进行重复的计算，是非常重要的技巧。</p>
 </blockquote>
@@ -549,6 +517,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+        </div>
+      
 
       
       
@@ -558,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/05/28/leetcode-477-汉明距离总和/" rel="next" title="leetcode每日一题： 477. 汉明距离总和">
-                <i class="fa fa-chevron-left"></i> leetcode每日一题： 477. 汉明距离总和
+              <a href="/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/" rel="next" title="leetcode： 1074. 元素和为目标值的子矩阵数量">
+                <i class="fa fa-chevron-left"></i> leetcode： 1074. 元素和为目标值的子矩阵数量
               </a>
             
           </div>
@@ -568,8 +542,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/05/29/leetcode-1074-元素和为目标值的子矩阵数量/" rel="prev" title="leetcode： 1074. 元素和为目标值的子矩阵数量">
-                leetcode： 1074. 元素和为目标值的子矩阵数量 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/05/31/leetcode-342-4的幂/" rel="prev" title="leetcode每日一题： 342. 4的幂">
+                leetcode每日一题： 342. 4的幂 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,10 +638,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
-                </a>
+                
               </div>
             
 
@@ -676,7 +650,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -754,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#560-和为K的子数组"><span class="nav-number">1.</span> <span class="nav-text">560. 和为K的子数组</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#560-和为-K-的子数组"><span class="nav-number">1.</span> <span class="nav-text">560. 和为 K 的子数组</span></a></li></ol></div>
             
 
           </div>

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="官方文档Promise A+ 规范async 函数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-12-09T06:59:28.341Z">
+<meta property="og:updated_time" content="2023-12-10T06:11:37.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise详解">
 <meta name="twitter:description" content="官方文档Promise A+ 规范async 函数">
@@ -218,16 +218,6 @@
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
           </a>
         </li>
       
@@ -441,8 +431,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2023-12-09T06:59:28+00:00">
-                2023-12-09
+              <time title="Post modified" itemprop="dateModified" datetime="2023-12-10T06:11:37+00:00">
+                2023-12-10
               </time>
             
           </span>
@@ -474,7 +464,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  138
+                  139
                 </span>
               
 
@@ -502,11 +492,11 @@
         <h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><p><a href="https://promisesaplus.com/" target="_blank" rel="noopener">Promise A+ 规范</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank" rel="noopener">async 函数</a></p>
 <a id="more"></a>
 <h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><ol>
-<li>异步函数不一定就会异步执行，主要看里面有没有异步的地方，比如setTimeout，比如http请求，比如indexedDB请求</li>
-<li>函数返回Promise对象，不一定就要写async，除非里面用了await</li>
-<li>async是Promise的等价简写，不必再多写一个<code>return new Promise</code></li>
+<li>异步函数不一定就会异步执行，主要看里面有没有异步的地方，比如 setTimeout，比如 http 请求，比如 indexedDB 请求</li>
+<li>函数返回 Promise 对象，不一定就要写 async，除非里面用了 await</li>
+<li>async 是 Promise 的等价简写，不必再多写一个<code>return new Promise</code></li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolveAfter2Seconds</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(<span class="string">'resolved'</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncCall</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'calling'</span>);</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">await</span> resolveAfter2Seconds();</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  <span class="comment">// Expected output: "resolved"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asyncCall();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolveAfter2Seconds</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      resolve(<span class="string">"resolved"</span>);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncCall</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"calling"</span>);</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">await</span> resolveAfter2Seconds();</span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">  <span class="comment">// Expected output: "resolved"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asyncCall();</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -643,10 +633,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">categories</span>
-                </a>
+                
               </div>
             
 
@@ -655,7 +645,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
