@@ -14,19 +14,22 @@ date: 2023-01-08
 ```typescript
 type MultiDimensionalArray = (number | MultiDimensionalArray)[];
 
-var flat = function (array:  MultiDimensionalArray, nums: number):  MultiDimensionalArray {
-    if(nums<=0){
-        return array
+var flat = function (
+  array: MultiDimensionalArray,
+  nums: number
+): MultiDimensionalArray {
+  if (nums <= 0) {
+    return array;
+  }
+  const res: MultiDimensionalArray = [];
+  for (let index = 0; index < array.length; index++) {
+    if (Array.isArray(array[index])) {
+      res.push(...flat(array[index] as MultiDimensionalArray, nums - 1));
+    } else {
+      res.push(array[index]);
     }
-    const res:MultiDimensionalArray = []
-    for (let index = 0; index < array.length; index++) {
-        if (Array.isArray(array[index])) {
-            res.push(...flat(array[index] as MultiDimensionalArray, nums - 1))
-        } else {
-            res.push(array[index])
-        }
-    }
-    return res
+  }
+  return res;
 };
 ```
 
@@ -880,4 +883,498 @@ function minOperations(nums: number[], x: number): number {
   console.log(left, right, state, min);
   return hasAnswer ? min : -1;
 }
+```
+
+# 2021-06-06
+
+## [474. 一和零](https://leetcode-cn.com/problems/ones-and-zeroes/)
+
+一道动态规划题目。
+
+首先要明白这是一道背包问题，而且是双维度的，可以装 0 和 1。
+
+那么我们就需要一个三维数组 dp 来记录动态规划的子过程的结果，第一个维度代表遍历到第 i 个字符串，第二个维度代表第 j 个 0 的问题规模，第三个维度代表第 k 个 1 的问题规模，依次扩展到我们的目标字符串个数，目标问题规模。
+
+状态转移方程：
+
+1. 如果加入当前字符串，导致背包溢出，则不加：dp[i][j][k] = dp[i-1][j][k]
+2. 如果不溢出，则有两种可能，取最优解：dp[i][j][k] = Math.max(dp[i-1][j][k], dp[i-1][j-zeros][k-ones]+1)
+
+这里还需要考虑一些边界问题，比如 i=0 的时候，dp[0][any][any]应该是 0，同理 m=0 和 n=0 也是如此。所以我们的数组空间需要每个维度上都加 1 来存放这些初始值。
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {string[]} strs
+ * @param {number} m
+ * @param {number} n
+ * @return {number}
+ */
+var findMaxForm = function (strs, m, n) {
+  let dp = new Array(strs.length + 1)
+    .fill(0)
+    .map(() => new Array(m + 1).fill(0).map(() => new Array(n + 1).fill(0)));
+  for (let i = 1; i <= strs.length; i++) {
+    let [zeros, ones] = getZeros(strs[i - 1]);
+    for (let j = 0; j <= m; j++) {
+      for (let k = 0; k <= n; k++) {
+        dp[i][j][k] = dp[i - 1][j][k];
+        if (j >= zeros && k >= ones) {
+          dp[i][j][k] = Math.max(
+            dp[i - 1][j][k],
+            dp[i - 1][j - zeros][k - ones] + 1
+          );
+        }
+      }
+    }
+  }
+  return dp[strs.length][m][n];
+};
+
+function getZeros(str) {
+  let zeros = [0, 0];
+  for (let i = 0; i < str.length; i++) {
+    zeros[str[i] - "0"]++;
+  }
+  return zeros;
+}
+```
+
+# 2021-06-05
+
+## [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements/)
+
+很简单的一道删除单链表节点题
+
+JavaScript 代码：
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+var removeElements = function (head, val) {
+  let h = new ListNode(0, head);
+  index = h;
+  while (index.next) {
+    if (index.next.val == val) {
+      let next = index.next.next;
+      index.next = next;
+      continue;
+    }
+    index = index.next;
+  }
+  return h.next;
+};
+```
+
+# 2021-06-04
+
+## [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+
+这题有两种解法：
+
+1. 哈希表记录指针
+2. 双指针
+
+### 哈希表记录指针
+
+JavaScript 代码：
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function (headA, headB) {
+  let hashset = new Set([]);
+  let index = headA;
+  while (index) {
+    hashset.add(index);
+    index = index.next;
+  }
+  index = headB;
+  while (index) {
+    if (hashset.has(index)) {
+      return index;
+    } else {
+      index = index.next;
+    }
+  }
+  return null;
+};
+```
+
+### 双指针
+
+链表总共分为三部分：
+
+1. headA 到公共节点
+2. headB 到公共节点
+3. 公共部分
+
+所以如果我们利用双指针，把这三个部分走一遍，就能让双指针碰上。
+
+1. index1 走 A 链，走完 A 链，走 B 链
+2. index2 走 B 链，走完 B 链，走 A 链
+
+> 两个指针同时等于 null 只有一种情况，就是两个链不相交。如果相交，想要都在链尾碰上，则两个链长度相等，若两个链长度相等且相交，则非公共部分长度一定相等，那么他们早就在第一次遍历的时候在公共节点遇上了。
+
+```JavaScript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+    let index1 = headA;
+    let index2 = headB;
+    while(index1!==index2){
+        index1 = index1==null?headB:index1.next;
+        index2 = index2==null?headA:index2.next;
+    }
+    return index1;
+};
+```
+
+# 2021-06-03
+
+> 凡是涉及到连续子数组的，都可以用前缀和+哈希表来解
+
+## [525. 连续数组](https://leetcode-cn.com/problems/contiguous-array/)
+
+这题要注意的就是，因为要统计元素个数，所以要使用 i+1。
+
+哈希表的 key 的含义是：当前遍历到的 1 与符合标准（一半是 1）之间的差距，而记录的位置则必须是最小位置。所以只在初始化的时候赋值。
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findMaxLength = function (nums) {
+  let sum = 0;
+  let hashmap = {};
+  let max = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+    if (i + 1 == sum * 2) {
+      max = i + 1;
+      continue;
+    }
+    if (hashmap.hasOwnProperty(i + 1 - sum * 2)) {
+      if (max < i - hashmap[i + 1 - sum * 2]) {
+        max = i - hashmap[i + 1 - sum * 2];
+      }
+    } else {
+      hashmap[i + 1 - sum * 2] = i;
+    }
+  }
+  return max;
+};
+```
+
+# 2021-05-31
+
+> 这个问题看起来是个简单题，其实可以从中学到位运算和一些数学知识。
+
+## [342. 4 的幂](https://leetcode-cn.com/problems/power-of-four/)
+
+我自己的解法很简单易懂，但是不够高效：
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfFour = function (n) {
+  let i = 1;
+  while (i < n) {
+    i = i * 4;
+  }
+  if (i == n) {
+    return true;
+  }
+  return false;
+};
+```
+
+这个解法的效率很差，只战胜了 55%的选手。说明肯定有更优解，我翻了一下答案。主要是 2 种角度的解法：
+
+1. 位运算
+2. 数学
+
+### 位运算
+
+如果是 2 的幂，那么位中只能出现一个 1。如果是 4 的，那么肯定也只有一个 1，且出现的位置是每隔一位出现。那么问题来了，怎么判断位上只有一个 1 呢？操作是：减去 1，然后与。得到的结果必然应该是 0。那如何判断 1 在哪一位上呢？好像只能遍历了。但其实我们不需要知道具体是哪一位，只需要知道是否分布在正确的位上，可以通过 mask 解决：`mask=$(01010101010101010101010101010101)_2$`，因为 1 分布在奇数位。也可以写成更简短的 16 进制形式：`mask=$(55555555)_16$`
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfFour = function (n) {
+  return n > 0 && (n & (n - 1)) == 0 && n & 0x55555555;
+};
+```
+
+奇怪的是这个代码的运行时间居然比上面那个还长，感觉不科学。
+
+### 数学角度
+
+首先依然是按照上面的两个条件：
+
+1. n>0
+2. n 只有一个 0
+
+我们观察到所有偶数分为：$4^x \times 2 \times 2$也就是$4^x$，和$4^x \times 2 \times 1$。而 4 的幂次除以 3 的余数必然是 1，而$4^x \times 2$这种除以 3 的余数必然是 2。
+
+我们增加这个条件筛选出$4^x$
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfFour = function (n) {
+  return n > 0 && (n & (n - 1)) == 0 && n % 3 == 1;
+};
+```
+
+# 2021-05-29
+
+> 这个问题需要拆分出子问题才好解决，要不然没有思路。它的子问题是：[560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
+
+## [1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/)
+
+当你理解了子问题之后，我们来想想，怎么把这个问题转换到子问题上呢？也就是如何把二维问题变一维问题呢？
+
+我们想象把一个矩阵的列上的元素全部加起来，不就是一个一维数组了吗。这个一维数组可以等效的应用在这个问题上。
+
+那这样的组合有哪些呢？通过简单的二次遍历，就能得出我们想要的组合：
+
+JavaScript 代码：
+
+```javascript
+for (let i = 0; i < n; i++) {
+  for (let j = i; j < n; j++) {}
+}
+```
+
+每次 i 到 j 之间的数就是我们想要的组合，拿这些数的和，组成新的一维数组，然后用一维数组的解法去解。这里有个小技巧是这个和也要避免重复计算，所以要把每次计算所得存下来，下次在这个基础上算，这样可以省下从头开始求和的时间。
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number[][]} matrix
+ * @param {number} target
+ * @return {number}
+ */
+var numSubmatrixSumTarget = function (matrix, target) {
+  let count = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    let sum = new Array(matrix[0].length).fill(0);
+    for (let j = i; j < matrix.length; j++) {
+      for (let k = 0; k < matrix[0].length; k++) {
+        sum[k] += matrix[j][k];
+      }
+      count += subarraySum(sum, target);
+    }
+  }
+  return count;
+};
+
+var subarraySum = function (nums, k) {
+  let pre = 0;
+  let preRecord = { 0: 1 };
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    pre += nums[i];
+    if (preRecord[pre - k]) {
+      count += preRecord[pre - k];
+    }
+    if (preRecord[pre]) {
+      preRecord[pre]++;
+    } else {
+      preRecord[pre] = 1;
+    }
+  }
+  return count;
+};
+```
+
+> 简化问题的办法有很多，比如降低问题规模，降低维度，二维 -> 一维。
+
+# 2021-05-29
+
+> 这题是在做每日一题中遇到的问题的子问题：[1074. 元素和为目标值的子矩阵数量](https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/)
+
+## [560. 和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/)
+
+遇到这类问题，首先想的是复杂度，然后复杂度天然是跟问题规模有关的。遍历一遍肯定是必要的，当我们遍历到第 n 这个位置，我们怎么判断从 0 到 n 中有多少个解，进一步的，我们还只要增量数据，n-1 的解不应该去重复计算。第 n 这个位置上的数是一定要考虑进去的，所以我们从后往前寻找。具体代码如下：
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var subarraySum = function (nums, k) {
+  let count = 0;
+  for (let start = 0; start < nums.length; ++start) {
+    let sum = 0;
+    for (let end = start; end >= 0; --end) {
+      sum += nums[end];
+      if (sum == k) {
+        count++;
+      }
+    }
+  }
+  return count;
+};
+```
+
+这样的话，算法的时间复杂度是 O(n^2)。有没有重复计算的问题呢，似乎不太好说，但结果是：有，像此类问题有统一的规律，就是我们可以记录前缀和。如果我们知道前缀和，那么我们只需要用当前和减去 k，看是否等于某个前缀和，如果有，我们不就正好找到一个子数组的和等于 k 了吗？所以基于前缀和，我们一次遍历即可解决问题。
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var subarraySum = function (nums, k) {
+  let pre = 0;
+  let preRecord = { 0: 1 };
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    pre += nums[i];
+    if (preRecord[pre - k]) {
+      count += preRecord[pre - k];
+    }
+    if (preRecord[pre]) {
+      preRecord[pre]++;
+    } else {
+      preRecord[pre] = 1;
+    }
+  }
+  return count;
+};
+```
+
+> 前缀和对过往的遍历总结提取了信息，使我们不用再去进行重复的计算，是非常重要的技巧。
+
+# 2021-05-28
+
+[477. 汉明距离总和](https://leetcode-cn.com/problems/total-hamming-distance/)
+
+这题初看上去特别简单，就是一个 O(n^2)的遍历（组合），对每一组求汉明距离累加起来。不过我一开始就觉得可能会超时，提交后果然超时了。更优的做法是按位遍历，每一位上所有的数要么是 0 要么是 1，把 0 和 1 的个数统计出来，相乘，就是这一位的汉明距离总和。
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var totalHammingDistance = function (nums) {
+  let max = Math.max(...nums);
+  let count = 0;
+  while (max > 0) {
+    count++;
+    max >>= 1;
+  }
+  let res = 0;
+  for (let i = 0; i < count; i++) {
+    let zero = 0;
+    let one = 0;
+    for (let j = 0; j < nums.length; j++) {
+      let temp = nums[j] >> i;
+      if (temp % 2) {
+        one++;
+      } else {
+        zero++;
+      }
+    }
+    res += zero * one;
+  }
+  return res;
+};
+```
+
+# 2021-05-27
+
+[1190. 反转每对括号间的子串](https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/)
+
+这道题一看就知道用栈来解决，但具体到怎么做却依旧不容易想通。直到看过答案后，才发现，实际上真的只需要遍历一遍就能解决问题。
+
+思路如下：
+
+每遇到一个括号块，就需要把里面的字符串翻转（这是单步操作），然后递归翻转每一层。这是我们人的思维，但机器是看不到这种宏观信息的，我们需要安排具体到每一步的任务。代码在遍历的时候只会遇到左括号或者右括号，假如我们遇到左括号的时候开始记录字符串，那么在遇到右括号的时候，就有翻转的目标对象了。但如果连续遇到两个左括号呢？我们将记录的信息先入栈，然后继续上面的步骤即可。
+
+具体步骤（单步）：
+
+1. 遇到左括号：入栈已记录的字符串，清空我们用于记录的变量
+2. 遇到普通字符：记录
+3. 遇到右括号：翻转记录的字符串，将栈顶字符串 pop 出来拼接上翻转好的字符串
+
+JavaScript 代码：
+
+```javascript
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseParentheses = function (s) {
+  let stack = [];
+  let str = "";
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == "(") {
+      stack.push(str);
+      str = "";
+    } else if (s[i] == ")") {
+      str = stack.pop() + Array.from(str).reverse().join("");
+    } else {
+      str += s[i];
+    }
+  }
+  return str;
+};
 ```
