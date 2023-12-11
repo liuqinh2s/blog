@@ -103,15 +103,15 @@ menu:
   About: /about/ || user
   tags: /tags/ || tags
   archives: /archives/ || archive
-  Mark: /Mark/ || star
-  # Computer Science: /ComputerScience/ || code
-  Notes: /notes/ || book
   Interview: /Interview/ || bank
-  English: /English/ || language
-  # Navigation: /Navigation/ || compass
-  Reading: /Reading/ || list
   leetcode: /leetcode/ || coffee
-  Link: /Link/ || link
+  English: /English/ || language
+  Notes: /notes/ || book
+  # Link: /Link/ || link
+  # Mark: /Mark/ || star
+  # Computer Science: /ComputerScience/ || code
+  # Navigation: /Navigation/ || compass
+  # Reading: /Reading/ || list
 
 # Enable/Disable menu icons.
 menu_icons:
