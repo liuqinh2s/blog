@@ -5,6 +5,75 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2023-12-11
+
+[1631. 最小体力消耗路径](https://leetcode.cn/problems/path-with-minimum-effort/description/)
+
+二分查找+BFS
+
+有种以前做过类似题目的感觉
+
+```typescript
+function minimumEffortPath(heights: number[][]): number {
+  const arr = heights.flat();
+  const x = Math.abs(Math.min(...arr) - Math.max(...arr));
+  console.log(x);
+  return binarySearch(0, x);
+
+  function binarySearch(start: number, end: number) {
+    const mid = Math.floor((start + end) / 2);
+    if (bfs(heights, [[0, 0]], new Set(), mid)) {
+      if (start >= end) {
+        return end;
+      }
+      return binarySearch(start, mid - 1);
+    } else {
+      if (start >= end) {
+        return end + 1;
+      }
+      return binarySearch(mid + 1, end);
+    }
+  }
+}
+
+function bfs(
+  heights: number[][],
+  queue: number[][],
+  visited: Set<string>,
+  x: number
+) {
+  while (queue.length) {
+    const [i, j] = queue.shift();
+    if (visited.has(i + "," + j)) {
+      continue;
+    }
+    if (i === heights.length - 1 && j === heights[0].length - 1) {
+      return true;
+    }
+    if (i - 1 >= 0 && Math.abs(heights[i][j] - heights[i - 1][j]) <= x) {
+      queue.push([i - 1, j]);
+    }
+    if (
+      i + 1 < heights.length &&
+      Math.abs(heights[i][j] - heights[i + 1][j]) <= x
+    ) {
+      queue.push([i + 1, j]);
+    }
+    if (j - 1 >= 0 && Math.abs(heights[i][j] - heights[i][j - 1]) <= x) {
+      queue.push([i, j - 1]);
+    }
+    if (
+      j + 1 < heights[0].length &&
+      Math.abs(heights[i][j] - heights[i][j + 1]) <= x
+    ) {
+      queue.push([i, j + 1]);
+    }
+    visited.add(i + "," + j);
+  }
+  return false;
+}
+```
+
 # 2023-11-19
 
 [2625. 扁平化嵌套数组](https://leetcode.cn/classic/problems/flatten-deeply-nested-array/description/)
