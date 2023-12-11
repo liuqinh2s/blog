@@ -104,11 +104,11 @@ menu:
   tags: /tags/ || tags
   archives: /archives/ || archive
   Mark: /Mark/ || star
-  Computer Science: /ComputerScience/ || code
+  # Computer Science: /ComputerScience/ || code
   Notes: /notes/ || book
   Interview: /Interview/ || bank
   English: /English/ || language
-  Navigation: /Navigation/ || compass
+  # Navigation: /Navigation/ || compass
   Reading: /Reading/ || list
   leetcode: /leetcode/ || coffee
   Link: /Link/ || link
