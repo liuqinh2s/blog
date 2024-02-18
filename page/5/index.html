@@ -383,7 +383,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:11:22+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:13:17+00:00">
                 2024-02-18
               </time>
             
@@ -539,7 +539,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:11:22+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:13:17+00:00">
                 2024-02-18
               </time>
             
@@ -696,7 +696,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:11:22+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:13:17+00:00">
                 2024-02-18
               </time>
             
@@ -866,7 +866,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:11:22+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:13:17+00:00">
                 2024-02-18
               </time>
             
@@ -976,7 +976,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2022/07/14/JavaScript执行上下文之作用域链/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.xyz/2022/07/14/JavaScript闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -995,7 +995,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2022/07/14/JavaScript执行上下文之作用域链/" itemprop="url">JavaScript执行上下文之作用域链</a></h2>
+                <a class="post-title-link" href="/2022/07/14/JavaScript闭包/" itemprop="url">JavaScript 闭包</a></h2>
         
 
         <div class="post-meta">
@@ -1023,7 +1023,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:11:22+00:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2024-02-18T06:13:17+00:00">
                 2024-02-18
               </time>
             
@@ -1051,7 +1051,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  573
+                  1,148
                 </span>
               
 
@@ -1077,17 +1077,16 @@
 
       
         
-          <p>执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。</p>
-<p>函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性<code>[[scope]]</code></p>
-<p>函数的生命周期分为：<strong>函数创建</strong> 和 <strong>函数调用</strong>。</p>
-<p>函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性<code>[[scope]]</code>（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的<code>AO</code>和<code>[[scope]]</code>合并成新的作用域链：</p>
-<blockquote>
-<p>假设要实现动态作用域的话，<code>[[scope]]</code>就得在调用时去执行上下文栈的上一帧去取。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scope = [AO].concat([[scope]]);</span><br></pre></td></tr></table></figure>
+          <h1 id="闭包是干什么用的"><a href="#闭包是干什么用的" class="headerlink" title="闭包是干什么用的"></a>闭包是干什么用的</h1><p>本质上闭包就是为了拓展查找自由变量的范围</p>
+<p>MDN 对闭包的定义为：</p>
+<p>A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)</p>
+<p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">'Mozilla'</span>; <span class="comment">// name is a local variable created by init</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">displayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// displayName() is the inner function, a closure</span></span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">// use variable declared in the parent function</span></span><br><span class="line">  &#125;</span><br><span class="line">  displayName();</span><br><span class="line">&#125;</span><br><span class="line">init();</span><br></pre></td></tr></table></figure>
+<p>name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。</p>
+<p>上面这个例子有点平平无奇了，让我们看一个神奇一点的例子：</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2022/07/14/JavaScript执行上下文之作用域链/#more" rel="contents">
+            <a class="btn" href="/2022/07/14/JavaScript闭包/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
