@@ -5,6 +5,35 @@ date: 2023-01-08
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2024-02-18
+
+[589. N 叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/description/?envType=daily-question&envId=2024-02-18)
+
+树的前序遍历
+
+```typescript
+/**
+ * Definition for node.
+ * class Node {
+ *     val: number
+ *     children: Node[]
+ *     constructor(val?: number) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.children = []
+ *     }
+ * }
+ */
+
+function preorder(root: Node | null): number[] {
+    if(root == null){
+        return [];
+    }
+    const res = [root.val];
+    root.children.forEach((p)=>res.push(...preorder(p)))
+    return res;
+};
+```
+
 # 2023-12-11
 
 [1631. 最小体力消耗路径](https://leetcode.cn/problems/path-with-minimum-effort/description/)
