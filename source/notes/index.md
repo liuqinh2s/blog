@@ -5,6 +5,42 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2024-03-09
+
+react 开发过程中，经常遇到一些奇怪的问题。最近解决的这个尤为奇怪，报错：`rendered fewer hooks than expected. this may be caused by an accidental early return statement`。但我并没有把 hooks 写道条件语句里面。最终从这篇文章找到了我想要的答案：[https://medium.com/@jonchurch/how-to-fix-react-error-rendered-fewer-hooks-than-expected-e6a378985d3c](https://medium.com/@jonchurch/how-to-fix-react-error-rendered-fewer-hooks-than-expected-e6a378985d3c)
+
+原因是我用普通函数调用的写法，应该改为组件写法：
+
+错误写法：
+
+```typescript
+export const Component1 = () => {
+  function getHtml() {
+    return <div></div>;
+  }
+
+  return <div>{getHtml()}</div>;
+};
+```
+
+正确写法：
+
+```typescript
+export const Component1 = () => {
+  function GetHtml() {
+    return <div></div>;
+  }
+
+  return (
+    <div>
+      <GetHtml></GetHtml>
+    </div>
+  );
+};
+```
+
+> 注意 React 组件首字母要大写
+
 # 2024-02-18
 
 如何实现毛玻璃效果，css:
