@@ -28,6 +28,51 @@ date: 2018-11-03 14:59:45
 
 scrollHeight，offsetHeight，clientHeight 同理
 
+可以用如下例子测试：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        border: 1px solid #000;
+        width:100px;
+        height:200px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        background-color: aquamarine;
+        margin-left: 10px;
+        overflow: hidden;
+        overflow-x: scroll
+    }
+
+    </style>
+</head>
+<body>
+    <div>
+sdsssssssssssssssssssssssssssdssssssssssssssssssssssssss
+    </div>
+    <script>
+    console.log('scrollWidth: ', document.querySelectorAll("div")[0].scrollWidth)
+    console.log('clientWidth: ', document.querySelectorAll("div")[0].clientWidth)
+    console.log('offsetWidth: ', document.querySelectorAll("div")[0].offsetWidth)
+    console.log('scrollHeight: ', document.querySelectorAll("div")[0].scrollHeight)
+    console.log('clientHeight: ', document.querySelectorAll("div")[0].clientHeight)
+    console.log('offsetHeight: ', document.querySelectorAll("div")[0].offsetHeight)
+    </script>
+</body>
+</html>
+```
+
+## useCallback的实践例子
+
+https://replit.com/@liuqinh2s/useCallback#README.md
+
 # 2024-03-09
 
 react 开发过程中，经常遇到一些奇怪的问题。最近解决的这个尤为奇怪，报错：`rendered fewer hooks than expected. this may be caused by an accidental early return statement`。但我并没有把 hooks 写道条件语句里面。最终从这篇文章找到了我想要的答案：[https://medium.com/@jonchurch/how-to-fix-react-error-rendered-fewer-hooks-than-expected-e6a378985d3c](https://medium.com/@jonchurch/how-to-fix-react-error-rendered-fewer-hooks-than-expected-e6a378985d3c)
