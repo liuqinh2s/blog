@@ -7,6 +7,10 @@ date: 2019-02-20 20:30:09
 
 我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
 
+# 2023-03-23
+
+- [阳光知道 - 关注各种编程开发技术](https://uovol.com/)
+
 # 2023-12-08
 
 - [Python Online Compiler (interpreter / Editor)](https://pythononlinecompiler.com/)
