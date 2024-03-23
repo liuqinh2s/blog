@@ -25,13 +25,13 @@ date: 2023-01-08
  */
 
 function preorder(root: Node | null): number[] {
-    if(root == null){
-        return [];
-    }
-    const res = [root.val];
-    root.children.forEach((p)=>res.push(...preorder(p)))
-    return res;
-};
+  if (root == null) {
+    return [];
+  }
+  const res = [root.val];
+  root.children.forEach((p) => res.push(...preorder(p)));
+  return res;
+}
 ```
 
 # 2023-12-11

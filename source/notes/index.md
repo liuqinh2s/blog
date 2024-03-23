@@ -5,7 +5,9 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
-# 2023-03-23
+# 2024-03-23
+
+## eslint 配置
 
 在文件头部写如下注释，即可让 eslint 某部分检查跳过此文件：
 
@@ -17,6 +19,14 @@ date: 2018-11-03 14:59:45
 参考：https://uovol.com/unexpected-console-statement--no-console
 
 这样的设计真是蛮好用的
+
+## scrollWidth, offsetWidth, clientWidth 的区别
+
+- scrollWidth 是元素真实的宽度（但不包含 border 和滚动条，但包含 padding）
+- offsetWidth 也是真实的元素宽度（但包含 border 和滚动条）
+- clientWidth 是元素的可视宽度（不包含 border 和滚动条）
+
+scrollHeight，offsetHeight，clientHeight 同理
 
 # 2024-03-09
 
