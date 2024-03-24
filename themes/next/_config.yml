@@ -107,11 +107,11 @@ menu:
   leetcode: /leetcode/ || coffee
   English: /English/ || language
   Notes: /notes/ || book
-  # Link: /Link/ || link
-  # Mark: /Mark/ || star
-  # Computer Science: /ComputerScience/ || code
-  # Navigation: /Navigation/ || compass
-  # Reading: /Reading/ || list
+  Link: /Link/ || link
+  Mark: /Mark/ || star
+  Computer Science: /ComputerScience/ || code
+  Navigation: /Navigation/ || compass
+  Reading: /Reading/ || list
 
 # Enable/Disable menu icons.
 menu_icons:
