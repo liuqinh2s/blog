@@ -5,6 +5,45 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2024-03-24
+
+怎么简化大量的if else结构，可以用map来实现：
+
+```javascript
+class A {
+
+}
+
+class B {
+
+}
+
+function a(){
+
+}
+
+function b(){
+
+}
+
+function f1(x){
+    if(x instanceof A){
+        a();
+    }else if(x instanceof B){
+        b();
+    }
+}
+
+const h = [
+    {cb: a, match: (x)=> x instanceof A},
+    {cb: b, match: (x)=> x instanceof B},
+]
+
+function f2(x){
+    h.find(y=>y.match(x))?.cb();
+}
+```
+
 # 2024-03-23
 
 ## eslint 配置
