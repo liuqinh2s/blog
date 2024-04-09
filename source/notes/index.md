@@ -5,42 +5,93 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2024-04-09
+
+react 组件在写成函数的时候，是会引起父组件渲染的：
+
+App.tsx
+
+```typescript
+import "./App.css";
+import { Child } from "./Child";
+
+export default function App() {
+  alert("父组件渲染");
+  return (
+    <main>
+      React ⚛️ + Vite ⚡ + Replit 🌀
+      {Child()}
+    </main>
+  );
+}
+```
+
+Child.tsx
+
+```typescript
+import { useState } from "react";
+
+export const Child = () => {
+  const [a, setA] = useState(0);
+  return (
+    <div
+      onClick={() => {
+        setA(a + 1);
+      }}
+    >
+      {a}
+    </div>
+  );
+};
+```
+
+改为组件式写法，才能避免父组件被渲染：
+
+```typescript
+import "./App.css";
+import { Child } from "./Child";
+
+export default function App() {
+  alert("父组件渲染");
+  return (
+    <main>
+      React ⚛️ + Vite ⚡ + Replit 🌀
+      <Child></Child>
+    </main>
+  );
+}
+```
+
+至于原因，还不了解。
+
 # 2024-03-24
 
-怎么简化大量的if else结构，可以用map来实现：
+怎么简化大量的 if else 结构，可以用 map 来实现：
 
 ```javascript
-class A {
+class A {}
 
-}
+class B {}
 
-class B {
+function a() {}
 
-}
+function b() {}
 
-function a(){
-
-}
-
-function b(){
-
-}
-
-function f1(x){
-    if(x instanceof A){
-        a();
-    }else if(x instanceof B){
-        b();
-    }
+function f1(x) {
+  if (x instanceof A) {
+    a();
+  } else if (x instanceof B) {
+    b();
+  }
 }
 
 const h = [
-    {cb: a, match: (x)=> x instanceof A},
-    {cb: b, match: (x)=> x instanceof B},
-]
+  { cb: a, match: (x) => x instanceof A },
+  { cb: b, match: (x) => x instanceof B },
+];
 
-function f2(x){
-    h.find(y=>y.match(x))?.cb();
+function f2(x) {
+  h.find((y) => y.match(x))?.cb();
 }
 ```
 
@@ -72,43 +123,58 @@ scrollHeight，offsetHeight，clientHeight 同理
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-    div{
+      div {
         border: 1px solid #000;
-        width:100px;
-        height:200px;
+        width: 100px;
+        height: 200px;
         padding-right: 15px;
         padding-bottom: 15px;
         background-color: aquamarine;
         margin-left: 10px;
         overflow: hidden;
-        overflow-x: scroll
-    }
-
+        overflow-x: scroll;
+      }
     </style>
-</head>
-<body>
-    <div>
-sdsssssssssssssssssssssssssssdssssssssssssssssssssssssss
-    </div>
+  </head>
+  <body>
+    <div>sdsssssssssssssssssssssssssssdssssssssssssssssssssssssss</div>
     <script>
-    console.log('scrollWidth: ', document.querySelectorAll("div")[0].scrollWidth)
-    console.log('clientWidth: ', document.querySelectorAll("div")[0].clientWidth)
-    console.log('offsetWidth: ', document.querySelectorAll("div")[0].offsetWidth)
-    console.log('scrollHeight: ', document.querySelectorAll("div")[0].scrollHeight)
-    console.log('clientHeight: ', document.querySelectorAll("div")[0].clientHeight)
-    console.log('offsetHeight: ', document.querySelectorAll("div")[0].offsetHeight)
+      console.log(
+        "scrollWidth: ",
+        document.querySelectorAll("div")[0].scrollWidth
+      );
+      console.log(
+        "clientWidth: ",
+        document.querySelectorAll("div")[0].clientWidth
+      );
+      console.log(
+        "offsetWidth: ",
+        document.querySelectorAll("div")[0].offsetWidth
+      );
+      console.log(
+        "scrollHeight: ",
+        document.querySelectorAll("div")[0].scrollHeight
+      );
+      console.log(
+        "clientHeight: ",
+        document.querySelectorAll("div")[0].clientHeight
+      );
+      console.log(
+        "offsetHeight: ",
+        document.querySelectorAll("div")[0].offsetHeight
+      );
     </script>
-</body>
+  </body>
 </html>
 ```
 
-## useCallback的实践例子
+## useCallback 的实践例子
 
 https://replit.com/@liuqinh2s/useCallback#README.md
 
