@@ -64,6 +64,10 @@ export default function App() {
 
 至于原因，还不了解。
 
+参考：
+
+https://www.zhihu.com/question/448269343
+
 # 2024-03-24
 
 怎么简化大量的 if else 结构，可以用 map 来实现：
