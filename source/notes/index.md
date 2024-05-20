@@ -5,11 +5,21 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2024-05-20
+
+最近在看怎样写好 react：
+
+- [我在工作中写 React，学到了什么？性能优化篇](https://juejin.cn/post/6889247428797530126)
+- [如何写出优秀的 React 代码](https://pengtikui.cn/blog/how-to-write-great-react)
+- [代码重构之路：编写干净的 React Components & JSX](https://zhuanlan.zhihu.com/p/161886512)
+- [如何写出优雅的 react 组件？](https://juejin.cn/post/7012260002895233055)
+- [React 最佳实践--如何写出更好的 React 代码（2022 年版）](https://www.freecodecamp.org/chinese/news/best-practices-for-react/)
+
 # 2024-05-17
 
-最近实现react Table组件遇到不少问题，所以打算多学点react，这篇文章讲`useReducer`，讲得很好:
+最近实现 react Table 组件遇到不少问题，所以打算多学点 react，这篇文章讲`useReducer`，讲得很好:
 
-[这一次彻底搞定useReducer-使用篇](https://juejin.cn/post/6844903869604986888)
+[这一次彻底搞定 useReducer-使用篇](https://juejin.cn/post/6844903869604986888)
 
 # 2024-04-17
 
