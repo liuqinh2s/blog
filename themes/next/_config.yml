@@ -112,6 +112,7 @@ menu:
   Computer Science: /ComputerScience/ || code
   Navigation: /Navigation/ || compass
   Reading: /Reading/ || list
+  Game: /游戏开发之旅/ || gamepad
 
 # Enable/Disable menu icons.
 menu_icons:
