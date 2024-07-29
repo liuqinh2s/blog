@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2024-07-29T08:58:04.015Z">
+<meta property="og:updated_time" content="2024-07-29T09:00:32.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="札记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-07-29公司项目中遇到一个问题是，用户正在编辑中文，然后按 esc 退出了一个 iframe 内的 textarea，查看代码后发现 window.top 对 textarea 是有一套 compos">
@@ -410,6 +410,8 @@
           <p>这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。</p>
 <h1 id="2024-07-29"><a href="#2024-07-29" class="headerlink" title="2024-07-29"></a>2024-07-29</h1><p>公司项目中遇到一个问题是，用户正在编辑中文，然后按 esc 退出了一个 iframe 内的 textarea，查看代码后发现 window.top 对 textarea 是有一套 compositionstart 的监听的，但 iframe 里面没有监听。</p>
 <p>document 上加监听是监听不到其内 iframe 内的元素的。如果要监听 iframe 内的元素的事件，则必须要再对 iframe 的 document 再做监听。</p>
+<p>刚刚 github 又出问题，提示 Git: connection reset by xxxip xxxport。解决办法：<code>git config --global --unset-all remote.origin.proxy</code></p>
+<p>本机 ping 了一下 github，发现提示上的 ip 和 ping 出来的 ip 不一样。</p>
 <h1 id="2024-05-20"><a href="#2024-05-20" class="headerlink" title="2024-05-20"></a>2024-05-20</h1><p>最近在看怎样写好 react：</p>
 <ul>
 <li><a href="https://juejin.cn/post/6889247428797530126" target="_blank" rel="noopener">我在工作中写 React，学到了什么？性能优化篇</a></li>
