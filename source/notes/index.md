@@ -11,6 +11,10 @@ date: 2018-11-03 14:59:45
 
 document 上加监听是监听不到其内 iframe 内的元素的。如果要监听 iframe 内的元素的事件，则必须要再对 iframe 的 document 再做监听。
 
+刚刚 github 又出问题，提示 Git: connection reset by xxxip xxxport。解决办法：`git config --global --unset-all remote.origin.proxy`
+
+本机 ping 了一下 github，发现提示上的 ip 和 ping 出来的 ip 不一样。
+
 # 2024-05-20
 
 最近在看怎样写好 react：
