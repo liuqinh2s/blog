@@ -15,6 +15,8 @@ document 上加监听是监听不到其内 iframe 内的元素的。如果要监
 
 本机 ping 了一下 github，发现提示上的 ip 和 ping 出来的 ip 不一样。
 
+> https://stackoverflow.com/questions/71571965/openssl-ssl-connect-connection-was-reset-in-connection-to-github-com443-while
+
 # 2024-05-20
 
 最近在看怎样写好 react：
