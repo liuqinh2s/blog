@@ -7,15 +7,42 @@ date: 2018-11-03 14:59:45
 
 # 2024-07-29
 
+很久没有做记录，并非是没有东西要写，而是之前服务器和域名过期，导致 github pages 访问不了，一时半会儿我没弄好，然后就去 wolai 上面记录了。结果发现 wolai （要付费才能分享笔记）和 notion（要观看方先注册 notion 才能看） 居然没法很好的分享笔记了。大为恼火。还是回到用 githubs pages 记录这种古老的方法来。之前探讨过：由于博客没人看，而且不方便记录，所以，实际上用博客记录+分享是一种不好的方式，缺点是既不好记录，也不好分享，优点是结合了记录和分享，all in one，一站式服务。算是一种折中吧。最好的方式仍然是用一个好的笔记工具记录，然后再弄到流量很大的网站（小红书，抖音，知乎，微博，B 站等等）。但现在居然连一个很好的笔记工具都没有了。之后我会考虑自己做一个，要做的东西其实蛮多的：
+
+1. 笔记软件，最好是加入绘图工具
+2. UGC 分享平台，但数据要属于用户，用户的数据神圣不可侵犯。内容不是平台的，把内容的所有权还给用户
+3. 作品版权证券化
+4. all in one
+
+## 事件监听
+
 公司项目中遇到一个问题是，用户正在编辑中文，然后按 esc 退出了一个 iframe 内的 textarea，查看代码后发现 window.top 对 textarea 是有一套 compositionstart 的监听的，但 iframe 里面没有监听。
 
 document 上加监听是监听不到其内 iframe 内的元素的。如果要监听 iframe 内的元素的事件，则必须要再对 iframe 的 document 再做监听。
+
+## 国内 github 月经问题
 
 刚刚 github 又出问题，提示 Git: connection reset by xxxip xxxport。解决办法：`git config --global --unset-all remote.origin.proxy`
 
 本机 ping 了一下 github，发现提示上的 ip 和 ping 出来的 ip 不一样。
 
 > https://stackoverflow.com/questions/71571965/openssl-ssl-connect-connection-was-reset-in-connection-to-github-com443-while
+
+## 编程的设计模式
+
+1. 简单的业务用命令式编程
+2. 复杂的用 react，只关注数据，不关心 DOM 操作。即：声明式编程
+3. 更复杂的用观察者，只关注数据，不关心其他模块的更新。
+4. 更更复杂的，连数据更新都复杂，上事务，管理好数据更新。
+
+但是用复杂的设计模式也带来相应的问题。
+
+比如观察者遇到一个问题，就是数据变化 onChange 粒度太细，会造成很多不必要的显示更新。解决办法有这样几种：
+
+1. 防抖
+2. 粗粒度的 onChange
+
+防抖比较简单，就不讲了。实现粗粒度，也就是一组操作一个 onChange。实际上把这组操作放入事务，事务结束后发出 onChange，就能达到目的。
 
 # 2024-05-20
 
