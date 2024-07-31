@@ -9,6 +9,10 @@ date: 2018-11-03 14:59:45
 
 加了 disabled 的 input，点击的时候是不会接受 onClick 事件的：https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/disabled
 
+- [事件](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
+- [事件冒泡](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Event_bubbling)
+- [event.stopPropagation](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation)
+
 # 2024-07-30
 
 ## 文本超长省略号
