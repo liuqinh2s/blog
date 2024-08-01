@@ -21,8 +21,8 @@ git config --global --get https.proxy
 设置代理：
 
 ```bash
-git config --global http.proxy 127.0.0.1:1080
-git config --global https.proxy 127.0.0.1:1080
+git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy http://127.0.0.1:1080
 ```
 
 取消代理：
@@ -31,6 +31,15 @@ git config --global https.proxy 127.0.0.1:1080
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+
+## 观察者细粒度 onChange 的解决方案
+
+1. 如果只涉及到显示问题，则用 debounce 解决即可
+2. 如果涉及到数据，则必须要求时序正确性，必须用事务+粗粒度 onChange
+
+## side project
+
+什么样的 side project 是好的，首先要 **工作量小**，虽然一般来说工作量小意味着没有护城河，但没关系，可以用 **质量精或者小众蓝海** 来解决。工作量大一定是不行的，因为本来就不是主职，根本没有那么多时间精力去做。谁打完一天工，还想搞东搞西啊。
 
 # 2024-07-31
 
