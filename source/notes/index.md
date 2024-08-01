@@ -5,6 +5,33 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2024-08-01
+
+github 总是抽风，push 不上去，实在受不了了，又来搞代理了，记不住命令，每次都要上网查实在不方便，还是记录到自己博客上吧
+
+## git 查看、设置、取消代理
+
+查看代理：
+
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+设置代理：
+
+```bash
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
+```
+
+取消代理：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
 # 2024-07-31
 
 加了 disabled 的 input，点击的时候是不会接受 onClick 事件的：https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/disabled
