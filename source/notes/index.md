@@ -11,6 +11,14 @@ date: 2018-11-03 14:59:45
 
 https://www.v2ex.com/t/841032
 
+## eslint
+
+同事建议的 eslint 规则：https://github.com/zengxiaoluan/eslint-plugin-jlc
+
+## window.open
+
+公司项目有个需求是有个属性叫：数据手册，然后点击后要跳转到用户指定的链接，但这个链接可能是本地链接。如果是在客户端环境，就能绕过浏览器的安全策略，打开本地链接，如果是浏览器环境，就要阻止打开。但很可惜的是，在某些版本的 chrome 浏览器上，会自动拼接当前域名。比如本地链接是：`C:\Users\win10\Pictures\1.png`，当前域名是：`www.baidu.com`，就会打开链接：`https://www.baidu.com/C:\Users\win10\Pictures\1.png`。比较棘手
+
 # 2024-08-01
 
 github 总是抽风，push 不上去，实在受不了了，又来搞代理了，记不住命令，每次都要上网查实在不方便，还是记录到自己博客上吧
