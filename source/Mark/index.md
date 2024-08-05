@@ -17,6 +17,7 @@ date: 2019-02-20 20:30:09
 - [各行各业每日新闻报告](https://www.mrbaogao.com/)
 - [relingo](https://relingo.net/en)：这个好像和沉浸式翻译差不多
 - [monkeytype](https://monkeytype.com/)：一个打字网站，不知道为啥挺火的样子
+- [calmcode](https://calmcode.io/)：免费 python 编程教学视频
 
 # 2024-03-23
 
