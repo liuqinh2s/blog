@@ -19,6 +19,8 @@ date: 2019-02-20 20:30:09
 - [阮一峰的博客](http://www.ruanyifeng.com/blog/)
 - [冴羽](https://github.com/mqyqingfeng)
 - [icheer.me](https://icheer.me/)
+- [matrix67](https://matrix67.itch.io/)，matrix67 的博客访问不了了，好像搬到了 itch.io。https://itch.io/，好像是个不错的游戏开发网站。这是liqi对他做的一个采访：https://liqi.io/matrix67/。https://www.sohu.com/a/68883280_372416
+- [酷壳的延续](https://coolshell.me/)，左耳朵耗子已经死了，原博客地址：https://coolshell.cn/
 
 # 个人博客
 
@@ -53,6 +55,8 @@ date: 2019-02-20 20:30:09
 - [Anish Athalye](https://anishathalye.com/)
 
 # 我的工具
+
+- [liqi - 利器](https://liqi.io)
 
 ## 综合资源
 
