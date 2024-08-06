@@ -103,11 +103,12 @@ menu:
   about: /about/ || user
   tags: /tags/ || tags
   archives: /archives/ || archive
-  笔记: /notes/ || book
-  收藏: /mark/ || star
+  编程: /programming/ || code
   英语: /english/ || language
   导航: /navigation/ || compass
+  收藏: /mark/ || star
   阅读: /reading/ || list
+  思考: /thinking/ || face-thinking
   # Interview: /Interview/ || bank
   # leetcode: /leetcode/ || coffee
   # Link: /Link/ || link
