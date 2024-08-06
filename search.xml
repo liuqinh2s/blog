@@ -738,25 +738,6 @@
     
     
     <entry>
-      <title>生成固定长度的字符串</title>
-      <link href="/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-      <url>/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
-      
-        <content type="html"><![CDATA[<p>前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。</p><a id="more"></a><h1 id="字符串方法：padStart-和-padEnd"><a href="#字符串方法：padStart-和-padEnd" class="headerlink" title="字符串方法：padStart()和 padEnd()"></a>字符串方法：padStart()和 padEnd()</h1><p>ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>.padStart(<span class="number">256</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="string">''</span>.padEnd(<span class="number">256</span>, <span class="string">'a'</span>);</span><br></pre></td></tr></table></figure><p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart</a></p><h1 id="数组方法：-join"><a href="#数组方法：-join" class="headerlink" title="数组方法： join()"></a>数组方法： join()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">256</span>).fill(<span class="string">'a'</span>).join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure><h1 id="字符串方法：repeat"><a href="#字符串方法：repeat" class="headerlink" title="字符串方法：repeat()"></a>字符串方法：repeat()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a'</span>.repeat(<span class="number">256</span>);</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>浏览器上的几种xy坐标</title>
       <link href="/blog/2022/06/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87/"/>
       <url>/blog/2022/06/09/%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87/</url>
@@ -768,6 +749,25 @@
         <tags>
             
             <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>生成固定长度的字符串</title>
+      <link href="/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <url>/blog/2022/06/09/%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<p>前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。</p><a id="more"></a><h1 id="字符串方法：padStart-和-padEnd"><a href="#字符串方法：padStart-和-padEnd" class="headerlink" title="字符串方法：padStart()和 padEnd()"></a>字符串方法：padStart()和 padEnd()</h1><p>ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>.padStart(<span class="number">256</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="string">''</span>.padEnd(<span class="number">256</span>, <span class="string">'a'</span>);</span><br></pre></td></tr></table></figure><p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart</a></p><h1 id="数组方法：-join"><a href="#数组方法：-join" class="headerlink" title="数组方法： join()"></a>数组方法： join()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">256</span>).fill(<span class="string">'a'</span>).join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure><h1 id="字符串方法：repeat"><a href="#字符串方法：repeat" class="headerlink" title="字符串方法：repeat()"></a>字符串方法：repeat()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a'</span>.repeat(<span class="number">256</span>);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
