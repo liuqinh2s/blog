@@ -104,10 +104,10 @@ menu:
   tags: /tags/ || tags
   archives: /archives/ || archive
   编程: /programming/ || code
-  英语: /englishs/ || language
-  导航: /navigations/ || compass
-  收藏: /marks/ || star
-  阅读: /readings/ || list
+  英语: /english/ || language
+  导航: /navigation/ || compass
+  收藏: /mark/ || star
+  阅读: /reading/ || list
   思考: /thinking/ || coffee
   # Interview: /Interview/ || bank
   # leetcode: /leetcode/ || coffee
