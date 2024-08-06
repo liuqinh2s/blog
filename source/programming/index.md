@@ -15,6 +15,58 @@ date: 2018-11-03 14:59:45
 
 改了一下博客文件夹的首字母大小写，然后发现 git 并不能把这种变化推送到云端。
 
+## 有条件的数组
+
+开发过程中经常遇到一些有条件的数组元素，一般我是用一个空数组起头，然后罗列各种条件下 push 什么：
+
+```typescript
+let arr = [];
+if (xxx) {
+  arr.push(balabala1);
+}
+if (xxx1) {
+  arr.push(balabala2);
+}
+```
+
+总感觉写法不是很优雅。
+
+原因是没有很好的体现出数组的顺序性。下面换一种写法：
+
+```typescript
+[
+  xxx && balabala1,
+  (function () {
+    /** do a lot of things */
+  })() && balabala2,
+].filter(Boolean);
+```
+
+当然这种写法是针对元素顺序固定，但元素不一定有的情况。如果元素顺序不固定，那这种写法就不够灵活
+
+## substring
+
+js 如何截取子字符串，用`substring(startIndex, endIndex)`：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring。在控制台输入的时候，还有一个api：`substr(startIndex, subStrLength)`，这个 api 已经废弃了：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+
+大概是因为前者更符合使用者的直觉吧。
+
+[substring，substr，slice 三者的区别](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring#substring_%E5%92%8C_substr_%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB)
+
+## [setProperty](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
+
+这个 api 的用处在于，可以给 css 设置`!important`。否则就跟 style.height 一样。
+
+```typescript
+style.setProperty("height", "calc(100% - 24px)", "!important");
+```
+
+以下两个效果是一样的：
+
+```typescript
+style.setProperty("height", "calc(100% - 24px)");
+style.height = "calc(100% - 24px)";
+```
+
 # 2024-08-05
 
 最近推送博客到 github 老是出问题：`git connection reset by 20.205.243.160 port 443`，于是查了一下：
