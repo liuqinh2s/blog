@@ -9,63 +9,70 @@
     
     <url>
         <loc>https://liuqinh2s.github.io/tags/</loc>
-        <lastmod>2024-08-06T01:56:57.390Z</lastmod>
+        <lastmod>2024-08-06T03:29:27.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://liuqinh2s.github.io/notes/</loc>
-        <lastmod>2024-08-06T01:56:57.390Z</lastmod>
+        <loc>https://liuqinh2s.github.io/thinking/</loc>
+        <lastmod>2024-08-06T03:29:27.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://liuqinh2s.github.io/archives/</loc>
-        <lastmod>2024-08-06T01:56:57.354Z</lastmod>
+        <loc>https://liuqinh2s.github.io/programming/</loc>
+        <lastmod>2024-08-06T03:29:27.359Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://liuqinh2s.github.io/about/</loc>
-        <lastmod>2024-08-06T01:56:57.354Z</lastmod>
+        <lastmod>2024-08-06T03:29:27.319Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://liuqinh2s.github.io/Mark/</loc>
-        <lastmod>2024-08-06T01:56:57.350Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuqinh2s.github.io/Math/</loc>
-        <lastmod>2024-08-06T01:56:57.350Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuqinh2s.github.io/Navigation/</loc>
-        <lastmod>2024-08-06T01:56:57.350Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuqinh2s.github.io/Reading/</loc>
-        <lastmod>2024-08-06T01:56:57.350Z</lastmod>
+        <loc>https://liuqinh2s.github.io/archives/</loc>
+        <lastmod>2024-08-06T03:29:27.319Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://liuqinh2s.github.io/English/</loc>
-        <lastmod>2024-08-06T01:56:57.346Z</lastmod>
+        <lastmod>2024-08-06T03:29:27.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuqinh2s.github.io/Mark/</loc>
+        <lastmod>2024-08-06T03:29:27.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuqinh2s.github.io/Math/</loc>
+        <lastmod>2024-08-06T03:29:27.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuqinh2s.github.io/Navigation/</loc>
+        <lastmod>2024-08-06T03:29:27.311Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuqinh2s.github.io/Reading/</loc>
+        <lastmod>2024-08-06T03:29:27.311Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
