@@ -47,6 +47,7 @@ date: 2019-02-20 20:30:09
 - [小弟调调 ™](https://wangchujiang.com/)
 - [山月行](https://shanyue.tech/)
 - [柳婼 の blog](https://www.liuchuo.net/)
+- [卢昌海个人主页](https://www.changhai.org/index.php)
 
 ## English
 
