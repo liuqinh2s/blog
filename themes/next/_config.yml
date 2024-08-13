@@ -103,17 +103,16 @@ menu:
   about: /about/ || user
   tags: /tags/ || tags
   archives: /archives/ || archive
-  编程: /programming/ || code
+  编程笔记: /programming/ || note
+  前端面试: /interview/ || bank
+  leetcode: /leetcode/ || code
+  计算机科学: /computer-science/ || book
+  Game: /game-programming/ || gamepad
   英语: /english/ || language
   导航: /navigation/ || compass
   收藏: /mark/ || star
   阅读: /reading/ || list
   思考: /thinking/ || coffee
-  # Interview: /Interview/ || bank
-  # leetcode: /leetcode/ || coffee
-  # Link: /Link/ || link
-  # Computer Science: /ComputerScience/ || code
-  # Game: /游戏开发之旅/ || gamepad
 
 # Enable/Disable menu icons.
 menu_icons:
