@@ -103,7 +103,7 @@ menu:
   about: /about/ || user
   tags: /tags/ || tags
   archives: /archives/ || archive
-  编程笔记: /programming-note/ || note
+  编程笔记: /programming-note/ || pencil
   前端面试: /interview/ || bank
   力扣: /leetcode/ || code
   计算机科学: /computer-science/ || book
