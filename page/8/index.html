@@ -232,12 +232,52 @@
         </li>
       
         
-        <li class="menu-item menu-item-编程">
+        <li class="menu-item menu-item-编程笔记">
           <a href="/blog/programming/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-note"></i> <br>
+            
+            编程笔记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-前端面试">
+          <a href="/blog/interview/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bank"></i> <br>
+            
+            前端面试
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-leetcode">
+          <a href="/blog/leetcode/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-code"></i> <br>
             
-            编程
+            leetcode
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-计算机科学">
+          <a href="/blog/computer-science/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            计算机科学
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/blog/game-programming/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br>
+            
+            Game
           </a>
         </li>
       
@@ -356,488 +396,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/10/JavaScript原型和原型链/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/07/10/JavaScript原型和原型链/" itemprop="url">JavaScript原型和原型链</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-10T00:00:00+00:00">
-                2022-07-10
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  389
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="原型链是干什么用的"><a href="#原型链是干什么用的" class="headerlink" title="原型链是干什么用的"></a>原型链是干什么用的</h1><p>JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。</p>
-<p>当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br><span class="line">Foo.prototype.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo.a);</span><br></pre></td></tr></table></figure>
-<p>原型和原型链主要由三个指针实现：</p>
-<ul>
-<li><code>prototype</code>: 构造函数的<code>prototype</code>属性指向原型对象</li>
-<li><code>__proto__</code>: 实例对象的<code>__proto__</code>属性指向原型对象</li>
-<li><code>constructor</code>: 原型对象的<code>constructor</code>属性指向构造函数</li>
-<li>所有对象都基于<code>Object</code>，是因为所有原型对象的<code>__proto__</code>最终都指向<code>Object.prototype</code>，而<code>Object.prototype</code>的<code>__proto__</code>为 null</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/10/JavaScript原型和原型链/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/20/TCP和UDP的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/06/20/TCP和UDP的区别/" itemprop="url">TCP和UDP的区别</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-20T00:00:00+00:00">
-                2022-06-20
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  842
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>好久没回顾这个知识点了，我现在只记得 TCP 是有链接的，UDP 是无连接的；TCP 是可靠的，UDP 是不可靠的。技术细节已经全然忘光了，今天就来回顾一下。</p>
-<p>先说几个几点结论，然后再说说细节：</p>
-<ul>
-<li>TCP 是有链接的，UDP 是无连接的</li>
-<li>TCP 可靠（无差错，不丢失不重复，按序到达），UDP 不可靠</li>
-<li>TCP 面向字节流，UDP 面向报文</li>
-<li>TCP 是一对一全双工，UDP 是 n 对 n</li>
-<li>TCP 的首部较大为 20 字节，UDP 首部只有 8 字节</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/06/20/TCP和UDP的区别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/11/服务器重装系统/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/06/11/服务器重装系统/" itemprop="url">服务器重装系统</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-11T00:00:00+00:00">
-                2022-06-11
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  480
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/06/11/服务器重装系统/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/09/浏览器上的几种xy坐标/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -885,7 +443,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
                 2024-08-13
               </time>
             
@@ -997,7 +555,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/09/生成固定长度的字符串/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -1016,7 +574,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/06/09/生成固定长度的字符串/" itemprop="url">生成固定长度的字符串</a></h2>
+                <a class="post-title-link" href="/blog/2022/06/08/浏览器storage事件/" itemprop="url">浏览器 storage 事件</a></h2>
         
 
         <div class="post-meta">
@@ -1028,8 +586,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-09T00:00:00+00:00">
-                2022-06-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-08T00:00:00+00:00">
+                2022-06-08
               </time>
             
 
@@ -1044,7 +602,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
                 2024-08-13
               </time>
             
@@ -1072,7 +630,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  177
+                  287
                 </span>
               
 
@@ -1098,10 +656,505 @@
 
       
         
-          <p>前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。</p>
+          <p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event</a></p>
+<p>在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：</p>
+<ol>
+<li>在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效</li>
+<li>必须写入与旧值不同的值，才能监听到</li>
+</ol>
+<p>我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/06/09/生成固定长度的字符串/#more" rel="contents">
+            <a class="btn" href="/blog/2022/06/08/浏览器storage事件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/08/二分查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2022/06/08/二分查找/" itemprop="url">二分查找</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-08T00:00:00+00:00">
+                2022-06-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  797
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。</p>
+<p>二分查找的前提：<strong>数据有序</strong></p>
+<p>二分查找结束的条件：查找区间为空，或者找到元素</p>
+<p>二分查找的条件分支：</p>
+<ol>
+<li><code>nums[mid]==target</code></li>
+<li><code>nums[mid]&lt;target</code></li>
+<li><code>nums[mid]&gt;target</code></li>
+</ol>
+<p>二分查找的搜索区间表示形式：</p>
+<ol>
+<li>左闭右开（区间为空的条件是 left==right）</li>
+<li>左闭右闭（区间为空的条件是 left&gt;right）</li>
+</ol>
+<p>二分查找有的时候我会写出死循环来，仔细思考了一下：<strong>必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能</strong>。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2022/06/08/二分查找/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2021/08/22/如何学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2021/08/22/如何学习/" itemprop="url">如何学习</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-08-22T00:00:00+00:00">
+                2021-08-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,522
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这篇文章的思想来自于这位博主：<a href="https://space.bilibili.com/344849038/" target="_blank" rel="noopener">bilibili-YJango</a>，我觉得很受启发就将其简略写了下来。</p>
+<h3 id="什么是学习？"><a href="#什么是学习？" class="headerlink" title="什么是学习？"></a>什么是学习？</h3><p>学习 vs 记忆</p>
+<p>记忆：容量有限、难以集齐</p>
+<p>学习：从有限的例子中找出问题和答案的规律：知识</p>
+<blockquote>
+<p>费曼说：如果你没有办法用简单的语言描述所学的知识，你就没有真正学会它。</p>
+</blockquote>
+<p>因为学习是用知识来压缩原本无限的信息</p>
+<p>学习：找出知识、压缩信息</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2021/08/22/如何学习/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2021/06/28/智能合约入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2021/06/28/智能合约入门/" itemprop="url">智能合约入门</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-28T00:00:00+00:00">
+                2021-06-28
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  224
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>前言<br>从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2021/06/28/智能合约入门/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1143,7 +1196,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/17/">17</a><a class="extend next" rel="next" href="/blog/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/16/">16</a><a class="extend next" rel="next" href="/blog/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1191,7 +1244,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1213,7 +1266,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1309,7 +1362,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">110.0k</span>
+    <span title="Site words total count">97.6k</span>
   
 </div>
 

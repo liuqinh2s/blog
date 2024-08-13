@@ -232,12 +232,52 @@
         </li>
       
         
-        <li class="menu-item menu-item-编程">
+        <li class="menu-item menu-item-编程笔记">
           <a href="/blog/programming/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-note"></i> <br>
+            
+            编程笔记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-前端面试">
+          <a href="/blog/interview/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bank"></i> <br>
+            
+            前端面试
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-leetcode">
+          <a href="/blog/leetcode/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-code"></i> <br>
             
-            编程
+            leetcode
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-计算机科学">
+          <a href="/blog/computer-science/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            计算机科学
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-game">
+          <a href="/blog/game-programming/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gamepad"></i> <br>
+            
+            Game
           </a>
         </li>
       
@@ -356,662 +396,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2018/05/22/APUE-Unix-System-Overview/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/05/22/APUE-Unix-System-Overview/" itemprop="url">《APUE-3rd》 读书笔记 -- Unix System Overview</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T00:00:00+00:00">
-                2018-05-22
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  5,883
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Preperation-Before-Class"><a href="#Preperation-Before-Class" class="headerlink" title="Preperation Before Class"></a>Preperation Before Class</h2><h3 id="apue-编程环境搭建"><a href="#apue-编程环境搭建" class="headerlink" title="apue 编程环境搭建"></a>apue 编程环境搭建</h3><blockquote>
-<p>Figure 1.3 List all the files in a directory</p>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"apue.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    DIR *dp;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">dirent</span> *<span class="title">dirp</span>;</span></span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">2</span>)</span><br><span class="line">        err_quit(<span class="string">"usage: ls directory_name"</span>);</span><br><span class="line">    <span class="keyword">if</span> ((dp = opendir(argv[<span class="number">1</span>])) == <span class="literal">NULL</span>)</span><br><span class="line">        err_sys(<span class="string">"can’t open %s"</span>, argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">while</span> ((dirp = readdir(dp)) != <span class="literal">NULL</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, dirp-&gt;d_name);</span><br><span class="line">    closedir(dp);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里简单说一下 apue 的编程环境搭建，实际上只需要用到一点点<strong>make</strong>、<strong>环境变量</strong>和<strong>gcc 命令</strong>的知识。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/05/22/APUE-Unix-System-Overview/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2018/04/30/mathjax常用公式记录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/04/30/mathjax常用公式记录/" itemprop="url">mathjax常用公式记录</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T00:00:00+00:00">
-                2018-04-30
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  194
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="角度记法"><a href="#角度记法" class="headerlink" title="角度记法"></a>角度记法</h2><ul>
-<li>度数：<code>$60^\circ$</code>，$60^\circ$</li>
-<li>度数分：<code>$60^\prime$</code>，$60^\prime$</li>
-<li>弧度：<code>$\frac{\pi}{2}$</code>，$\frac{\pi}{2}$</li>
-<li>角度记法：<code>$\angle A$</code>，$\angle A$</li>
-</ul>
-<h2 id="三重环积分无法渲染的问题"><a href="#三重环积分无法渲染的问题" class="headerlink" title="三重环积分无法渲染的问题"></a>三重环积分无法渲染的问题</h2><p>在网上找了半天资料最终解决了，参考这个答案：<a href="https://math.meta.stackexchange.com/questions/9973/how-do-you-render-a-closed-surface-double-integral" target="_blank" rel="noopener">How do you render a closed surface double integral?</a>，做法是直接使用 Unicode 编码：<code>\unicode{x222F}</code>，三重环积分的编码，参考这里：<a href="http://unicode-search.net/unicode-namesearch.pl?term=INTEGRAL" target="_blank" rel="noopener">unicode-search.net</a>，所以只要将<code>$\oiiint$</code>换成<code>$\unicode{x2230}$</code>即可正确显示三重环积分。如下：</p>
-<p>$$\unicode{x2230}$$</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/04/30/mathjax常用公式记录/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2018/04/25/数学基础公式推导/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2018/04/25/数学基础公式推导/" itemprop="url">数学基础公式推导</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+00:00">
-                2018-04-25
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  326
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天看到下面这个公式，突然想我好像不会推导啊：</p>
-<p>$\sin(\beta-\alpha) = \sin\beta\cos\alpha - \cos\beta\sin\alpha$</p>
-<p>遂想如何推导，在 youtube 上找了一个视频：<a href="https://www.youtube.com/watch?v=uX6hxwW5BYM" target="_blank" rel="noopener">三角函数正余弦和角公式推导</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2018/04/25/数学基础公式推导/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2017/11/14/Override-Overload-Overwrite/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2017/11/14/Override-Overload-Overwrite/" itemprop="url">Override Overload Overwrite</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-14T00:00:00+00:00">
-                2017-11-14
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
-                2024-08-13
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,605
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>我们都知道有些东西容易混淆，在加上中文翻译得乱七八糟，更加让人困惑。今天我要讲的这三位可就真是绝了。</p>
-<p>它们是：Override、Overload、Overwrite。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2017/11/14/Override-Overload-Overwrite/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2017/10/23/The-Semantics-of-Function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1059,7 +443,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:31:58+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
                 2024-08-13
               </time>
             
@@ -1156,11 +540,645 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2017/10/21/The-Semantics-of-Data/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/10/21/The-Semantics-of-Data/" itemprop="url">Inside the C++ Object Model 系列笔记 三 -- The Semantics of Data</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T00:00:00+00:00">
+                2017-10-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,076
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>C++对象模型的细节，讨论了 data members 的处理。</p>
+<h2 id="空类在内存中有空间吗"><a href="#空类在内存中有空间吗" class="headerlink" title="空类在内存中有空间吗"></a>空类在内存中有空间吗</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/10/21/The-Semantics-of-Data/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2017/10/20/The-Semantics-of-constructors/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/10/20/The-Semantics-of-constructors/" itemprop="url">Inside the C++ Object Model 系列笔记 二 -- The Semantics of constructors</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-20T00:00:00+00:00">
+                2017-10-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,476
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>这一章详细的讨论了 constructor 如何工作，讨论构造一个对象的过程以及构造一个对象给程序带来的影响。</p>
+<h2 id="区分-trivial-和-notrivial"><a href="#区分-trivial-和-notrivial" class="headerlink" title="区分 trivial 和 notrivial"></a>区分 trivial 和 notrivial</h2><ol>
+<li>只有编译器需要的时候(为什么会需要?后面讲的很清楚)，合成操作才是 nontrivial 的， 这样的构造函数才会被真正的合成出来;</li>
+<li>如果编译器不需要，而程序员又没有提供，这时的默认构造函数就是 trivial 的。虽然它在概念上存在，但是编译器实际上根本不会去合成出来，因为他不做任何没有意义的事情，所以当然可以忽略它不去合成。trivial 的函数只存在于概念上，实际上不存在这个函数。</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/10/20/The-Semantics-of-constructors/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2017/10/19/Object-Lessons/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/10/19/Object-Lessons/" itemprop="url">Inside the C++ Object Model 系列笔记 一 -- Object Lessons</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T00:00:00+00:00">
+                2017-10-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,198
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>多态：统一的接口，不同的实现</p>
+</blockquote>
+<p><strong>C++多态（polymorphism）</strong> 表示“以一个 public base class 的指针（或者 reference），寻址出一个 derived class object”</p>
+<h2 id="Layout-Costs-for-Adding-Encapsulation-封装"><a href="#Layout-Costs-for-Adding-Encapsulation-封装" class="headerlink" title="Layout Costs for Adding Encapsulation(封装)"></a>Layout Costs for Adding Encapsulation(封装)</h2><blockquote>
+<p>意思是：为了添加封装所需要付出的内存布局花销</p>
+</blockquote>
+<p>第一章 Object Lessons 介绍了 C++如何在背后实现一个对象，内存中的布局以及空间上的关系。</p>
+<p><strong>在计算机的原理中，要实现某个机制，我们总能找到很多种实现方式</strong>（对比着学习，多思考每种实现方法的利弊），C++的类的实现也不例外，让我们对比以下三种实现方式：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/10/19/Object-Lessons/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2017/03/29/值传递和引用传递/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2017/03/29/值传递和引用传递/" itemprop="url">值传递和引用传递</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T00:00:00+00:00">
+                2017-03-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2024-08-13T02:47:32+00:00">
+                2024-08-13
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  477
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Java 没有引用传递，本质上都是值传递，只不过传递的值可以是指针（Java 没有指针，所以你也可以理解为对象，其实本质上还是指针）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getString</span><span class="params">(String text)</span></span>&#123;</span><br><span class="line">        text = <span class="string">"hello"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Solution solution = <span class="keyword">new</span> Solution();</span><br><span class="line">        String text = <span class="string">"world"</span>;</span><br><span class="line">        solution.getString(text);</span><br><span class="line">        System.out.println(text);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2017/03/29/值传递和引用传递/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/blog/page/16/">16</a><a class="page-number" href="/blog/page/17/">17</a><a class="extend next" rel="next" href="/blog/page/16/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/blog/page/16/">16</a><a class="extend next" rel="next" href="/blog/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1208,7 +1226,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1230,7 +1248,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1326,7 +1344,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">110.0k</span>
+    <span title="Site words total count">97.6k</span>
   
 </div>
 
