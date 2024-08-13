@@ -7,9 +7,19 @@ date: 2018-11-03 14:59:45
 
 # 2024-08-13
 
+## chrome 离线下载
+
 工欲善其事必先利其器，最近公司项目开发上，chrome 浏览器（127.0.6533.100）的 devtool 经常性卡死，真的把我的耐心磨没了，真的是越做越烂了。打算装回旧版本的 chrome。那么如何安装旧版本的 chrome 呢，找离线安装包也挺费劲的：
 
 - [Chromium 历史版本离线安装包 - 下载方法](https://github.com/vikyd/note/blob/master/chrome_offline_download.md)
+
+## 前端打包工具一览
+
+- [webpack](https://webpack.js.org/)
+- [esbuild](https://esbuild.github.io/)
+- [rollup](https://www.rollupjs.com/)
+- [farm](https://farm-fe.github.io/)
+- [rolldown](https://github.com/rolldown/rolldown)
 
 # 2024-08-07
 
