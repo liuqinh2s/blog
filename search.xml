@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[游戏开发之旅]]></title>
+    <url>%2Fblog%2F2024%2F08%2F05%2F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%B9%8B%E6%97%85%2F</url>
+    <content type="text"><![CDATA[一直想自己做个什么项目，可以为之奋斗终身的那种，想来想去，还是决定跟炼哥一起做个游戏，但我是个游戏开发小白，完全的 0 基础。所以新开了这个篇章，决定跟进记录一下自己学习游戏开发的过程。这个专题也是以时间为线。 测试 2023-05-21游戏策划： 2d 像素风，要有商店，大量游戏内小游戏，比如星露谷里面植入魔塔，在魔塔里面刷的材料也可以在开放世界用。星露谷本身也有矿洞，而且矿洞的血条也只在矿洞有效。可以种种田，刷一些材料。甚至可以在里面布置一个塔防，防止怪物入侵，刷怪物材料。大量菜单和开放任务。像星露谷一样搞个小镇，小镇上有几个公告牌，上面发布 NPC 的任务。也可以学星露谷搞日期，特定日期有特定的事件触发。可以在木匠那里买日历挂在家里。对了，可以装饰家里，弄很多装饰性的物件（女性和小孩子都特别喜欢）。也可以学星露谷弄个绿洲赌场，里面摆各种各样的老虎机和赌博小游戏。可以增加一个类似星露谷姜岛的地方，更可以拓展多个地图区域，每个区域都有自己的特殊材料。也可以升级工具，甚至设置一个科技树，魔法树来点亮。可以发展职业，加特定技能点属性点。最重要的当然是可以多人在线一起玩。 2023-05-10miloyip 的游戏开发推荐书籍：game-programmer-zh-cn.pdf 2023-05-09要想做出好的游戏，有一本书可以先看看：游戏设计艺术（第 2 版） 2023-04-26首先我觉得要熟悉 Unity 的 API]]></content>
+      <tags>
+        <tag>游戏开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[前端面试指南]]></title>
     <url>%2Fblog%2F2024%2F08%2F05%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%90%88%E9%9B%86%2F</url>
     <content type="text"><![CDATA[编程题寻找字符串中出现最多的字符怎么实现？遍历一遍字符串，用个 map 记录每个字符出现的次数，然后遍历一遍 map，取出出现次数最多的字符 1234567891011121314151617181920function getMaxChar(str: string): string &#123; const map = &#123;&#125;; for (let i = 0; i &lt; str.length; i++) &#123; const c = str[i]; if (!map[c]) &#123; map[c] = 1; &#125; else &#123; map[c]++; &#125; &#125; let max = 0; let maxChar; for (let k of Object.keys(map || &#123;&#125;)) &#123; if (max &lt; map[k]) &#123; max = map[k]; maxChar = k; &#125; &#125; return maxChar;&#125; 数组扁平化(nest to flat)实现一个Array.prototype.flat()，leetcode 对应题目：2625. 扁平化嵌套数组 扁平数组嵌套化(flat to nest) 菜单数组转换为嵌套树形结构，但示例只有两级 123456789101112[ &#123; id: 1, menu: '水果', level: 1 &#125;, &#123; id: 2, menu: '橘子', level: 2, parentId: 1 &#125; // ...]// 转换为[ &#123; id: 1, menu: '水果', level: 1, children: [&#123; id: 2, menu: '橘子', level: 2, parentId: 1 &#125;] &#125;, // ...] 以下是我给出的解答，未经过严格测试 12345678910111213141516171819202122232425262728293031323334353637383940414243const a = [ &#123; id: 2, menu: "橘子", level: 2, parentId: 1, &#125;, // ... &#123; id: 1, menu: "水果", level: 1, &#125;,];function flat2nest(array) &#123; const res = []; const map = &#123;&#125;; for (let index = 0; index &lt; array.length; index++) &#123; if (map[array[index].id]) &#123; map[array[index].id] = &#123; ...array[index], children: map[array[index].id].children, &#125;; &#125; else &#123; map[array[index].id] = &#123; ...array[index] &#125;; &#125; if (!array[index].parentId) &#123; res.push(map[array[index].id]); &#125; else &#123; if (!map[array[index].parentId]) &#123; map[array[index].parentId] = &#123;&#125;; &#125; if (!map[array[index].parentId].children) &#123; map[array[index].parentId].children = []; &#125; map[array[index].parentId].children.push(&#123; ...array[index] &#125;); &#125; &#125; return res;&#125;const b = flat2nest(a);console.log(b); 实现一个深拷贝实现 PromiseJavaScript 基础最基础的两个知识点： Prototype Chain（原型链） JavaScript 原型和原型链 JavaScript 对象的继承有哪几种？ closure（闭包） JavaScript 词法作用域 JavaScript 执行上下文栈 JavaScript 执行上下文之变量对象 JavaScript 执行上下文之作用域链 JavaScript 闭包 结合这两个知识点学习，我们发现，原型链就是用来方便查找对象上的变量，闭包就是方便查找自由变量，本质上都是为了让 JavaScript 这个编程语言更加丰富，灵活，好用，方便程序员写出更加短小精悍，易于封装和复用的代码。 箭头函数 Promise A+ 规范 Event Loop（事件循环） 内存回收 try-catch： try-catch 能抛出 promise 的异常吗 怎么判断对象为空？ 类型判断 JavaScript 有几种基础数据类型？Symbol 和 BigInt 是什么时候引进的？ typeof有几种类型？分别是什么？ Object.prototype.toString()有几种类型？分别是什么？ 模拟 JavaScript 原生方法 模拟实现 JavaScript 的 new 操作符 模拟实现 JavaScript 的 apply 和 call 方法 模拟实现 JavaScript 的 bind 方法 知不知道最新的 url 参数获取的 API？ JavaScript 历史 5 分钟彻底搞懂 js 的版本演进（ES5,ES6,ES2015 的区别） - 知乎 ES6 带来了哪些新东西？ ECMAScript 2015 Language Specification – ECMA-262 6th Edition var，let，const 的区别 浏览器环境 window.parent node 环境CSS 基础 行内元素和块级元素 盒模型 伪类和伪元素 CSS 前缀 BFC 垂直居中有几种方式？ 垂直居中和水平居中 position text-overflow（文本溢出） flex: 2 有用过吗？多列布局怎么实现？ 前端编程范式 debounce, throttle（防抖和节流） EventBus（事件总线） 浏览器相关 浏览器事件 事件委托 Repaint, Reflow（重绘和回流） 同源策略和跨域 CSRF 和 XSS 攻击 网络HTTP HTTP 状态码 GET 请求和 POST 请求的区别 HTTP 和 HTTPS 的区别 HTTP 缓存 TCP/IP TCP 为什么要三次握手四次挥手 typescript type 和 interface 的区别 reactvue Vue 组件通信方式有哪些，各有什么特点？ Vue 项目怎么提高项目性能？举一些例子 vue3 在某些场景比 vue2 性能更低，为什么会这样？ 其他 新版本发布后，怎么用技术手段通知用户刷新页面？ 性能优化数据怎么上报、分析？ element ui table 吸顶怎么做，滚动怎么处理等 TS 用的多吗？ 工作中解决的最有成就感的事？ 你在工作中遇到过最大的挑战是什么，怎么解决的？ 在团队协作时，有遇到过什么问题吗，如果有冲突你会怎么做 你有什么想问我的？ 低代码、怎么动态加载渲染一个组件，底层怎么实现？]]></content>
@@ -14,14 +22,6 @@
     <content type="text"><![CDATA[基础理论课 数据结构和算法 操作系统 计算机组成原理与汇编 计算机网络 我列出这四门课，是因为国内本科结束之后，考研初试要考的就是这四门课。这也说明了这四门课是计算机专业非常重要的基础学科。复试的话会涉及到更深入的一点东西，比如：编译原理、软件工程、人工智能、多媒体技术、信号处理。 书籍推荐CSAPP中文叫：深入理解计算机系统英文叫：Computer Systems: A Programmer’s Perspective，简称 CSAPP。 有能力的话，尽量看英文版 看书要做笔记，细分知识点，明确所学的核心知识点 习题不要略过，一定要做 这是 CMU（Carnegie Mellon University，卡内基梅隆大学）的计算机入门教材，这本教材对应的课程是 CS 213 ，是很多课程的先修课。 如何阅读《深入理解计算机系统》这本书？ 课程主页 2016 年课程主页 卡内基梅隆大学 Introduction to Computer Systems CMU 15-213 Fall 卡内基梅隆大学 Introduction to Computer Systems CMU 15-213 2015 Spring 看完知乎答主的回答，我们需要注意的是这门课也有一个先修课，是一门编程语言 C0（C 语言的子集），对应的课程是 CS 122，或者你学 Python 也行。CMU 一般是给大二学生开这个课，学过 C 以后就可以上了。 这本书讲的是计算机底层的基础原理，涵盖范围主要是 计算机组成原理和汇编，是圣经般的入门书，突出原理，讲解非常细腻、系统。 我目前还在学习，这里有我的学习笔记： 浮点数原理 《CSAPP》读书笔记 -- 第 3 章：程序的机器级表示 《CSAPP》读书笔记 -- 第 4 章：处理器体系结构 SICPAPUE动手开始写代码ACM然而仅仅是学习理论是完全不够的。 我这里要讲的是 ACM，ACM国际大学生程序设计竞赛（ACM International Collegiate Programming Contest, ICPC）的简称，由 ACM（Association for Computing Machinery，（美国）计算机协会）主办。 为什么 ACM 如此重要（以及 ACM 的大奖对本科生找工作的分量这么重），因为编程活动所要依赖的只有两个：抽象和逻辑，这就是为什么其实编程可以从小学开始（没有过高的知识门槛）。计算机科学的诸多课程，就是由先辈们靠着抽象和逻辑搭建起来的知识大厦，这些知识和经验是叶，而你抽象和逻辑能力，依靠计算机解决问题的能力是根。练习 ACM 就跟武术世界里面的李小龙每天练拳一样，是基本功。 练习 ACM 一般用 Online Judge 系统，这里我推荐几个： 北京大学的在线裁判系统，简称 POJ 杭州电子科技大学的在线裁判系统 leetcode 大型项目ACM 自然跟真正的应用程序的编写是不一样的，当你真正步入开发的时候，你会发现还有非常多的东西要学，一个看似简单的 APP，其架构却是非常复杂的，代码量和代码结构的复杂也远超你的想象。那么如何上手学习呢，你也不可能一步登天，一上来就开发一款应用啊。答案自然是：一个功能，一个功能的实现，按模块学习，按模块设计，慢慢积累，有点像搭积木。你不要觉得仅实现一个功能会拿不出手，初学者就是这样积累起来的，所以你大可以把你实现的那些小东西都整理好（这也就是我下面会写到的，做好编程札记），文档和代码都好好保存，因为东西太多比较容易忘，而且编程最忌讳的就是重复工作，从零做起。 编程心得其实我早就想写一个系列，就叫：编程心得，这个里面放上很多编程中的细节问题，就跟网上的笔试面试经典一样，其实这些东西虽然吸收的快，但有些东西还是必须经过亲力亲为才能真正体会到，但我并不反对直接看这种东西，否则我就不必花心思去写了。直接看前人总结的经验非常有好处，这就像武侠世界里的传输内力，人类之所以发展起了文明，就是因为知识的传递非常迅速而有效，我们根本不需要做任何事之前都需要自己做过一遍才知道怎么做，我们往往都借助他人的经验。 说到这个话题，我觉得有必要强调一下，编程札记 这个东西。一直以来我都十分建议积累式学习，不管是工作还是学习，都要做好记录，特别是重要的点，一定要记下来，比如实现一个东西的时候遇到的困难，以及如何解决，有哪些关键点，等等。写这个东西是为了便于回顾，以及衡量自己的工作量。 学而时习之，不亦说乎 目前免费的云笔记首推：有道云笔记，虽然用的没有为知笔记爽，对于穷学生来说还是比较友好的。另外人家后台是网易，而且跟网易云音乐、有道词典、网易公开课、网易云课堂、网易严选等等产品构成了一个网易的高口碑生态链，所以你一定程度上不用担心它关门倒闭。 素养访问全球网众所周知，我们处于一个国域网当中，如果你想看看外面的世界，必须要学会科学上网（翻墙）。互联网时代，这是必备技能。目前我用的是 搬瓦工+shadowsocks。 脱离 Windows 的襁褓很多人喜欢争论 Linux 和 Windows，就像各种语言之间的争论一样，无休无止。但同样很多人喜欢说，Windows 和 Linux 无所谓，真正的开发者都是什么好用用什么，主要看需求。 而这里我要说的，跟这些都不一样，对于初学者我的建议一定是：脱离 Windows 的襁褓。否则你将很难对计算机的 CLI（Command Line Interface）产生直观性的体验。Linux 逼迫你，把你暴露在一个更原始的环境，也就更贴近事物的原理，让你看的更加清楚，让你脱离不动脑子傻瓜式的鼠标点点点。而之所以那些高手喜欢说 Windows 很好用，没必要用 Linux，是因为他们都是脱离了低级层次，已经到达更高层次的人，他们当然无所谓，Windows 早已蒙蔽不了他们的双眼。这是一种看山还是山，看水还是水的境界。而你不经过历练，是不会到达这个境界的。 不要一见到命令行就恐惧，正如你不应该一见到英文网站和英文资料就恐惧一样，这种回避绝对是有害的。 对于初学者，Linux 比 mac os x 好，因为 mac 也可以点点点。 当然如果你已经脱离了低级层次，那么我绝对更推荐你用 windows，其次是 mac，最后是 linux。原因自然是 Windows 的应用生态是最完善的，最能满足日常需求的。 LaTex 和 Markdown说到文档和笔记的编写，就得推这两个东西了：LaTex 是学术界写论文的标准，现在微软的 word 软件似乎也有一席之地了，毕竟 LaTex 比 word 难用多了，特别是对非计算机类的学者来说。LaTex 排版效果非常棒，我感觉，出版社出版，维基百科词条，也都用得上 LaTex。Markdown 是 github 上文档的标准，也是网络上各种博主的写作标准，最最关键的点是，mathjax 这个组织，让 Markdown 的便捷和 LaTex 的强大结合起来了，你可以在 Markdown 中插入用 LaTex 书写的数学公式。这也是我不用简书的原因，简书虽然有 Markdown，却不支持 mathjax，公式贴图可以啊，但你总不至于写个上下标都贴图吧。 时至今日（2018-11-01），简书的 markdown 已经支持数学公式了。除了 mathjax 还有 katex 也是不错的数学公式渲染引擎，katex 似乎比 mathjax 还要快上一些。 关于 LaTax 的手册，我还是希望大家自己去找，在这个时代一定要把自己的搜索能力练起来，特别是寻找 最权威的资料，最一手的信息，因为这样你才有可能在比特币刚诞生不久的时候就了解到它（举个例子），当然很多人会说其实他们早就知道这个东西，只不过一直不想去深入了解。 当然我也不会吝啬于分享，我先讲讲我如何找这份资料：首先使用 google 搜索引擎，其次使用英文搜索，输入 LaTex math，得到如下有用的答案： LATEX Mathematical Symbols 多用搜索少用书签，锻炼自己的搜索能力 至于要不要把它们加进你的书签，我的建议是这类东西没必要加，你可以仔细思考一下这个搜索有什么特别的，对，他加了 math 这个关键信息，如果你只是单纯的搜索 LaTex 或者 math那么你将得到大量无关的信息，但其实你平常用的时候经常就只是用到LaTex数学方面的东西，其他的基本用 MarkDown 排版。 我在使用 mathjax 写数学公式过程中遇到过的最头痛的问题有两个： 三重环积分无法显示：$\unicode{x2230}$（我这里用了特殊的技巧才将它显示出来），显示为：$\oiiint$，详情参考：mathjax 常用公式记录 markdown 和 mathjax 的冲突，详情参见：Hexo+Markdown+MathJax 搭建个人博客 版本管理工具一提到版本管理工具，现在最流行的就是 git 了。最基本的是要理解一点 git 的原理，git 的作用主要体现在可以进行文本内容的比较，而不是简单粗暴的将发生修改的文件直接替换掉。多人协作的时候，如果想减少冲突，有两种手段，排首位的就是勤合并，其次是分工明确，不要多个人做同一件事（改同一个地方）。 工具 编辑器：虽然现在编程都用 IDE，但平常处理一些文本的时候，还是要用到普通的文本编辑器，我目前使用的事 sublime text3：精通一款编辑器之 sublime text3 时至今日，github 已经被微软收购，而微软力推的 vscode 编辑器也成为了主流。尤其是自从我做前端以来，都是用 vscode 敲代码。 互联网时代的能力 依靠互联网和计算机解决问题的能力 搜索能力 找资源的能力 举几个例子： 腾讯视频的资源好多都要 VIP，但是在 YouTube 上很多可以找到免费的资源，毕竟墙外面。而很多美剧英剧资源则都在百度云上面，可以说是互相伤害的局面。 B 站上的资源真的多，有不少的教育类的付费视频在 B 站上可以免费看，但随时有被查封的可能，所以批量下载 B 站的视频是比较常见的需求。 github 上的电子书资源相当多，各类破解软件也挺多的，用来学习的开源项目也是数不胜数。以前下载电子书我都是用微盘和百度网盘的，时间再往前则是新浪爱问知识人了。破解软件嘛，类似 kmspico（Windows 的破解软件），github 上轻松找到。kcptun 的 mac 版（kcptun darwin）轻松找到。 谷歌经常能搜到大学课件或者服务器的某些内部资料。]]></content>
       <tags>
         <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[游戏开发之旅]]></title>
-    <url>%2Fblog%2F2024%2F08%2F05%2F%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91%E4%B9%8B%E6%97%85%2F</url>
-    <content type="text"><![CDATA[一直想自己做个什么项目，可以为之奋斗终身的那种，想来想去，还是决定跟炼哥一起做个游戏，但我是个游戏开发小白，完全的 0 基础。所以新开了这个篇章，决定跟进记录一下自己学习游戏开发的过程。这个专题也是以时间为线。 测试 2023-05-21游戏策划： 2d 像素风，要有商店，大量游戏内小游戏，比如星露谷里面植入魔塔，在魔塔里面刷的材料也可以在开放世界用。星露谷本身也有矿洞，而且矿洞的血条也只在矿洞有效。可以种种田，刷一些材料。甚至可以在里面布置一个塔防，防止怪物入侵，刷怪物材料。大量菜单和开放任务。像星露谷一样搞个小镇，小镇上有几个公告牌，上面发布 NPC 的任务。也可以学星露谷搞日期，特定日期有特定的事件触发。可以在木匠那里买日历挂在家里。对了，可以装饰家里，弄很多装饰性的物件（女性和小孩子都特别喜欢）。也可以学星露谷弄个绿洲赌场，里面摆各种各样的老虎机和赌博小游戏。可以增加一个类似星露谷姜岛的地方，更可以拓展多个地图区域，每个区域都有自己的特殊材料。也可以升级工具，甚至设置一个科技树，魔法树来点亮。可以发展职业，加特定技能点属性点。最重要的当然是可以多人在线一起玩。 2023-05-10miloyip 的游戏开发推荐书籍：game-programmer-zh-cn.pdf 2023-05-09要想做出好的游戏，有一本书可以先看看：游戏设计艺术（第 2 版） 2023-04-26首先我觉得要熟悉 Unity 的 API]]></content>
-      <tags>
-        <tag>游戏开发</tag>
       </tags>
   </entry>
   <entry>
@@ -311,19 +311,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[生成固定长度的字符串]]></title>
-    <url>%2Fblog%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
-    <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[浏览器上的几种xy坐标]]></title>
     <url>%2Fblog%2F2022%2F06%2F09%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87%2F</url>
     <content type="text"><![CDATA[首先分为两大类： 事件坐标 dom 坐标 事件坐标有如下几种： screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY 下面这张图可以很好的对比展示这几种 xy 坐标： 那如果是在 iframe 中的 document，clientX 和 screenX 还是符合直觉的值吗？ 答案是 clientX 不是，screenX 是。 clientX 的值是从 document 的左起始位置算起的，不会考虑 iframe 距离浏览器左边距。screenX 则依然是距离屏幕左边的距离。 dom 坐标]]></content>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[生成固定长度的字符串]]></title>
+    <url>%2Fblog%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -351,19 +351,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能合约入门]]></title>
-    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
-      <tags>
-        <tag>币圈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[快速排序最坏的情况啥时候出现]]></title>
     <url>%2Fblog%2F2021%2F06%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN 代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN$退化成了$N$。那么什么情况会退化成$logN$，当然是问题规模缩减得慢的时候，这与我们选中枢有直接的关系。假如我们选的中枢，每次都是最小或者最大，那么问题的缩小速度就会变成线性的了；而假如我们选的中枢，每次恰好是中间那个数，那么问题递归次数就是$log_2^N$了。 由于我们一般都是选第一个或者最后一个元素做中枢，那么最坏的情况对应就是：已经有序（这包括正序，逆序，以及全部元素相等） 由于快速排序的这个特征，所以我们一般的算法库中是结合了好几种排序算法：C++一道深坑面试题：STL 里 sort 算法用的是什么排序算法？ 同时我也在思考为啥快排这种最坏是$O(N^2)$的算法会被使用，而不直接使用最坏是$O(NlogN)$的算法，比如归并排序，堆排序。答案自然是这些排序也有各自的缺点，而且我估计是无法容忍的缺点。比如归并排序，它不是一个原地排序算法，需要额外的存储空间。堆排序，需要构建堆花费额外的时间。堆构建完毕后，借用堆这种结构，每次只能从堆顶取出最大或最小的数，而且取完还要进行堆维护，花费$logN$的时间。构建堆的过程和堆排序的过程类似，只不过构建堆是添加叶节点+上浮堆化的过程，而堆排序是取根节点+下沉堆化的过程，同样的构建堆也要花费$O(NlogN)$的时间。所以堆排序会花费双倍的时间。]]></content>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[智能合约入门]]></title>
+    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
+      <tags>
+        <tag>币圈</tag>
       </tags>
   </entry>
   <entry>
