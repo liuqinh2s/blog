@@ -1,5 +1,5 @@
 ---
-title: Reading
+title: 思考
 date: 2024-08-06
 ---
 
