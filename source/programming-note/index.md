@@ -20,6 +20,7 @@ date: 2018-11-03 14:59:45
 - [rollup](https://www.rollupjs.com/)
 - [farm](https://farm-fe.github.io/)
 - [rolldown](https://github.com/rolldown/rolldown)
+- [rspack](https://rspack.dev/)
 
 # 2024-08-07
 
