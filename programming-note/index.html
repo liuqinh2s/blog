@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2024-08-29T03:19:41.699Z">
+<meta property="og:updated_time" content="2024-08-29T03:25:35.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程笔记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-08-29今天在 git rebase 的过程中遇到一个问题，阻断了我的 rebase 解决冲突流程： 1Git: &amp;apos;pro-api/&amp;apos; does not have a commit">
@@ -412,7 +412,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Git: &apos;pro-api/&apos; does not have a commit checked out</span><br></pre></td></tr></table></figure>
 <p>最后查明原因是某个子目录多了一个<code>.git</code>文件夹，一个仓库是不可以有两个<code>.git</code>的。删掉这个多余的即可继续解决 rebase 的冲突。</p>
 <p><a href="https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding" target="_blank" rel="noopener">How to fix: error: &#39;<filename>&#39; does not have a commit checked out fatal: adding files failed when inputting &quot;git add .&quot; in command prompt</filename></a></p>
-<p>合并的时候，最好用 rebase，但该处问题的地方还是会出问题。比如我从<code>2.2.C</code>分支基础上新建一个<code>liuqin/updateCBB/2.2.C</code>分支，然后开发到一半，领导基于<code>2.2.C</code>分支开出了<code>2.2.D</code>分支，然后一些同事，在<code>2.2.D</code>分支和<code>liuqin/updateCBB/2.2.C</code>分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉。最后合并的时候（从<code>liuqin/updateCBB/2.2.C</code>分支合并到<code>2.2.D</code>分支），一堆报错。</p>
+<p>合并的时候，最好用 rebase，但该处问题的地方还是会出问题。比如我从<code>2.2.C</code>分支基础上新建一个<code>liuqin/updateCBB/2.2.C</code>分支，然后开发到一半，领导基于<code>2.2.C</code>分支开出了<code>2.2.D</code>分支，然后一些同事，在<code>2.2.D</code>分支和<code>liuqin/updateCBB/2.2.C</code>分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉（我们构建发布的分支，一旦构建报错，就会通知到内网聊天账号上，所以会第一时间得到解决）。最后合并的时候（从<code>liuqin/updateCBB/2.2.C</code>分支合并到<code>2.2.D</code>分支），一堆报错。</p>
 <h1 id="2024-08-28"><a href="#2024-08-28" class="headerlink" title="2024-08-28"></a>2024-08-28</h1><ul>
 <li><a href="https://inteltechniques.com/book1.html" target="_blank" rel="noopener">Open Source Intelligence Techniques</a>：全书都是在教你如何在网上搜索定位公开信息（严格来说，我觉得应该算半公开信息）。作者是一位受雇于美国政府的电脑犯罪调查员。</li>
 </ul>
