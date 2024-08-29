@@ -17,7 +17,7 @@ Git: 'pro-api/' does not have a commit checked out
 
 [How to fix: error: '<filename>' does not have a commit checked out fatal: adding files failed when inputting "git add ." in command prompt](https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding)
 
-合并的时候，最好用 rebase，但该处问题的地方还是会出问题。比如我从`2.2.C`分支基础上新建一个`liuqin/updateCBB/2.2.C`分支，然后开发到一半，领导基于`2.2.C`分支开出了`2.2.D`分支，然后一些同事，在`2.2.D`分支和`liuqin/updateCBB/2.2.C`分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉。最后合并的时候（从`liuqin/updateCBB/2.2.C`分支合并到`2.2.D`分支），一堆报错。
+合并的时候，最好用 rebase，但该处问题的地方还是会出问题。比如我从`2.2.C`分支基础上新建一个`liuqin/updateCBB/2.2.C`分支，然后开发到一半，领导基于`2.2.C`分支开出了`2.2.D`分支，然后一些同事，在`2.2.D`分支和`liuqin/updateCBB/2.2.C`分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉（我们构建发布的分支，一旦构建报错，就会通知到内网聊天账号上，所以会第一时间得到解决）。最后合并的时候（从`liuqin/updateCBB/2.2.C`分支合并到`2.2.D`分支），一堆报错。
 
 # 2024-08-28
 
