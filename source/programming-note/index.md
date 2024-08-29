@@ -5,6 +5,18 @@ date: 2018-11-03 14:59:45
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2024-08-29
+
+今天在 git rebase 的过程中遇到一个问题，阻断了我的 rebase 解决冲突流程：
+
+```
+Git: 'pro-api/' does not have a commit checked out
+```
+
+最后查明原因是某个子目录多了一个`.git`文件夹，一个仓库是不可以有两个`.git`的。删掉这个多余的即可继续解决 rebase 的冲突。
+
+[How to fix: error: '<filename>' does not have a commit checked out fatal: adding files failed when inputting "git add ." in command prompt](https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding)
+
 # 2024-08-28
 
 - [Open Source Intelligence Techniques](https://inteltechniques.com/book1.html)：全书都是在教你如何在网上搜索定位公开信息（严格来说，我觉得应该算半公开信息）。作者是一位受雇于美国政府的电脑犯罪调查员。
