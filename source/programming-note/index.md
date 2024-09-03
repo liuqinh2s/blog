@@ -9,6 +9,20 @@ date: 2018-11-03 14:59:45
 
 今天同事问我关于`visibility: hidden`的父元素，子元素是`visibility: visible`，显示出了子元素的问题。以前面试的时候我写过一篇总结，但是找不到了。之后会补一篇。可以先参考一下这篇文章：[CSS 中用 opacity、visibility、display 属性将 元素隐藏 的 对比分析](https://segmentfault.com/a/1190000015116392)
 
+## 多行文本显示末尾省略号
+
+[多行文字 text-overflow: ellipsis 省略号失效问题](https://blog.csdn.net/qq_51978639/article/details/128862967)
+
+```css
+text-overflow: ellipsis;
+overflow: hidden;
+display: -webkit-box; //特别显示模式
+-webkit-line-clamp: 8; //行数
+-webkit-box-orient: vertical; //盒子中内容竖直排列
+```
+
+不用限定高度，因为已经限定了行数
+
 # 2024-09-02
 
 亿万富翁指的是身价在一亿美元以上的富豪。而不是身价在一万亿美元以上的富豪。万元户，百万富翁，千万富翁这些都是写实。亿万富翁是个虚数。理应叫上亿富翁。
