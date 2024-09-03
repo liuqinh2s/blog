@@ -239,17 +239,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaScript 闭包]]></title>
-    <url>%2Fblog%2F2022%2F07%2F14%2FJavaScript%E9%97%AD%E5%8C%85%2F</url>
-    <content type="text"><![CDATA[闭包是干什么用的本质上闭包就是为了拓展查找自由变量的范围 MDN 对闭包的定义为： A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment) 一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。 123456789function init() &#123; var name = 'Mozilla'; // name is a local variable created by init function displayName() &#123; // displayName() is the inner function, a closure console.log(name); // use variable declared in the parent function &#125; displayName();&#125;init(); name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。 上面这个例子有点平平无奇了，让我们看一个神奇一点的例子： 1234567891011var scope = "global scope";function checkscope()&#123; var scope = "local scope"; function f()&#123; return scope; &#125; return f;&#125;var foo = checkscope();foo(); 这里直接给出简要的执行过程： 进入全局代码，创建全局执行上下文，全局执行上下文压入执行上下文栈 全局执行上下文初始化 执行 checkscope 函数，创建 checkscope 函数执行上下文，checkscope 执行上下文被压入执行上下文栈 checkscope 执行上下文初始化，创建变量对象、作用域链、this 等 checkscope 函数执行完毕，checkscope 执行上下文从执行上下文栈中弹出 执行 f 函数，创建 f 函数执行上下文，f 执行上下文被压入执行上下文栈 f 执行上下文初始化，创建变量对象、作用域链、this 等 f 函数执行完毕，f 函数上下文从执行上下文栈中弹出 了解到这个过程，我们应该思考一个问题，那就是： 当 f 函数执行的时候，checkscope 函数上下文已经被销毁了啊(即从执行上下文栈中被弹出)，怎么还会读取到 checkscope 作用域下的 scope 值呢？ 以上的代码，要是转换成 PHP，就会报错，因为在 PHP 中，f 函数只能读取到自己作用域和全局作用域里的值，所以读不到 checkscope 下的 scope 值。 然而 JavaScript 却是可以的！ 当我们了解了具体的执行过程后，我们知道 f 执行上下文维护了一个作用域链： 123fContext = &#123; Scope: [AO, checkscopeContext.AO, globalContext.VO],&#125;; 对的，就是因为这个作用域链，f 函数依然可以读取到 checkscopeContext.AO 的值，说明当 f 函数引用了 checkscopeContext.AO 中的值的时候，即使 checkscopeContext 被销毁了，但是 JavaScript 依然会让 checkscopeContext.AO 活在内存中（因为还有别的引用在，所以不会进行垃圾回收），f 函数依然可以通过 f 函数的作用域链找到它，正是因为 JavaScript 做到了这一点，从而实现了闭包这个概念。 所以，让我们再看一遍实践角度上闭包的定义： 即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回） 在代码中引用了自由变量 在这里再补充一个《JavaScript 权威指南》英文原版对闭包的定义: This combination of a function object and a scope (a set of variable bindings) in which the function’s variables are resolved is called a closure in the computer science literature. 闭包在计算机科学中也只是一个普通的概念，大家不要去想得太复杂。 经典面试题1234567891011var data = [];for (var i = 0; i &lt; 3; i++) &#123; data[i] = function () &#123; console.log(i); &#125;;&#125;data[0]();data[1]();data[2](); 答案是全是 3，因为这里的 i 是直接从全局上下文中读取到的，让我们多加一层闭包： 12345678910111213var data = [];for (var i = 0; i &lt; 3; i++) &#123; data[i] = (function (i) &#123; return function () &#123; console.log(i); &#125;; &#125;)(i);&#125;data[0]();data[1]();data[2](); 这里写了个立即执行函数，由它创建了一个闭包：立即执行函数的 AO + 内层函数，这个闭包中有个自由变量 i，来自这个立即执行函数的形参，形参在每次立即执行后会被分别赋值 0,1,2。而内层函数被返回给这个 data 数组，当内层函数执行时，顺着作用域链查找 i，会先从立即执行函数的 AO 中读取到 i，就会分别读取到 0,1,2。 参考 JavaScript 深入之闭包 闭包 - mdn]]></content>
+    <title><![CDATA[JavaScript执行上下文之作用域链]]></title>
+    <url>%2Fblog%2F2022%2F07%2F14%2FJavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%2F</url>
+    <content type="text"><![CDATA[执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链： 假设要实现动态作用域的话，[[scope]]就得在调用时去执行上下文栈的上一帧去取。 1Scope = [AO].concat([[scope]]); 实例剖析123456var scope = "global scope";function checkscope() &#123; var scope2 = "local scope"; return scope2;&#125;checkscope(); 执行过程如下： 全局执行上下文创建，其作用域链就只有自身的 VO，然后将全局上下文压栈： 1234567ECStack = [];globalContext = &#123; VO, Scope: [VO], this: window,&#125;;ECStack.push(globalContext); checkscope 函数被创建，保存当前执行上下文的作用域链到 checkscope 函数的内部属性[[scope]]（这一步是词法作用域实现的关键） 1checkscope.[[scope]] = globalContext.Scope; 调用 checkscope 函数，函数并不立刻执行，开始做准备工作，生成执行上下文，并压入执行上下文栈： AO：用 arguments 创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明 Scope：复制函数[[scope]]属性创建作用域链，将活动对象压入 checkscope 作用域链顶端 this 12345678910checkscopeContext = &#123; AO: &#123; arguments: &#123; length: 0, &#125;, scope2: undefined, &#125;, Scope: [AO, [[Scope]]],&#125;;ECStack.push(checkscopeContext); 准备工作做完，开始执行函数，随着函数的执行，修改 AO 的属性值，查找到 scope2 的值，返回后函数执行完毕，函数上下文从执行上下文栈中弹出 12345678910checkscopeContext = &#123; AO: &#123; arguments: &#123; length: 0, &#125;, scope2: "local scope", &#125;, Scope: [AO, [[Scope]]],&#125;;ECStack.pop(); 每一步中具体的实现细节我们无法得知（因为可以有多种实现手法），但这 5 步却是真实存在的（因为可以通过例子验证）。]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaScript执行上下文之作用域链]]></title>
-    <url>%2Fblog%2F2022%2F07%2F14%2FJavaScript%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B9%8B%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%2F</url>
-    <content type="text"><![CDATA[执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链： 假设要实现动态作用域的话，[[scope]]就得在调用时去执行上下文栈的上一帧去取。 1Scope = [AO].concat([[scope]]); 实例剖析123456var scope = "global scope";function checkscope() &#123; var scope2 = "local scope"; return scope2;&#125;checkscope(); 执行过程如下： 全局执行上下文创建，其作用域链就只有自身的 VO，然后将全局上下文压栈： 1234567ECStack = [];globalContext = &#123; VO, Scope: [VO], this: window,&#125;;ECStack.push(globalContext); checkscope 函数被创建，保存当前执行上下文的作用域链到 checkscope 函数的内部属性[[scope]]（这一步是词法作用域实现的关键） 1checkscope.[[scope]] = globalContext.Scope; 调用 checkscope 函数，函数并不立刻执行，开始做准备工作，生成执行上下文，并压入执行上下文栈： AO：用 arguments 创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明 Scope：复制函数[[scope]]属性创建作用域链，将活动对象压入 checkscope 作用域链顶端 this 12345678910checkscopeContext = &#123; AO: &#123; arguments: &#123; length: 0, &#125;, scope2: undefined, &#125;, Scope: [AO, [[Scope]]],&#125;;ECStack.push(checkscopeContext); 准备工作做完，开始执行函数，随着函数的执行，修改 AO 的属性值，查找到 scope2 的值，返回后函数执行完毕，函数上下文从执行上下文栈中弹出 12345678910checkscopeContext = &#123; AO: &#123; arguments: &#123; length: 0, &#125;, scope2: "local scope", &#125;, Scope: [AO, [[Scope]]],&#125;;ECStack.pop(); 每一步中具体的实现细节我们无法得知（因为可以有多种实现手法），但这 5 步却是真实存在的（因为可以通过例子验证）。]]></content>
+    <title><![CDATA[JavaScript 闭包]]></title>
+    <url>%2Fblog%2F2022%2F07%2F14%2FJavaScript%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[闭包是干什么用的本质上闭包就是为了拓展查找自由变量的范围 MDN 对闭包的定义为： A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment) 一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。 123456789function init() &#123; var name = 'Mozilla'; // name is a local variable created by init function displayName() &#123; // displayName() is the inner function, a closure console.log(name); // use variable declared in the parent function &#125; displayName();&#125;init(); name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。 上面这个例子有点平平无奇了，让我们看一个神奇一点的例子： 1234567891011var scope = "global scope";function checkscope()&#123; var scope = "local scope"; function f()&#123; return scope; &#125; return f;&#125;var foo = checkscope();foo(); 这里直接给出简要的执行过程： 进入全局代码，创建全局执行上下文，全局执行上下文压入执行上下文栈 全局执行上下文初始化 执行 checkscope 函数，创建 checkscope 函数执行上下文，checkscope 执行上下文被压入执行上下文栈 checkscope 执行上下文初始化，创建变量对象、作用域链、this 等 checkscope 函数执行完毕，checkscope 执行上下文从执行上下文栈中弹出 执行 f 函数，创建 f 函数执行上下文，f 执行上下文被压入执行上下文栈 f 执行上下文初始化，创建变量对象、作用域链、this 等 f 函数执行完毕，f 函数上下文从执行上下文栈中弹出 了解到这个过程，我们应该思考一个问题，那就是： 当 f 函数执行的时候，checkscope 函数上下文已经被销毁了啊(即从执行上下文栈中被弹出)，怎么还会读取到 checkscope 作用域下的 scope 值呢？ 以上的代码，要是转换成 PHP，就会报错，因为在 PHP 中，f 函数只能读取到自己作用域和全局作用域里的值，所以读不到 checkscope 下的 scope 值。 然而 JavaScript 却是可以的！ 当我们了解了具体的执行过程后，我们知道 f 执行上下文维护了一个作用域链： 123fContext = &#123; Scope: [AO, checkscopeContext.AO, globalContext.VO],&#125;; 对的，就是因为这个作用域链，f 函数依然可以读取到 checkscopeContext.AO 的值，说明当 f 函数引用了 checkscopeContext.AO 中的值的时候，即使 checkscopeContext 被销毁了，但是 JavaScript 依然会让 checkscopeContext.AO 活在内存中（因为还有别的引用在，所以不会进行垃圾回收），f 函数依然可以通过 f 函数的作用域链找到它，正是因为 JavaScript 做到了这一点，从而实现了闭包这个概念。 所以，让我们再看一遍实践角度上闭包的定义： 即使创建它的上下文已经销毁，它仍然存在（比如，内部函数从父函数中返回） 在代码中引用了自由变量 在这里再补充一个《JavaScript 权威指南》英文原版对闭包的定义: This combination of a function object and a scope (a set of variable bindings) in which the function’s variables are resolved is called a closure in the computer science literature. 闭包在计算机科学中也只是一个普通的概念，大家不要去想得太复杂。 经典面试题1234567891011var data = [];for (var i = 0; i &lt; 3; i++) &#123; data[i] = function () &#123; console.log(i); &#125;;&#125;data[0]();data[1]();data[2](); 答案是全是 3，因为这里的 i 是直接从全局上下文中读取到的，让我们多加一层闭包： 12345678910111213var data = [];for (var i = 0; i &lt; 3; i++) &#123; data[i] = (function (i) &#123; return function () &#123; console.log(i); &#125;; &#125;)(i);&#125;data[0]();data[1]();data[2](); 这里写了个立即执行函数，由它创建了一个闭包：立即执行函数的 AO + 内层函数，这个闭包中有个自由变量 i，来自这个立即执行函数的形参，形参在每次立即执行后会被分别赋值 0,1,2。而内层函数被返回给这个 data 数组，当内层函数执行时，顺着作用域链查找 i，会先从立即执行函数的 AO 中读取到 i，就会分别读取到 0,1,2。 参考 JavaScript 深入之闭包 闭包 - mdn]]></content>
       <tags>
         <tag>JavaScript</tag>
       </tags>
@@ -303,19 +303,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[生成固定长度的字符串]]></title>
-    <url>%2Fblog%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
-    <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[浏览器上的几种xy坐标]]></title>
     <url>%2Fblog%2F2022%2F06%2F09%2F%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E5%87%A0%E7%A7%8Dxy%E5%9D%90%E6%A0%87%2F</url>
     <content type="text"><![CDATA[首先分为两大类： 事件坐标 dom 坐标 事件坐标有如下几种： screenX, screenY clientX, clientY pageX, pageY offsetX, offsetY 下面这张图可以很好的对比展示这几种 xy 坐标： 那如果是在 iframe 中的 document，clientX 和 screenX 还是符合直觉的值吗？ 答案是 clientX 不是，screenX 是。 clientX 的值是从 document 的左起始位置算起的，不会考虑 iframe 距离浏览器左边距。screenX 则依然是距离屏幕左边的距离。 dom 坐标]]></content>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[生成固定长度的字符串]]></title>
+    <url>%2Fblog%2F2022%2F06%2F09%2F%E7%94%9F%E6%88%90%E5%9B%BA%E5%AE%9A%E9%95%BF%E5%BA%A6%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。 字符串方法：padStart()和 padEnd()ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求： 12''.padStart(256, 'a');''.padEnd(256, 'a'); 官方文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart 数组方法： join()1new Array(256).fill('a').join(''); 字符串方法：repeat()1'a'.repeat(256);]]></content>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -343,19 +343,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[智能合约入门]]></title>
-    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
-      <tags>
-        <tag>币圈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[快速排序最坏的情况啥时候出现]]></title>
     <url>%2Fblog%2F2021%2F06%2F28%2F%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E6%9C%80%E5%9D%8F%E7%9A%84%E6%83%85%E5%86%B5%E5%95%A5%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[在面试富途的时候面试官问了这样一个问题：快速排序最坏的情况啥时候出现？当时没有答上来。实际上这个问题比较容易想清楚，思路如下，从快速排序的形式入手：$O(N*logN)$，N 代表单次排序的时间花销，logN 代表递归次数。我们知道最坏情况是$O(N^2)$，也就是说$logN$退化成了$N$。那么什么情况会退化成$logN$，当然是问题规模缩减得慢的时候，这与我们选中枢有直接的关系。假如我们选的中枢，每次都是最小或者最大，那么问题的缩小速度就会变成线性的了；而假如我们选的中枢，每次恰好是中间那个数，那么问题递归次数就是$log_2^N$了。 由于我们一般都是选第一个或者最后一个元素做中枢，那么最坏的情况对应就是：已经有序（这包括正序，逆序，以及全部元素相等） 由于快速排序的这个特征，所以我们一般的算法库中是结合了好几种排序算法：C++一道深坑面试题：STL 里 sort 算法用的是什么排序算法？ 同时我也在思考为啥快排这种最坏是$O(N^2)$的算法会被使用，而不直接使用最坏是$O(NlogN)$的算法，比如归并排序，堆排序。答案自然是这些排序也有各自的缺点，而且我估计是无法容忍的缺点。比如归并排序，它不是一个原地排序算法，需要额外的存储空间。堆排序，需要构建堆花费额外的时间。堆构建完毕后，借用堆这种结构，每次只能从堆顶取出最大或最小的数，而且取完还要进行堆维护，花费$logN$的时间。构建堆的过程和堆排序的过程类似，只不过构建堆是添加叶节点+上浮堆化的过程，而堆排序是取根节点+下沉堆化的过程，同样的构建堆也要花费$O(NlogN)$的时间。所以堆排序会花费双倍的时间。]]></content>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[智能合约入门]]></title>
+    <url>%2Fblog%2F2021%2F06%2F28%2F%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[前言从 2017 年开始买比特币的时候，我就想学习智能合约相关的开发，也曾想过要投身区块链行业，这一拖就是 4 年。我认真开始学起智能合约，最主要的原因其实是因为我离它更近了。这一轮牛市，DEFI 火爆，让我学会了使用钱包和公链。而在去年，我还是个只会在 OTC 入金的傻子，库币的 OTC 定价那么不合理都只会用 OTC 入金，后来我才发现原来 USDT 可以随意在链上转，而且波场免手续费，由此打开了新世界的大门。 资料 Solidity 语言 Solidity 文档 Remix Remix 的使用 Remix 使用教程 发币 人生中第一段智能合约代码 12345678pragma solidity ^0.4.0;contract addressTest&#123; function getBalance(address addr) public view returns (uint)&#123; return addr.balance; &#125;&#125;]]></content>
+      <tags>
+        <tag>币圈</tag>
       </tags>
   </entry>
   <entry>
@@ -415,19 +415,19 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[hexo把英文引号渲染成中文引号的问题]]></title>
-    <url>%2Fblog%2F2019%2F04%2F15%2Fhexo%E6%8A%8A%E8%8B%B1%E6%96%87%E5%BC%95%E5%8F%B7%E6%B8%B2%E6%9F%93%E6%88%90%E4%B8%AD%E6%96%87%E5%BC%95%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。 首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。 打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。 然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。 那么问题就确定了：hexo 把英文引号渲染成了中文引号。 谷歌搜了一下：hexo 渲染 单引号 中文单引号，得到几条不错的结果： 求助：单引号显示异常 #1981 6.4.0 版本之后的两个问题 #462 对于我所使用的kramed，只需要在_config.yml中配置： 12kramed: smartypants: false 问题的原因是 markdown 渲染器把英文引号渲染成了中文引号，但这其实是可以配置的，所以解决起来比较简单。 在解决这个问题的过程中，如果你想顺利的解决问题，你需要的知识点有： 字符集的知识 Chrome 开发工具使用经验 前端开发知识 好的搜索习惯 一定的英语水平 查阅文档的意识和习惯 如果你已经具备了以上前提，那么就能比较轻松愉快的解决这个问题了。]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[C++ map的remove函数实现]]></title>
     <url>%2Fblog%2F2019%2F04%2F15%2FC%2B%2B%E7%9A%84map%E7%9A%84remove%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[今天同学群里面讨论了这样一段代码，说是产品出了 bug，现场急着修复。 12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; // mapPeople[3] = "hexu3"; // mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); for (; iter != mapPeople.end(); iter++) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; mapPeople.erase(iter++); std::cout &lt;&lt; (iter != mapPeople.end()) &lt;&lt; std::endl; &#125; &#125; //for (; iter != mapPeople.end();) //&#123; // if (iter-&gt;first == 2) // &#123; // std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; // mapPeople.erase(iter++); // if (iter == mapPeople.end()) // break; // &#125; // iter++; //&#125;// getchar(); return 0;&#125; 说是第一个 for 循环会崩溃，第二个 for 循环可以通过。经过分析，主要问题其实是出在对迭代器和 erase 的不熟悉上，导致错误的使用，这个程序的错误很明显，就是在 erase 这条分支中，iter++了两次。那么如何写一个正确的 remove 函数呢？代码如下： 123456789101112131415161718192021222324252627#include &lt;iostream&gt;#include &lt;map&gt;#include &lt;string&gt;int main()&#123; std::cout &lt;&lt; "hello world" &lt;&lt; std::endl; std::map&lt;int, std::string&gt; mapPeople; mapPeople[1] = "hexu1"; mapPeople[2] = "hexu2"; mapPeople[3] = "hexu3"; mapPeople[4] = "hexu4"; std::map&lt;int, std::string&gt;::iterator iter = mapPeople.begin(); while (iter != mapPeople.end()) &#123; if (iter-&gt;first == 2) &#123; std::cout &lt;&lt; "id : " &lt;&lt; iter-&gt;first &lt;&lt; ", name : " &lt;&lt; iter-&gt;second &lt;&lt; std::endl; iter = mapPeople.erase(iter); continue; &#125; iter++; &#125; return 0;&#125; 另外，碰到删除的时候，要小心，可以这么写：iter = mapPeople.erase(iter);，也可以这么写：mapPeople.erase(iter++);（必须在删除前给迭代器++，否则迭代器会失效，这个问题那位程序员倒是考虑到了）。 最后我想说的一点是，根据指定 key 删除 map 中的元素，这个功能在其他语言中都有库函数可以调用，而 C++却没有，还要自己动手写，而且需要对 map 的原理有一定的了解。这就从侧面反映了 C++可能并不是一个高效的生产工具。]]></content>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo把英文引号渲染成中文引号的问题]]></title>
+    <url>%2Fblog%2F2019%2F04%2F15%2Fhexo%E6%8A%8A%E8%8B%B1%E6%96%87%E5%BC%95%E5%8F%B7%E6%B8%B2%E6%9F%93%E6%88%90%E4%B8%AD%E6%96%87%E5%BC%95%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[其实这个问题我早就发现了，但一直没太在意，今天写博客的时候又看到这个难看的引号，终于忍不住想看看到底出了什么问题。 首先我试了中文的单引号和英文的单引号，发现渲染效果都一样，然后想看看当我分别打中文单引号和英文单引号的时候，hexo 的渲染结果到底是不是一样。 打开 chrome 开发工具，发现页面上的英文单引号统一被渲染成了中文的单引号。 然后我手动修改页面看了下英文单引号是什么样子，发现样式确实很不一样。 那么问题就确定了：hexo 把英文引号渲染成了中文引号。 谷歌搜了一下：hexo 渲染 单引号 中文单引号，得到几条不错的结果： 求助：单引号显示异常 #1981 6.4.0 版本之后的两个问题 #462 对于我所使用的kramed，只需要在_config.yml中配置： 12kramed: smartypants: false 问题的原因是 markdown 渲染器把英文引号渲染成了中文引号，但这其实是可以配置的，所以解决起来比较简单。 在解决这个问题的过程中，如果你想顺利的解决问题，你需要的知识点有： 字符集的知识 Chrome 开发工具使用经验 前端开发知识 好的搜索习惯 一定的英语水平 查阅文档的意识和习惯 如果你已经具备了以上前提，那么就能比较轻松愉快的解决这个问题了。]]></content>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
