@@ -25,7 +25,7 @@ tags: [信息差]
 https://wwp.lanzouq.com/b02fq9w8d
 密码：lxmusic
 
-也可以点这里直接下载：[flower-v1.js](../assets/flower-v1.js)
+也可以点这里直接下载：[flower-v1.js](../../../../assets/flower-v1.js)
 
 至于怎么导入音源到洛雪音乐 app，可以自己上网查。
 
