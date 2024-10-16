@@ -396,7 +396,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/08/浏览器storage事件/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/08/二分查找/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -415,7 +415,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/06/08/浏览器storage事件/" itemprop="url">浏览器 storage 事件</a></h2>
+                <a class="post-title-link" href="/blog/2022/06/08/二分查找/" itemprop="url">二分查找</a></h2>
         
 
         <div class="post-meta">
@@ -443,8 +443,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-10-10T03:15:54+00:00">
-                2024-10-10
+              <time title="更新于" itemprop="dateModified" datetime="2024-10-16T06:34:51+00:00">
+                2024-10-16
               </time>
             
           </span>
@@ -471,7 +471,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  287
+                  797
                 </span>
               
 
@@ -497,16 +497,24 @@
 
       
         
-          <p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event</a></p>
-<p>在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：</p>
+          <p>什么是二分查找：二分查找每次只查询 mid（数组最中间的数），如果没找到目标，就缩小区间，根据 mid 和目标数对比，只搜左半区间或右半区间。</p>
+<p>二分查找的前提：<strong>数据有序</strong></p>
+<p>二分查找结束的条件：查找区间为空，或者找到元素</p>
+<p>二分查找的条件分支：</p>
 <ol>
-<li>在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效</li>
-<li>必须写入与旧值不同的值，才能监听到</li>
+<li><code>nums[mid]==target</code></li>
+<li><code>nums[mid]&lt;target</code></li>
+<li><code>nums[mid]&gt;target</code></li>
 </ol>
-<p>我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。</p>
+<p>二分查找的搜索区间表示形式：</p>
+<ol>
+<li>左闭右开（区间为空的条件是 left==right）</li>
+<li>左闭右闭（区间为空的条件是 left&gt;right）</li>
+</ol>
+<p>二分查找有的时候我会写出死循环来，仔细思考了一下：<strong>必须每次收缩边界的时候，都排除掉 mid，完全避免 mid 被重复查的可能</strong>。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/06/08/浏览器storage事件/#more" rel="contents">
+            <a class="btn" href="/blog/2022/06/08/二分查找/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -604,8 +612,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-10-10T03:15:54+00:00">
-                2024-10-10
+              <time title="更新于" itemprop="dateModified" datetime="2024-10-16T06:34:51+00:00">
+                2024-10-16
               </time>
             
           </span>
@@ -767,8 +775,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-10-10T03:15:54+00:00">
-                2024-10-10
+              <time title="更新于" itemprop="dateModified" datetime="2024-10-16T06:34:51+00:00">
+                2024-10-16
               </time>
             
           </span>
@@ -924,8 +932,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-10-10T03:15:54+00:00">
-                2024-10-10
+              <time title="更新于" itemprop="dateModified" datetime="2024-10-16T06:34:51+00:00">
+                2024-10-16
               </time>
             
           </span>
@@ -1081,8 +1089,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-10-10T03:15:54+00:00">
-                2024-10-10
+              <time title="更新于" itemprop="dateModified" datetime="2024-10-16T06:34:51+00:00">
+                2024-10-16
               </time>
             
           </span>
