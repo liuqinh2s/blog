@@ -9,7 +9,7 @@ date: 2018-11-03 14:59:45
 
 什么情况下不会进 try finally 的 finally 部分？
 
-今天遇到一个异步卡在 pending 的情况，导致不会进 finally。
+今天遇到一个异步卡在 pending 的情况，导致不会进 finally。具体情况是，一个异步的弹框，没有写 onClose，要在 onClose 里面 resolve(false)
 
 # 2024-10-16
 
