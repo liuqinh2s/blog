@@ -81,23 +81,23 @@
 
 
 
-<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-10-21什么情况下不会进 try finally 的 finally 部分？ 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。 2024-10-16最近遇到一个： 123te">
+<meta name="description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-10-21什么情况下不会进 try finally 的 finally 部分？ 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。具体情况是，一个异步的弹框，没有写 onClos">
 <meta name="keywords" content="Coding Writing Thinking">
 <meta property="og:type" content="website">
 <meta property="og:title" content="编程笔记">
 <meta property="og:url" content="https://liuqinh2s.github.io/programming-note/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-10-21什么情况下不会进 try finally 的 finally 部分？ 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。 2024-10-16最近遇到一个： 123te">
+<meta property="og:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-10-21什么情况下不会进 try finally 的 finally 部分？ 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。具体情况是，一个异步的弹框，没有写 onClos">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/正则表达式的坑1.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/正则表达式的坑2.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2024-10-21T03:01:55.396Z">
+<meta property="og:updated_time" content="2024-10-21T03:03:25.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程笔记">
-<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-10-21什么情况下不会进 try finally 的 finally 部分？ 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。 2024-10-16最近遇到一个： 123te">
+<meta name="twitter:description" content="这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2024-10-21什么情况下不会进 try finally 的 finally 部分？ 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。具体情况是，一个异步的弹框，没有写 onClos">
 <meta name="twitter:image" content="https://liuqinh2s.github.io/images/2023/正则表达式的坑1.png">
 
 
@@ -409,7 +409,7 @@
         
           <p>这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。</p>
 <h1 id="2024-10-21"><a href="#2024-10-21" class="headerlink" title="2024-10-21"></a>2024-10-21</h1><p>什么情况下不会进 try finally 的 finally 部分？</p>
-<p>今天遇到一个异步卡在 pending 的情况，导致不会进 finally。</p>
+<p>今天遇到一个异步卡在 pending 的情况，导致不会进 finally。具体情况是，一个异步的弹框，没有写 onClose，要在 onClose 里面 resolve(false)</p>
 <h1 id="2024-10-16"><a href="#2024-10-16" class="headerlink" title="2024-10-16"></a>2024-10-16</h1><p>最近遇到一个：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br></pre></td></tr></table></figure>
 <p>失效的问题。最终查明原因是：<code>display: flex;</code>引起的</p>
