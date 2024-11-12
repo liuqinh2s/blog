@@ -103,16 +103,16 @@ menu:
   about: /about/ || user
   tags: /tags/ || tags
   archives: /archives/ || archive
-  编程笔记: /programming-note/ || pencil
-  前端面试: /interview/ || bank
-  力扣: /leetcode/ || code
-  计算机科学: /computer-science/ || book
-  游戏开发: /game-programming/ || gamepad
-  英语: /english/ || language
-  导航: /navigation/ || compass
-  收藏: /mark/ || star
-  阅读: /reading/ || list
-  思考: /thinking/ || coffee
+  # 编程笔记: /programming-note/ || pencil
+  # 前端面试: /interview/ || bank
+  # 力扣: /leetcode/ || code
+  # 计算机科学: /computer-science/ || book
+  # 游戏开发: /game-programming/ || gamepad
+  # 英语: /english/ || language
+  # 导航: /navigation/ || compass
+  # 收藏: /mark/ || star
+  # 阅读: /reading/ || list
+  # 思考: /thinking/ || coffee
 
 # Enable/Disable menu icons.
 menu_icons:
