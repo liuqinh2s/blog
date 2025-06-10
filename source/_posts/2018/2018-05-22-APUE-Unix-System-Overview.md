@@ -1,6 +1,6 @@
 ---
 title: 《APUE-3rd》 读书笔记 -- Unix System Overview
-categories: [操作系统]
+tags: [操作系统]
 ---
 
 ## Preperation Before Class

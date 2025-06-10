@@ -103,6 +103,8 @@ menu:
   about: /about/ || user
   tags: /tags/ || tags
   archives: /archives/ || archive
+  # 收藏: /mark/ || star
+  # 思考: /thinking/ || coffee
   # 编程笔记: /programming-note/ || pencil
   # 前端面试: /interview/ || bank
   # 力扣: /leetcode/ || code
@@ -110,9 +112,7 @@ menu:
   # 游戏开发: /game-programming/ || gamepad
   # 英语: /english/ || language
   # 导航: /navigation/ || compass
-  # 收藏: /mark/ || star
   # 阅读: /reading/ || list
-  # 思考: /thinking/ || coffee
 
 # Enable/Disable menu icons.
 menu_icons:
@@ -162,7 +162,7 @@ links_layout: block
 links:
   liam: https://lianera.github.io
   jiyanggg: https://jiyanggg.github.io/
-  曾小乱 – 在描绘他的生活倒影: https://zengxiaoluan.dbgfdy.com/
+  曾小乱 – 在描绘他的生活倒影: https://zengyuxin.com/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
