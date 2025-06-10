@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="我的消费观2025 年已经过去一半了，今年并非没有写博客，而是搬到了 wolai 笔记软件上了，可能因为充了 wolai 笔记的年度会员。但感觉明年不会再续费了，倒不是说 wolai 笔记不好，而是因为我穷，或者觉得可以省下这笔钱。曾经也花钱买过域名，但最终没有坚持续费，因为可能也不是刚需。而今刚需只剩下这几样：  翻墙。https://portal.shadowsocks.nz/login $4">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-06-10T06:04:51.345Z">
+<meta property="og:updated_time" content="2025-06-10T06:47:37.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的消费观">
 <meta name="twitter:description" content="我的消费观2025 年已经过去一半了，今年并非没有写博客，而是搬到了 wolai 笔记软件上了，可能因为充了 wolai 笔记的年度会员。但感觉明年不会再续费了，倒不是说 wolai 笔记不好，而是因为我穷，或者觉得可以省下这笔钱。曾经也花钱买过域名，但最终没有坚持续费，因为可能也不是刚需。而今刚需只剩下这几样：  翻墙。https://portal.shadowsocks.nz/login $4">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-10T06:04:51+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-10T06:47:37+00:00">
                 2025-06-10
               </time>
             
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  920
+                  1,082
                 </span>
               
 
@@ -412,6 +412,13 @@
 <h1 id="当下社会之怪状-原子化的个人"><a href="#当下社会之怪状-原子化的个人" class="headerlink" title="当下社会之怪状 - 原子化的个人"></a>当下社会之怪状 - 原子化的个人</h1><p>昨天中午吃饭的时候，跟曾海霞闲聊，说起现代社会的个体原子化问题，就是说，很多在外打工的年轻人，父母不在身边，也没有房产，也没有朋友，也不结婚，结了婚可能也没有孩子，有孩子也可能留守。即便有了房产，也可能会换工作，而且再换工作也不一定是房子所在的城市。人只跟公司有关，但跟公司的关系也是薄弱的，随时可能会被裁员，人就像漂浮着的浮萍，没有根，没有依靠。关系只有一种，就是同事关系，换一个城市就不再联系。</p>
 <p>结合我本人的这么多年经历，其实这种孤独感确实是有。我在杭州，长沙，深圳三个城市上过班。其实上大学后，跟爸妈一年都见不了几次，大学还好有寒暑假可以见。</p>
 <p>不过从丁元英的强势文化思维和毛泽东的主观能动性的角度来看，实际上强者可能并不会觉得不适应这种原子化。但大量的弱势文化群体面对个体原子化，可能会比较难受。大家可能都需要新的方式去团结在一起，相互有个依靠。</p>
+<h1 id="今日-leetcode"><a href="#今日-leetcode" class="headerlink" title="今日 leetcode"></a>今日 leetcode</h1><p><a href="https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/?envType=daily-question&amp;envId=2025-06-10" target="_blank" rel="noopener">3442. Maximum Difference Between Even and Odd Frequency I</a></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxDifference</span>(<span class="params">s: <span class="built_in">string</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> minEven = <span class="literal">Infinity</span>;</span><br><span class="line">    <span class="keyword">let</span> maxOdd = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;s.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[s[i]] !== <span class="literal">undefined</span>)&#123;</span><br><span class="line">            map[s[i]]++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            map[s[i]]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> k of <span class="built_in">Object</span>.keys(map||&#123;&#125;))&#123;</span><br><span class="line">        <span class="keyword">if</span>(map[k]%<span class="number">2</span> === <span class="number">0</span>)&#123;</span><br><span class="line">            minEven = <span class="built_in">Math</span>.min(map[k], minEven)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            maxOdd = <span class="built_in">Math</span>.max(map[k], maxOdd)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// console.log('maxOdd: ', maxOdd, 'minEven: ', minEven)</span></span><br><span class="line">    <span class="keyword">return</span> maxOdd - minEven;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这题一开始我有两个误解：</p>
+<ol>
+<li>以为偶数也要取最大的</li>
+<li>算最值的时候放到遍历字符串的循环里面去了，导致计算偶数的时候也把最大奇数更新了</li>
+</ol>
 
       
     </div>
@@ -625,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我的消费观"><span class="nav-number">1.</span> <span class="nav-text">我的消费观</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#当下社会之怪状-原子化的个人"><span class="nav-number">2.</span> <span class="nav-text">当下社会之怪状 - 原子化的个人</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我的消费观"><span class="nav-number">1.</span> <span class="nav-text">我的消费观</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#当下社会之怪状-原子化的个人"><span class="nav-number">2.</span> <span class="nav-text">当下社会之怪状 - 原子化的个人</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今日-leetcode"><span class="nav-number">3.</span> <span class="nav-text">今日 leetcode</span></a></li></ol></div>
             
 
           </div>
@@ -659,7 +666,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">139.8k</span>
+    <span title="Site words total count">140.0k</span>
   
 </div>
 
