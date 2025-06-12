@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="4 年前，我第一次尝试用代码自动交易，当时没有想过回测，直接上的实盘交易程序，没有赚到钱，最后放弃了。而现在我重新开始写起了量化交易代码。目前在攻坚短线交易策略。 原先我觉得市场行情分为两种：  趋势开多开空会赚（趋势较为明显的一段时期，如 2024 年 11 月份的币圈） 趋势开多开空会亏（趋势不明显的一段时间，如 2024 年 12 月份到 2025 年 6 月初），震荡行情  但是以上是长线">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-06-12T02:54:08.027Z">
+<meta property="og:updated_time" content="2025-06-12T03:23:06.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的量化交易之路">
 <meta name="twitter:description" content="4 年前，我第一次尝试用代码自动交易，当时没有想过回测，直接上的实盘交易程序，没有赚到钱，最后放弃了。而现在我重新开始写起了量化交易代码。目前在攻坚短线交易策略。 原先我觉得市场行情分为两种：  趋势开多开空会赚（趋势较为明显的一段时期，如 2024 年 11 月份的币圈） 趋势开多开空会亏（趋势不明显的一段时间，如 2024 年 12 月份到 2025 年 6 月初），震荡行情  但是以上是长线">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-12T02:54:08+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-12T03:23:06+00:00">
                 2025-06-12
               </time>
             
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  502
+                  1,040
                 </span>
               
 
@@ -410,6 +410,24 @@
 <p>我的趋势短线策略回测今年的 4，5 月份，两个月能赚 1 倍，还不错。但是在 1 到 3 月份回测效果很差几乎归零</p>
 <p>于是我加入局部性原理，每 4 天一个策略周期，如果是亏的，就用相同的策略，但是倒转开仓方向。因为在我看来不是开多就是开空，如果亏钱，那就是方向没对。</p>
 <p>用了这个办法后，效果确实不错，1 到 5 月总的是赚 1 倍多，最高能赚 2 倍多，但最大回撤很不好，而这个指标太过重要，这个指标不好的话根本实盘中会面临非常大的压力。于是继续思考，我猜测，会不会存在这样一种行情，开多开空都不对，都会亏。答案是有可能会，因为只考虑开仓还不够，还要考虑平仓。假如市场震荡剧烈，反复无常，在 RSI 还没达到止盈点的时候，就掉转方向爆仓了呢。于是我继续给局部性原理添加固定幅度止盈，效果又提升了一大截，1 到 3 月赚了 4 倍多，但只是 1 到 3 月赚，4 月和 5 月亏得很惨。说明还是不够完美</p>
+<h1 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h1><p>计算机领域最重要的定理之一，就是局部性原理，分为时间局部性和空间局部性。时间局部性原理简单来说就是最近最常访问的数据（包括指令），在接下来的时间里被访问的概率更大。空间局部性原理指的则是，被访问过的数据，其存储空间附近的数据更容易被访问。局部性原理催生了计算机缓存架构的产生，是整个计算机架构的理论的基石。</p>
+<p>那么金融市场是否存在同样的现象呢，答案是存在。</p>
+<p>其实有这么一个哲学命题，说是一艘船，每隔一段时间换一块甲板，最终换的面目全非，那么从什么时候开始它不再是它？同样的人的身体和心灵也在不断的变化之中，旧的细胞不断死亡，新的细胞不断产生，你还是以前的你吗，如果不是，那么从什么时候开始不是的呢？</p>
+<p>万物都在渐变之中，局部性原理是普适的。</p>
+<h2 id="局部性-状态机"><a href="#局部性-状态机" class="headerlink" title="局部性+状态机"></a>局部性+状态机</h2><p>我给目前的量化策略制定了一个框架，总共 5 个回调函数：</p>
+<ol>
+<li>canOpenLong()，能否开多</li>
+<li>canOpenShort()，能否开空</li>
+<li>canCloseLong()，能否平多</li>
+<li>canCloseShort()，能否平空</li>
+<li>selectSymbol()，假如有多个币可以开多，多个币可以开空，如何进行选择</li>
+</ol>
+<p>而我的局部性原理催生出一个状态机，包含三个状态，两种转换：</p>
+<p>假如 4 天内是亏的，且四天内没有反转过（避免过度反转，过度反转不符合局部性），就反转开仓（原先是开多，现在就开空），如果反转后还是亏的，就开始计数，4 天内达到 6 次，就开始固定幅度止盈。</p>
+<blockquote>
+<p>我用以上这套策略回测，3 个月赚 4 倍多，但之后两个月把赚的又亏光了</p>
+</blockquote>
+<p>现在我打算把状态机的转换顺序换成先转为固定幅度止盈，再转为反向开仓</p>
 
       
     </div>
@@ -505,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -605,6 +632,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#局部性原理"><span class="nav-number">1.</span> <span class="nav-text">局部性原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部性-状态机"><span class="nav-number">1.1.</span> <span class="nav-text">局部性+状态机</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -632,7 +675,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">141.2k</span>
+    <span title="Site words total count">141.8k</span>
   
 </div>
 
