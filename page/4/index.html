@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/11/20/模拟实现JavaScript的new操作符/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/11/21/模拟实现JavaScript的apply和call方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -315,7 +315,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2023/11/20/模拟实现JavaScript的new操作符/" itemprop="url">模拟实现JavaScript的new操作符</a></h2>
+                <a class="post-title-link" href="/blog/2023/11/21/模拟实现JavaScript的apply和call方法/" itemprop="url">模拟实现JavaScript的apply和call方法</a></h2>
         
 
         <div class="post-meta">
@@ -327,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-11-20T00:00:00+00:00">
-                2023-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-11-21T00:00:00+00:00">
+                2023-11-21
               </time>
             
 
@@ -343,7 +343,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T01:51:02+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T14:31:26+00:00">
                 2025-06-16
               </time>
             
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  573
+                  810
                 </span>
               
 
@@ -397,15 +397,20 @@
 
       
         
-          <p>JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。</p>
-<p>如果自己写了返回，那么分两种情况：</p>
+          <p>apply 和 call 的相同点是：</p>
 <ol>
-<li>返回的是对象或者方法，就返回我们自己写的返回内容</li>
-<li>否则返回默认对象 this</li>
+<li>都由一个函数调用</li>
+<li>第一个参数都是原函数的执行环境 this</li>
 </ol>
+<p>不同点是：</p>
+<p>apply 的第二个参数接收原函数的所有参数，而 call 从第二个参数开始跟原函数一样是打散的</p>
+<p>代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F(arg1, arg2, ...)&#123;&#125;</span><br><span class="line">F.apply(thisArg, [arg1, arg2, ...]);</span><br><span class="line">F.call(thisArg, arg1, arg2, ...);</span><br></pre></td></tr></table></figure>
+<p>需要特别注意的是，如果是在非严格模式下，thisArg 如果为 null 或 undefined，就会被替换成全局对象（在浏览器中是 window）；如果为原始值，就会被替换成原始值的的自动包装对象。</p>
+<p>严格模式下，thisArg 传什么就是什么。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/11/20/模拟实现JavaScript的new操作符/#more" rel="contents">
+            <a class="btn" href="/blog/2023/11/21/模拟实现JavaScript的apply和call方法/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -503,7 +508,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T01:51:02+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T14:31:26+00:00">
                 2025-06-16
               </time>
             
@@ -619,6 +624,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/11/20/模拟实现JavaScript的new操作符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2023/11/20/模拟实现JavaScript的new操作符/" itemprop="url">模拟实现JavaScript的new操作符</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-11-20T00:00:00+00:00">
+                2023-11-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T14:31:26+00:00">
+                2025-06-16
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  573
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。</p>
+<p>如果自己写了返回，那么分两种情况：</p>
+<ol>
+<li>返回的是对象或者方法，就返回我们自己写的返回内容</li>
+<li>否则返回默认对象 this</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2023/11/20/模拟实现JavaScript的new操作符/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/11/06/策划一款游戏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -666,7 +831,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T01:51:02+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T14:31:26+00:00">
                 2025-06-16
               </time>
             
@@ -831,7 +996,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T01:51:02+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T14:31:26+00:00">
                 2025-06-16
               </time>
             
@@ -929,161 +1094,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/10/30/一种速算/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2023/10/30/一种速算/" itemprop="url">一种速算</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-10-30T00:00:00+00:00">
-                2023-10-30
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-16T01:51:02+00:00">
-                2025-06-16
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  186
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>以 5 结尾的数的平方，都有一个很好记的速算方式，就是前面的数乘以比它大一的数然后再拼接上 25，比如 $25\times 25$，就是 $2\times 3$ 等于 6，再拼接上 25，等于 625。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/10/30/一种速算/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1136,7 +1146,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1149,7 +1159,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
