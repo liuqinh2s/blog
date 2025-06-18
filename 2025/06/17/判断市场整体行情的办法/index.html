@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="目前我用的判断市场整体行情的办法是这样的，非常的粗鄙：计算 4 天内账户的盈亏，如果是亏的且 4 天内没有反转过开仓，就反转开仓。 这个方案在 2025 年 1 月到 5 月还可以，能有 6 倍多收益，但是最大回撤也达到了 60%。 在更久远的时间里则不行，从 2020 年到 2024 年会归零。 我在想有没有更好的办法判断市场整体行情。获取统计分析近一天的开多开空列表，分析其走势可以得出答案。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-06-18T08:08:13.948Z">
+<meta property="og:updated_time" content="2025-06-18T09:49:19.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断市场整体行情的办法">
 <meta name="twitter:description" content="目前我用的判断市场整体行情的办法是这样的，非常的粗鄙：计算 4 天内账户的盈亏，如果是亏的且 4 天内没有反转过开仓，就反转开仓。 这个方案在 2025 年 1 月到 5 月还可以，能有 6 倍多收益，但是最大回撤也达到了 60%。 在更久远的时间里则不行，从 2020 年到 2024 年会归零。 我在想有没有更好的办法判断市场整体行情。获取统计分析近一天的开多开空列表，分析其走势可以得出答案。">
@@ -341,7 +341,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-18T08:08:13+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-18T09:49:19+00:00">
                 2025-06-18
               </time>
             
@@ -374,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  217
+                  498
                 </span>
               
 
@@ -405,6 +405,12 @@
 <p>我在想有没有更好的办法判断市场整体行情。获取统计分析近一天的开多开空列表，分析其走势可以得出答案。</p>
 <a id="more"></a>
 <p>可以发明一个新的指标，当前五分钟能做多的币减去上个五分钟能做多的币的数量；如果这个量大于 0，且在是上升态势，就是市场整体行情就是多头。</p>
+<h1 id="激活-windows"><a href="#激活-windows" class="headerlink" title="激活 windows"></a>激活 windows</h1><p>公司外网上的 Windows 一直没有激活，今天突然想激活它，在网上找了一圈，终于找到一个能用的方法：<a href="https://zhuanlan.zhihu.com/p/498458662" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/498458662</a></p>
+<p>总结就是，第一步：以管理员身份打开 powershell，第二步：依次输入以下命令：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">slmgr -ipk M7XTQ-FN8P6-TTKYV-<span class="number">9</span>D4CC-J462D</span><br><span class="line"></span><br><span class="line">slmgr -skms kms.<span class="number">03</span>k.org</span><br><span class="line"></span><br><span class="line">slmgr -ato</span><br><span class="line"></span><br><span class="line">slmgr -dlv</span><br></pre></td></tr></table></figure>
+<h1 id="挂了代理打不开-Windows10-应用商店"><a href="#挂了代理打不开-Windows10-应用商店" class="headerlink" title="挂了代理打不开 Windows10 应用商店"></a>挂了代理打不开 Windows10 应用商店</h1><p>clash 设置里面有个 UWP 应用回环设置，开了这个就好了。Windows 8 开始就屏蔽了 app 把网络请求发给 localhost，然后 clash 则是通过以调试为借口绕开这个限制。但是即便开了这个，也还是下载不了 kali linux。</p>
+<p>然后我记得我以前解决过这个问题，就去自己博客里面搜，一下就找到了非常好的解决方案。真的要勤于记录已经解决过的问题。<a href="https://liuqinh2s.github.io/blog/2024/11/13/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%B1%87%E6%80%BB/">编程笔记汇总</a>，在这篇博客里面搜：<code>商店挂代理访问不了</code></p>
+<h1 id="虚拟机里面似乎安装不了-wsl"><a href="#虚拟机里面似乎安装不了-wsl" class="headerlink" title="虚拟机里面似乎安装不了 wsl"></a>虚拟机里面似乎安装不了 wsl</h1><p>试了<code>wsl 1</code>和<code>wsl 2</code>都不行</p>
 
       
     </div>
@@ -500,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -600,6 +615,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#激活-windows"><span class="nav-number">1.</span> <span class="nav-text">激活 windows</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挂了代理打不开-Windows10-应用商店"><span class="nav-number">2.</span> <span class="nav-text">挂了代理打不开 Windows10 应用商店</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟机里面似乎安装不了-wsl"><span class="nav-number">3.</span> <span class="nav-text">虚拟机里面似乎安装不了 wsl</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -627,7 +658,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">142.4k</span>
+    <span title="Site words total count">142.7k</span>
   
 </div>
 
