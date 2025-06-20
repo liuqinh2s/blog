@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/2024/11/13/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/2024/11/13/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2025-06-18T09:49:19.442Z">
+<meta property="og:updated_time" content="2025-06-20T07:04:15.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程笔记">
 <meta name="twitter:description" content="这是我以前所有的编程笔记的汇总。以前是分类优于日期，就是我开了很多个栏目，编程是其中的一个栏目，然后编程里面按日期记录笔记。但现在是日期优先，在每天的日志中记录所有发生的事情，不管类别。用标签和搜索管理这些笔记。 为什么我打算这么做，因为即便我按分类来记录了信息，可以看到编程笔记中仍然是不是会夹杂这与编程无关的内容，这一点其实是避免不了的。世间的事物哪有单一维度的划分机制。唯一真实存在的是如大江大">
@@ -347,8 +347,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-18T09:49:19+00:00">
-                2025-06-18
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-20T07:04:15+00:00">
+                2025-06-20
               </time>
             
           </span>
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  34,608
+                  34,720
                 </span>
               
 
@@ -1352,7 +1352,7 @@
 <li>git rebase</li>
 <li>merge request<br>的方式进行开发。</li>
 </ol>
-<p>之前一直都没用过 git rebase（不了解不敢用），今天抽空看了这篇文章：<a href="https://morningspace.github.io/tech/git-merge-stories-6/，对git" target="_blank" rel="noopener">https://morningspace.github.io/tech/git-merge-stories-6/，对git</a> rebase 算是基本理解了。</p>
+<p>之前一直都没用过 git rebase（不了解不敢用），今天抽空看了这篇文章：<a href="https://morningspace.github.io/tech/git-merge-stories-6/" target="_blank" rel="noopener">https://morningspace.github.io/tech/git-merge-stories-6/</a> ，对 git rebase 算是基本理解了。</p>
 <h1 id="2022-09-06"><a href="#2022-09-06" class="headerlink" title="2022-09-06"></a>2022-09-06</h1><p>看零度解说的时候，他讲到一个语音转文字的网站，我突然想起来微信好像自带了一个这个功能，于是试了一下，真的很方便，在输入语音的时候说完话往右上滑动就能以文字的形式发送出去了。而且微信好像还有自带的翻译，可以翻译英文，韩文什么的。微信都这么方便了，那就没有必要用其他的网站工具了。</p>
 <h2 id="关于-git-工作习惯"><a href="#关于-git-工作习惯" class="headerlink" title="关于 git 工作习惯"></a>关于 git 工作习惯</h2><p>最好的习惯是开自己的分支，合并用 merge request。</p>
 <p>如果硬要在 dev 分支开发的话，一定要贯彻远端优先原则，每次准备提交自己的代码了都做如下操作：</p>
@@ -1396,14 +1396,17 @@
 <p>那怎么获取对象的 key 呢？代码如下：<code>keyof typeof</code></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  <span class="string">'a'</span>: <span class="string">'a'</span>,</span><br><span class="line">  <span class="string">'b'</span>: <span class="string">'b'</span></span><br><span class="line">  <span class="string">'c'</span>: &#123;</span><br><span class="line">    <span class="string">'d'</span>: <span class="string">'d'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="keyword">as</span> <span class="keyword">const</span>;</span><br><span class="line"><span class="keyword">let</span> b: keyof <span class="keyword">typeof</span> obj = <span class="string">'d'</span>;</span><br></pre></td></tr></table></figure>
 <p>而且这个是不用 as const 也可以的</p>
-<h2 id="限定一个对象的-key-与另一个对象的-key-完全匹配"><a href="#限定一个对象的-key-与另一个对象的-key-完全匹配" class="headerlink" title="限定一个对象的 key 与另一个对象的 key 完全匹配"></a>限定一个对象的 key 与另一个对象的 key 完全匹配</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> DOCTYPE &#123;</span><br><span class="line">  DEVICE = <span class="number">1</span>,</span><br><span class="line">  SYMBOL = <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a: Record&lt;DOCTYPE, <span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">  [DOCTYPE.DEVICE]: <span class="string">"aaaa"</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>这样写会报错，应该少了一个 key。这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。</p>
+<h2 id="限定一个对象的-key-与另一个对象的-key-完全匹配"><a href="#限定一个对象的-key-与另一个对象的-key-完全匹配" class="headerlink" title="限定一个对象的 key 与另一个对象的 key 完全匹配"></a>限定一个对象的 key 与另一个对象的 key 完全匹配</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> DOCTYPE &#123;</span><br><span class="line">  DEVICE = <span class="number">1</span>,</span><br><span class="line">  SYMBOL = <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> a: Record&lt;DOCTYPE, <span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">  [DOCTYPE.DEVICE]: <span class="string">"aaaa"</span>,</span><br><span class="line">&#125;; <span class="comment">// 这样写会报错，少了一个 key。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> b: Record&lt;DOCTYPE, <span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">  [DOCTYPE.DEVICE]: <span class="string">"aaaa"</span>,</span><br><span class="line">  [DOCTYPE.SYMBOL]: <span class="string">"aaaa"</span>,</span><br><span class="line">&#125;; <span class="comment">// 这样才对</span></span><br></pre></td></tr></table></figure>
+<p>这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。</p>
 <h2 id="如果不想限定完全一致，要怎么写"><a href="#如果不想限定完全一致，要怎么写" class="headerlink" title="如果不想限定完全一致，要怎么写"></a>如果不想限定完全一致，要怎么写</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">enum</span> DOCTYPE &#123;</span><br><span class="line">  DEVICE = <span class="number">1</span>,</span><br><span class="line">  SYMBOL = <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> aa = &#123;</span><br><span class="line">  [key <span class="keyword">in</span> keyof <span class="keyword">typeof</span> DOCTYPE]?: <span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> a: aa = &#123;</span><br><span class="line">  [DOCTYPE.DEVICE]: <span class="string">"aaaa"</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>只需要在 key 后面加个问号，就跟其他的任意 key 一样处理（今天被这么一个简单的问题难住了，说明不会举一反三）</p>
-<h2 id="怎么获取-enum-的-key-和-value-类型"><a href="#怎么获取-enum-的-key-和-value-类型" class="headerlink" title="怎么获取 enum 的 key 和 value 类型"></a>怎么获取 enum 的 key 和 value 类型</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="keyword">enum</span> Direction &#123;</span><br><span class="line">  a = <span class="string">"vertical"</span>,</span><br><span class="line">  b = <span class="string">"horizontal"</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> k = keyof <span class="keyword">typeof</span> Direction;</span><br><span class="line"><span class="keyword">type</span> v = <span class="string">`<span class="subst">$&#123;Direction&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="怎么获取-enum-的-key-和-value-类型"><a href="#怎么获取-enum-的-key-和-value-类型" class="headerlink" title="怎么获取 enum 的 key 和 value 类型"></a>怎么获取 enum 的 key 和 value 类型</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="keyword">enum</span> Direction &#123;</span><br><span class="line">  a = <span class="string">"vertical"</span>,</span><br><span class="line">  b = <span class="string">"horizontal"</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> k = keyof <span class="keyword">typeof</span> Direction;</span><br><span class="line"><span class="keyword">type</span> v = <span class="string">`<span class="subst">$&#123;Direction&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">type</span> v1 = Item&lt;<span class="keyword">typeof</span> Direction&gt;; <span class="comment">// 这样不行，Item只能获取对象，数组，Map，Set的值类型</span></span><br></pre></td></tr></table></figure>
 <h1 id="2022-08-23"><a href="#2022-08-23" class="headerlink" title="2022-08-23"></a>2022-08-23</h1><p>没什么用，但用起来很爽的快捷键，Vscode 清除没有用到的 import 语句：</p>
 <p>Mac:<br>option+shift+O</p>
 <p>windows:<br>Alt+shift+O</p>
+<blockquote>
+<p>这样做非常危险，清理完没有用到的 import 后，可能打破某种循环引用的奇妙平衡，从而导致项目根本跑不起来。所以清理完引用后，一定要记得跑一下项目，看是否能跑起来，再提交代码。</p>
+</blockquote>
 <h2 id="高内聚，低耦合"><a href="#高内聚，低耦合" class="headerlink" title="高内聚，低耦合"></a>高内聚，低耦合</h2><ul>
 <li>高内聚是减少了代码量，增加复用，避免改了这里还要改那里</li>
 <li>低耦合是增加了代码量，减少复用，避免改了这里却动到了那里</li>
@@ -1473,7 +1476,7 @@
 <p>怎么控制光标位置：让输入框的 selectionStart 等于 selectionEnd</p>
 </blockquote>
 <h1 id="2022-06-23"><a href="#2022-06-23" class="headerlink" title="2022-06-23"></a>2022-06-23</h1><h2 id="异或交换"><a href="#异或交换" class="headerlink" title="异或交换"></a>异或交换</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swapTwoNumber</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  a ^= b;</span><br><span class="line">  b ^= a;</span><br><span class="line">  a ^= b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>异或交换在交换同一个数（内存地址相同，而非仅仅数值相同）的时候，会把这个数变成 0，比如 swap(x,x)，由于执行第一步<code>a ^= b;</code>的时候，已经让 x 变成了 0，所以后面再执行剩下两步的时候也变不回来了。</p>
+<p>异或交换在交换同一个数（内存地址相同，而非仅仅数值相同）的时候，会把这个数变成 0，由于执行第一步<code>a ^= b;</code>的时候，已经让 x 变成了 0，所以后面再执行剩下两步的时候也变不回来了。</p>
 <h1 id="2022-06-17"><a href="#2022-06-17" class="headerlink" title="2022-06-17"></a>2022-06-17</h1><h2 id="弹框等待用户交互"><a href="#弹框等待用户交互" class="headerlink" title="弹框等待用户交互"></a>弹框等待用户交互</h2><p>如何实现：在一个弹框的回调（用户点击是或者否）之后才执行接下来的逻辑？</p>
 <p>答案是：<strong>用 Promise 就可以阻断代码流程</strong>，弹框之后的逻辑必须等待弹框的回调函数中的 resolve 或 reject 被执行，才能接着执行，而回调函数则必须等待用户的点击，这样就实现了一个等待用户交互的逻辑。</p>
 <h2 id="TS-表达一个对象类型"><a href="#TS-表达一个对象类型" class="headerlink" title="TS 表达一个对象类型"></a>TS 表达一个对象类型</h2><p>TS 我一直用的比较少，之前还想一个对象 key 和 value 都是 string，用 ts 怎么表示：<code>let v: {[key:string]:string}</code></p>
@@ -1842,7 +1845,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">142.7k</span>
+    <span title="Site words total count">142.8k</span>
   
 </div>
 
