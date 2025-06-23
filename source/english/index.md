@@ -22,6 +22,19 @@ date: 2019-03-03 16:01:26
 
 # 2025-06-23
 
+给大家展示一下，用 AI 学英语有多爽：[用腾讯元宝学 ESL Podcast](https://yuanbao.tencent.com/bot/app/share/chat/FlEPxnBcowza)
+
+- toilet 有马桶的意思，不仅仅是厕所。
+- swish 漱口，swish it around。
+- floss 牙线，flossing 用牙线剔牙
+- lather up 打出泡沫
+- rinse 冲洗
+- shave close enough 刮胡子不够干净，注意这里用的是 close 不是 clear
+- disposable blades 一次性刀片
+- I’m on to breakfast 我该准备去吃早餐了，注意是 on to breakfast 不是 go to
+
+# 2025-06-22
+
 给大家推荐一个非常好的英语学习资源：ESL Podcast，全称是 English as a second language Podcast，在全网都很有名
 
 [Daily English 2 - Getting Up](https://tv.eslpod.com/p/blog-daily-english-1)
