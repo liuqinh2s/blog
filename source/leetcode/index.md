@@ -4,6 +4,39 @@ title: leetcode合集
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2025-06-23
+
+[3442. Maximum Difference Between Even and Odd Frequency I](https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/?envType=daily-question&envId=2025-06-10)
+
+```Typescript
+function maxDifference(s: string): number {
+    const map = {};
+    let minEven = Infinity;
+    let maxOdd = 0;
+    for(let i=0;i<s.length;i++){
+        if(map[s[i]] !== undefined){
+            map[s[i]]++;
+        } else {
+            map[s[i]]=1;
+        }
+    }
+    for(let k of Object.keys(map||{})){
+        if(map[k]%2 === 0){
+            minEven = Math.min(map[k], minEven)
+        } else {
+            maxOdd = Math.max(map[k], maxOdd)
+        }
+    }
+    // console.log('maxOdd: ', maxOdd, 'minEven: ', minEven)
+    return maxOdd - minEven;
+};
+```
+
+这题一开始我有两个误解：
+
+1. 以为偶数也要取最大的
+2. 算最值的时候放到遍历字符串的循环里面去了，导致计算偶数的时候也把最大奇数更新了
+
 # 2024-02-18
 
 [589. N 叉树的前序遍历](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/description/?envType=daily-question&envId=2024-02-18)
