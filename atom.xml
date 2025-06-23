@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/"/>
-  <updated>2025-06-23T09:06:31.523Z</updated>
+  <updated>2025-06-23T09:23:33.362Z</updated>
   <id>https://liuqinh2s.github.io/</id>
   
   <author>
@@ -17,108 +17,15 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>我的信息源</title>
-    <link href="https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BF%A1%E6%81%AF%E6%BA%90/"/>
-    <id>https://liuqinh2s.github.io/2025/06/23/我的信息源/</id>
+    <title>我的互联网生活</title>
+    <link href="https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB/"/>
+    <id>https://liuqinh2s.github.io/2025/06/23/我的互联网生活/</id>
     <published>2025-06-23T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.523Z</updated>
+    <updated>2025-06-23T09:23:33.362Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;经常打开手机漫无目的的刷着算法推荐的东西，有的时候觉得太过无聊粗俗。还是得认真审视一下自己的信息源。另外就是博客，尤其是个人博客的流量实在太低了，约等于
-        
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="https://liuqinh2s.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>判断市场整体行情的办法</title>
-    <link href="https://liuqinh2s.github.io/2025/06/17/%E5%88%A4%E6%96%AD%E5%B8%82%E5%9C%BA%E6%95%B4%E4%BD%93%E8%A1%8C%E6%83%85%E7%9A%84%E5%8A%9E%E6%B3%95/"/>
-    <id>https://liuqinh2s.github.io/2025/06/17/判断市场整体行情的办法/</id>
-    <published>2025-06-17T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.523Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;目前我用的判断市场整体行情的办法是这样的，非常的粗鄙：计算 4 天内账户的盈亏，如果是亏的且 4 天内没有反转过开仓，就反转开仓。&lt;/p&gt;
-&lt;p&gt;这个方案在 2025 年 1 月到 5 月还可以，能有 6 倍多收益，但是最大回撤也达到了 60%。&lt;/p&gt;
-&lt;p&gt;在更久远的时间里则不行，从 2020 年到 2024 年会归零。&lt;/p&gt;
-&lt;p&gt;我在想有没有更好的办法判断市场整体行情。获取统计分析近一天的开多开空列表，分析其走势可以得出答案。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="https://liuqinh2s.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>接下来要做的事</title>
-    <link href="https://liuqinh2s.github.io/2025/06/16/%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B/"/>
-    <id>https://liuqinh2s.github.io/2025/06/16/接下来要做的事/</id>
-    <published>2025-06-16T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.523Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;由于跟老婆异地，我几乎每两周就会坐高铁来回一趟深圳和株洲，高铁上信号真的很差，只能听听洛雪音乐或者飞鸟听书。洛雪音乐是会自动缓存听过的音乐的，而飞鸟听书则应该会缓存将要播放的书籍。&lt;/p&gt;
-&lt;p&gt;上周回家我突发奇想，老是听旧的歌已经听腻了，能不能给洛雪音乐加个类似豆瓣 FM 的功能，我当年很喜欢打开豆瓣 FM 随机播放音乐，很多好听的歌都是这样发现的。所以我决定给洛雪音乐贡献代码，增加这个新功能，应该有很多人会想用。&lt;/p&gt;
-&lt;p&gt;然后今天打开洛雪音乐的 github 项目，发现之前遇到的另一个问题其实有比较好的解决方案，只是因为我懒得去搞。就是像网易云音乐这种音乐 APP，它是有云端同步功能的，可以让手机，电脑多端同步。洛雪音乐其实也可以，之前我用电脑同步了手机上的音乐，但每次都要手动同步有点麻烦。其实自己有服务器的话，是可以数据同步服务放到服务器的：&lt;a href=&quot;https://github.com/lyswhut/lx-music-sync-server#readme&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/lyswhut/lx-music-sync-server#readme&lt;/a&gt; 。这个也必须搞起来&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="https://liuqinh2s.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的量化交易之路</title>
-    <link href="https://liuqinh2s.github.io/2025/06/12/%E6%88%91%E7%9A%84%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%E4%B9%8B%E8%B7%AF/"/>
-    <id>https://liuqinh2s.github.io/2025/06/12/我的量化交易之路/</id>
-    <published>2025-06-12T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.523Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;4 年前，我第一次尝试用代码自动交易，当时没有想过回测，直接上的实盘交易程序，没有赚到钱，最后放弃了。而现在我重新开始写起了量化交易代码。目前在攻坚短线交易策略。&lt;/p&gt;
-&lt;p&gt;原先我觉得市场行情分为两种：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;趋势开多开空会赚（趋势较为明显的一段时期，如 2024 年 11 月份的币圈）&lt;/li&gt;
-&lt;li&gt;趋势开多开空会亏（趋势不明显的一段时间，如 2024 年 12 月份到 2025 年 6 月初），震荡行情&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;但是以上是长线策略才会面临的两种行情，短线策略更为复杂。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="https://liuqinh2s.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的消费观</title>
-    <link href="https://liuqinh2s.github.io/2025/06/10/%E6%88%91%E7%9A%84%E6%B6%88%E8%B4%B9%E8%A7%82/"/>
-    <id>https://liuqinh2s.github.io/2025/06/10/我的消费观/</id>
-    <published>2025-06-10T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.522Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;我的消费观&quot;&gt;&lt;a href=&quot;#我的消费观&quot; class=&quot;headerlink&quot; title=&quot;我的消费观&quot;&gt;&lt;/a&gt;我的消费观&lt;/h1&gt;&lt;p&gt;2025 年已经过去一半了，今年并非没有写博客，而是搬到了 wolai 笔记软件上了，可能因为充了 wolai 笔记的年度会员。但感觉明年不会再续费了，倒不是说 wolai 笔记不好，而是因为我穷，或者觉得可以省下这笔钱。曾经也花钱买过域名，但最终没有坚持续费，因为可能也不是刚需。而今刚需只剩下这几样：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;翻墙。&lt;a href=&quot;https://portal.shadowsocks.nz/login&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://portal.shadowsocks.nz/login&lt;/a&gt; $49.95 USD 三年，搭配 clash 客户端使用&lt;/li&gt;
-&lt;li&gt;服务器。&lt;a href=&quot;https://www.racknerd.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.racknerd.com/&lt;/a&gt; $43.46 USD 两年，在跑我自研的量化交易相关的程序。还有一个萤光云的新加坡服务器，专门跑币安的量化交易相关的程序，可恶的币安 API 不支持美国 IP，导致我多花了 500 多块钱，明年应该不会续费了。&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;p&gt;经常打开手机漫无目的的刷着算法推荐的东西，有的时候觉得太过无聊粗俗。还是得认真审视一下自己的信息源。另外就是博客，尤其是个人博客的流量实在太低了，约等于 0，我打算还是把每天写的东西同步到流量大的平台。&lt;/p&gt;
     
     </summary>
     
@@ -132,7 +39,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/23/%E6%89%A7%E5%8C%BB%E8%AF%81/"/>
     <id>https://liuqinh2s.github.io/2024/11/23/执医证/</id>
     <published>2024-11-23T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.522Z</updated>
+    <updated>2025-06-23T09:23:33.362Z</updated>
     
     <summary type="html">
     
@@ -158,7 +65,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/20/%E4%BB%A5%E5%89%8D%E6%94%B6%E8%97%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%93%BE%E6%8E%A5/"/>
     <id>https://liuqinh2s.github.io/2024/11/20/以前收藏的一些链接/</id>
     <published>2024-11-20T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.522Z</updated>
+    <updated>2025-06-23T09:23:33.362Z</updated>
     
     <summary type="html">
     
@@ -182,7 +89,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/13/%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0%E6%B1%87%E6%80%BB/"/>
     <id>https://liuqinh2s.github.io/2024/11/13/编程笔记汇总/</id>
     <published>2024-11-13T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.522Z</updated>
+    <updated>2025-06-23T09:23:33.362Z</updated>
     
     <summary type="html">
     
@@ -201,7 +108,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/12/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
     <id>https://liuqinh2s.github.io/2024/11/12/重新整理博客/</id>
     <published>2024-11-12T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -223,7 +130,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/26/%E6%88%91%E5%AF%B9%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%9C%8B%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2024/08/26/我对读书的看法/</id>
     <published>2024-08-26T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -252,7 +159,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/14/%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2024/08/14/投资总结/</id>
     <published>2024-08-14T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -275,7 +182,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/13/free-resource/"/>
     <id>https://liuqinh2s.github.io/2024/08/13/free-resource/</id>
     <published>2024-08-13T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -293,7 +200,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E4%BD%9C%E5%93%81%E7%89%88%E6%9D%83%E8%AF%81%E5%88%B8%E5%8C%96/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/作品版权证券化/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -312,7 +219,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/星露谷物语/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -333,7 +240,7 @@
     <link href="https://liuqinh2s.github.io/2023/12/05/JavaScript%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/"/>
     <id>https://liuqinh2s.github.io/2023/12/05/JavaScript如何实现节流和防抖函数/</id>
     <published>2023-12-05T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -353,7 +260,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/23/JavaScript%E7%9A%84var,let,const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://liuqinh2s.github.io/2023/11/23/JavaScript的var,let,const的区别/</id>
     <published>2023-11-23T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.361Z</updated>
     
     <summary type="html">
     
@@ -373,7 +280,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/22/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84bind%E6%96%B9%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2023/11/22/模拟实现JavaScript的bind方法/</id>
     <published>2023-11-22T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.360Z</updated>
     
     <summary type="html">
     
@@ -391,7 +298,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/21/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84apply%E5%92%8Ccall%E6%96%B9%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2023/11/21/模拟实现JavaScript的apply和call方法/</id>
     <published>2023-11-21T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.360Z</updated>
     
     <summary type="html">
     
@@ -419,7 +326,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/20/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84new%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>https://liuqinh2s.github.io/2023/11/20/模拟实现JavaScript的new操作符/</id>
     <published>2023-11-20T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.360Z</updated>
     
     <summary type="html">
     
@@ -442,7 +349,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/20/JavaScript%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%A7%E6%89%BF%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D/"/>
     <id>https://liuqinh2s.github.io/2023/11/20/JavaScript对象的继承有哪几种/</id>
     <published>2023-11-20T00:00:00.000Z</published>
-    <updated>2025-06-23T09:06:31.521Z</updated>
+    <updated>2025-06-23T09:23:33.360Z</updated>
     
     <summary type="html">
     
@@ -460,6 +367,92 @@
     
     
       <category term="javascript" scheme="https://liuqinh2s.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>策划一款游戏</title>
+    <link href="https://liuqinh2s.github.io/2023/11/06/%E7%AD%96%E5%88%92%E4%B8%80%E6%AC%BE%E6%B8%B8%E6%88%8F/"/>
+    <id>https://liuqinh2s.github.io/2023/11/06/策划一款游戏/</id>
+    <published>2023-11-06T00:00:00.000Z</published>
+    <updated>2025-06-23T09:23:33.360Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近玩了
+        
+      
+    
+    </summary>
+    
+    
+      <category term="游戏策划" scheme="https://liuqinh2s.github.io/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E5%88%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实现一个高效的deepClone</title>
+    <link href="https://liuqinh2s.github.io/2023/11/01/%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84deepClone/"/>
+    <id>https://liuqinh2s.github.io/2023/11/01/实现JavaScript的deepClone/</id>
+    <published>2023-11-01T00:00:00.000Z</published>
+    <updated>2025-06-23T09:23:33.360Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;先来实现一个最简版的-deepClone&quot;&gt;&lt;a href=&quot;#先来实现一个最简版的-deepClone&quot; class=&quot;headerlink&quot; title=&quot;先来实现一个最简版的 deepClone&quot;&gt;&lt;/a&gt;先来实现一个最简版的 deepClone&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;deepClone&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    obj == &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt; ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;boolean&quot;&lt;/span&gt; ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; obj;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.isArray(obj)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; temp = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; obj.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      temp[i] = deepClone(obj[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; temp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;object&quot;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; temp = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; k &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.keys(obj)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      temp[k] = deepClone(obj[k]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; temp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;迭代版本的-deepClone&quot;&gt;&lt;a href=&quot;#迭代版本的-deepClone&quot; class=&quot;headerlink&quot; title=&quot;迭代版本的 deepClone&quot;&gt;&lt;/a&gt;迭代版本的 deepClone&lt;/h2&gt;&lt;p&gt;最近 EDA 项目在解决一些性能上的问题，首当其冲的就是 deepClone，各种地方都在用，且十分卡性能。如何解决这个问题呢？&lt;/p&gt;
+&lt;p&gt;由于我们项目中的 deepClone 是一个递归版本的 deepClone，所以应该可以通过把它改成迭代版的 deepClone 来提速。&lt;/p&gt;
+&lt;p&gt;用栈来实现迭代。函数调用栈本身也是栈，但开销肯定比自己写的栈要大一些。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="js" scheme="https://liuqinh2s.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一种速算</title>
+    <link href="https://liuqinh2s.github.io/2023/10/30/%E4%B8%80%E7%A7%8D%E9%80%9F%E7%AE%97/"/>
+    <id>https://liuqinh2s.github.io/2023/10/30/一种速算/</id>
+    <published>2023-10-30T00:00:00.000Z</published>
+    <updated>2025-06-23T09:23:33.360Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以 5 结尾的数的平方，都有一个很好记的速算方式，就是前面的数乘以比它大一的数然后再拼接上 25，比如 $25\times 25$，就是 $2\times 3$ 等于 6，再拼接上 25，等于 625。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="https://liuqinh2s.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重庆旅游攻略</title>
+    <link href="https://liuqinh2s.github.io/2023/10/12/%E9%87%8D%E5%BA%86%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/"/>
+    <id>https://liuqinh2s.github.io/2023/10/12/重庆旅游攻略/</id>
+    <published>2023-10-12T00:00:00.000Z</published>
+    <updated>2025-06-23T09:23:33.360Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;景点推荐游玩时间：&lt;/p&gt;
+&lt;p&gt;3 月-5 月以及 9 月~11 月（天气凉爽宜人）&lt;/p&gt;
+&lt;p&gt;推荐路线及景点：&lt;/p&gt;
+&lt;p&gt;Day1：解放碑—长江索道-洪崖洞&lt;/p&gt;
+&lt;p&gt;Day2：磁器口—马房湾 66 号江湖菜-四川美术学院—南滨路&lt;/p&gt;
+&lt;p&gt;Day3：李子坝—鹅岭二厂—南山一棵树&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="攻略" scheme="https://liuqinh2s.github.io/tags/%E6%94%BB%E7%95%A5/"/>
     
   </entry>
   
