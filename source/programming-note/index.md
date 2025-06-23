@@ -1,9 +1,62 @@
 ---
 title: 编程笔记
-date: 2018-11-03 14:59:45
+tags: [编程]
 ---
 
+这是我以前所有的编程笔记的汇总。以前是分类优于日期，就是我开了很多个栏目，编程是其中的一个栏目，然后编程里面按日期记录笔记。但现在是日期优先，在每天的日志中记录所有发生的事情，不管类别。用标签和搜索管理这些笔记。
+
+为什么我打算这么做，因为即便我按分类来记录了信息，可以看到编程笔记中仍然是不是会夹杂这与编程无关的内容，这一点其实是避免不了的。世间的事物哪有单一维度的划分机制。唯一真实存在的是如大江大河般滚滚而逝的时间。笔记只是让这些时间能有个纪念。
+
+<!-- more -->
+
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
+
+# 2025-01-03
+
+修改 location.search，但不刷新可以做到吗？
+
+1： `history.pushState`方法（HTML5），此方法可以产生一个历史记录，可以后退
+
+```javascript
+// 假设当前URL是https://example.com/page.html
+let newSearchParams = "?param1=value1";
+let newUrl = location.origin + location.pathname + newSearchParams;
+history.pushState(null, "", newUrl);
+console.log(location.search); // 输出:?param1=value1
+```
+
+2： `history.replaceState`方法（HTML5），此方法不产生历史记录
+
+```javascript
+let url = new URL(location.href);
+url.search = "?newParam=newValue";
+history.replaceState(null, "", url);
+console.log(location.search); // 输出:?newParam=newValue
+```
+
+# 2024-12-27
+
+vscode 上移下移一行代码快捷键：`alt+上下方向键`
+
+# 2024-12-26
+
+前端样式: resize: both
+
+这个 resize 决定了 dom 元素是否可以拖拽大小。
+
+官方文档: [resize - CSS: Cascading Style Sheets - MDN Web Docs - Mozilla](https://developer.mozilla.org/zh-CN/docs/Web/CSS/resize)
+
+# 2024-12-13
+
+js 的 attribute 和 property 的区别：
+
+对于一个 input 元素，input.setAttribute('value', '111');是不能成功的，因为 input 没有 value 这个 attribute，只有 input.value 这个 property。
+
+结论是，系统自带的一些特殊属性 attribute 和 property 是可以同步的，比如 input.title='111'和 input.setAttribute('title', '111')。自定义的属性就要小心修改了，因为不能同步，比如你 input.setAttribute('aaa', '111')，用 input.aaa 是获取不到的，input.bbb = '222'，用 input.getAttribute('bbb')也是获取不到的。还有就是要记忆一下哪些属性是可以同步的，比如上面的 value 就是个坑。
+
+# 2024-12-10
+
+clientWidth 获取的是整数，有一定误差，缩放的时候尤为明显，可能会导致一些布局排版的 bug，所以最好是用 getBoundingClientRect().width，它可以返回浮点数，就可以用来解决以上 bug
 
 # 2024-10-21
 
@@ -39,8 +92,6 @@ backgroundImage: `url(${content + "?" + Date.now()})`;
 
 原子摄影术这一小节讲到：
 不要以为给原子拍照是件容易的事，因为在给这么小的物体照相时，**如果所用的照明光线的波长比被拍摄物体的尺寸大，照片就会模糊得一塌糊涂**。你总不能用刷墙的排笔来画工笔画吧！和微小的显微组织打过交道的生物学家都很明白这种困难，因为**细菌的大小（约 0.000 1 厘米）和可见光的波长相仿。如果要使细菌呈现出清晰的像，就得用紫外线给细菌摄影，才能获得较好的结果**。但是分子的尺寸及其在晶格中的间隔是如此之小（0.000 000 01 厘米），无论是可见光还是紫外线都无法充当画具。如果想要看到单个原子，非用波长比可见光短几千倍的射线——X 光——不可。但这么一来，又会遇到一个似乎无法克服的困难：**X 光可以穿透物体而不发生折射**，因此，无论是放大镜还是显微镜，都不会使 X 光聚焦。这种性质再加上 X 光的强大穿透力，在医学上当然是很有用的，**因为 X 光如果在穿透人体时发生折射，就会把 X 光底片弄成一片模糊。但就是这个性质，似乎又排除了得到任何一张放大的 X 光照片的可能性！**
-
-> 有一点不理解，X 光如果在穿透人体时发生折射，就会把 X 光底片弄成一片模糊，那拍摄细菌的时候也会折射，怎么就不会糊掉呢
 
 # 2024-09-11
 
@@ -91,7 +142,7 @@ display: -webkit-box; //特别显示模式
 
 # 2024-09-02
 
-亿万富翁指的是身价在一亿美元以上的富豪。而不是身价在一万亿美元以上的富豪。万元户，百万富翁，千万富翁这些都是写实。亿万富翁是个虚数。理应叫上亿富翁。
+亿万富翁指的是身价在一亿美元以上的富豪。而不是身价在一万亿美元以上的富豪。万元户，百万富翁，千万富翁这些都是写实。亿万富翁是个虚数。理应叫亿富翁。
 
 # 2024-08-30
 
@@ -117,7 +168,7 @@ Git: 'pro-api/' does not have a commit checked out
 
 [How to fix: error: '<filename>' does not have a commit checked out fatal: adding files failed when inputting "git add ." in command prompt](https://stackoverflow.com/questions/56873278/how-to-fix-error-filename-does-not-have-a-commit-checked-out-fatal-adding)
 
-合并的时候，最好用 rebase，但该处问题的地方还是会出问题。比如我从`2.2.C`分支基础上新建一个`liuqin/updateCBB/2.2.C`分支，然后开发到一半，领导基于`2.2.C`分支开出了`2.2.D`分支，然后一些同事，在`2.2.D`分支和`liuqin/updateCBB/2.2.C`分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉（我们构建发布的分支，一旦构建报错，就会通知到内网聊天账号上，所以会第一时间得到解决）。最后合并的时候（从`liuqin/updateCBB/2.2.C`分支合并到`2.2.D`分支），一堆报错。
+合并的时候，最好用 rebase，但该出问题的地方还是会出问题。比如我从`2.2.C`分支基础上新建一个`liuqin/updateCBB/2.2.C`分支，然后开发到一半，领导基于`2.2.C`分支开出了`2.2.D`分支，然后一些同事，在`2.2.D`分支和`liuqin/updateCBB/2.2.C`分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉（我们构建发布的分支，一旦构建报错，就会通知到内网聊天账号上，所以会第一时间得到解决）。最后合并的时候（从`liuqin/updateCBB/2.2.C`分支合并到`2.2.D`分支），一堆报错。
 
 ## 历史的变迁
 
@@ -204,7 +255,7 @@ Git: 'pro-api/' does not have a commit checked out
 
 ## chrome 离线下载
 
-工欲善其事必先利其器，最近公司项目开发上，chrome 浏览器（127.0.6533.100）的 devtool 经常性卡死，真的把我的耐心磨没了，真的是越做越烂了。打算装回旧版本的 chrome。那么如何安装旧版本的 chrome 呢，找离线安装包也挺费劲的：
+工欲善其事必先利其器，最近公司项目开发上，chrome 浏览器（版本：127.0.6533.100）的 devtool 经常性卡死，真的把我的耐心磨没了，真的是越做越烂了。打算装回旧版本的 chrome。那么如何安装旧版本的 chrome 呢，找离线安装包也挺费劲的：
 
 - [Chromium 历史版本离线安装包 - 下载方法](https://github.com/vikyd/note/blob/master/chrome_offline_download.md)
 
@@ -266,7 +317,7 @@ if (xxx1) {
 
 ## substring
 
-js 如何截取子字符串，用`substring(startIndex, endIndex)`：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring。在控制台输入的时候，还有一个api：`substr(startIndex, subStrLength)`，这个 api 已经废弃了：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+js 如何截取子字符串，用`substring(startIndex, endIndex)`：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring 。在控制台输入的时候，还有一个 api：`substr(startIndex, subStrLength)`，这个 api 已经废弃了：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr
 
 大概是因为前者更符合使用者的直觉吧。
 
@@ -2705,7 +2756,7 @@ git pull origin pro-ui/dev:pro-ui/dev
 3. merge request
    的方式进行开发。
 
-之前一直都没用过 git rebase（不了解不敢用），今天抽空看了这篇文章：https://morningspace.github.io/tech/git-merge-stories-6/，对git rebase 算是基本理解了。
+之前一直都没用过 git rebase（不了解不敢用），今天抽空看了这篇文章：https://morningspace.github.io/tech/git-merge-stories-6/ ，对 git rebase 算是基本理解了。
 
 # 2022-09-06
 
@@ -2845,10 +2896,15 @@ const enum DOCTYPE {
 }
 let a: Record<DOCTYPE, string> = {
   [DOCTYPE.DEVICE]: "aaaa",
-};
+}; // 这样写会报错，少了一个 key。
+
+let b: Record<DOCTYPE, string> = {
+  [DOCTYPE.DEVICE]: "aaaa",
+  [DOCTYPE.SYMBOL]: "aaaa",
+}; // 这样才对
 ```
 
-这样写会报错，应该少了一个 key。这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
+这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
 
 ## 如果不想限定完全一致，要怎么写
 
@@ -2876,6 +2932,7 @@ export const enum Direction {
 }
 type k = keyof typeof Direction;
 type v = `${Direction}`;
+type v1 = Item<typeof Direction>; // 这样不行，Item只能获取对象，数组，Map，Set的值类型
 ```
 
 # 2022-08-23
@@ -2887,6 +2944,8 @@ option+shift+O
 
 windows:
 Alt+shift+O
+
+> 这样做非常危险，清理完没有用到的 import 后，可能打破某种循环引用的奇妙平衡，从而导致项目根本跑不起来。所以清理完引用后，一定要记得跑一下项目，看是否能跑起来，再提交代码。
 
 ## 高内聚，低耦合
 
@@ -3007,7 +3066,7 @@ function swapTwoNumber(a, b){
 }
 ```
 
-异或交换在交换同一个数（内存地址相同，而非仅仅数值相同）的时候，会把这个数变成 0，比如 swap(x,x)，由于执行第一步`a ^= b;`的时候，已经让 x 变成了 0，所以后面再执行剩下两步的时候也变不回来了。
+异或交换在交换同一个数（内存地址相同，而非仅仅数值相同）的时候，会把这个数变成 0，由于执行第一步`a ^= b;`的时候，已经让 x 变成了 0，所以后面再执行剩下两步的时候也变不回来了。
 
 # 2022-06-17
 
