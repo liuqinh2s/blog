@@ -71,6 +71,12 @@ function instanceofFunc(instance, A) {
 
 今天查了一下 2023 开发岗薪资的情况，发现自己的工资有点落后了，中位数是 36w。通过这篇文章：[开发人员薪资：2023 年有增长吗？](https://hackernoon.com/zh/2023-%E5%B9%B4%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E8%96%AA%E8%B5%84%E6%9C%89%E5%A2%9E%E9%95%BF%E5%90%97)，发现了这个网站：[HackerNoon - read, write and learn about any technology](https://hackernoon.com/)，感觉挺不错的。
 
+# 2025-06-23
+
+执医证考试科目：内科，外科，妇，儿，传染，生理，病理，统计。
+
+最难的是内科
+
 # 2023-11-14
 
 今日话题：
