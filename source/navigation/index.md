@@ -37,6 +37,7 @@ date: 2019-02-20 20:30:09
 - [翁天信](https://www.dandyweng.com/)
 - [程序员的喵](https://catcoding.me/)
 - [geekplux](https://geekplux.com/)
+- [geekplux 的书单](https://www.goodreads.com/user/show/121623405-geekplux)
 - [lcomplete 的技术分享](https://tech.codelc.com/)
 - [Shidenggui](https://shidenggui.com/)
 - [folyd](https://folyd.com/)
@@ -48,6 +49,7 @@ date: 2019-02-20 20:30:09
 - [山月行](https://shanyue.tech/)
 - [柳婼 の blog](https://www.liuchuo.net/)
 - [卢昌海个人主页](https://www.changhai.org/index.php)
+- [Wang Jie - Biofy](https://biofy.cn/wangjiegulu)
 
 ## English
 
@@ -62,10 +64,21 @@ date: 2019-02-20 20:30:09
 
 - [liqi - 利器](https://liqi.io)
 
+## 服务器购买平台
+
+- [萤光云管理控制台](https://console.ygcloud.com/login)
+
 ## 综合资源
 
 - [居居西](https://jujuxi.xyz)：这是我自己制作的资源分享网站，用于分享我喜爱的网络资源，如果有侵权的地方，可以直接联系我删除
 - [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
+
+## 新闻热点
+
+- [今日热榜](https://tophub.today/)
+- [摸摸鱼热榜](https://momoyu.cc/)
+- [知微事见](https://ef.zhiweidata.com/)
+- [果汁排行榜 - 各类榜单排名大全](http://guozhivip.com/rank/)
 
 ## 导航
 
@@ -80,6 +93,12 @@ date: 2019-02-20 20:30:09
 
 - [ChatGPT](https://chat.openai.com/)
 - [openprompt](https://openprompt.co/)
+- AI 解读一张照片内包含的信息：[They See Your Photos](https://theyseeyourphotos.com/)
+- AI 写歌：[GitHub - ASLP-lab/DiffRhythm: Di♪♪Rhythm: Blazingly Fast and Embarrassingly Simple End-to-End Full-Length Song Generation with Latent Diffusion](https://github.com/ASLP-lab/DiffRhythm)
+- 测试 AI 智力水平：[Humanity's Last Exam](https://agi.safe.ai/)
+- [Raphael - 免费无限制 AI 图像生成器 | FLUX.1-Dev 模型](https://raphael.app/zh)
+- [Hika AI - Free AI Search Engine for Deep Insights and Smart Knowledge Mapping](https://hika.fyi/)
+- [用 Slea.ai 免费 AI Logo 生成器轻松创建专业 Logo](https://slea.ai/zh-CN)
 
 ## 软件
 
@@ -116,7 +135,7 @@ date: 2019-02-20 20:30:09
   - [Calibre](https://calibre-ebook.com/)
   - [沉浸式翻译](https://immersivetranslate.com/)
 - 平台：
-  - [zlibrary](https://zlibrary-asia.se/)
+  - [zlibrary](https://zh.z-library.sk/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
   - [技术书在线阅读](https://livebook.manning.com/)
   - [图灵社区](https://www.ituring.com.cn/)
@@ -124,7 +143,9 @@ date: 2019-02-20 20:30:09
   - [鸠摩搜书](https://www.jiumodiary.com/)
   - [书伴 – 你的电子书伴侣](https://bookfere.com/)
   - [古诗文网-古诗文经典传承](https://www.gushiwen.cn/)
+  - [中国盲人数字图书馆](http://www.cdlvi.cn/user/index)
 - 具体书籍：
+  - [Software Engineering at Google](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
   - [Textbook for Electrical Engineering & Electronics](https://www.allaboutcircuits.com/textbook/)
   - [HTML with Superpowers | HTML with Superpowers](https://htmlwithsuperpowers.netlify.app/)
   - [The Illustrated Machine Learning Website](https://illustrated-machine-learning.github.io/index.html)
@@ -172,8 +193,11 @@ date: 2019-02-20 20:30:09
 - [Metaphor](https://metaphor.systems/)
 - [90's Cursor Effects](https://tholman.com/cursor-effects/)
 
-局域网传输：https://landrop.app/
-正版操作系统下载网站：https://next.itellyou.cn/
+## 软件
+
+- 局域网传输：https://landrop.app/
+- 正版操作系统下载网站：https://next.itellyou.cn/
+- [iPA 商店-最优秀的 iPA 资源下载网站](https://ipa.store/)
 
 ## 图片编辑
 
@@ -215,6 +239,7 @@ date: 2019-02-20 20:30:09
 - 编译原理：
   - [Crafting Interpreters](http://craftinginterpreters.com/)
   - [自己动手写编译器 — 自己动手写编译器](https://pandolia.net/tinyc/)
+  - [Writing Compilers](https://takashiidobe.com/gen/writing-compilers)
   - JavaScript AST：
     - [Esprima: Parser](https://esprima.org/demo/parse.html#)
     - [AST explorer](https://astexplorer.net/)
@@ -243,9 +268,14 @@ date: 2019-02-20 20:30:09
 - [I Spent 2 years Launching Tiny Projects | Tiny Projects](https://tinyprojects.dev/posts/i_spent_two_years_launching_tiny_projects)
 - [GitHub 开源项目维护协作指南](https://github.com/eryajf/HowToStartOpenSource)
 - [Building an aircraft radar system in JavaScript](https://charliegerard.dev/blog/aircraft-radar-system-rtl-sdr-web-usb/)
+- 绘图、白板、设计：
+  - [Excalidraw](https://excalidraw.com/)
+  - [paint-board](https://songlh.top/paint-board/)，[LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!](https://github.com/LHRUN/paint-board?tab=readme-ov-file)
+  - [yft-design](https://yft.design/)
 
 ### 编程工具
 
+- MongoDB Atlas 提供免费的 500M 云数据库：[MongoDB Atlas | 多云开发者数据平台 | MongoDB](https://www.mongodb.com/zh-cn/atlas)
 - Typescript 编译网站：[TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/index.html)
 - [Vue SFC Playground](https://sfc.vuejs.org/)
 - 可视化编程：[Python Tutor: Learn Python, JavaScript, C, C++, and Java by visualizing code](https://pythontutor.com/)
@@ -265,6 +295,11 @@ date: 2019-02-20 20:30:09
 - [SolidJS · Reactive Javascript Library](https://www.solidjs.com/)
 - 常用软件的黑色主题：[Dracula — Dark theme for 271+ apps](https://draculatheme.com/)
 - [Quick Reference](https://wangchujiang.com/reference/)
+- 代码转图片：
+  - [Carbon | Create and share beautiful images of your source code](https://carbon.now.sh/)
+  - [CodeImage - A tool to manage and beautify your code screenshots](https://app.codeimage.dev/)
+- 流程图：
+  - [D2 Playground](https://play.d2lang.com/)
 
 ### 编程学习
 
@@ -385,8 +420,39 @@ date: 2019-02-20 20:30:09
 - [AXS Staking Dashboard](https://stake.axieinfinity.com/)
 - [axie 市场](https://app.axieinfinity.com/marketplace/axies/)
 
+## 加密货币交易所 API 文档
+
+- [基本信息 | Binance Open Platform](https://developers.binance.com/docs/zh-CN/derivatives/usds-margined-futures/general-info)
+- [简介 | Bitget API](https://www.bitget.com/zh-CN/api-doc/common/intro)
+
+## 博客文章
+
+- 做互联网上的房东而不是租客：[Be A Property Owner And Not A Renter On The Internet · Den Delimarsky](https://den.dev/blog/be-a-property-owner-not-a-renter-on-the-internet/)
+- [如何测试电梯 – 韩师傅就是我](http://hanzilu.com/wordpress/?p=239)
+- [7 reasons to use Canva over PowerPoint for better presentation design](https://www.xda-developers.com/tips-for-canva-presentations-vs-powerpoint/)
+- [Next-level frosted glass with backdrop-filter • Josh W. Comeau](https://www.joshwcomeau.com/css/backdrop-filter/)
+- [Ideas from "A Philosophy of Software Design"](https://www.16elt.com/2024/09/25/first-book-of-byte-sized-tech/index.html)
+- [zhangchenchen/self-consistent-coder: 如何成为一名自洽的程序员](https://github.com/zhangchenchen/self-consistent-coder)
+
+## 电子杂志
+
+- [bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来](https://www.bestblogs.dev/#subscribe)
+
 ## 其他
 
+- [创业大全 - 大学生创新创业项目资源库](https://cy.urongda.com/)
+- [BeddyStories - 全球经典儿童睡前故事库（0-12 岁）](https://beddystories.com/zh)
+- 炼哥公司团队正在做的游戏：[JungoJam-Dive into a wonderland where friends create, play, and stay together](https://jungojam.nvsgames.com/)
+- PDF 转成其他文件格式：[GitHub - oomol-lab/pdf-craft: PDF craft can convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. The project has just started.](https://github.com/oomol-lab/pdf-craft)
+- 国外程序员圣诞节会玩的代码大冒险：[Advent of Code 2024](https://adventofcode.com/)
+- [Dollar Street - photos as data to kill country stereotypes](https://www.gapminder.org/dollar-street)
+- 观看全球免费 TV：[Watch Global & Local Live TV Online for Free - tv.garden](https://tv.garden/)
+- [VPS Black Friday - Cheapest VPS Flash Deals](https://vps.blackfriday/)
+- 单词书网页版：[WordsFunny](https://wordsfunny.com/BeiShiGaoZhong_4/words)
+- 挑战拼接单词：[Master Lexical Puzzles with Combinations Game - Daily Word Challenge](https://combinationsgame.online/)
+- [LinkChecker](https://link-checker.itea.dev/)
+- [Proofs without words](https://artofproblemsolving.com/wiki/index.php/Proofs_without_words)
+- 国内元宇宙项目：[BlockCity](https://www.blockcity.vip/)
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
 - macos
   - 壁纸软件：[irvue](https://leonspok.com/irvue/landing/)
