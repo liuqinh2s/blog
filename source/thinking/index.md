@@ -8,6 +8,8 @@ title: 思考
 
 周末在罗湖的洪湖、老街那边玩，在地铁里看到深圳元宇宙的广告：[BlockCity](https://www.blockcity.vip/)，查了一下是美团王兴投资的项目，而且 2025 年 6 月刚通过国家审核，是中国少数几个有资质的元宇宙项目。我觉得项目还在早期就买了三个区块，加起来大概 3300 多块钱。
 
+[AI 解读 BlockCity 项目](https://yuanbao.tencent.com/bot/app/share/chat/wQBPfh5FwXw7)
+
 # 2025-06-23
 
 ## 我的消费观
