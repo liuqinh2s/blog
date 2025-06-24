@@ -93,11 +93,11 @@ feed:
 
 marked:
   smartypants: false
-# search:
-#   path: search.xml
-#   field: post
-#   format: html
-#   limit: 10000
+search:
+  path: search.xml
+  field: all
+  format: html
+  limit: 10000
 #
 sitemap:
   path: sitemap.xml
