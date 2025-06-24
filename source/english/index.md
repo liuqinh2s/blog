@@ -19,6 +19,18 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-06-24
+
+[Daily English 4 - Eating Breakfast](https://tv.eslpod.com/p/blog-daily-english-4)
+[AI 陪读](https://yuanbao.tencent.com/chat/naQivTmsDa/f3e4b24f-5e24-46ea-a873-d73fea31af22)
+
+- cereal 麦片
+- a stack of waffles 厚华夫饼
+- skim milk 脱脂奶
+- silverware tray 狭义：银质餐具收纳盒，广义：金属餐具收纳盒
+- Thermos 保温杯
+- I would love to 我多希望
+
 # 2025-06-23
 
 给大家展示一下，用 AI 学英语有多爽：[用腾讯元宝学 ESL Podcast](https://yuanbao.tencent.com/bot/app/share/chat/FlEPxnBcowza)
