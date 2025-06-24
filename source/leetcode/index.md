@@ -4,6 +4,35 @@ title: leetcode合集
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2025-06-24
+
+[2200. Find All K-Distant Indices in an Array](https://leetcode.com/problems/find-all-k-distant-indices-in-an-array/description/?envType=daily-question&envId=2025-06-24)
+
+```Typescript
+function findKDistantIndices(nums: number[], key: number, k: number): number[] {
+    let indexes = []
+    for(let i=0;i<nums.length;i++){
+        if(nums[i] === key){
+            indexes.push(i);
+        }
+    }
+    let res= [];
+    for(let i=0;i<nums.length;i++){
+        for(let j=0;j<indexes.length;j++){
+            if(Math.abs(i-indexes[j])<=k){
+                res.push(i);
+                break;
+            }
+        }
+    }
+    return res;
+};
+```
+
+在做这题的时候，我莫名其妙认为要加`nums[i]<=nums[indexes[j]]`，看来不止 AI 有幻觉，人也有幻觉。
+
+其实只要判断多少距离内有没有目标数就可以了，只需要一个条件：`Math.abs(i-indexes[j])<=k`。根本就没有大小关系的限制
+
 # 2025-06-23
 
 [3442. Maximum Difference Between Even and Odd Frequency I](https://leetcode.com/problems/maximum-difference-between-even-and-odd-frequency-i/description/?envType=daily-question&envId=2025-06-10)
