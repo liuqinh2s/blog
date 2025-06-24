@@ -98,6 +98,8 @@ date: 2019-02-20 20:30:09
 - 测试 AI 智力水平：[Humanity's Last Exam](https://agi.safe.ai/)
 - [Raphael - 免费无限制 AI 图像生成器 | FLUX.1-Dev 模型](https://raphael.app/zh)
 - [Hika AI - Free AI Search Engine for Deep Insights and Smart Knowledge Mapping](https://hika.fyi/)
+- [MemFree - Hybrid AI Search](https://www.memfree.me/)
+- [【官网】302.AI - 汇集全球顶级品牌的 AI 超市，零月费，按需付费，全面开放](https://302.ai/)
 - [用 Slea.ai 免费 AI Logo 生成器轻松创建专业 Logo](https://slea.ai/zh-CN)
 
 ## 软件
@@ -128,6 +130,12 @@ date: 2019-02-20 20:30:09
 - [抖音网页版](https://www.douyin.com/)
 - 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
 - 剧本桥段：[TV Tropes](https://tvtropes.org/)
+
+## 音乐
+
+- [无损生活 - 全网无损音乐免费下载，音乐搜索,音乐在线试听,下载,在线解析网](https://flac.life/)
+- [自己收集的几个可用源 · Issue #1769 · lyswhut/lx-music-desktop · GitHub](https://github.com/lyswhut/lx-music-desktop/issues/1769)
+- [六音软件永久地址发布页，收藏我回家不迷路！](https://6yso.com/)
 
 ## 书籍
 
@@ -198,6 +206,22 @@ date: 2019-02-20 20:30:09
 - 局域网传输：https://landrop.app/
 - 正版操作系统下载网站：https://next.itellyou.cn/
 - [iPA 商店-最优秀的 iPA 资源下载网站](https://ipa.store/)
+- [「stardew valley」的搜索结果\_马克喵](https://www.macat.vip/)
+
+## 视频
+
+- [量子资源网](https://lzizy8.com/)
+- [艾旦影视-免费福利影院](https://www.lovedan.net/)
+
+## 网盘
+
+- [PanSearch | 网盘资源搜索 | 网盘搜索引擎](https://www.pansearch.me/)
+- [超能搜 - 百度网盘搜索神器](https://www.chaonengsou.com/)
+- [搜索盘](http://uukk6.cn/app/index.html?id=test)
+
+## 字体
+
+- [jaywcjlove/free-font: 收录商用免费汉字字体，还包括开源英文字体 Free Font](https://github.com/jaywcjlove/free-font)
 
 ## 图片编辑
 
@@ -300,6 +324,9 @@ date: 2019-02-20 20:30:09
   - [CodeImage - A tool to manage and beautify your code screenshots](https://app.codeimage.dev/)
 - 流程图：
   - [D2 Playground](https://play.d2lang.com/)
+- [Create a new site from git | Netlify](https://app.netlify.com/start)
+- [Vercel](https://vercel.com/)
+- [arnog/mathlive: A web component for easy math input](https://github.com/arnog/mathlive)
 
 ### 编程学习
 
@@ -433,19 +460,33 @@ date: 2019-02-20 20:30:09
 - [Next-level frosted glass with backdrop-filter • Josh W. Comeau](https://www.joshwcomeau.com/css/backdrop-filter/)
 - [Ideas from "A Philosophy of Software Design"](https://www.16elt.com/2024/09/25/first-book-of-byte-sized-tech/index.html)
 - [zhangchenchen/self-consistent-coder: 如何成为一名自洽的程序员](https://github.com/zhangchenchen/self-consistent-coder)
+- [关于 AI 学习方法的思考——产品经理入门人工智能 | 人人都是产品经理](https://www.woshipm.com/ai/804024.html)
+- 重磅 | 完备的 AI 学习路线，最详细的资源整理！:[ai-roadmap/ai-union-201904/README.md at master · apachecn/ai-roadmap](https://github.com/apachecn/ai-roadmap/blob/master/ai-union-201904/README.md)
+- 自然语言处理相关推荐书目:[research_tao/00_books.md at master · zibuyu/research_tao](https://github.com/zibuyu/research_tao/blob/master/00_books.md)
+- [图灵奖得主 Yann LeCun 万字演讲：今天的 AI 比猫还笨，自曝早已放弃大模型-36 氪](https://www.36kr.com/p/3001427555235970)
+- [流浪天下 – 背包行走，流浪天下](https://maie.name/)
+- [Is the 10,000-Year-Old Yonaguni Monument a Man-Made Marvel or Nature's Art?](https://www.ancientoriginsunleashed.com/p/is-the-10000-year-old-yonaguni-monument)
 
 ## 电子杂志
 
 - [bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来](https://www.bestblogs.dev/#subscribe)
 
+## 英语学习资源
+
+- [BBC Learning English - Learn English vocabulary](https://www.bbc.co.uk/learningenglish/english/vocabulary)
+- [田间小站 - 高级英语学习](https://www.tjxz.cc/)
+
 ## 其他
 
+- 数学雕塑：[Sculpture by Zachary Abel](http://zacharyabel.com/sculpture/)
+- [Google 艺术与文化](https://artsandculture.google.com/?hl=zh-cn)
 - [创业大全 - 大学生创新创业项目资源库](https://cy.urongda.com/)
 - [BeddyStories - 全球经典儿童睡前故事库（0-12 岁）](https://beddystories.com/zh)
 - 炼哥公司团队正在做的游戏：[JungoJam-Dive into a wonderland where friends create, play, and stay together](https://jungojam.nvsgames.com/)
 - PDF 转成其他文件格式：[GitHub - oomol-lab/pdf-craft: PDF craft can convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. The project has just started.](https://github.com/oomol-lab/pdf-craft)
 - 国外程序员圣诞节会玩的代码大冒险：[Advent of Code 2024](https://adventofcode.com/)
 - [Dollar Street - photos as data to kill country stereotypes](https://www.gapminder.org/dollar-street)
+- [WATCHING THE WORLD](https://webcamaze.engineering.zhaw.ch/watchingtheworld/)
 - 观看全球免费 TV：[Watch Global & Local Live TV Online for Free - tv.garden](https://tv.garden/)
 - [VPS Black Friday - Cheapest VPS Flash Deals](https://vps.blackfriday/)
 - 单词书网页版：[WordsFunny](https://wordsfunny.com/BeiShiGaoZhong_4/words)
@@ -456,7 +497,8 @@ date: 2019-02-20 20:30:09
 - 国外服务器：[搬瓦工](https://bandwagonhost.com/services)
 - macos
   - 壁纸软件：[irvue](https://leonspok.com/irvue/landing/)
-  - 翻墙工具：[ClashX pro](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)，购买服务地址：https://portal.shadowsocks.nz/login
+  - 翻墙工具：[ClashX pro](https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public)
+- 翻墙购买服务地址：https://portal.shadowsocks.nz/login
 - [gfwlist](https://github.com/gfwlist/gfwlist)：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 - 人体构造：[3dbody](https://www.3dbody.com/)
 - 房屋设计网站：[homestyler](https://www.homestyler.com/)
@@ -478,3 +520,4 @@ date: 2019-02-20 20:30:09
 - 制乐：[开始 | Learning Synths](https://learningsynths.ableton.com/zh-Hans)
 - [机械表原理](https://ciechanow.ski/mechanical-watch/)
 - [公式化剖析色彩三要素：色相、饱和度、明度](https://zhuanlan.zhihu.com/p/30409532)
+- [Gold Price History Chart | Gold Price Trends | Goldhub](https://china.gold.org/goldhub/data/gold-prices)
