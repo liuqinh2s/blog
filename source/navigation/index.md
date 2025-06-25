@@ -19,7 +19,7 @@ date: 2019-02-20 20:30:09
 - [阮一峰的博客](http://www.ruanyifeng.com/blog/)
 - [冴羽](https://github.com/mqyqingfeng)
 - [icheer.me](https://icheer.me/)
-- [matrix67](https://matrix67.itch.io/)，matrix67 的博客访问不了了，好像搬到了 itch.io。https://itch.io/，好像是个不错的游戏开发网站。这是liqi对他做的一个采访：https://liqi.io/matrix67/。https://www.sohu.com/a/68883280_372416
+- [matrix67](https://matrix67.itch.io/)，matrix67 的博客访问不了了，好像搬到了 [itch.io](https://itch.io/)，好像是个不错的游戏开发网站。这是 liqi 对他做的一个[采访](https://liqi.io/matrix67/)。https://www.sohu.com/a/68883280_372416
 - [酷壳的延续](https://coolshell.me/)，左耳朵耗子已经死了，原博客地址：https://coolshell.cn/
 - [王垠的博客](https://www.yinwang.org/)
 - [槽边往事](https://www.hecaitou.com/)，[槽边往事](https://www.hecaitou.info/)
@@ -105,6 +105,10 @@ date: 2019-02-20 20:30:09
 ## 软件
 
 - [Everything - 基于名称快速定位文件和文件夹。](https://www.voidtools.com/zh-cn/)
+- 局域网传输：[landrop](https://landrop.app/)
+- 正版操作系统下载网站：[itellyou](https://next.itellyou.cn/)
+- [iPA 商店-最优秀的 iPA 资源下载网站](https://ipa.store/)
+- [「stardew valley」的搜索结果\_马克喵](https://www.macat.vip/)
 
 ## 配色
 
@@ -200,13 +204,6 @@ date: 2019-02-20 20:30:09
 - [AutoCut: 通过字幕来剪切视频](https://github.com/mli/autocut)
 - [Metaphor](https://metaphor.systems/)
 - [90's Cursor Effects](https://tholman.com/cursor-effects/)
-
-## 软件
-
-- 局域网传输：https://landrop.app/
-- 正版操作系统下载网站：https://next.itellyou.cn/
-- [iPA 商店-最优秀的 iPA 资源下载网站](https://ipa.store/)
-- [「stardew valley」的搜索结果\_马克喵](https://www.macat.vip/)
 
 ## 视频
 
