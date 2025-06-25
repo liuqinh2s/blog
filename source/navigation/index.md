@@ -463,6 +463,7 @@ date: 2019-02-20 20:30:09
 - [图灵奖得主 Yann LeCun 万字演讲：今天的 AI 比猫还笨，自曝早已放弃大模型-36 氪](https://www.36kr.com/p/3001427555235970)
 - [流浪天下 – 背包行走，流浪天下](https://maie.name/)
 - [Is the 10,000-Year-Old Yonaguni Monument a Man-Made Marvel or Nature's Art?](https://www.ancientoriginsunleashed.com/p/is-the-10000-year-old-yonaguni-monument)
+- 这篇文章讲了一些误用布尔的例子：[Booleans Are a Trap](https://katafrakt.me/2024/11/09/booleans-are-a-trap/)
 
 ## 电子杂志
 
