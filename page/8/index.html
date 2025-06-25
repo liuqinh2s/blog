@@ -443,7 +443,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:19:46+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:40:22+00:00">
                 2025-06-25
               </time>
             
@@ -602,7 +602,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:19:46+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:40:22+00:00">
                 2025-06-25
               </time>
             
@@ -762,7 +762,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:19:46+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:40:22+00:00">
                 2025-06-25
               </time>
             
@@ -790,7 +790,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  389
+                  433
                 </span>
               
 
@@ -817,11 +817,11 @@
       
         
           <h1 id="原型链是干什么用的"><a href="#原型链是干什么用的" class="headerlink" title="原型链是干什么用的"></a>原型链是干什么用的</h1><p>JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。</p>
-<p>当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br><span class="line">Foo.prototype.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo.a);</span><br></pre></td></tr></table></figure>
+<p>当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找（通过<code>__proto__</code>一层一层往上找）。比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br><span class="line">Foo.prototype.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(foo.a); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
 <p>原型和原型链主要由三个指针实现：</p>
 <ul>
-<li><code>prototype</code>: 构造函数的<code>prototype</code>属性指向原型对象</li>
+<li><code>prototype</code>: 构造函数的<code>prototype</code>属性指向原型对象（这个原型对象一般就用<code>构造函数.prototype</code>表示）</li>
 <li><code>__proto__</code>: 实例对象的<code>__proto__</code>属性指向原型对象</li>
 <li><code>constructor</code>: 原型对象的<code>constructor</code>属性指向构造函数</li>
 <li>所有对象都基于<code>Object</code>，是因为所有原型对象的<code>__proto__</code>最终都指向<code>Object.prototype</code>，而<code>Object.prototype</code>的<code>__proto__</code>为 null</li>
@@ -926,7 +926,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:19:46+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:40:22+00:00">
                 2025-06-25
               </time>
             
@@ -1089,7 +1089,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:19:46+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-06-25T09:40:22+00:00">
                 2025-06-25
               </time>
             
