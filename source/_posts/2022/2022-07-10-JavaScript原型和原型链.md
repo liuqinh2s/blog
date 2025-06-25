@@ -46,3 +46,7 @@ console.log(a.__proto__.hasOwnProperty('constructor')); // true
 - [Javascript Object Hierarchy](http://www.mollypages.org/tutorials/js.mp)
 - [一文看懂 JS 的继承](https://www.freecodecamp.org/chinese/news/inheritance-in-js/)
 - [面试官问：能否模拟实现 JS 的 new 操作符](https://juejin.cn/post/6844903704663949325)
+
+# 实践
+
+最后不得不说一句，在我们公司的项目开发中，根本用不上以上知识，我们都是用 typescript 和类编程。但了解底层原理还是有助于解决一些疑难杂症的

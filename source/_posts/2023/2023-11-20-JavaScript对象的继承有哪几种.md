@@ -38,7 +38,7 @@ const child1 = new Child();
 const child2 = new Child();
 child1.a = 3;
 child1.array.push(4);
-console.log(child1.a, child2.array, child1.func1);
+console.log(child2.a, child2.array);
 ```
 
 缺点是：由于**子原型是父原型的一个实例**，所以父级属性在子级的原型上，而不在每个子级的实例上，所以如果属性是引用类型时会互相影响。
