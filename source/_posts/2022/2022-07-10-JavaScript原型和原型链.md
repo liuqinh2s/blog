@@ -7,18 +7,18 @@ tags: [JavaScript]
 
 JavaScript 采用了原型和原型链来实现类和继承（就是查找属性用的）。
 
-当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找。比如：
+当 JavaScript 查找一个对象上的属性的时候，在该对象上找不到就会去它的原型链上查找（通过`__proto__`一层一层往上找）。比如：
 
 ```javascript
 function Foo() {}
 var foo = new Foo();
 Foo.prototype.a = 1;
-console.log(foo.a);
+console.log(foo.a); // 1
 ```
 
 原型和原型链主要由三个指针实现：
 
-- `prototype`: 构造函数的`prototype`属性指向原型对象
+- `prototype`: 构造函数的`prototype`属性指向原型对象（这个原型对象一般就用`构造函数.prototype`表示）
 - `__proto__`: 实例对象的`__proto__`属性指向原型对象
 - `constructor`: 原型对象的`constructor`属性指向构造函数
 - 所有对象都基于`Object`，是因为所有原型对象的`__proto__`最终都指向`Object.prototype`，而`Object.prototype`的`__proto__`为 null
@@ -31,7 +31,7 @@ console.log(foo.a);
 
 ![Javascript Object Hierarchy](../../../../images/2023/prototype.jpg)
 
-- 所有对象都有`__proto__`属性，但只有函数对象才有`prototype`属性
+- 所有对象都有`__proto__`属性，但只有函数对象才有`prototype`属性，只有原型对象才有`constructor`属性（严格意义上）
 - 实例对象没有`constructor`属性，该属性继承自原型对象。分别对实例对象和原型对象使用`hasOwnProperty`验证`constructor`属性即可证明
 
 ```Javascript
