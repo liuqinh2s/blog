@@ -42,7 +42,7 @@ console.log(child2.a); // 1
 console.log(child2.array); // [1, 2, 3, 4]
 ```
 
-缺点是：由于**子原型是父原型的一个实例**，所以父级属性在子级的原型上，而不在每个子级的实例上，所以如果属性是引用类型时会互相影响。
+缺点是：由于**子原型是父原型的一个实例**，所以父类属性在子类的原型上，而不在每个子类的实例上，所以如果属性是引用类型时会互相影响。
 
 ## 借用构造函数继承
 
@@ -72,7 +72,7 @@ console.log(child2.array); // [1, 2, 3]
 console.log(child1.func1); // undefined
 ```
 
-解决了原型链继承中，属性没绑定到子实例里面的问题，但如果仅这样继承的话，父原型上的东西没有被继承
+解决了原型链继承中，属性没绑定到子实例里面的问题，但如果仅这样继承的话，父原型上的属性没有被继承
 
 ## 组合式继承
 
@@ -90,7 +90,7 @@ Parent.prototype.func1 = () => {
   console.log("func1");
 };
 function Child() {
-  // 把父级属性绑定到子实例里面，此处第二次调用父构造函数
+  // 把父类属性绑定到子实例里面，此处第二次调用父构造函数
   Parent.call(this);
   this.b = 2;
 }
@@ -105,6 +105,8 @@ console.log(child2.array); // [1, 2, 3]
 console.log(child1.func1); // func1
 ```
 
+组合式继承效果是已经达到了，既把父类的实例属性绑定到了子类实例中，又把父类静态方法绑定到了子类原型上。
+
 缺点是：
 
 1. 父构造函数执行了两次
@@ -115,26 +117,27 @@ console.log(child1.func1); // func1
 创建一个临时的构造函数，并把这个临时的构造函数的 prototype 指向父原型
 
 ```javascript
-function myObject(Parent) {
+function myObject(ParentPrototype) {
   function F() {}
-  F.prototype = Parent;
+  F.prototype = ParentPrototype;
   return new F();
 }
 ```
 
-相当于`Object.create()`，ECMAScript 5 通过增加 Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的 myObject()方法效果相同
+这样就避免了创建父类的实例，可以只使用父类的原型
+
+> 相当于`Object.create()`，ECMAScript 5 通过增加 Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的 myObject()方法效果相同
 
 ## 寄生式继承
 
 在原型式继承的基础上，做了一个封装：
 
 ```javascript
-function createAnother(Parent) {
-  const clone = myObject(Parent);
-  clone.sayHi = function () {
-    console.log("Hi");
-  };
-  return clone;
+function inheritPrototype(Child, Parent) {
+  // 拷贝了一份父级的原型，而非生成父级的实例，所以上面没有父级的实例的属性
+  const p = myObject(Parent.prototype);
+  p.constructor = Child;
+  Child.prototype = p;
 }
 ```
 
@@ -165,7 +168,7 @@ Parent.prototype.func1 = () => {
   console.log("func1");
 };
 function Child() {
-  // 把父级属性绑定到子实例里面
+  // 把父类属性绑定到子实例里面
   Parent.call(this);
   this.b = 2;
 }

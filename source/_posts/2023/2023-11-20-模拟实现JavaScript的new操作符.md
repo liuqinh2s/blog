@@ -15,7 +15,7 @@ JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，asyn
 ```javascript
 function A() {
   this.aa = "6";
-  // 7种基本数据类型，都不能作为构造函数的返回值
+  // 7种基本数据类型，都不能作为构造函数的返回值，意思就是会被当做无效语句忽略掉。返回的依旧是默认对象this，而非基本数据类型
   //   return 1; // Number
   //   return false; // Boolean
   //   return "1"; // String
@@ -56,38 +56,6 @@ function newOperator(C) {
   return obj;
 }
 ```
-
-也可以自己写`Object.create`：
-
-```javascript
-function object(obj) {
-  function F() {}
-  F.prototype = obj;
-  return new F();
-}
-
-function newOperator(C) {
-  if (typeof C !== "function") {
-    throw "newOperator function the first param must be a function";
-  }
-  // ES6 new.target 指向构造函数，可以用来标识函数是否被用做构造函数
-  newOperator.target = C;
-  const obj = object(C.prototype);
-  const args = [].slice.call(arguments, 1);
-  const res = C.apply(obj, args);
-  if ((typeof res === "object" && res !== null) || typeof res === "function") {
-    return res;
-  }
-  return obj;
-}
-
-function A() {}
-
-const a = newOperator(A);
-console.log(a);
-```
-
-但是发现，打印出来的是`F {}`，虽然点开此对象，发现构造函数已经是`A`了，但确实不如 JavaScript 自带的`Object.create`干净完美
 
 ## 参考
 
