@@ -328,7 +328,7 @@ Git: 'pro-api/' does not have a commit checked out
 
 ## font awesome
 
-本地的 node 版本不适配 hexo 版本，所以不能在本地调试博客，但需要快速确认哪些 font awesome icon 能用。一个简单的办法是查看 network，找到 font-awesome 的版本。我看了一下是 4.6.2，上网搜了一下这个版本的所有可用图标：https://fontawesomelib.com/releases/4.6.2/list/all/index.html
+本地的 node 版本不适配 hexo 版本，所以不能在本地调试博客，但需要快速确认哪些 font awesome icon 能用。一个简单的办法是查看 network，找到 font-awesome 的版本。我看了一下是 4.6.2，上网搜了一下这个版本的所有可用图标：https://fontawesome.com/v4/icons/
 
 ## 文件夹命名规范
 
