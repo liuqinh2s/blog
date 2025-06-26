@@ -11,6 +11,14 @@ tags: [编程]
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2025-06-26
+
+今天翻看《JavaScript 高级程序设计第 4 版》突然发现了这个议题：**选择 Object 还是 Map**，这个问题我以前也想到过，不过没有深究
+
+![选Object还是Map](../images/2025/选Object还是Map.png)
+
+总的来说差别不大，我个人喜欢用 Object，因为感觉写起来更简单。
+
 # 2025-06-25
 
 昨天整理 chrome 书签的时候，看到一篇文章很感兴趣：[Ideas from "A Philosophy of Software Design"](https://www.16elt.com/2024/09/25/first-book-of-byte-sized-tech/index.html)，算是一本书的读书笔记，这本书也很不错：[A Philosophy of Software Design](https://book.douban.com/subject/30218046/)。

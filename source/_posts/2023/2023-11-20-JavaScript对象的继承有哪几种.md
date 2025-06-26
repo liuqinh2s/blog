@@ -18,12 +18,12 @@ javascript 高级程序设计中有写，对象的继承总共有六种:
 
 ```javascript
 function Parent() {
-  // A的非引用属性
+  // Parent 的非引用属性
   this.a = 1;
-  // A的引用属性
+  // Parent 的引用属性
   this.array = [1, 2, 3];
 }
-// A的静态方法
+// Parent 的静态方法
 Parent.prototype.func1 = () => {
   console.log("func1");
 };
@@ -38,7 +38,8 @@ const child1 = new Child();
 const child2 = new Child();
 child1.a = 3;
 child1.array.push(4);
-console.log(child2.a, child2.array);
+console.log(child2.a); // 1
+console.log(child2.array); // [1, 2, 3, 4]
 ```
 
 缺点是：由于**子原型是父原型的一个实例**，所以父级属性在子级的原型上，而不在每个子级的实例上，所以如果属性是引用类型时会互相影响。
@@ -47,12 +48,12 @@ console.log(child2.a, child2.array);
 
 ```javascript
 function Parent() {
-  // A的非引用属性
+  // Parent 的非引用属性
   this.a = 1;
-  // A的引用属性
+  // Parent 的引用属性
   this.array = [1, 2, 3];
 }
-// A的静态方法
+// Parent 的静态方法
 Parent.prototype.func1 = () => {
   console.log("func1");
 };
@@ -66,9 +67,9 @@ Child.prototype.func2 = () => {
 };
 const child1 = new Child();
 const child2 = new Child();
-child1.a = 3;
 child1.array.push(4);
-console.log(child1.a, child2.array, child1.func1);
+console.log(child2.array); // [1, 2, 3]
+console.log(child1.func1); // undefined
 ```
 
 解决了原型链继承中，属性没绑定到子实例里面的问题，但如果仅这样继承的话，父原型上的东西没有被继承
@@ -79,12 +80,12 @@ console.log(child1.a, child2.array, child1.func1);
 
 ```javascript
 function Parent() {
-  // A的非引用属性
+  // Parent 的非引用属性
   this.a = 1;
-  // A的引用属性
+  // Parent 的引用属性
   this.array = [1, 2, 3];
 }
-// A的静态方法
+// Parent 的静态方法
 Parent.prototype.func1 = () => {
   console.log("func1");
 };
@@ -99,9 +100,9 @@ Child.prototype.func2 = () => {
 };
 const child1 = new Child();
 const child2 = new Child();
-child1.a = 3;
 child1.array.push(4);
-console.log(child1.a, child2.array, child1.func1);
+console.log(child2.array); // [1, 2, 3]
+console.log(child1.func1); // func1
 ```
 
 缺点是：
@@ -114,14 +115,14 @@ console.log(child1.a, child2.array, child1.func1);
 创建一个临时的构造函数，并把这个临时的构造函数的 prototype 指向父原型
 
 ```javascript
-function object(Parent) {
+function myObject(Parent) {
   function F() {}
   F.prototype = Parent;
   return new F();
 }
 ```
 
-相当于`Object.create()`，ECMAScript 5 通过增加 Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的 object()方法效果相同
+相当于`Object.create()`，ECMAScript 5 通过增加 Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的 myObject()方法效果相同
 
 ## 寄生式继承
 
@@ -129,7 +130,7 @@ function object(Parent) {
 
 ```javascript
 function createAnother(Parent) {
-  const clone = object(Parent);
+  const clone = myObject(Parent);
   clone.sayHi = function () {
     console.log("Hi");
   };
@@ -142,24 +143,24 @@ function createAnother(Parent) {
 综合了寄生式继承和组合式继承，并克服了组合式继承的缺点
 
 ```javascript
-function object(Parent) {
+function myObject(Parent) {
   function F() {}
   F.prototype = Parent;
   return new F();
 }
 function inheritPrototype(Child, Parent) {
   // 拷贝了一份父级的原型，而非生成父级的实例，所以上面没有父级的实例的属性
-  const p = object(Parent.prototype);
+  const p = myObject(Parent.prototype);
   p.constructor = Child;
   Child.prototype = p;
 }
 function Parent() {
-  // A的非引用属性
+  // Parent 的非引用属性
   this.a = 1;
-  // A的引用属性
+  // Parent 的引用属性
   this.array = [1, 2, 3];
 }
-// A的静态方法
+// Parent 的静态方法
 Parent.prototype.func1 = () => {
   console.log("func1");
 };
@@ -174,9 +175,9 @@ Child.prototype.func2 = () => {
 };
 const child1 = new Child();
 const child2 = new Child();
-child1.a = 3;
 child1.array.push(4);
-console.log(child1.a, child2.array, child1.func1);
+console.log(child2.array); // [1, 2, 3]
+console.log(child1.func1); // func1
 ```
 
 ES6 的 class 语法糖，就是寄生式组合继承
