@@ -4,6 +4,41 @@ title: leetcode合集
 
 这里是我的 leetcode 做题笔记，以前是用写一篇文章的方式发布 leetcode 做题笔记的，现在觉得，或许开个专栏更好，因为有每日一题的打算，就不用水那么多篇文章了。自从我开始以时间为分类的方式用专栏来记录自己的每日活动，我发现自己表达的欲望也变强了，记录和回过头来检索这些信息的效率也都提高了，真是不错的方法。
 
+# 2025-06-26
+
+[2311. Longest Binary Subsequence Less Than or Equal to K](https://leetcode.com/problems/longest-binary-subsequence-less-than-or-equal-to-k/?envType=daily-question&envId=2025-06-26)
+
+```typescript
+function longestSubsequence(s: string, k: number): number {
+  const len = k.toString(2).length;
+  for (let i = 1; i <= s.length; i++) {
+    if (s.at(-i) === "1") {
+      const substr = s.substring(s.length - i);
+      if (parseInt(substr, 2) > k) {
+        // console.log(s.substring(0, s.length-i), s.substring(s.length-i))
+        return (
+          s
+            .substring(0, s.length - i)
+            .split("")
+            .filter((x) => x === "0").length +
+          substr.length -
+          1
+        );
+      }
+    }
+  }
+  return s.length;
+}
+```
+
+这个题目的子字符串跟我们平常说的子字符串有点区别，应该说它是任意几个子字符串拼接起来，而不是单个子串。
+
+这个题目有以下几个规律：
+
+1. 如果用纯 0，那肯定是符合`<=k`这个条件的，所以这个子字符串的长度一定大于等于纯 0。
+2. 前导 0 是不会让数字变大，但是可以让最终子串变长的，所以前导 0 是多多益善。
+3. 优先往最终结果中添加低位的 1，可以使最终结果容纳尽可能多的 1
+
 # 2025-06-24
 
 [2200. Find All K-Distant Indices in an Array](https://leetcode.com/problems/find-all-k-distant-indices-in-an-array/description/?envType=daily-question&envId=2025-06-24)
