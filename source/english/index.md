@@ -19,6 +19,17 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-06-26
+
+[Daily English 5 - Getting Dressed & Ready for Work](https://tv.eslpod.com/p/blog-daily-english-5)
+
+- closet 衣柜
+- dress shirts 正装衬衫
+- suit jackets 西装
+- underwear 内裤
+- color coordinating 颜色搭配
+- buckle 皮带的带扣
+
 # 2025-06-24
 
 [Daily English 4 - Eating Breakfast](https://tv.eslpod.com/p/blog-daily-english-4)
