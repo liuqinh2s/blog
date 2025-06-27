@@ -101,6 +101,10 @@ date: 2019-02-20 20:30:09
 - [MemFree - Hybrid AI Search](https://www.memfree.me/)
 - [【官网】302.AI - 汇集全球顶级品牌的 AI 超市，零月费，按需付费，全面开放](https://302.ai/)
 - [用 Slea.ai 免费 AI Logo 生成器轻松创建专业 Logo](https://slea.ai/zh-CN)
+- AI 生成播客：[panyanyany/Twocast: AI Podcast Generator for bilingual episodes, Multi Languages, Alternative to NotebookLLM；真人对话 AI 播客生成器，多语言，多音色](https://github.com/panyanyany/Twocast)
+- 浏览器翻译插件，这些插件都要配置 AI 模型的 API KEY，但是去哪里找免费的 AI API KEY 呢？
+  - [xiao-zaiyi/illa-helper: 浸入式学语言助手 (Immersive Language Learning Assistant)](https://github.com/xiao-zaiyi/illa-helper?tab=readme-ov-file)
+  - [mengxi-ream/read-frog: 🐸 Read Frog - Open Source Immersive Translate | 🐸 陪读蛙 - 开源沉浸式翻译](https://github.com/mengxi-ream/read-frog)
 
 ## 软件
 
@@ -109,6 +113,9 @@ date: 2019-02-20 20:30:09
 - 正版操作系统下载网站：[itellyou](https://next.itellyou.cn/)
 - [iPA 商店-最优秀的 iPA 资源下载网站](https://ipa.store/)
 - [「stardew valley」的搜索结果\_马克喵](https://www.macat.vip/)
+- 给手机安装 linux 系统：[postmarketOS // v25.06: the one with systemd](https://postmarketos.org/blog/2025/06/22/v25.06-release/)
+- GraphQL GUI 软件：[zhnd/query-box: A modern, intelligent API request playground.](https://github.com/zhnd/query-box)
+- 数位板显示软件：[SHINING-TECH/EasyDisplayClient: EasyDisplay is designed for easy content management and reliable display on various screens. For usage details and updates, please see the README.](https://github.com/SHINING-TECH/EasyDisplayClient)
 
 ## 配色
 
@@ -146,6 +153,7 @@ date: 2019-02-20 20:30:09
 - 书籍工具：
   - [Calibre](https://calibre-ebook.com/)
   - [沉浸式翻译](https://immersivetranslate.com/)
+  - 电子书阅读软件:[Reeden](https://reeden.app/cn)
 - 平台：
   - [zlibrary](https://zh.z-library.sk/)
   - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
@@ -296,6 +304,7 @@ date: 2019-02-20 20:30:09
 
 ### 编程工具
 
+- [C++ Online IDE - AI-Powered Compiler](https://www.adacpp.com/)
 - MongoDB Atlas 提供免费的 500M 云数据库：[MongoDB Atlas | 多云开发者数据平台 | MongoDB](https://www.mongodb.com/zh-cn/atlas)
 - Typescript 编译网站：[TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play/index.html)
 - [Vue SFC Playground](https://sfc.vuejs.org/)

@@ -4,6 +4,14 @@ title: 新闻
 
 新成立了一个栏目，专门用于记录最近发生的一些大新闻。
 
+# 2025-06-27
+
+## AI 对各行业的冲击
+
+![选Object还是Map](../images/2025/AI让stackoverflow快倒闭了.png)
+
+[林威宇 - Stack Overflow 快要變成時代眼淚了，五月的新發布問題剩下 20000... | Facebook](https://www.facebook.com/uyiewnil/posts/pfbid0n2adkNrGgh8TEZXrMfJhRF7KhonUW8CUsPpsjNijoXXQtVbtFyNBWrJLwD7nFca2l)
+
 # 2025-06-26
 
 ## 中国垃圾不够烧了
