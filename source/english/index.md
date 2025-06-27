@@ -19,6 +19,18 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-06-27
+
+[Daily English 6 - The Commute to Work](https://tv.eslpod.com/p/blog-daily-english-6)
+
+- ignition 点火器
+- transmission 变速杆
+- P 挡 (Park/驻车档), R 挡 (Reverse/倒车档), D 挡 (Drive/前进档)
+- stick shift 手动挡， automatic transmission 自动挡
+- freeway 高度公路
+- onramp 匝道
+- parking garage 停车场
+
 # 2025-06-26
 
 [Daily English 5 - Getting Dressed & Ready for Work](https://tv.eslpod.com/p/blog-daily-english-5)
