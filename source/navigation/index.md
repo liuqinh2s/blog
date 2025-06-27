@@ -105,6 +105,7 @@ date: 2019-02-20 20:30:09
 - 浏览器翻译插件，这些插件都要配置 AI 模型的 API KEY，但是去哪里找免费的 AI API KEY 呢？
   - [xiao-zaiyi/illa-helper: 浸入式学语言助手 (Immersive Language Learning Assistant)](https://github.com/xiao-zaiyi/illa-helper?tab=readme-ov-file)
   - [mengxi-ream/read-frog: 🐸 Read Frog - Open Source Immersive Translate | 🐸 陪读蛙 - 开源沉浸式翻译](https://github.com/mengxi-ream/read-frog)
+- 硅基流动 API 控制台：[SiliconCloud](https://cloud.siliconflow.cn/sft-d1f3c9bk20jc73cq6pv0/models)
 
 ## 软件
 
