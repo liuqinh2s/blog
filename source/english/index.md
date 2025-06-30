@@ -19,6 +19,24 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-06-30
+
+[Daily English 7 - At My Desk, on Break, and at Lunch](https://tv.eslpod.com/p/blog-daily-english-7)
+
+- memos 备忘录
+- inbox 文件盒
+- start in on 开始处理（某项任务）get down to（认真开始做）
+- conference call 电话会议
+- head office 总部
+- head down to = 前往（某地）
+- break room 休息室
+- water cooler 饮水机
+- run into 偶遇
+- take-out：外卖（美式英语，英式常用 takeaway）
+- stand in line：排队（英式用 queue，美式更口语化）
+- Casual Fridays 欧美企业常见文化：周五允许穿便装（如牛仔裤），氛围更轻松，同事常结伴外出午餐
+- kick back 休息
+
 # 2025-06-27
 
 [Daily English 6 - The Commute to Work](https://tv.eslpod.com/p/blog-daily-english-6)
