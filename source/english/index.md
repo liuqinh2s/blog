@@ -19,6 +19,24 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-07-01
+
+[Daily English 8 - The Commute Home and Running Errands](https://tv.eslpod.com/p/blog-daily-english-8)
+
+- ​​run errands​​ 外出办事，跑腿
+- quitting time 每日工作/学习的正式结束时刻 ​
+- signal my turn 打转向灯
+- hassle 烦人
+- stalled 因阻碍而中断的状态 ​​
+- fast lane 快车道
+- backing up traffic 交通堵塞
+- surface streets 与高速公路（freeway/highway）相对的城市或城镇普通地面道路 ​​
+- pasta 意大利面
+- checkout stands 超市、商场等零售场所中供顾客结账的固定柜台或区域 ​​
+- cashier and the bagger 收银员和装袋员
+
+> 在中国我好像没有见过装袋员，一般收银员同时也负责装袋
+
 # 2025-06-30
 
 [Daily English 7 - At My Desk, on Break, and at Lunch](https://tv.eslpod.com/p/blog-daily-english-7)
