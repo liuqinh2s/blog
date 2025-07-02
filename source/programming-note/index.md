@@ -13,7 +13,13 @@ tags: [编程]
 
 # 2025-07-02
 
-[MCP市场 - 收录20,000+ MCP Servers的全球最大平台](https://mcpmarket.cn/)
+[MCP 市场 - 收录 20,000+ MCP Servers 的全球最大平台](https://mcpmarket.cn/)
+
+## react input 组件表情符号问题
+
+发现一个奇怪的现象，react input 组件的 onChange 的 evt.target.value 里面可以有表情符号，但是 onBlur 的 evt.target.value 里面会过滤掉表情符号。
+
+[react 的 input 组件，onChange 的 e.target.value 里包含了表情符号，但是 onBlur 的 e.target.value 里没有包含表情符号，这是为啥](https://yuanbao.tencent.com/bot/app/share/chat/F2GTivbitbKn)
 
 # 2025-06-30
 

@@ -19,6 +19,21 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-07-02
+
+[Daily English 9 - Making Dinner, Eating Dinner](https://tv.eslpod.com/p/blog-daily-english-9)
+
+- kitchen counter 厨房台面
+- groceries 杂货
+- burner “燃烧器”或“炉头”
+- tossing the salad 搅拌沙拉。“tossing” 是动词 ​​“toss” 的现在分词形式 ​​，核心含义是 ​​“轻轻或漫不经心地扔、抛掷”​​，但根据语境可延伸为 ​​“摇荡”“颠簸”“（食物）拌匀”或“掷硬币决定”​​ 等
+- ​place mats 餐具垫
+- do the dishes 洗碗
+- leftovers 吃剩的食物
+- Tupperware container 塑料保鲜盒的代名词。“​​Tupperware container​​”指的是美国品牌 ​​ 特百惠（Tupperware）​​ 生产的塑料密封保鲜容器，其核心特点是 ​​ 创新的密封设计和高耐用性 ​​
+- plastic wrap 保鲜膜
+- aluminum foil 铝箔
+
 # 2025-07-01
 
 [Daily English 8 - The Commute Home and Running Errands](https://tv.eslpod.com/p/blog-daily-english-8)
