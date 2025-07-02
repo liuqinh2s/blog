@@ -106,6 +106,7 @@ date: 2019-02-20 20:30:09
   - [xiao-zaiyi/illa-helper: 浸入式学语言助手 (Immersive Language Learning Assistant)](https://github.com/xiao-zaiyi/illa-helper?tab=readme-ov-file)
   - [mengxi-ream/read-frog: 🐸 Read Frog - Open Source Immersive Translate | 🐸 陪读蛙 - 开源沉浸式翻译](https://github.com/mengxi-ream/read-frog)
 - 硅基流动 API 控制台：[SiliconCloud](https://cloud.siliconflow.cn/sft-d1f3c9bk20jc73cq6pv0/models)
+- [MCP 市场 - 收录 20,000+ MCP Servers 的全球最大平台](https://mcpmarket.cn/)
 
 ## 软件
 
