@@ -19,6 +19,19 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-07-03
+
+[Daily English 10 - Relaxing, Reading the Mail, and the Trash](https://tv.eslpod.com/p/blog-daily-english-10)
+
+- chill out 放松，休闲
+- sort through 整理，翻找
+- fliers 传单
+- stoop 门廊
+- commercials （电台或电视播放的）商业广告 ​​
+- thumb through 表示 ​​ 快速翻阅、浏览（书籍、杂志、文件等）​​，核心动作是 ​​ 用拇指翻动页面，粗略查看内容而不深入阅读 ​​
+- Atlantic Monthly 大西洋月刊
+- mystery writer 悬疑作家
+
 # 2025-07-02
 
 [Daily English 9 - Making Dinner, Eating Dinner](https://tv.eslpod.com/p/blog-daily-english-9)
