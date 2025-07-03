@@ -29,6 +29,7 @@ date: 2019-02-20 20:30:09
 
 ## 中文
 
+- [胡涂说](https://hutusi.com/)
 - [槽边往事](https://www.hecaitou.com/)
 - [云风的 BLOG](https://blog.codingnow.com/)
 - [拔赤](http://jayli.github.io/)
@@ -110,6 +111,7 @@ date: 2019-02-20 20:30:09
 
 ## 软件
 
+- [daily.dev | Where developers grow together](https://app.daily.dev/)
 - [Everything - 基于名称快速定位文件和文件夹。](https://www.voidtools.com/zh-cn/)
 - 局域网传输：[landrop](https://landrop.app/)
 - 正版操作系统下载网站：[itellyou](https://next.itellyou.cn/)
