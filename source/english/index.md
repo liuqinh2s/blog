@@ -19,6 +19,19 @@ title: English
 
 2025 年了，现在可以用 AI 来学英语了，任何中文材料都可以得到很地道的英文表达。语料不再受任何限制，沉浸式翻译，沙拉查词这两个软件我也不用了，用 AI 来翻译就够了。我目前是用腾讯元宝上的 deepseek 模型。不过断断续续学了十多年英语，还是半生不熟，总结为还是得多操练才行。
 
+# 2025-07-04
+
+[Daily English 11 - Getting Ready for Bed and Going to Sleep](https://tv.eslpod.com/p/blog-daily-english-11)
+
+- ritual 按固定程序重复进行的仪式或习惯
+- tap 水龙头
+- I’m beat 我累得不行了
+- hamper 指“带盖容器”（如野餐篮、洗衣篮）
+- pajamas “成套睡衣裤”
+- slippers 指室内穿着的轻便软底拖鞋
+- fluff pillow 抖松枕头
+- nod off 因疲劳/无聊无意识地短暂瞌睡
+
 # 2025-07-03
 
 [Daily English 10 - Relaxing, Reading the Mail, and the Trash](https://tv.eslpod.com/p/blog-daily-english-10)
