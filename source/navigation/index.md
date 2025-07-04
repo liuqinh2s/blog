@@ -9,7 +9,7 @@ date: 2019-02-20 20:30:09
 
 - [Lianera's homepage](https://lianera.github.io/)
 - [Hi, I'm Jiyang](https://jiyanggg.github.io/)
-- [曾小乱 – 在描绘他的生活倒影](https://zengxiaoluan.dbgfdy.com/)
+- [曾小乱 – 在描绘他的生活倒影](https://zengyuxin.com/)
 - [果小右](https://gejiuyuan.gitee.io/)
 
 # 推荐的博主
@@ -29,6 +29,7 @@ date: 2019-02-20 20:30:09
 
 ## 中文
 
+- [Long Luo's Life Notes](https://www.longluo.me/)
 - [胡涂说](https://hutusi.com/)
 - [槽边往事](https://www.hecaitou.com/)
 - [云风的 BLOG](https://blog.codingnow.com/)
@@ -481,6 +482,7 @@ date: 2019-02-20 20:30:09
 ## 电子杂志
 
 - [bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来](https://www.bestblogs.dev/#subscribe)
+- [ThoughtCo.com is the World's Largest Education Resource](https://www.thoughtco.com/)
 
 ## 英语学习资源
 
