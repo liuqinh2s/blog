@@ -9,12 +9,6 @@ date: 2018-04-17 17:00:10
 
 兴趣爱好：喜欢科幻、喜欢探究事物的本质，对人类文明和世界的未来很感兴趣。
 
-我的微信公众号：
-
-![概率宇宙和历史进程](https://i.loli.net/2019/07/08/5d22f89dbbb2b42435.jpg)
-
 [简历](../assets/liuqinh2s-resume.pdf)
 
 公司项目：[嘉立创 EDA](https://pro.lceda.cn/editor)
-
-自己的兴趣爱好项目: [jujuxi](https://jujuxi.xyz/)
