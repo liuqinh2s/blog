@@ -121,6 +121,8 @@ date: 2019-02-20 20:30:09
 - 给手机安装 linux 系统：[postmarketOS // v25.06: the one with systemd](https://postmarketos.org/blog/2025/06/22/v25.06-release/)
 - GraphQL GUI 软件：[zhnd/query-box: A modern, intelligent API request playground.](https://github.com/zhnd/query-box)
 - 数位板显示软件：[SHINING-TECH/EasyDisplayClient: EasyDisplay is designed for easy content management and reliable display on various screens. For usage details and updates, please see the README.](https://github.com/SHINING-TECH/EasyDisplayClient)
+- [墨刀 - 适合产品经理的原型设计及协作平台](https://modao.cc/)：我曾经想做一款社交媒体软件，用墨刀画的原型
+- [Dribbble - Discover the World’s Top Designers & Creative Professionals](https://dribbble.com/)
 
 ## 配色
 
