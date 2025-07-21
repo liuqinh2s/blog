@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-07-21T04:54:55.004Z">
+<meta property="og:updated_time" content="2025-07-21T13:44:02.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用 react hooks 总结">
 <meta name="twitter:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
@@ -451,7 +451,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-21T04:54:55+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-21T13:44:02+00:00">
                 2025-07-21
               </time>
             
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  351
+                  1,364
                 </span>
               
 
@@ -517,11 +517,58 @@
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
 <li>不要直接去修改 state，只有用 setState 函数去改，才会触发重新渲染。</li>
 <li>并不是调用 setState 就一定会重新渲染，如果设置的 state 跟上次一样，就不会重新渲染。</li>
-<li>setState 并不会立即更新 state，而是等收集完所有的 setState 最后再统一更新，若想用上个 setState 更新后的值，就要用回调函数的方式写：</li>
-</ol>
+<li><p>setState 并不会立即更新 state，而是等收集完所有的 setState 最后再统一更新，若想用上个 setState 更新后的值，就要用回调函数的方式写：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">    setCount(count + <span class="number">1</span>);</span><br><span class="line">    setCount(count + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'A: '</span>, count) <span class="comment">// ?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">    setCount(<span class="function"><span class="params">prev</span> =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">    setCount(<span class="function"><span class="params">prev</span> =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'B: '</span>, count) <span class="comment">// ?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Answer</span></span><br><span class="line"><span class="comment">// A: 5</span></span><br><span class="line"><span class="comment">// B 6</span></span><br></pre></td></tr></table></figure>
-<p>4.</p>
-<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h2><h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><h2 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h2><h2 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h2>
+</li>
+<li><p>多次 setState 只会触发一次重新渲染。</p>
+</li>
+<li><code>useState(func)</code>，中的 func 函数只会在组件第一次渲染的时候执行，重新渲染不会执行。</li>
+</ol>
+<h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p>useEffect 有两个参数，第一个参数是副作用函数，第二个参数是依赖数组。在组件渲染的时候，如果发现依赖数组中某项变了，就会在组件渲染结束后调用副作用函数。如果不传第二个参数，则每次组件渲染都会调用副作用函数。如果传入空数组，则只在第一次渲染的时候调用副作用函数。</p>
+<h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h2><p>useLayoutEffect 和 useEffect 是 react 中用于处理副作用的两个核心 Hook，它们两个的区别在于<strong>执行时机</strong>和<strong>对页面渲染的影响</strong></p>
+<h3 id="执行时机"><a href="#执行时机" class="headerlink" title="执行时机"></a>执行时机</h3><ul>
+<li><p>useEffect 在浏览器完成<strong>布局（DOM 更新）和绘制（屏幕渲染）后异步执行</strong>。这意味着它不会阻塞浏览器的渲染流程，用户会先看到页面更新，再执行副作用逻辑。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">"异步执行，不阻塞渲染"</span>); &#125;, []);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>useLayoutEffect 在浏览器完成<strong>布局后，绘制前同步执行</strong>。它会阻塞浏览器的渲染，确保副作用在用户看到屏幕前完成。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useLayoutEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123; <span class="built_in">console</span>.log(<span class="string">"同步执行，阻塞渲染"</span>); &#125;, []);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="对页面渲染的影响"><a href="#对页面渲染的影响" class="headerlink" title="对页面渲染的影响"></a>对页面渲染的影响</h3><ul>
+<li>useEffect<ul>
+<li>不阻塞渲染，适合非紧急操作（如数据请求，事件订阅）</li>
+<li>可能导致闪烁：若副作用修改了 DOM 样式（如调整元素位置），用户可能先看到初始状态，再看到更新后的状态，出现视觉跳动</li>
+</ul>
+</li>
+<li>useLayoutEffect<ul>
+<li>阻塞渲染，确保 DOM 修改在绘制前完成，避免闪烁问题</li>
+<li>性能风险：若副作用逻辑耗时较长（如循环更新状态），会延迟页面渲染，导致卡顿</li>
+</ul>
+</li>
+</ul>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 示例：防止闪烁（useLayoutEffect）</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Tooltip</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> ref = useRef(<span class="literal">null</span>);</span><br><span class="line">  <span class="keyword">const</span> [height, setHeight] = useState(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  useLayoutEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 同步获取元素高度，避免用户先看到未调整的布局</span></span><br><span class="line">    setHeight(ref.current.getBoundingClientRect().height);</span><br><span class="line">  &#125;, []);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;ref&#125;</span>&gt;</span>高度: &#123;height&#125;px<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>useEffect 和 useLayoutEffect 均可返回清理函数（如移除事件监听），但 useLayoutEffect 的清理在绘制前同步执行</li>
+<li>useLayoutEffect 在 服务端渲染(SSR) 中会触发警告（因无 DOM 环境），需替换为 useEffect</li>
+</ol>
+<h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><p>函数中的函数，每次调用外层函数时，内层函数都会重新创建，会有 CPU 和内存开销。怎么证明内层函数被重新创建了呢，直接对比函数引用即可：<code>func1 === func2</code>，若不相等，则不是同一个函数。</p>
+<p>useCallback 就是用来防止组件内的函数被重复创建的。useCallback 的第一个参数就是需要被缓存的函数，第二个参数是依赖项，只有依赖项发生变化，才会返回新的函数引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> memoizedFn = useCallback(Fn, [dependencies]);</span><br></pre></td></tr></table></figure>
+<p>如果没有用到组件中的变量，可以直接把函数写到组件外，这样连 useCallback 都不必使用了。</p>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ol>
+<li>函数作为 props 传递给用<code>React.memo</code>包裹的子组件，可以避免子组件重新渲染</li>
+<li>函数被其他 Hook 依赖 ​​（如 useEffect、useMemo）</li>
+<li>自定义 Hook 返回的函数 ​​，确保调用方可优化</li>
+<li>对于频繁触发的函数（如表单输入、滚动事件），缓存可降低重复创建函数的性能损耗</li>
+</ol>
+<h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><p>useMemo 和 useCallback 的唯一区别在于，useMemo 返回函数的计算结果的缓存，useCallback 返回函数本身的缓存。即：<code>useCallback(fn, depsArray)等价于 useMemo(()=&gt;fn, depsArray)</code>。React 分开设计是为了<strong>语义清晰</strong>和<strong>减少误用</strong>（如 useMemo 直接返回函数易出错）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> memoizedFn = useCallback(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;, [deps]);      <span class="comment">// 缓存函数</span></span><br><span class="line"><span class="keyword">const</span> memoizedValue = useMemo(<span class="function"><span class="params">()</span> =&gt;</span> compute(), [deps]); <span class="comment">// 缓存值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>语义意图：useMemo 表达“缓存计算”，useCallback 表达“缓存函数”</li>
+<li>​​ 优化对象 ​​：useMemo 减少计算开销，useCallback 减少渲染开销；</li>
+<li>​​ 设计目的 ​​：分离二者可提升代码可读性，降低误用风险</li>
+</ul>
+<h2 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h2><h2 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h2>
       
     </div>
     
@@ -734,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">1.</span> <span class="nav-text">useState</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">2.</span> <span class="nav-text">useEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useLayoutEffect"><span class="nav-number">3.</span> <span class="nav-text">useLayoutEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useRef"><span class="nav-number">4.</span> <span class="nav-text">useRef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useCallback"><span class="nav-number">5.</span> <span class="nav-text">useCallback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useMemo"><span class="nav-number">6.</span> <span class="nav-text">useMemo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useContext"><span class="nav-number">7.</span> <span class="nav-text">useContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useReducer"><span class="nav-number">8.</span> <span class="nav-text">useReducer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">1.</span> <span class="nav-text">useState</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">2.</span> <span class="nav-text">useEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useLayoutEffect"><span class="nav-number">3.</span> <span class="nav-text">useLayoutEffect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行时机"><span class="nav-number">3.1.</span> <span class="nav-text">执行时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对页面渲染的影响"><span class="nav-number">3.2.</span> <span class="nav-text">对页面渲染的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.3.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">3.4.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useRef"><span class="nav-number">4.</span> <span class="nav-text">useRef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useCallback"><span class="nav-number">5.</span> <span class="nav-text">useCallback</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">5.1.</span> <span class="nav-text">适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useMemo"><span class="nav-number">6.</span> <span class="nav-text">useMemo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useContext"><span class="nav-number">7.</span> <span class="nav-text">useContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useReducer"><span class="nav-number">8.</span> <span class="nav-text">useReducer</span></a></li></ol></div>
             
 
           </div>
@@ -768,7 +815,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">103.2k</span>
+    <span title="Site words total count">104.2k</span>
   
 </div>
 
