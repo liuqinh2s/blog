@@ -167,7 +167,7 @@ console.log(b);
 
 # 前端编程范式
 
-- debounce, throttle（防抖和节流）
+- [debounce, throttle（防抖和节流）](../2023/12/05/JavaScript如何实现节流和防抖函数/)
 - EventBus（事件总线）
 
 # 浏览器相关
