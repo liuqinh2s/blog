@@ -123,15 +123,15 @@ console.log(b);
 结合这两个知识点学习，我们发现，**原型链就是用来方便查找对象上的变量，闭包就是方便查找自由变量**，本质上都是为了让 JavaScript 这个编程语言更加丰富，灵活，好用，方便程序员写出更加短小精悍，易于封装和复用的代码。
 
 - 箭头函数
-- Promise A+ 规范
+- [Promise A+ 规范](../2023/07/19/Promise详解/)
 - Event Loop（事件循环）
 - 内存回收
 - try-catch：
   - [try-catch 能抛出 promise 的异常吗](https://juejin.cn/post/6850418110907088910)
 - 怎么判断对象为空？
 - 类型判断
-  - JavaScript 有几种基础数据类型？Symbol 和 BigInt 是什么时候引进的？
-  - `typeof`有几种类型？分别是什么？
+  - JavaScript 有几种基础数据类型(7 种)？Symbol 和 BigInt 是什么时候引进的？
+  - `typeof`有几种类型(8 种)？分别是什么？
   - `Object.prototype.toString()`有几种类型？分别是什么？
 - 模拟 JavaScript 原生方法
   - [模拟实现 JavaScript 的 new 操作符](../2023/11/20/模拟实现JavaScript的new操作符/)
@@ -144,7 +144,7 @@ console.log(b);
 - [5 分钟彻底搞懂 js 的版本演进（ES5,ES6,ES2015 的区别） - 知乎](https://zhuanlan.zhihu.com/p/516325981)
 - ES6 带来了哪些新东西？
 - [ECMAScript 2015 Language Specification – ECMA-262 6th Edition](https://262.ecma-international.org/6.0/)
-- var，let，const 的区别
+- [var，let，const 的区别](../2023/11/23/JavaScript的var,let,const的区别/)
 
 ## 浏览器环境
 
@@ -214,3 +214,15 @@ console.log(b);
 - 在团队协作时，有遇到过什么问题吗，如果有冲突你会怎么做
 - 你有什么想问我的？
 - 低代码、怎么动态加载渲染一个组件，底层怎么实现？
+
+## 2025-07-21
+
+- 用过哪些 react hooks？
+- 跨站脚本攻击
+- 浏览器跨窗口通信，postMessage，broadcastChanel
+- vue2，vue3
+- 防爬虫手段
+- canvas
+- top left 搭配什么使用？
+- less 语法，module css，怎么定义全局样式，怎么定义变量
+- 暴露出的问题：问 Java 答不上，问 vue 答不上
