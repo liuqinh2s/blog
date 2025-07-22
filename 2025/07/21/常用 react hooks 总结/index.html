@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-07-21T13:44:02.043Z">
+<meta property="og:updated_time" content="2025-07-22T01:50:25.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用 react hooks 总结">
 <meta name="twitter:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
@@ -451,8 +451,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-21T13:44:02+00:00">
-                2025-07-21
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-22T01:50:25+00:00">
+                2025-07-22
               </time>
             
           </span>
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,364
+                  1,526
                 </span>
               
 
@@ -551,7 +551,10 @@
 <li>useEffect 和 useLayoutEffect 均可返回清理函数（如移除事件监听），但 useLayoutEffect 的清理在绘制前同步执行</li>
 <li>useLayoutEffect 在 服务端渲染(SSR) 中会触发警告（因无 DOM 环境），需替换为 useEffect</li>
 </ol>
-<h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><p>函数中的函数，每次调用外层函数时，内层函数都会重新创建，会有 CPU 和内存开销。怎么证明内层函数被重新创建了呢，直接对比函数引用即可：<code>func1 === func2</code>，若不相等，则不是同一个函数。</p>
+<h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><p>函数内部定义的变量，在每次调用函数的时候，都会重新创建。如果不想重新创建，要么在组件外定义变量，要么使用 useRef 定义变量。</p>
+<p>useRef 的参数只在组件第一次渲染的时候作为返回值，useRef 返回的值，在组件每次渲染的时候都保持引用地址不变。</p>
+<p>示例：<a href="https://codesandbox.io/p/sandbox/jgzkxl" target="_blank" rel="noopener">useRef-example-1</a></p>
+<h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><p>函数中的函数，每次调用外层函数时，内层函数都会重新创建，会有 CPU 和内存开销。怎么证明内层函数被重新创建了呢，直接对比函数引用即可：<code>func1 === func2</code>，若不相等，则不是同一个函数。</p>
 <p>useCallback 就是用来防止组件内的函数被重复创建的。useCallback 的第一个参数就是需要被缓存的函数，第二个参数是依赖项，只有依赖项发生变化，才会返回新的函数引用。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> memoizedFn = useCallback(Fn, [dependencies]);</span><br></pre></td></tr></table></figure>
 <p>如果没有用到组件中的变量，可以直接把函数写到组件外，这样连 useCallback 都不必使用了。</p>
@@ -568,7 +571,8 @@
 <li>​​ 优化对象 ​​：useMemo 减少计算开销，useCallback 减少渲染开销；</li>
 <li>​​ 设计目的 ​​：分离二者可提升代码可读性，降低误用风险</li>
 </ul>
-<h2 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h2><h2 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h2>
+<h2 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h2><h2 id="useReducer"><a href="#useReducer" class="headerlink" title="useReducer"></a>useReducer</h2><h2 id="一些疑问"><a href="#一些疑问" class="headerlink" title="一些疑问"></a>一些疑问</h2><p>像 useEffect，useCallback，useMemo 这类有依赖项的 Hook，是怎么记录上一次的依赖项的，在组件重新渲染时不是要对比上一次的依赖项和此次依赖项是否相同吗。</p>
+
       
     </div>
     
@@ -781,7 +785,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">1.</span> <span class="nav-text">useState</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">2.</span> <span class="nav-text">useEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useLayoutEffect"><span class="nav-number">3.</span> <span class="nav-text">useLayoutEffect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行时机"><span class="nav-number">3.1.</span> <span class="nav-text">执行时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对页面渲染的影响"><span class="nav-number">3.2.</span> <span class="nav-text">对页面渲染的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.3.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">3.4.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useRef"><span class="nav-number">4.</span> <span class="nav-text">useRef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useCallback"><span class="nav-number">5.</span> <span class="nav-text">useCallback</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">5.1.</span> <span class="nav-text">适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useMemo"><span class="nav-number">6.</span> <span class="nav-text">useMemo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useContext"><span class="nav-number">7.</span> <span class="nav-text">useContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useReducer"><span class="nav-number">8.</span> <span class="nav-text">useReducer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#useState"><span class="nav-number">1.</span> <span class="nav-text">useState</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">1.1.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useEffect"><span class="nav-number">2.</span> <span class="nav-text">useEffect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useLayoutEffect"><span class="nav-number">3.</span> <span class="nav-text">useLayoutEffect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行时机"><span class="nav-number">3.1.</span> <span class="nav-text">执行时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对页面渲染的影响"><span class="nav-number">3.2.</span> <span class="nav-text">对页面渲染的影响</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-number">3.3.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项-1"><span class="nav-number">3.4.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useRef"><span class="nav-number">4.</span> <span class="nav-text">useRef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useCallback"><span class="nav-number">5.</span> <span class="nav-text">useCallback</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-number">5.1.</span> <span class="nav-text">适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useMemo"><span class="nav-number">6.</span> <span class="nav-text">useMemo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useContext"><span class="nav-number">7.</span> <span class="nav-text">useContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useReducer"><span class="nav-number">8.</span> <span class="nav-text">useReducer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些疑问"><span class="nav-number">9.</span> <span class="nav-text">一些疑问</span></a></li></ol></div>
             
 
           </div>
@@ -815,7 +819,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">104.2k</span>
+    <span title="Site words total count">104.3k</span>
   
 </div>
 
