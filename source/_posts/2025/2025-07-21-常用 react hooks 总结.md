@@ -104,6 +104,12 @@ function Tooltip() {
 
 ## useRef
 
+函数内部定义的变量，在每次调用函数的时候，都会重新创建。如果不想重新创建，要么在组件外定义变量，要么使用 useRef 定义变量。
+
+useRef 的参数只在组件第一次渲染的时候作为返回值，useRef 返回的值，在组件每次渲染的时候都保持引用地址不变。
+
+示例：[useRef-example-1](https://codesandbox.io/p/sandbox/jgzkxl)
+
 ## useCallback
 
 函数中的函数，每次调用外层函数时，内层函数都会重新创建，会有 CPU 和内存开销。怎么证明内层函数被重新创建了呢，直接对比函数引用即可：`func1 === func2`，若不相等，则不是同一个函数。
@@ -139,3 +145,7 @@ const memoizedValue = useMemo(() => compute(), [deps]); // 缓存值
 ## useContext
 
 ## useReducer
+
+## 一些疑问
+
+像 useEffect，useCallback，useMemo 这类有依赖项的 Hook，是怎么记录上一次的依赖项的，在组件重新渲染时不是要对比上一次的依赖项和此次依赖项是否相同吗。
