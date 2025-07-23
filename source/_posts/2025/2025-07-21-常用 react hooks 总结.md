@@ -394,5 +394,3 @@ const [state, dispatch] = useReducer(reducer, initialState);
 像 useEffect，useCallback，useMemo 这类有依赖项的 Hook，是怎么记录上一次的依赖项的，在组件重新渲染时不是要对比上一次的依赖项和此次依赖项是否相同吗。
 
 答：react 为每个组件创建一个 Fiber 节点，Fiber.memoizedState 属性指向一个单向链表，链表中的每个节点对应一个 Hook。useEffect 的 Hook 节点也有一个 memoizedState 属性，指向一个 effect 对象（包含 create、destroy、deps 等字段，其中 deps 就是依赖项）。useCallback 和 useMemo 的 Hook 节点也有一个 memoizedState 属性，指向一个数组（如 [callback, deps]）。react 严格按照 Hook 的调用顺序匹配链表节点，因此必须在顶层调用 Hook，不能把 Hook 写到条件中。
-
-1
