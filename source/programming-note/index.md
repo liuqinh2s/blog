@@ -11,6 +11,12 @@ tags: [编程]
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2025-07-23
+
+今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz，404。然后查了一下stylus，发现它已经从npm下架了：https://www.npmjs.com/package/stylus?activeTab=readme，原因是包含恶意代码被npm安全团队移除了。
+
+然后我看了一下我博客的依赖，应该是`"hexo-renderer-stylus": "^0.3.1"`这个库依赖了 stylus，但我好像没用到这个，直接删了就行。
+
 # 2025-07-02
 
 [MCP 市场 - 收录 20,000+ MCP Servers 的全球最大平台](https://mcpmarket.cn/)
