@@ -13,12 +13,12 @@ useState 返回包含两个值的数组，第一个值是变量 state，第二�
 
 示例：
 
-```JavaScript
+```jsx
 const [appleCount, setAppleCount] = useState(1);
 console.log(appleCount); //1
 
-setAppleCount(prev => prev + 1);
-console.log(appleCount) // 2
+setAppleCount((prev) => prev + 1);
+console.log(appleCount); // 2
 ```
 
 ### 注意事项
@@ -27,21 +27,21 @@ console.log(appleCount) // 2
 2. 并不是调用 setState 就一定会重新渲染，如果设置的 state 跟上次一样，就不会重新渲染。
 3. setState 并不会立即更新 state，而是等收集完所有的 setState 最后再统一更新，若想用上个 setState 更新后的值，就要用回调函数的方式写：
 
-   ```JavaScript
-   function A () {
-       const [count, setCount] = useState(4);
+   ```jsx
+   function A() {
+     const [count, setCount] = useState(4);
 
-       setCount(count + 1);
-       setCount(count + 1);
-       console.log('A: ', count) // ?
+     setCount(count + 1);
+     setCount(count + 1);
+     console.log("A: ", count); // ?
    }
 
-   function B () {
-       const [count, setCount] = useState(4);
+   function B() {
+     const [count, setCount] = useState(4);
 
-       setCount(prev => prev + 1);
-       setCount(prev => prev + 1);
-       console.log('B: ', count) // ?
+     setCount((prev) => prev + 1);
+     setCount((prev) => prev + 1);
+     console.log("B: ", count); // ?
    }
 
    // Answer
@@ -63,12 +63,16 @@ useLayoutEffect 和 useEffect 是 react 中用于处理副作用的两个核心 
 ### 执行时机
 
 - useEffect 在浏览器完成**布局（DOM 更新）和绘制（屏幕渲染）后异步执行**。这意味着它不会阻塞浏览器的渲染流程，用户会先看到页面更新，再执行副作用逻辑。
-  ```JavaScript
-  useEffect(() => { console.log("异步执行，不阻塞渲染"); }, []);
+  ```jsx
+  useEffect(() => {
+    console.log("异步执行，不阻塞渲染");
+  }, []);
   ```
 - useLayoutEffect 在浏览器完成**布局后，绘制前同步执行**。它会阻塞浏览器的渲染，确保副作用在用户看到屏幕前完成。
-  ```JavaScript
-  useLayoutEffect(() => { console.log("同步执行，阻塞渲染"); }, []);
+  ```jsx
+  useLayoutEffect(() => {
+    console.log("同步执行，阻塞渲染");
+  }, []);
   ```
 
 ### 对页面渲染的影响
@@ -82,7 +86,7 @@ useLayoutEffect 和 useEffect 是 react 中用于处理副作用的两个核心 
 
 ### 示例
 
-```JavaScript
+```jsx
 // 示例：防止闪烁（useLayoutEffect）
 function Tooltip() {
   const ref = useRef(null);
@@ -157,19 +161,19 @@ useRef 的参数只在组件第一次渲染的时候作为返回值，useRef 返
 3. 跨渲染持久化数据 ​
    记录前一次状态或渲染次数
 
-   ```JavaScript
+   ```jsx
    function Counter() {
-   const [count, setCount] = useState(0);
-   const prevCountRef = useRef();
-   useEffect(() => {
-     prevCountRef.current = count; // 更新前保存当前值
-   }, [count]);
-   return (
-     <div>
-       当前值: {count}, 之前值: {prevCountRef.current}
-       <button onClick={() => setCount(count + 1)}>增加</button>
-     </div>
-   );
+     const [count, setCount] = useState(0);
+     const prevCountRef = useRef();
+     useEffect(() => {
+       prevCountRef.current = count; // 更新前保存当前值
+     }, [count]);
+     return (
+       <div>
+         当前值: {count}, 之前值: {prevCountRef.current}
+         <button onClick={() => setCount(count + 1)}>增加</button>
+       </div>
+     );
    }
    ```
 
@@ -178,24 +182,24 @@ useRef 的参数只在组件第一次渲染的时候作为返回值，useRef 返
 1. 跨组件传递 Ref（forwardRef）
    父组件访问子组件的 DOM 节点：
 
-   ```JavaScript
-   const Child = forwardRef((props, ref)=> <input ref={ref} />);
-   const Parent = ()=>{
+   ```jsx
+   const Child = forwardRef((props, ref) => <input ref={ref} />);
+   const Parent = () => {
      const inputRef = useRef(null);
-     return <Child ref={inputRef} />;  // 父组件通过 inputRef 操作子组件输入框
-   }
+     return <Child ref={inputRef} />; // 父组件通过 inputRef 操作子组件输入框
+   };
    ```
 
 2. 暴露子组件方法（useImperativeHandle）
    自定义子组件暴露给父组件的方法：
-   ```JavaScript
-   const Child = forwardRef((props, ref)=>{
+   ```jsx
+   const Child = forwardRef((props, ref) => {
      const inputRef = useRef(null);
-     useImperativeHandle(ref, ()=>({
-       focus: ()=>inputRef.current.focus()
-     }))
-     return <input ref={inputRef} />
-   })
+     useImperativeHandle(ref, () => ({
+       focus: () => inputRef.current.focus(),
+     }));
+     return <input ref={inputRef} />;
+   });
    ```
 
 ### useRef 和组件外部定义的变量对比
@@ -213,7 +217,7 @@ useRef 的生命周期绑定于组件实例，组件挂载时创建，卸载时�
 
 useCallback 就是用来防止组件内的函数被重复创建的。useCallback 的第一个参数就是需要被缓存的函数，第二个参数是依赖项，只有依赖项发生变化，才会返回新的函数引用。
 
-```JavaScript
+```jsx
 const memoizedFn = useCallback(Fn, [dependencies]);
 ```
 
@@ -232,15 +236,16 @@ React.memo 是 react 提供的高阶组件（HOC），专门用于优化函数�
 
 1. 浅比较（Shallow Comparison）：
    默认情况下，React.memo 会对组件的 props 进行浅比较（比较引用地址而非深层内容），若 props 未变化，则跳过重新渲染，直接复用上一次的渲染结果。
-   ```JavaScript
+   ```jsx
    const MemoizedComponent = React.memo(MyComponent); // 包装后组件仅在 props 变化时渲染
    ```
    示例：[React.memo-example-1](https://codesandbox.io/p/sandbox/2m6n5x)
 2. 自定义比较函数：
    若 props 包含复杂对象或数组，可通过第二个参数传入自定义比较函数，手动控制渲染逻辑：
-   ```JavaScript
-   const areEqual = (preProps, nextProps)=>preProps.user.name===nextProps.user.name;
-   const MemoizedComponent = React.memo(MyComponent, areEqual);  // 仅当 name 变化时重新渲染
+   ```jsx
+   const areEqual = (preProps, nextProps) =>
+     preProps.user.name === nextProps.user.name;
+   const MemoizedComponent = React.memo(MyComponent, areEqual); // 仅当 name 变化时重新渲染
    ```
 
 若组件依赖全局状态（Context）或内部状态（State），React.memo 无法阻止其更新
@@ -249,8 +254,8 @@ React.memo 是 react 提供的高阶组件（HOC），专门用于优化函数�
 
 useMemo 和 useCallback 的唯一区别在于，useMemo 返回函数的计算结果的缓存，useCallback 返回函数本身的缓存。即：`useCallback(fn, depsArray)等价于 useMemo(()=>fn, depsArray)`。React 分开设计是为了**语义清晰**和**减少误用**（如 useMemo 直接返回函数易出错）
 
-```JavaScript
-const memoizedFn = useCallback(() => {}, [deps]);      // 缓存函数
+```jsx
+const memoizedFn = useCallback(() => {}, [deps]); // 缓存函数
 const memoizedValue = useMemo(() => compute(), [deps]); // 缓存值
 ```
 
