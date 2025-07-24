@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="window.postMessage()（通用跨域方案）通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。 12345678910// 发送方const targetWindow = window.open(&apos;child.html&apos;);targetWindow.postMessage(&apos;Hel">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-07-24T04:01:53.979Z">
+<meta property="og:updated_time" content="2025-07-24T05:51:33.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器跨窗口通信总结">
 <meta name="twitter:description" content="window.postMessage()（通用跨域方案）通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。 12345678910// 发送方const targetWindow = window.open(&apos;child.html&apos;);targetWindow.postMessage(&apos;Hel">
@@ -451,7 +451,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T04:01:53+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T05:51:33+00:00">
                 2025-07-24
               </time>
             
@@ -512,6 +512,7 @@
         <h2 id="window-postMessage-（通用跨域方案）"><a href="#window-postMessage-（通用跨域方案）" class="headerlink" title="window.postMessage()（通用跨域方案）"></a>window.postMessage()（通用跨域方案）</h2><p>通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送方</span></span><br><span class="line"><span class="keyword">const</span> targetWindow = <span class="built_in">window</span>.open(<span class="string">'child.html'</span>);</span><br><span class="line">targetWindow.postMessage(<span class="string">'Hello'</span>, <span class="string">'https://example.com'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收方</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, (event)=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.origin === <span class="string">'https://example.com'</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(event.data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>优势：支持跨域通信，安全性高（需验证 event.origin）。<br>局限：需预先建立窗口引用关系，无法广播消息。</p>
+<a id="more"></a>
 <h2 id="BroadcastChannel（同源广播方案）"><a href="#BroadcastChannel（同源广播方案）" class="headerlink" title="BroadcastChannel（同源广播方案）"></a>BroadcastChannel（同源广播方案）</h2><p>基于发布-订阅模式，同源窗口通过相同频道名通信：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> channel = <span class="keyword">new</span> BroadcastChannel(<span class="string">'news'</span>);</span><br><span class="line">channel.postMessage(<span class="string">'Update!'</span>);</span><br><span class="line">channel.onmessage = <span class="function">(<span class="params">event</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event.data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>优势：无需窗口引用，支持一对多广播<br>局限：仅限同源窗口，safari 兼容性较差</p>
