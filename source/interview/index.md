@@ -4,107 +4,11 @@ title: 前端面试指南
 
 # 编程题
 
-## 寻找字符串中出现最多的字符怎么实现？
-
-遍历一遍字符串，用个 map 记录每个字符出现的次数，然后遍历一遍 map，取出出现次数最多的字符
-
-```typescript
-function getMaxChar(str: string): string {
-  const map = {};
-  for (let i = 0; i < str.length; i++) {
-    const c = str[i];
-    if (!map[c]) {
-      map[c] = 1;
-    } else {
-      map[c]++;
-    }
-  }
-  let max = 0;
-  let maxChar;
-  for (let k of Object.keys(map || {})) {
-    if (max < map[k]) {
-      max = map[k];
-      maxChar = k;
-    }
-  }
-  return maxChar;
-}
-```
-
-## 数组扁平化(nest to flat)
-
-实现一个`Array.prototype.flat()`，leetcode 对应题目：[2625. 扁平化嵌套数组](https://leetcode.cn/classic/problems/flatten-deeply-nested-array/description/)
-
-## 扁平数组嵌套化(flat to nest)
-
-1. 菜单数组转换为嵌套树形结构，但示例只有两级
-
-```javascript
-[
-  { id: 1, menu: '水果', level: 1 },
-  { id: 2, menu: '橘子', level: 2, parentId: 1 }
-  // ...
-]
-// 转换为
-[
-  {
-    id: 1, menu: '水果', level: 1, children: [{ id: 2, menu: '橘子', level: 2, parentId: 1 }]
-  },
-  // ...
-]
-```
-
-以下是我给出的解答，未经过严格测试
-
-```javascript
-const a = [
-  {
-    id: 2,
-    menu: "橘子",
-    level: 2,
-    parentId: 1,
-  }, // ...
-  {
-    id: 1,
-    menu: "水果",
-    level: 1,
-  },
-];
-
-function flat2nest(array) {
-  const res = [];
-  const map = {};
-  for (let index = 0; index < array.length; index++) {
-    if (map[array[index].id]) {
-      map[array[index].id] = {
-        ...array[index],
-        children: map[array[index].id].children,
-      };
-    } else {
-      map[array[index].id] = { ...array[index] };
-    }
-    if (!array[index].parentId) {
-      res.push(map[array[index].id]);
-    } else {
-      if (!map[array[index].parentId]) {
-        map[array[index].parentId] = {};
-      }
-      if (!map[array[index].parentId].children) {
-        map[array[index].parentId].children = [];
-      }
-      map[array[index].parentId].children.push({ ...array[index] });
-    }
-  }
-  return res;
-}
-
-const b = flat2nest(a);
-console.log(b);
-```
-
-## 实现一个深拷贝
-
-## 实现 Promise
+- [寻找字符串中出现最多的字符怎么实现？](../2022/07/24/寻找字符串中出现最多的字符怎么实现？)
+- 数组扁平化(nest to flat)：实现一个`Array.prototype.flat()`，leetcode 对应题目：[2625. 扁平化嵌套数组](https://leetcode.cn/classic/problems/flatten-deeply-nested-array/description/)
+- [扁平数组嵌套化（flat to nest）](../2022/07/25/扁平数组嵌套化（flat to nest）)
+- 实现一个深拷贝
+- 实现 Promise
 
 # JavaScript 基础
 
