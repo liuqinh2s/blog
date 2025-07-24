@@ -41,7 +41,7 @@ title: 前端面试指南
   - [模拟实现 JavaScript 的 new 操作符](../2023/11/20/模拟实现JavaScript的new操作符/)
   - [模拟实现 JavaScript 的 apply 和 call 方法](../2023/11/21/模拟实现JavaScript的apply和call方法/)
   - [模拟实现 JavaScript 的 bind 方法](../2023/11/22/模拟实现JavaScript的bind方法/)
-- 知不知道最新的 url 参数获取的 API？
+- [知不知道最新的 url 参数获取的 API？](../2022/07/26/知不知道最新的url参数获取的API？/)
 
 ## JavaScript 历史
 
