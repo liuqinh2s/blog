@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/11/20/JavaScript对象的继承有哪几种/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2023/11/20/模拟实现JavaScript的new操作符/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -425,7 +425,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2023/11/20/JavaScript对象的继承有哪几种/" itemprop="url">JavaScript对象的继承有哪几种</a></h2>
+                <a class="post-title-link" href="/blog/2023/11/20/模拟实现JavaScript的new操作符/" itemprop="url">模拟实现JavaScript的new操作符</a></h2>
         
 
         <div class="post-meta">
@@ -453,7 +453,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T03:47:41+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T04:01:53+00:00">
                 2025-07-24
               </time>
             
@@ -481,7 +481,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,198
+                  434
                 </span>
               
 
@@ -507,18 +507,15 @@
 
       
         
-          <p>javascript 高级程序设计中有写，对象的继承总共有六种:</p>
+          <p>JavaScript 的 new 操作符，操作对象是一个函数（箭头函数，async 函数除外），一般来说此函数我们不自己写 return，此时返回的是个默认的对象 this。</p>
+<p>如果自己写了返回，那么分两种情况：</p>
 <ol>
-<li>原型链继承，子原型是父原型的一个实例</li>
-<li>借用构造函数继承，子构造函数调用父构造函数</li>
-<li>组合式继承(组合 1 和 2)</li>
-<li>原型式继承</li>
-<li>寄生式继承</li>
-<li>寄生式组合继承（组合 3 和 5）</li>
+<li>返回的是对象或者方法，就返回我们自己写的返回内容</li>
+<li>否则返回默认对象 this</li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2023/11/20/JavaScript对象的继承有哪几种/#more" rel="contents">
+            <a class="btn" href="/blog/2023/11/20/模拟实现JavaScript的new操作符/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -616,7 +613,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T03:47:41+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T04:01:53+00:00">
                 2025-07-24
               </time>
             
@@ -781,7 +778,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T03:47:41+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T04:01:53+00:00">
                 2025-07-24
               </time>
             
@@ -939,7 +936,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T03:47:41+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T04:01:53+00:00">
                 2025-07-24
               </time>
             
@@ -1094,7 +1091,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T03:47:41+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-07-24T04:01:53+00:00">
                 2025-07-24
               </time>
             
