@@ -13,7 +13,7 @@ tags: [编程]
 
 # 2025-07-23
 
-今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz， 404。然后查了一下 stylus，发现它已经从 npm 下架了：https://www.npmjs.com/package/stylus?activeTab=readme， 原因是包含恶意代码被 npm 安全团队移除了。
+今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz ，404。然后查了一下 stylus，发现它已经从 npm 下架了：https://www.npmjs.com/package/stylus?activeTab=readme ，原因是包含恶意代码被 npm 安全团队移除了。
 
 然后我看了一下我博客的依赖，应该是`"hexo-renderer-stylus": "^0.3.1"`这个库依赖了 stylus，这个是 hexo 样式的核心库，删了的话，main.css 都不会生成了。在网上搜了一下，已经有人开始吐槽了：https://juejin.cn/post/7529903134296653839
 
