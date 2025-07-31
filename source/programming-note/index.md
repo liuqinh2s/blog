@@ -426,7 +426,11 @@ https://www.v2ex.com/t/841032
 
 ## window.open
 
-公司项目有个需求是有个属性叫：数据手册，然后点击后要跳转到用户指定的链接，但这个链接可能是本地链接。如果是在客户端环境，就能绕过浏览器的安全策略，打开本地链接，如果是浏览器环境，就要阻止打开。但很可惜的是，在某些版本的 chrome 浏览器上，会自动拼接当前域名。比如本地链接是：`C:\Users\win10\Pictures\1.png`，当前域名是：`www.baidu.com`，就会打开链接：`https://www.baidu.com/C:\Users\win10\Pictures\1.png`。比较棘手
+公司项目有个需求是有个属性叫：数据手册，然后点击后要跳转到用户指定的链接，但这个链接可能是本地链接。如果是在客户端环境，就能绕过浏览器的安全策略，打开本地链接，如果是浏览器环境，就要阻止打开。但很可惜的是，在某些版本的 chrome 浏览器上，会自动拼接当前域名。比如本地链接是：`C:\Users\win10\Pictures\1.png`，当前域名是：`www.baidu.com`，就会打开链接：`https://www.baidu.com/C:\Users\win10\Pictures\1.png`。解决方案是：加个点击事件监听，然后写`window.open('C:\Users\win10\Pictures\1.png')`
+
+现代浏览器（如 Chrome、Firefox）默认禁止通过 `window.open()` 直接打开本地文件路径（如 file:// 协议），以防止恶意脚本访问用户文件系统。若尝试打开，浏览器可能显示空白页或报错（如 "Not allowed to load local resource"），或者启动浏览器时添加 `--allow-file-access-from-files` 参数，就可以打开了。
+
+虽然浏览器禁止打开本地文件，但可以打开本地软件，比如：`mailto://xxx`或者`vscode://xxx`
 
 # 2024-08-01
 
