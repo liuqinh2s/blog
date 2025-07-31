@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2025-07-31T08:13:27.266Z">
+<meta property="og:updated_time" content="2025-07-31T08:22:02.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程笔记">
 <meta name="twitter:description" content="这是我以前所有的编程笔记的汇总。以前是分类优于日期，就是我开了很多个栏目，编程是其中的一个栏目，然后编程里面按日期记录笔记。但现在是日期优先，在每天的日志中记录所有发生的事情，不管类别。用标签和搜索管理这些笔记。 为什么我打算这么做，因为即便我按分类来记录了信息，可以看到编程笔记中仍然是不是会夹杂这与编程无关的内容，这一点其实是避免不了的。世间的事物哪有单一维度的划分机制。唯一真实存在的是如大江大">
@@ -422,7 +422,7 @@
 <p>为什么我打算这么做，因为即便我按分类来记录了信息，可以看到编程笔记中仍然是不是会夹杂这与编程无关的内容，这一点其实是避免不了的。世间的事物哪有单一维度的划分机制。唯一真实存在的是如大江大河般滚滚而逝的时间。笔记只是让这些时间能有个纪念。</p>
 <a id="more"></a>
 <p>这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。</p>
-<h1 id="2025-07-23"><a href="#2025-07-23" class="headerlink" title="2025-07-23"></a>2025-07-23</h1><p>今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：<a href="https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz，" target="_blank" rel="noopener">https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz，</a> 404。然后查了一下 stylus，发现它已经从 npm 下架了：<a href="https://www.npmjs.com/package/stylus?activeTab=readme，" target="_blank" rel="noopener">https://www.npmjs.com/package/stylus?activeTab=readme，</a> 原因是包含恶意代码被 npm 安全团队移除了。</p>
+<h1 id="2025-07-23"><a href="#2025-07-23" class="headerlink" title="2025-07-23"></a>2025-07-23</h1><p>今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：<a href="https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz" target="_blank" rel="noopener">https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz</a> ，404。然后查了一下 stylus，发现它已经从 npm 下架了：<a href="https://www.npmjs.com/package/stylus?activeTab=readme" target="_blank" rel="noopener">https://www.npmjs.com/package/stylus?activeTab=readme</a> ，原因是包含恶意代码被 npm 安全团队移除了。</p>
 <p>然后我看了一下我博客的依赖，应该是<code>&quot;hexo-renderer-stylus&quot;: &quot;^0.3.1&quot;</code>这个库依赖了 stylus，这个是 hexo 样式的核心库，删了的话，main.css 都不会生成了。在网上搜了一下，已经有人开始吐槽了：<a href="https://juejin.cn/post/7529903134296653839" target="_blank" rel="noopener">https://juejin.cn/post/7529903134296653839</a></p>
 <h1 id="2025-07-02"><a href="#2025-07-02" class="headerlink" title="2025-07-02"></a>2025-07-02</h1><p><a href="https://mcpmarket.cn/" target="_blank" rel="noopener">MCP 市场 - 收录 20,000+ MCP Servers 的全球最大平台</a></p>
 <h2 id="react-input-组件表情符号问题"><a href="#react-input-组件表情符号问题" class="headerlink" title="react input 组件表情符号问题"></a>react input 组件表情符号问题</h2><p>发现一个奇怪的现象，react input 组件的 onChange 的 evt.target.value 里面可以有表情符号，但是 onBlur 的 evt.target.value 里面会过滤掉表情符号。</p>
