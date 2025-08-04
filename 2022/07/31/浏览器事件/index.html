@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/事件冒泡.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/事件捕获.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/DOM事件流.png">
-<meta property="og:updated_time" content="2025-08-04T01:51:14.503Z">
+<meta property="og:updated_time" content="2025-08-04T01:58:50.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器事件">
 <meta name="twitter:description" content="事件事件编程是一种观察者模式，可以很好的解耦页面的表现和页面的行为。 事件流事件冒泡 - IE 浏览器：从子节点到祖先节点事件捕获 - Netscape 浏览器：从祖先节点到子节点DOM 事件流 - DOM2 Event 规范 3 个阶段：事件捕获 -&amp;gt; 到达目标 -&amp;gt; 事件冒泡 事件冒泡： 事件捕获： DOM 事件流： 事件处理程序HTML 事件处理程序1&amp;lt;input type">
@@ -455,7 +455,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-04T01:51:14+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-04T01:58:50+00:00">
                 2025-08-04
               </time>
             
@@ -488,7 +488,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,443
+                  1,442
                 </span>
               
 
@@ -546,7 +546,7 @@
 <p>就是兼容这三种事件绑定方式而已。</p>
 <h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><h3 id="DOM-事件对象"><a href="#DOM-事件对象" class="headerlink" title="DOM 事件对象"></a>DOM 事件对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.type); <span class="comment">// "click"</span></span><br><span class="line">&#125;;</span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, (event) =&gt; &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.type); <span class="comment">// "click"</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
 <p>不管以 DOM0 还是 DOM2 的方式，绑定事件处理程序，都会传入 event，事件对象。</p>
-<h4 id="this-currentTarget-target-的区别"><a href="#this-currentTarget-target-的区别" class="headerlink" title="this, currentTarget, target 的区别"></a>this, currentTarget, target 的区别</h4><p><strong>在事件处理程序内部，this 对象始终等于 currentTarget 的值</strong>，而 target 只包含事件的实际<br>目标。如果事件处理程序直接添加在了意图的目标，则 this、currentTarget 和 target 的值是一样<br>的。下面的例子展示了这两个属性都等于 this 的情形：</p>
+<h4 id="this-currentTarget-target-的区别"><a href="#this-currentTarget-target-的区别" class="headerlink" title="this, currentTarget, target 的区别"></a>this, currentTarget, target 的区别</h4><p>this 是调用函数的对象，currentTarget 是事件函数注册的目标，而 target 是事件的实际目标。如果事件处理程序直接添加在了意图的目标，则 this、currentTarget 和 target 的值是一样的。下面的例子展示了这两个属性都等于 this 的情形：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.currentTarget === <span class="keyword">this</span>); <span class="comment">// true</span></span><br><span class="line"> <span class="built_in">console</span>.log(event.target === <span class="keyword">this</span>); <span class="comment">// true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>上面的代码检测了 currentTarget 和 target 的值是否等于 this。因为 click 事件的目标是按<br>钮，所以这 3 个值是相等的。如果这个事件处理程序是添加到按钮的父节点（如 document.body）上，<br>那么它们的值就不一样了。比如下面的例子在 document.body 上添加了单击处理程序：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.currentTarget === <span class="built_in">document</span>.body); <span class="comment">// true</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span> === <span class="built_in">document</span>.body); <span class="comment">// true</span></span><br><span class="line"> <span class="built_in">console</span>.log(event.target === <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>)); <span class="comment">// true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
