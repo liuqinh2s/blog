@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Linux,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
-<meta name="keywords" content="Linux">
+<meta name="description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 this，arguments，super 或 new.target。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。 引入箭头函数有两个方面的作用：  更简短的函数 不绑定 this">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="服务器重装系统">
-<meta property="og:url" content="https://liuqinh2s.github.io/2022/06/11/服务器重装系统/index.html">
+<meta property="og:title" content="箭头函数">
+<meta property="og:url" content="https://liuqinh2s.github.io/2022/08/06/箭头函数/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
+<meta property="og:description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 this，arguments，super 或 new.target。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。 引入箭头函数有两个方面的作用：  更简短的函数 不绑定 this">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-08-06T03:27:17.906Z">
+<meta property="og:updated_time" content="2025-08-06T03:27:17.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="服务器重装系统">
-<meta name="twitter:description" content="今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr">
+<meta name="twitter:title" content="箭头函数">
+<meta name="twitter:description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 this，arguments，super 或 new.target。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。 引入箭头函数有两个方面的作用：  更简短的函数 不绑定 this">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/2022/06/11/服务器重装系统/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/2022/08/06/箭头函数/">
 
 
 
 
 
-  <title>服务器重装系统 | liuqinh2s' blog</title>
+  <title>箭头函数 | liuqinh2s' blog</title>
   
 
 
@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/06/11/服务器重装系统/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/06/箭头函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -423,7 +423,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">服务器重装系统</h2>
+          <h2 class="post-title" itemprop="name headline">箭头函数</h2>
         
 
         <div class="post-meta">
@@ -435,8 +435,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-06-11T00:00:00+00:00">
-                2022-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-06T00:00:00+00:00">
+                2022-08-06
               </time>
             
 
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  480
+                  1,456
                 </span>
               
 
@@ -509,24 +509,47 @@
       
 
       
-        <p>今天我的 wordpress 数据库被攻击了，目前还不知道黑客用了什么手段，所以打算给服务器重装系统。我用的是搬瓦工的服务器，打开管理界面，我选择的是 centos-7-x86_64-bbr</p>
+        <p>箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 <code>this</code>，<code>arguments</code>，<code>super</code> 或 <code>new.target</code>。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且<strong>它不能用作构造函数</strong>。</p>
+<p>引入箭头函数有两个方面的作用：</p>
+<ol>
+<li>更简短的函数</li>
+<li>不绑定 this</li>
+</ol>
 <a id="more"></a>
-<blockquote>
-<p>BBR（Bottleneck Bandwidth and RTT）是一种新的拥塞控制算法，由 Google 贡献给 Linux 内核 TCP 堆栈。有了 BBR，Linux 服务器可以显着提高吞吐量并减少连接延迟。此外，部署 BBR 很容易，因为此算法只需要在发送方更新，而无需在网络或接收方更新。</p>
-</blockquote>
-<h1 id="搭建-Shadowsocks"><a href="#搭建-Shadowsocks" class="headerlink" title="搭建 Shadowsocks"></a>搭建 Shadowsocks</h1><p>然后首先想到的是要安装 shadowsocks，因为我这个服务器基本上就是用来干这个事的。</p>
-<p>我不想使用网上那种一键安装脚本的方式来弄这个，因为怕不安全（真的怕了怕了）。所以最好要自己搞懂每一步都做了什么。</p>
-<p>主要参考这篇文章：<a href="https://gist.github.com/3013216027/469e7b988edde7e5f806f55a993b9efa" target="_blank" rel="noopener">https://gist.github.com/3013216027/469e7b988edde7e5f806f55a993b9efa</a></p>
-<p>发现安装 shadowsocks 之前先要安装 pip</p>
-<p>安装 pip 则要安装 python3</p>
-<h2 id="安装-python3"><a href="#安装-python3" class="headerlink" title="安装 python3"></a>安装 python3</h2><p>我试了一下<code>yum install python3</code>居然真的能安装，终于不用像以前那样从 python 官网下载源码，自己编译，自己配环境变量了。</p>
-<p>安装完后测一下版本<code>python3 --version</code>：Python 3.6.8，测一下安装位置：<code>which python3</code>：/usr/bin/python3</p>
-<h2 id="安装-shadowsocks"><a href="#安装-shadowsocks" class="headerlink" title="安装 shadowsocks"></a>安装 shadowsocks</h2><p>接下来就是安装 shadowsocks 了：<code>python3 -m pip install shadowsocks</code></p>
-<p>安装完后测一下 ssserver 看能不能用，直接输入这个命令看看效果，能用，定位一下位置：</p>
-<p><code>which ssserver</code>：/usr/local/bin/ssserver。</p>
-<p>卸载 shadowsocks 后就不能用了，所以能确定 ssserver 是跟 shadowsocks 有关的。</p>
-<h2 id="配置-shadowsocks"><a href="#配置-shadowsocks" class="headerlink" title="配置 shadowsocks"></a>配置 shadowsocks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;server&quot;: &quot;0.0.0.0&quot;,</span><br><span class="line">    &quot;local_port&quot;: 1080,</span><br><span class="line">    &quot;port_password&quot;: &#123;</span><br><span class="line">        &quot;10085&quot;: &quot;gagosdfger&quot;,</span><br><span class="line">        &quot;10086&quot;: &quot;gagosdfger&quot;,</span><br><span class="line">        &quot;10010&quot;: &quot;gagosdfger&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;timeout&quot;: 600</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>发现加密方法不支持<code>aes-256-gcm</code>，有什么办法给它加一种加密方式呢</p>
+<h2 id="更短的函数"><a href="#更短的函数" class="headerlink" title="更短的函数"></a>更短的函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements = [</span><br><span class="line">  <span class="string">'Hydrogen'</span>,</span><br><span class="line">  <span class="string">'Helium'</span>,</span><br><span class="line">  <span class="string">'Lithium'</span>,</span><br><span class="line">  <span class="string">'Beryllium'</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">elements.map(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> element.length;</span><br><span class="line">&#125;); <span class="comment">// 返回数组：[8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的普通函数可以改写成如下的箭头函数</span></span><br><span class="line">elements.map(<span class="function">(<span class="params">element</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> element.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当箭头函数只有一个参数时，可以省略参数的圆括号</span></span><br><span class="line">elements.map(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line"> <span class="keyword">return</span> element.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当箭头函数的函数体只有一个 `return` 语句时，可以省略 `return` 关键字和方法体的花括号</span></span><br><span class="line">elements.map(<span class="function"><span class="params">element</span> =&gt;</span> element.length); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在这个例子中，因为我们只需要 `length` 属性，所以可以使用参数解构</span></span><br><span class="line"><span class="comment">// 需要注意的是字符串 `"length"` 是我们想要获得的属性的名称，而 `lengthFooBArX` 则只是个变量名，</span></span><br><span class="line"><span class="comment">// 可以替换成任意合法的变量名</span></span><br><span class="line"><span class="comment">// 这样写的话，方法体中就可以更简洁一些</span></span><br><span class="line">elements.map(<span class="function">(<span class="params">&#123; <span class="string">"length"</span>: lengthFooBArX &#125;</span>) =&gt;</span> lengthFooBArX); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//加括号的函数体返回对象字面量表达式：</span></span><br><span class="line">params =&gt; (&#123;<span class="attr">foo</span>: bar&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="没有单独的-this"><a href="#没有单独的-this" class="headerlink" title="没有单独的 this"></a>没有单独的 this</h2><p>在箭头函数出现之前，每一个函数根据它是如何被调用的来定义这个函数的 this 值</p>
+<ol>
+<li>如果这个函数是构造函数，this 指针指向新构造的对象</li>
+<li>在严格模式下，this 指向 undefined</li>
+<li>如果该函数是一个对象的方法，那么它的 this 指针指向这个对象</li>
+<li>其他的函数中的 this 指向全局对象</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Person() 构造函数定义 `this`作为它自己的实例.</span></span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="keyword">function</span> <span class="title">growUp</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 在非严格模式, growUp()函数定义 `this`作为全局对象,</span></span><br><span class="line">    <span class="comment">// 与在 Person()构造函数中定义的 `this`并不相同.</span></span><br><span class="line">    <span class="keyword">this</span>.age++;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<p>在 ECMAScript3/5 中，通过将 this 值分配给封闭的变量，可以解决 this 问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">  that.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="keyword">function</span> <span class="title">growUp</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 回调引用的是`that`变量, 其值是预期的对象.</span></span><br><span class="line">    that.age++;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者可以创建<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="noopener">绑定函数</a>，以便将预先分配的 this 值传递到绑定的目标函数</p>
+<p>箭头函数不会创建自己的 this，它只会从自己的作用域链的上一层继承 this。因此，在下面的代码中，传递给 setInterval 的函数内的 this 与 Person 函数中的 this 值相同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.age++; <span class="comment">// |this| 正确地指向 p 实例</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+<h1 id="通过-call，apply，bind-调用"><a href="#通过-call，apply，bind-调用" class="headerlink" title="通过 call，apply，bind 调用"></a>通过 call，apply，bind 调用</h1><p>由于箭头函数没有自己的 this 指针，通过 call()或 apply()方法调用一个函数时，只能传递参数，不能绑定 this，他们的第一个参数会被忽略。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> adder = &#123;</span><br><span class="line">  base : <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">  add : <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</span><br><span class="line">    <span class="keyword">return</span> f(a);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  addThruCall: <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> f = <span class="function"><span class="params">v</span> =&gt;</span> v + <span class="keyword">this</span>.base;</span><br><span class="line">    <span class="keyword">var</span> b = &#123;</span><br><span class="line">      base : <span class="number">2</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> f.call(b, a);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(adder.add(<span class="number">1</span>));         <span class="comment">// 输出 2</span></span><br><span class="line"><span class="built_in">console</span>.log(adder.addThruCall(<span class="number">1</span>)); <span class="comment">// 仍然输出 2</span></span><br></pre></td></tr></table></figure>
+<h1 id="不绑定-arguments"><a href="#不绑定-arguments" class="headerlink" title="不绑定 arguments"></a>不绑定 arguments</h1><p>箭头函数不绑定 arguments 对象，因此 arguments 只是引用了封闭作用域内的 arguments。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">arguments</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> arr = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">arr(); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">arguments</span>[<span class="number">0</span>] + n; <span class="comment">// 隐式绑定 foo 函数的 arguments 对象. arguments[0] 是 n,即传给foo函数的第一个参数</span></span><br><span class="line">  <span class="keyword">return</span> f();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(<span class="number">1</span>); <span class="comment">// 2</span></span><br><span class="line">foo(<span class="number">2</span>); <span class="comment">// 4</span></span><br><span class="line">foo(<span class="number">3</span>); <span class="comment">// 6</span></span><br><span class="line">foo(<span class="number">3</span>,<span class="number">2</span>);<span class="comment">//6</span></span><br></pre></td></tr></table></figure>
+<p>使用剩余参数来达到原有的意图：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> f = <span class="function">(<span class="params">...args</span>) =&gt;</span> args[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">return</span> f(arg);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">arg1,arg2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> f = <span class="function">(<span class="params">...args</span>) =&gt;</span> args[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> f(arg1,arg2);</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>,<span class="number">2</span>);  <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<h1 id="箭头函数不适合作为方法"><a href="#箭头函数不适合作为方法" class="headerlink" title="箭头函数不适合作为方法"></a>箭头函数不适合作为方法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  i: <span class="number">10</span>,</span><br><span class="line">  b: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>.i, <span class="keyword">this</span>),</span><br><span class="line">  c: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="keyword">this</span>.i, <span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.b();</span><br><span class="line"><span class="comment">// undefined, Window&#123;...&#125;</span></span><br><span class="line">obj.c();</span><br><span class="line"><span class="comment">// 10, Object &#123;...&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  a: <span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">"b"</span>, &#123;</span><br><span class="line">  <span class="keyword">get</span>: () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a, <span class="keyword">typeof</span> <span class="keyword">this</span>.a, <span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a+<span class="number">10</span>;</span><br><span class="line">   <span class="comment">// 代表全局对象 'Window', 因此 'this.a' 返回 'undefined'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">obj.b; <span class="comment">// undefined   "undefined"   Window &#123;postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="箭头函数不能用作构造函数"><a href="#箭头函数不能用作构造函数" class="headerlink" title="箭头函数不能用作构造函数"></a>箭头函数不能用作构造函数</h1><p>箭头函数不能用作构造器，和 <code>new</code>一起用会抛出错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo(); <span class="comment">// TypeError: Foo is not a constructor</span></span><br></pre></td></tr></table></figure>
+<h1 id="箭头函数没有-prototype-属性"><a href="#箭头函数没有-prototype-属性" class="headerlink" title="箭头函数没有 prototype 属性"></a>箭头函数没有 prototype 属性</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(Foo.prototype); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="箭头函数内不能使用-yield"><a href="#箭头函数内不能使用-yield" class="headerlink" title="箭头函数内不能使用 yield"></a>箭头函数内不能使用 yield</h1><p>yield 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
+<p>什么是 yield?</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield</a></p>
+<h1 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h1><p>箭头函数在参数和箭头之间不能换行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = ()</span><br><span class="line">           =&gt; <span class="number">1</span>;</span><br><span class="line"><span class="comment">// SyntaxError: expected expression, got '=&gt;'</span></span><br></pre></td></tr></table></figure>
+<p>但是，可以通过在 ‘=&gt;’ 之后换行，或者用 ‘( )’、&#39;{ }&#39;来实现换行，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function">(<span class="params">a, b, c</span>) =&gt;</span></span><br><span class="line">  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="function">(<span class="params">a, b, c</span>) =&gt;</span> (</span><br><span class="line">  <span class="number">1</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="function">(<span class="params">a, b, c</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = (</span><br><span class="line">  a,</span><br><span class="line">  b,</span><br><span class="line">  c</span><br><span class="line">) =&gt; <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 不会有语法错误</span></span><br></pre></td></tr></table></figure>
+<h1 id="解析顺序"><a href="#解析顺序" class="headerlink" title="解析顺序"></a>解析顺序</h1><p>虽然箭头函数中的箭头不是运算符，但箭头函数具有与常规函数不同的特殊<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener">运算符优先级</a>解析规则。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> callback;</span><br><span class="line"></span><br><span class="line">callback = callback || <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;; <span class="comment">// ok</span></span><br><span class="line"></span><br><span class="line">callback = callback || <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;;</span><br><span class="line"><span class="comment">// SyntaxError: invalid arrow-function arguments</span></span><br><span class="line"></span><br><span class="line">callback = callback || <span class="function">(<span class="params">(</span>) =&gt;</span> &#123;&#125;);    <span class="comment">// ok</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -544,7 +567,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Linux/" rel="tag"># Linux</a>
+            <a href="/blog/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -557,8 +580,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/06/09/浏览器上的几种xy坐标/" rel="next" title="浏览器上的几种xy坐标">
-                <i class="fa fa-chevron-left"></i> 浏览器上的几种xy坐标
+              <a href="/blog/2022/08/04/浏览器同源策略和跨域问题/" rel="next" title="浏览器同源策略和跨域问题">
+                <i class="fa fa-chevron-left"></i> 浏览器同源策略和跨域问题
               </a>
             
           </div>
@@ -567,8 +590,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/06/20/TCP和UDP的区别/" rel="prev" title="TCP和UDP的区别">
-                TCP和UDP的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2022/11/06/vue.js响应系统的实现 第一篇/" rel="prev" title="vue.js响应系统的实现 第一篇">
+                vue.js响应系统的实现 第一篇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -744,7 +767,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建-Shadowsocks"><span class="nav-number">1.</span> <span class="nav-text">搭建 Shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-python3"><span class="nav-number">1.1.</span> <span class="nav-text">安装 python3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-shadowsocks"><span class="nav-number">1.2.</span> <span class="nav-text">安装 shadowsocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-shadowsocks"><span class="nav-number">1.3.</span> <span class="nav-text">配置 shadowsocks</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#更短的函数"><span class="nav-number">1.</span> <span class="nav-text">更短的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有单独的-this"><span class="nav-number">2.</span> <span class="nav-text">没有单独的 this</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#通过-call，apply，bind-调用"><span class="nav-number"></span> <span class="nav-text">通过 call，apply，bind 调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不绑定-arguments"><span class="nav-number"></span> <span class="nav-text">不绑定 arguments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数不适合作为方法"><span class="nav-number"></span> <span class="nav-text">箭头函数不适合作为方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数不能用作构造函数"><span class="nav-number"></span> <span class="nav-text">箭头函数不能用作构造函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数没有-prototype-属性"><span class="nav-number"></span> <span class="nav-text">箭头函数没有 prototype 属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箭头函数内不能使用-yield"><span class="nav-number"></span> <span class="nav-text">箭头函数内不能使用 yield</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#换行"><span class="nav-number"></span> <span class="nav-text">换行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析顺序"><span class="nav-number"></span> <span class="nav-text">解析顺序</span></a></li></div>
             
 
           </div>
