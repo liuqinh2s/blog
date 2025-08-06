@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 this，arguments，super 或 new.target。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。 引入箭头函数有两个方面的作用：  更简短的函数 不绑定 this">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-08-06T03:27:17.907Z">
+<meta property="og:updated_time" content="2025-08-06T03:54:27.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="箭头函数">
 <meta name="twitter:description" content="箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 this，arguments，super 或 new.target。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。 引入箭头函数有两个方面的作用：  更简短的函数 不绑定 this">
@@ -451,7 +451,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T03:27:17+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T03:54:27+00:00">
                 2025-08-06
               </time>
             
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,456
+                  1,228
                 </span>
               
 
@@ -516,7 +516,7 @@
 <li>不绑定 this</li>
 </ol>
 <a id="more"></a>
-<h2 id="更短的函数"><a href="#更短的函数" class="headerlink" title="更短的函数"></a>更短的函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elements = [</span><br><span class="line">  <span class="string">'Hydrogen'</span>,</span><br><span class="line">  <span class="string">'Helium'</span>,</span><br><span class="line">  <span class="string">'Lithium'</span>,</span><br><span class="line">  <span class="string">'Beryllium'</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">elements.map(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> element.length;</span><br><span class="line">&#125;); <span class="comment">// 返回数组：[8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面的普通函数可以改写成如下的箭头函数</span></span><br><span class="line">elements.map(<span class="function">(<span class="params">element</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> element.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当箭头函数只有一个参数时，可以省略参数的圆括号</span></span><br><span class="line">elements.map(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line"> <span class="keyword">return</span> element.length;</span><br><span class="line">&#125;); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当箭头函数的函数体只有一个 `return` 语句时，可以省略 `return` 关键字和方法体的花括号</span></span><br><span class="line">elements.map(<span class="function"><span class="params">element</span> =&gt;</span> element.length); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在这个例子中，因为我们只需要 `length` 属性，所以可以使用参数解构</span></span><br><span class="line"><span class="comment">// 需要注意的是字符串 `"length"` 是我们想要获得的属性的名称，而 `lengthFooBArX` 则只是个变量名，</span></span><br><span class="line"><span class="comment">// 可以替换成任意合法的变量名</span></span><br><span class="line"><span class="comment">// 这样写的话，方法体中就可以更简洁一些</span></span><br><span class="line">elements.map(<span class="function">(<span class="params">&#123; <span class="string">"length"</span>: lengthFooBArX &#125;</span>) =&gt;</span> lengthFooBArX); <span class="comment">// [8, 6, 7, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//加括号的函数体返回对象字面量表达式：</span></span><br><span class="line">params =&gt; (&#123;<span class="attr">foo</span>: bar&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="更短的函数"><a href="#更短的函数" class="headerlink" title="更短的函数"></a>更短的函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b;          <span class="comment">// 传统函数：function(a, b) &#123; return a + b; &#125;</span></span><br><span class="line"><span class="keyword">const</span> square = <span class="function"><span class="params">x</span> =&gt;</span> x * x;            <span class="comment">// 单参数省略括号</span></span><br><span class="line"><span class="keyword">const</span> createObj = <span class="function"><span class="params">()</span> =&gt;</span> (&#123; <span class="attr">key</span>: <span class="number">1</span> &#125;); <span class="comment">// 返回对象需用括号包裹</span></span><br></pre></td></tr></table></figure>
 <h2 id="没有单独的-this"><a href="#没有单独的-this" class="headerlink" title="没有单独的 this"></a>没有单独的 this</h2><p>在箭头函数出现之前，每一个函数根据它是如何被调用的来定义这个函数的 this 值</p>
 <ol>
 <li>如果这个函数是构造函数，this 指针指向新构造的对象</li>
@@ -580,8 +580,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/08/04/浏览器同源策略和跨域问题/" rel="next" title="浏览器同源策略和跨域问题">
-                <i class="fa fa-chevron-left"></i> 浏览器同源策略和跨域问题
+              <a href="/blog/2022/08/05/宏任务和微任务/" rel="next" title="宏任务和微任务">
+                <i class="fa fa-chevron-left"></i> 宏任务和微任务
               </a>
             
           </div>
@@ -676,7 +676,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -801,7 +801,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">112.4k</span>
+    <span title="Site words total count">112.8k</span>
   
 </div>
 
