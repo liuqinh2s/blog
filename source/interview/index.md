@@ -97,9 +97,11 @@ title: 前端面试指南
 
 # typescript
 
-- type 和 interface 的区别
+- [type 和 interface 的区别](../2022/06/21/type 和 interface 的区别/)
 
 # react
+
+- [用过哪些 react hooks？](../2025/07/21/常用 react hooks 总结/)
 
 # vue
 
