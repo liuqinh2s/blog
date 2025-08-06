@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="面试中经常被问到跨域问题，可以说这是前端网络安全必问的一道题。我感觉之前每次都答得不是很好，要搞清楚几个关键的点：  跨域问题是浏览器才有的问题，如果其他程序请求后端，是不存在跨域问题的，比如爬虫，webpack server，后端程序 前端跨域问题的关键在于后端是否允许跨域，如果后端允许，则也是不存在跨域问题的，正是利用了这一点，XSS 攻击才能成功。 跨域请求是能发送成功的，只是请求结果读取不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-08-05T10:02:02.855Z">
+<meta property="og:updated_time" content="2025-08-06T01:17:50.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器同源策略和跨域问题">
 <meta name="twitter:description" content="面试中经常被问到跨域问题，可以说这是前端网络安全必问的一道题。我感觉之前每次都答得不是很好，要搞清楚几个关键的点：  跨域问题是浏览器才有的问题，如果其他程序请求后端，是不存在跨域问题的，比如爬虫，webpack server，后端程序 前端跨域问题的关键在于后端是否允许跨域，如果后端允许，则也是不存在跨域问题的，正是利用了这一点，XSS 攻击才能成功。 跨域请求是能发送成功的，只是请求结果读取不">
@@ -451,8 +451,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-05T10:02:02+00:00">
-                2025-08-05
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T01:17:50+00:00">
+                2025-08-06
               </time>
             
           </span>
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,443
+                  1,493
                 </span>
               
 
@@ -578,7 +578,7 @@
 <p>浏览器限制 ​​：浏览器禁止跨域脚本读取其他域的资源。例如：</p>
 <ul>
 <li>恶意网站 evil.com 的 JavaScript 无法通过 XMLHttpRequest 或 fetch 读取 bank.com 的页面内容（包括 Token）。</li>
-<li>即使攻击者在 evil.com 嵌入<iframe>加载 bank.com 页面，也无法通过脚本读取其 DOM 中的 Token（受同源策略限制）。</iframe></li>
+<li>即使攻击者在 evil.com 嵌入<code>&lt;iframe&gt;</code>加载 bank.com 页面，也无法通过脚本读取其 DOM 中的 Token（受同源策略限制）。</li>
 </ul>
 <p>关键点 ​​：Token 通常嵌入在目标站点的 HTML 表单或 HTTP 头中，攻击者无法跨域提取。</p>
 <p>安全优化：</p>
@@ -595,7 +595,8 @@
 <li>执行：其他用户访问含恶意脚本的页面，浏览器执行恶意脚本触发攻击</li>
 </ul>
 <h3 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h3><ol>
-<li>输入过滤：对用户提交的数据（URL 参数、表单等）进行</li>
+<li>输入过滤：对用户提交的数据（URL 参数、表单等）进行严格校验，过滤特殊字符（如<code>&lt;</code>、<code>&gt;</code>）</li>
+<li>输出编码：将用户输入的内容在输出到 HTML 时进行转义（如将<code>&lt;</code>转为<code>&amp;lt;</code>），防止浏览器解析为代码。</li>
 </ol>
 
       
@@ -637,8 +638,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/08/05/CSRF 和 XSS 攻击/" rel="prev" title="CSRF 和 XSS 攻击">
-                CSRF 和 XSS 攻击 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2022/11/06/vue.js响应系统的实现 第一篇/" rel="prev" title="vue.js响应系统的实现 第一篇">
+                vue.js响应系统的实现 第一篇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -723,7 +724,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">93</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -736,7 +737,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
