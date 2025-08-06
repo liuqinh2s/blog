@@ -28,7 +28,7 @@ title: 前端面试指南
 
 - [箭头函数](../2022/08/06/箭头函数/)
 - [Promise A+ 规范](../2023/07/19/Promise详解/)
-- Event Loop（事件循环）
+- [Event Loop（事件循环）](../2022/08/05/宏任务和微任务/)
 - 内存回收
 - try-catch：
   - [try-catch 能抛出 promise 的异常吗](https://juejin.cn/post/6850418110907088910)
