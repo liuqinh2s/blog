@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/24/寻找字符串中出现最多的字符怎么实现？/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/06/箭头函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -425,7 +425,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/24/寻找字符串中出现最多的字符怎么实现？/" itemprop="url">寻找字符串中出现最多的字符怎么实现？</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/06/箭头函数/" itemprop="url">箭头函数</a></h2>
         
 
         <div class="post-meta">
@@ -437,8 +437,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-24T00:00:00+00:00">
-                2022-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-06T00:00:00+00:00">
+                2022-08-06
               </time>
             
 
@@ -453,8 +453,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -481,7 +481,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  127
+                  1,228
                 </span>
               
 
@@ -507,10 +507,15 @@
 
       
         
-          <h2 id="寻找字符串中出现最多的字符怎么实现？"><a href="#寻找字符串中出现最多的字符怎么实现？" class="headerlink" title="寻找字符串中出现最多的字符怎么实现？"></a>寻找字符串中出现最多的字符怎么实现？</h2><p>遍历一遍字符串，用个 map 记录每个字符出现的次数，然后遍历一遍 map，取出出现次数最多的字符</p>
+          <p>箭头函数表达式的语法比函数表达式更简洁，并且没有自己的 <code>this</code>，<code>arguments</code>，<code>super</code> 或 <code>new.target</code>。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且<strong>它不能用作构造函数</strong>。</p>
+<p>引入箭头函数有两个方面的作用：</p>
+<ol>
+<li>更简短的函数</li>
+<li>不绑定 this</li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/24/寻找字符串中出现最多的字符怎么实现？/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/06/箭头函数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -561,7 +566,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript执行上下文之作用域链/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/05/宏任务和微任务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -580,7 +585,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/14/JavaScript执行上下文之作用域链/" itemprop="url">JavaScript执行上下文之作用域链</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/05/宏任务和微任务/" itemprop="url">宏任务和微任务</a></h2>
         
 
         <div class="post-meta">
@@ -592,8 +597,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+00:00">
-                2022-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+00:00">
+                2022-08-05
               </time>
             
 
@@ -608,8 +613,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -636,7 +641,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  573
+                  764
                 </span>
               
 
@@ -662,17 +667,15 @@
 
       
         
-          <p>执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。</p>
-<p>函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性<code>[[scope]]</code></p>
-<p>函数的生命周期分为：<strong>函数创建</strong> 和 <strong>函数调用</strong>。</p>
-<p>函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性<code>[[scope]]</code>（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的<code>AO</code>和<code>[[scope]]</code>合并成新的作用域链：</p>
-<blockquote>
-<p>假设要实现动态作用域的话，<code>[[scope]]</code>就得在调用时去执行上下文栈的上一帧去取。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scope = [AO].concat([[scope]]);</span><br></pre></td></tr></table></figure>
+          
+          参考微任务、宏任务与 Event-Loop
+宏任务和微任务到底是什么？
+JavaScript 中的 Event Loop（事件循环）机制
+什么是 Event-LoopJS 是单线程执行的，所以要执行多任务的话依赖于异步和事件循环（Event Loop）。JS 是单线程的，指的是 JS 引擎线程。在浏
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/14/JavaScript执行上下文之作用域链/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/05/宏任务和微任务/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -723,7 +726,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript闭包/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/04/浏览器同源策略和跨域问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -742,7 +745,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/14/JavaScript闭包/" itemprop="url">JavaScript 闭包</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/04/浏览器同源策略和跨域问题/" itemprop="url">浏览器同源策略和跨域问题</a></h2>
         
 
         <div class="post-meta">
@@ -754,8 +757,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+00:00">
-                2022-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-04T00:00:00+00:00">
+                2022-08-04
               </time>
             
 
@@ -770,8 +773,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -798,7 +801,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,148
+                  1,530
                 </span>
               
 
@@ -824,16 +827,15 @@
 
       
         
-          <h1 id="闭包是干什么用的"><a href="#闭包是干什么用的" class="headerlink" title="闭包是干什么用的"></a>闭包是干什么用的</h1><p>本质上闭包就是为了拓展查找自由变量的范围</p>
-<p>MDN 对闭包的定义为：</p>
-<p>A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)</p>
-<p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">'Mozilla'</span>; <span class="comment">// name is a local variable created by init</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">displayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// displayName() is the inner function, a closure</span></span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">// use variable declared in the parent function</span></span><br><span class="line">  &#125;</span><br><span class="line">  displayName();</span><br><span class="line">&#125;</span><br><span class="line">init();</span><br></pre></td></tr></table></figure>
-<p>name 是 displayName 函数所处环境中的变量，它们一起构成了闭包。而闭包的实现依赖于执行上下文中的作用域链。</p>
-<p>上面这个例子有点平平无奇了，让我们看一个神奇一点的例子：</p>
+          <p>面试中经常被问到跨域问题，可以说这是前端网络安全必问的一道题。我感觉之前每次都答得不是很好，要搞清楚几个关键的点：</p>
+<ol>
+<li><strong>跨域问题是浏览器才有的问题</strong>，如果其他程序请求后端，是不存在跨域问题的，比如爬虫，webpack server，后端程序</li>
+<li><strong>前端跨域问题的关键在于后端是否允许跨域</strong>，如果后端允许，则也是不存在跨域问题的，正是利用了这一点，XSS 攻击才能成功。</li>
+<li><strong>跨域请求是能发送成功的，只是请求结果读取不到而已</strong>。正是利用了这一点，CSRF 攻击才能成功。</li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/14/JavaScript闭包/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/04/浏览器同源策略和跨域问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -884,7 +886,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/13/JavaScript执行上下文之变量对象/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/31/浏览器事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -903,7 +905,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/13/JavaScript执行上下文之变量对象/" itemprop="url">JavaScript执行上下文之变量对象</a></h2>
+                <a class="post-title-link" href="/blog/2022/07/31/浏览器事件/" itemprop="url">浏览器事件</a></h2>
         
 
         <div class="post-meta">
@@ -915,8 +917,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-13T00:00:00+00:00">
-                2022-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-31T00:00:00+00:00">
+                2022-07-31
               </time>
             
 
@@ -931,8 +933,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -959,7 +961,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  932
+                  1,945
                 </span>
               
 
@@ -985,16 +987,14 @@
 
       
         
-          <h1 id="执行上下文中包含哪些东西"><a href="#执行上下文中包含哪些东西" class="headerlink" title="执行上下文中包含哪些东西"></a>执行上下文中包含哪些东西</h1><p>对于每个执行上下文，都有三个重要属性：</p>
-<ul>
-<li>变量对象(Variable object，VO)</li>
-<li>作用域链(Scope chain)</li>
-<li>this</li>
-</ul>
-<p>本篇就来讲讲第一个变量对象</p>
+          
+          事件事件编程是一种观察者模式，可以很好的解耦页面的表现和页面的行为。
+事件流事件冒泡 - IE 浏览器：从子节点到祖先节点事件捕获 - Netscape 浏览器：从祖先节点到子节点DOM 事件流 - DOM2 Event 规范 3 个阶段：事件捕获 -&gt; 到达目标 -&gt; 事件冒泡
+事件冒
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/13/JavaScript执行上下文之变量对象/#more" rel="contents">
+            <a class="btn" href="/blog/2022/07/31/浏览器事件/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1045,7 +1045,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/12/JavaScript执行上下文栈/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/26/知不知道最新的url参数获取的API？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -1064,7 +1064,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/12/JavaScript执行上下文栈/" itemprop="url">JavaScript执行上下文栈</a></h2>
+                <a class="post-title-link" href="/blog/2022/07/26/知不知道最新的url参数获取的API？/" itemprop="url">知不知道最新的url参数获取的API？</a></h2>
         
 
         <div class="post-meta">
@@ -1076,8 +1076,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-12T00:00:00+00:00">
-                2022-07-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-26T00:00:00+00:00">
+                2022-07-26
               </time>
             
 
@@ -1092,8 +1092,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -1120,7 +1120,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  407
+                  254
                 </span>
               
 
@@ -1146,14 +1146,14 @@
 
       
         
-          <h1 id="顺序执行？"><a href="#顺序执行？" class="headerlink" title="顺序执行？"></a>顺序执行？</h1><p>代码示例 1：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo1'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();  <span class="comment">// foo1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo2'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// foo2</span></span><br></pre></td></tr></table></figure>
-<p>代码示例 2：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo1'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo();  <span class="comment">// foo2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo2'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// foo2</span></span><br></pre></td></tr></table></figure>
-<p>第一个例子中用到了变量提升，第二个例子中用到了函数提升。JavaScript 引擎并非一行一行地分析和执行程序，而是一段一段地分析执行。当执行一段代码的时候，会进行一个“准备工作”。到底 JavaScript 引擎遇到一段怎样的代码时才会做“准备工作”呢？</p>
+          
+          核心 API：URLSearchParams现代浏览器原生支持的查询参数处理标准接口
+基础使用示例：
+123456// 从当前URL获取参数const params = new URLSearchParams(window.location.search);// 获取单个参数值const name 
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/12/JavaScript执行上下文栈/#more" rel="contents">
+            <a class="btn" href="/blog/2022/07/26/知不知道最新的url参数获取的API？/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1195,7 +1195,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/blog/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/19/">19</a><a class="extend next" rel="next" href="/blog/page/10/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/8/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/blog/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/20/">20</a><a class="extend next" rel="next" href="/blog/page/10/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1243,7 +1243,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1256,7 +1256,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1352,7 +1352,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">112.9k</span>
+    <span title="Site words total count">114.7k</span>
   
 </div>
 

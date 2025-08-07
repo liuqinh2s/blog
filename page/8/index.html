@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/05/宏任务和微任务/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/10/伪类和伪元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -425,7 +425,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/08/05/宏任务和微任务/" itemprop="url">宏任务和微任务</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/10/伪类和伪元素/" itemprop="url">伪类和伪元素</a></h2>
         
 
         <div class="post-meta">
@@ -437,8 +437,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-05T00:00:00+00:00">
-                2022-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-10T00:00:00+00:00">
+                2022-08-10
               </time>
             
 
@@ -453,8 +453,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -481,7 +481,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  764
+                  115
                 </span>
               
 
@@ -508,14 +508,13 @@
       
         
           
-          参考微任务、宏任务与 Event-Loop
-宏任务和微任务到底是什么？
-JavaScript 中的 Event Loop（事件循环）机制
-什么是 Event-LoopJS 是单线程执行的，所以要执行多任务的话依赖于异步和事件循环（Event Loop）。JS 是单线程的，指的是 JS 引擎线程。在浏
+          参考https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements
+伪类伪类是选择器的一种，用于选择处于特定状态的元素，开头为冒号
+1:ps
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/08/05/宏任务和微任务/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/10/伪类和伪元素/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -566,7 +565,7 @@ JavaScript 中的 Event Loop（事件循环）机制
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/04/浏览器同源策略和跨域问题/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/09/CSS 前缀/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -585,7 +584,7 @@ JavaScript 中的 Event Loop（事件循环）机制
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/08/04/浏览器同源策略和跨域问题/" itemprop="url">浏览器同源策略和跨域问题</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/09/CSS 前缀/" itemprop="url">CSS 前缀</a></h2>
         
 
         <div class="post-meta">
@@ -597,8 +596,8 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-04T00:00:00+00:00">
-                2022-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-09T00:00:00+00:00">
+                2022-08-09
               </time>
             
 
@@ -613,8 +612,8 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -641,167 +640,7 @@ JavaScript 中的 Event Loop（事件循环）机制
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,530
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>面试中经常被问到跨域问题，可以说这是前端网络安全必问的一道题。我感觉之前每次都答得不是很好，要搞清楚几个关键的点：</p>
-<ol>
-<li><strong>跨域问题是浏览器才有的问题</strong>，如果其他程序请求后端，是不存在跨域问题的，比如爬虫，webpack server，后端程序</li>
-<li><strong>前端跨域问题的关键在于后端是否允许跨域</strong>，如果后端允许，则也是不存在跨域问题的，正是利用了这一点，XSS 攻击才能成功。</li>
-<li><strong>跨域请求是能发送成功的，只是请求结果读取不到而已</strong>。正是利用了这一点，CSRF 攻击才能成功。</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/08/04/浏览器同源策略和跨域问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/31/浏览器事件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/2022/07/31/浏览器事件/" itemprop="url">浏览器事件</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-31T00:00:00+00:00">
-                2022-07-31
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,945
+                  130
                 </span>
               
 
@@ -828,13 +667,14 @@ JavaScript 中的 Event Loop（事件循环）机制
       
         
           
-          事件事件编程是一种观察者模式，可以很好的解耦页面的表现和页面的行为。
-事件流事件冒泡 - IE 浏览器：从子节点到祖先节点事件捕获 - Netscape 浏览器：从祖先节点到子节点DOM 事件流 - DOM2 Event 规范 3 个阶段：事件捕获 -&gt; 到达目标 -&gt; 事件冒泡
-事件冒
+          参考https://www.zhihu.com/question/20597072
+https://developer.mozilla.org/zh-CN/docs/Glossary/Vendor_Prefix
+主流浏览器引擎前缀
+-webkit-（谷歌，safari，新版 Opera 浏览器，以及
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/31/浏览器事件/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/09/CSS 前缀/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -885,7 +725,7 @@ JavaScript 中的 Event Loop（事件循环）机制
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/26/知不知道最新的url参数获取的API？/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/08/css position/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -904,7 +744,7 @@ JavaScript 中的 Event Loop（事件循环）机制
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/26/知不知道最新的url参数获取的API？/" itemprop="url">知不知道最新的url参数获取的API？</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/08/css position/" itemprop="url">css position</a></h2>
         
 
         <div class="post-meta">
@@ -916,8 +756,8 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-26T00:00:00+00:00">
-                2022-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-08T00:00:00+00:00">
+                2022-08-08
               </time>
             
 
@@ -932,8 +772,8 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -960,7 +800,7 @@ JavaScript 中的 Event Loop（事件循环）机制
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  254
+                  260
                 </span>
               
 
@@ -987,13 +827,19 @@ JavaScript 中的 Event Loop（事件循环）机制
       
         
           
-          核心 API：URLSearchParams现代浏览器原生支持的查询参数处理标准接口
-基础使用示例：
-123456// 从当前URL获取参数const params = new URLSearchParams(window.location.search);// 获取单个参数值const name 
+          参考https://developer.mozilla.org/zh-CN/docs/Web/CSS/position
+可选项有四种：
+
+static
+relative
+absolute
+sticky
+
+static默认就是 static，在这个选项下，设置 top, bottom, left, r
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/26/知不知道最新的url参数获取的API？/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/08/css position/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1044,7 +890,7 @@ JavaScript 中的 Event Loop（事件循环）机制
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/25/扁平数组嵌套化（flat to nest）/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/07/盒模型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -1063,7 +909,7 @@ JavaScript 中的 Event Loop（事件循环）机制
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/blog/2022/07/25/扁平数组嵌套化（flat to nest）/" itemprop="url">扁平数组嵌套化（flat to nest）</a></h2>
+                <a class="post-title-link" href="/blog/2022/08/07/盒模型/" itemprop="url">盒模型</a></h2>
         
 
         <div class="post-meta">
@@ -1075,8 +921,8 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-25T00:00:00+00:00">
-                2022-07-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-07T00:00:00+00:00">
+                2022-08-07
               </time>
             
 
@@ -1091,8 +937,8 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-06T07:36:18+00:00">
-                2025-08-06
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
               </time>
             
           </span>
@@ -1119,7 +965,7 @@ JavaScript 中的 Event Loop（事件循环）机制
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  243
+                  563
                 </span>
               
 
@@ -1145,14 +991,185 @@ JavaScript 中的 Event Loop（事件循环）机制
 
       
         
-          <h2 id="扁平数组嵌套化-flat-to-nest"><a href="#扁平数组嵌套化-flat-to-nest" class="headerlink" title="扁平数组嵌套化(flat to nest)"></a>扁平数组嵌套化(flat to nest)</h2><ol>
-<li>菜单数组转换为嵌套树形结构，但示例只有两级</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">menu</span>: <span class="string">'水果'</span>, <span class="attr">level</span>: <span class="number">1</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">menu</span>: <span class="string">'橘子'</span>, <span class="attr">level</span>: <span class="number">2</span>, <span class="attr">parentId</span>: <span class="number">1</span> &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">]</span><br><span class="line"><span class="comment">// 转换为</span></span><br><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    id: <span class="number">1</span>, <span class="attr">menu</span>: <span class="string">'水果'</span>, <span class="attr">level</span>: <span class="number">1</span>, <span class="attr">children</span>: [&#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">menu</span>: <span class="string">'橘子'</span>, <span class="attr">level</span>: <span class="number">2</span>, <span class="attr">parentId</span>: <span class="number">1</span> &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>以下是我给出的解答，未经过严格测试</p>
+          
+          基本概念
+margin
+border
+padding
+content
+
+
+标准模型和 IE 模型的区别
+标准模型的 width = content
+IE 模型的 width = content+2*padding+2*border
+
+通过 css3 新增的属性 box-sizing: content
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/blog/2022/07/25/扁平数组嵌套化（flat to nest）/#more" rel="contents">
+            <a class="btn" href="/blog/2022/08/07/盒模型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/08/07/BFC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="liuqinh2s">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2022/08/07/BFC/" itemprop="url">BFC</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-07T00:00:00+00:00">
+                2022-08-07
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-07T01:02:33+00:00">
+                2025-08-07
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  515
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          BFC，Block Formatting Context，块级格式上下文
+具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。
+触发 BFC只要元素满足下面任一条件即可触发 BFC 特性：
+
+body 根元素
+浮
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/blog/2022/08/07/BFC/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1194,7 +1211,7 @@ JavaScript 中的 Event Loop（事件循环）机制
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/19/">19</a><a class="extend next" rel="next" href="/blog/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/20/">20</a><a class="extend next" rel="next" href="/blog/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1242,7 +1259,7 @@ JavaScript 中的 Event Loop（事件循环）机制
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">94</span>
+                  <span class="site-state-item-count">100</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1255,7 +1272,7 @@ JavaScript 中的 Event Loop（事件循环）机制
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1351,7 +1368,7 @@ JavaScript 中的 Event Loop（事件循环）机制
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">112.9k</span>
+    <span title="Site words total count">114.7k</span>
   
 </div>
 
