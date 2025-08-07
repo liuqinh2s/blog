@@ -66,7 +66,7 @@ title: 前端面试指南
 - 垂直居中有几种方式？
   - [垂直居中和水平居中](../2022/12/13/css%E5%B1%85%E4%B8%AD%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
 - [position](../2022/08/08/css position)
-- text-overflow（文本溢出）
+- [text-overflow（文本溢出）](../2022/08/11/CSS文本溢出显示三个点)
 - flex: 2 有用过吗？多列布局怎么实现？
 
 # 前端编程范式
@@ -86,10 +86,10 @@ title: 前端面试指南
 
 ## HTTP
 
-- HTTP 状态码
-- GET 请求和 POST 请求的区别
-- HTTP 和 HTTPS 的区别
-- HTTP 缓存
+- [HTTP 状态码](../2022/08/12/HTTP状态码)
+- [GET 请求和 POST 请求的区别](../2022/08/12/GET请求和POST请求的区别)
+- [HTTP 和 HTTPS 的区别](../2022/08/12/HTTP和HTTPS的区别)
+- [HTTP 缓存](../2022/08/13/HTTP缓存)
 
 ## TCP/IP
 
