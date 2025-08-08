@@ -7,6 +7,18 @@ date: 2019-02-20 20:30:09
 
 我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
 
+# 2025-08-08
+
+- 在线的像素图作图工具，可以同屏制作多个动画帧：[Pixel Motion](https://pixel-motion.yysuni.com/)
+- 一个 25MB 大小的 AI 语音模型，用来从文本生成语音。只使用个人电脑 CPU，几分钟就安装完毕，通过 Python 脚本使用，好像不支持中文：[KittenML/KittenTTS: State-of-the-art TTS model under 25MB 😻](https://github.com/KittenML/KittenTTS)
+- 跨平台的 AI 智能截图工具，可以识别并提取公式、表格、代码、图片和文字：
+  - [xyTom/snippai: Snip Anything Solve Everything​](https://github.com/xyTom/snippai)
+  - [Snippai: Snip Anything Solve Everything](https://www.snippai.de/)
+- 一个在线数学工具，包括数学手册、计算器、数学图形绘制等功能：[黄博士网: 教育网,在线数学手册计算器软件，电化学虚拟实验室，虚拟电化学工作站，电化学软件](https://drhuang.com/chinese/science/mathematics/software/)
+- 该网站收录中国国内的各种标志 LOGO 的 SVG 文件，目前有 700 多个：[收录国内矢量 LOGO - SVGLOGO](https://svglogo.top/?view=original)
+- 这个英文仓库收录了启用 Linux 服务器以后的各种安全措施：[imthenachoman/How-To-Secure-A-Linux-Server: An evolving how-to guide for securing a Linux server.](https://github.com/imthenachoman/How-To-Secure-A-Linux-Server)
+- 一篇长文，介绍 SVG 格式的基础知识：[A Friendly Introduction to SVG • Josh W. Comeau](https://www.joshwcomeau.com/svg/friendly-introduction-to-svg/)
+
 # 2024-08-06
 
 - [一些好书](https://github.com/0voice/expert_readed_books)
