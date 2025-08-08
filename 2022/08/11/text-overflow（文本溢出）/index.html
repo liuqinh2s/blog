@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="参考https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow 这个面试的时候被问过 N 次。不知道为啥这么喜欢问这个。今天好好学一下这个技巧">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://secure2.wostatic.cn/static/x5sD24sryE3PtyBkBzw4Hd/image.png?auth_key=1754473784-6GYTYgJpMtXgz576di2vVr-0-5849c07b628e06a4470a2ac6a42739f1">
-<meta property="og:updated_time" content="2025-08-08T05:47:15.562Z">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2022/单行文本溢出显示省略号.png">
+<meta property="og:updated_time" content="2025-08-08T06:48:49.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS文本溢出显示三个点">
 <meta name="twitter:description" content="参考https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow 这个面试的时候被问过 N 次。不知道为啥这么喜欢问这个。今天好好学一下这个技巧">
-<meta name="twitter:image" content="https://secure2.wostatic.cn/static/x5sD24sryE3PtyBkBzw4Hd/image.png?auth_key=1754473784-6GYTYgJpMtXgz576di2vVr-0-5849c07b628e06a4470a2ac6a42739f1">
+<meta name="twitter:image" content="https://liuqinh2s.github.io/images/2022/单行文本溢出显示省略号.png">
 
 
 
@@ -453,7 +453,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-08T05:47:15+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-08T06:48:49+00:00">
                 2025-08-08
               </time>
             
@@ -486,7 +486,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  259
+                  453
                 </span>
               
 
@@ -515,9 +515,23 @@
 <p>这个面试的时候被问过 N 次。不知道为啥这么喜欢问这个。今天好好学一下这个技巧</p>
 <a id="more"></a>
 <h1 id="text-overflow"><a href="#text-overflow" class="headerlink" title="text-overflow"></a>text-overflow</h1><p>text-overflow CSS 属性确定如何向用户发出未显示的溢出内容信号。它可以被剪切，显示一个省略号（&quot;...&quot;）或显示一个自定义字符串</p>
-<p><img src="https://secure2.wostatic.cn/static/x5sD24sryE3PtyBkBzw4Hd/image.png?auth_key=1754473784-6GYTYgJpMtXgz576di2vVr-0-5849c07b628e06a4470a2ac6a42739f1" alt></p>
+<p><img src="../../../../images/2022/单行文本溢出显示省略号.png" alt></p>
 <p>这个属性只对那些块级元素溢出的内容有效，但是必须要与块级元素内联（inline）方向一致（举个例子：内容在盒子的下方溢出。此时就不会生效）。文本可能在以下情况下溢出：当其因为某种原因而无法换行（例子：设置了&quot;white-space: nowrap&quot;），或者一个单词太长而不能合理的被安置（fit）</p>
 <p>这个属性并不会强制&quot;溢出&quot;事件的发生，因此为了能让&quot;text-overflow&quot;能够生效，程序员们必须要在元素上添加几个额外属性，比如设置：overflow: hidden</p>
+<h1 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space" target="_blank" rel="noopener">white-space - CSS：层叠样式表 | MDN</a></p>
+<p>这个属性指定了两件事：</p>
+<ul>
+<li>空白字符是否合并，如何合并</li>
+<li>是否换行，如何换行</li>
+</ul>
+<p><code>nowrap</code>是不包裹的意思，也就是如果文本超出容器，不换行。</p>
+<h1 id="多行文本溢出容器最后一行如何显示省略号"><a href="#多行文本溢出容器最后一行如何显示省略号" class="headerlink" title="多行文本溢出容器最后一行如何显示省略号"></a>多行文本溢出容器最后一行如何显示省略号</h1><p>由于单行文本溢出容器显示省略号过于简单，一般面试官想问的其实是多行文本的问题。但这个问题其实目前来说没有很好的解决办法，网上看到的那些解决方案，看起来效果都不好。</p>
+<p>主流解决方案是三种：</p>
+<ol>
+<li>webkit 专属方案：<code>-webkit-line-clamp</code></li>
+<li>高度截断 + 伪元素方案</li>
+<li>JavaScript 动态计算方案</li>
+</ol>
 
       
     </div>
@@ -558,8 +572,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/08/12/GET请求和POST请求的区别/" rel="prev" title="GET 请求和 POST 请求的区别">
-                GET 请求和 POST 请求的区别 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2022/08/12/HTTP状态码/" rel="prev" title="HTTP状态码">
+                HTTP状态码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -735,7 +749,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-overflow"><span class="nav-number">2.</span> <span class="nav-text">text-overflow</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-overflow"><span class="nav-number">2.</span> <span class="nav-text">text-overflow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#white-space"><span class="nav-number">3.</span> <span class="nav-text">white-space</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多行文本溢出容器最后一行如何显示省略号"><span class="nav-number">4.</span> <span class="nav-text">多行文本溢出容器最后一行如何显示省略号</span></a></li></ol></div>
             
 
           </div>
@@ -769,7 +783,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">117.2k</span>
+    <span title="Site words total count">117.4k</span>
   
 </div>
 
