@@ -89,13 +89,15 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="基本概念 margin border padding content   标准模型和 IE 模型的区别 标准模型的 width = content IE 模型的 width = content+2*padding+2*border  通过 css3 新增的属性 box-sizing: content-box | border-box分别设置盒模型为标准模型（content-box）和 IE 模型（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://secure2.wostatic.cn/static/pfDWJMeproywBbjBcqRgcS/image.png?auth_key=1754469525-cvLKHP7aRBVNaB6jTLQRRg-0-28d0d020dd7061b8b379b3aee2f41c41">
-<meta property="og:image" content="https://secure2.wostatic.cn/static/kS9VxGbWev1AyQE9ZV92cN/image.png?auth_key=1754469525-pgftayZ9BryeTQZuMWJFHV-0-2364e586ea037585e768a26f0e8463c9">
-<meta property="og:updated_time" content="2025-08-08T06:48:49.085Z">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2022/盒模型.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2022/标准盒模型.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2022/IE盒模型.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2022/外边距合并.png">
+<meta property="og:updated_time" content="2025-08-08T07:49:50.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="盒模型">
 <meta name="twitter:description" content="基本概念 margin border padding content   标准模型和 IE 模型的区别 标准模型的 width = content IE 模型的 width = content+2*padding+2*border  通过 css3 新增的属性 box-sizing: content-box | border-box分别设置盒模型为标准模型（content-box）和 IE 模型（">
-<meta name="twitter:image" content="https://secure2.wostatic.cn/static/pfDWJMeproywBbjBcqRgcS/image.png?auth_key=1754469525-cvLKHP7aRBVNaB6jTLQRRg-0-28d0d020dd7061b8b379b3aee2f41c41">
+<meta name="twitter:image" content="https://liuqinh2s.github.io/images/2022/盒模型.png">
 
 
 
@@ -454,7 +456,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-08T06:48:49+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-08T07:49:50+00:00">
                 2025-08-08
               </time>
             
@@ -518,7 +520,7 @@
 <li>padding</li>
 <li>content</li>
 </ul>
-<p><img src="https://secure2.wostatic.cn/static/pfDWJMeproywBbjBcqRgcS/image.png?auth_key=1754469525-cvLKHP7aRBVNaB6jTLQRRg-0-28d0d020dd7061b8b379b3aee2f41c41" alt></p>
+<p><img src="../../../../images/2022/盒模型.png" alt></p>
 <h1 id="标准模型和-IE-模型的区别"><a href="#标准模型和-IE-模型的区别" class="headerlink" title="标准模型和 IE 模型的区别"></a>标准模型和 IE 模型的区别</h1><ul>
 <li>标准模型的 <code>width = content</code></li>
 <li>IE 模型的 <code>width = content+2*padding+2*border</code></li>
@@ -526,8 +528,10 @@
 <p>通过 css3 新增的属性 <code>box-sizing: content-box | border-box</code>分别设置盒模型为标准模型（<code>content-box</code>）和 IE 模型（<code>border-box</code>）。</p>
 <h2 id="标准模型"><a href="#标准模型" class="headerlink" title="标准模型"></a>标准模型</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.content-box &#123;</span><br><span class="line">  box-sizing:content-box;</span><br><span class="line">  width: <span class="number">100</span>px;</span><br><span class="line">  height: <span class="number">50</span>px;</span><br><span class="line">  padding: <span class="number">10</span>px;</span><br><span class="line">  border: <span class="number">5</span>px solid red;</span><br><span class="line">  margin: <span class="number">15</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>.content-box</code>设置为标准模型，它的元素宽度 width=100px。</p>
+<p><img src="../../../../images/2022/标准盒模型.png" alt></p>
 <h2 id="IE-模型"><a href="#IE-模型" class="headerlink" title="IE 模型"></a>IE 模型</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.border-box &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  width: <span class="number">100</span>px;</span><br><span class="line">  height: <span class="number">50</span>px;</span><br><span class="line">  padding: <span class="number">10</span>px;</span><br><span class="line">  border: <span class="number">5</span>px solid red;</span><br><span class="line">  margin: <span class="number">15</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>.border-box</code>设置为 IE 模型，它的元素宽度 <code>width=content + 2*padding+2*border = 70px + 2*10px+2*5px = 100px</code>。</p>
+<p><img src="../../../../images/2022/IE盒模型.png" alt></p>
 <h1 id="javascript-如何设置获取盒模型对应的宽和高"><a href="#javascript-如何设置获取盒模型对应的宽和高" class="headerlink" title="javascript 如何设置获取盒模型对应的宽和高"></a>javascript 如何设置获取盒模型对应的宽和高</h1><ol>
 <li><code>dom.style.width/height</code> 只能取到行内样式的宽和高，style 标签中和 link 外链的样式取不到。</li>
 <li><code>dom.currentStyle.width/height</code> 取到的是最终渲染后的宽和高，只有 IE 支持此属性。</li>
@@ -535,7 +539,7 @@
 <li><code>dom.getBoundingClientRect().width/height</code> 也是得到渲染后的宽和高，大多浏览器支持。IE9 以上支持，除此外还可以取到相对于视窗的上下左右的距离</li>
 </ol>
 <h1 id="外边距重叠"><a href="#外边距重叠" class="headerlink" title="外边距重叠"></a>外边距重叠</h1><p>当两个垂直外边距相遇时，他们将形成一个外边距，合并后的外边距高度等于两个发生合并的外边距的高度中的较大者。<strong>注意</strong>：只有普通文档流中块框的垂直外边距才会发生外边距合并，行内框、浮动框或绝对定位之间的外边距不会合并。</p>
-<p><img src="https://secure2.wostatic.cn/static/kS9VxGbWev1AyQE9ZV92cN/image.png?auth_key=1754469525-pgftayZ9BryeTQZuMWJFHV-0-2364e586ea037585e768a26f0e8463c9" alt></p>
+<p><img src="../../../../images/2022/外边距合并.png" alt></p>
 <p>可以是兄弟元素，也可以父子元素之间发生外边距重叠。</p>
 <p>看下面这个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;section id=<span class="string">"sec"</span>&gt;</span><br><span class="line">    &lt;style media=<span class="string">"screen"</span>&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            margin: <span class="number">0</span>;</span><br><span class="line">            padding: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        #sec &#123;</span><br><span class="line">            background: #f00;</span><br><span class="line">            margin-top: <span class="number">20</span>px;</span><br><span class="line">            <span class="comment">/* overflow: hidden; */</span></span><br><span class="line">        &#125;</span><br><span class="line">        .child &#123;</span><br><span class="line">            height: <span class="number">100</span>px;</span><br><span class="line">            margin-top: <span class="number">10</span>px;</span><br><span class="line">            background: yellow;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;<span class="regexp">/style&gt;</span></span><br><span class="line"><span class="regexp">    &lt;article class="child"&gt;&lt;/</span>article&gt;</span><br><span class="line">&lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
@@ -571,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/08/06/箭头函数/" rel="next" title="箭头函数">
-                <i class="fa fa-chevron-left"></i> 箭头函数
+              <a href="/blog/2022/08/07/BFC/" rel="next" title="BFC">
+                <i class="fa fa-chevron-left"></i> BFC
               </a>
             
           </div>
@@ -581,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/08/07/BFC/" rel="prev" title="BFC">
-                BFC <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2022/08/08/css position/" rel="prev" title="css position">
+                css position <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
