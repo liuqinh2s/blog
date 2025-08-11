@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-08-09T01:28:25.875Z">
+<meta property="og:updated_time" content="2025-08-11T01:22:54.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用 react hooks 总结">
 <meta name="twitter:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
@@ -451,8 +451,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-09T01:28:25+00:00">
-                2025-08-09
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-11T01:22:54+00:00">
+                2025-08-11
               </time>
             
           </span>
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,309
+                  3,304
                 </span>
               
 
@@ -518,12 +518,13 @@
 <li>不要直接去修改 state，只有用 setState 函数去改，才会触发重新渲染。</li>
 <li>并不是调用 setState 就一定会重新渲染，如果设置的 state 跟上次一样，就不会重新渲染。</li>
 <li><p>setState 并不会立即更新 state，而是等收集完所有的 setState 最后再统一更新，若想用上个 setState 更新后的值，就要用回调函数的方式写：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"A: "</span>, count); <span class="comment">// ?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"B: "</span>, count); <span class="comment">// ?</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Answer</span></span><br><span class="line"><span class="comment">// A: 5</span></span><br><span class="line"><span class="comment">// B 6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"A: "</span>, count); <span class="comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"B: "</span>, count); <span class="comment">// 4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>多次 setState 只会触发一次重新渲染。</p>
 </li>
 <li><code>useState(func)</code>，中的 func 函数只会在组件第一次渲染的时候执行，重新渲染不会执行。</li>
 </ol>
+<p><a href="https://codesandbox.io/p/sandbox/rf4l67?file=%2Fsrc%2FApp.tsx%3A14%2C34" target="_blank" rel="noopener">useState-example</a></p>
 <h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p>useEffect 有两个参数，第一个参数是副作用函数，第二个参数是依赖数组。在组件渲染的时候，如果发现依赖数组中某项变了，就会在组件渲染结束后调用副作用函数。如果不传第二个参数，则每次组件渲染都会调用副作用函数。如果传入空数组，则只在第一次渲染的时候调用副作用函数。</p>
 <h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h2><p>useLayoutEffect 和 useEffect 是 react 中用于处理副作用的两个核心 Hook，它们两个的区别在于<strong>执行时机</strong>和<strong>对页面渲染的影响</strong></p>
 <h3 id="执行时机"><a href="#执行时机" class="headerlink" title="执行时机"></a>执行时机</h3><ul>
