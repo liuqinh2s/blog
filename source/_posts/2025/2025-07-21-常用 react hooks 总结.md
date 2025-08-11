@@ -33,7 +33,7 @@ console.log(appleCount); // 2
 
      setCount(count + 1);
      setCount(count + 1);
-     console.log("A: ", count); // 4
+     console.log("A: ", count); // A: 4
    }
 
    function B() {
@@ -41,7 +41,7 @@ console.log(appleCount); // 2
 
      setCount((prev) => prev + 1);
      setCount((prev) => prev + 1);
-     console.log("B: ", count); // 4
+     console.log("B: ", count); // B: 4
    }
    ```
 
