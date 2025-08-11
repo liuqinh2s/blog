@@ -33,7 +33,7 @@ console.log(appleCount); // 2
 
      setCount(count + 1);
      setCount(count + 1);
-     console.log("A: ", count); // ?
+     console.log("A: ", count); // 4
    }
 
    function B() {
@@ -41,16 +41,14 @@ console.log(appleCount); // 2
 
      setCount((prev) => prev + 1);
      setCount((prev) => prev + 1);
-     console.log("B: ", count); // ?
+     console.log("B: ", count); // 4
    }
-
-   // Answer
-   // A: 5
-   // B 6
    ```
 
 4. 多次 setState 只会触发一次重新渲染。
 5. `useState(func)`，中的 func 函数只会在组件第一次渲染的时候执行，重新渲染不会执行。
+
+[useState-example](https://codesandbox.io/p/sandbox/rf4l67?file=%2Fsrc%2FApp.tsx%3A14%2C34)
 
 ## useEffect
 
