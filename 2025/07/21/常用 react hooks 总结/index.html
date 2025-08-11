@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-08-11T01:22:54.772Z">
+<meta property="og:updated_time" content="2025-08-11T01:23:53.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用 react hooks 总结">
 <meta name="twitter:description" content="最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。">
@@ -451,7 +451,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2025-08-11T01:22:54+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2025-08-11T01:23:53+00:00">
                 2025-08-11
               </time>
             
@@ -484,7 +484,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,304
+                  3,306
                 </span>
               
 
@@ -518,7 +518,7 @@
 <li>不要直接去修改 state，只有用 setState 函数去改，才会触发重新渲染。</li>
 <li>并不是调用 setState 就一定会重新渲染，如果设置的 state 跟上次一样，就不会重新渲染。</li>
 <li><p>setState 并不会立即更新 state，而是等收集完所有的 setState 最后再统一更新，若想用上个 setState 更新后的值，就要用回调函数的方式写：</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"A: "</span>, count); <span class="comment">// 4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"B: "</span>, count); <span class="comment">// 4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  setCount(count + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"A: "</span>, count); <span class="comment">// A: 4</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = useState(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  setCount(<span class="function">(<span class="params">prev</span>) =&gt;</span> prev + <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"B: "</span>, count); <span class="comment">// B: 4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>多次 setState 只会触发一次重新渲染。</p>
 </li>
