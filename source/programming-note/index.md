@@ -11,6 +11,64 @@ tags: [编程]
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2025-08-18
+
+最近测试提了一个奇葩的 bug，起因是一个 textArea 的换行被产品从 Enter 改为了`Ctrl/Shift/Alt+Enter`，而 Enter 则改为输入结束。然后测试表示，换行后，按`Ctrl+Z`没法撤销换行了，原因是换行是通过直接修改 textArea.value 属性实现的，而浏览器撤销堆栈仅记录用户直接输入的操作。通过 textarea.value = newValue 直接赋值会**清空撤销堆栈** ​​，导致 Ctrl+Z 失效。
+
+解决方案有两种：
+
+1. 模拟用户输入行为
+2. 独立维护撤销堆栈
+
+```JavaScript
+function insertNewlineWithUndo(textarea) {
+  textarea.focus(); // 确保焦点在目标输入框
+  const success = document.execCommand('insertText', false, '\n');
+  if (!success) { // 降级处理
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const value = textarea.value;
+    textarea.value = value.slice(0, start) + '\n' + value.slice(end);
+    textarea.selectionStart = textarea.selectionEnd = start + 1;
+  }
+}
+```
+
+[document.execCommand - Web API | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand)
+
+```JavaScript
+const historyMap = new WeakMap();
+
+function initUndoStack(textarea) {
+  historyMap.set(textarea, {
+    undoStack: [],
+    redoStack: [],
+    currentValue: textarea.value
+  });
+
+  textarea.addEventListener('input', () => {
+    const history = historyMap.get(textarea);
+    history.undoStack.push(history.currentValue);
+    history.currentValue = textarea.value;
+    history.redoStack = [];
+  });
+}
+
+// 监听Ctrl+Z并调用自定义撤销
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.key === 'z' && e.target.tagName === 'TEXTAREA') {
+    e.preventDefault();
+    const history = historyMap.get(e.target);
+    if (history.undoStack.length > 0) {
+      history.redoStack.push(history.currentValue);
+      history.currentValue = history.undoStack.pop();
+      e.target.value = history.currentValue;
+      e.target.dispatchEvent(new Event('input', { bubbles: true })); // 更新UI
+    }
+  }
+});
+```
+
 # 2025-07-23
 
 今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz ，404。然后查了一下 stylus，发现它已经从 npm 下架了：https://www.npmjs.com/package/stylus?activeTab=readme ，原因是包含恶意代码被 npm 安全团队移除了。
