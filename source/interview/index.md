@@ -9,6 +9,7 @@ title: 前端面试指南
 3. css 基础
 4. 计算机网络
 5. typescript，jquery，react，vue，webpack 等非原生 js 的前端技术
+6. 效率工具：git、vscode 等
 
 以下是我积累的一些常见面试题，既可以考察自己，也可以拿来面试别人。
 
@@ -19,6 +20,8 @@ title: 前端面试指南
 - [扁平数组嵌套化（flat to nest）](../2022/07/25/扁平数组嵌套化（flat to nest）)
 - 实现一个深拷贝
 - 实现 Promise
+- [debounce, throttle（防抖和节流）](../2023/12/05/JavaScript如何实现节流和防抖函数/)
+- EventBus（事件总线）
 
 # JavaScript 基础
 
@@ -79,11 +82,6 @@ title: 前端面试指南
 - [text-overflow（文本溢出）](../2022/08/11/text-overflow（文本溢出）)
 - flex: 2 有用过吗？多列布局怎么实现？
 
-# 前端编程范式
-
-- [debounce, throttle（防抖和节流）](../2023/12/05/JavaScript如何实现节流和防抖函数/)
-- EventBus（事件总线）
-
 # 浏览器相关
 
 - [浏览器事件](../2022/07/31/浏览器事件/)
@@ -118,6 +116,10 @@ title: 前端面试指南
 - Vue 组件通信方式有哪些，各有什么特点？
 - Vue 项目怎么提高项目性能？举一些例子
 - vue3 在某些场景比 vue2 性能更低，为什么会这样？
+
+# git
+
+- git add 的意义是什么，为什么要设计出这个？
 
 # 其他
 

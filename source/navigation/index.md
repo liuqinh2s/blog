@@ -5,14 +5,17 @@ date: 2019-02-20 20:30:09
 
 这是我上网冲浪发现的一些好东西，大部分是网站，也有些其他类型的工具，资源。
 
-# 我的朋友们
+最终我打算做成一个网站和 APP，聚焦的点在于指引，比如入门指引，我会把最富盛名的入门教材列出。
+
+# 友链
 
 - [Lianera's homepage](https://lianera.github.io/)
 - [Hi, I'm Jiyang](https://jiyanggg.github.io/)
 - [曾小乱 – 在描绘他的生活倒影](https://zengyuxin.com/)
-- [果小右](https://gejiuyuan.gitee.io/)
 
-# 推荐的博主
+# 个人博客
+
+## 中文
 
 - `hexo-next-theme`的作者：[IIssNan's Notes](https://notes.iissnan.com/)
 - [程序员的喵](https://catcoding.me/)
@@ -24,11 +27,6 @@ date: 2019-02-20 20:30:09
 - [王垠的博客](https://www.yinwang.org/)
 - [槽边往事](https://www.hecaitou.com/)，[槽边往事](https://www.hecaitou.info/)
 - [李笑来](https://lixiaolai.com/#/)
-
-# 个人博客
-
-## 中文
-
 - [Long Luo's Life Notes](https://www.longluo.me/)
 - [胡涂说](https://hutusi.com/)
 - [槽边往事](https://www.hecaitou.com/)
@@ -72,7 +70,6 @@ date: 2019-02-20 20:30:09
 
 ## 综合资源
 
-- [居居西](https://jujuxi.xyz)：这是我自己制作的资源分享网站，用于分享我喜爱的网络资源，如果有侵权的地方，可以直接联系我删除
 - [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
 
 ## 新闻热点
@@ -255,7 +252,6 @@ date: 2019-02-20 20:30:09
 ### 编程项目
 
 - 电子书阅读器：[KOReader](https://koreader.rocks/)
-- 白板工具：[pointless](https://github.com/kkoomen/pointless)
 - Run Python in Your HTML：[PyScript | Run Python in your HTML](https://pyscript.net/)
 - [项目可视化](https://github.com/githubocto/repo-visualizer)
 - [</> htmx - high power tools for html](https://htmx.org/)
@@ -308,6 +304,7 @@ date: 2019-02-20 20:30:09
   - [Excalidraw](https://excalidraw.com/)
   - [paint-board](https://songlh.top/paint-board/)，[LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!](https://github.com/LHRUN/paint-board?tab=readme-ov-file)
   - [yft-design](https://yft.design/)
+  - [pointless](https://github.com/kkoomen/pointless)
 
 ### 编程工具
 
