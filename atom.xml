@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/"/>
-  <updated>2025-08-22T01:31:12.185Z</updated>
+  <updated>2025-08-22T06:07:47.065Z</updated>
   <id>https://liuqinh2s.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Figma笔记</title>
+    <link href="https://liuqinh2s.github.io/2025/08/22/Figma%E7%AC%94%E8%AE%B0/"/>
+    <id>https://liuqinh2s.github.io/2025/08/22/Figma笔记/</id>
+    <published>2025-08-22T00:00:00.000Z</published>
+    <updated>2025-08-22T06:07:47.065Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早就听闻 Figma 市值非常高（大概好几年前吧），把 Adobe PhotoShop 都给干下去了。以前只是听闻 Figma 用起来比 PhotoShop 更简单所以才深受用户喜爱，现在感觉事情并没有那么简单，Figma 市值之所以那么高肯定是有原因的，原因应该是盈利确实很好，市占率确实很高，因为我发现它好像是专门做 UI 设计的工具，而随便一想就知道这块蛋糕在现在这个时代是特别大的。&lt;/p&gt;
+&lt;p&gt;我的东家也是做白板类项目的，不过也是做垂直领域，EDA，项目地址在此：&lt;a href=&quot;https://pro.lceda.cn/editor&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;嘉立创 EDA 专业版&lt;/a&gt;。我所了解的其他白板项目有这些：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://excalidraw.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Excalidraw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://songlh.top/paint-board/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;paint-board&lt;/a&gt;，&lt;a href=&quot;https://github.com/LHRUN/paint-board?tab=readme-ov-file&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://yft.design/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;yft-design&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/kkoomen/pointless&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pointless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可见能结合具体业务，垂直发展，才是白板项目能否壮大的关键。而具体业务也有大有小，UI 设计，海报设计这些用户面大所以相应的市值也非常高。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="UI设计" scheme="https://liuqinh2s.github.io/tags/UI%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git笔记</title>
     <link href="https://liuqinh2s.github.io/2025/08/20/git%E7%AC%94%E8%AE%B0/"/>
     <id>https://liuqinh2s.github.io/2025/08/20/git笔记/</id>
     <published>2025-08-20T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -45,7 +71,7 @@
     <link href="https://liuqinh2s.github.io/2025/08/11/Vue%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/08/11/Vue总结/</id>
     <published>2025-08-11T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -65,7 +91,7 @@
     <link href="https://liuqinh2s.github.io/2025/07/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E7%AA%97%E5%8F%A3%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/07/24/浏览器跨窗口通信总结/</id>
     <published>2025-07-24T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -85,7 +111,7 @@
     <link href="https://liuqinh2s.github.io/2025/07/21/%E5%B8%B8%E7%94%A8%20react%20hooks%20%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/07/21/常用 react hooks 总结/</id>
     <published>2025-07-21T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -103,7 +129,7 @@
     <link href="https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB/"/>
     <id>https://liuqinh2s.github.io/2025/06/23/我的互联网生活/</id>
     <published>2025-06-23T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -121,7 +147,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/12/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
     <id>https://liuqinh2s.github.io/2024/11/12/重新整理博客/</id>
     <published>2024-11-12T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -143,7 +169,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/11/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB%E5%AE%9E%E8%B7%B5/"/>
     <id>https://liuqinh2s.github.io/2024/11/11/囚徒健身实践/</id>
     <published>2024-11-11T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -173,7 +199,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/26/%E6%88%91%E5%AF%B9%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%9C%8B%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2024/08/26/我对读书的看法/</id>
     <published>2024-08-26T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.065Z</updated>
     
     <summary type="html">
     
@@ -202,7 +228,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/14/%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2024/08/14/投资总结/</id>
     <published>2024-08-14T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -225,7 +251,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/13/free-resource/"/>
     <id>https://liuqinh2s.github.io/2024/08/13/free-resource/</id>
     <published>2024-08-13T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -243,7 +269,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E4%BD%9C%E5%93%81%E7%89%88%E6%9D%83%E8%AF%81%E5%88%B8%E5%8C%96/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/作品版权证券化/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -262,7 +288,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/星露谷物语/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -283,7 +309,7 @@
     <link href="https://liuqinh2s.github.io/2023/12/05/JavaScript%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/"/>
     <id>https://liuqinh2s.github.io/2023/12/05/JavaScript如何实现节流和防抖函数/</id>
     <published>2023-12-05T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -303,7 +329,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/23/JavaScript%E7%9A%84var,let,const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://liuqinh2s.github.io/2023/11/23/JavaScript的var,let,const的区别/</id>
     <published>2023-11-23T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -323,7 +349,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/22/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84bind%E6%96%B9%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2023/11/22/模拟实现JavaScript的bind方法/</id>
     <published>2023-11-22T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -341,7 +367,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/21/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84apply%E5%92%8Ccall%E6%96%B9%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2023/11/21/模拟实现JavaScript的apply和call方法/</id>
     <published>2023-11-21T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.185Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -369,7 +395,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/20/JavaScript%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%A7%E6%89%BF%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D/"/>
     <id>https://liuqinh2s.github.io/2023/11/20/JavaScript对象的继承有哪几种/</id>
     <published>2023-11-20T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.184Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -395,7 +421,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/20/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84new%E6%93%8D%E4%BD%9C%E7%AC%A6/"/>
     <id>https://liuqinh2s.github.io/2023/11/20/模拟实现JavaScript的new操作符/</id>
     <published>2023-11-20T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.184Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -418,7 +444,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/06/%E7%AD%96%E5%88%92%E4%B8%80%E6%AC%BE%E6%B8%B8%E6%88%8F/"/>
     <id>https://liuqinh2s.github.io/2023/11/06/策划一款游戏/</id>
     <published>2023-11-06T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.184Z</updated>
+    <updated>2025-08-22T06:07:47.064Z</updated>
     
     <summary type="html">
     
@@ -434,27 +460,6 @@
     
     
       <category term="游戏策划" scheme="https://liuqinh2s.github.io/tags/%E6%B8%B8%E6%88%8F%E7%AD%96%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实现一个高效的deepClone</title>
-    <link href="https://liuqinh2s.github.io/2023/11/01/%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84deepClone/"/>
-    <id>https://liuqinh2s.github.io/2023/11/01/实现JavaScript的deepClone/</id>
-    <published>2023-11-01T00:00:00.000Z</published>
-    <updated>2025-08-22T01:31:12.184Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;先来实现一个最简版的-deepClone&quot;&gt;&lt;a href=&quot;#先来实现一个最简版的-deepClone&quot; class=&quot;headerlink&quot; title=&quot;先来实现一个最简版的 deepClone&quot;&gt;&lt;/a&gt;先来实现一个最简版的 deepClone&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;deepClone&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;obj&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    obj == &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;string&quot;&lt;/span&gt; ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;boolean&quot;&lt;/span&gt; ||&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; obj;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;.isArray(obj)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; temp = [];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; obj.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      temp[i] = deepClone(obj[i]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; temp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;typeof&lt;/span&gt; obj == &lt;span class=&quot;string&quot;&gt;&quot;object&quot;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; temp = &amp;#123;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; k &lt;span class=&quot;keyword&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Object&lt;/span&gt;.keys(obj)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      temp[k] = deepClone(obj[k]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; temp;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;迭代版本的-deepClone&quot;&gt;&lt;a href=&quot;#迭代版本的-deepClone&quot; class=&quot;headerlink&quot; title=&quot;迭代版本的 deepClone&quot;&gt;&lt;/a&gt;迭代版本的 deepClone&lt;/h2&gt;&lt;p&gt;最近 EDA 项目在解决一些性能上的问题，首当其冲的就是 deepClone，各种地方都在用，且十分卡性能。如何解决这个问题呢？&lt;/p&gt;
-&lt;p&gt;由于我们项目中的 deepClone 是一个递归版本的 deepClone，所以应该可以通过把它改成迭代版的 deepClone 来提速。&lt;/p&gt;
-&lt;p&gt;用栈来实现迭代。函数调用栈本身也是栈，但开销肯定比自己写的栈要大一些。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="js" scheme="https://liuqinh2s.github.io/tags/js/"/>
     
   </entry>
   
