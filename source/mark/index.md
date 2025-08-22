@@ -7,6 +7,13 @@ date: 2019-02-20 20:30:09
 
 我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
 
+# 2025-08-22
+
+- [中小学语文示范诵读\_央广网](https://edu.cnr.cn/eduzt/ywkwsfsd/)
+- [毒蘑菇测试入口](https://volumeshader.org/zh)
+- [HRAC 业余无线电执照考试 2025 最新题库 在线模拟 PWA 支持](https://github.com/AlliotTech/ham-exam-web)
+- [citywalki](https://www.citywalki.com/)：这个网站让你感受在世界 200 多个城市步行/开车/飞无人机。选择城市和移动方式后，它会全屏播放相应的 Youtube 视频，体验不错。
+
 # 2025-08-08
 
 - 在线的像素图作图工具，可以同屏制作多个动画帧：[Pixel Motion](https://pixel-motion.yysuni.com/)
