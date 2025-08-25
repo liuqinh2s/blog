@@ -11,6 +11,33 @@ tags: [编程]
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2025-08-25
+
+如果遇到`window.open(imgUrl)`打开新窗口的时候不是预览图片，而是下载，怎么办？
+
+```JavaScript
+function previewImage(imageUrl) {
+    const newWindow = window.open("", "_blank");
+    const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+            <body style="margin:0; display:flex; justify-content:center; align-items:center;">
+                <img src="${imageUrl}" style="max-width:100%; max-height:100%;">
+            </body>
+        </html>
+    `;
+    newWindow.document.write(htmlContent);
+    newWindow.document.close(); // 确保文档加载完成
+}
+```
+
+若图片的 ​​MIME 类型未被浏览器识别 ​​（如服务器返回 application/octet-stream），浏览器会将其视为“无法解析的二进制文件”，自动触发下载行为
+
+```
+Content-Type: application/octet-stream  // 导致下载
+Content-Type: image/jpeg                 // 正常预览
+```
+
 # 2025-08-18
 
 最近测试提了一个奇葩的 bug，起因是一个 textArea 的换行被产品从 Enter 改为了`Ctrl/Shift/Alt+Enter`，而 Enter 则改为输入结束。然后测试表示，换行后，按`Ctrl+Z`没法撤销换行了，原因是换行是通过直接修改 textArea.value 属性实现的，而浏览器撤销堆栈仅记录用户直接输入的操作。通过 textarea.value = newValue 直接赋值会**清空撤销堆栈** ​​，导致 Ctrl+Z 失效。
