@@ -17,37 +17,33 @@ date: 2019-02-20 20:30:09
 
 ## 中文
 
-- `hexo-next-theme`的作者：[IIssNan's Notes](https://notes.iissnan.com/)
+- 程序员群体中的网络大 v，写的入门教程非常简单易懂：[阮一峰的博客](http://www.ruanyifeng.com/blog/)
+- 我个人非常喜爱的 hexo 主题`hexo-next-theme`的作者：[IIssNan's Notes](https://notes.iissnan.com/)
+- [槽边往事](https://www.hecaitou.com/)，[槽边往事](https://www.hecaitou.info/)
+- [云风的 BLOG](https://blog.codingnow.com/)
+- [李笑来](https://lixiaolai.com/#/)
+- 这个人据说没有上过一天学，自学长大的：[翁天信](https://www.dandyweng.com/)
 - [程序员的喵](https://catcoding.me/)
-- [阮一峰的博客](http://www.ruanyifeng.com/blog/)
 - [冴羽](https://yayujs.com/)
 - [icheer.me](https://icheer.me/)
-- [matrix67](https://matrix67.itch.io/)，matrix67 的博客访问不了了，好像搬到了 [itch.io](https://itch.io/)，好像是个不错的游戏开发网站。这是 liqi 对他做的一个[采访](https://liqi.io/matrix67/)。https://www.sohu.com/a/68883280_372416
+- 顾森，通过信息竞赛进入北大中文系，但爱好是数学：[matrix67](https://matrix67.com/)。这是 liqi 对他做的一个[采访](https://liqi.io/matrix67/)。这是其他的访谈：https://www.sohu.com/a/68883280_372416
 - [酷壳的延续](https://coolshell.me/)，左耳朵耗子已经死了，原博客地址：https://coolshell.cn/
 - [王垠的博客](https://www.yinwang.org/)
-- [槽边往事](https://www.hecaitou.com/)，[槽边往事](https://www.hecaitou.info/)
-- [李笑来](https://lixiaolai.com/#/)
 - [Long Luo's Life Notes](https://www.longluo.me/)
 - [胡涂说](https://hutusi.com/)
-- [槽边往事](https://www.hecaitou.com/)
-- [云风的 BLOG](https://blog.codingnow.com/)
 - [拔赤](http://jayli.github.io/)
 - [知乎 vczh 轮子哥](http://www.cppblog.com/vczh/)
 - [刘未鹏](http://mindhacks.cn/)
-- [翁天信](https://www.dandyweng.com/)
-- [程序员的喵](https://catcoding.me/)
 - [geekplux](https://geekplux.com/)
 - [geekplux 的书单](https://www.goodreads.com/user/show/121623405-geekplux)
 - [lcomplete 的技术分享](https://tech.codelc.com/)
 - [Shidenggui](https://shidenggui.com/)
 - [folyd](https://folyd.com/)
-- [Star Rocket Blog](https://blog.starrocket.io/blog/)
 - [t9t](https://blog.t9t.io/)
 - [冴羽的博客](https://github.com/mqyqingfeng/Blog)
 - [匠心博客](https://zhaomenghuan.js.org/)
 - [小弟调调 ™](https://wangchujiang.com/)
 - [山月行](https://shanyue.tech/)
-- [柳婼 の blog](https://www.liuchuo.net/)
 - [卢昌海个人主页](https://www.changhai.org/index.php)
 - [Wang Jie - Biofy](https://biofy.cn/wangjiegulu)
 
@@ -129,11 +125,9 @@ date: 2019-02-20 20:30:09
 ## 图片
 
 - [unsplash](https://unsplash.com/)
-- [pixabay - 2.6 million+ Stunning Free Images to Use Anywhere](https://pixabay.com/)
-- [project:~Pixorama/1 · db.eboy.com](https://hello.eboy.com/pool/~Pixorama/1?q=project)
 - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
 - 伊丽莎白植物手绘：[ILLUSTRATIONS of the NATURAL ORDERS of PLANTS](https://www.c82.net/twining/plants/)
-- [拾光 - 壁纸软件](https://gitee.com/nguaduot/timeline#https://gitee.com/link?target=https%3A%2F%2Fapp.nguaduot.cn%2Ftimeline)
+- [拾光壁纸](https://snake.timeline.ink/)
 - [梗图微缩世界](https://floor796.com/)
 
 ## 视频
@@ -160,7 +154,6 @@ date: 2019-02-20 20:30:09
   - 电子书阅读软件:[Reeden](https://reeden.app/cn)
 - 平台：
   - [zlibrary](https://zh.z-library.sk/)
-  - [首页 | itbox | 专注 IT 类图书分享](https://itbox.cc/)
   - [技术书在线阅读](https://livebook.manning.com/)
   - [图灵社区](https://www.ituring.com.cn/)
   - [PDF 之家](https://homeofpdf.com/index.html)

@@ -7,6 +7,14 @@ date: 2019-02-20 20:30:09
 
 我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
 
+# 2025-08-29
+
+- [机械图书馆](https://mechanical-library.org/)
+- [天体地图](https://atlasof.space/)
+- [all text in nyc](https://www.alltext.nyc/search?q=China)：这个网站对纽约街景照片做了文字识别，可以搜索某个词在纽约街头（路牌/招牌）出现的地点。
+- [Is This Tech Dead? | Tech Obsolescence Tracker](https://www.isthistechdead.com/)
+- [提示式编程](https://www.gibney.org/prompt_coding)
+
 # 2025-08-22
 
 - [中小学语文示范诵读\_央广网](https://edu.cnr.cn/eduzt/ywkwsfsd/)
