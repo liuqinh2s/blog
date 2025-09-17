@@ -7,12 +7,6 @@ date: 2019-02-20 20:30:09
 
 最终我打算做成一个网站和 APP，聚焦的点在于指引，比如入门指引，我会把最富盛名的入门教材列出。
 
-# 友链
-
-- [Lianera's homepage](https://lianera.github.io/)
-- [Hi, I'm Jiyang](https://jiyanggg.github.io/)
-- [曾小乱 – 在描绘他的生活倒影](https://zengyuxin.com/)
-
 # 个人博客
 
 ## 中文
@@ -23,12 +17,12 @@ date: 2019-02-20 20:30:09
 - [云风的 BLOG](https://blog.codingnow.com/)
 - [李笑来](https://lixiaolai.com/#/)
 - 这个人据说没有上过一天学，自学长大的：[翁天信](https://www.dandyweng.com/)
+- 王垠以前非常桀骜不驯，现在好像在卖课：[王垠的博客](https://www.yinwang.org/)
+- [酷壳的延续](https://coolshell.me/)，左耳朵耗子已经死了，原博客地址：https://coolshell.cn/
 - [程序员的喵](https://catcoding.me/)
 - [冴羽](https://yayujs.com/)
 - [icheer.me](https://icheer.me/)
 - 顾森，通过信息竞赛进入北大中文系，但爱好是数学：[matrix67](https://matrix67.com/)。这是 liqi 对他做的一个[采访](https://liqi.io/matrix67/)。这是其他的访谈：https://www.sohu.com/a/68883280_372416
-- [酷壳的延续](https://coolshell.me/)，左耳朵耗子已经死了，原博客地址：https://coolshell.cn/
-- [王垠的博客](https://www.yinwang.org/)
 - [Long Luo's Life Notes](https://www.longluo.me/)
 - [胡涂说](https://hutusi.com/)
 - [拔赤](http://jayli.github.io/)
@@ -40,7 +34,6 @@ date: 2019-02-20 20:30:09
 - [Shidenggui](https://shidenggui.com/)
 - [folyd](https://folyd.com/)
 - [t9t](https://blog.t9t.io/)
-- [冴羽的博客](https://github.com/mqyqingfeng/Blog)
 - [匠心博客](https://zhaomenghuan.js.org/)
 - [小弟调调 ™](https://wangchujiang.com/)
 - [山月行](https://shanyue.tech/)
