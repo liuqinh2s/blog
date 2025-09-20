@@ -13,4 +13,7 @@ date: 2018-04-17 17:00:10
 
 公司项目：[嘉立创 EDA](https://pro.lceda.cn/editor)
 
-个人作品：[SudoKu](https://liuqinh2s.github.io/SudoKu/)
+个人作品：
+
+- [SudoKu](https://liuqinh2s.github.io/SudoKu/)
+- [AwesomeWeb](https://liuqinh2s.github.io/AwesomeWeb/)
