@@ -7,6 +7,16 @@ date: 2019-02-20 20:30:09
 
 我一直打算像阮一峰一样出一份自己的周刊，但我不想局限于技术方面，只要是我感兴趣的，高质量的，有价值的信息都会在这里记录下来，以后周刊就会从这个里面出。
 
+# 2025-09-28
+
+- [一道几何题](https://samjshah.com/2025/08/05/sangaku-puzzle-i-cant-solve/)
+- [99 个物理小实验](https://interactivetextbooks.tudelft.nl/showthephysics/Introduction/About.html)
+
+# 2025-09-19
+
+- 类似操作系统桌面的网站：[PostHog is for product engineers](https://posthog.com/)
+- 一位摄影师为她的每一件个人物品（书籍、衣服、药品等等），拍了一张照片，放到网站上，一共有 12795 张。她想告诉大家，不要低估你拥有的物品数量。[Katalog](https://katalog-barbaraiweins.com/#images)
+
 # 2025-08-29
 
 - [机械图书馆](https://mechanical-library.org/)
