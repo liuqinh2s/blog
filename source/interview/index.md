@@ -78,7 +78,7 @@ title: 前端面试指南
 - [BFC](../2022/08/07/BFC)
 - [垂直居中和水平居中](../2022/12/13/css%E5%B1%85%E4%B8%AD%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
 - [position](../2022/08/08/css position)
-- flex: 2 有用过吗？多列布局怎么实现？
+- flex: 2 有用过吗？多列布局怎么实现？：[flex，flex-grow，flex-shrink，flex-basis](../2022/12/14/flex，flex-grow，flex-shrink，flex-basis)
 - [CSS 文本溢出显示三个点](../2022/08/11/CSS 文本溢出显示三个点)
 
 # 浏览器相关
