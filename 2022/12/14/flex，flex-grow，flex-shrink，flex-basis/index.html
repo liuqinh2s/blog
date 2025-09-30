@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,">
+  <meta name="keywords" content="css,前端,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="面试官问：flex: 2 有用过吗？多列布局怎么实现？ flex - CSS：层叠样式表 | MDN flex，flex-grow，flex-shrink，flex-basis这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：">
+<meta name="keywords" content="css,前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript执行上下文之作用域链">
-<meta property="og:url" content="https://liuqinh2s.github.io/2022/07/14/JavaScript执行上下文之作用域链/index.html">
+<meta property="og:title" content="flex，flex-grow，flex-shrink，flex-basis">
+<meta property="og:url" content="https://liuqinh2s.github.io/2022/12/14/flex，flex-grow，flex-shrink，flex-basis/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链">
+<meta property="og:description" content="面试官问：flex: 2 有用过吗？多列布局怎么实现？ flex - CSS：层叠样式表 | MDN flex，flex-grow，flex-shrink，flex-basis这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2025-09-30T02:59:20.886Z">
+<meta property="og:updated_time" content="2025-09-30T02:59:20.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript执行上下文之作用域链">
-<meta name="twitter:description" content="执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链">
+<meta name="twitter:title" content="flex，flex-grow，flex-shrink，flex-basis">
+<meta name="twitter:description" content="面试官问：flex: 2 有用过吗？多列布局怎么实现？ flex - CSS：层叠样式表 | MDN flex，flex-grow，flex-shrink，flex-basis这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/2022/07/14/JavaScript执行上下文之作用域链/">
+  <link rel="canonical" href="https://liuqinh2s.github.io/2022/12/14/flex，flex-grow，flex-shrink，flex-basis/">
 
 
 
 
 
-  <title>JavaScript执行上下文之作用域链 | liuqinh2s' blog</title>
+  <title>flex，flex-grow，flex-shrink，flex-basis | liuqinh2s' blog</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/07/14/JavaScript执行上下文之作用域链/">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2022/12/14/flex，flex-grow，flex-shrink，flex-basis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="liuqinh2s">
@@ -353,7 +353,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JavaScript执行上下文之作用域链</h2>
+          <h2 class="post-title" itemprop="name headline">flex，flex-grow，flex-shrink，flex-basis</h2>
         
 
         <div class="post-meta">
@@ -365,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+00:00">
-                2022-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-12-14T00:00:00+00:00">
+                2022-12-14
               </time>
             
 
@@ -414,7 +414,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  573
+                  391
                 </span>
               
 
@@ -439,39 +439,31 @@
       
 
       
-        <p>执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。</p>
-<p>函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性<code>[[scope]]</code></p>
-<p>函数的生命周期分为：<strong>函数创建</strong> 和 <strong>函数调用</strong>。</p>
-<p>函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性<code>[[scope]]</code>（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的<code>AO</code>和<code>[[scope]]</code>合并成新的作用域链：</p>
-<blockquote>
-<p>假设要实现动态作用域的话，<code>[[scope]]</code>就得在调用时去执行上下文栈的上一帧去取。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scope = [AO].concat([[scope]]);</span><br></pre></td></tr></table></figure>
+        <p>面试官问：flex: 2 有用过吗？多列布局怎么实现？</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex" target="_blank" rel="noopener">flex - CSS：层叠样式表 | MDN</a></p>
+<h2 id="flex，flex-grow，flex-shrink，flex-basis"><a href="#flex，flex-grow，flex-shrink，flex-basis" class="headerlink" title="flex，flex-grow，flex-shrink，flex-basis"></a>flex，flex-grow，flex-shrink，flex-basis</h2><p>这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：</p>
 <a id="more"></a>
-<h1 id="实例剖析"><a href="#实例剖析" class="headerlink" title="实例剖析"></a>实例剖析</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> scope2 = <span class="string">"local scope"</span>;</span><br><span class="line">  <span class="keyword">return</span> scope2;</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
-<p>执行过程如下：</p>
-<ol>
-<li>全局执行上下文创建，其作用域链就只有自身的 VO，然后将全局上下文压栈：</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [];</span><br><span class="line">globalContext = &#123;</span><br><span class="line">  VO,</span><br><span class="line">  Scope: [VO],</span><br><span class="line">  <span class="keyword">this</span>: <span class="built_in">window</span>,</span><br><span class="line">&#125;;</span><br><span class="line">ECStack.push(globalContext);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>checkscope 函数被创建，保存当前执行上下文的作用域链到 checkscope 函数的内部属性<code>[[scope]]</code>（这一步是词法作用域实现的关键）</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checkscope.[[scope]] = globalContext.Scope;</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>调用 checkscope 函数，函数并不立刻执行，开始做准备工作，生成执行上下文，并压入执行上下文栈：</li>
-</ol>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>grow 的计算跟自身宽高无关，直接按比例分配剩余的空间，shrink 的计算是跟自身宽高有关的，需要根据自身宽高，按加权比例平摊（缩减）超出的空间。</p>
+<p>假设计算的是水平方向的 flex：</p>
+<p>grow 的算法如下：</p>
+<p>单个元素需要 grow 的量：<code>(单个子元素 flex-grow/总的 flex-grow)*(父容器宽度-子元素宽度之和)</code></p>
+<p>实验地址：</p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/qEbNEOV" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
+
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h3><p>shrink 的算法如下：</p>
+<p>假设 div1 是 100px, flex-shrink:1；div2 是 200px, flex-shrink:2；div3 是 300px, flex-shrink: 3。容器宽度 400px</p>
 <ul>
-<li>AO：用 arguments 创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明</li>
-<li>Scope：复制函数<code>[[scope]]</code>属性创建作用域链，将活动对象压入 checkscope 作用域链顶端</li>
-<li>this</li>
+<li>div1 元素需要 shrink 的量：<code>(100*1)/(100*1+200*2+300*3)*(100+200+300 - 400)</code></li>
+<li>div2 元素需要 shrink 的量：<code>(200*2)/(100*1+200*2+300*3)*(100+200+300 - 400)</code></li>
+<li>div3 元素需要 shrink 的量：<code>(300*3)/(100*1+200*2+300*3)*(100+200+300 - 400)</code></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    scope2: <span class="literal">undefined</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, [[Scope]]],</span><br><span class="line">&#125;;</span><br><span class="line">ECStack.push(checkscopeContext);</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>准备工作做完，开始执行函数，随着函数的执行，修改 AO 的属性值，查找到 scope2 的值，返回后函数执行完毕，函数上下文从执行上下文栈中弹出</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    scope2: <span class="string">"local scope"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, [[Scope]]],</span><br><span class="line">&#125;;</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
-<p>每一步中具体的实现细节我们无法得知（因为可以有多种实现手法），但这 5 步却是真实存在的（因为可以通过例子验证）。</p>
+<p>也就是加权比例，需要用到自身的宽高</p>
+<p>抽象表达：</p>
+<p>单个元素需要 shrink 的量：<code>(自身宽度*单个子元素flex-shrink)/(sum(自身宽度*单个子元素flex-shrink))*(子元素宽度之和-父容器宽度)</code></p>
+<p>实验地址：</p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/vELKYjp" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
+
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>flex-basis 就是宽高的意思，但比宽高优先级高，比如定义了 width: 100px; flex-basis: 0px;那么就是按 0 去进行 flex 的。</p>
 
       
     </div>
@@ -489,7 +481,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/blog/tags/css/" rel="tag"># css</a>
+          
+            <a href="/blog/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -502,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/07/14/JavaScript闭包/" rel="next" title="JavaScript 闭包">
-                <i class="fa fa-chevron-left"></i> JavaScript 闭包
+              <a href="/blog/2022/12/13/css居中的最佳实践/" rel="next" title="css居中的最佳实践">
+                <i class="fa fa-chevron-left"></i> css居中的最佳实践
               </a>
             
           </div>
@@ -512,8 +506,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/07/24/寻找字符串中出现最多的字符怎么实现？/" rel="prev" title="寻找字符串中出现最多的字符怎么实现？">
-                寻找字符串中出现最多的字符怎么实现？ <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2023/02/06/AI时代来临，有哪些机遇我可以抓住？/" rel="prev" title="AI时代来临，有哪些机遇我可以抓住？">
+                AI时代来临，有哪些机遇我可以抓住？ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -689,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实例剖析"><span class="nav-number">1.</span> <span class="nav-text">实例剖析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#flex，flex-grow，flex-shrink，flex-basis"><span class="nav-number">1.</span> <span class="nav-text">flex，flex-grow，flex-shrink，flex-basis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow"><span class="nav-number">1.1.</span> <span class="nav-text">flex-grow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink"><span class="nav-number">1.2.</span> <span class="nav-text">flex-shrink</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-basis"><span class="nav-number">1.3.</span> <span class="nav-text">flex-basis</span></a></li></ol></li></ol></div>
             
 
           </div>
