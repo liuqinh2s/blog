@@ -4,6 +4,17 @@ title: 新闻
 
 新成立了一个栏目，专门用于记录最近发生的一些大新闻。
 
+# 2025-10-18
+
+杨振宁去世
+
+# 2025-10-17
+
+黄金涨到`1000￥/g`，`4378$/oz.t`
+
+"盎司用什么字母代表"点击查看元宝的回答
+[https://yuanbao.tencent.com/bot/app/share/chat/zBZShbFt1GQV](https://yuanbao.tencent.com/bot/app/share/chat/zBZShbFt1GQV)
+
 # 2025-07-28
 
 - [中共中央办公厅 国务院办公厅印发《育儿补贴制度实施方案》](https://www.gov.cn/zhengce/202507/content_7034132.htm)：从 2025 年 1 月开始，三周岁的幼儿，国家每年发 3600 元补贴。
