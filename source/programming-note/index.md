@@ -8,6 +8,10 @@ title: 编程笔记
 
 这里主要用来记录我生活中的所思所想，当然大部分可能是跟计算机、编程有关的。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+# 2026-03-08
+
+现在有了AI，大部分落地的能力都靠AI了，人的工作上升到提问，给任务，做决策，这些更高层面的工作。给AI提供问题，目的，对AI的工作进行审核。现在已经是个探索，和想法为王的时代了。
+
 # 2025-09-19
 
 今天遇到两个很奇怪的打包问题，首先是 webpack 打包，相对路径打包填了 output.publicPath 根本没用，一看 dist 中的 js 的 src 没有添加相对路径。然后是用 vite 打包，居然会在 src 目录中给每个 tsx 生成一个对应的 js 文件，原因是 tsc 没有加`—noEmit`，或者在 tsconfig.json 中配置“noEmit”: true，也可以。
@@ -762,27 +766,27 @@ scrollHeight，offsetHeight，clientHeight 同理
     <script>
       console.log(
         "scrollWidth: ",
-        document.querySelectorAll("div")[0].scrollWidth
+        document.querySelectorAll("div")[0].scrollWidth,
       );
       console.log(
         "clientWidth: ",
-        document.querySelectorAll("div")[0].clientWidth
+        document.querySelectorAll("div")[0].clientWidth,
       );
       console.log(
         "offsetWidth: ",
-        document.querySelectorAll("div")[0].offsetWidth
+        document.querySelectorAll("div")[0].offsetWidth,
       );
       console.log(
         "scrollHeight: ",
-        document.querySelectorAll("div")[0].scrollHeight
+        document.querySelectorAll("div")[0].scrollHeight,
       );
       console.log(
         "clientHeight: ",
-        document.querySelectorAll("div")[0].clientHeight
+        document.querySelectorAll("div")[0].clientHeight,
       );
       console.log(
         "offsetHeight: ",
-        document.querySelectorAll("div")[0].offsetHeight
+        document.querySelectorAll("div")[0].offsetHeight,
       );
     </script>
   </body>
@@ -1661,7 +1665,7 @@ targetElem.scrollLeft += evt.deltaY; // 把evt.deltaY替换成每次点击按钮
 ```tsx
 svgStr.replace(
   /[^\x00-\x7f]/g,
-  (s) => "&#x" + s.codePointAt(0).toString(16) + ";"
+  (s) => "&#x" + s.codePointAt(0).toString(16) + ";",
 );
 ```
 
@@ -1901,16 +1905,11 @@ div {
   width: 100px;
   height: 100px;
   background: #58a;
-  background: linear-gradient(135deg, transparent 15px, red 0) top left, linear-gradient(
-        -135deg,
-        transparent 15px,
-        yellow 0
-      ) top right,
-    linear-gradient(-45deg, transparent 15px, green 0) bottom right, linear-gradient(
-        45deg,
-        transparent 15px,
-        blue 0
-      ) bottom left;
+  background:
+    linear-gradient(135deg, transparent 15px, red 0) top left,
+    linear-gradient(-135deg, transparent 15px, yellow 0) top right,
+    linear-gradient(-45deg, transparent 15px, green 0) bottom right,
+    linear-gradient(45deg, transparent 15px, blue 0) bottom left;
   background-size: 50% 50%;
   background-repeat: no-repeat;
 }
@@ -2675,19 +2674,19 @@ localStorage.setItem(
   "a",
   Array(5 * 1024 * 1024 - 1)
     .fill("0")
-    .join("")
+    .join(""),
 ); // 通过
 localStorage.setItem(
   "a",
   Array(5 * 1024 * 1024)
     .fill("0")
-    .join("")
+    .join(""),
 ); // 不通过
 localStorage.setItem(
   "aa",
   Array(5 * 1024 * 1024 - 1)
     .fill("0")
-    .join("")
+    .join(""),
 ); // 不通过
 ```
 
