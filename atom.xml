@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/"/>
-  <updated>2026-07-16T09:09:19.690Z</updated>
+  <updated>2026-07-16T09:57:17.222Z</updated>
   <id>https://liuqinh2s.github.io/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>刘钦的网络周刊#1：欧洲高温与“空调的历史债”</title>
+    <link href="https://liuqinh2s.github.io/2026/07/05/%E5%88%98%E9%92%A6%E7%9A%84%E7%BD%91%E7%BB%9C%E5%91%A8%E5%88%8A-1/"/>
+    <id>https://liuqinh2s.github.io/2026/07/05/刘钦的网络周刊-1/</id>
+    <published>2026-07-05T00:00:00.000Z</published>
+    <updated>2026-07-16T09:57:17.222Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;周刊宗旨：为终身学习者打造高质量信息源。&lt;/p&gt;
+&lt;p&gt;更新节奏：每周日发布。&lt;/p&gt;
+&lt;h1 id=&quot;本期目录&quot;&gt;&lt;a href=&quot;#本期目录&quot; class=&quot;headerlink&quot; title=&quot;本期目录&quot;&gt;&lt;/a&gt;本期目录&lt;/h1&gt;&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="周刊" scheme="https://liuqinh2s.github.io/tags/%E5%91%A8%E5%88%8A/"/>
+    
+      <category term="热点时事" scheme="https://liuqinh2s.github.io/tags/%E7%83%AD%E7%82%B9%E6%97%B6%E4%BA%8B/"/>
+    
+      <category term="每周精选" scheme="https://liuqinh2s.github.io/tags/%E6%AF%8F%E5%91%A8%E7%B2%BE%E9%80%89/"/>
+    
+  </entry>
+  
+  <entry>
     <title>重大新闻挖掘器</title>
     <link href="https://liuqinh2s.github.io/2026/06/05/%E9%87%8D%E5%A4%A7%E6%96%B0%E9%97%BB%E6%8C%96%E6%8E%98%E5%99%A8/"/>
     <id>https://liuqinh2s.github.io/2026/06/05/重大新闻挖掘器/</id>
     <published>2026-06-05T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -45,7 +76,7 @@
     <link href="https://liuqinh2s.github.io/2025/09/18/%E4%BB%A3%E7%A0%81%E8%80%A6%E5%90%88/"/>
     <id>https://liuqinh2s.github.io/2025/09/18/代码耦合/</id>
     <published>2025-09-18T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -64,37 +95,11 @@
   </entry>
   
   <entry>
-    <title>Figma笔记</title>
-    <link href="https://liuqinh2s.github.io/2025/08/22/Figma%E7%AC%94%E8%AE%B0/"/>
-    <id>https://liuqinh2s.github.io/2025/08/22/Figma笔记/</id>
-    <published>2025-08-22T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;早就听闻 Figma 市值非常高（大概好几年前吧），把 Adobe PhotoShop 都给干下去了。以前只是听闻 Figma 用起来比 PhotoShop 更简单所以才深受用户喜爱，现在感觉事情并没有那么简单，Figma 市值之所以那么高肯定是有原因的，原因应该是盈利确实很好，市占率确实很高，因为我发现它好像是专门做 UI 设计的工具，而随便一想就知道这块蛋糕在现在这个时代是特别大的。&lt;/p&gt;
-&lt;p&gt;我的东家也是做白板类项目的，不过也是做垂直领域，EDA，项目地址在此：&lt;a href=&quot;https://pro.lceda.cn/editor&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;嘉立创 EDA 专业版&lt;/a&gt;。我所了解的其他白板项目有这些：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://excalidraw.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Excalidraw&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://songlh.top/paint-board/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;paint-board&lt;/a&gt;，&lt;a href=&quot;https://github.com/LHRUN/paint-board?tab=readme-ov-file&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://yft.design/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;yft-design&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/kkoomen/pointless&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pointless&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;可见能结合具体业务，垂直发展，才是白板项目能否壮大的关键。而具体业务也有大有小，UI 设计，海报设计这些用户面大所以相应的市值也非常高。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="UI设计" scheme="https://liuqinh2s.github.io/tags/UI%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
     <title>仓鼠导航</title>
     <link href="https://liuqinh2s.github.io/2025/08/22/%E4%BB%93%E9%BC%A0%E5%AF%BC%E8%88%AA/"/>
     <id>https://liuqinh2s.github.io/2025/08/22/仓鼠导航/</id>
     <published>2025-08-22T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -117,11 +122,37 @@
   </entry>
   
   <entry>
+    <title>Figma笔记</title>
+    <link href="https://liuqinh2s.github.io/2025/08/22/Figma%E7%AC%94%E8%AE%B0/"/>
+    <id>https://liuqinh2s.github.io/2025/08/22/Figma笔记/</id>
+    <published>2025-08-22T00:00:00.000Z</published>
+    <updated>2026-07-16T09:57:17.222Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;早就听闻 Figma 市值非常高（大概好几年前吧），把 Adobe PhotoShop 都给干下去了。以前只是听闻 Figma 用起来比 PhotoShop 更简单所以才深受用户喜爱，现在感觉事情并没有那么简单，Figma 市值之所以那么高肯定是有原因的，原因应该是盈利确实很好，市占率确实很高，因为我发现它好像是专门做 UI 设计的工具，而随便一想就知道这块蛋糕在现在这个时代是特别大的。&lt;/p&gt;
+&lt;p&gt;我的东家也是做白板类项目的，不过也是做垂直领域，EDA，项目地址在此：&lt;a href=&quot;https://pro.lceda.cn/editor&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;嘉立创 EDA 专业版&lt;/a&gt;。我所了解的其他白板项目有这些：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://excalidraw.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Excalidraw&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://songlh.top/paint-board/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;paint-board&lt;/a&gt;，&lt;a href=&quot;https://github.com/LHRUN/paint-board?tab=readme-ov-file&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://yft.design/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;yft-design&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/kkoomen/pointless&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pointless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可见能结合具体业务，垂直发展，才是白板项目能否壮大的关键。而具体业务也有大有小，UI 设计，海报设计这些用户面大所以相应的市值也非常高。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="UI设计" scheme="https://liuqinh2s.github.io/tags/UI%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git笔记</title>
     <link href="https://liuqinh2s.github.io/2025/08/20/git%E7%AC%94%E8%AE%B0/"/>
     <id>https://liuqinh2s.github.io/2025/08/20/git笔记/</id>
     <published>2025-08-20T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -145,7 +176,7 @@
     <link href="https://liuqinh2s.github.io/2025/08/11/Vue%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/08/11/Vue总结/</id>
     <published>2025-08-11T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -165,7 +196,7 @@
     <link href="https://liuqinh2s.github.io/2025/07/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E7%AA%97%E5%8F%A3%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/07/24/浏览器跨窗口通信总结/</id>
     <published>2025-07-24T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -185,7 +216,7 @@
     <link href="https://liuqinh2s.github.io/2025/07/21/%E5%B8%B8%E7%94%A8%20react%20hooks%20%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/07/21/常用 react hooks 总结/</id>
     <published>2025-07-21T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -203,7 +234,7 @@
     <link href="https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB/"/>
     <id>https://liuqinh2s.github.io/2025/06/23/我的互联网生活/</id>
     <published>2025-06-23T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -221,7 +252,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/12/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
     <id>https://liuqinh2s.github.io/2024/11/12/重新整理博客/</id>
     <published>2024-11-12T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -243,7 +274,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/11/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB%E5%AE%9E%E8%B7%B5/"/>
     <id>https://liuqinh2s.github.io/2024/11/11/囚徒健身实践/</id>
     <published>2024-11-11T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -273,7 +304,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/26/%E6%88%91%E5%AF%B9%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%9C%8B%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2024/08/26/我对读书的看法/</id>
     <published>2024-08-26T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -302,7 +333,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/14/%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2024/08/14/投资总结/</id>
     <published>2024-08-14T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -325,7 +356,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/13/free-resource/"/>
     <id>https://liuqinh2s.github.io/2024/08/13/free-resource/</id>
     <published>2024-08-13T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -343,7 +374,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E4%BD%9C%E5%93%81%E7%89%88%E6%9D%83%E8%AF%81%E5%88%B8%E5%8C%96/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/作品版权证券化/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.689Z</updated>
+    <updated>2026-07-16T09:57:17.221Z</updated>
     
     <summary type="html">
     
@@ -362,7 +393,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/星露谷物语/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.690Z</updated>
+    <updated>2026-07-16T09:57:17.222Z</updated>
     
     <summary type="html">
     
@@ -383,7 +414,7 @@
     <link href="https://liuqinh2s.github.io/2023/12/05/JavaScript%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/"/>
     <id>https://liuqinh2s.github.io/2023/12/05/JavaScript如何实现节流和防抖函数/</id>
     <published>2023-12-05T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.689Z</updated>
+    <updated>2026-07-16T09:57:17.221Z</updated>
     
     <summary type="html">
     
@@ -403,7 +434,7 @@
     <link href="https://liuqinh2s.github.io/2023/11/23/JavaScript%E7%9A%84var,let,const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://liuqinh2s.github.io/2023/11/23/JavaScript的var,let,const的区别/</id>
     <published>2023-11-23T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.689Z</updated>
+    <updated>2026-07-16T09:57:17.221Z</updated>
     
     <summary type="html">
     
@@ -423,39 +454,11 @@
     <link href="https://liuqinh2s.github.io/2023/11/22/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84bind%E6%96%B9%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2023/11/22/模拟实现JavaScript的bind方法/</id>
     <published>2023-11-22T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.689Z</updated>
+    <updated>2026-07-16T09:57:17.221Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;bind 函数我们经常用到，主要用于换绑 this。其返回值是一个方法。此外我们还可以把一些参数固定下来，相当于封装了一个简易函数。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模拟实现JavaScript的apply和call方法</title>
-    <link href="https://liuqinh2s.github.io/2023/11/21/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84apply%E5%92%8Ccall%E6%96%B9%E6%B3%95/"/>
-    <id>https://liuqinh2s.github.io/2023/11/21/模拟实现JavaScript的apply和call方法/</id>
-    <published>2023-11-21T00:00:00.000Z</published>
-    <updated>2026-07-16T09:09:19.689Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;apply 和 call 的相同点是：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;都由一个函数调用&lt;/li&gt;
-&lt;li&gt;第一个参数都是原函数的执行环境 this&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;不同点是：&lt;/p&gt;
-&lt;p&gt;apply 的第二个参数接收原函数的所有参数，而 call 从第二个参数开始跟原函数一样是打散的&lt;/p&gt;
-&lt;p&gt;代码如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;F(arg1, arg2, ...)&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;F.apply(thisArg, [arg1, arg2, ...]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;F.call(thisArg, arg1, arg2, ...);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;需要特别注意的是，如果是在非严格模式下，thisArg 如果为 null 或 undefined，就会被替换成全局对象（在浏览器中是 window）；如果为原始值，就会被替换成原始值的的自动包装对象。&lt;/p&gt;
-&lt;p&gt;严格模式下，thisArg 传什么就是什么。&lt;/p&gt;
     
     </summary>
     
