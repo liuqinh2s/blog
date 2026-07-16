@@ -513,3 +513,4 @@ date: 2019-02-20 20:30:09
 - [机械表原理](https://ciechanow.ski/mechanical-watch/)
 - [公式化剖析色彩三要素：色相、饱和度、明度](https://zhuanlan.zhihu.com/p/30409532)
 - [Gold Price History Chart | Gold Price Trends | Goldhub](https://china.gold.org/goldhub/data/gold-prices)
+- [Hexo NexT主题最新官方博客](https://theme-next.js.org/)
