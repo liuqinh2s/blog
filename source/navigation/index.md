@@ -51,10 +51,6 @@ date: 2019-02-20 20:30:09
 
 - [liqi - 利器](https://liqi.io)
 
-## 服务器购买平台
-
-- [萤光云管理控制台](https://console.ygcloud.com/login)
-
 ## 综合资源
 
 - [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
