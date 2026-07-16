@@ -1,4 +1,6 @@
 name: deploying Hexo project to GitHub pages
+permissions:
+  contents: write
 on:
   push:
     branches:
@@ -7,29 +9,29 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@master
-      
-    - name: Use Node.js 12
-      uses: actions/setup-node@v2-beta
-      with:
-        node-version: '12.22.12'
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
 
-    - name: Install Pandoc
-      run: |
-        sudo apt-get install pandoc
-        
-    - name: Install and Build 🔧 
-      run: |
-        npm install -g hexo-cli
-        npm install
-        hexo clean
-        hexo generate
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12.22.12"
 
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: docs
-        BASE_BRANCH: main
+      - name: Install Pandoc
+        run: |
+          sudo apt-get install pandoc
+
+      - name: Install and Build 🔧
+        run: |
+          npm install -g hexo-cli
+          npm install
+          hexo clean
+          hexo generate
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs
+          BASE_BRANCH: main
