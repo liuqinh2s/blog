@@ -93,6 +93,18 @@ feed:
 
 marked:
   smartypants: false
+
+# TOC Configuration
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: ""
+    class: null
+
 search:
   path: search.xml
   field: all
