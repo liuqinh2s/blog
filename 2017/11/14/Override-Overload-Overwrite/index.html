@@ -90,7 +90,7 @@
 <meta property="og:description" content="我们都知道有些东西容易混淆，在加上中文翻译得乱七八糟，更加让人困惑。今天我要讲的这三位可就真是绝了。 它们是：Override、Overload、Overwrite。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/12/09/LAIVFxpekMXyogD.jpg">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.216Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Override Overload Overwrite">
 <meta name="twitter:description" content="我们都知道有些东西容易混淆，在加上中文翻译得乱七八糟，更加让人困惑。今天我要讲的这三位可就真是绝了。 它们是：Override、Overload、Overwrite。">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -442,7 +442,7 @@
 <li>函数签名（signature）</li>
 <li>多态（polymorphism、polymorphic）</li>
 </ol>
-<h2 id="函数签名"><a href="#函数签名" class="headerlink" title="函数签名"></a>函数签名</h2><p>函数签名是什么，其实就是用来区别函数的，两个函数怎么样认定是不同的两个函数呢，只有两个方面：</p>
+<h2><span id="han-shu-qian-ming">函数签名</span><a href="#han-shu-qian-ming" class="header-anchor"></a></h2><p>函数签名是什么，其实就是用来区别函数的，两个函数怎么样认定是不同的两个函数呢，只有两个方面：</p>
 <ol>
 <li>函数名</li>
 <li>参数</li>
@@ -450,12 +450,12 @@
 <p>有人说还有返回值啊，不行，返回值不能作为函数签名的一部分，因为你调用一个函数的时候，返回值根本不能帮助编译器来识别你用的是哪个函数，比如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;</span><br><span class="line"></span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
 <p>请问我使用的是哪个函数？你看返回值确实不行吧。</p>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态是面向对象编程的概念，你可以看看它的准确定义：</p>
+<h2><span id="duo-tai">多态</span><a href="#duo-tai" class="header-anchor"></a></h2><p>多态是面向对象编程的概念，你可以看看它的准确定义：</p>
 <p>Polymorphism，定义很简短：polymorphism is the provision of a single interface to entities of different types.</p>
 <p>如果父类有一个函数，子类也定义了一个完全相同的函数（函数签名相同），那么你可以用父类指针（或者说父类对象）作为统一的接口，来调用子类的方法。比如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(“Vehicles can move!!”);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MotorBike</span> <span class="title">extends</span> <span class="title">Vehicle</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(“MotorBike can move <span class="keyword">and</span> accelerate too!!”);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="title">extends</span> <span class="title">Vehicle</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">move</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(“Hi! I am a car!”);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Vehicle vh = <span class="keyword">new</span> MotorBike();</span><br><span class="line">        vh.move();    <span class="comment">// prints MotorBike can move and accelerate too!!</span></span><br><span class="line">        vh = <span class="keyword">new</span> Vehicle();</span><br><span class="line">        vh.move();    <span class="comment">// prints Vehicles can move!!</span></span><br><span class="line">        vh = <span class="keyword">new</span> Car();</span><br><span class="line">        vh.move();   <span class="comment">// prints Hi! I am a car!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>多态的好处是可以扩展啊，比如我后来又多了个 truck 类，我不需要去动已经写好的代码，只要把 truck 模块写好，加进去就行了。</p>
-<h2 id="Override、Overload、Overwrite-的区别"><a href="#Override、Overload、Overwrite-的区别" class="headerlink" title="Override、Overload、Overwrite 的区别"></a>Override、Overload、Overwrite 的区别</h2><p>好了，知道了这两个概念，我们再来看看上面的那三个混在一起的东西：</p>
+<h2><span id="override-overload-overwrite-de-qu-bie">Override、Overload、Overwrite 的区别</span><a href="#override-overload-overwrite-de-qu-bie" class="header-anchor"></a></h2><p>好了，知道了这两个概念，我们再来看看上面的那三个混在一起的东西：</p>
 <ul>
 <li>Override（推翻，对英文意思就是这个）subclass method overrides base class method means:<ul>
 <li>in different range (in derived class and base class)</li>
@@ -477,7 +477,7 @@
 </ul>
 <p>我们应该记住只有 Override 才跟多态有关。</p>
 <p>Overload 是本 class 里面的不同函数（只不过函数名一样罢了，其实是两个不同的函数，看两个函数是否是同一个函数就看函数签名就行了），其实没啥稀奇的，不就是函数名一样嘛。函数签名一样，区分出是用父类还是子类的函数，这才是面向对象和多态要解决的问题。</p>
-<h2 id="Override-和-Overwrite-的区别"><a href="#Override-和-Overwrite-的区别" class="headerlink" title="Override 和 Overwrite 的区别"></a>Override 和 Overwrite 的区别</h2><blockquote>
+<h2><span id="override-he-overwrite-de-qu-bie">Override 和 Overwrite 的区别</span><a href="#override-he-overwrite-de-qu-bie" class="header-anchor"></a></h2><blockquote>
 <p>比较容易混淆的其实是 Override 和 Overwrite，但你只要死记住：Override 必须函数签名要一样，而 Overwrite 只需函数名一样即可。另外 C++ 中一定要用 virtual 才算 Override，而 Java 默认就是 Override，不需要修饰词。</p>
 </blockquote>
 <blockquote>
@@ -711,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数签名"><span class="nav-number">1.</span> <span class="nav-text">函数签名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态"><span class="nav-number">2.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Override、Overload、Overwrite-的区别"><span class="nav-number">3.</span> <span class="nav-text">Override、Overload、Overwrite 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Override-和-Overwrite-的区别"><span class="nav-number">4.</span> <span class="nav-text">Override 和 Overwrite 的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">函数签名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">Override、Overload、Overwrite 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">Override 和 Overwrite 的区别</span></a></li></ol></div>
             
 
           </div>
@@ -745,7 +745,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

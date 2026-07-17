@@ -90,7 +90,7 @@
 <meta property="og:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/舞蹈链.png">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.221Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数独游戏制作过程记录">
 <meta name="twitter:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -445,11 +445,11 @@
 <p>精确覆盖问题是一个 NP 完全问题，NP 问题的概念我差不多忘光了，得重新看看</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="精确覆盖问题"><a href="#精确覆盖问题" class="headerlink" title="精确覆盖问题"></a>精确覆盖问题</h2><p>简单来说就是给定一个全集 X，和若干子集 S，从子集中选出 N 个，它们拼凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集 X。</p>
-<h2 id="X-算法"><a href="#X-算法" class="headerlink" title="X 算法"></a>X 算法</h2><p>维基百科的解说我看不懂，还好 OI-Wiki 上讲的足够详细：<a href="https://oi-wiki.org/search/dlx/#x-%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">X 算法</a></p>
+<h2><span id="jing-que-fu-gai-wen-ti">精确覆盖问题</span><a href="#jing-que-fu-gai-wen-ti" class="header-anchor"></a></h2><p>简单来说就是给定一个全集 X，和若干子集 S，从子集中选出 N 个，它们拼凑起来恰好（没有多余的元素，比如某个元素出现过两次）等于全集 X。</p>
+<h2><span id="x-suan-fa">X 算法</span><a href="#x-suan-fa" class="header-anchor"></a></h2><p>维基百科的解说我看不懂，还好 OI-Wiki 上讲的足够详细：<a href="https://oi-wiki.org/search/dlx/#x-%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">X 算法</a></p>
 <p>解决精确覆盖问题，简单来说分为以下几个步骤：</p>
-<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><p>针对问题建模，建模成一个 01 矩阵，每一行代表一个集合，1 代表包含了集合 X 的某个元素（1 的位置，就是该元素在集合 X 中的位置），0 代表没包含</p>
-<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><p>简化问题（缩小矩阵，删掉不再考虑的部分），递归解决子问题。</p>
+<h3><span id="jian-mo">建模</span><a href="#jian-mo" class="header-anchor"></a></h3><p>针对问题建模，建模成一个 01 矩阵，每一行代表一个集合，1 代表包含了集合 X 的某个元素（1 的位置，就是该元素在集合 X 中的位置），0 代表没包含</p>
+<h3><span id="suan-fa-bu-zou">算法步骤</span><a href="#suan-fa-bu-zou" class="header-anchor"></a></h3><p>简化问题（缩小矩阵，删掉不再考虑的部分），递归解决子问题。</p>
 <ol>
 <li>选行：选 1 出现次数最少的一列，然后从这列有 1 的行中随便选一行</li>
 <li>删减：找到这一行的有 1 的那些列，去掉这些列，找到这些列上是 1 的行，去掉这些行</li>
@@ -459,7 +459,7 @@
 <blockquote>
 <p>这个算法很好的缩小了问题规模，非常典型的技巧</p>
 </blockquote>
-<h3 id="算法含义"><a href="#算法含义" class="headerlink" title="算法含义"></a>算法含义</h3><p>每选择一行，代表着打算用这一行去精确覆盖全集，那么相应的：</p>
+<h3><span id="suan-fa-han-yi">算法含义</span><a href="#suan-fa-han-yi" class="header-anchor"></a></h3><p>每选择一行，代表着打算用这一行去精确覆盖全集，那么相应的：</p>
 <ol>
 <li>每行只用一次，故删除选择的这一行</li>
 <li>这一行中出现的所有元素（每个 1 代表一个元素出现），后续都不用再考虑，故删除相关列</li>
@@ -468,7 +468,7 @@
 <p>以上三步可以保证每次选择的行，行之间是不会出现重复元素的。</p>
 <p>结束标志也很好理解，最后一次删除的行，如果全部是 1，则标志着我们所有列都刚好填补上了元素。</p>
 <p>这样我们就做到了全覆盖+精确覆盖，这两项要求。</p>
-<h3 id="算法的具体实现"><a href="#算法的具体实现" class="headerlink" title="算法的具体实现"></a>算法的具体实现</h3><p>具体代码实现，还有很多细节不清楚，参考资料：</p>
+<h3><span id="suan-fa-de-ju-ti-shi-xian">算法的具体实现</span><a href="#suan-fa-de-ju-ti-shi-xian" class="header-anchor"></a></h3><p>具体代码实现，还有很多细节不清楚，参考资料：</p>
 <ul>
 <li><a href="https://developer.aliyun.com/article/373709" target="_blank" rel="noopener">跳跃的舞者，舞蹈链（Dancing Links）算法——求解精确覆盖问题</a></li>
 </ul>
@@ -476,16 +476,16 @@
 <p><a href="https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/DancingLinksX/DancingLinksX.ts</a></p>
 <p>与上面那个实现不同，我这个实现既有列头，又有行头，反正怎么方便怎么来。</p>
 <p><img src="../../../../images/2023/舞蹈链.png" alt="舞蹈链"></p>
-<h2 id="数独怎么转化为精确覆盖问题"><a href="#数独怎么转化为精确覆盖问题" class="headerlink" title="数独怎么转化为精确覆盖问题"></a>数独怎么转化为精确覆盖问题</h2><p>参考资料：<a href="https://zhuanlan.zhihu.com/p/67447747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/67447747</a></p>
+<h2><span id="shu-du-zen-me-zhuan-hua-wei-jing-que-fu-gai-wen-ti">数独怎么转化为精确覆盖问题</span><a href="#shu-du-zen-me-zhuan-hua-wei-jing-que-fu-gai-wen-ti" class="header-anchor"></a></h2><p>参考资料：<a href="https://zhuanlan.zhihu.com/p/67447747" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/67447747</a></p>
 <p>在网上查阅了大量资料，但一开始都看不懂，且发现他们讲的基本上一模一样（天下文章一大抄），就跟前面舞蹈链一样，连配图都是一样的。</p>
 <p>怎么把数独这个矩阵转化为精确覆盖问题的 01 矩阵，其实就是要想清楚，行和列的意义是什么？</p>
-<h3 id="行的意义"><a href="#行的意义" class="headerlink" title="行的意义"></a>行的意义</h3><p>精确覆盖问题的核心要素是：一个全集 X，若干子集 S</p>
+<h3><span id="xing-de-yi-yi">行的意义</span><a href="#xing-de-yi-yi" class="header-anchor"></a></h3><p>精确覆盖问题的核心要素是：一个全集 X，若干子集 S</p>
 <p>那么我们先来想想全集是什么？</p>
 <p>全集肯定是一幅完整的正确的数独答案</p>
 <p>那每个子集是什么？</p>
 <p>子集应该是单个格子的解，然后我们拿恰好 81 个子集，凑出全集。</p>
 <p>每个格子有 9 种填法，81 个格子有 729 种填法，所以我们需要从 729 个子集中选 81 个出来。</p>
-<h3 id="列的意义"><a href="#列的意义" class="headerlink" title="列的意义"></a>列的意义</h3><p>首先思考一下要往一个数独的格子里填入一个数字受哪些条件约束：</p>
+<h3><span id="lie-de-yi-yi">列的意义</span><a href="#lie-de-yi-yi" class="header-anchor"></a></h3><p>首先思考一下要往一个数独的格子里填入一个数字受哪些条件约束：</p>
 <p>首先，这个格子里不能有数字，即为空</p>
 <p>其次，同一行不能有相同数字</p>
 <p>再次，同一列不能有相同数字</p>
@@ -516,7 +516,7 @@
 <p>244 列表示第 0 个九宫格是否有数字 2</p>
 <p>……</p>
 <p>323 列表示第 8 个九宫格是否有数字 9</p>
-<h3 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h3><p>我们拿 <code>4*4</code> 的数独来做例子（只用到 1 到 4 四个数，可以称之为 2 阶数独吧，比咱们常玩的三阶数独小一阶）：</p>
+<h3><span id="ju-ti-li-zi">具体例子</span><a href="#ju-ti-li-zi" class="header-anchor"></a></h3><p>我们拿 <code>4*4</code> 的数独来做例子（只用到 1 到 4 四个数，可以称之为 2 阶数独吧，比咱们常玩的三阶数独小一阶）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0 4 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br><span class="line">0 0 0 0</span><br></pre></td></tr></table></figure>
 <p>这幅图转化成精确覆盖问题的矩阵是什么样呢？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">第二个格子里填了数，其他没填    | 第一行填了数字4                  | 第2列填了数字4                  |  第1个4宫格填了数字4</span><br><span class="line">0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 | 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 | 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span><br></pre></td></tr></table></figure>
@@ -529,7 +529,7 @@
 <blockquote>
 <p>数独的总个数是这么得出来的。9!×722×27× 27,704,267,971=6,670,903,752,021,072,936,960（约有 6.67×10 的 21 次方）种组合，2005 年由 Bertram Felgenhauer 和 Frazer Jarvis 计算出该数字，如果将重复（如数字交换、对称等）不计算，那么有 5,472,730,538 个组合。那么有趣的来了，有个 9!=362880，这个就等于 9 的全排列，是不是可以从这里做突破口呢？如果我可以随机的生成 362880 个完整的数独矩阵，然后随机的每行挖去 4 到 5 个那就是 <code>362880/24/120*9*362880=411505920</code> 个，这个数字够大家有生之年玩的了。--摘录自<a href="https://blog.csdn.net/peng_wu01/article/details/6026103" target="_blank" rel="noopener">数独-- 一个高效率生成数独的算法</a> 真实性有待进一步考证</p>
 </blockquote>
-<h3 id="数独求解"><a href="#数独求解" class="headerlink" title="数独求解"></a>数独求解</h3><p>随便给出一个数独图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，解空间是 729，对应的 01 矩阵大小是：<code>729*324</code>，不过还好是个稀疏矩阵。</p>
+<h3><span id="shu-du-qiu-jie">数独求解</span><a href="#shu-du-qiu-jie" class="header-anchor"></a></h3><p>随便给出一个数独图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，解空间是 729，对应的 01 矩阵大小是：<code>729*324</code>，不过还好是个稀疏矩阵。</p>
 <p>有一个优化必须要说一下：每次选行的时候，选 1 最少的列上的某一行。</p>
 <p>选 1 最少的列的意义是：寻找出现在所有子集中次数最少的元素，既然大家都很缺这个元素，那么基本上意味着凑全集合，很需要这个元素，那么就要优先选择这些元素</p>
 <p>没加这个优化的时候，我的回溯一直在搞排列组合，无头苍蝇，跑了 60 多万次 dance 都没结果（几分钟都过去了），加了这个优化直接起飞，1 秒钟不到就解出来了。</p>
@@ -537,10 +537,10 @@
 <p>能直接在浏览器上跑的代码：<a href="https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/bundle.js" target="_blank" rel="noopener">https://github.com/liuqinh2s/Algorithm/blob/master/SudoKu/bundle.js</a></p>
 <p>可以通过<code>npm i @liuqinh2s/sudoku-js</code>安装</p>
 <p>能在线玩的项目：<a href="https://jujuxi.xyz/sudoku/" target="_blank" rel="noopener">https://jujuxi.xyz/sudoku/</a></p>
-<h3 id="数独生成"><a href="#数独生成" class="headerlink" title="数独生成"></a>数独生成</h3><p>以上只讲了如何解数独，那么如何生成数独呢：<a href="https://www.zhihu.com/question/22043229/answer/44315364" target="_blank" rel="noopener">数独的生成过程是怎样的？ - 单想的回答 - 知乎</a></p>
+<h3><span id="shu-du-sheng-cheng">数独生成</span><a href="#shu-du-sheng-cheng" class="header-anchor"></a></h3><p>以上只讲了如何解数独，那么如何生成数独呢：<a href="https://www.zhihu.com/question/22043229/answer/44315364" target="_blank" rel="noopener">数独的生成过程是怎样的？ - 单想的回答 - 知乎</a></p>
 <p>简单来说就是：随机放入 11 个数，求解出终盘，然后挖洞。</p>
-<h3 id="数独背景知识"><a href="#数独背景知识" class="headerlink" title="数独背景知识"></a>数独背景知识</h3><p><a href="https://www.jianshu.com/p/d77de0dcf792" target="_blank" rel="noopener">初级课堂（3）|数独比你还优美，还有个性！</a><br>比较精美的数独网站：<a href="http://sudoku.com/" target="_blank" rel="noopener">Sudoku.com</a></p>
-<h3 id="数独难易判定"><a href="#数独难易判定" class="headerlink" title="数独难易判定"></a>数独难易判定</h3>
+<h3><span id="shu-du-bei-jing-zhi-shi">数独背景知识</span><a href="#shu-du-bei-jing-zhi-shi" class="header-anchor"></a></h3><p><a href="https://www.jianshu.com/p/d77de0dcf792" target="_blank" rel="noopener">初级课堂（3）|数独比你还优美，还有个性！</a><br>比较精美的数独网站：<a href="http://sudoku.com/" target="_blank" rel="noopener">Sudoku.com</a></p>
+<h3><span id="shu-du-nan-yi-pan-ding">数独难易判定</span><a href="#shu-du-nan-yi-pan-ding" class="header-anchor"></a></h3>
       
     </div>
     
@@ -757,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#精确覆盖问题"><span class="nav-number">1.</span> <span class="nav-text">精确覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-算法"><span class="nav-number">2.</span> <span class="nav-text">X 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建模"><span class="nav-number">2.1.</span> <span class="nav-text">建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法步骤"><span class="nav-number">2.2.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法含义"><span class="nav-number">2.3.</span> <span class="nav-text">算法含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法的具体实现"><span class="nav-number">2.4.</span> <span class="nav-text">算法的具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数独怎么转化为精确覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">数独怎么转化为精确覆盖问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行的意义"><span class="nav-number">3.1.</span> <span class="nav-text">行的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列的意义"><span class="nav-number">3.2.</span> <span class="nav-text">列的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体例子"><span class="nav-number">3.3.</span> <span class="nav-text">具体例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独求解"><span class="nav-number">3.4.</span> <span class="nav-text">数独求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独生成"><span class="nav-number">3.5.</span> <span class="nav-text">数独生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独背景知识"><span class="nav-number">3.6.</span> <span class="nav-text">数独背景知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数独难易判定"><span class="nav-number">3.7.</span> <span class="nav-text">数独难易判定</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">精确覆盖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">X 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.3.</span> <span class="nav-text">算法含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.4.</span> <span class="nav-text">算法的具体实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">数独怎么转化为精确覆盖问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.1.</span> <span class="nav-text">行的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.2.</span> <span class="nav-text">列的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.3.</span> <span class="nav-text">具体例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.4.</span> <span class="nav-text">数独求解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.5.</span> <span class="nav-text">数独生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.6.</span> <span class="nav-text">数独背景知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.7.</span> <span class="nav-text">数独难易判定</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -791,7 +791,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

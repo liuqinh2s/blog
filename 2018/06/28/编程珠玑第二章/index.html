@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="本书的另一个中心思想显而易见：良好的算法是程序性能提升的关键。 下面还是通过探讨几个实例，来领会一下算法的重要性。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.217Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程珠玑系列笔记 -- 第二章 啊哈！算法">
 <meta name="twitter:description" content="本书的另一个中心思想显而易见：良好的算法是程序性能提升的关键。 下面还是通过探讨几个实例，来领会一下算法的重要性。">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -432,7 +432,7 @@
         <p>本书的另一个中心思想显而易见：<strong>良好的算法是程序性能提升的关键。</strong></p>
 <p>下面还是通过探讨几个实例，来领会一下算法的重要性。</p>
 <a id="more"></a>
-<h2 id="三个问题"><a href="#三个问题" class="headerlink" title="三个问题"></a>三个问题</h2><p>A. 给定一个最多包含 40 亿个随机排列的 32 位整数的顺序文件，找出一个不在文件中的 32 位整数(在文件中至少缺失一个这样的数 - - 为什么? )。在具有足够内存的情况下，如何解决该问题?如果有几个外部的“临时”文件可用，但是仅有几百字节的内存，又该如何解决该问题?</p>
+<h2><span id="san-ge-wen-ti">三个问题</span><a href="#san-ge-wen-ti" class="header-anchor"></a></h2><p>A. 给定一个最多包含 40 亿个随机排列的 32 位整数的顺序文件，找出一个不在文件中的 32 位整数(在文件中至少缺失一个这样的数 - - 为什么? )。在具有足够内存的情况下，如何解决该问题?如果有几个外部的“临时”文件可用，但是仅有几百字节的内存，又该如何解决该问题?</p>
 <p>至少缺失一个这样的数是因为：32 位无符号整数的表示范围是<code>0 到 4,294,967,295</code>，比 40 亿大：。如果有足够的内存，可以采用第一章的位图表示法，需要的内存是：<code>4 000 000 000/8 = 500 000 000</code>，500MB 的内存。而且我们需要使用二分查找来加速查找过程，顺序遍历 500MB 的空间是很慢的。使用二分查找对这种量大的数据集是非常重要的手段，但 <strong>二分查找的基础是数据集有序</strong>。所以初看这里是没法直接使用二分法的，但是如果我们这样想：32 位整数的每一位不是 0 就是 1，我们按照第 1 位划分的话，就可以划分出两个集合（需要遍历全部数据一遍），如果某个集合小于 $2^{31}$ 个数就选中成为我们下一次划分的对象（如果两个集合都小于 $2^{31}$ 就随便选一个），直到我们得到一个空集，而这个空集中本来应该存在的那些数，就是缺失的数了。在划分集合的时候，我们实际上要把数据存到硬盘中，可以使用 buffer 来减少 IO 次数。最坏时间复杂度是一个等比数列：<br>$$n+\frac{1}{2}n+\cdots+1 = 2n$$</p>
 <p>可见这里的二分法并没有起到<code>logN</code>的效果。需要遍历的二分法还算什么二分法呢？但庆幸的是，我们至少可以解决这一题。</p>
 <p>B. 将一个 n 元一维向量左旋转 i 个位置。例如，当 n=8 且 i=3 时，向量 abcdefgh 旋转为 defghabc。简单的代码使用一个 n 元的中间向量在 n 步内完成该工作。你能否仅使用数十个额外字节的存储空间，在正比于 n 的时间内完成向量的旋转？</p>
@@ -667,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#三个问题"><span class="nav-number">1.</span> <span class="nav-text">三个问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">三个问题</span></a></li></ol></div>
             
 
           </div>
@@ -701,7 +701,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

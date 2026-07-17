@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="HTTP 使用 80 端口，HTTPS 使用 443 端口 HTTPS 需要申请证书 HTTP 是超文本传输协议，是明文传输；HTTPS 是经过 SSL 加密的协议，传输更安全 HTTPS 比 HTTP 慢，因为 HTTPS 除了 TCP 握手的三个包，还要加上 SSL 握手的 9 个包  HTTPS 的加密过程参考https://blog.csdn.net/xiaopang_yan/artic">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.220Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 和 HTTPS 的区别">
 <meta name="twitter:description" content="HTTP 使用 80 端口，HTTPS 使用 443 端口 HTTPS 需要申请证书 HTTP 是超文本传输协议，是明文传输；HTTPS 是经过 SSL 加密的协议，传输更安全 HTTPS 比 HTTP 慢，因为 HTTPS 除了 TCP 握手的三个包，还要加上 SSL 握手的 9 个包  HTTPS 的加密过程参考https://blog.csdn.net/xiaopang_yan/artic">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -435,13 +435,13 @@
 <li>HTTP 是超文本传输协议，是明文传输；HTTPS 是经过 SSL 加密的协议，传输更安全</li>
 <li>HTTPS 比 HTTP 慢，因为 HTTPS 除了 TCP 握手的三个包，还要加上 SSL 握手的 9 个包</li>
 </ol>
-<h1 id="HTTPS-的加密过程"><a href="#HTTPS-的加密过程" class="headerlink" title="HTTPS 的加密过程"></a>HTTPS 的加密过程</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/xiaopang_yan/article/details/78709574" target="_blank" rel="noopener">https://blog.csdn.net/xiaopang_yan/article/details/78709574</a></p>
+<h1><span id="https-de-jia-mi-guo-cheng">HTTPS 的加密过程</span><a href="#https-de-jia-mi-guo-cheng" class="header-anchor"></a></h1><h2><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor"></a></h2><p><a href="https://blog.csdn.net/xiaopang_yan/article/details/78709574" target="_blank" rel="noopener">https://blog.csdn.net/xiaopang_yan/article/details/78709574</a></p>
 <p><a href="https://www.ruanyifeng.com/blog/2014/09/ssl-latency.html" target="_blank" rel="noopener">https://www.ruanyifeng.com/blog/2014/09/ssl-latency.html</a></p>
 <p>加密者，解密者</p>
-<h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>使用同一份密钥</p>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>加密者使用私钥加密，解密者用公钥解密，没有私钥，解不开用公钥加密的内容。</p>
-<h2 id="数字证书"><a href="#数字证书" class="headerlink" title="数字证书"></a>数字证书</h2><p>操作系统内置数字证书，其目的是提前把值得信赖的公钥获取到，保证了公钥的真实。</p>
-<h2 id="HTTPS-的-SSL-握手流程"><a href="#HTTPS-的-SSL-握手流程" class="headerlink" title="HTTPS 的 SSL 握手流程"></a>HTTPS 的 SSL 握手流程</h2><p>客户端 → 服务器：你好</p>
+<h2><span id="dui-cheng-jia-mi">对称加密</span><a href="#dui-cheng-jia-mi" class="header-anchor"></a></h2><p>使用同一份密钥</p>
+<h2><span id="fei-dui-cheng-jia-mi">非对称加密</span><a href="#fei-dui-cheng-jia-mi" class="header-anchor"></a></h2><p>加密者使用私钥加密，解密者用公钥解密，没有私钥，解不开用公钥加密的内容。</p>
+<h2><span id="shu-zi-zheng-shu">数字证书</span><a href="#shu-zi-zheng-shu" class="header-anchor"></a></h2><p>操作系统内置数字证书，其目的是提前把值得信赖的公钥获取到，保证了公钥的真实。</p>
+<h2><span id="https-de-ssl-wo-shou-liu-cheng">HTTPS 的 SSL 握手流程</span><a href="#https-de-ssl-wo-shou-liu-cheng" class="header-anchor"></a></h2><p>客户端 → 服务器：你好</p>
 <p>服务器 → 客户端：你好，我是服务器，这是我的数字证书</p>
 <p>客户端 → 服务器：向我证明你就是我要访问的服务器</p>
 <p>服务器 → 客户端：hello world{hello wolrd}[私钥|RSA]</p>
@@ -669,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS-的加密过程"><span class="nav-number">1.</span> <span class="nav-text">HTTPS 的加密过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对称加密"><span class="nav-number">1.2.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非对称加密"><span class="nav-number">1.3.</span> <span class="nav-text">非对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字证书"><span class="nav-number">1.4.</span> <span class="nav-text">数字证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS-的-SSL-握手流程"><span class="nav-number">1.5.</span> <span class="nav-text">HTTPS 的 SSL 握手流程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">HTTPS 的加密过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">非对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">数字证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">HTTPS 的 SSL 握手流程</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -703,7 +703,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

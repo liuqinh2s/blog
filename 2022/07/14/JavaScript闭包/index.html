@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="闭包是干什么用的本质上闭包就是为了拓展查找自由变量的范围 MDN 对闭包的定义为： A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment) 一个函数和对其周围状态（lexical">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.219Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 闭包">
 <meta name="twitter:description" content="闭包是干什么用的本质上闭包就是为了拓展查找自由变量的范围 MDN 对闭包的定义为： A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment) 一个函数和对其周围状态（lexical">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -429,7 +429,7 @@
       
 
       
-        <h1 id="闭包是干什么用的"><a href="#闭包是干什么用的" class="headerlink" title="闭包是干什么用的"></a>闭包是干什么用的</h1><p>本质上闭包就是为了拓展查找自由变量的范围</p>
+        <h1><span id="bi-bao-shi-gan-shi-me-yong-de">闭包是干什么用的</span><a href="#bi-bao-shi-gan-shi-me-yong-de" class="header-anchor"></a></h1><p>本质上闭包就是为了拓展查找自由变量的范围</p>
 <p>MDN 对闭包的定义为：</p>
 <p>A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment)</p>
 <p>一个函数和对其周围状态（lexical environment，词法环境）的引用捆绑在一起（或者说函数被引用包围），这样的组合就是闭包（closure）。</p>
@@ -466,11 +466,11 @@
 <p>This combination of a function object and a scope (a set of variable bindings) in which the function’s variables are resolved is called a closure in the computer science literature.</p>
 </blockquote>
 <p>闭包在计算机科学中也只是一个普通的概念，大家不要去想得太复杂。</p>
-<h1 id="经典面试题"><a href="#经典面试题" class="headerlink" title="经典面试题"></a>经典面试题</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();</span><br><span class="line">data[<span class="number">1</span>]();</span><br><span class="line">data[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure>
+<h1><span id="jing-dian-mian-shi-ti">经典面试题</span><a href="#jing-dian-mian-shi-ti" class="header-anchor"></a></h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();</span><br><span class="line">data[<span class="number">1</span>]();</span><br><span class="line">data[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure>
 <p>答案是全是 3，因为这里的 i 是直接从全局上下文中读取到的，让我们多加一层闭包：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  data[i] = (<span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">data[<span class="number">0</span>]();</span><br><span class="line">data[<span class="number">1</span>]();</span><br><span class="line">data[<span class="number">2</span>]();</span><br></pre></td></tr></table></figure>
 <p>这里写了个立即执行函数，由它创建了一个闭包：立即执行函数的 AO + 内层函数，这个闭包中有个自由变量 i，来自这个立即执行函数的形参，形参在每次立即执行后会被分别赋值 0,1,2。而内层函数被返回给这个 data 数组，当内层函数执行时，顺着作用域链查找 i，会先从立即执行函数的 AO 中读取到 i，就会分别读取到 0,1,2。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor"></a></h1><ul>
 <li><a href="https://github.com/mqyqingfeng/Blog/issues/9" target="_blank" rel="noopener">JavaScript 深入之闭包</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="noopener">闭包 - mdn</a></li>
 </ul>
@@ -504,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/07/14/JavaScript执行上下文之作用域链/" rel="next" title="JavaScript执行上下文之作用域链">
-                <i class="fa fa-chevron-left"></i> JavaScript执行上下文之作用域链
+              <a href="/blog/2022/07/13/JavaScript执行上下文之变量对象/" rel="next" title="JavaScript执行上下文之变量对象">
+                <i class="fa fa-chevron-left"></i> JavaScript执行上下文之变量对象
               </a>
             
           </div>
@@ -514,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/07/24/寻找字符串中出现最多的字符怎么实现？/" rel="prev" title="寻找字符串中出现最多的字符怎么实现？">
-                寻找字符串中出现最多的字符怎么实现？ <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2022/07/14/JavaScript执行上下文之作用域链/" rel="prev" title="JavaScript执行上下文之作用域链">
+                JavaScript执行上下文之作用域链 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -691,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包是干什么用的"><span class="nav-number">1.</span> <span class="nav-text">闭包是干什么用的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典面试题"><span class="nav-number">2.</span> <span class="nav-text">经典面试题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">闭包是干什么用的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">经典面试题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -725,7 +725,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

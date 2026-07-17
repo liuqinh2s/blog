@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。 首先我们应该思考为什么要有这么一个东西，也就是它的目的是什么？ 目的React Diff 算法的目的是优化真实 DOM 更新，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。 时间复杂度：通过启发式策略（如：同层比较、Key 标识）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.220Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Diff 算法">
 <meta name="twitter:description" content="每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。 首先我们应该思考为什么要有这么一个东西，也就是它的目的是什么？ 目的React Diff 算法的目的是优化真实 DOM 更新，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。 时间复杂度：通过启发式策略（如：同层比较、Key 标识）">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -431,9 +431,9 @@
       
         <p>每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。</p>
 <p>首先我们应该思考为什么要有这么一个东西，也就是它的目的是什么？</p>
-<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>React Diff 算法的目的是<strong>优化真实 DOM 更新</strong>，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。</p>
+<h2><span id="mu-de">目的</span><a href="#mu-de" class="header-anchor"></a></h2><p>React Diff 算法的目的是<strong>优化真实 DOM 更新</strong>，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。</p>
 <p>时间复杂度：通过启发式策略（如：同层比较、Key 标识）将传统 $$O(n^3)$$ 复杂度降至 O(n)</p>
-<h2 id="三大核心策略"><a href="#三大核心策略" class="headerlink" title="三大核心策略"></a>三大核心策略</h2><ol>
+<h2><span id="san-da-he-xin-ce-lue">三大核心策略</span><a href="#san-da-he-xin-ce-lue" class="header-anchor"></a></h2><ol>
 <li><strong>Tree Diff（树层比较）</strong><ul>
 <li>仅比较同一层级节点，跨层级移动会触发销毁和重建（如：节点从父节点 A 移动到节点 B，视为删除后重建），疑问？假如父节点 A、B 是同层级，那么它们的子节点（A+B）算同一层级吗</li>
 <li>优化建议：避免频繁跨层级操作，可用 CSS 隐藏代替 DOM 移除</li>
@@ -450,7 +450,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="Fibber-架构下的优化（React-16-）"><a href="#Fibber-架构下的优化（React-16-）" class="headerlink" title="Fibber 架构下的优化（React 16+）"></a>Fibber 架构下的优化（React 16+）</h2><ol>
+<h2><span id="fibber-jia-gou-xia-de-you-hua-react-16">Fibber 架构下的优化（React 16+）</span><a href="#fibber-jia-gou-xia-de-you-hua-react-16" class="header-anchor"></a></h2><ol>
 <li>增量更新与任务拆分<ul>
 <li>Diff 过程拆分为可中断的小任务，避免阻塞主线程</li>
 <li>高优先级更新（如用户交互）可中断低优先级任务</li>
@@ -678,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三大核心策略"><span class="nav-number">2.</span> <span class="nav-text">三大核心策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fibber-架构下的优化（React-16-）"><span class="nav-number">3.</span> <span class="nav-text">Fibber 架构下的优化（React 16+）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">三大核心策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">Fibber 架构下的优化（React 16+）</span></a></li></ol></div>
             
 
           </div>
@@ -712,7 +712,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

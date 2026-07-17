@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="最近买了一台服务器，太多 linux 命令要上网查询了，已经不适合记在札记里面（札记里面一般是记录比较杂的东西，篇幅尚不能形成文章），所以专门开了一篇文章来讲我在使用 linux 服务器遇到的问题，以及解决办法。 首先要谈的是服务器安全问题 以前搭 wordpress 博客的时候，被盗过两次，跟同事讨论了之后，发现可能是因为我使用了 root 账号远程登录，要论安全性的话，最好的方式是：  禁止">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.221Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux使用手册">
 <meta name="twitter:description" content="最近买了一台服务器，太多 linux 命令要上网查询了，已经不适合记在札记里面（札记里面一般是记录比较杂的东西，篇幅尚不能形成文章），所以专门开了一篇文章来讲我在使用 linux 服务器遇到的问题，以及解决办法。 首先要谈的是服务器安全问题 以前搭 wordpress 博客的时候，被盗过两次，跟同事讨论了之后，发现可能是因为我使用了 root 账号远程登录，要论安全性的话，最好的方式是：  禁止">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -454,7 +454,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setenforce 0</span><br><span class="line">sudo service sshd restart</span><br></pre></td></tr></table></figure>
 <p>修改完端口，还要让防火墙放行此端口：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 放行指定端口</span><br><span class="line">firewall-cmd --zone=public --add-port=xxxx/tcp --permanent</span><br><span class="line">// 重启防火墙</span><br><span class="line">systemctl restart firewalld.service</span><br><span class="line">// 重新载入配置</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-<h1 id="前因"><a href="#前因" class="headerlink" title="前因"></a>前因</h1><p>买了国外的域名和服务器，这样就可以避免国内特别麻烦的备案了，话说国外的域名和服务器真是便宜啊：</p>
+<h1><span id="qian-yin">前因</span><a href="#qian-yin" class="header-anchor"></a></h1><p>买了国外的域名和服务器，这样就可以避免国内特别麻烦的备案了，话说国外的域名和服务器真是便宜啊：</p>
 <ul>
 <li>服务器（VPS）：<a href="https://www.racknerd.com/" target="_blank" rel="noopener">racknerd.com</a></li>
 <li>域名：<a href="https://www.name.com/" target="_blank" rel="noopener">name.com</a></li>
@@ -464,7 +464,7 @@
 <blockquote>
 <p>现在 Windows 平台也有 FinalShell 了，体验终于又统一起来了</p>
 </blockquote>
-<h2 id="centos-安装-nginx"><a href="#centos-安装-nginx" class="headerlink" title="centos 安装 nginx"></a>centos 安装 nginx</h2><p>yum install 没有可用软件包 nginx。</p>
+<h2><span id="centos-an-zhuang-nginx">centos 安装 nginx</span><a href="#centos-an-zhuang-nginx" class="header-anchor"></a></h2><p>yum install 没有可用软件包 nginx。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * base: mirror.lzu.edu.cn</span><br><span class="line"> * extras: mirror.lzu.edu.cn</span><br><span class="line"> * updates: mirror.lzu.edu.cn</span><br><span class="line">没有可用软件包 nginx。</span><br><span class="line">错误：无须任何处理</span><br></pre></td></tr></table></figure>
 <p>原因是 nginx 位于第三方的 yum 源里面，而不在 centos 官方 yum 源里面</p>
 <p>解决方法：</p>
@@ -474,7 +474,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
 <p>重新试一下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
-<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><p>nginx 的配置位置：<code>/etc/nginx</code>中，在该目录下，主要的配置文件是 nginx.conf</p>
+<h2><span id="nginx">nginx</span><a href="#nginx" class="header-anchor"></a></h2><p>nginx 的配置位置：<code>/etc/nginx</code>中，在该目录下，主要的配置文件是 nginx.conf</p>
 <p>常见需求和解决办法：</p>
 <ol>
 <li>ssl 证书怎么搞：Let&#39;s Encrypt 提供的解决方案，按照这个操作：<a href="https://certbot.eff.org/instructions?ws=nginx&amp;os=centosrhel7" target="_blank" rel="noopener">certbot instructions</a></li>
@@ -482,12 +482,12 @@
 <li>HTTP 跳转到 HTTPS：使用 301 重定向的方式将 http 的请求重定向到 https 上</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    #填写绑定证书的域名</span><br><span class="line">    server_name www.xxx.com;</span><br><span class="line"></span><br><span class="line">    #把http的域名请求转成https</span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="nginx-配置单页应用"><a href="#nginx-配置单页应用" class="headerlink" title="nginx 配置单页应用"></a>nginx 配置单页应用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files $uri $uri/ /index.html?$args;</span><br><span class="line">  index  index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Shadowsocks-搭建"><a href="#Shadowsocks-搭建" class="headerlink" title="Shadowsocks 搭建"></a>Shadowsocks 搭建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</span><br><span class="line">vim /etc/shadowsocks.json</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line"><span class="string">"server_port"</span>:<span class="string">"端口"</span>,</span><br><span class="line"><span class="string">"local_port"</span>:1080,</span><br><span class="line"><span class="string">"password"</span>:<span class="string">"密码"</span>,</span><br><span class="line"><span class="string">"timeout"</span>:300,</span><br><span class="line"><span class="string">"method"</span>:<span class="string">"aes-256-gcm"</span></span><br><span class="line">&#125;</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
-<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>查看防火墙开放的端口：<code>firewall-cmd --list-ports</code></p>
-<h2 id="把常用的程序做成服务，并开机启动"><a href="#把常用的程序做成服务，并开机启动" class="headerlink" title="把常用的程序做成服务，并开机启动"></a>把常用的程序做成服务，并开机启动</h2><p>新建服务脚本：<code>/etc/systemd/system/shadowsocks.service</code></p>
+<h3><span id="nginx-pei-zhi-dan-ye-ying-yong">nginx 配置单页应用</span><a href="#nginx-pei-zhi-dan-ye-ying-yong" class="header-anchor"></a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files $uri $uri/ /index.html?$args;</span><br><span class="line">  index  index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="shadowsocks-da-jian">Shadowsocks 搭建</span><a href="#shadowsocks-da-jian" class="header-anchor"></a></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U</span><br><span class="line">vim /etc/shadowsocks.json</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line"><span class="string">"server_port"</span>:<span class="string">"端口"</span>,</span><br><span class="line"><span class="string">"local_port"</span>:1080,</span><br><span class="line"><span class="string">"password"</span>:<span class="string">"密码"</span>,</span><br><span class="line"><span class="string">"timeout"</span>:300,</span><br><span class="line"><span class="string">"method"</span>:<span class="string">"aes-256-gcm"</span></span><br><span class="line">&#125;</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<h2><span id="fang-huo-qiang">防火墙</span><a href="#fang-huo-qiang" class="header-anchor"></a></h2><p>查看防火墙开放的端口：<code>firewall-cmd --list-ports</code></p>
+<h2><span id="ba-chang-yong-de-cheng-xu-zuo-cheng-fu-wu-bing-kai-ji-qi-dong">把常用的程序做成服务，并开机启动</span><a href="#ba-chang-yong-de-cheng-xu-zuo-cheng-fu-wu-bing-kai-ji-qi-dong" class="header-anchor"></a></h2><p>新建服务脚本：<code>/etc/systemd/system/shadowsocks.service</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Shadowsocks Server Service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<h2><span id="chang-yong-ming-ling">常用命令</span><a href="#chang-yong-ming-ling" class="header-anchor"></a></h2><ul>
 <li>创建用户：<code>useradd &lt;用户名&gt;</code>，删除用户：<code>userdel &lt;用户名&gt;</code></li>
 <li>修改密码：<code>passwd &lt;用户名&gt;</code></li>
 <li>创建用户组：<code>groupadd &lt;用户组名&gt;</code>，删除用户组：<code>groupdel &lt;用户组名&gt;</code>，查看所有组：<code>groups</code></li>
@@ -495,17 +495,17 @@
 <li>查看某些应用的端口占用情况，比如 ssh 的端口号：<code>netstat -anp |grep ssh</code></li>
 <li>给用户某个文件夹权限：<code>chown -R liuhai:liuhai /opt # 将目录/opt 及其下面的所有文件、子目录的文件主改成 liuhai</code></li>
 </ul>
-<h2 id="常见文件位置"><a href="#常见文件位置" class="headerlink" title="常见文件位置"></a>常见文件位置</h2><ul>
+<h2><span id="chang-jian-wen-jian-wei-zhi">常见文件位置</span><a href="#chang-jian-wen-jian-wei-zhi" class="header-anchor"></a></h2><ul>
 <li>hosts 文件位置：<code>/etc/hosts</code></li>
 <li>nginx 配置位置：<code>/etc/nginx/nginx.conf</code></li>
 </ul>
-<h2 id="vim-编辑常用技巧"><a href="#vim-编辑常用技巧" class="headerlink" title="vim 编辑常用技巧"></a>vim 编辑常用技巧</h2><p>去除多行注释：</p>
+<h2><span id="vim-bian-ji-chang-yong-ji-qiao">vim 编辑常用技巧</span><a href="#vim-bian-ji-chang-yong-ji-qiao" class="header-anchor"></a></h2><p>去除多行注释：</p>
 <ol>
 <li>按 ctrl+v 进入 visual block 模式</li>
 <li>按上下方向键选择多行</li>
 <li>按 d 去掉#</li>
 </ol>
-<h2 id="linux-基础知识"><a href="#linux-基础知识" class="headerlink" title="linux 基础知识"></a>linux 基础知识</h2><p>ls 展示的权限的含义：</p>
+<h2><span id="linux-ji-chu-zhi-shi">linux 基础知识</span><a href="#linux-ji-chu-zhi-shi" class="header-anchor"></a></h2><p>ls 展示的权限的含义：</p>
 <p>linux drwxr-xr-x<br>第一位表示文件类型。d 是目录文件，l 是链接文件，-是普通文件，p 是管道<br>第 2-4 位表示这个文件的属主拥有的权限，r 是读，w 是写，x 是执行。<br>第 5-7 位表示和这个文件属主所在同一个组的用户所具有的权限。<br>第 8-10 位表示其他用户所具有的权限。</p>
 
       
@@ -724,7 +724,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前因"><span class="nav-number">1.</span> <span class="nav-text">前因</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#centos-安装-nginx"><span class="nav-number">1.1.</span> <span class="nav-text">centos 安装 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">1.2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-配置单页应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">nginx 配置单页应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks-搭建"><span class="nav-number">1.3.</span> <span class="nav-text">Shadowsocks 搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙"><span class="nav-number">1.4.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把常用的程序做成服务，并开机启动"><span class="nav-number">1.5.</span> <span class="nav-text">把常用的程序做成服务，并开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">1.6.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见文件位置"><span class="nav-number">1.7.</span> <span class="nav-text">常见文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-编辑常用技巧"><span class="nav-number">1.8.</span> <span class="nav-text">vim 编辑常用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-基础知识"><span class="nav-number">1.9.</span> <span class="nav-text">linux 基础知识</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">前因</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">centos 安装 nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.1.</span> <span class="nav-text">nginx 配置单页应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">Shadowsocks 搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">把常用的程序做成服务，并开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.6.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.7.</span> <span class="nav-text">常见文件位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.8.</span> <span class="nav-text">vim 编辑常用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.9.</span> <span class="nav-text">linux 基础知识</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -758,7 +758,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/舍入四种策略.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/浮点数加减流程图.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/10的19次方的二进制.png">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.217Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浮点数原理">
 <meta name="twitter:description" content="浮点数的作用：区别于整形数，用来表示小数。可以用来表示很大的数，或者非常接近 0 的小数，或者近似的做实数计算，浮点数的一般形式：$x\times 2^y$。  IEEE（pronounced “Eye-Triple-Eee”）浮点数标准 是行业内公认的标准。  rounding：when a number cannot be represented exactly in the format a">
@@ -378,8 +378,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -446,7 +446,7 @@
 <p>相应的，二进制也可以写成这种形式：</p>
 <p>$$<br>b = \sum_{i=-n}^m 2^i \times b_i<br>$$</p>
 <a id="more"></a>
-<h1 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h1><p>IEEE 浮点数的格式：$V = (-1)^s \times M \times 2^E$</p>
+<h1><span id="fu-dian-shu-de-biao-shi">浮点数的表示</span><a href="#fu-dian-shu-de-biao-shi" class="header-anchor"></a></h1><p>IEEE 浮点数的格式：$V = (-1)^s \times M \times 2^E$</p>
 <ul>
 <li>s 是符号（Sign），s 为 0 时是正，s 为 1 时是负</li>
 <li>M 是有效数字（Significand，即 <strong>尾数</strong>）</li>
@@ -461,15 +461,15 @@
 <li>分数为 n 个，分数域 $frac=f_{n-1}\cdots f_1 f_0$，用来计算有效数字 M</li>
 </ul>
 <p>32 位浮点数（单精度，float 型）中，s=1，k=8，n=23；64 位浮点数（双精度，double 型）中，s=1，k=11，n=52。</p>
-<h2 id="正常化值（Normalized-Values）"><a href="#正常化值（Normalized-Values）" class="headerlink" title="正常化值（Normalized Values）"></a>正常化值（Normalized Values）</h2><p>当 $exp$ 域既不是全 0，也不是全 1 的时候，就是正常化值。</p>
+<h2><span id="zheng-chang-hua-zhi-normalized-values">正常化值（Normalized Values）</span><a href="#zheng-chang-hua-zhi-normalized-values" class="header-anchor"></a></h2><p>当 $exp$ 域既不是全 0，也不是全 1 的时候，就是正常化值。</p>
 <p>$E = e - Bias$，其中 $e$ 就是 $exp$ 域：$e_{k-1}\cdots e_1e_0$ 的值（除去全 0 和全 1 之后，取值范围是 1 到$2^k-2$），$Bias=2^{k-1}-1$（单精度的时候是 127，双精度的时候是 1023），那么 $E$ 的取值范围，单精度的时候是：<code>-126 ~ +127</code>，双精度的时候是：<code>-1022 ~ +1023</code>，其实 $E$ 的算法就是 <strong>移码</strong> 的计算方法。</p>
 <p>$M = 1+f$，$0\le f\lt 1$，内存里只记录 f，而 1 作为一个前导值计算时候再加上，所以 f 是分数域 $frac$ 的 $0.f_{n-1}\cdots f_1f_0$ 这种形式</p>
-<h2 id="非正常化值（Denormalized-Values）"><a href="#非正常化值（Denormalized-Values）" class="headerlink" title="非正常化值（Denormalized Values）"></a>非正常化值（Denormalized Values）</h2><p>当指数域全 0，就是非正常化格式。</p>
+<h2><span id="fei-zheng-chang-hua-zhi-denormalized-values">非正常化值（Denormalized Values）</span><a href="#fei-zheng-chang-hua-zhi-denormalized-values" class="header-anchor"></a></h2><p>当指数域全 0，就是非正常化格式。</p>
 <p>在这种情况下，指数值是 $E = 1-Bias$，也就是固定了，有效数字值 $M = f$ 也就是没有前导 1 了。这个格式下可以表示 0，因为正常化值中，一定有： $M\ge 1$，所以我们无法在正常化值格式下表示 0。当符号位是 0，有效数字 $M=f=0$，我们得到的就是<code>+0.0</code>，当符号位是 1 的时候就是<code>-0.0</code>。</p>
 <p>除了可以表示 0，这个格式的另一个作用就是用来表示非常接近 0 的数。</p>
-<h2 id="特殊值（Special-Values）"><a href="#特殊值（Special-Values）" class="headerlink" title="特殊值（Special Values）"></a>特殊值（Special Values）</h2><p>当指数域全 1 的时候，且分数域是全 0，就表示无穷大，如果符号域为 0，表示 $+\infty$，如果符号位是 1，则表示 $-\infty$。无穷大可以作为溢出的结果，当我们用两个很大的数相乘，或者除以 0；</p>
+<h2><span id="te-shu-zhi-special-values">特殊值（Special Values）</span><a href="#te-shu-zhi-special-values" class="header-anchor"></a></h2><p>当指数域全 1 的时候，且分数域是全 0，就表示无穷大，如果符号域为 0，表示 $+\infty$，如果符号位是 1，则表示 $-\infty$。无穷大可以作为溢出的结果，当我们用两个很大的数相乘，或者除以 0；</p>
 <p>当指数域全 1，且分数域并非全 0 的时候，结果可以叫做：<code>NaN</code>（Not a Number 的简写），这种值用来表示不能用实数或者无穷大表示的计算结果，比如计算：$\sqrt{-1}$ 或者 $\infty - \infty$。</p>
-<h2 id="综合理解"><a href="#综合理解" class="headerlink" title="综合理解"></a>综合理解</h2><p>下图是三类浮点数在数轴上的显示：</p>
+<h2><span id="zong-he-li-jie">综合理解</span><a href="#zong-he-li-jie" class="header-anchor"></a></h2><p>下图是三类浮点数在数轴上的显示：</p>
 <p><img src="../../../../images/浮点数三种类型.png" alt="浮点数三种类型"></p>
 <p>可以看到非正常化值集中在 0 附近，正常化值散布在整个数轴的空间，特殊值则只表示两个无穷值。</p>
 <p>下图是浮点数三种类型的光滑衔接：</p>
@@ -484,13 +484,13 @@
 <li><strong>非正常化值按照精度只占一组，正常化值的数量是非正常化值数量的 $2^{k}-2$ 倍</strong></li>
 <li><strong>正常化值的第一组的精度和非正常化值的精度一样，也就是实现了无缝衔接</strong></li>
 </ul>
-<h1 id="浮点数的计算"><a href="#浮点数的计算" class="headerlink" title="浮点数的计算"></a>浮点数的计算</h1><h2 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h2><p><img src="../../../../images/舍入四种策略.png" alt="舍入四种策略"></p>
+<h1><span id="fu-dian-shu-de-ji-suan">浮点数的计算</span><a href="#fu-dian-shu-de-ji-suan" class="header-anchor"></a></h1><h2><span id="she-ru">舍入</span><a href="#she-ru" class="header-anchor"></a></h2><p><img src="../../../../images/舍入四种策略.png" alt="舍入四种策略"></p>
 <p><a href="https://en.wikipedia.org/wiki/Rounding" target="_blank" rel="noopener">Rounding 维基百科</a></p>
 <p><a href="https://upload.wikimedia.org/wikipedia/commons/8/8a/Comparison_rounding_graphs_SMIL.svg" target="_blank" rel="noopener">各种 Rounding 合集图</a></p>
 <p>浮点数中使用的是：舍入到最近的偶数，因为舍入结果放大和缩小各占 50%的概率，这样就可以防止最终结果偏大或者偏小。</p>
 <p>下面是把浮点数舍入到小数点后两位数：</p>
 <p>$10.00011_2(2\frac{3}{32})$ -&gt; $10.00_2(2)$ 不到一半，正常四舍五入<br>$10.00110_2(2\frac{3}{16})$ -&gt; $10.01_2(2\frac{1}{4})$ 超过一半，正常四舍五入<br>$10.11100_2(2\frac{7}{8})$ -&gt; $11.00_2(3)$ 正好一半，保证最后一位是偶数，所以向上舍入<br>$10.10100_2(2\frac{5}{8})$ -&gt; $10.10_2(2\frac{1}{2})$ 正好一半，保证最后一位是偶数，所以向下舍入</p>
-<h2 id="浮点数加减运算"><a href="#浮点数加减运算" class="headerlink" title="浮点数加减运算"></a>浮点数加减运算</h2><h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><ul>
+<h2><span id="fu-dian-shu-jia-jian-yun-suan">浮点数加减运算</span><a href="#fu-dian-shu-jia-jian-yun-suan" class="header-anchor"></a></h2><h3><span id="ji-ben-xing-zhi">基本性质</span><a href="#ji-ben-xing-zhi" class="header-anchor"></a></h3><ul>
 <li>相加可能产生 infinity 或者 NaN</li>
 <li>不满足交换律，不满足结合律（因为舍入会造成精度上的损失）</li>
 <li>加上 0 等于原来的数</li>
@@ -500,7 +500,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 浮点数加法不满足交换律</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">3.14</span> + <span class="number">1e20</span> - <span class="number">1e20</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">1e20</span> - <span class="number">1e20</span> + <span class="number">3.14</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">// 浮点数加法不满足结合律</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (<span class="number">3.14</span> + <span class="number">1e20</span>) - <span class="number">1e20</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="number">3.14</span> + (<span class="number">1e20</span> - <span class="number">1e20</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>运行结果:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">3.14</span><br><span class="line">0</span><br><span class="line">3.14</span><br></pre></td></tr></table></figure>
-<h3 id="具体细节"><a href="#具体细节" class="headerlink" title="具体细节"></a>具体细节</h3><p>设两个浮点数 $x$ 和 $y$：</p>
+<h3><span id="ju-ti-xi-jie">具体细节</span><a href="#ju-ti-xi-jie" class="header-anchor"></a></h3><p>设两个浮点数 $x$ 和 $y$：</p>
 <p>$$<br>\begin{cases}<br>x=(-1)^{s_x} M_x 2^{E_x} \<br>y=(-1)^{s_y} M_y 2^{E_y}<br>\end{cases}<br>$$</p>
 <p>则浮点数加减运算结果为：</p>
 <p>$$<br>x\pm y = \left((-1)^{s_x}M_x 2^{E_x-E_y} \pm (-1)^{s_y}M_y \right)2^{E_y}<br>$$</p>
@@ -515,7 +515,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="浮点数加减实例"><a href="#浮点数加减实例" class="headerlink" title="浮点数加减实例"></a>浮点数加减实例</h3><p>$x=3.14, y=2.718$ 求 $z=x+y$。</p>
+<h3><span id="fu-dian-shu-jia-jian-shi-li">浮点数加减实例</span><a href="#fu-dian-shu-jia-jian-shi-li" class="header-anchor"></a></h3><p>$x=3.14, y=2.718$ 求 $z=x+y$。</p>
 <p>首先算出 $x$ 和 $y$ 的内存表示：</p>
 <p>$x = 3+0.14$，3 的二进制表示是<code>11</code>，0.14 的二进制要稍微计算一下，我们让 0.14 不断的乘以 2（也就是左移），得到的整数位部分就是其二进制值的一位：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">0.14 * 2 = 0.28     0</span><br><span class="line">0.28 * 2 = 0.56     0</span><br><span class="line">0.56 * 2 = 1.12     1</span><br><span class="line">0.12 * 2 = 0.24     0</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
@@ -541,7 +541,7 @@
 <p>上述代码保存为：<code>Bitset2float.cpp</code>，编译并执行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ g++ -o Bitset2float Bitset2float.cpp</span><br><span class="line">$ ./Bitset2float 01110110111010010111101</span><br></pre></td></tr></table></figure>
 <p>对得到结果：<code>0.4645</code>，$1.4645\times 2^2 = 5.858$，而 $3.14+2.718=5.858$，这就说明我们的计算无误。</p>
-<h3 id="算法流程图"><a href="#算法流程图" class="headerlink" title="算法流程图"></a>算法流程图</h3><p><img src="../../../../images/浮点数加减流程图.jpg" alt="浮点数加减流程图"></p>
+<h3><span id="suan-fa-liu-cheng-tu">算法流程图</span><a href="#suan-fa-liu-cheng-tu" class="header-anchor"></a></h3><p><img src="../../../../images/浮点数加减流程图.jpg" alt="浮点数加减流程图"></p>
 <p>这个流程图并不是完美的，真实的浮点数流程图和浮点数计算电路比这个复杂。另外我忘画了一个东西，这个图最后应该加上溢出处理模块，E 可能会上溢（当 E 加 1 的时候），也可能会下溢（当 E 减 1 的时候）。</p>
 <p>最后这个流程图中没有对特殊值的判断，比如：$\infty - \infty = NaN$, $\infty + \infty = \infty$, $NaN + 任何数 = NaN$。</p>
 <p>了解了浮点数加法的流程之后，最后我们回到最上面说的 <strong>浮点数加减法不满足交换律和结合律</strong>，从计算细节分析为什么不行。</p>
@@ -550,13 +550,13 @@
 <p>很遗憾的是 64bit 只能摆的下 $10^{19}$。我试了一下把源程序中的 1e20 换成 1e19 也是同样的结果。所以我们就使用 1e19 来分析这道题。</p>
 <p>首先是 M 规格化，M 右移 63 位，E 加 63，舍入 M，那么 1e19 最终的双精度浮点数表示是：<code>0 10000111110 0001010110001110010001100000100100010011110100000000</code></p>
 <p>小阶向大阶看齐，3.14 的阶是 1，M 需要右移 62 位，而 M 的精度才 52，可想而知 M 就是 0 了。那么 3.14 + 1e19 的结果就是 <strong>1e19</strong>。1e20 就更加不用说了。</p>
-<h2 id="浮点数乘除"><a href="#浮点数乘除" class="headerlink" title="浮点数乘除"></a>浮点数乘除</h2><h3 id="基本性质-1"><a href="#基本性质-1" class="headerlink" title="基本性质"></a>基本性质</h3><ul>
+<h2><span id="fu-dian-shu-cheng-chu">浮点数乘除</span><a href="#fu-dian-shu-cheng-chu" class="header-anchor"></a></h2><h3><span id="ji-ben-xing-zhi">基本性质</span><a href="#ji-ben-xing-zhi" class="header-anchor"></a></h3><ul>
 <li>相乘可能产生 infinity 或者 NaN</li>
 <li>不满足交换律，结合律，分配率（因为溢出会造成程序无法计算出正确的结果）</li>
 <li>乘以 1 会等于原来的数</li>
 <li>除了 infinity 和 NaN，满足单调性：$a\ge b \rightarrow a\times c \ge b \times c$</li>
 </ul>
-<h3 id="具体细节-1"><a href="#具体细节-1" class="headerlink" title="具体细节"></a>具体细节</h3><p>设两个浮点数 $x$ 和 $y$ ：</p>
+<h3><span id="ju-ti-xi-jie">具体细节</span><a href="#ju-ti-xi-jie" class="header-anchor"></a></h3><p>设两个浮点数 $x$ 和 $y$ ：</p>
 <p>$$<br>\begin{cases}<br>x = \pm M_x 2^{E_x} \<br>y = \pm M_y 2^{E_y}<br>\end{cases}<br>$$</p>
 <p>则浮点数乘除运算结果是：</p>
 <p>$$<br>xy = \pm (M_x\times M_y)2^{E_x\pm E_y}<br>$$</p>
@@ -784,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浮点数的表示"><span class="nav-number">1.</span> <span class="nav-text">浮点数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#正常化值（Normalized-Values）"><span class="nav-number">1.1.</span> <span class="nav-text">正常化值（Normalized Values）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非正常化值（Denormalized-Values）"><span class="nav-number">1.2.</span> <span class="nav-text">非正常化值（Denormalized Values）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊值（Special-Values）"><span class="nav-number">1.3.</span> <span class="nav-text">特殊值（Special Values）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#综合理解"><span class="nav-number">1.4.</span> <span class="nav-text">综合理解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮点数的计算"><span class="nav-number">2.</span> <span class="nav-text">浮点数的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#舍入"><span class="nav-number">2.1.</span> <span class="nav-text">舍入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数加减运算"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数加减运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本性质"><span class="nav-number">2.2.1.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体细节"><span class="nav-number">2.2.2.</span> <span class="nav-text">具体细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数加减实例"><span class="nav-number">2.2.3.</span> <span class="nav-text">浮点数加减实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法流程图"><span class="nav-number">2.2.4.</span> <span class="nav-text">算法流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点数乘除"><span class="nav-number">2.3.</span> <span class="nav-text">浮点数乘除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本性质-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体细节-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">具体细节</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">浮点数的表示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">正常化值（Normalized Values）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">非正常化值（Denormalized Values）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">特殊值（Special Values）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">综合理解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">浮点数的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">舍入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">浮点数加减运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.1.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.2.</span> <span class="nav-text">具体细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.3.</span> <span class="nav-text">浮点数加减实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.4.</span> <span class="nav-text">算法流程图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.3.</span> <span class="nav-text">浮点数乘除</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.3.1.</span> <span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.3.2.</span> <span class="nav-text">具体细节</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -818,7 +818,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

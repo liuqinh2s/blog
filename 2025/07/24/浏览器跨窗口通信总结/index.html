@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="window.postMessage()（通用跨域方案）通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。 12345678910// 发送方const targetWindow = window.open(&apos;child.html&apos;);targetWindow.postMessage(&apos;Hel">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.222Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器跨窗口通信总结">
 <meta name="twitter:description" content="window.postMessage()（通用跨域方案）通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。 12345678910// 发送方const targetWindow = window.open(&apos;child.html&apos;);targetWindow.postMessage(&apos;Hel">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -429,17 +429,17 @@
       
 
       
-        <h2 id="window-postMessage-（通用跨域方案）"><a href="#window-postMessage-（通用跨域方案）" class="headerlink" title="window.postMessage()（通用跨域方案）"></a>window.postMessage()（通用跨域方案）</h2><p>通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。</p>
+        <h2><span id="window-postmessage-tong-yong-kua-yu-fang-an">window.postMessage()（通用跨域方案）</span><a href="#window-postmessage-tong-yong-kua-yu-fang-an" class="header-anchor"></a></h2><p>通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送方</span></span><br><span class="line"><span class="keyword">const</span> targetWindow = <span class="built_in">window</span>.open(<span class="string">'child.html'</span>);</span><br><span class="line">targetWindow.postMessage(<span class="string">'Hello'</span>, <span class="string">'https://example.com'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收方</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, (event)=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.origin === <span class="string">'https://example.com'</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(event.data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>优势：支持跨域通信，安全性高（需验证 event.origin）。<br>局限：需预先建立窗口引用关系，无法广播消息。</p>
 <a id="more"></a>
-<h2 id="BroadcastChannel（同源广播方案）"><a href="#BroadcastChannel（同源广播方案）" class="headerlink" title="BroadcastChannel（同源广播方案）"></a>BroadcastChannel（同源广播方案）</h2><p>基于发布-订阅模式，同源窗口通过相同频道名通信：</p>
+<h2><span id="broadcastchannel-tong-yuan-guang-bo-fang-an">BroadcastChannel（同源广播方案）</span><a href="#broadcastchannel-tong-yuan-guang-bo-fang-an" class="header-anchor"></a></h2><p>基于发布-订阅模式，同源窗口通过相同频道名通信：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> channel = <span class="keyword">new</span> BroadcastChannel(<span class="string">'news'</span>);</span><br><span class="line">channel.postMessage(<span class="string">'Update!'</span>);</span><br><span class="line">channel.onmessage = <span class="function">(<span class="params">event</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event.data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>优势：无需窗口引用，支持一对多广播<br>局限：仅限同源窗口，safari 兼容性较差</p>
-<h2 id="Web-Storage-事件（存储驱动方案）"><a href="#Web-Storage-事件（存储驱动方案）" class="headerlink" title="Web Storage 事件（存储驱动方案）"></a>Web Storage 事件（存储驱动方案）</h2><p>利用 localStorage，sessionStorage 存储数，通过 storage 事件监听变更。</p>
+<h2><span id="web-storage-shi-jian-cun-chu-qu-dong-fang-an">Web Storage 事件（存储驱动方案）</span><a href="#web-storage-shi-jian-cun-chu-qu-dong-fang-an" class="header-anchor"></a></h2><p>利用 localStorage，sessionStorage 存储数，通过 storage 事件监听变更。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(<span class="string">'key'</span>, <span class="built_in">JSON</span>.stringify(&#123;<span class="attr">data</span>: <span class="string">'value'</span>&#125;));</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, (event)=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.key === <span class="string">'key'</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.parse(event.newValue));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>优势：支持同源多窗口，数据持久化。<br>局限：非实时（事件触发延迟约 100ms），仅支持字符串数据。</p>
-<h2 id="SharedWorker（共享线程方案）"><a href="#SharedWorker（共享线程方案）" class="headerlink" title="SharedWorker（共享线程方案）"></a>SharedWorker（共享线程方案）</h2><h2 id="WebSocket（服务端中转方案）"><a href="#WebSocket（服务端中转方案）" class="headerlink" title="WebSocket（服务端中转方案）"></a>WebSocket（服务端中转方案）</h2>
+<h2><span id="sharedworker-gong-xiang-xian-cheng-fang-an">SharedWorker（共享线程方案）</span><a href="#sharedworker-gong-xiang-xian-cheng-fang-an" class="header-anchor"></a></h2><h2><span id="websocket-fu-wu-duan-zhong-zhuan-fang-an">WebSocket（服务端中转方案）</span><a href="#websocket-fu-wu-duan-zhong-zhuan-fang-an" class="header-anchor"></a></h2>
       
     </div>
     
@@ -656,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window-postMessage-（通用跨域方案）"><span class="nav-number">1.</span> <span class="nav-text">window.postMessage()（通用跨域方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BroadcastChannel（同源广播方案）"><span class="nav-number">2.</span> <span class="nav-text">BroadcastChannel（同源广播方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Storage-事件（存储驱动方案）"><span class="nav-number">3.</span> <span class="nav-text">Web Storage 事件（存储驱动方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SharedWorker（共享线程方案）"><span class="nav-number">4.</span> <span class="nav-text">SharedWorker（共享线程方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebSocket（服务端中转方案）"><span class="nav-number">5.</span> <span class="nav-text">WebSocket（服务端中转方案）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">window.postMessage()（通用跨域方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">BroadcastChannel（同源广播方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">Web Storage 事件（存储驱动方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">SharedWorker（共享线程方案）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">WebSocket（服务端中转方案）</span></a></li></ol></div>
             
 
           </div>
@@ -690,7 +690,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

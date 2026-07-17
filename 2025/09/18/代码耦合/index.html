@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="编程绕不开的一个话题：耦合 耦合其实是个中性词，代码模块之间要相互协作完成任务，就必定要耦合。耦合即：一方对另一方的假设。你不可能对协作的对象不做任何假设，所以其实有些耦合是必须的。我们要解决的是非必要的，不良的耦合。  如无必要，不要使代码耦合，过度耦合会加速代码腐烂（比如：难加新功能，难修 bug）  对另一方做尽可能少的假设其实只是手段之一，而且这种手段势必会让代码变得更加抽象复杂。另一种手">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.222Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码耦合">
 <meta name="twitter:description" content="编程绕不开的一个话题：耦合 耦合其实是个中性词，代码模块之间要相互协作完成任务，就必定要耦合。耦合即：一方对另一方的假设。你不可能对协作的对象不做任何假设，所以其实有些耦合是必须的。我们要解决的是非必要的，不良的耦合。  如无必要，不要使代码耦合，过度耦合会加速代码腐烂（比如：难加新功能，难修 bug）  对另一方做尽可能少的假设其实只是手段之一，而且这种手段势必会让代码变得更加抽象复杂。另一种手">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -436,14 +436,14 @@
 </blockquote>
 <p>对另一方做尽可能少的假设其实只是手段之一，而且这种手段势必会让代码变得更加抽象复杂。另一种手段就是：制定标准和建立知识库，大家用共同的标准和共有的知识去沟通，就会非常顺畅，反之则寸步难行。所以当你觉得你们的项目程序写得稀烂，先不要关注过度耦合的问题，先看看是不是连标准都没制定，公共知识库都没有建立，人员不知道不遵守既定标准和知识。</p>
 <a id="more"></a>
-<h1 id="怎么写出低耦合的代码"><a href="#怎么写出低耦合的代码" class="headerlink" title="怎么写出低耦合的代码"></a>怎么写出低耦合的代码</h1><ol>
+<h1><span id="zen-me-xie-chu-di-ou-he-de-dai-ma">怎么写出低耦合的代码</span><a href="#zen-me-xie-chu-di-ou-he-de-dai-ma" class="header-anchor"></a></h1><ol>
 <li>模块的单向依赖关系</li>
 <li>接口的正交性和紧凑性</li>
 <li>提供原子化的最底层 API + 胶水层 API（根据业务，对原子 API 做一些比较常用的组合）</li>
 <li>既要防御式编程，也要提供模块和接口的最佳实践</li>
 </ol>
-<h2 id="单向依赖"><a href="#单向依赖" class="headerlink" title="单向依赖"></a>单向依赖</h2><p>模块之间尽可能的单向依赖，做成像树状结构，而不要像网状结构。</p>
-<h2 id="正交性"><a href="#正交性" class="headerlink" title="正交性"></a>正交性</h2><p>正交性是指一个模块提供的 API 中，多个方法之间是否有重复的功能。</p>
+<h2><span id="dan-xiang-yi-lai">单向依赖</span><a href="#dan-xiang-yi-lai" class="header-anchor"></a></h2><p>模块之间尽可能的单向依赖，做成像树状结构，而不要像网状结构。</p>
+<h2><span id="zheng-jiao-xing">正交性</span><a href="#zheng-jiao-xing" class="header-anchor"></a></h2><p>正交性是指一个模块提供的 API 中，多个方法之间是否有重复的功能。</p>
 <p>如果有重复功能，正交性就差。</p>
 <blockquote>
 <p>想象一下，调节电视的声音的时候，亮度也会跟着一起变化。</p>
@@ -454,11 +454,11 @@
 <p>胶水层调用底层原语 API 来实现常用模式供上层使用。</p>
 <p>对于胶水层中的模块，对正交性的要求可以稍低一些。</p>
 <p>注意上层代码既可以直接调用正交的底层 API，又可以调用胶水层的常用模式。</p>
-<h2 id="紧凑性"><a href="#紧凑性" class="headerlink" title="紧凑性"></a>紧凑性</h2><p>紧凑性是指一个模块提供的 API 中，公有方法总数必须很少，每个方法的参数也必须很少。</p>
+<h2><span id="jin-cou-xing">紧凑性</span><a href="#jin-cou-xing" class="header-anchor"></a></h2><p>紧凑性是指一个模块提供的 API 中，公有方法总数必须很少，每个方法的参数也必须很少。</p>
 <p>《Unix 编程艺术》上说一个模块不要超过 7 个方法，不然就很难理解。</p>
 <p>总之，单向依赖、正交性、紧凑性这三个指标都很务实，有客观方法可以度量。</p>
-<h2 id="不同级别之间的耦合"><a href="#不同级别之间的耦合" class="headerlink" title="不同级别之间的耦合"></a>不同级别之间的耦合</h2><p>软件是由不同级别的概念层组成，不同级别的概念层具有不同的职责，不同级别的概念层中存在不同的耦合：有方法级别、类级别、包级别、协议级别、语言级别、数据流级别、数据库级别、业务级别……</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>耦合的本质是假设，假设越多，被打破的机率就越高，所以软件的可靠性就越低。低耦合代表的是在软件不同级别的概念上只依赖它需要依赖的，从而达到它本身的修改不至于造成其它系统的非必要影响，反之亦然。</p>
+<h2><span id="bu-tong-ji-bie-zhi-jian-de-ou-he">不同级别之间的耦合</span><a href="#bu-tong-ji-bie-zhi-jian-de-ou-he" class="header-anchor"></a></h2><p>软件是由不同级别的概念层组成，不同级别的概念层具有不同的职责，不同级别的概念层中存在不同的耦合：有方法级别、类级别、包级别、协议级别、语言级别、数据流级别、数据库级别、业务级别……</p>
+<h2><span id="zong-jie">总结</span><a href="#zong-jie" class="header-anchor"></a></h2><p>耦合的本质是假设，假设越多，被打破的机率就越高，所以软件的可靠性就越低。低耦合代表的是在软件不同级别的概念上只依赖它需要依赖的，从而达到它本身的修改不至于造成其它系统的非必要影响，反之亦然。</p>
 <p>在软件开发过程中，我们应该管理这些耦合，不论在哪个级别上。应该经常考虑如果这些假设被打破了，会给系统带来哪些风险。</p>
 
       
@@ -677,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么写出低耦合的代码"><span class="nav-number">1.</span> <span class="nav-text">怎么写出低耦合的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单向依赖"><span class="nav-number">1.1.</span> <span class="nav-text">单向依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正交性"><span class="nav-number">1.2.</span> <span class="nav-text">正交性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#紧凑性"><span class="nav-number">1.3.</span> <span class="nav-text">紧凑性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同级别之间的耦合"><span class="nav-number">1.4.</span> <span class="nav-text">不同级别之间的耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">怎么写出低耦合的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">单向依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">正交性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">紧凑性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">不同级别之间的耦合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -711,7 +711,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

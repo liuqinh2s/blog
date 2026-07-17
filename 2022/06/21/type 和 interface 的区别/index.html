@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="相同点都可以描述一个对象或者函数interface 12345678interface User &amp;#123;  name: string;  age: number;&amp;#125;interface setUser &amp;#123;  (name: string, age: number): void;&amp;#125; type 123456type User = &amp;#123;  name: string">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.219Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="type 和 interface 的区别">
 <meta name="twitter:description" content="相同点都可以描述一个对象或者函数interface 12345678interface User &amp;#123;  name: string;  age: number;&amp;#125;interface setUser &amp;#123;  (name: string, age: number): void;&amp;#125; type 123456type User = &amp;#123;  name: string">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -429,13 +429,13 @@
       
 
       
-        <h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><h3 id="都可以描述一个对象或者函数"><a href="#都可以描述一个对象或者函数" class="headerlink" title="都可以描述一个对象或者函数"></a>都可以描述一个对象或者函数</h3><p>interface</p>
+        <h2><span id="xiang-tong-dian">相同点</span><a href="#xiang-tong-dian" class="header-anchor"></a></h2><h3><span id="du-ke-yi-miao-shu-yi-ge-dui-xiang-huo-zhe-han-shu">都可以描述一个对象或者函数</span><a href="#du-ke-yi-miao-shu-yi-ge-dui-xiang-huo-zhe-han-shu" class="header-anchor"></a></h3><p>interface</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> setUser &#123;</span><br><span class="line">  (name: <span class="built_in">string</span>, age: <span class="built_in">number</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>type</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> User = &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> setUser = <span class="function">(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">void</span>;</span><br></pre></td></tr></table></figure>
 <p>语法上 type 用等于号，interface 直接跟 class 一样使用。</p>
 <a id="more"></a>
-<h3 id="都允许扩展"><a href="#都允许扩展" class="headerlink" title="都允许扩展"></a>都允许扩展</h3><p>interface 和 type 都可以拓展，并且不是互相独立的，也就是说 interface 可以 extends type，type 也可以 extends interface。虽然效果差不多，但是两者语法不同。</p>
+<h3><span id="du-yun-xu-kuo-zhan">都允许扩展</span><a href="#du-yun-xu-kuo-zhan" class="header-anchor"></a></h3><p>interface 和 type 都可以拓展，并且不是互相独立的，也就是说 interface 可以 extends type，type 也可以 extends interface。虽然效果差不多，但是两者语法不同。</p>
 <p>interface extends interface</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Name &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">interface</span> User <span class="keyword">extends</span> Name &#123;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>type extends type</p>
@@ -445,9 +445,9 @@
 <p>type extends interface</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Name &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">type</span> User = Name &amp; &#123; age: <span class="built_in">number</span> &#125;;</span><br></pre></td></tr></table></figure>
 <p>扩展的语法也不一样，type 使用&amp;进行扩展，interface 使用 extends 进行扩展</p>
-<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><h3 id="type-可以而-interface-不行"><a href="#type-可以而-interface-不行" class="headerlink" title="type 可以而 interface 不行"></a>type 可以而 interface 不行</h3><p>type 可以声明基本类型别名，联合类型，交叉类型，元组等类型</p>
+<h2><span id="bu-tong-dian">不同点</span><a href="#bu-tong-dian" class="header-anchor"></a></h2><h3><span id="type-ke-yi-er-interface-bu-xing">type 可以而 interface 不行</span><a href="#type-ke-yi-er-interface-bu-xing" class="header-anchor"></a></h3><p>type 可以声明基本类型别名，联合类型，交叉类型，元组等类型</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本类型别名</span></span><br><span class="line"><span class="keyword">type</span> Name = <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Dog &#123;</span><br><span class="line">  wang();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Cat &#123;</span><br><span class="line">  miao();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 联合类型</span></span><br><span class="line"><span class="keyword">type</span> Pet = Dog | Cat;</span><br><span class="line"><span class="comment">// 交叉类型</span></span><br><span class="line"><span class="keyword">type</span> Nothing = Dog &amp; Cat;</span><br><span class="line"><span class="comment">// 元组，具体定义数组每个位置的类型</span></span><br><span class="line"><span class="keyword">type</span> PetList = [Dog, Cat];</span><br></pre></td></tr></table></figure>
-<h3 id="interface-可以而-type-不行"><a href="#interface-可以而-type-不行" class="headerlink" title="interface 可以而 type 不行"></a>interface 可以而 type 不行</h3><p>interface 能够声明合并</p>
+<h3><span id="interface-ke-yi-er-type-bu-xing">interface 可以而 type 不行</span><a href="#interface-ke-yi-er-type-bu-xing" class="header-anchor"></a></h3><p>interface 能够声明合并</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> User &#123;</span><br><span class="line">  sex: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">User 接口为 &#123;</span></span><br><span class="line"><span class="comment">  name: string</span></span><br><span class="line"><span class="comment">  age: number</span></span><br><span class="line"><span class="comment">  sex: string </span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
       
@@ -666,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点"><span class="nav-number">1.</span> <span class="nav-text">相同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#都可以描述一个对象或者函数"><span class="nav-number">1.1.</span> <span class="nav-text">都可以描述一个对象或者函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#都允许扩展"><span class="nav-number">1.2.</span> <span class="nav-text">都允许扩展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">2.</span> <span class="nav-text">不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#type-可以而-interface-不行"><span class="nav-number">2.1.</span> <span class="nav-text">type 可以而 interface 不行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interface-可以而-type-不行"><span class="nav-number">2.2.</span> <span class="nav-text">interface 可以而 type 不行</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">相同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">都可以描述一个对象或者函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">都允许扩展</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">type 可以而 interface 不行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">interface 可以而 type 不行</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -700,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://secure2.wostatic.cn/static/evDetmt9UjV41T9EyquRLY/image.png?auth_key=1754534532-sLYf5VbRUDuTCurH32X6Fj-0-0b4cd1a5eff0683ebf93266aac16ec83">
 <meta property="og:image" content="https://secure2.wostatic.cn/static/ss7rNkuYjxNQspYC95gxV7/image.png?auth_key=1754534532-d1BjfYQ7DMJ8LyQzzNiK7W-0-31a84997fb561ae6562cce16b2186b4f">
 <meta property="og:image" content="https://secure2.wostatic.cn/static/pqNpWmXPiey42tY2QvoBhT/image.png?auth_key=1754534532-e8G847N18NiFRoLSvuiFwu-0-189125b95f5d729c40d6e6a4037d86ec">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.220Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP缓存">
 <meta name="twitter:description" content="参考https://github.com/amandakelake/blog/issues/41 概述基本原理浏览器在请求资源的时候，根据请求头的 expires 和 cache-control 判断是否命中强缓存，是则直接从缓存读取资源，不会发请求到服务器。 如果没有命中强缓存，浏览器一定会发送一个请求到服务器，通过 last-modified 和 etag 验证资源是否命中协商缓存，如果命中，">
@@ -377,8 +377,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -435,17 +435,17 @@
       
 
       
-        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/amandakelake/blog/issues/41" target="_blank" rel="noopener">https://github.com/amandakelake/blog/issues/41</a></p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>浏览器在请求资源的时候，根据请求头的 expires 和 cache-control 判断是否命中强缓存，是则直接从缓存读取资源，不会发请求到服务器。</p>
+        <h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor"></a></h1><p><a href="https://github.com/amandakelake/blog/issues/41" target="_blank" rel="noopener">https://github.com/amandakelake/blog/issues/41</a></p>
+<h1><span id="gai-shu">概述</span><a href="#gai-shu" class="header-anchor"></a></h1><h2><span id="ji-ben-yuan-li">基本原理</span><a href="#ji-ben-yuan-li" class="header-anchor"></a></h2><p>浏览器在请求资源的时候，根据请求头的 expires 和 cache-control 判断是否命中强缓存，是则直接从缓存读取资源，不会发请求到服务器。</p>
 <p>如果没有命中强缓存，浏览器一定会发送一个请求到服务器，通过 last-modified 和 etag 验证资源是否命中协商缓存，如果命中，服务器会将这个请求返回，但是不会返回这个资源的数据，依然是从缓存中读取资源。</p>
 <p>如果前面两者都没命中，直接从服务器加载资源。</p>
-<h2 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h2><p>如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据。</p>
-<h2 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h2><p>强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
-<h1 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h1><p>强缓存通过 Expires 和 Cache-Control 两种响应头实现</p>
-<h2 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h2><p>Expires 是 Http1.0 提出的一个表示资源过期时间的 header，它描述的是一个绝对时间，由服务器返回。</p>
+<h2><span id="xiang-tong-dian">相同点</span><a href="#xiang-tong-dian" class="header-anchor"></a></h2><p>如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据。</p>
+<h2><span id="bu-tong-dian">不同点</span><a href="#bu-tong-dian" class="header-anchor"></a></h2><p>强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
+<h1><span id="qiang-huan-cun">强缓存</span><a href="#qiang-huan-cun" class="header-anchor"></a></h1><p>强缓存通过 Expires 和 Cache-Control 两种响应头实现</p>
+<h2><span id="expires">Expires</span><a href="#expires" class="header-anchor"></a></h2><p>Expires 是 Http1.0 提出的一个表示资源过期时间的 header，它描述的是一个绝对时间，由服务器返回。</p>
 <p>Expires 受限于本地时间，如果修改了本地时间，可能会造成缓存失效。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expires: Wed, <span class="number">11</span> May <span class="number">2018</span> <span class="number">07</span>:<span class="number">20</span>:<span class="number">00</span> GMT</span><br></pre></td></tr></table></figure>
-<h2 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h2><p>Cache-Control 出现于 HTTP/1.1，优先级高于 Expires，表示的是相对时间</p>
+<h2><span id="cache-control">Cache-Control</span><a href="#cache-control" class="header-anchor"></a></h2><p>Cache-Control 出现于 HTTP/1.1，优先级高于 Expires，表示的是相对时间</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cache-Control: max-age=<span class="number">315360000</span></span><br></pre></td></tr></table></figure>
 <p><code>max-age</code>再结合客户端接收到响应的客户端系统时间，就可以算出实际的客户端过期时间。哪怕一开始时间不准也没关系。比<code>Expires</code>这种绝对时间要好一点</p>
 <p>Cache-Control: no-cache 不会缓存数据到本地的说法是错的，详情《HTTP 权威指南》P182</p>
@@ -454,11 +454,11 @@
 <p>Cache-Control: public 可以被所有用户缓存（多用户共享），包括终端和 CDN 等中间代理服务器</p>
 <p>Cache-Control: private 只能被终端浏览器缓存（而且是私有缓存），不允许中继缓存服务器进行缓存</p>
 <p><img src="https://secure2.wostatic.cn/static/smgmHVhU3e8rvNgANy1Jqy/image.png?auth_key=1754534532-rrXomnWU55j4FF1LwXcCpy-0-7492f51de37b531c582b2a938ffe0018" alt></p>
-<h1 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h1><p>当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，请求响应返回的 http 状态为 304 并且会显示一个 Not Modified 的字符串。</p>
+<h1><span id="xie-shang-huan-cun">协商缓存</span><a href="#xie-shang-huan-cun" class="header-anchor"></a></h1><p>当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，请求响应返回的 http 状态为 304 并且会显示一个 Not Modified 的字符串。</p>
 <p>协商缓存是利用的是【Last-Modified, If-Modified-Since】和【ETag、If-None-Match】这两对 Header 来管理的</p>
-<h2 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last-Modified, If-Modified-Since"></a>Last-Modified, If-Modified-Since</h2><p>Last-Modified 表示本地文件最后修改日期，浏览器会在 request header 加上 If-Modified-Since(上次返回的 Last-Modified 的值)，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来</p>
+<h2><span id="last-modified-if-modified-since">Last-Modified, If-Modified-Since</span><a href="#last-modified-if-modified-since" class="header-anchor"></a></h2><p>Last-Modified 表示本地文件最后修改日期，浏览器会在 request header 加上 If-Modified-Since(上次返回的 Last-Modified 的值)，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来</p>
 <p>但是如果在本地打开缓存文件，就会造成 Last-Modified 被修改，所以在 HTTP/1.1 出现了 ETag</p>
-<h2 id="ETag、If-None-Match"><a href="#ETag、If-None-Match" class="headerlink" title="ETag、If-None-Match"></a>ETag、If-None-Match</h2><p>ETag 就像一个指纹，资源变化都会导致 ETag 变化，跟最后修改时间没关系，ETag 可以保证每一个资源是唯一的</p>
+<h2><span id="etag-if-none-match">ETag、If-None-Match</span><a href="#etag-if-none-match" class="header-anchor"></a></h2><p>ETag 就像一个指纹，资源变化都会导致 ETag 变化，跟最后修改时间没关系，ETag 可以保证每一个资源是唯一的</p>
 <p>If-None-Match 的 header 会将上次返回的 ETag 发送给服务器，询问该资源的 ETag 是否有更新，有变动就会发送新的资源回来</p>
 <p><img src="https://secure2.wostatic.cn/static/evDetmt9UjV41T9EyquRLY/image.png?auth_key=1754534532-sLYf5VbRUDuTCurH32X6Fj-0-0b4cd1a5eff0683ebf93266aac16ec83" alt></p>
 <p>ETag 的优先级比 Last-Modified 更高</p>
@@ -468,8 +468,8 @@
 <li>某些文件修改非常频繁，比如在秒以下的时间内进行修改（比方说 1s 内修改了 N 次），If-Modified-Since 能检查到的粒度是秒级的，这种修改无法判断（UNIX 记录 MTIME 只能精确到秒）</li>
 <li>某些服务器不能精确的得到文件的最后修改时间。</li>
 </ul>
-<h1 id="整体流程图"><a href="#整体流程图" class="headerlink" title="整体流程图"></a>整体流程图</h1><p><img src="https://secure2.wostatic.cn/static/ss7rNkuYjxNQspYC95gxV7/image.png?auth_key=1754534532-d1BjfYQ7DMJ8LyQzzNiK7W-0-31a84997fb561ae6562cce16b2186b4f" alt></p>
-<h1 id="几种状态码的区别"><a href="#几种状态码的区别" class="headerlink" title="几种状态码的区别"></a>几种状态码的区别</h1><ul>
+<h1><span id="zheng-ti-liu-cheng-tu">整体流程图</span><a href="#zheng-ti-liu-cheng-tu" class="header-anchor"></a></h1><p><img src="https://secure2.wostatic.cn/static/ss7rNkuYjxNQspYC95gxV7/image.png?auth_key=1754534532-d1BjfYQ7DMJ8LyQzzNiK7W-0-31a84997fb561ae6562cce16b2186b4f" alt></p>
+<h1><span id="ji-chong-zhuang-tai-ma-de-qu-bie">几种状态码的区别</span><a href="#ji-chong-zhuang-tai-ma-de-qu-bie" class="header-anchor"></a></h1><ul>
 <li>200：强缓存 Expires/Cache-Control 失效时，返回新的资源文件</li>
 <li>200（from cache）：强缓存 Expires/Cache-Control 都存在，未过期，Cache-Control 优先于 Expires 时，浏览器从本地获取资源成功</li>
 <li>304（Not Modified）：协商缓存 Last-Modified/ETag 没有过期时，服务器返回状态码 304</li>
@@ -478,7 +478,7 @@
 <p>现在的 200（from cache）已经变成了 from disk cache（磁盘缓存）和 from memory cache（内存缓存）两种，打开 chrome 控制台看一下网络请求就知道了</p>
 <p><img src="https://secure2.wostatic.cn/static/pqNpWmXPiey42tY2QvoBhT/image.png?auth_key=1754534532-e8G847N18NiFRoLSvuiFwu-0-189125b95f5d729c40d6e6a4037d86ec" alt></p>
 <p>具体两者的区别，暂时没有去深究，有兴趣的同学可以自己去研究</p>
-<h1 id="如何选择合适的缓存"><a href="#如何选择合适的缓存" class="headerlink" title="如何选择合适的缓存"></a>如何选择合适的缓存</h1><p>大致的顺序</p>
+<h1><span id="ru-he-xuan-ze-he-gua-de-huan-cun">如何选择合适的缓存</span><a href="#ru-he-xuan-ze-he-gua-de-huan-cun" class="header-anchor"></a></h1><p>大致的顺序</p>
 <ul>
 <li>Cache-Control，请求服务器之前</li>
 <li>Expires，请求服务器之前</li>
@@ -709,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本原理"><span class="nav-number">2.1.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相同点"><span class="nav-number">2.2.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不同点"><span class="nav-number">2.3.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强缓存"><span class="nav-number">3.</span> <span class="nav-text">强缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Expires"><span class="nav-number">3.1.</span> <span class="nav-text">Expires</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache-Control"><span class="nav-number">3.2.</span> <span class="nav-text">Cache-Control</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#协商缓存"><span class="nav-number">4.</span> <span class="nav-text">协商缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Last-Modified-If-Modified-Since"><span class="nav-number">4.1.</span> <span class="nav-text">Last-Modified, If-Modified-Since</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ETag、If-None-Match"><span class="nav-number">4.2.</span> <span class="nav-text">ETag、If-None-Match</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#整体流程图"><span class="nav-number">5.</span> <span class="nav-text">整体流程图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几种状态码的区别"><span class="nav-number">6.</span> <span class="nav-text">几种状态码的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何选择合适的缓存"><span class="nav-number">7.</span> <span class="nav-text">如何选择合适的缓存</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.3.</span> <span class="nav-text">不同点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">强缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.1.</span> <span class="nav-text">Expires</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.2.</span> <span class="nav-text">Cache-Control</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">协商缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text">Last-Modified, If-Modified-Since</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.2.</span> <span class="nav-text">ETag、If-None-Match</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">整体流程图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">6.</span> <span class="nav-text">几种状态码的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">如何选择合适的缓存</span></a></li></ol></div>
             
 
           </div>
@@ -743,7 +743,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

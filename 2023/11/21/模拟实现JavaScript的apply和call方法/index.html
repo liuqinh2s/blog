@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="apply 和 call 的相同点是：  都由一个函数调用 第一个参数都是原函数的执行环境 this  不同点是： apply 的第二个参数接收原函数的所有参数，而 call 从第二个参数开始跟原函数一样是打散的 代码如下： 123F(arg1, arg2, ...)&amp;#123;&amp;#125;F.apply(thisArg, [arg1, arg2, ...]);F.call(thisArg, ar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.221Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模拟实现JavaScript的apply和call方法">
 <meta name="twitter:description" content="apply 和 call 的相同点是：  都由一个函数调用 第一个参数都是原函数的执行环境 this  不同点是： apply 的第二个参数接收原函数的所有参数，而 call 从第二个参数开始跟原函数一样是打散的 代码如下： 123F(arg1, arg2, ...)&amp;#123;&amp;#125;F.apply(thisArg, [arg1, arg2, ...]);F.call(thisArg, ar">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -454,10 +454,10 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.callFn = <span class="function"><span class="keyword">function</span> <span class="title">call</span>(<span class="params">thisArg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.applyFn(thisArg, [].slice.applyFn(<span class="built_in">arguments</span>, [<span class="number">1</span>]));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>测试用例：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">  name: <span class="string">"1"</span>,</span><br><span class="line">  h,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">h</span>(<span class="params">arg1</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arg1, <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">h.applyFn(a, [<span class="string">"7"</span>]);</span><br><span class="line">h.callFn(a, <span class="string">"8"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="在-ES3、ES5-中-undefined-是能修改的"><a href="#在-ES3、ES5-中-undefined-是能修改的" class="headerlink" title="在 ES3、ES5 中 undefined 是能修改的"></a>在 ES3、ES5 中 undefined 是能修改的</h2><p>可能大部分人不知道。ES5 中虽然在全局作用域下不能修改，但在局部作用域中也是能修改的，不信可以复制以下测试代码在控制台执行下。虽然一般情况下是不会的去修改它。</p>
+<h2><span id="zai-es3-es5-zhong-undefined-shi-neng-xiu-gai-de">在 ES3、ES5 中 undefined 是能修改的</span><a href="#zai-es3-es5-zhong-undefined-shi-neng-xiu-gai-de" class="header-anchor"></a></h2><p>可能大部分人不知道。ES5 中虽然在全局作用域下不能修改，但在局部作用域中也是能修改的，不信可以复制以下测试代码在控制台执行下。虽然一般情况下是不会的去修改它。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="literal">undefined</span> = <span class="number">3</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="literal">undefined</span>); <span class="comment">// chrome下也是 3</span></span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
 <p>所以判断一个变量 a 是不是 undefined，更严谨的方案是 <code>typeof a === &#39;undefined&#39;</code>或者 <code>a === void 0;</code>这里面用的是 void，void 的作用是计算表达式，始终返回 undefined，也可以这样写 void(0)。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor"></a></h2><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function" target="_blank" rel="noopener">Function() constructor - JavaScript | MDN</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/void" target="_blank" rel="noopener">void 运算符 - JavaScript | MDN</a></li>
 <li><a href="https://github.com/lessfish/underscore-analysis/issues/1" target="_blank" rel="noopener">为什么用「void 0」代替「undefined」</a></li>
@@ -681,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-ES3、ES5-中-undefined-是能修改的"><span class="nav-number">1.</span> <span class="nav-text">在 ES3、ES5 中 undefined 是能修改的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">在 ES3、ES5 中 undefined 是能修改的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -715,7 +715,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

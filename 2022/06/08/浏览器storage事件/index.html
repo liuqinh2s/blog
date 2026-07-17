@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.219Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器 storage 事件">
 <meta name="twitter:description" content="官方文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Window/storage_event 在使用 storage 事件的时候，我发现了两个不符合我直觉的特性：  在本窗口修改存储区域（localStorage 或 sessionStorage）时，本窗口的监听无效 必须写入与旧值不同的值，才能监听到  我自己写代码测试了以上两个特点，但疑">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -437,11 +437,11 @@
 </ol>
 <p>我自己写代码测试了以上两个特点，但疑惑的是中文文档里面什么都没讲，原来英文文档里面说了这两点，MDN 的中文文档和英文文档并不是翻译关系，完全就是另写的。所以如果觉得文档有问题，还是切换到英文看吧。</p>
 <a id="more"></a>
-<h1 id="英文文档的解释"><a href="#英文文档的解释" class="headerlink" title="英文文档的解释"></a>英文文档的解释</h1><p>The storage event of the Window interface fires when a storage area (localStorage) has been <strong>modified in the context of another document</strong>.</p>
+<h1><span id="ying-wen-wen-dang-de-jie-shi">英文文档的解释</span><a href="#ying-wen-wen-dang-de-jie-shi" class="header-anchor"></a></h1><p>The storage event of the Window interface fires when a storage area (localStorage) has been <strong>modified in the context of another document</strong>.</p>
 <blockquote>
 <p>Note: <strong>This won&#39;t work on the same page that is making the changes</strong> — it is really a way for other pages on the domain using the storage to sync any changes that are made. Pages on other domains can&#39;t access the same storage objects.</p>
 </blockquote>
-<h1 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置监听</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, ()=&gt;&#123;<span class="built_in">console</span>.log(<span class="string">'监听storage'</span>, localStorage.getItem(<span class="string">'abcd'</span>))&#125;);</span><br><span class="line"><span class="comment">// 查看dom有哪些监听事件</span></span><br><span class="line">getEventListeners(<span class="built_in">window</span>);</span><br><span class="line"><span class="comment">// 设置localStorage</span></span><br><span class="line">localStorage.setItem(<span class="string">'abcd'</span>, <span class="string">'1111'</span>);</span><br></pre></td></tr></table></figure>
+<h1><span id="ce-shi-dai-ma">测试代码</span><a href="#ce-shi-dai-ma" class="header-anchor"></a></h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置监听</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, ()=&gt;&#123;<span class="built_in">console</span>.log(<span class="string">'监听storage'</span>, localStorage.getItem(<span class="string">'abcd'</span>))&#125;);</span><br><span class="line"><span class="comment">// 查看dom有哪些监听事件</span></span><br><span class="line">getEventListeners(<span class="built_in">window</span>);</span><br><span class="line"><span class="comment">// 设置localStorage</span></span><br><span class="line">localStorage.setItem(<span class="string">'abcd'</span>, <span class="string">'1111'</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -659,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#英文文档的解释"><span class="nav-number">1.</span> <span class="nav-text">英文文档的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试代码"><span class="nav-number">2.</span> <span class="nav-text">测试代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">英文文档的解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">测试代码</span></a></li></ol></div>
             
 
           </div>
@@ -693,7 +693,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

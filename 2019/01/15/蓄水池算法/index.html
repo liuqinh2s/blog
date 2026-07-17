@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.218Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蓄水池算法">
 <meta name="twitter:description" content="蓄水池算法(Reservoir Sampling)这个算法真的很奇妙，它的核心是一个数学证明。外延，或者说应用场景是：  $C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本 流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -429,17 +429,17 @@
       
 
       
-        <h2 id="蓄水池算法-Reservoir-Sampling"><a href="#蓄水池算法-Reservoir-Sampling" class="headerlink" title="蓄水池算法(Reservoir Sampling)"></a>蓄水池算法(Reservoir Sampling)</h2><p>这个算法真的很奇妙，它的核心是一个<strong>数学证明</strong>。外延，或者说应用场景是：</p>
+        <h2><span id="xu-shui-chi-suan-fa-reservoir-sampling">蓄水池算法(Reservoir Sampling)</span><a href="#xu-shui-chi-suan-fa-reservoir-sampling" class="header-anchor"></a></h2><p>这个算法真的很奇妙，它的核心是一个<strong>数学证明</strong>。外延，或者说应用场景是：</p>
 <ol>
 <li>$C_n^k$，也就是从大小为 n 的样本集中随机取 k 个不同的样本</li>
 <li>流式数据，或者说无法直接根据索引拿到数据（更加不可能一遍加载到内存）</li>
 </ol>
 <a id="more"></a>
-<h3 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h3><p>算法的描述其实很简单：<a href="https://zh.wikipedia.org/zh-cn/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A8%A3" target="_blank" rel="noopener">维基百科：水塘抽样</a></p>
+<h3><span id="suan-fa-miao-shu">算法描述</span><a href="#suan-fa-miao-shu" class="header-anchor"></a></h3><p>算法的描述其实很简单：<a href="https://zh.wikipedia.org/zh-cn/%E6%B0%B4%E5%A1%98%E6%8A%BD%E6%A8%A3" target="_blank" rel="noopener">维基百科：水塘抽样</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">问题描述：从包含n个不同的项目的集合S中随机选取k个不同的样本。</span><br><span class="line">算法：</span><br><span class="line">从S中取首k个放入[水塘]中</span><br><span class="line">对每个S[j]项（j&gt;=k，数组从0开始）：</span><br><span class="line">true随机产生一个范围从0到j的整数r</span><br><span class="line">true若r&lt;k则把水塘中的第r项换成S[j]项</span><br><span class="line">最后得到的水塘就是抽样结果</span><br></pre></td></tr></table></figure>
 <p>这个算法保证了每一项最后可能存在于水塘中的概率都是一样的。</p>
 <p>单看算法，你肯定不知道为什么是等概率，其实数学证明并不难，请看下面的证明：</p>
-<h3 id="数学证明"><a href="#数学证明" class="headerlink" title="数学证明"></a>数学证明</h3><p>我们把样本分为两类：</p>
+<h3><span id="shu-xue-zheng-ming">数学证明</span><a href="#shu-xue-zheng-ming" class="header-anchor"></a></h3><p>我们把样本分为两类：</p>
 <ol>
 <li>一类是首 k 个，它们一开始就在水塘中</li>
 <li>一类是其他，它们一开始并不在水塘中</li>
@@ -455,7 +455,7 @@
 <li>一开始不在水塘中的那一部分，随便选一个做研究对象。被选中到水塘的概率为：$\frac{k}{j}$，后续不被替换的概率$\frac{j}{j+1}$，一直到$\frac{n-1}{n}$。<br><br>所以该项被保留的概率 = $\frac{k}{j}\times\frac{j}{j+1}\times\cdots\frac{n-1}{n}=\frac{k}{n}$</li>
 </ol>
 <p>到此我们就证明了所以样本最终存在于水塘中的概率都是$\frac{k}{n}$，这也完全符合了我们的数学期望。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>弄个流式数据我们这里没有条件，只能用伪代码模拟一下：</p>
+<h3><span id="dai-ma">代码</span><a href="#dai-ma" class="header-anchor"></a></h3><p>弄个流式数据我们这里没有条件，只能用伪代码模拟一下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Data[] reservoirSampling(<span class="keyword">int</span> k, DataStream dataStream)&#123;</span><br><span class="line">    Data[] reservoir = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// init pool</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;reservoir.length;i++)&#123;</span><br><span class="line">        reservoir[i] = dataStream.getCurrentData();</span><br><span class="line">        dataStream.toNext();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Random random = <span class="keyword">new</span> Random();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k;!dataStream.isFinish();i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> d = random.nextInt(i+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(d&lt;k)&#123;</span><br><span class="line">            reservoir[d] = dataStream.getCurrentData();</span><br><span class="line">        &#125;</span><br><span class="line">        dataStream.toNext();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> reservoir;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -674,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#蓄水池算法-Reservoir-Sampling"><span class="nav-number">1.</span> <span class="nav-text">蓄水池算法(Reservoir Sampling)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法描述"><span class="nav-number">1.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数学证明"><span class="nav-number">1.2.</span> <span class="nav-text">数学证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">蓄水池算法(Reservoir Sampling)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">算法描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">数学证明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -708,7 +708,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

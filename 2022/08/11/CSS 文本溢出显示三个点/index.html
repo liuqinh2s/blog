@@ -90,7 +90,7 @@
 <meta property="og:description" content="参考https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow 这个面试的时候被问过 N 次。不知道为啥这么喜欢问这个。今天好好学一下这个技巧">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/单行文本溢出显示省略号.png">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.219Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 文本溢出显示三个点">
 <meta name="twitter:description" content="参考https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow 这个面试的时候被问过 N 次。不知道为啥这么喜欢问这个。今天好好学一下这个技巧">
@@ -373,8 +373,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -431,29 +431,29 @@
       
 
       
-        <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow</a></p>
+        <h1><span id="can-kao">参考</span><a href="#can-kao" class="header-anchor"></a></h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-overflow</a></p>
 <p>这个面试的时候被问过 N 次。不知道为啥这么喜欢问这个。今天好好学一下这个技巧</p>
 <a id="more"></a>
-<h1 id="单行文本溢出显示省略号"><a href="#单行文本溢出显示省略号" class="headerlink" title="单行文本溢出显示省略号"></a>单行文本溢出显示省略号</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="text-overflow"><a href="#text-overflow" class="headerlink" title="text-overflow"></a>text-overflow</h1><p>text-overflow CSS 属性确定如何向用户发出未显示的溢出内容信号。它可以被剪切，显示一个省略号（&quot;...&quot;）或显示一个自定义字符串</p>
+<h1><span id="dan-xing-wen-ben-yi-chu-xian-shi-sheng-lue-hao">单行文本溢出显示省略号</span><a href="#dan-xing-wen-ben-yi-chu-xian-shi-sheng-lue-hao" class="header-anchor"></a></h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowrap</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br></pre></td></tr></table></figure>
+<h1><span id="text-overflow">text-overflow</span><a href="#text-overflow" class="header-anchor"></a></h1><p>text-overflow CSS 属性确定如何向用户发出未显示的溢出内容信号。它可以被剪切，显示一个省略号（&quot;...&quot;）或显示一个自定义字符串</p>
 <p><img src="../../../../images/2022/单行文本溢出显示省略号.png" alt></p>
 <p>这个属性只对那些块级元素溢出的内容有效，但是必须要与块级元素内联（inline）方向一致（举个例子：内容在盒子的下方溢出。此时就不会生效）。文本可能在以下情况下溢出：当其因为某种原因而无法换行（例子：设置了&quot;white-space: nowrap&quot;），或者一个单词太长而不能合理的被安置（fit）</p>
 <p>这个属性并不会强制&quot;溢出&quot;事件的发生，因此为了能让&quot;text-overflow&quot;能够生效，程序员们必须要在元素上添加几个额外属性，比如设置：overflow: hidden</p>
-<h1 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space" target="_blank" rel="noopener">white-space - CSS：层叠样式表 | MDN</a></p>
+<h1><span id="white-space">white-space</span><a href="#white-space" class="header-anchor"></a></h1><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/white-space" target="_blank" rel="noopener">white-space - CSS：层叠样式表 | MDN</a></p>
 <p>这个属性指定了两件事：</p>
 <ul>
 <li>空白字符是否合并，如何合并</li>
 <li>是否换行，如何换行</li>
 </ul>
 <p><code>nowrap</code>是不包裹的意思，也就是如果文本超出容器，<strong>不用换行</strong>去达到包裹文本的目的。</p>
-<h1 id="多行文本溢出容器最后一行如何显示省略号"><a href="#多行文本溢出容器最后一行如何显示省略号" class="headerlink" title="多行文本溢出容器最后一行如何显示省略号"></a>多行文本溢出容器最后一行如何显示省略号</h1><p>由于单行文本溢出容器显示省略号过于简单，一般面试官想问的其实是多行文本的问题。</p>
+<h1><span id="duo-xing-wen-ben-yi-chu-rong-qi-zui-hou-yi-xing-ru-he-xian-shi-sheng-lue-hao">多行文本溢出容器最后一行如何显示省略号</span><a href="#duo-xing-wen-ben-yi-chu-rong-qi-zui-hou-yi-xing-ru-he-xian-shi-sheng-lue-hao" class="header-anchor"></a></h1><p>由于单行文本溢出容器显示省略号过于简单，一般面试官想问的其实是多行文本的问题。</p>
 <p>主流解决方案是三种：</p>
 <ol>
 <li>webkit 专属方案：<code>-webkit-line-clamp</code></li>
 <li>高度截断 + 伪元素方案</li>
 <li>JavaScript 动态计算方案</li>
 </ol>
-<h2 id="webkit-line-clamp"><a href="#webkit-line-clamp" class="headerlink" title="-webkit-line-clamp"></a>-webkit-line-clamp</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 1; <span class="comment">/* 超出多少行才显示三个点，1:表示超出1行就显示 */</span></span><br></pre></td></tr></table></figure>
+<h2><span id="webkit-line-clamp">-webkit-line-clamp</span><a href="#webkit-line-clamp" class="header-anchor"></a></h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">-webkit-box</span>;</span><br><span class="line"><span class="selector-tag">-webkit-box-orient</span>: <span class="selector-tag">vertical</span>;</span><br><span class="line"><span class="selector-tag">-webkit-line-clamp</span>: 1; <span class="comment">/* 超出多少行才显示三个点，1:表示超出1行就显示 */</span></span><br></pre></td></tr></table></figure>
 <iframe height="265" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/wBMGeKx" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
 <p>虽然第 2 行超出部分显示了三个点，但第 3 行却也显示出来了，原因是 flex 布局的默认 <code>align-items:stretch</code> 设置把高度自动撑满</p>
@@ -677,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单行文本溢出显示省略号"><span class="nav-number">2.</span> <span class="nav-text">单行文本溢出显示省略号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-overflow"><span class="nav-number">3.</span> <span class="nav-text">text-overflow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#white-space"><span class="nav-number">4.</span> <span class="nav-text">white-space</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多行文本溢出容器最后一行如何显示省略号"><span class="nav-number">5.</span> <span class="nav-text">多行文本溢出容器最后一行如何显示省略号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#webkit-line-clamp"><span class="nav-number">5.1.</span> <span class="nav-text">-webkit-line-clamp</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">单行文本溢出显示省略号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">text-overflow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">white-space</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">5.</span> <span class="nav-text">多行文本溢出容器最后一行如何显示省略号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">5.1.</span> <span class="nav-text">-webkit-line-clamp</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -711,7 +711,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

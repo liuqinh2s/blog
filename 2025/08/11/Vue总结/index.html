@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="Vue 也是比较常用的前端框架，我这篇文章尝试总结一下 Vue 的常用知识点 声明式编程 + 组件式开发js 原生语言和 JQuery 这类库，都是命令式的编程，而 Vue 和 React 这类框架，则是声明式编程，或者说是数据驱动式编程。它们的区别在于是否要手动操作 DOM 更新视图。声明式编程只需要关注数据更新，而不用操心 DOM 的更新。 早先的前端开发都是html、js、css三类文件分离">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.222Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 总结">
 <meta name="twitter:description" content="Vue 也是比较常用的前端框架，我这篇文章尝试总结一下 Vue 的常用知识点 声明式编程 + 组件式开发js 原生语言和 JQuery 这类库，都是命令式的编程，而 Vue 和 React 这类框架，则是声明式编程，或者说是数据驱动式编程。它们的区别在于是否要手动操作 DOM 更新视图。声明式编程只需要关注数据更新，而不用操心 DOM 的更新。 早先的前端开发都是html、js、css三类文件分离">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -430,11 +430,11 @@
 
       
         <p>Vue 也是比较常用的前端框架，我这篇文章尝试总结一下 Vue 的常用知识点</p>
-<h2 id="声明式编程-组件式开发"><a href="#声明式编程-组件式开发" class="headerlink" title="声明式编程 + 组件式开发"></a>声明式编程 + 组件式开发</h2><p>js 原生语言和 JQuery 这类库，都是命令式的编程，而 Vue 和 React 这类框架，则是声明式编程，或者说是数据驱动式编程。它们的区别在于是否要手动操作 DOM 更新视图。声明式编程只需要关注数据更新，而不用操心 DOM 的更新。</p>
+<h2><span id="sheng-ming-shi-bian-cheng-zu-jian-shi-kai-fa">声明式编程 + 组件式开发</span><a href="#sheng-ming-shi-bian-cheng-zu-jian-shi-kai-fa" class="header-anchor"></a></h2><p>js 原生语言和 JQuery 这类库，都是命令式的编程，而 Vue 和 React 这类框架，则是声明式编程，或者说是数据驱动式编程。它们的区别在于是否要手动操作 DOM 更新视图。声明式编程只需要关注数据更新，而不用操心 DOM 的更新。</p>
 <p>早先的前端开发都是<code>html</code>、<code>js</code>、<code>css</code>三类文件分离的。如果类比做人体的话，html 就像人体的骨骼，是个架子；js 就像人体的肌肉，可以让人体动起来；css 就像皮肤，负责外观。但现在前端编程又回到了融合它们三个的组件式开发的时代。因为组件式开发，封装性更强，这也意味着维护更简单，使用更方便。</p>
 <a id="more"></a>
-<h2 id="基本写法"><a href="#基本写法" class="headerlink" title="基本写法"></a>基本写法</h2><p>一个组件中，包含三块：<code>&lt;template&gt;&lt;/template&gt;</code>、<code>&lt;script&gt;&lt;/script&gt;</code>、<code>&lt;style&gt;&lt;/style&gt;</code>。分别用来写<code>html</code>、<code>js</code>、<code>css</code>。</p>
-<h2 id="指令系统（directive）"><a href="#指令系统（directive）" class="headerlink" title="指令系统（directive）"></a>指令系统（directive）</h2><ol>
+<h2><span id="ji-ben-xie-fa">基本写法</span><a href="#ji-ben-xie-fa" class="header-anchor"></a></h2><p>一个组件中，包含三块：<code>&lt;template&gt;&lt;/template&gt;</code>、<code>&lt;script&gt;&lt;/script&gt;</code>、<code>&lt;style&gt;&lt;/style&gt;</code>。分别用来写<code>html</code>、<code>js</code>、<code>css</code>。</p>
+<h2><span id="zhi-ling-xi-tong-directive">指令系统（directive）</span><a href="#zhi-ling-xi-tong-directive" class="header-anchor"></a></h2><ol>
 <li><strong>内置指令</strong><ul>
 <li><code>v-bind</code>（缩写<code>:</code>）：动态绑定属性（如：<code>:class=&quot;{ active: isActive }&quot;</code>）</li>
 <li><code>v-on</code>（缩写<code>@</code>）：事件监听（如：<code>@onClick=&quot;handleClick&quot;</code>）</li>
@@ -661,7 +661,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明式编程-组件式开发"><span class="nav-number">1.</span> <span class="nav-text">声明式编程 + 组件式开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本写法"><span class="nav-number">2.</span> <span class="nav-text">基本写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令系统（directive）"><span class="nav-number">3.</span> <span class="nav-text">指令系统（directive）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">声明式编程 + 组件式开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">基本写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">指令系统（directive）</span></a></li></ol></div>
             
 
           </div>
@@ -695,7 +695,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

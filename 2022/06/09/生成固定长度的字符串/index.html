@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.219Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成固定长度的字符串">
 <meta name="twitter:description" content="前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -431,11 +431,11 @@
       
         <p>前端一般都要应对各种各样的用户输入，比如限制用户输入的字符串长度不超过 255 个字符。那么我自己测试的时候，去哪里弄个 256 长度的字符串呢，作为一个程序员，当然是自己写代码生成。下面我就来罗列一下有哪些方法可以实现这个需求。</p>
 <a id="more"></a>
-<h1 id="字符串方法：padStart-和-padEnd"><a href="#字符串方法：padStart-和-padEnd" class="headerlink" title="字符串方法：padStart()和 padEnd()"></a>字符串方法：padStart()和 padEnd()</h1><p>ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求：</p>
+<h1><span id="zi-fu-chuan-fang-fa-padstart-he-padend">字符串方法：padStart()和 padEnd()</span><a href="#zi-fu-chuan-fang-fa-padstart-he-padend" class="header-anchor"></a></h1><p>ES6 的字符串新语法 padStart()和 padEnd()，可以很好的完成这个需求：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">''</span>.padStart(<span class="number">256</span>, <span class="string">'a'</span>);</span><br><span class="line"><span class="string">''</span>.padEnd(<span class="number">256</span>, <span class="string">'a'</span>);</span><br></pre></td></tr></table></figure>
 <p>官方文档：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/padStart</a></p>
-<h1 id="数组方法：-join"><a href="#数组方法：-join" class="headerlink" title="数组方法： join()"></a>数组方法： join()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">256</span>).fill(<span class="string">'a'</span>).join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
-<h1 id="字符串方法：repeat"><a href="#字符串方法：repeat" class="headerlink" title="字符串方法：repeat()"></a>字符串方法：repeat()</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a'</span>.repeat(<span class="number">256</span>);</span><br></pre></td></tr></table></figure>
+<h1><span id="shu-zu-fang-fa-join">数组方法： join()</span><a href="#shu-zu-fang-fa-join" class="header-anchor"></a></h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">256</span>).fill(<span class="string">'a'</span>).join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+<h1><span id="zi-fu-chuan-fang-fa-repeat">字符串方法：repeat()</span><a href="#zi-fu-chuan-fang-fa-repeat" class="header-anchor"></a></h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'a'</span>.repeat(<span class="number">256</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -466,8 +466,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2022/06/09/浏览器上的几种xy坐标/" rel="next" title="浏览器上的几种xy坐标">
-                <i class="fa fa-chevron-left"></i> 浏览器上的几种xy坐标
+              <a href="/blog/2022/06/08/二分查找/" rel="next" title="二分查找">
+                <i class="fa fa-chevron-left"></i> 二分查找
               </a>
             
           </div>
@@ -476,8 +476,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2022/06/11/服务器重装系统/" rel="prev" title="服务器重装系统">
-                服务器重装系统 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2022/06/09/浏览器上的几种xy坐标/" rel="prev" title="浏览器上的几种xy坐标">
+                浏览器上的几种xy坐标 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串方法：padStart-和-padEnd"><span class="nav-number">1.</span> <span class="nav-text">字符串方法：padStart()和 padEnd()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组方法：-join"><span class="nav-number">2.</span> <span class="nav-text">数组方法： join()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串方法：repeat"><span class="nav-number">3.</span> <span class="nav-text">字符串方法：repeat()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">字符串方法：padStart()和 padEnd()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">数组方法： join()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">字符串方法：repeat()</span></a></li></ol></div>
             
 
           </div>
@@ -687,7 +687,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

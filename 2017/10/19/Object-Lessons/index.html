@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/C++对象模型.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/虚基类.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/虚拟多重继承.jpg">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.216Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 一 -- Object Lessons">
 <meta name="twitter:description" content="多态：统一的接口，不同的实现  C++多态（polymorphism） 表示“以一个 public base class 的指针（或者 reference），寻址出一个 derived class object” Layout Costs for Adding Encapsulation(封装) 意思是：为了添加封装所需要付出的内存布局花销  第一章 Object Lessons 介绍了 C++">
@@ -377,8 +377,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -439,17 +439,17 @@
 <p>多态：统一的接口，不同的实现</p>
 </blockquote>
 <p><strong>C++多态（polymorphism）</strong> 表示“以一个 public base class 的指针（或者 reference），寻址出一个 derived class object”</p>
-<h2 id="Layout-Costs-for-Adding-Encapsulation-封装"><a href="#Layout-Costs-for-Adding-Encapsulation-封装" class="headerlink" title="Layout Costs for Adding Encapsulation(封装)"></a>Layout Costs for Adding Encapsulation(封装)</h2><blockquote>
+<h2><span id="layout-costs-for-adding-encapsulation-feng-zhuang">Layout Costs for Adding Encapsulation(封装)</span><a href="#layout-costs-for-adding-encapsulation-feng-zhuang" class="header-anchor"></a></h2><blockquote>
 <p>意思是：为了添加封装所需要付出的内存布局花销</p>
 </blockquote>
 <p>第一章 Object Lessons 介绍了 C++如何在背后实现一个对象，内存中的布局以及空间上的关系。</p>
 <p><strong>在计算机的原理中，要实现某个机制，我们总能找到很多种实现方式</strong>（对比着学习，多思考每种实现方法的利弊），C++的类的实现也不例外，让我们对比以下三种实现方式：</p>
 <a id="more"></a>
-<h3 id="三种对象实现模式"><a href="#三种对象实现模式" class="headerlink" title="三种对象实现模式"></a>三种对象实现模式</h3><h4 id="A-Simple-Object-Model"><a href="#A-Simple-Object-Model" class="headerlink" title="A Simple Object Model"></a>A Simple Object Model</h4><p><img src="../../../../images/简单对象模型.jpg" alt="A Simple Object Model"></p>
+<h3><span id="san-chong-dui-xiang-shi-xian-mo-shi">三种对象实现模式</span><a href="#san-chong-dui-xiang-shi-xian-mo-shi" class="header-anchor"></a></h3><h4><span id="a-simple-object-model">A Simple Object Model</span><a href="#a-simple-object-model" class="header-anchor"></a></h4><p><img src="../../../../images/简单对象模型.jpg" alt="A Simple Object Model"></p>
 <p>可以看到，简单对象模型把所有的 data member 和 member function（函数指针）都放在对象里了。</p>
-<h4 id="A-Table-driven-Object-Model"><a href="#A-Table-driven-Object-Model" class="headerlink" title="A Table-driven Object Model"></a>A Table-driven Object Model</h4><p><img src="../../../../images/表驱动模型.jpg" alt="A Table-driven Object Model"></p>
+<h4><span id="a-table-driven-object-model">A Table-driven Object Model</span><a href="#a-table-driven-object-model" class="header-anchor"></a></h4><p><img src="../../../../images/表驱动模型.jpg" alt="A Table-driven Object Model"></p>
 <p>表驱动模型把 member 分为 data 和 function 两类，用两个指针分别指向两个表，一个存放所有的 data member，一个存放所有的 function 指针。</p>
-<h4 id="The-C-Object-Model"><a href="#The-C-Object-Model" class="headerlink" title="The C++ Object Model"></a>The C++ Object Model</h4><p><img src="../../../../images/C++对象模型.jpg" alt="The C++ Object Model"></p>
+<h4><span id="the-c-object-model">The C++ Object Model</span><a href="#the-c-object-model" class="header-anchor"></a></h4><p><img src="../../../../images/C++对象模型.jpg" alt="The C++ Object Model"></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">Type</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Point3d</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    Point3d(Type x, Type y, Type z) : x_(x), y_(y), z_(z) &#123;&#125;</span><br><span class="line">    <span class="function">Type <span class="title">x</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> x_; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Type x_, y_, z_;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面的 C++ 类并不会比 C 语言 的 struct 耗费更多的内存空间，三个 data members 直接内含于 Object 中，member functions 则放在 Object 外。</p>
 <p>C++的 data members 有两种：<strong>static 和 nonstatic</strong></p>
@@ -463,10 +463,10 @@
 <li>任何由于位对齐所需要的填补上去的空间;(关于内存对齐，自己查)</li>
 <li>为了支持 virtual 机制而引起的额外负担。</li>
 </ul>
-<h3 id="data-members-在内存中的布局"><a href="#data-members-在内存中的布局" class="headerlink" title="data members 在内存中的布局"></a>data members 在内存中的布局</h3><p><code>C++</code>只保证处于同一个 access section（也就是 private,public,protected 片段）的数据，一定会以声明的次序出现在内存布局当中(要求较晚出现的数据成员处在较大的内存地址中)。<br><code>C++</code>标准只提供了这一点点的保证。<br>允许编译器将多个 Access Section 的顺序自由排列，而不必在乎它们的声明次序。但似乎没有编译器这样做。<br>对于继承类，C++标准并未指定是其基类成员在前还是自己的成员在前。</p>
+<h3><span id="data-members-zai-nei-cun-zhong-de-bu-ju">data members 在内存中的布局</span><a href="#data-members-zai-nei-cun-zhong-de-bu-ju" class="header-anchor"></a></h3><p><code>C++</code>只保证处于同一个 access section（也就是 private,public,protected 片段）的数据，一定会以声明的次序出现在内存布局当中(要求较晚出现的数据成员处在较大的内存地址中)。<br><code>C++</code>标准只提供了这一点点的保证。<br>允许编译器将多个 Access Section 的顺序自由排列，而不必在乎它们的声明次序。但似乎没有编译器这样做。<br>对于继承类，C++标准并未指定是其基类成员在前还是自己的成员在前。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">X</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="keyword">int</span> i;</span><br><span class="line">   <span class="keyword">int</span> j;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">   <span class="keyword">int</span> k;</span><br><span class="line">   <span class="keyword">int</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>数据 i 一定在 j 之前，k 一定在 n 之前。其他顺序就看编译器了。</p>
-<h3 id="Virtual-Table-vtbl-vtable-和-vptr"><a href="#Virtual-Table-vtbl-vtable-和-vptr" class="headerlink" title="Virtual Table(vtbl, vtable) 和 vptr"></a>Virtual Table(vtbl, vtable) 和 vptr</h3><p>Virtual function 机制由以下 2 个步骤来支持：</p>
+<h3><span id="virtual-table-vtbl-vtable-he-vptr">Virtual Table(vtbl, vtable) 和 vptr</span><a href="#virtual-table-vtbl-vtable-he-vptr" class="header-anchor"></a></h3><p>Virtual function 机制由以下 2 个步骤来支持：</p>
 <ol>
 <li>每个 class 产生的 Virtual function 的指针放在 Virtual Table 中</li>
 <li>编译器给每个 class object 添加一个指针 vptr，指向相应的 vtable</li>
@@ -474,7 +474,7 @@
 <p>一个 vtable 对应一个 class，一个 vptr 才对应一个 class object，必须区分开这 2 个概念。vtable 独立于对象，就跟函数独立于对象一样。这样所有对象才能共享它们，就像 static data members 被共享一样。</p>
 <p><code>nonstatic data member</code>是对象独有的，每个对象都有自己的一份。而其他的 member 全都是公用的。其实这里可以顺便学一下<a href="https://zh.wikipedia.org/zh/序列化" target="_blank" rel="noopener">序列化</a>这个概念，思考一下序列化对象的时候哪些东西需要存储。</p>
 <p>RTTI(run-time type identification):一般来说，每一个 class 相关联的 type_info 对象的指针通常也保存在 vtable 的第一个 slot 中。关于 type_info 是什么，可以自己查。</p>
-<h3 id="引入继承后的对象模型成本"><a href="#引入继承后的对象模型成本" class="headerlink" title="引入继承后的对象模型成本"></a>引入继承后的对象模型成本</h3><ul>
+<h3><span id="yin-ru-ji-cheng-hou-de-dui-xiang-mo-xing-cheng-ben">引入继承后的对象模型成本</span><a href="#yin-ru-ji-cheng-hou-de-dui-xiang-mo-xing-cheng-ben" class="header-anchor"></a></h3><ul>
 <li>如果是普通继承，父对象被直接包含在子对象里面，这样父对象的存取也是直接进行的，没有额外的指针成本。</li>
 <li>如果是虚拟继承，父对象由一个指针指出来，这样父对象的存取就必须由指针访问，添加了一层间接性。</li>
 </ul>
@@ -486,7 +486,7 @@
 <p>我觉得这里有个问题，class D 继承 class B 和 class C 的时候并不是虚继承，所以何不将 B 和 C 直接放在 D 中呢？这样就省了两次指针。</p>
 </blockquote>
 <p>这是我看到的一个讲的很不错的博客：<a href="https://liuhongjiang.github.io/hexotech/2012/11/30/virtual-inheritance/" target="_blank" rel="noopener">虚拟继承</a></p>
-<h2 id="struct-和-class-关键字的区别"><a href="#struct-和-class-关键字的区别" class="headerlink" title="struct 和 class 关键字的区别"></a>struct 和 class 关键字的区别</h2><p>总共就两个区别：</p>
+<h2><span id="struct-he-class-guan-jian-zi-de-qu-bie">struct 和 class 关键字的区别</span><a href="#struct-he-class-guan-jian-zi-de-qu-bie" class="header-anchor"></a></h2><p>总共就两个区别：</p>
 <ul>
 <li>struct defaults to public access and class defaults to private access.</li>
 <li>When inheriting, struct defaults to public inheritance and class defaults to private inheritance. (Ironically, as with so many things in C++, the default is backwards: public inheritance is by far the more common choice, but people rarely declare structs just to save on typing the “public” keyword). 哈哈，我觉得这么做的目的无非就是提醒你注意封装，不要给外部暴露没必要的东西，所以才把默认搞成 private。</li>
@@ -497,7 +497,7 @@
 <p>POD stands for Plain Old Data - that is, a class (whether defined with the keyword struct or the keyword class) without constructors, destructors and virtual members functions.</p>
 </blockquote>
 <p>由于这 2 个关键字在本质上无区别，所以 class 并没有必须要引入，但是引入它的确非常令人满意，因为这个语言所引入的不止是这个关键字，还有它所支持的封装和继承的哲学。可以这样想象：struct 只剩下方便 C 程序员迁徙到 C++的用途了。</p>
-<h2 id="programming-paradigms"><a href="#programming-paradigms" class="headerlink" title="programming paradigms"></a>programming paradigms</h2><p>C++支持三种形式的编程风格(或称典范 paradigm):</p>
+<h2><span id="programming-paradigms">programming paradigms</span><a href="#programming-paradigms" class="header-anchor"></a></h2><p>C++支持三种形式的编程风格(或称典范 paradigm):</p>
 <ul>
 <li>面向过程的风格（procedural model）: 就像 C 一样，一条语句接一条语句的执行或者函数跳转;</li>
 <li>抽象数据类型模型(abstract data type model，ADT): 仅仅使用了 class 的封装，很多人都是 在用基于对象的风格却误以为自己在使用面向对象的风格;</li>
@@ -515,7 +515,7 @@
 <blockquote>
 <p>如果你对 C 语言的程序栈很了解的话，就会知道形参实际上是不存在的，实参直接拷贝到了寄存器中，所以底层上来说参数都是值拷贝，而且操作结果无法写回到实参，实参稳稳的放在上一个栈帧中从未发生任何变化。具体的细节可以看：<a href="../../../../2018/10/08/程序的机器级表示/#过程调用例子">《CSAPP》读书笔记 -- 第 3 章：程序的机器级表示</a></p>
 </blockquote>
-<h2 id="指针的类型"><a href="#指针的类型" class="headerlink" title="指针的类型"></a>指针的类型</h2><ul>
+<h2><span id="zhi-zhen-de-lei-xing">指针的类型</span><a href="#zhi-zhen-de-lei-xing" class="header-anchor"></a></h2><ul>
 <li>对于内存来说，不同类型的指针并没有什么不同。它们都是占用一个 word 的大小（所以 word 的大小决定了内存可访问空间的大小，32 位系统是 4 字节，64 位系统是 8 字节），包含一个数字，这个数字代表内存中的一个地址;</li>
 <li>指针的类型是编译器的概念，对于硬件来说，并没有什么指针类型的概念;</li>
 <li>转型操作也只是一种编译器的指令，它改变的是编译器对被指内存的解释方式而已!</li>
@@ -738,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Layout-Costs-for-Adding-Encapsulation-封装"><span class="nav-number">1.</span> <span class="nav-text">Layout Costs for Adding Encapsulation(封装)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种对象实现模式"><span class="nav-number">1.1.</span> <span class="nav-text">三种对象实现模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Simple-Object-Model"><span class="nav-number">1.1.1.</span> <span class="nav-text">A Simple Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Table-driven-Object-Model"><span class="nav-number">1.1.2.</span> <span class="nav-text">A Table-driven Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#The-C-Object-Model"><span class="nav-number">1.1.3.</span> <span class="nav-text">The C++ Object Model</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-members-在内存中的布局"><span class="nav-number">1.2.</span> <span class="nav-text">data members 在内存中的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Virtual-Table-vtbl-vtable-和-vptr"><span class="nav-number">1.3.</span> <span class="nav-text">Virtual Table(vtbl, vtable) 和 vptr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入继承后的对象模型成本"><span class="nav-number">1.4.</span> <span class="nav-text">引入继承后的对象模型成本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#struct-和-class-关键字的区别"><span class="nav-number">2.</span> <span class="nav-text">struct 和 class 关键字的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#programming-paradigms"><span class="nav-number">3.</span> <span class="nav-text">programming paradigms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针的类型"><span class="nav-number">4.</span> <span class="nav-text">指针的类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">Layout Costs for Adding Encapsulation(封装)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.</span> <span class="nav-text">三种对象实现模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.1.</span> <span class="nav-text">A Simple Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.2.</span> <span class="nav-text">A Table-driven Object Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.1.3.</span> <span class="nav-text">The C++ Object Model</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.2.</span> <span class="nav-text">data members 在内存中的布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.3.</span> <span class="nav-text">Virtual Table(vtbl, vtable) 和 vptr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.4.</span> <span class="nav-text">引入继承后的对象模型成本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">struct 和 class 关键字的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">3.</span> <span class="nav-text">programming paradigms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">4.</span> <span class="nav-text">指针的类型</span></a></li></ol></div>
             
 
           </div>
@@ -772,7 +772,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="基础知识 默认大小：如果不设置宽高，canvas 的默认宽高是：width: 300px; height: 150px;。 替换内容：与&amp;lt;img&amp;gt;元素不同，&amp;lt;canvas&amp;gt;元素需要结束标签&amp;lt;/canvas&amp;gt;，如果结束标签不存在，则文档的其余部分会被认为是替代内容，将不会显示出来。 什么是替换内容，就是在某些东西加载不出来的时候（原因可能多种多样，比如浏览器太老不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-16T09:57:17.221Z">
+<meta property="og:updated_time" content="2026-07-17T07:08:11.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canvas 入门笔记">
 <meta name="twitter:description" content="基础知识 默认大小：如果不设置宽高，canvas 的默认宽高是：width: 300px; height: 150px;。 替换内容：与&amp;lt;img&amp;gt;元素不同，&amp;lt;canvas&amp;gt;元素需要结束标签&amp;lt;/canvas&amp;gt;，如果结束标签不存在，则文档的其余部分会被认为是替代内容，将不会显示出来。 什么是替换内容，就是在某些东西加载不出来的时候（原因可能多种多样，比如浏览器太老不">
@@ -371,8 +371,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-16T09:57:17+00:00">
-                2026-07-16
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-17T07:08:11+00:00">
+                2026-07-17
               </time>
             
           </span>
@@ -429,7 +429,7 @@
       
 
       
-        <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><ol>
+        <h1><span id="ji-chu-zhi-shi">基础知识</span><a href="#ji-chu-zhi-shi" class="header-anchor"></a></h1><ol>
 <li>默认大小：如果不设置宽高，canvas 的默认宽高是：<code>width: 300px; height: 150px;</code>。</li>
 <li>替换内容：与<code>&lt;img&gt;</code>元素不同，<strong><code>&lt;canvas&gt;</code>元素需要结束标签<code>&lt;/canvas&gt;</code></strong>，如果结束标签不存在，则文档的其余部分会被认为是替代内容，将不会显示出来。<blockquote>
 <p>什么是替换内容，就是在某些东西加载不出来的时候（原因可能多种多样，比如浏览器太老不支持这个东西，比如网络不好加载不出），那么就给这些东西替换成其他内容，比如<code>&lt;img&gt;</code>标签就有 alt 属性用于在图片加载不出的时候显示文本。<code>canvas</code>标签也有相应的措施，用法是：</p>
@@ -442,15 +442,15 @@
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line"><span class="keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">  <span class="keyword">const</span> context = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  <span class="comment">// drawing code here</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// canvas-unsupported code here</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="2D-绘图"><a href="#2D-绘图" class="headerlink" title="2D 绘图"></a>2D 绘图</h1><h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>直角坐标系，原点在左上角，x 轴向右为正，y 轴向下为正。</p>
-<h2 id="绘制图形"><a href="#绘制图形" class="headerlink" title="绘制图形"></a>绘制图形</h2><p><strong>不同于 SVG，<code>&lt;canvas&gt;</code> 只支持两种形式的图形绘制：矩形和路径（由一系列点连成的线段）</strong>。所有其他类型的图形都是通过一条或者多条路径组合而成的。不过，我们拥有众多路径生成的方法让复杂图形的绘制成为了可能。</p>
-<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><p>三种绘制矩形的方法：</p>
+<h1><span id="2d-hui-tu">2D 绘图</span><a href="#2d-hui-tu" class="header-anchor"></a></h1><h2><span id="zuo-biao-xi">坐标系</span><a href="#zuo-biao-xi" class="header-anchor"></a></h2><p>直角坐标系，原点在左上角，x 轴向右为正，y 轴向下为正。</p>
+<h2><span id="hui-zhi-tu-xing">绘制图形</span><a href="#hui-zhi-tu-xing" class="header-anchor"></a></h2><p><strong>不同于 SVG，<code>&lt;canvas&gt;</code> 只支持两种形式的图形绘制：矩形和路径（由一系列点连成的线段）</strong>。所有其他类型的图形都是通过一条或者多条路径组合而成的。不过，我们拥有众多路径生成的方法让复杂图形的绘制成为了可能。</p>
+<h3><span id="hui-zhi-ju-xing">绘制矩形</span><a href="#hui-zhi-ju-xing" class="header-anchor"></a></h3><p>三种绘制矩形的方法：</p>
 <ol>
 <li>绘制一个填充矩形：<code>fillRect(x, y, width, height)</code></li>
 <li>绘制一个矩形边框：<code>strokeRect(x, y, width, height)</code></li>
 <li>清除一个矩形区域，让清除部分完全透明：<code>clearRect(x, y, width, height)</code></li>
 </ol>
-<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>核心命令 5 个：</p>
+<h3><span id="hui-zhi-lu-jing">绘制路径</span><a href="#hui-zhi-lu-jing" class="header-anchor"></a></h3><p>核心命令 5 个：</p>
 <ol>
 <li>beginPath() // 开始绘制</li>
 <li>moveTo() // 移动画笔</li>
@@ -462,7 +462,7 @@
 <p>closePath()不是必须的，用 fill()就能自动闭合曲线，但 stroke()不会自动闭合曲线，所以在如果想闭合曲线就要在 stroke()之前 closePath()一下</p>
 </blockquote>
 <p>举个例子：<a href="https://replit.com/@liuqinh2s/canvas-practice#index.html" target="_blank" rel="noopener">画三角形</a></p>
-<h4 id="常见的路径"><a href="#常见的路径" class="headerlink" title="常见的路径"></a>常见的路径</h4><ul>
+<h4><span id="chang-jian-de-lu-jing">常见的路径</span><a href="#chang-jian-de-lu-jing" class="header-anchor"></a></h4><ul>
 <li>直线：lineTo(x, y)</li>
 <li>圆弧：<ul>
 <li>arc(x, y, radius, startAngle, endAngle, anticlockwise) // startAngle 和 endAngle 单位是弧度</li>
@@ -476,7 +476,7 @@
 </li>
 <li>矩形：rect(x, y, width, height)</li>
 </ul>
-<h4 id="Path2D-对象"><a href="#Path2D-对象" class="headerlink" title="Path2D 对象"></a>Path2D 对象</h4><p>Path2D 对象用来缓存绘画命令，有三种构造方式：</p>
+<h4><span id="path2d-dui-xiang">Path2D 对象</span><a href="#path2d-dui-xiang" class="header-anchor"></a></h4><p>Path2D 对象用来缓存绘画命令，有三种构造方式：</p>
 <ol>
 <li>new Path2D(); // 空对象</li>
 <li>new Path2D(path); // 克隆一个 Path2D 对象</li>
@@ -485,7 +485,7 @@
 <p>还可以拼接 path：</p>
 <p>Path2D.addPath(path, transform?) // 添加一条路径到当前路径，可以设置变换矩阵</p>
 <p><a href="https://replit.com/@liuqinh2s/canvas-path2d-practice#script.js" target="_blank" rel="noopener">代码示例</a></p>
-<h2 id="样式和颜色"><a href="#样式和颜色" class="headerlink" title="样式和颜色"></a>样式和颜色</h2><ul>
+<h2><span id="yang-shi-he-yan-se">样式和颜色</span><a href="#yang-shi-he-yan-se" class="header-anchor"></a></h2><ul>
 <li>fillStyle = color // 填充色</li>
 <li>strokeStyle = color // 轮廓色</li>
 <li>globalAlpha = transparencyValue // 透明度，取值范围：0.0（完全透明）到 1.0（完全不透明）</li>
@@ -711,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2D-绘图"><span class="nav-number">2.</span> <span class="nav-text">2D 绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标系"><span class="nav-number">2.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制图形"><span class="nav-number">2.2.</span> <span class="nav-text">绘制图形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制矩形"><span class="nav-number">2.2.1.</span> <span class="nav-text">绘制矩形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">2.2.2.</span> <span class="nav-text">绘制路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的路径"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">常见的路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Path2D-对象"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Path2D 对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样式和颜色"><span class="nav-number">2.3.</span> <span class="nav-text">样式和颜色</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">2.</span> <span class="nav-text">2D 绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.2.</span> <span class="nav-text">绘制图形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.1.</span> <span class="nav-text">绘制矩形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">2.2.2.</span> <span class="nav-text">绘制路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">常见的路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Path2D 对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#null"><span class="nav-number">2.3.</span> <span class="nav-text">样式和颜色</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -745,7 +745,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">128.3k</span>
+    <span title="Site words total count">128.5k</span>
   
 </div>
 
