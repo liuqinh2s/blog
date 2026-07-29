@@ -41,7 +41,7 @@ categries: [学习笔记]
 6. **Linear**（Vocab Projection（词表投影））。与 Token Embedding 共享同一个词汇表矩阵。输出 logits（对数得分），再经过 Softmax 就得到最后每个 token 的概率了。
 7. **Softmax**：一种归一化函数，可以把一组数变为相加等于1，也就是概率
 
-> 需要注意的是，还有两个环节由于不属于Transformer结构没有列出来。
+> 需要注意的是，还有两个环节由于不属于 Transformer 结构没有列出来。
 > 1. Tokenizer 生成词汇表
 > 2. 解码策略（Decoding Strategy）
 
@@ -75,7 +75,7 @@ Token Embedding 需要依赖一个 $W_E$ 矩阵（列=词汇数，行=$d_{model}
 
 $$
 \begin{aligned}
-PE(pos, 2i) &= \sin\left(\frac{pos}{10000^{2i/d}}\right) \\
+PE(pos, 2i) &= \sin\left(\frac{pos}{10000^{2i/d}}\right) \\\\
 PE(pos, 2i+1) &= \cos\left(\frac{pos}{10000^{2i/d}}\right)
 \end{aligned}
 $$
@@ -88,16 +88,16 @@ $$
 
 $$
 \begin{bmatrix}
-\sin\big((pos + k)\omega\big) \\
+\sin\big((pos + k)\omega\big) \\\\
 \cos\big((pos + k)\omega\big)
 \end{bmatrix}
 =
 \begin{bmatrix}
-\cos(k\omega) & \sin(k\omega) \\
+\cos(k\omega) & \sin(k\omega) \\\\
 -\sin(k\omega) & \cos(k\omega)
 \end{bmatrix}
 \begin{bmatrix}
-\sin(pos\omega) \\
+\sin(pos\omega) \\\\
 \cos(pos\omega)
 \end{bmatrix}
 $$
@@ -113,7 +113,7 @@ $$
 R_{\theta}(pos,i)
 =
 \begin{bmatrix}
-\cos(pos\cdot\omega_i) & -\sin(pos\cdot\omega_i) \\
+\cos(pos\cdot\omega_i) & -\sin(pos\cdot\omega_i) \\\\
 \sin(pos\cdot\omega_i) & \cos(pos\cdot\omega_i)
 \end{bmatrix}
 $$
@@ -134,14 +134,14 @@ $$
 $$
 R_{n-m}=
 \begin{bmatrix}
-R\big((n-m)\omega_0\big) & & & \\
-& R\big((n-m)\omega_1\big) & & \\
-& & \ddots & \\
+R\big((n-m)\omega_0\big) & & & \\\\
+& R\big((n-m)\omega_1\big) & & \\\\
+& & \ddots & \\\\
 & & & R\big((n-m)\omega_{\frac{d}{2}-1}\big)
 \end{bmatrix},\quad
 R(\theta)=
 \begin{bmatrix}
-\cos\theta & -\sin\theta \\
+\cos\theta & -\sin\theta \\\\
 \sin\theta & \cos\theta
 \end{bmatrix}
 $$
@@ -259,7 +259,34 @@ $$
 
 ## LayerNorm
 
+全称：Layer Normalization，中文翻译：层归一化，简称：LN
+
+计算公式：
+
+$$
+\text{LayerNorm}(x) = \gamma \cdot \frac{x-\mu}{\sqrt{\sigma^2+\epsilon}} + \beta
+$$
+
+> 公式含义：均值、方差归一化 + 可学习缩放 γ、偏移 β
+
+### 层归一化的目的
+
+1. **稳定每层输入分布，缓解内部协变量偏移（Internal Covariate Shift）**
+网络不断前向传播时，参数持续更新，每层输入的数据分布一直在剧烈变化。
+模型需要持续适应新分布，学习变慢、梯度容易爆炸 / 消失。
+归一化把特征强制调整到均值≈0，方差≈1，让后续层不用持续适应变化的数据分布。
+“防止输出越传越大” 只是现象之一；本质是控制特征分布波动，不只限制幅值变大，也防止幅值持续变小。
+2. **加速训练、允许使用更大学习率**
+分布稳定后梯度更加平滑，优化器收敛更快。
+3. **缓解梯度消失 / 梯度爆炸**
+激活输入不会持续偏移到激活函数饱和区域（比如 sigmoid 两端梯度接近 0）。
+4. **降低参数初始化、学习率调参压力**
+
+> 注意：现代 GPT 采用的是 Pre-LN，而非论文中提到的 Post-LN，二者有非常大的差别
+
 ## FFN
+
+全称：Feed Forward Network，中文翻译：前馈网络
 
 ### SwiGLU
 
