@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #16a4ff;
+  background: #004dfe;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2980,4 +2980,17 @@ pre .javascript .function {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.MathJax_Display,
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding-bottom: 8px;
+}
+.post-body .MathJax_Display,
+.post-body mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
