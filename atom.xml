@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://liuqinh2s.github.io/"/>
-  <updated>2026-07-21T08:08:12.385Z</updated>
+  <updated>2026-07-29T06:41:42.797Z</updated>
   <id>https://liuqinh2s.github.io/</id>
   
   <author>
@@ -17,23 +17,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Transformer学习笔记</title>
+    <link href="https://liuqinh2s.github.io/2026/07/27/Transformer%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://liuqinh2s.github.io/2026/07/27/Transformer学习笔记/</id>
+    <published>2026-07-27T00:00:00.000Z</published>
+    <updated>2026-07-29T06:41:42.797Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;大模型自学笔记&quot;&gt;&lt;a href=&quot;#大模型自学笔记&quot; class=&quot;headerlink&quot; title=&quot;大模型自学笔记&quot;&gt;&lt;/a&gt;大模型自学笔记&lt;/h1&gt;&lt;p&gt;大模型就两块内容：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;推理原理&lt;/li&gt;
+&lt;li&gt;训练原理&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Transformer架构图&quot;&gt;&lt;a href=&quot;#Transformer架构图&quot; class=&quot;headerlink&quot; title=&quot;Transformer架构图&quot;&gt;&lt;/a&gt;Transformer架构图&lt;/h2&gt;&lt;p&gt;从论文：《 Attention is all you need 》开始学习。先看看整个 Transformer 架构图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://arxiv.org/html/1706.03762v7/Figures/ModalNet-21.png&quot; alt=&quot;Transformer架构图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="https://liuqinh2s.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="AI" scheme="https://liuqinh2s.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>刘钦的网络周刊#1：欧洲高温与“空调的历史债”</title>
     <link href="https://liuqinh2s.github.io/2026/07/05/%E5%88%98%E9%92%A6%E7%9A%84%E7%BD%91%E7%BB%9C%E5%91%A8%E5%88%8A-1/"/>
     <id>https://liuqinh2s.github.io/2026/07/05/刘钦的网络周刊-1/</id>
     <published>2026-07-05T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;周刊宗旨：为终身学习者打造高质量信息源。&lt;/p&gt;
+      &lt;p&gt;周刊宗旨：为终身学习者打造高质量信息源。&lt;/p&gt;
 &lt;p&gt;更新节奏：每周日发布。&lt;/p&gt;
-&lt;h1&gt;&lt;span id=&quot;ben-qi-mu-lu&quot;&gt;本期目录&lt;/span&gt;&lt;a href=&quot;#ben-qi-mu-lu&quot;
-        
-      
+&lt;h2 id=&quot;封面图&quot;&gt;&lt;a href=&quot;#封面图&quot; class=&quot;headerlink&quot; title=&quot;封面图&quot;&gt;&lt;/a&gt;封面图&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1782840784409-3ed7096efd1e?q=80&amp;amp;w=930&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;ixlib=rb-4.1.0&amp;amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot; alt=&quot;Modern dji mini 3 pro drone on a dark background. photo – Free Technology Image on Unsplash&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这幅图带着科技的美感，虽不似自然之美，但人造之物竟然也可以让人感受到足够的精美，也许这就是一种天工开物之美吧。人类于自然中总结学习世界的本质规律，掌握并亲手刻画道痕，这就是人性中包含着神性的部分。&lt;/p&gt;
+&lt;h2 id=&quot;首刊寄语&quot;&gt;&lt;a href=&quot;#首刊寄语&quot; class=&quot;headerlink&quot; title=&quot;首刊寄语&quot;&gt;&lt;/a&gt;首刊寄语&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;为什么我决定做这个网络周刊？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因为，从现在开始，长期、固定地在互联网上输出，而不是做一个透明人——这件事对普通人越来越重要。⁠&lt;br&gt;⁠&lt;br&gt;我们正生活在一个“只获取、不表达”的时代：刷短视频、看评论、收藏转发，看似信息爆炸，实际却很容易形成路径依赖——只接收、不消化；只点赞、不组织；只围观、不表达。久而久之，一个人的表达欲会被磨损，表达能力会退化，最终在公共讨论中失去位置：听得见世界，却发不出自己的声音。⁠&lt;br&gt;⁠&lt;br&gt;我想把这份《网络周刊》当作一个长期练习：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;练习把输入变成输出，把“看到的”变成“想清楚的”；&lt;/li&gt;
+&lt;li&gt;练习把碎片变成结构，把杂音变成观点；&lt;/li&gt;
+&lt;li&gt;练习在陌生人组成的世界里，建立连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输出当然不轻松，但它并不需要一开始就精美。日更很难，月更太慢，&lt;strong&gt;周更是普通人最好的节律&lt;/strong&gt;：频率足够形成复利，又不会压垮生活。最好固定在每周同一天发布，让自己与读者都形成“期待”。&lt;br&gt;⁠⁠&lt;br&gt;&lt;strong&gt;写什么？&lt;/strong&gt; 写你真正在意的：你这一周关心的事、被触动的观点、学到的技能、审美的瞬间、对生活的观察。你可以引用，但一定要转述与消化：搬运不产生理解，转述才能长出自己的表达。&lt;/p&gt;
     
     </summary>
     
@@ -51,7 +80,7 @@
     <link href="https://liuqinh2s.github.io/2026/06/05/%E9%87%8D%E5%A4%A7%E6%96%B0%E9%97%BB%E6%8C%96%E6%8E%98%E5%99%A8/"/>
     <id>https://liuqinh2s.github.io/2026/06/05/重大新闻挖掘器/</id>
     <published>2026-06-05T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -75,7 +104,7 @@
     <link href="https://liuqinh2s.github.io/2025/09/18/%E4%BB%A3%E7%A0%81%E8%80%A6%E5%90%88/"/>
     <id>https://liuqinh2s.github.io/2025/09/18/代码耦合/</id>
     <published>2025-09-18T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -98,7 +127,7 @@
     <link href="https://liuqinh2s.github.io/2025/08/22/Figma%E7%AC%94%E8%AE%B0/"/>
     <id>https://liuqinh2s.github.io/2025/08/22/Figma笔记/</id>
     <published>2025-08-22T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -124,7 +153,7 @@
     <link href="https://liuqinh2s.github.io/2025/08/22/%E4%BB%93%E9%BC%A0%E5%AF%BC%E8%88%AA/"/>
     <id>https://liuqinh2s.github.io/2025/08/22/仓鼠导航/</id>
     <published>2025-08-22T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -151,7 +180,7 @@
     <link href="https://liuqinh2s.github.io/2025/08/20/git%E7%AC%94%E8%AE%B0/"/>
     <id>https://liuqinh2s.github.io/2025/08/20/git笔记/</id>
     <published>2025-08-20T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -159,7 +188,7 @@
       
         
         
-          &lt;h1&gt;&lt;span id=&quot;git-add-de-yi-yi-shi-shi-me-wei-shi-me-yao-she-ji-chu-zhe-ge&quot;&gt;git add 的意义是什么，为什么要设计出这个？&lt;/span&gt;&lt;a
+          &lt;h1 id=&quot;git-add-的意义是什么，为什么要设计出这个？&quot;&gt;&lt;a href=&quot;#git-add-的意义是什么，为什么要设计出这个？&quot; class=&quot;headerlink&quot; title=&quot;git add 的意义是什么，为什么要设计出这个？&quot;&gt;&lt;/a&gt;git add
         
       
     
@@ -175,7 +204,7 @@
     <link href="https://liuqinh2s.github.io/2025/08/11/Vue%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/08/11/Vue总结/</id>
     <published>2025-08-11T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -195,7 +224,7 @@
     <link href="https://liuqinh2s.github.io/2025/07/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E7%AA%97%E5%8F%A3%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/07/24/浏览器跨窗口通信总结/</id>
     <published>2025-07-24T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -215,7 +244,7 @@
     <link href="https://liuqinh2s.github.io/2025/07/21/%E5%B8%B8%E7%94%A8%20react%20hooks%20%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2025/07/21/常用 react hooks 总结/</id>
     <published>2025-07-21T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.385Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -233,7 +262,7 @@
     <link href="https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB/"/>
     <id>https://liuqinh2s.github.io/2025/06/23/我的互联网生活/</id>
     <published>2025-06-23T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -251,7 +280,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/12/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
     <id>https://liuqinh2s.github.io/2024/11/12/重新整理博客/</id>
     <published>2024-11-12T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -273,7 +302,7 @@
     <link href="https://liuqinh2s.github.io/2024/11/11/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB%E5%AE%9E%E8%B7%B5/"/>
     <id>https://liuqinh2s.github.io/2024/11/11/囚徒健身实践/</id>
     <published>2024-11-11T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -303,7 +332,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/26/%E6%88%91%E5%AF%B9%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%9C%8B%E6%B3%95/"/>
     <id>https://liuqinh2s.github.io/2024/08/26/我对读书的看法/</id>
     <published>2024-08-26T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -332,7 +361,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/14/%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/"/>
     <id>https://liuqinh2s.github.io/2024/08/14/投资总结/</id>
     <published>2024-08-14T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -355,7 +384,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/13/free-resource/"/>
     <id>https://liuqinh2s.github.io/2024/08/13/free-resource/</id>
     <published>2024-08-13T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -373,7 +402,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E4%BD%9C%E5%93%81%E7%89%88%E6%9D%83%E8%AF%81%E5%88%B8%E5%8C%96/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/作品版权证券化/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.796Z</updated>
     
     <summary type="html">
     
@@ -392,7 +421,7 @@
     <link href="https://liuqinh2s.github.io/2024/08/03/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/"/>
     <id>https://liuqinh2s.github.io/2024/08/03/星露谷物语/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.797Z</updated>
     
     <summary type="html">
     
@@ -413,7 +442,7 @@
     <link href="https://liuqinh2s.github.io/2023/12/05/JavaScript%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/"/>
     <id>https://liuqinh2s.github.io/2023/12/05/JavaScript如何实现节流和防抖函数/</id>
     <published>2023-12-05T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.796Z</updated>
     
     <summary type="html">
     
@@ -433,31 +462,13 @@
     <link href="https://liuqinh2s.github.io/2023/11/23/JavaScript%E7%9A%84var,let,const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://liuqinh2s.github.io/2023/11/23/JavaScript的var,let,const的区别/</id>
     <published>2023-11-23T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
+    <updated>2026-07-29T06:41:42.796Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;首先&lt;code&gt;var&lt;/code&gt;,&lt;code&gt;let&lt;/code&gt;,&lt;code&gt;const&lt;/code&gt;都是用于定义变量，这是它们的共同点，那么它们的区别呢？&lt;/p&gt;
 &lt;p&gt;其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）:&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.a);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模拟实现JavaScript的bind方法</title>
-    <link href="https://liuqinh2s.github.io/2023/11/22/%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0JavaScript%E7%9A%84bind%E6%96%B9%E6%B3%95/"/>
-    <id>https://liuqinh2s.github.io/2023/11/22/模拟实现JavaScript的bind方法/</id>
-    <published>2023-11-22T00:00:00.000Z</published>
-    <updated>2026-07-21T08:08:12.383Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;bind 函数我们经常用到，主要用于换绑 this。其返回值是一个方法。此外我们还可以把一些参数固定下来，相当于封装了一个简易函数。&lt;/p&gt;
     
     </summary>
     
