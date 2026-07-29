@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2018/金丝雀值.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2018/含金丝雀值汇编码1.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2018/含金丝雀值汇编码2.png">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.793Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《CSAPP》 -- 程序的机器级表示">
 <meta name="twitter:description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
@@ -403,7 +403,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,288
+                  6,290
                 </span>
               
 
@@ -570,7 +570,7 @@
 <p>举个例子：t=a+b，a、b、t 都是整形数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CF: (unsigned)t&lt;(unsigned)a       无符号溢出</span><br><span class="line">ZF: (t==0)                        零</span><br><span class="line">SF: (t&lt;0)                         负数</span><br><span class="line">OF: (a&lt;0 == b&lt;0) &amp;&amp; (t&lt;0 != a&lt;0)  有符号溢出</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>OF 的表达式也可以写作：(a<0 && b<0 t>0) || (a&gt;0 &amp;&amp; b&gt;0 &amp;&amp; t&lt;0)，也就是说 a、b 都是负数相加却是正数，或者 a、b 都是正数相加却是负数，这两种情况就代表溢出了。</0></p>
+<p>OF 的表达式也可以写作：(a&lt;0 &amp;&amp; b<0 && t>0) || (a&gt;0 &amp;&amp; b&gt;0 &amp;&amp; t&lt;0)，也就是说 a、b 都是负数相加却是正数，或者 a、b 都是正数相加却是负数，这两种情况就代表溢出了。</0></p>
 </blockquote>
 <p>leal 操作不会改变状态码，因为这个指令只是用来计算地址。除此之外表 3.7 中的所有操作都可能改变状态码。例如逻辑操作：XOR，会使 CF 和 OF 置零，移位操作会使 CF 置为最后一个移位出去的 bit，但 OF 要置零。自增和自减指令会设置 OF 和 ZF，不设置 CF。</p>
 <p>CMP 指令类似于 SUB 指令，但只修改状态码而不改变其他寄存器，如果两个操作数相等，ZF 就会被设置；TEST 指令类似于 AND 指令，但只修改状态码而不改变其他寄存器，如果两个操作数是重复的： testl %eax,%eax，作用是检测%eax 是 0，还是正数，还是负数。</p>
@@ -695,7 +695,7 @@
 <p>而之后的<code>ret</code>指令继续将<code>Return Address</code> pop 出来，并将<code>Return Address</code>放到 PC 中。</p>
 <p>从这个例子我们可以看出，编译器遵循一组简单的惯例来管理栈结构。</p>
 <ol>
-<li>通过%ebp 加偏移量（+8,+12,…）访问参数</li>
+<li>通过%ebp 加偏移量（+8,+12,...）访问参数</li>
 <li>通过 push 指令或者栈指针减偏移量来分配栈空间</li>
 <li>在返回前恢复保存好的寄存器，并使栈指针指向调用者的返回地址（Return Address）</li>
 </ol>
@@ -984,7 +984,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

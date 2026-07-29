@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript执行上下文之作用域链">
 <meta name="twitter:description" content="执行上下文中有个作用域链，当查找一个变量时会顺着这个链找。 函数的作用域在函数定义的时候就决定了。这是因为函数对象有个内部属性[[scope]] 函数的生命周期分为：函数创建 和 函数调用。 函数创建的时候，会把其所处执行上下文的作用域链直接赋值给函数的内部属性[[scope]]（这就是词法作用域的原理了），函数调用的时候会创建自己的执行上下文，并把自己的AO和[[scope]]合并成新的作用域链">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -444,11 +444,11 @@
 <li>全局执行上下文创建，其作用域链就只有自身的 VO，然后将全局上下文压栈：</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ECStack = [];</span><br><span class="line">globalContext = &#123;</span><br><span class="line">  VO,</span><br><span class="line">  Scope: [VO],</span><br><span class="line">  <span class="keyword">this</span>: <span class="built_in">window</span>,</span><br><span class="line">&#125;;</span><br><span class="line">ECStack.push(globalContext);</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="2">
 <li>checkscope 函数被创建，保存当前执行上下文的作用域链到 checkscope 函数的内部属性<code>[[scope]]</code>（这一步是词法作用域实现的关键）</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checkscope.[[scope]] = globalContext.Scope;</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="4">
 <li>调用 checkscope 函数，函数并不立刻执行，开始做准备工作，生成执行上下文，并压入执行上下文栈：</li>
 </ol>
 <ul>
@@ -457,7 +457,7 @@
 <li>this</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    scope2: <span class="literal">undefined</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, [[Scope]]],</span><br><span class="line">&#125;;</span><br><span class="line">ECStack.push(checkscopeContext);</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="5">
 <li>准备工作做完，开始执行函数，随着函数的执行，修改 AO 的属性值，查找到 scope2 的值，返回后函数执行完毕，函数上下文从执行上下文栈中弹出</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">  AO: &#123;</span><br><span class="line">    <span class="built_in">arguments</span>: &#123;</span><br><span class="line">      length: <span class="number">0</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    scope2: <span class="string">"local scope"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  Scope: [AO, [[Scope]]],</span><br><span class="line">&#125;;</span><br><span class="line">ECStack.pop();</span><br></pre></td></tr></table></figure>
@@ -713,7 +713,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

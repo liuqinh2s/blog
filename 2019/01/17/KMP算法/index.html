@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/02/01/5c545a0ceea57.jpg#align=left&display=inline&height=78&linkTarget=_blank&originHeight=78&originWidth=392&width=392">
 <meta property="og:image" content="https://i.loli.net/2019/02/01/5c545a0d27686.jpg#align=left&display=inline&height=100&linkTarget=_blank&originHeight=100&originWidth=418&width=418">
 <meta property="og:image" content="https://i.loli.net/2019/02/01/5c545a0cf058c.jpg#align=left&display=inline&height=90&linkTarget=_blank&originHeight=90&originWidth=410&width=410">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.794Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KMP算法">
 <meta name="twitter:description" content="KMP 算法KMP 算法用来在一个文本中查找模式串，如下图所示： 文本匹配例子：  我们把上面那个长字符串的称为文本，下面这个短的称为模式串。我们的目的是查看ABADABAD是否出现在文本中。 不必要的比较：  跳过不必要的比较：  KMP 算法的核心作用在于帮助模式串顺利的跳过很多不必要的比较（模式串没有任何前缀与文本匹配），直接后移到一部分前缀已经匹配的位置，开始下一次的比较。更准确的讲是移动">
@@ -375,7 +375,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -454,7 +454,6 @@
 <blockquote>
 <p>真前后缀的意思是，前后缀不能是字符串本身，只能是字符串的真子集</p>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -497,7 +496,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <ol>
 <li>i = 0，<code>next[0]</code>，我们填-1；</li>
 <li>i = 1，前面的字符串为<code>A</code>，其最长相同真前后缀长度为 0，即<code>next[1] = 0</code>；</li>
@@ -522,7 +520,6 @@
 <blockquote>
 <p>当然这种错开，和<code>next[0]=-1</code>的设定，不那么自然。其实可以有更自然的设计：</p>
 </blockquote>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -564,7 +561,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>这样一一对应就行了，next 数组也与模式串等长。</p>
 <p>这种 next 表的代码如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span>[] getNextArray(String pattern)&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = <span class="keyword">new</span> <span class="keyword">int</span>[pattern.length()];</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span> &amp;&amp; pattern.charAt(i)!=pattern.charAt(j))&#123;</span><br><span class="line">            j = nextArray[j-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;pattern.length() &amp;&amp; pattern.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            nextArray[i++] = ++j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">            nextArray[i++] = j;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nextArray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">KMP</span><span class="params">(String text, String pattern)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] nextArray = getNextArray(pattern);</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;text.length() &amp;&amp; j&lt;pattern.length())&#123;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;<span class="number">0</span> &amp;&amp; text.charAt(i)!=pattern.charAt(j))&#123;</span><br><span class="line">            j = nextArray[j-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;text.length() &amp;&amp; j&lt;pattern.length() &amp;&amp; text.charAt(i)==pattern.charAt(j))&#123;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j==pattern.length())&#123;</span><br><span class="line">        <span class="keyword">return</span> i-j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -825,7 +821,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

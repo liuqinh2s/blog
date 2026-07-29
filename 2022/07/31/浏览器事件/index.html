@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/事件冒泡.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/事件捕获.png">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/DOM事件流.png">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器事件">
 <meta name="twitter:description" content="事件事件编程是一种观察者模式，可以很好的解耦页面的表现和页面的行为。 事件流事件冒泡 - IE 浏览器：从子节点到祖先节点事件捕获 - Netscape 浏览器：从祖先节点到子节点DOM 事件流 - DOM2 Event 规范 3 个阶段：事件捕获 -&amp;gt; 到达目标 -&amp;gt; 事件冒泡 事件冒泡： 事件捕获： DOM 事件流： 事件处理程序HTML 事件处理程序1&amp;lt;input type">
@@ -375,7 +375,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -479,7 +479,6 @@
 <p>stopPropagation()方法用于立即阻止事件流在 DOM 结构中传播，取消后续的事件捕获或冒泡。例如，直接添加到按钮的事件处理程序中调用 stopPropagation()，可以阻止 document.body 上注册的事件处理程序执行。比如：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"Clicked"</span>);</span><br><span class="line"> event.stopPropagation();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">document</span>.body.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">"Body clicked"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h4 id="eventPhase"><a href="#eventPhase" class="headerlink" title="eventPhase"></a>eventPhase</h4><p>eventPhase 的取值及含义</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -516,7 +515,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.eventPhase); <span class="comment">// 2  事件到达</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">"click"</span>, (event) =&gt; &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.eventPhase); <span class="comment">// 1  事件捕获</span></span><br><span class="line">&#125;, <span class="literal">true</span>);</span><br><span class="line"><span class="built_in">document</span>.body.onclick = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.eventPhase); <span class="comment">// 3  事件冒泡</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="IE-事件对象"><a href="#IE-事件对象" class="headerlink" title="IE 事件对象"></a>IE 事件对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">let</span> event = <span class="built_in">window</span>.event;</span><br><span class="line"> <span class="built_in">console</span>.log(event.type); <span class="comment">// "click"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</span><br><span class="line">btn.attachEvent(<span class="string">"onclick"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(event.type); <span class="comment">// "click"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -804,7 +802,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="执行上下文中包含哪些东西对于每个执行上下文，都有三个重要属性：  变量对象(Variable object，VO) 作用域链(Scope chain) this  本篇就来讲讲第一个变量对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript执行上下文之变量对象">
 <meta name="twitter:description" content="执行上下文中包含哪些东西对于每个执行上下文，都有三个重要属性：  变量对象(Variable object，VO) 作用域链(Scope chain) this  本篇就来讲讲第一个变量对象">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -475,7 +475,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    arguments: &#123;</span><br><span class="line">        0: 1,</span><br><span class="line">        length: 1</span><br><span class="line">    &#125;,</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 3,</span><br><span class="line">    c: reference to function c()&#123;&#125;,</span><br><span class="line">    d: reference to FunctionExpression "d"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><h2 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    a = <span class="number">1</span>;  <span class="comment">// 相当于挂在全局对象上</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(); <span class="comment">// ???</span></span><br></pre></td></tr></table></figure>
 <p>会报错，<code>Uncaught ReferenceError: a is not defined</code></p>
-<p>这是因为函数中的 “a” 并没有通过 var 关键字声明，所有不会被存放在 AO 中。</p>
+<p>这是因为函数中的 &quot;a&quot; 并没有通过 var 关键字声明，所有不会被存放在 AO 中。</p>
 <p>第一段执行 console 的时候， AO 的值是：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AO = &#123;</span><br><span class="line">    arguments: &#123;</span><br><span class="line">        length: 0</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>没有 a 的值，然后就会到全局去找，全局也没有，所以会报错。</p>
@@ -741,7 +741,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

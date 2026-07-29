@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。 首先我们应该思考为什么要有这么一个东西，也就是它的目的是什么？ 目的React Diff 算法的目的是优化真实 DOM 更新，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。 时间复杂度：通过启发式策略（如：同层比较、Key 标识）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Diff 算法">
 <meta name="twitter:description" content="每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。 首先我们应该思考为什么要有这么一个东西，也就是它的目的是什么？ 目的React Diff 算法的目的是优化真实 DOM 更新，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。 时间复杂度：通过启发式策略（如：同层比较、Key 标识）">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  453
+                  456
                 </span>
               
 
@@ -432,7 +432,7 @@
         <p>每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。</p>
 <p>首先我们应该思考为什么要有这么一个东西，也就是它的目的是什么？</p>
 <h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>React Diff 算法的目的是<strong>优化真实 DOM 更新</strong>，手段是搞一套虚拟 DOM 树，并对比新旧虚拟 DOM 树的差异，然后只对有虚拟 DOM 树中有差异的地方去更新真实 DOM。</p>
-<p>时间复杂度：通过启发式策略（如：同层比较、Key 标识）将传统 <script type="math/tex">O(n^3)</script> 复杂度降至 O(n)</p>
+<p>时间复杂度：通过启发式策略（如：同层比较、Key 标识）将传统 $$O(n^3)$$ 复杂度降至 O(n)</p>
 <h2 id="三大核心策略"><a href="#三大核心策略" class="headerlink" title="三大核心策略"></a>三大核心策略</h2><ol>
 <li><strong>Tree Diff（树层比较）</strong><ul>
 <li>仅比较同一层级节点，跨层级移动会触发销毁和重建（如：节点从父节点 A 移动到节点 B，视为删除后重建），疑问？假如父节点 A、B 是同层级，那么它们的子节点（A+B）算同一层级吗</li>
@@ -712,7 +712,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

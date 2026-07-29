@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="有两种作用域：  动态作用域 静态作用域（也叫：词法作用域，lexical scoping）  JavaScript 采用的是词法作用域">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript词法作用域">
 <meta name="twitter:description" content="有两种作用域：  动态作用域 静态作用域（也叫：词法作用域，lexical scoping）  JavaScript 采用的是词法作用域">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -451,7 +451,11 @@
 <p>这两个例子中，虽然函数执行的环境不一样，但打印的结果是一样的，因为还是那个原因，JavaScript 的作用域是静态作用域</p>
 <h1 id="引用犀牛书中的一段话"><a href="#引用犀牛书中的一段话" class="headerlink" title="引用犀牛书中的一段话"></a>引用犀牛书中的一段话</h1><blockquote>
 <p>Like most modern programming languages, JavaScript uses lexical scoping. This means that functions are executed using the variable scope that was in effect when they were defined, not the variable scope that is in effect when they are invoked. In order to implement lexical scoping, the internal state of a JavaScript function object must in- clude not only the code of the function but also a reference to the current scope chain. (Before reading the rest of this section, you may want to review the material on variable scope and the scope chain in §3.10 and §3.10.3.) This combination of a function object and a scope (a set of variable bindings) in which the function’s variables are resolved is called a closure in the computer science literature. (This is an old term that refers to the fact that the function’s variables have bindings in the scope chain and that therefore the function is “closed over” its variables.)</p>
+</blockquote>
+<blockquote>
 <p>Technically, all JavaScript functions are closures: they are objects, and they have a scope chain associated with them. Most functions are invoked using the same scope chain that was in effect when the function was defined, and it doesn’t really matter that there is a closure involved. Closures become interesting when they are invoked under a different scope chain than the one that was in effect when they were defined. This happens most commonly when a nested function object is returned from the function within which it was defined. There are a number of powerful programming techniques that involve this kind of nested function closures, and their use has become relatively common in JavaScript programming. Closures may seem confusing when you first en- counter them, but it is important that you understand them well enough to use them comfortably.</p>
+</blockquote>
+<blockquote>
 <p>JavaScript, The Definite Guide</p>
 </blockquote>
 <h1 id="JavaScript-是如何实现这种词法作用域的"><a href="#JavaScript-是如何实现这种词法作用域的" class="headerlink" title="JavaScript 是如何实现这种词法作用域的"></a>JavaScript 是如何实现这种词法作用域的</h1><p>想要了解这种词法作用域是如何实现的，就要了解 JavaScript 的执行上下文栈，具体请看这篇文章：<a href="../../../07/12/JavaScript执行上下文栈/index.html">JavaScript 执行上下文栈</a></p>
@@ -709,7 +713,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

@@ -90,7 +90,7 @@
 <meta property="og:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/舞蹈链.png">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.796Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数独游戏制作过程记录">
 <meta name="twitter:description" content="我打算自己做一个数独游戏，主要分为两步：  生成一个数独 验证玩家填入的数字是否正确  生成一个数独可以有很省事的办法，就是直接从数独库中随机选一个（甚至可以直接把空白都给你挖好）。也可以用暴力方法（回溯法），一行一行去填，进行不下去就回溯到上一步。 生成数独最高效的算法是：舞蹈链，实际上舞蹈链是一种数据结构，是为了X 算法而产生的，而 X 算法是用来解决一类问题：精确覆盖问题  插个题外话，我朋">
@@ -373,7 +373,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -440,6 +440,8 @@
 <p>生成数独最高效的算法是：<a href="https://zh.wikipedia.org/wiki/%E8%88%9E%E8%B9%88%E9%93%BE" target="_blank" rel="noopener"><strong>舞蹈链</strong></a>，实际上舞蹈链是一种数据结构，是为了<a href="https://zh.wikipedia.org/wiki/X%E7%AE%97%E6%B3%95" target="_blank" rel="noopener"><strong>X 算法</strong></a>而产生的，而 X 算法是用来解决一类问题：<a href="https://zh.wikipedia.org/zh-hans/%E7%B2%BE%E7%A1%AE%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98" target="_blank" rel="noopener"><strong>精确覆盖问题</strong></a></p>
 <blockquote>
 <p>插个题外话，我朋友说，东野圭吾的小说<a href="https://zh.wikipedia.org/zh-hans/%E5%AB%8C%E7%96%91%E7%8A%AFX%E7%9A%84%E7%8D%BB%E8%BA%AB" target="_blank" rel="noopener">《嫌疑犯 X 的献身》</a>，的凶手就在研究这个问题，有兴趣可以顺带看看，这小说挺有名的。</p>
+</blockquote>
+<blockquote>
 <p>精确覆盖问题是一个 NP 完全问题，NP 问题的概念我差不多忘光了，得重新看看</p>
 </blockquote>
 <a id="more"></a>
@@ -523,7 +525,9 @@
 <p>当然也可以用复合数独图，推出复合行，但是复合行可能无法推出单个具体数独图，因为存在一对多的情况，一个很简单的例子就是全 1 的行，对应的是抽象的数独解，而数独解是有 N 个的。</p>
 <blockquote>
 <p>数独的全部解有多少个？</p>
-<p>数独的总个数是这么得出来的。9!×722×27× 27,704,267,971=6,670,903,752,021,072,936,960（约有 6.67×10 的 21 次方）种组合，2005 年由 Bertram Felgenhauer 和 Frazer Jarvis 计算出该数字，如果将重复（如数字交换、对称等）不计算，那么有 5,472,730,538 个组合。那么有趣的来了，有个 9!=362880，这个就等于 9 的全排列，是不是可以从这里做突破口呢？如果我可以随机的生成 362880 个完整的数独矩阵，然后随机的每行挖去 4 到 5 个那就是 <code>362880/24/120*9*362880=411505920</code> 个，这个数字够大家有生之年玩的了。—摘录自<a href="https://blog.csdn.net/peng_wu01/article/details/6026103" target="_blank" rel="noopener">数独— 一个高效率生成数独的算法</a> 真实性有待进一步考证</p>
+</blockquote>
+<blockquote>
+<p>数独的总个数是这么得出来的。9!×722×27× 27,704,267,971=6,670,903,752,021,072,936,960（约有 6.67×10 的 21 次方）种组合，2005 年由 Bertram Felgenhauer 和 Frazer Jarvis 计算出该数字，如果将重复（如数字交换、对称等）不计算，那么有 5,472,730,538 个组合。那么有趣的来了，有个 9!=362880，这个就等于 9 的全排列，是不是可以从这里做突破口呢？如果我可以随机的生成 362880 个完整的数独矩阵，然后随机的每行挖去 4 到 5 个那就是 <code>362880/24/120*9*362880=411505920</code> 个，这个数字够大家有生之年玩的了。--摘录自<a href="https://blog.csdn.net/peng_wu01/article/details/6026103" target="_blank" rel="noopener">数独-- 一个高效率生成数独的算法</a> 真实性有待进一步考证</p>
 </blockquote>
 <h3 id="数独求解"><a href="#数独求解" class="headerlink" title="数独求解"></a>数独求解</h3><p>随便给出一个数独图，也就是相当于给出了舞蹈链中的一行，我们以这一行为入口，即可进行精确覆盖问题的求解，解空间是 729，对应的 01 矩阵大小是：<code>729*324</code>，不过还好是个稀疏矩阵。</p>
 <p>有一个优化必须要说一下：每次选行的时候，选 1 最少的列上的某一行。</p>
@@ -787,7 +791,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

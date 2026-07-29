@@ -90,7 +90,7 @@
 <meta property="og:description" content="c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/04/25/5ae01bb4b32a9.gif">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.792Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 四 -- The Semantics of Function">
 <meta name="twitter:description" content="c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。">
@@ -373,7 +373,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -467,7 +467,7 @@
 <li>其中 vptr 为指向虚函数表的指针，它由编译器产生。vptr 也要进行名字处理，因为一个继承体系可能有多个 vptr。</li>
 <li>1 是虚函数在虚函数表中的索引，通过它关联到虚函数 function().</li>
 </ul>
-<p>何时发生这种转换？答案是在必需的时候 — 一个再熟悉不过的答案。当通过指针调用的时候，要调用的函数实体无法在编译期决定，必需待到执行期才能获得，所以上面引入一个间接层的转换必不可少。但是当我们通过对象（不是引用，也不是指针）来调用的时候，<br>进行上面的转换就显得多余了，因为在编译器要调用的函数实体已经被决定。此时调用发生的转换，与一个非静态成员函数(Nonstatic Member Functions)调用发生的转换一致。p.function()的处理就跟非静态成员函数一样了。</p>
+<p>何时发生这种转换？答案是在必需的时候 -- 一个再熟悉不过的答案。当通过指针调用的时候，要调用的函数实体无法在编译期决定，必需待到执行期才能获得，所以上面引入一个间接层的转换必不可少。但是当我们通过对象（不是引用，也不是指针）来调用的时候，<br>进行上面的转换就显得多余了，因为在编译器要调用的函数实体已经被决定。此时调用发生的转换，与一个非静态成员函数(Nonstatic Member Functions)调用发生的转换一致。p.function()的处理就跟非静态成员函数一样了。</p>
 <h2 id="Static-Member-Function"><a href="#Static-Member-Function" class="headerlink" title="Static Member Function"></a>Static Member Function</h2><ul>
 <li>不能够直接存取其类中的非静态成员（nostatic members），包括不能调用非静态成员函数(Nonstatic Member Functions)。</li>
 <li>不能声明为 const、volatile 或 virtual</li>
@@ -739,7 +739,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

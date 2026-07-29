@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="BFC，Block Formatting Context，块级格式上下文 具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。 触发 BFC只要元素满足下面任一条件即可触发 BFC 特性：  body 根元素 浮动元素：float 除 none 以外的值 绝对定位元素：position (absolute、fi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC">
 <meta name="twitter:description" content="BFC，Block Formatting Context，块级格式上下文 具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。 触发 BFC只要元素满足下面任一条件即可触发 BFC 特性：  body 根元素 浮动元素：float 除 none 以外的值 绝对定位元素：position (absolute、fi">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -440,31 +440,25 @@
 <li>overflow 除了 visible 以外的值 (hidden、auto、scroll)</li>
 </ul>
 <h2 id="BFC-特性及应用"><a href="#BFC-特性及应用" class="headerlink" title="BFC 特性及应用"></a>BFC 特性及应用</h2><h3 id="同一个-BFC-下外边距会重叠"><a href="#同一个-BFC-下外边距会重叠" class="headerlink" title="同一个 BFC 下外边距会重叠"></a>同一个 BFC 下外边距会重叠</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    div&#123;</span></span><br><span class="line"><span class="undefined">        width: 100px;</span></span><br><span class="line"><span class="undefined">        height: 100px;</span></span><br><span class="line"><span class="undefined">        background: lightblue;</span></span><br><span class="line"><span class="undefined">        margin: 100px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/jEypwWo" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/jEypwWo" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
 <p>如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .container &#123;</span></span><br><span class="line"><span class="undefined">        overflow: hidden;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    p &#123;</span></span><br><span class="line"><span class="undefined">        width: 100px;</span></span><br><span class="line"><span class="undefined">        height: 100px;</span></span><br><span class="line"><span class="undefined">        background: lightblue;</span></span><br><span class="line"><span class="undefined">        margin: 100px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/OPWwgNo" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/OPWwgNo" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
 <h3 id="BFC-可以阻止元素被浮动元素覆盖"><a href="#BFC-可以阻止元素被浮动元素覆盖" class="headerlink" title="BFC 可以阻止元素被浮动元素覆盖"></a><strong>BFC 可以阻止元素被浮动元素覆盖</strong></h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100px;width: 100px;float: left;background: lightblue"</span>&gt;</span></span><br><span class="line">  我是一个左浮动的元素</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 200px; height: 200px;background: #eee"</span>&gt;</span></span><br><span class="line">  我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/OPWwgRB" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/OPWwgRB" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100px;width: 100px;float: left;background: lightblue;"</span>&gt;</span></span><br><span class="line">    我是一个左浮动的元素</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 200px; height: 200px;background: #eee; overflow: hidden;"</span>&gt;</span></span><br><span class="line">    我是一个没有设置浮动, 也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/myRjwOL" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/myRjwOL" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
 <h3 id="BFC-可以包含浮动的元素（清除浮动）"><a href="#BFC-可以包含浮动的元素（清除浮动）" class="headerlink" title="BFC 可以包含浮动的元素（清除浮动）"></a><strong>BFC 可以包含浮动的元素（清除浮动）</strong></h3><p>我们都知道，浮动的元素会脱离普通文档流，来看下下面一个例子</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/jEypwVj" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/jEypwVj" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
 <p>由于容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度。如果使触发容器的 BFC，那么容器将会包裹着浮动元素。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;overflow: hidden"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/emgjRgJ" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-</iframe>
+<iframe height="400" style="width: 100%;" scrolling="no" title="示例Pen" src="https://codepen.io/liuqinh2s/embed/emgjRgJ" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><br></iframe>
 
       
     </div>
@@ -716,7 +710,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

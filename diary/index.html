@@ -95,7 +95,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2023/rider目录树自动定位到文件.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/2022/ClashX默认配置.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/11/rbelB5sHhZQLofY.png">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.800Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日记">
 <meta name="twitter:description" content="这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。 2026-06-12我还是打算把所有笔记都搬到notion上。我在wolai上写了不少内容，而且今年充了一年的会员，但是明年我不打算续费了，因为我用notion完全可以满足我的所有需求，另外就是notion这个平台更为可靠（更有名气，用户更多），wo">
@@ -369,7 +369,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rebase origin/main</span><br><span class="line"># 或者如果你的分支不是main，而是其他分支，比如dev，那需要指定分支，比如：git rebase origin/dev </span><br><span class="line"># 我这里是 master 分支，直接 git rebase origin/master</span><br></pre></td></tr></table></figure>
 <p>这里要注意的是origin/main这种格式，而不是 origin main 。origin是远程仓库名，main是远程分支名，中间用斜杠而非空格隔开。远程分支名不一定是main，远程仓库名也可以不是origin，比如当你有多个远程仓库时（当你同时在github和gitee存储了这个项目时，你需要指定远程仓库名），你需要把代码同时推送到GitHub + Gitee，就需要切换远程仓库名了。用 git remote -v 查看当前远程仓库名。用 git brach -r 查看远程分支名。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 先同步远程最新分支列表（必执行，不然看不到新建/已删分支）</span><br><span class="line">git fetch origin --prune</span><br><span class="line"># 只展示远程分支，格式 origin/main、origin/dev</span><br><span class="line">git branch -r</span><br></pre></td></tr></table></figure>
-<p>-r = —remotes，输出带origin/分支名，就是你rebase origin/main用到的名称<br>-a = —all：本地 + 远程分支一起列出 git branch -a<br>-rv：附带每个远程分支最新 commit：git branch -rv</p>
+<p>-r = --remotes，输出带origin/分支名，就是你rebase origin/main用到的名称<br>-a = --all：本地 + 远程分支一起列出 git branch -a<br>-rv：附带每个远程分支最新 commit：git branch -rv</p>
 <blockquote>
 <p>原理：branch -r读本地缓存，不联网；远程刚新建分支，必须先fetch才看得见。</p>
 </blockquote>
@@ -458,7 +458,7 @@
 <h1 id="2024-09-11"><a href="#2024-09-11" class="headerlink" title="2024-09-11"></a>2024-09-11</h1><p>最近在玩两个游戏：factorio（异星工场）和 terraria（泰拉瑞亚）<br>在看的书：从一到无穷大</p>
 <p>肝泰拉瑞亚有点肝不动了，我确实很喜欢游戏里的这种能力获得感，以及通过查游戏攻略来解决问题。长时间玩游戏眼睛吃不消了，打算开始研究真实世界。毕竟真实世界更加丰富而且神秘。</p>
 <p>把 10 拆成两个数，两个数相乘等于 40，要怎么拆？</p>
-<p>需要借助虚数，拆成：<script type="math/tex">5+\sqrt{-15}</script>和<script type="math/tex">5-\sqrt{-15}</script></p>
+<p>需要借助虚数，拆成：$$5+\sqrt{-15}$$和$$5-\sqrt{-15}$$</p>
 <p>在《从一到无穷大》这本书写完后，许多世纪难题都被攻克了，它们有：</p>
 <ol>
 <li>哥德巴赫猜想</li>
@@ -768,7 +768,7 @@
 <li>到项目目录下<code>npm publish --access public</code>，发布公开包（私有包要收费）</li>
 </ol>
 <blockquote>
-<p>注意事项，新建项目的目录不能是中文会报错，如果没充钱—access public 是必须的，包名可能会跟已有的包名冲突，可以通过 npm search xxx 查询</p>
+<p>注意事项，新建项目的目录不能是中文会报错，如果没充钱--access public 是必须的，包名可能会跟已有的包名冲突，可以通过 npm search xxx 查询</p>
 </blockquote>
 <h2 id="npm-依赖包版本号"><a href="#npm-依赖包版本号" class="headerlink" title="npm 依赖包版本号"></a>npm 依赖包版本号</h2><p><a href="https://blog.51cto.com/u_15127697/3633383" target="_blank" rel="noopener">npm 语义版本(npm 依赖包版本的~、&gt;、^符号各代表什么？)</a></p>
 <h1 id="2023-10-17"><a href="#2023-10-17" class="headerlink" title="2023-10-17"></a>2023-10-17</h1><p>SVG 默认开了抗锯齿，会把 1 像素的线条用 2 像素显示</p>
@@ -797,7 +797,7 @@
 <p><code>&amp;zwj;</code>它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。零宽连字符的 Unicode 码位是 U+200D(HTML: ‍ <code>&amp;zwj;</code>）。</p>
 <p>此外，浏览器还会把以下字符当作空白进行解析：空格（<code>&amp;#x0020;</code>）、制表位（<code>&amp;#x0009;</code>）、换行（<code>&amp;#x000A;</code>）和回车（ <code>&amp;#x000D;</code>）还有中文全角空格（<code>&amp;#12288;</code>）等等。</p>
 <blockquote>
-<p>用 tspan 标签和 xml:space=”preserve”也可以解决</p>
+<p>用 tspan 标签和 xml:space=&quot;preserve&quot;也可以解决</p>
 </blockquote>
 <h1 id="2023-08-02"><a href="#2023-08-02" class="headerlink" title="2023-08-02"></a>2023-08-02</h1><p>最近想把某个消息放在组件文件中进行监听，但发现消息总线可能还没注册好，这个时候可以用<code>DOMContentLoaded</code>这个事件。</p>
 <p>官方文档：<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event" target="_blank" rel="noopener">Window: DOMContentLoaded event</a></p>
@@ -1271,7 +1271,7 @@
 <p><a href="https://zhuanlan.zhihu.com/p/55906778" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/55906778</a></p>
 <p>不用其他软件，以管理员权限启动 powershell 敲下面命令即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foreach ($n in (get-appxpackage).packagefamilyname) &#123;checknetisolation loopbackexempt -a -n=&quot;$n&quot;&#125;</span><br></pre></td></tr></table></figure>
-<p>如果只想对某个特定 UWP 应用设置代理，用 $n=(get-appxpackage <em>应用名的独特部分，比如邮件应用是commu</em>).packagefamilyname | checknetisolation loopbackexempt -a -n=”$n”</p>
+<p>如果只想对某个特定 UWP 应用设置代理，用 $n=(get-appxpackage <em>应用名的独特部分，比如邮件应用是commu</em>).packagefamilyname | checknetisolation loopbackexempt -a -n=&quot;$n”</p>
 <p>npm i 之后遇到 hexo 找不到的问题：<code>bash: hexo: command not found</code></p>
 <p>其实就是需要全局安装一下 hexo：<code>npm install -g hexo</code></p>
 <p>还可以使用 npx 来执行，这样就不用全局安装了：<code>npx hexo</code>，npx 会自动下载缺失的模块，但是用完就删了，不会留下痕迹，下次再用还是要联网下载该模块。</p>
@@ -1819,7 +1819,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

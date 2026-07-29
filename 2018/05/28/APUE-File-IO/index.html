@@ -97,7 +97,7 @@
 <meta property="og:image" content="https://i.loli.net/2018/05/31/5b0f4c0dc6161.png">
 <meta property="og:image" content="https://i.loli.net/2018/05/31/5b0f4c6873af3.png">
 <meta property="og:image" content="https://i.loli.net/2018/05/31/5b0f4cf6d20f6.png">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.793Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《APUE-3rd》 读书笔记 -- File I&#x2F;O">
 <meta name="twitter:description" content="前言这章讲的是文件 IO，其中有几个非常重要的概念：  File Desriptors，文件描述符 current file offset，当前文件偏移量 File Sharing Data Structure，文件共享数据模型 file descriptor flags ，文件描述位 file status flags ，文件状态位">
@@ -380,7 +380,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  11,903
+                  11,907
                 </span>
               
 
@@ -526,7 +526,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Returns: 0 if OK, −1 on error</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">close</span><span class="params">(<span class="keyword">int</span> fd)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>Closing a file also releases any record locks that the process may have on the file. We’ll discuss this point further in Section 14.3. 关闭一个文件同样会释放进程对该文件的所有锁。</p>
 <p>When a process terminates, all of its open files are closed automatically by the kernel. Many programs take advantage of this fact and don’t explicitly close open files. See the program in Figure 1.4, for example. 当一个进程终止，所有它打开的文件都会被内核自动关闭。许多程序利用了这一点，不明确关闭文件。</p>
-<h2 id="lseek-Function"><a href="#lseek-Function" class="headerlink" title="lseek Function"></a>lseek Function</h2><p>Every open file has an associated “current file offset,” normally a non-negative integer that measures the number of bytes from the beginning of the file. (We describe some exceptions to the ‘‘non-negative’’ qualifier later in this section.) Read and write operations normally start at the current file offset and cause the offset to be incremented by the number of bytes read or written. By default, this offset is initialized to 0 when a file is opened, unless the O_APPEND option is specified. 每个打开的文件都与 “current file offset”关联，正常情况下它是一个非负整形数，表示从文件开始到目前位置的字节数。读和写操作都是从 current file offset 开始的，并且会让 offset 增加，随着读和写的进行。默认的，当文件被打开时，这个位移初始化时 0，除非指明了 O_APPEND 选项。</p>
+<h2 id="lseek-Function"><a href="#lseek-Function" class="headerlink" title="lseek Function"></a>lseek Function</h2><p>Every open file has an associated “current file offset,” normally a non-negative integer that measures the number of bytes from the beginning of the file. (We describe some exceptions to the ‘‘non-negative’’ qualifier later in this section.) Read and write operations normally start at the current file offset and cause the offset to be incremented by the number of bytes read or written. By default, this offset is initialized to 0 when a file is opened, unless the O_APPEND option is specified. 每个打开的文件都与 &quot;current file offset&quot;关联，正常情况下它是一个非负整形数，表示从文件开始到目前位置的字节数。读和写操作都是从 current file offset 开始的，并且会让 offset 增加，随着读和写的进行。默认的，当文件被打开时，这个位移初始化时 0，除非指明了 O_APPEND 选项。</p>
 <p>An open file’s offset can be set explicitly by calling lseek. 通过调用 lseek 函数，一个打开的文件的 offset 可以被设定。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="keyword">off_t</span> lseek(<span class="keyword">int</span> fd, <span class="keyword">off_t</span> offset, <span class="keyword">int</span> whence);</span><br><span class="line"><span class="comment">// Returns: new file offset if OK, −1 on error</span></span><br></pre></td></tr></table></figure>
 <p>The interpretation of the offset depends on the value of the whence argument.</p>
@@ -578,7 +578,7 @@
 <p>POSIX.1 changed the prototype for this function in several ways. The classic definition is</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int read(int fd, char *buf, unsigned nbytes);</span><br></pre></td></tr></table></figure>
 <ul>
-<li>First, the second argument was changed from char <em> to void </em> to be consistent<br>with ISO C: the type void * is used for generic pointers.</li>
+<li>First, the second argument was changed from char _ to void _ to be consistent<br>with ISO C: the type void * is used for generic pointers.</li>
 <li>Next, the return value was required to be a signed integer (ssize_t) to return a positive byte count, 0 (for end of file), or −1 (for an error).</li>
 <li>Finally, the third argument historically has been an unsigned integer, to allow a 16-bit implementation to read or write up to 65,534 bytes at a time. With the 1990 POSIX.1 standard, the primitive system data type ssize_t was introduced to provide the signed return value, and the unsigned size_t was used for the third argument. (Recall the SSIZE_MAX constant from Section 2.5.2.)</li>
 </ul>
@@ -604,6 +604,8 @@
 <p>We’ll return to this timing example later in the text. In Section 3.14, we show the effect of synchronous writes; in Section 5.8, we compare these unbuffered I/O times with the standard I/O library.</p>
 <blockquote>
 <p>Beware when trying to measure the performance of programs that read and write files. The operating system will try to cache the file incore, so if you measure the performance of the program repeatedly, the successive timings will likely be better than the first. This improvement occurs because the first run causes the file to be entered into the system’s cache, and successive runs access the file from the system’s cache instead of from the disk. (The term incore means in main memory. Back in the day, a computer’s main memory was built out of ferrite core. This is where the phrase ‘‘core dump’’ comes from: the main memory image of a program stored in a file on disk for diagnosis.)</p>
+</blockquote>
+<blockquote>
 <p>In the tests reported in Figure 3.6, each run with a different buffer size was made using a different copy of the file so that the current run didn’t find the data in the cache from the previous run. The files are large enough that they all don’t remain in the cache (the test system was configured with 6 GB of RAM).</p>
 </blockquote>
 <h2 id="File-Sharing"><a href="#File-Sharing" class="headerlink" title="File Sharing"></a>File Sharing</h2><p>The UNIX System supports the sharing of open files among different processes. Before describing the dup function, we need to describe this sharing. To do this, we’ll examine the data structures used by the kernel for all I/O.</p>
@@ -637,7 +639,11 @@
 <p>The arrangement of these three tables has existed since the early versions of the UNIX System [Thompson 1978]. <strong>This arrangement is critical to the way files are shared among processes</strong>. We’ll return to this figure in later chapters, when we describe additional ways that files are shared.</p>
 <blockquote>
 <p><strong>The v-node was invented to provide support for multiple file system types on a single computer system</strong>. This work was done independently by Peter Weinberger (Bell Laboratories) and Bill Joy (Sun Microsystems). <strong>Sun called this the Virtual File System and called the file system–independent portion of the i-node the v-node</strong> [Kleiman 1986]. The v-node propagated through various vendor implementations as support for Sun’s Network File System (NFS) was added. The first release from Berkeley to provide v-nodes was the 4.3BSD Reno release, when NFS was added.</p>
+</blockquote>
+<blockquote>
 <p>In SVR4, the v-node replaced the file system–independent i-node of SVR3. Solaris is derived from SVR4 and, therefore, uses v-nodes.</p>
+</blockquote>
+<blockquote>
 <p>Instead of splitting the data structures into a v-node and an i-node, Linux uses a file system–independent i-node and a file system–dependent i-node.</p>
 </blockquote>
 <p>If two independent processes have the same file open, we could have the arrangement shown in Figure 3.8.</p>
@@ -773,7 +779,7 @@
 </blockquote>
 <p>The prototype that we show corresponds to POSIX.1. FreeBSD 8.0 and Mac OS X 10.6.8 declare the second argument as an unsigned long. This detail doesn’t matter, since the second argument is always a #defined name from a header.</p>
 <p>For the ISO C prototype, an ellipsis is used for the remaining arguments. Normally, however, there is only one more argument, and it’s usually a pointer to a variable or a structure.</p>
-<p>In this prototype, we show only the headers required for the function itself. Normally, additional device-specific headers are required. For example, the ioctl commands for terminal I/O, beyond the basic operations specified by POSIX.1, all require the <termios.h> header.</termios.h></p>
+<p>In this prototype, we show only the headers required for the function itself. Normally, additional device-specific headers are required. For example, the ioctl commands for terminal I/O, beyond the basic operations specified by POSIX.1, all require the &lt;termios.h&gt; header.</p>
 <p>Each device driver can define its own set of ioctl commands. The system, however, provides generic ioctl commands for different classes of devices. Examples of some of the categories for these generic ioctl commands supported in FreeBSD are summarized in Figure 3.15.</p>
 <p><img src="https://i.loli.net/2018/05/31/5b0f4cf6d20f6.png" width="60%"></p>
 <p>The mag tape operations allow us to write end-of-file marks on a tape, rewind a tape, space forward over a specified number of files or records, and the like. None of these operations is easily expressed in terms of the other functions in the chapter (read, write, lseek, and so on), so the easiest way to handle these devices has always been to access their operations using ioctl.</p>
@@ -1071,7 +1077,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

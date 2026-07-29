@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://liuqinh2s.github.io/images/C++对象模型.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/虚基类.jpg">
 <meta property="og:image" content="https://liuqinh2s.github.io/images/虚拟多重继承.jpg">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.792Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Inside the C++ Object Model 系列笔记 一 -- Object Lessons">
 <meta name="twitter:description" content="多态：统一的接口，不同的实现  C++多态（polymorphism） 表示“以一个 public base class 的指针（或者 reference），寻址出一个 derived class object” Layout Costs for Adding Encapsulation(封装) 意思是：为了添加封装所需要付出的内存布局花销  第一章 Object Lessons 介绍了 C++">
@@ -377,7 +377,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -511,7 +511,9 @@
 <p>也就是说你取不到 b 的地址。所以说引用相当于一个 <code>别名</code>。引用常用在函数调用里，可以直接操作原有对象，这样就可以不用写指针的指针这种绕弯的东西了。</p>
 <blockquote>
 <p>函数的实参传递给形参是值传递，也就是一个 copy，形参在函数里将是一个局部变量。这个特性是许多新手面临的大坑。一道经典的考察题目便是，实现一个 C 语言的 swap 函数，由于 C 语言没有引用，你就只能用指针来操作原有对象了。java 更坑，java 没有指针，所以需要用引用，但基础数据类型没有引用，所以你如果要交换基础数据类型的话，根本没办法写 swap 函数。</p>
-<p>如果你对 C 语言的程序栈很了解的话，就会知道形参实际上是不存在的，实参直接拷贝到了寄存器中，所以底层上来说参数都是值拷贝，而且操作结果无法写回到实参，实参稳稳的放在上一个栈帧中从未发生任何变化。具体的细节可以看：<a href="../../../../2018/10/08/程序的机器级表示/#过程调用例子">《CSAPP》读书笔记 — 第 3 章：程序的机器级表示</a></p>
+</blockquote>
+<blockquote>
+<p>如果你对 C 语言的程序栈很了解的话，就会知道形参实际上是不存在的，实参直接拷贝到了寄存器中，所以底层上来说参数都是值拷贝，而且操作结果无法写回到实参，实参稳稳的放在上一个栈帧中从未发生任何变化。具体的细节可以看：<a href="../../../../2018/10/08/程序的机器级表示/#过程调用例子">《CSAPP》读书笔记 -- 第 3 章：程序的机器级表示</a></p>
 </blockquote>
 <h2 id="指针的类型"><a href="#指针的类型" class="headerlink" title="指针的类型"></a>指针的类型</h2><ul>
 <li>对于内存来说，不同类型的指针并没有什么不同。它们都是占用一个 word 的大小（所以 word 的大小决定了内存可访问空间的大小，32 位系统是 4 字节，64 位系统是 8 字节），包含一个数字，这个数字代表内存中的一个地址;</li>
@@ -770,7 +772,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 

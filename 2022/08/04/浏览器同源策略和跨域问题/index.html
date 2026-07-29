@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
 <meta property="og:description" content="面试中经常被问到跨域问题，可以说这是前端网络安全必问的一道题。我感觉之前每次都答得不是很好，要搞清楚几个关键的点：  跨域问题是浏览器才有的问题，如果其他程序请求后端，是不存在跨域问题的，比如爬虫，webpack server，后端程序 前端跨域问题的关键在于后端是否允许跨域，如果后端允许，则也是不存在跨域问题的，正是利用了这一点，XSS 攻击才能成功。 跨域请求是能发送成功的，只是请求结果读取不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2026-07-29T06:41:42.795Z">
+<meta property="og:updated_time" content="2026-07-29T07:18:49.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器同源策略和跨域问题">
 <meta name="twitter:description" content="面试中经常被问到跨域问题，可以说这是前端网络安全必问的一道题。我感觉之前每次都答得不是很好，要搞清楚几个关键的点：  跨域问题是浏览器才有的问题，如果其他程序请求后端，是不存在跨域问题的，比如爬虫，webpack server，后端程序 前端跨域问题的关键在于后端是否允许跨域，如果后端允许，则也是不存在跨域问题的，正是利用了这一点，XSS 攻击才能成功。 跨域请求是能发送成功的，只是请求结果读取不">
@@ -371,7 +371,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T06:41:42+00:00">
+              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T07:18:49+00:00">
                 2026-07-29
               </time>
             
@@ -486,7 +486,7 @@
 <li>Lax 无法防御 GET 型 CSRF，如果支付等高敏感操作使用 GET 请求，就会面临攻击</li>
 </ul>
 <h4 id="CSRF-Token"><a href="#CSRF-Token" class="headerlink" title="CSRF Token"></a>CSRF Token</h4><ol>
-<li>生成：服务器为每个会话生成一个唯一随机 Token（如 crypto.randomBytes(32).toString(‘hex’)，注意 math.random()生成的是伪随机数）</li>
+<li>生成：服务器为每个会话生成一个唯一随机 Token（如 crypto.randomBytes(32).toString(&#39;hex&#39;)，注意 math.random()生成的是伪随机数）</li>
 <li>Token 的传递方式安全，Token 通常通过以下方式传递：<ul>
 <li>表单隐藏字段：如<code>&lt;input type=&quot;hidden&quot; name=&quot;csrf_token&quot; value=&quot;随机值&quot;&gt;</code></li>
 <li>HTTP 请求头：如<code>X-CSRF-Token: 随机值</code>（用于 AJAX 请求）</li>
@@ -770,7 +770,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">130.6k</span>
+    <span title="Site words total count">131.4k</span>
   
 </div>
 
