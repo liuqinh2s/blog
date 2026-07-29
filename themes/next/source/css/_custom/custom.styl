@@ -1,1 +1,18 @@
 // Custom styles.
+
+// 数学公式在窄屏上添加横向滚动
+.MathJax_Display,
+mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding-bottom: 8px;
+}
+
+// 确保公式容器不会超出父元素
+.post-body .MathJax_Display,
+.post-body mjx-container {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
