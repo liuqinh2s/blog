@@ -94,16 +94,16 @@ feed:
 marked:
   smartypants: false
 
-# TOC Configuration
-toc:
-  maxdepth: 3
-  class: toc
-  slugify: transliteration
-  decodeEntities: false
-  anchor:
-    position: after
-    symbol: ""
-    class: null
+# TOC Configuration (removed hexo-toc, using Next theme built-in toc)
+# toc:
+#   maxdepth: 3
+#   class: toc
+#   slugify: false
+#   decodeEntities: false
+#   anchor:
+#     position: after
+#     symbol: ""
+#     class: null
 
 search:
   path: search.xml
