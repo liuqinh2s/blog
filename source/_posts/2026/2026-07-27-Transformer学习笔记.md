@@ -358,7 +358,7 @@ $\sigma'(z) = \sigma(z)\cdot\big(1-\sigma(z)\big)$
 1. 论文：《Attention is all you need》
 2. Transformer
 3. RNN、CNN、DN
-4. 注意力公式：$\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$
+4. 注意力公式：$$\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
 5. QKV，`softmax()`，$d_k$，归一化，方差（Var()），标准差，平均绝对误差 MAE，期望，独立，同分布
 6. 矩阵，向量，向量点积，矩阵乘法，矩阵转置，轴对称，中心对称，镜像
 7. Token ID，词嵌入矩阵X（Embedding），词汇表，$W_Q$，$W_K$，$W_V$
