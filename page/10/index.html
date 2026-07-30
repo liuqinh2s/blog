@@ -179,18 +179,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">116</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags/">
-        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-count">55</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -248,6 +248,167 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/13/HTTP%E7%BC%93%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+      <meta itemprop="name" content="liuqinh2s">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | liuqinh2s' blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2022/08/13/HTTP%E7%BC%93%E5%AD%98/" class="post-title-link" itemprop="url">HTTP缓存</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-13 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-13T00:00:00+00:00">2022-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-30 12:23:55" itemprop="dateModified" datetime="2026-07-30T12:23:55+00:00">2026-07-30</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1>参考</h1>
+<p><a target="_blank" rel="noopener" href="https://github.com/amandakelake/blog/issues/41">https://github.com/amandakelake/blog/issues/41</a></p>
+<h1>概述</h1>
+<h2 id="基本原理">基本原理</h2>
+<p>浏览器在请求资源的时候，根据请求头的 expires 和 cache-control 判断是否命中强缓存，是则直接从缓存读取资源，不会发请求到服务器。</p>
+<p>如果没有命中强缓存，浏览器一定会发送一个请求到服务器，通过 last-modified 和 etag 验证资源是否命中协商缓存，如果命中，服务器会将这个请求返回，但是不会返回这个资源的数据，依然是从缓存中读取资源。</p>
+<p>如果前面两者都没命中，直接从服务器加载资源。</p>
+<h2 id="相同点">相同点</h2>
+<p>如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据。</p>
+<h2 id="不同点">不同点</h2>
+<p>强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
+<h1>强缓存</h1>
+<p>强缓存通过 Expires 和 Cache-Control 两种响应头实现</p>
+<h2 id="Expires">Expires</h2>
+<p>Expires 是 Http1.0 提出的一个表示资源过期时间的 header，它描述的是一个绝对时间，由服务器返回。</p>
+<p>Expires 受限于本地时间，如果修改了本地时间，可能会造成缓存失效。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Expires</span>: <span class="title class_">Wed</span>, <span class="number">11</span> <span class="title class_">May</span> <span class="number">2018</span> <span class="number">07</span>:<span class="number">20</span>:<span class="number">00</span> <span class="variable constant_">GMT</span></span><br></pre></td></tr></table></figure>
+<h2 id="Cache-Control">Cache-Control</h2>
+<p>Cache-Control 出现于 HTTP/1.1，优先级高于 Expires，表示的是相对时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Cache</span>-<span class="title class_">Control</span>: max-age=<span class="number">315360000</span></span><br></pre></td></tr></table></figure>
+<p><code>max-age</code>再结合客户端接收到响应的客户端系统时间，就可以算出实际的客户端过期时间。哪怕一开始时间不准也没关系。比<code>Expires</code>这种绝对时间要好一点</p>
+<p>Cache-Control: no-cache 不会缓存数据到本地的说法是错的，详情《HTTP 权威指南》P182</p>
+<p><img src="https://secure2.wostatic.cn/static/wum3ZUmQc9DarWutUZot7x/image.png?auth_key=1754534532-qVbQqnmsppnejEwk2TxKtE-0-aa32ea74f2d1bb7905d02cf2d65c10fc" alt=""></p>
+<p>Cache-Control: no-store 才是真正的不缓存数据到本地</p>
+<p>Cache-Control: public 可以被所有用户缓存（多用户共享），包括终端和 CDN 等中间代理服务器</p>
+<p>Cache-Control: private 只能被终端浏览器缓存（而且是私有缓存），不允许中继缓存服务器进行缓存</p>
+<p><img src="https://secure2.wostatic.cn/static/smgmHVhU3e8rvNgANy1Jqy/image.png?auth_key=1754534532-rrXomnWU55j4FF1LwXcCpy-0-7492f51de37b531c582b2a938ffe0018" alt=""></p>
+<h1>协商缓存</h1>
+<p>当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，请求响应返回的 http 状态为 304 并且会显示一个 Not Modified 的字符串。</p>
+<p>协商缓存是利用的是【Last-Modified, If-Modified-Since】和【ETag、If-None-Match】这两对 Header 来管理的</p>
+<h2 id="Last-Modified-If-Modified-Since">Last-Modified, If-Modified-Since</h2>
+<p>Last-Modified 表示本地文件最后修改日期，浏览器会在 request header 加上 If-Modified-Since(上次返回的 Last-Modified 的值)，询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来</p>
+<p>但是如果在本地打开缓存文件，就会造成 Last-Modified 被修改，所以在 HTTP/1.1 出现了 ETag</p>
+<h2 id="ETag、If-None-Match">ETag、If-None-Match</h2>
+<p>ETag 就像一个指纹，资源变化都会导致 ETag 变化，跟最后修改时间没关系，ETag 可以保证每一个资源是唯一的</p>
+<p>If-None-Match 的 header 会将上次返回的 ETag 发送给服务器，询问该资源的 ETag 是否有更新，有变动就会发送新的资源回来</p>
+<p><img src="https://secure2.wostatic.cn/static/evDetmt9UjV41T9EyquRLY/image.png?auth_key=1754534532-sLYf5VbRUDuTCurH32X6Fj-0-0b4cd1a5eff0683ebf93266aac16ec83" alt=""></p>
+<p>ETag 的优先级比 Last-Modified 更高</p>
+<p>具体为什么要用 ETag，主要出于以下几种情况的考虑：</p>
+<ul>
+<li>一些文件会周期性的更改，但它的内容并不改变（只改变修改时间），这个时候我们并不希望客户端认为这个文件被修改了，而重新 GET</li>
+<li>某些文件修改非常频繁，比如在秒以下的时间内进行修改（比方说 1s 内修改了 N 次），If-Modified-Since 能检查到的粒度是秒级的，这种修改无法判断（UNIX 记录 MTIME 只能精确到秒）</li>
+<li>某些服务器不能精确的得到文件的最后修改时间。</li>
+</ul>
+<h1>整体流程图</h1>
+<p><img src="https://secure2.wostatic.cn/static/ss7rNkuYjxNQspYC95gxV7/image.png?auth_key=1754534532-d1BjfYQ7DMJ8LyQzzNiK7W-0-31a84997fb561ae6562cce16b2186b4f" alt=""></p>
+<h1>几种状态码的区别</h1>
+<ul>
+<li>200：强缓存 Expires/Cache-Control 失效时，返回新的资源文件</li>
+<li>200（from cache）：强缓存 Expires/Cache-Control 都存在，未过期，Cache-Control 优先于 Expires 时，浏览器从本地获取资源成功</li>
+<li>304（Not Modified）：协商缓存 Last-Modified/ETag 没有过期时，服务器返回状态码 304</li>
+</ul>
+<p>但是！但是！</p>
+<p>现在的 200（from cache）已经变成了 from disk cache（磁盘缓存）和 from memory cache（内存缓存）两种，打开 chrome 控制台看一下网络请求就知道了</p>
+<p><img src="https://secure2.wostatic.cn/static/pqNpWmXPiey42tY2QvoBhT/image.png?auth_key=1754534532-e8G847N18NiFRoLSvuiFwu-0-189125b95f5d729c40d6e6a4037d86ec" alt=""></p>
+<p>具体两者的区别，暂时没有去深究，有兴趣的同学可以自己去研究</p>
+<h1>如何选择合适的缓存</h1>
+<p>大致的顺序</p>
+<ul>
+<li>Cache-Control，请求服务器之前</li>
+<li>Expires，请求服务器之前</li>
+<li>If-None-Match（ETag），请求服务器</li>
+<li>If-Modified-Sine（Last-Modified），请求服务器</li>
+</ul>
+<p>协商缓存需要配合强缓存使用，如果不启用强缓存的话，协商缓存根本没有意义。</p>
+<p>大部分 web 服务器都默认开启协商缓存，而且是同时启用【Last-Modified，If-Modified-Since】和【ETag，If-None-Match】</p>
+<p>但是下面的场景需要注意：</p>
+<ul>
+<li>分布式系统里多台机器间文件的 Last-Modified 必须保持一致，以免负载均衡到不同机器导致比对失败</li>
+<li>分布式系统应尽量关闭掉 ETag（每台机器生成的 ETag 都会不一样）</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/GET%E8%AF%B7%E6%B1%82%E5%92%8CPOST%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -284,7 +445,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-30 10:00:34" itemprop="dateModified" datetime="2026-07-30T10:00:34+00:00">2026-07-30</time>
+      <time title="修改时间：2026-07-30 12:23:55" itemprop="dateModified" datetime="2026-07-30T12:23:55+00:00">2026-07-30</time>
     </span>
 
   
@@ -351,112 +512,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-      <meta itemprop="name" content="liuqinh2s">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | liuqinh2s' blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2022/08/12/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" class="post-title-link" itemprop="url">HTTP状态码</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-08-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-12T00:00:00+00:00">2022-08-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-30 10:00:34" itemprop="dateModified" datetime="2026-07-30T10:00:34+00:00">2026-07-30</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>401</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1>2XX 请求成功</h1>
-<p>200 OK ： 客户端发送给服务器的请求被正常处理并返回</p>
-<h1>3XX 重定向</h1>
-<p>301 Moved Permanently：永久重定向，请求的网页已永久移动到新位置。服务器返回此响应时，会自动将请求者转到新位置。</p>
-<p>302 Moved Temporarily：临时重定向，请求的网页已临时移动到新位置。服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
-<p>304 Not Modified：未修改，自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。</p>
-<h1>4XX 客户端错误</h1>
-<p>400 Bad Request：错误请求，服务器不理解请求的语法，常见于客户端传参错误。</p>
-<p>401 Unauthorized：未授权，表示发送的请求需要有通过 HTTP 认证的认证信息，常见于客户端未登录。</p>
-<p>403 Forbidden：禁止，服务器拒绝请求，常见于客户端权限不足</p>
-<p>404 Not Found：未找到，服务器找不到对应资源</p>
-<h1>5XX 服务端错误</h1>
-<p>500 Inter Server Error：服务器内部错误，服务器遇到错误，无法完成请求</p>
-<p>501 Not Implemented：尚未实施，服务器不具备完成请求的功能</p>
-<p>502 Bad Gateway：作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应</p>
-<p>503 service unavailable：服务不可用，服务器目前无法使用（处于超载或停机维护状态）。通常是暂时状态</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/HTTP%E5%92%8CHTTPS%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -493,7 +548,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-30 10:00:34" itemprop="dateModified" datetime="2026-07-30T10:00:34+00:00">2026-07-30</time>
+      <time title="修改时间：2026-07-30 12:23:55" itemprop="dateModified" datetime="2026-07-30T12:23:55+00:00">2026-07-30</time>
     </span>
 
   
@@ -576,6 +631,112 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+      <meta itemprop="name" content="liuqinh2s">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | liuqinh2s' blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2022/08/12/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/" class="post-title-link" itemprop="url">HTTP状态码</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-12T00:00:00+00:00">2022-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-30 12:23:55" itemprop="dateModified" datetime="2026-07-30T12:23:55+00:00">2026-07-30</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>401</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1>2XX 请求成功</h1>
+<p>200 OK ： 客户端发送给服务器的请求被正常处理并返回</p>
+<h1>3XX 重定向</h1>
+<p>301 Moved Permanently：永久重定向，请求的网页已永久移动到新位置。服务器返回此响应时，会自动将请求者转到新位置。</p>
+<p>302 Moved Temporarily：临时重定向，请求的网页已临时移动到新位置。服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
+<p>304 Not Modified：未修改，自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。</p>
+<h1>4XX 客户端错误</h1>
+<p>400 Bad Request：错误请求，服务器不理解请求的语法，常见于客户端传参错误。</p>
+<p>401 Unauthorized：未授权，表示发送的请求需要有通过 HTTP 认证的认证信息，常见于客户端未登录。</p>
+<p>403 Forbidden：禁止，服务器拒绝请求，常见于客户端权限不足</p>
+<p>404 Not Found：未找到，服务器找不到对应资源</p>
+<h1>5XX 服务端错误</h1>
+<p>500 Inter Server Error：服务器内部错误，服务器遇到错误，无法完成请求</p>
+<p>501 Not Implemented：尚未实施，服务器不具备完成请求的功能</p>
+<p>502 Bad Gateway：作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应</p>
+<p>503 service unavailable：服务不可用，服务器目前无法使用（处于超载或停机维护状态）。通常是暂时状态</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/11/CSS%20%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E4%B8%89%E4%B8%AA%E7%82%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -612,7 +773,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-30 10:00:34" itemprop="dateModified" datetime="2026-07-30T10:00:34+00:00">2026-07-30</time>
+      <time title="修改时间：2026-07-30 12:23:55" itemprop="dateModified" datetime="2026-07-30T12:23:55+00:00">2026-07-30</time>
     </span>
 
   
@@ -668,121 +829,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/10/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-      <meta itemprop="name" content="liuqinh2s">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | liuqinh2s' blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2022/08/10/%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0/" class="post-title-link" itemprop="url">伪类和伪元素</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-08-10 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-10T00:00:00+00:00">2022-08-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-07-30 10:00:34" itemprop="dateModified" datetime="2026-07-30T10:00:34+00:00">2026-07-30</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>113</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1>参考</h1>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements">https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements</a></p>
-<h1>伪类</h1>
-<p>伪类是选择器的一种，用于选择处于特定状态的元素，开头为冒号</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:pseudo-class-name;</span><br></pre></td></tr></table></figure>
-<p>例子：</p>
-<ol>
-<li>:first-child</li>
-<li>:last-child</li>
-<li>:only-child</li>
-<li>:invalid 表示任意内容未通过验证的<code>&lt;input&gt;</code>或其他<code>&lt;form&gt;</code>元素</li>
-<li>:hover</li>
-<li>:focus</li>
-</ol>
-<h1>伪元素</h1>
-<p>伪元素像新的元素，开头为双冒号</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">::pseudo-element-name</span><br></pre></td></tr></table></figure>
-<p>例子：</p>
-<ol>
-<li>::first-line</li>
-<li>::before</li>
-<li>::after</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/blog/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/blog/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/23/">23</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/blog/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/blog/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/blog/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/24/">24</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/blog/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>
@@ -812,7 +860,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:45</span>
+    <span title="站点阅读时长">7:46</span>
   </span>
 </div>
 <div class="busuanzi-count">
