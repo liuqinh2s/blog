@@ -1,7 +1,8 @@
 ---
 title: Transformer学习笔记
 tags: [AI, 学习笔记]
-categries: [学习笔记]
+categories: [学习笔记, AI]
+mathjax: true
 ---
 
 # 大模型自学笔记
@@ -29,13 +30,13 @@ categries: [学习笔记]
 
 图中，无论是左边还是右边，都有 `N×`，意思是多个重复模块，也可以叫：block 。block 之间是串行工作的，前一个 block 的输出会给到后一个 block 作为输入。
 
-> 需要注意的是单个 Block 不包含词嵌入、Positional Encoding、Linear、Softmax 等，只包含 $N \times$ 圈起来的部分
+> 需要注意的是单个 Block 不包含词嵌入、Positional Encoding、Linear、Softmax 等，只包含 $N\times$ 圈起来的部分
 
 接下来我们来细数一下 Transformer 有哪些模块：
 
-1. **Input Embedding和Output Embedding**，它们分别是 Encoder 和 Decoder 的编码模块，可以统称为 Token Embedding（词嵌入）。
+1. **Input Embedding 和 Output Embedding**，它们分别是 Encoder 和 Decoder 的编码模块，可以统称为 Token Embedding（词嵌入）。
 2. **Positional Encoding**（位置编码，简称：PE）。因为 Attention 是不管词之间的顺序的，所以需要额外处理位置信息。
-3. **Multi-Head Attention和Masked Multi-Head Attention**（多头注意力和掩码多头注意力）。多头注意力就是把单注意力在向量维度上进行分割（一般是平均分割），然后计算完注意力后，拼接矩阵（把维度又变回来）。
+3. **Multi-Head Attention 和 Masked Multi-Head Attention**（多头注意力和掩码多头注意力）。多头注意力就是把单注意力在向量维度上进行分割（一般是平均分割），然后计算完注意力后，拼接矩阵（把维度又变回来）。
 4. **Add & Norm**（Add 就是 Residual，残差连接；Norm 是 Layer Normalization，层归一化，简称：LayerNorm）。残差连接的目的是解决深层网络梯度归零，训练不到深层的问题。层归一化使向量均值变成0，方差变成1，目的是稳定每层输入分布，控制特征分布波动。
 5. **Feed Forward**（前馈网络，简称：FFN）。FFN 的目的是引入非线性，存储大量长期知识。
 6. **Linear**（Vocab Projection（词表投影））。与 Token Embedding 共享同一个词汇表矩阵。输出 logits（对数得分），再经过 Softmax 就得到最后每个 token 的概率了。
@@ -55,7 +56,7 @@ Transformer 只负责输出每个 token 的概率（一个 $V$ 维向量，$V$ �
 
 ## 词嵌入
 
-Token Embedding 需要依赖一个 $W_E$ 矩阵（列=词汇数，行=$d_{model}$）。每个 token 用一个 $d_{model}$ 维向量表示。
+Token Embedding 需要依赖一个 $W_E$ 矩阵（列=词汇数，行=$d_{\text{model}}$）。每个 token 用一个 $d_{\text{model}}$ 维向量表示。
 
 程序上看，这个矩阵是一个数组， token id 就是数组 index，根据它就可以直接取到一条 token。
 
@@ -75,7 +76,7 @@ Token Embedding 需要依赖一个 $W_E$ 矩阵（列=词汇数，行=$d_{model}
 
 $$
 \begin{aligned}
-PE(pos, 2i) &= \sin\left(\frac{pos}{10000^{2i/d}}\right) \\\\
+PE(pos, 2i) &= \sin\left(\frac{pos}{10000^{2i/d}}\right) \\
 PE(pos, 2i+1) &= \cos\left(\frac{pos}{10000^{2i/d}}\right)
 \end{aligned}
 $$
@@ -84,26 +85,27 @@ $$
 
 这个编码方式的特性有：
 
-1. 两组不同位置，如果偏移 k 相同，那么它们之间的换算矩阵就相同。从而可以让模型学习到它们的相对距离是相同的：
+1. 两组不同位置，如果偏移 $k$ 相同，那么它们之间的换算矩阵就相同。从而可以让模型学习到它们的相对距离是相同的：
 
-$$
-\begin{bmatrix}
-\sin\big((pos + k)\omega\big) \\\\
-\cos\big((pos + k)\omega\big)
-\end{bmatrix}
-=
-\begin{bmatrix}
-\cos(k\omega) & \sin(k\omega) \\\\
--\sin(k\omega) & \cos(k\omega)
-\end{bmatrix}
-\begin{bmatrix}
-\sin(pos\omega) \\\\
-\cos(pos\omega)
-\end{bmatrix}
-$$
+    $$
+    \begin{bmatrix}
+    \sin\big((pos + k)\omega\big) \\
+    \cos\big((pos + k)\omega\big)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    \cos(k\omega) & \sin(k\omega) \\
+    -\sin(k\omega) & \cos(k\omega)
+    \end{bmatrix}
+    \begin{bmatrix}
+    \sin(pos\omega) \\
+    \cos(pos\omega)
+    \end{bmatrix}
+    $$
 
 2. 每组奇偶维度，就像一个二维平面的时钟，它们的周期是不一样的，低维周期短，便于注意力观察相邻较近的 token 之间的关系，高维周期长，便于注意力观察相隔较远的 token 之间的关系。
-3. 标准正弦位置编码 **不存在有限周期**，不会出现有限位置 P 使得 $\boldsymbol{PE}(pos+P)=\boldsymbol{PE}(pos)$ 对所有 pos 成立。
+
+3. 标准正弦位置编码 **不存在有限周期**，不会出现有限位置 $P$ 使得 $\boldsymbol{PE}(pos+P)=\boldsymbol{PE}(pos)$ 对所有 $pos$ 成立。
 
 ### RoPE
 
@@ -113,7 +115,7 @@ $$
 R_{\theta}(pos,i)
 =
 \begin{bmatrix}
-\cos(pos\cdot\omega_i) & -\sin(pos\cdot\omega_i) \\\\
+\cos(pos\cdot\omega_i) & -\sin(pos\cdot\omega_i) \\
 \sin(pos\cdot\omega_i) & \cos(pos\cdot\omega_i)
 \end{bmatrix}
 $$
@@ -134,14 +136,14 @@ $$
 $$
 R_{n-m}=
 \begin{bmatrix}
-R\big((n-m)\omega_0\big) & & & \\\\
-& R\big((n-m)\omega_1\big) & & \\\\
-& & \ddots & \\\\
+R\big((n-m)\omega_0\big) & & & \\
+& R\big((n-m)\omega_1\big) & & \\
+& & \ddots & \\
 & & & R\big((n-m)\omega_{\frac{d}{2}-1}\big)
 \end{bmatrix},\quad
 R(\theta)=
 \begin{bmatrix}
-\cos\theta & -\sin\theta \\\\
+\cos\theta & -\sin\theta \\
 \sin\theta & \cos\theta
 \end{bmatrix}
 $$
@@ -297,9 +299,9 @@ $$
 \text{FFN}(\boldsymbol{h}) = W_2 \cdot \sigma(W_1 \boldsymbol{h} + b_1)+b_2
 $$
 
-- \(W_1\)：升维（通常 4 倍隐藏维度）
-- 激活函数 \(\sigma\)（GeLU/ReLU）引入非线性
-- \(W_2\)：降维回原始维度
+- $W_1$：升维（通常 4 倍隐藏维度）
+- 激活函数 $\sigma$（GeLU/ReLU）引入非线性
+- $W_2$：降维回原始维度
 
 **核心作用：引入非线性**。如果没有非线性，无论堆叠多少层，本质上也只不过是一层网络，整个模型退化为线性模型，无法学习复杂函数。**FFN 提供整层必不可少的非线性能力。**
 
@@ -310,9 +312,34 @@ FFN：对每个 token 单独、并行变换，不跨 token 运算。
 Attention = 通信、检索、关联匹配
 FFN = 个体内部思考、推理、知识映射
 
+### ReLU
+
+全称：Rectified Linear Unit，中文翻译：修正线性单元（也常译作：整流线性单元）
+
+基础形式 
+
+$\text{ReLU}(z) = \max(0,z)$ 
+
+逐元素运算：
+
+- 当 $z>0$：$\text{ReLU}(z)=z$
+- 当 $z\le0$：$\text{ReLU}(z)=0$
+
+图像特征：正区间线性直通，负区间直接截断到 0。
+
+拓展变体（顺带了解）
+- Leaky ReLU：$\text{LReLU}(z)=\max(\alpha z,z),\alpha\ll1$，缓解神经元死亡
+- PReLU：可学习斜率的 Leaky ReLU
+- ReLU6：$\min(\max(0,z),6)$，移动端量化常用
+
 ### SwiGLU
 
-$\text{SwiGLU}(x,W,V,b,c) = (\boldsymbol{x}W + b) \odot \text{Swish}(\boldsymbol{x}V + c)$
+SwiGLU 是 GLU 门控家族，2020 论文提出，2022 年后开源模型普及：PaLM、LLaMA 系列、Mistral、Qwen、DeepSeek 全部使用 SwiGLU。
+
+> 注意：原生 OpenAI GPT-2、GPT-3、GPT-3.5 基座：没有 SwiGLU！
+> 它们用的是标准单支路 FFN + GELU 激活
+
+$$\text{SwiGLU}(x,W,V,b,c) = (\boldsymbol{x}W + b) \odot \text{Swish}(\boldsymbol{x}V + c)$$
 
 $\odot$：逐元素哈达玛积（element-wise multiply）
 
@@ -320,7 +347,9 @@ $\text{Swish}(z) = z\cdot\sigma(z),\quad \sigma=\text{sigmoid}$
 
 省略偏置的写法：
 
-$\text{SwiGLU}(\boldsymbol{x}) = (W_1\boldsymbol{x}) \odot \big((W_2\boldsymbol{x})\cdot\sigma(W_2\boldsymbol{x})\big)$
+$$
+\text{SwiGLU}(\boldsymbol{x}) = (W_1\boldsymbol{x}) \odot \big((W_2\boldsymbol{x})\cdot\sigma(W_2\boldsymbol{x})\big)
+$$
 
 伪代码：
 
@@ -358,7 +387,8 @@ $\sigma'(z) = \sigma(z)\cdot\big(1-\sigma(z)\big)$
 1. 论文：《Attention is all you need》
 2. Transformer
 3. RNN、CNN、DN
-4. 注意力公式：$$\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
+4. 注意力公式：
+    $$\text{Attention}(Q,K,V)=\text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V$$
 5. QKV，`softmax()`，$d_k$，归一化，方差（Var()），标准差，平均绝对误差 MAE，期望，独立，同分布
 6. 矩阵，向量，向量点积，矩阵乘法，矩阵转置，轴对称，中心对称，镜像
 7. Token ID，词嵌入矩阵X（Embedding），词汇表，$W_Q$，$W_K$，$W_V$

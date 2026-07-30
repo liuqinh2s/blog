@@ -1,0 +1,5 @@
+// 文章页面隐藏友链，只在站点概览显示
+// 当侧边栏处于"文章目录(toc)"激活状态时，隐藏友链
+.sidebar-toc-active ~ .sidebar-blogroll,
+.sidebar-nav-toc.active ~ .sidebar-blogroll
+    display: none !important
