@@ -1,480 +1,396 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>liuqinh2s&#39; blog</title>
-  
-  <subtitle>Do something cool!</subtitle>
-  <link href="/blog/atom.xml" rel="self"/>
-  
-  <link href="https://liuqinh2s.github.io/"/>
-  <updated>2026-07-29T08:45:00.395Z</updated>
-  <id>https://liuqinh2s.github.io/</id>
-  
   <author>
     <name>liuqinh2s</name>
-    
   </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://liuqinh2s.github.io/</id>
+  <link href="https://liuqinh2s.github.io/" rel="alternate"/>
+  <link href="https://liuqinh2s.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, liuqinh2s</rights>
+  <subtitle>Do something cool!</subtitle>
+  <title>liuqinh2s' blog</title>
+  <updated>2026-07-30T10:00:34.516Z</updated>
   <entry>
-    <title>Transformer学习笔记</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="学习笔记" scheme="https://liuqinh2s.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="AI" scheme="https://liuqinh2s.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/AI/"/>
+    <category term="学习笔记" scheme="https://liuqinh2s.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="AI" scheme="https://liuqinh2s.github.io/tags/AI/"/>
+    <id>https://liuqinh2s.github.io/2026/07/27/Transformer%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <link href="https://liuqinh2s.github.io/2026/07/27/Transformer%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://liuqinh2s.github.io/2026/07/27/Transformer学习笔记/</id>
     <published>2026-07-27T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;大模型自学笔记&quot;&gt;&lt;a href=&quot;#大模型自学笔记&quot; class=&quot;headerlink&quot; title=&quot;大模型自学笔记&quot;&gt;&lt;/a&gt;大模型自学笔记&lt;/h1&gt;&lt;p&gt;大模型就两块内容：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;推理原理&lt;/li&gt;
-&lt;li&gt;训练原理&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;Transformer架构图&quot;&gt;&lt;a href=&quot;#Transformer架构图&quot; class=&quot;headerlink&quot; title=&quot;Transformer架构图&quot;&gt;&lt;/a&gt;Transformer架构图&lt;/h2&gt;&lt;p&gt;从论文：《 Attention is all you need 》开始学习。先看看整个 Transformer 架构图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://arxiv.org/html/1706.03762v7/Figures/ModalNet-21.png&quot; alt=&quot;Transformer架构图&quot;&gt;&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<h1>大模型自学笔记</h1>
+<p>大模型就两块内容：</p>
+<ol>
+<li>推理原理</li>
+<li>训练原理</li>
+</ol>
+<h2 id="Transformer架构图">Transformer架构图</h2>
+<p>从论文：《 Attention is all you need 》开始学习。先看看整个 Transformer 架构图：</p>
+<p><img src="https://arxiv.org/html/1706.03762v7/Figures/ModalNet-21.png" alt="Transformer架构图"></p>]]>
     </summary>
-    
-    
-      <category term="学习笔记" scheme="https://liuqinh2s.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="AI" scheme="https://liuqinh2s.github.io/tags/AI/"/>
-    
+    <title>Transformer学习笔记</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>刘钦的网络周刊#1：欧洲高温与“空调的历史债”</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="周刊" scheme="https://liuqinh2s.github.io/tags/%E5%91%A8%E5%88%8A/"/>
+    <category term="热点时事" scheme="https://liuqinh2s.github.io/tags/%E7%83%AD%E7%82%B9%E6%97%B6%E4%BA%8B/"/>
+    <category term="每周精选" scheme="https://liuqinh2s.github.io/tags/%E6%AF%8F%E5%91%A8%E7%B2%BE%E9%80%89/"/>
+    <id>https://liuqinh2s.github.io/2026/07/05/%E5%88%98%E9%92%A6%E7%9A%84%E7%BD%91%E7%BB%9C%E5%91%A8%E5%88%8A-1/</id>
     <link href="https://liuqinh2s.github.io/2026/07/05/%E5%88%98%E9%92%A6%E7%9A%84%E7%BD%91%E7%BB%9C%E5%91%A8%E5%88%8A-1/"/>
-    <id>https://liuqinh2s.github.io/2026/07/05/刘钦的网络周刊-1/</id>
     <published>2026-07-05T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;周刊宗旨：为终身学习者打造高质量信息源。&lt;/p&gt;
-&lt;p&gt;更新节奏：每周日发布。&lt;/p&gt;
-&lt;h2 id=&quot;封面图&quot;&gt;&lt;a href=&quot;#封面图&quot; class=&quot;headerlink&quot; title=&quot;封面图&quot;&gt;&lt;/a&gt;封面图&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://images.unsplash.com/photo-1782840784409-3ed7096efd1e?q=80&amp;amp;w=930&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;ixlib=rb-4.1.0&amp;amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot; alt=&quot;Modern dji mini 3 pro drone on a dark background. photo – Free Technology Image on Unsplash&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这幅图带着科技的美感，虽不似自然之美，但人造之物竟然也可以让人感受到足够的精美，也许这就是一种天工开物之美吧。人类于自然中总结学习世界的本质规律，掌握并亲手刻画道痕，这就是人性中包含着神性的部分。&lt;/p&gt;
-&lt;h2 id=&quot;首刊寄语&quot;&gt;&lt;a href=&quot;#首刊寄语&quot; class=&quot;headerlink&quot; title=&quot;首刊寄语&quot;&gt;&lt;/a&gt;首刊寄语&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;为什么我决定做这个网络周刊？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;因为，从现在开始，长期、固定地在互联网上输出，而不是做一个透明人——这件事对普通人越来越重要。⁠&lt;br&gt;⁠&lt;br&gt;我们正生活在一个“只获取、不表达”的时代：刷短视频、看评论、收藏转发，看似信息爆炸，实际却很容易形成路径依赖——只接收、不消化；只点赞、不组织；只围观、不表达。久而久之，一个人的表达欲会被磨损，表达能力会退化，最终在公共讨论中失去位置：听得见世界，却发不出自己的声音。⁠&lt;br&gt;⁠&lt;br&gt;我想把这份《网络周刊》当作一个长期练习：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;练习把输入变成输出，把“看到的”变成“想清楚的”；&lt;/li&gt;
-&lt;li&gt;练习把碎片变成结构，把杂音变成观点；&lt;/li&gt;
-&lt;li&gt;练习在陌生人组成的世界里，建立连接。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;输出当然不轻松，但它并不需要一开始就精美。日更很难，月更太慢，&lt;strong&gt;周更是普通人最好的节律&lt;/strong&gt;：频率足够形成复利，又不会压垮生活。最好固定在每周同一天发布，让自己与读者都形成“期待”。&lt;br&gt;⁠⁠&lt;br&gt;&lt;strong&gt;写什么？&lt;/strong&gt; 写你真正在意的：你这一周关心的事、被触动的观点、学到的技能、审美的瞬间、对生活的观察。你可以引用，但一定要转述与消化：搬运不产生理解，转述才能长出自己的表达。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>周刊宗旨：为终身学习者打造高质量信息源。</p>
+<p>更新节奏：每周日发布。</p>
+<h2 id="封面图">封面图</h2>
+<p><img src="https://images.unsplash.com/photo-1782840784409-3ed7096efd1e?q=80&amp;w=930&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Modern dji mini 3 pro drone on a dark background. photo – Free Technology Image on Unsplash"></p>
+<p>这幅图带着科技的美感，虽不似自然之美，但人造之物竟然也可以让人感受到足够的精美，也许这就是一种天工开物之美吧。人类于自然中总结学习世界的本质规律，掌握并亲手刻画道痕，这就是人性中包含着神性的部分。</p>
+<h2 id="首刊寄语">首刊寄语</h2>
+<p><strong>为什么我决定做这个网络周刊？</strong></p>
+<p>因为，从现在开始，长期、固定地在互联网上输出，而不是做一个透明人——这件事对普通人越来越重要。⁠<br>
+⁠<br>
+我们正生活在一个“只获取、不表达”的时代：刷短视频、看评论、收藏转发，看似信息爆炸，实际却很容易形成路径依赖——只接收、不消化；只点赞、不组织；只围观、不表达。久而久之，一个人的表达欲会被磨损，表达能力会退化，最终在公共讨论中失去位置：听得见世界，却发不出自己的声音。⁠<br>
+⁠<br>
+我想把这份《网络周刊》当作一个长期练习：</p>
+<ul>
+<li>练习把输入变成输出，把“看到的”变成“想清楚的”；</li>
+<li>练习把碎片变成结构，把杂音变成观点；</li>
+<li>练习在陌生人组成的世界里，建立连接。</li>
+</ul>
+<p>输出当然不轻松，但它并不需要一开始就精美。日更很难，月更太慢，<strong>周更是普通人最好的节律</strong>：频率足够形成复利，又不会压垮生活。最好固定在每周同一天发布，让自己与读者都形成“期待”。<br>
+⁠⁠<br>
+<strong>写什么？</strong> 写你真正在意的：你这一周关心的事、被触动的观点、学到的技能、审美的瞬间、对生活的观察。你可以引用，但一定要转述与消化：搬运不产生理解，转述才能长出自己的表达。</p>]]>
     </summary>
-    
-    
-      <category term="周刊" scheme="https://liuqinh2s.github.io/tags/%E5%91%A8%E5%88%8A/"/>
-    
-      <category term="热点时事" scheme="https://liuqinh2s.github.io/tags/%E7%83%AD%E7%82%B9%E6%97%B6%E4%BA%8B/"/>
-    
-      <category term="每周精选" scheme="https://liuqinh2s.github.io/tags/%E6%AF%8F%E5%91%A8%E7%B2%BE%E9%80%89/"/>
-    
+    <title>刘钦的网络周刊#1：欧洲高温与“空调的历史债”</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>重大新闻挖掘器</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="Vibe Coding" scheme="https://liuqinh2s.github.io/tags/Vibe-Coding/"/>
+    <id>https://liuqinh2s.github.io/2026/06/05/%E9%87%8D%E5%A4%A7%E6%96%B0%E9%97%BB%E6%8C%96%E6%8E%98%E5%99%A8/</id>
     <link href="https://liuqinh2s.github.io/2026/06/05/%E9%87%8D%E5%A4%A7%E6%96%B0%E9%97%BB%E6%8C%96%E6%8E%98%E5%99%A8/"/>
-    <id>https://liuqinh2s.github.io/2026/06/05/重大新闻挖掘器/</id>
     <published>2026-06-05T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今年Vibe Coding的项目中，目前对我来说最具价值的就是这个&lt;a href=&quot;https://liuqinh2s.github.io/news/&quot;&gt;重大新闻挖掘器&lt;/a&gt;项目了。用AI自动发现现象级新闻，一直是我想做的一个东西，现在Vibe Coding这么成熟，我终于抽出时间把它做了出来。我喜爱的新闻主要是这么几个方面：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;社交媒体热烈讨论传播的，已经不局限在小圈子，而是破圈传播。&lt;/li&gt;
-&lt;li&gt;科技类新闻，因为科技进步关乎人类命运，和世界未来发展。&lt;/li&gt;
-&lt;li&gt;经济类新闻，帮助我在投资理财市场中保持敏感度，及时抓住机会。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;总体来说，只要是真正现象级的新闻我都不希望错过。我还将根据一整年的新闻数据，总结出大事记，词云图，新闻趋势图，帮助我更好地理解世界的发展趋势，窥见未来的发展方向，以及社会人群心理变化。当然也可以简简单单的当作回忆这一年的珍贵资料，待到我死去，这就是珍贵的社会历史资料。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>今年Vibe Coding的项目中，目前对我来说最具价值的就是这个<a href="https://liuqinh2s.github.io/news/">重大新闻挖掘器</a>项目了。用AI自动发现现象级新闻，一直是我想做的一个东西，现在Vibe Coding这么成熟，我终于抽出时间把它做了出来。我喜爱的新闻主要是这么几个方面：</p>
+<ol>
+<li>社交媒体热烈讨论传播的，已经不局限在小圈子，而是破圈传播。</li>
+<li>科技类新闻，因为科技进步关乎人类命运，和世界未来发展。</li>
+<li>经济类新闻，帮助我在投资理财市场中保持敏感度，及时抓住机会。</li>
+</ol>
+<p>总体来说，只要是真正现象级的新闻我都不希望错过。我还将根据一整年的新闻数据，总结出大事记，词云图，新闻趋势图，帮助我更好地理解世界的发展趋势，窥见未来的发展方向，以及社会人群心理变化。当然也可以简简单单的当作回忆这一年的珍贵资料，待到我死去，这就是珍贵的社会历史资料。</p>]]>
     </summary>
-    
-    
-      <category term="Vibe Coding" scheme="https://liuqinh2s.github.io/tags/Vibe-Coding/"/>
-    
+    <title>重大新闻挖掘器</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>代码耦合</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="软件工程" scheme="https://liuqinh2s.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    <id>https://liuqinh2s.github.io/2025/09/18/%E4%BB%A3%E7%A0%81%E8%80%A6%E5%90%88/</id>
     <link href="https://liuqinh2s.github.io/2025/09/18/%E4%BB%A3%E7%A0%81%E8%80%A6%E5%90%88/"/>
-    <id>https://liuqinh2s.github.io/2025/09/18/代码耦合/</id>
     <published>2025-09-18T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;编程绕不开的一个话题：耦合&lt;/p&gt;
-&lt;p&gt;耦合其实是个中性词，代码模块之间要相互协作完成任务，就必定要耦合。&lt;strong&gt;耦合即：一方对另一方的假设&lt;/strong&gt;。你不可能对协作的对象不做任何假设，所以其实有些耦合是必须的。我们要解决的是非必要的，不良的耦合。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如无必要，不要使代码耦合，过度耦合会加速代码腐烂（比如：难加新功能，难修 bug）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;对另一方做尽可能少的假设其实只是手段之一，而且这种手段势必会让代码变得更加抽象复杂。另一种手段就是：制定标准和建立知识库，大家用共同的标准和共有的知识去沟通，就会非常顺畅，反之则寸步难行。所以当你觉得你们的项目程序写得稀烂，先不要关注过度耦合的问题，先看看是不是连标准都没制定，公共知识库都没有建立，人员不知道不遵守既定标准和知识。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>编程绕不开的一个话题：耦合</p>
+<p>耦合其实是个中性词，代码模块之间要相互协作完成任务，就必定要耦合。<strong>耦合即：一方对另一方的假设</strong>。你不可能对协作的对象不做任何假设，所以其实有些耦合是必须的。我们要解决的是非必要的，不良的耦合。</p>
+<blockquote>
+<p>如无必要，不要使代码耦合，过度耦合会加速代码腐烂（比如：难加新功能，难修 bug）</p>
+</blockquote>
+<p>对另一方做尽可能少的假设其实只是手段之一，而且这种手段势必会让代码变得更加抽象复杂。另一种手段就是：制定标准和建立知识库，大家用共同的标准和共有的知识去沟通，就会非常顺畅，反之则寸步难行。所以当你觉得你们的项目程序写得稀烂，先不要关注过度耦合的问题，先看看是不是连标准都没制定，公共知识库都没有建立，人员不知道不遵守既定标准和知识。</p>]]>
     </summary>
-    
-    
-      <category term="软件工程" scheme="https://liuqinh2s.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
-    
+    <title>代码耦合</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>仓鼠导航</title>
-    <link href="https://liuqinh2s.github.io/2025/08/22/%E4%BB%93%E9%BC%A0%E5%AF%BC%E8%88%AA/"/>
-    <id>https://liuqinh2s.github.io/2025/08/22/仓鼠导航/</id>
-    <published>2025-08-22T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;最近又开始想自己做做项目了，这个项目我思考了好几年，早就想做，但是一拖再拖。但最近愈发觉得，这个项目实在好，应该去做。理由如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;这个赛道我特别喜欢，我就喜欢收藏一些特别有趣的网站&lt;/li&gt;
-&lt;li&gt;可以锻炼技术能力，光靠公司项目，很多技术还未尝试
-        
-      
-    
-    </summary>
-    
-    
-      <category term="独立开发" scheme="https://liuqinh2s.github.io/tags/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Figma笔记</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="UI设计" scheme="https://liuqinh2s.github.io/tags/UI%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://liuqinh2s.github.io/2025/08/22/Figma%E7%AC%94%E8%AE%B0/</id>
     <link href="https://liuqinh2s.github.io/2025/08/22/Figma%E7%AC%94%E8%AE%B0/"/>
-    <id>https://liuqinh2s.github.io/2025/08/22/Figma笔记/</id>
     <published>2025-08-22T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;早就听闻 Figma 市值非常高（大概好几年前吧），把 Adobe PhotoShop 都给干下去了。以前只是听闻 Figma 用起来比 PhotoShop 更简单所以才深受用户喜爱，现在感觉事情并没有那么简单，Figma 市值之所以那么高肯定是有原因的，原因应该是盈利确实很好，市占率确实很高，因为我发现它好像是专门做 UI 设计的工具，而随便一想就知道这块蛋糕在现在这个时代是特别大的。&lt;/p&gt;
-&lt;p&gt;我的东家也是做白板类项目的，不过也是做垂直领域，EDA，项目地址在此：&lt;a href=&quot;https://pro.lceda.cn/editor&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;嘉立创 EDA 专业版&lt;/a&gt;。我所了解的其他白板项目有这些：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://excalidraw.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Excalidraw&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://songlh.top/paint-board/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;paint-board&lt;/a&gt;，&lt;a href=&quot;https://github.com/LHRUN/paint-board?tab=readme-ov-file&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://yft.design/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;yft-design&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/kkoomen/pointless&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;pointless&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;可见能结合具体业务，垂直发展，才是白板项目能否壮大的关键。而具体业务也有大有小，UI 设计，海报设计这些用户面大所以相应的市值也非常高。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>早就听闻 Figma 市值非常高（大概好几年前吧），把 Adobe PhotoShop 都给干下去了。以前只是听闻 Figma 用起来比 PhotoShop 更简单所以才深受用户喜爱，现在感觉事情并没有那么简单，Figma 市值之所以那么高肯定是有原因的，原因应该是盈利确实很好，市占率确实很高，因为我发现它好像是专门做 UI 设计的工具，而随便一想就知道这块蛋糕在现在这个时代是特别大的。</p>
+<p>我的东家也是做白板类项目的，不过也是做垂直领域，EDA，项目地址在此：<a href="https://pro.lceda.cn/editor">嘉立创 EDA 专业版</a>。我所了解的其他白板项目有这些：</p>
+<ul>
+<li><a href="https://excalidraw.com/">Excalidraw</a></li>
+<li><a href="https://songlh.top/paint-board/">paint-board</a>，<a href="https://github.com/LHRUN/paint-board?tab=readme-ov-file">LHRUN/paint-board: 🎨 A powerful multi-end drawing board that brings together a lot of creative brushes to experience a whole new range of drawing effects!</a></li>
+<li><a href="https://yft.design/">yft-design</a></li>
+<li><a href="https://github.com/kkoomen/pointless">pointless</a></li>
+</ul>
+<p>可见能结合具体业务，垂直发展，才是白板项目能否壮大的关键。而具体业务也有大有小，UI 设计，海报设计这些用户面大所以相应的市值也非常高。</p>]]>
     </summary>
-    
-    
-      <category term="UI设计" scheme="https://liuqinh2s.github.io/tags/UI%E8%AE%BE%E8%AE%A1/"/>
-    
+    <title>Figma笔记</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>git笔记</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="独立开发" scheme="https://liuqinh2s.github.io/tags/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91/"/>
+    <id>https://liuqinh2s.github.io/2025/08/22/%E4%BB%93%E9%BC%A0%E5%AF%BC%E8%88%AA/</id>
+    <link href="https://liuqinh2s.github.io/2025/08/22/%E4%BB%93%E9%BC%A0%E5%AF%BC%E8%88%AA/"/>
+    <published>2025-08-22T00:00:00.000Z</published>
+    <summary>
+      <![CDATA[<p>最近又开始想自己做做项目了，这个项目我思考了好几年，早就想做，但是一拖再拖。但最近愈发觉得，这个项目实在好，应该去做。理由如下：</p>
+<ol>
+<li>这个赛道我特别喜欢，我就喜欢收藏一些特别有趣的网站</li>
+<li>可以锻炼技术能力，光靠公司项目，很多技术还未尝试]]>
+    </summary>
+    <title>仓鼠导航</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="git" scheme="https://liuqinh2s.github.io/tags/git/"/>
+    <id>https://liuqinh2s.github.io/2025/08/20/git%E7%AC%94%E8%AE%B0/</id>
     <link href="https://liuqinh2s.github.io/2025/08/20/git%E7%AC%94%E8%AE%B0/"/>
-    <id>https://liuqinh2s.github.io/2025/08/20/git笔记/</id>
     <published>2025-08-20T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;git-add-的意义是什么，为什么要设计出这个？&quot;&gt;&lt;a href=&quot;#git-add-的意义是什么，为什么要设计出这个？&quot; class=&quot;headerlink&quot; title=&quot;git add 的意义是什么，为什么要设计出这个？&quot;&gt;&lt;/a&gt;git add
-        
-      
-    
+    <summary>
+      <![CDATA[<h1>git add 的意义是什么，为什么要设计出这个？</h1>
+<p>答：git add 的意义是提交粒度的精细化控制。使用 git add -p 可以精细到代码块。git add 引入&quot;暂存区&quot;（Staging Area）概念]]>
     </summary>
-    
-    
-      <category term="git" scheme="https://liuqinh2s.github.io/tags/git/"/>
-    
+    <title>git笔记</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>Vue 总结</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="Vue" scheme="https://liuqinh2s.github.io/tags/Vue/"/>
+    <id>https://liuqinh2s.github.io/2025/08/11/Vue%E6%80%BB%E7%BB%93/</id>
     <link href="https://liuqinh2s.github.io/2025/08/11/Vue%E6%80%BB%E7%BB%93/"/>
-    <id>https://liuqinh2s.github.io/2025/08/11/Vue总结/</id>
     <published>2025-08-11T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Vue 也是比较常用的前端框架，我这篇文章尝试总结一下 Vue 的常用知识点&lt;/p&gt;
-&lt;h2 id=&quot;声明式编程-组件式开发&quot;&gt;&lt;a href=&quot;#声明式编程-组件式开发&quot; class=&quot;headerlink&quot; title=&quot;声明式编程 + 组件式开发&quot;&gt;&lt;/a&gt;声明式编程 + 组件式开发&lt;/h2&gt;&lt;p&gt;js 原生语言和 JQuery 这类库，都是命令式的编程，而 Vue 和 React 这类框架，则是声明式编程，或者说是数据驱动式编程。它们的区别在于是否要手动操作 DOM 更新视图。声明式编程只需要关注数据更新，而不用操心 DOM 的更新。&lt;/p&gt;
-&lt;p&gt;早先的前端开发都是&lt;code&gt;html&lt;/code&gt;、&lt;code&gt;js&lt;/code&gt;、&lt;code&gt;css&lt;/code&gt;三类文件分离的。如果类比做人体的话，html 就像人体的骨骼，是个架子；js 就像人体的肌肉，可以让人体动起来；css 就像皮肤，负责外观。但现在前端编程又回到了融合它们三个的组件式开发的时代。因为组件式开发，封装性更强，这也意味着维护更简单，使用更方便。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>Vue 也是比较常用的前端框架，我这篇文章尝试总结一下 Vue 的常用知识点</p>
+<h2 id="声明式编程-组件式开发">声明式编程 + 组件式开发</h2>
+<p>js 原生语言和 JQuery 这类库，都是命令式的编程，而 Vue 和 React 这类框架，则是声明式编程，或者说是数据驱动式编程。它们的区别在于是否要手动操作 DOM 更新视图。声明式编程只需要关注数据更新，而不用操心 DOM 的更新。</p>
+<p>早先的前端开发都是<code>html</code>、<code>js</code>、<code>css</code>三类文件分离的。如果类比做人体的话，html 就像人体的骨骼，是个架子；js 就像人体的肌肉，可以让人体动起来；css 就像皮肤，负责外观。但现在前端编程又回到了融合它们三个的组件式开发的时代。因为组件式开发，封装性更强，这也意味着维护更简单，使用更方便。</p>]]>
     </summary>
-    
-    
-      <category term="Vue" scheme="https://liuqinh2s.github.io/tags/Vue/"/>
-    
+    <title>Vue 总结</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>浏览器跨窗口通信总结</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="浏览器" scheme="https://liuqinh2s.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    <id>https://liuqinh2s.github.io/2025/07/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E7%AA%97%E5%8F%A3%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/</id>
     <link href="https://liuqinh2s.github.io/2025/07/24/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E7%AA%97%E5%8F%A3%E9%80%9A%E4%BF%A1%E6%80%BB%E7%BB%93/"/>
-    <id>https://liuqinh2s.github.io/2025/07/24/浏览器跨窗口通信总结/</id>
     <published>2025-07-24T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;window-postMessage-（通用跨域方案）&quot;&gt;&lt;a href=&quot;#window-postMessage-（通用跨域方案）&quot; class=&quot;headerlink&quot; title=&quot;window.postMessage()（通用跨域方案）&quot;&gt;&lt;/a&gt;window.postMessage()（通用跨域方案）&lt;/h2&gt;&lt;p&gt;通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 发送方&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; targetWindow = &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.open(&lt;span class=&quot;string&quot;&gt;&#39;child.html&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;targetWindow.postMessage(&lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;https://example.com&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 接收方&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;message&#39;&lt;/span&gt;, (event)=&amp;gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(event.origin === &lt;span class=&quot;string&quot;&gt;&#39;https://example.com&#39;&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(event.data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;优势：支持跨域通信，安全性高（需验证 event.origin）。&lt;br&gt;局限：需预先建立窗口引用关系，无法广播消息。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<h2 id="window-postMessage-（通用跨域方案）">window.postMessage()（通用跨域方案）</h2>
+<p>通过获得目标窗口引用（如 window.open()返回对象、iframe.contentWindow 或 window.opener），发送可序列化数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送方</span></span><br><span class="line"><span class="keyword">const</span> targetWindow = <span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">&#x27;child.html&#x27;</span>);</span><br><span class="line">targetWindow.<span class="title function_">postMessage</span>(<span class="string">&#x27;Hello&#x27;</span>, <span class="string">&#x27;https://example.com&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收方</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="function">(<span class="params">event</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.<span class="property">origin</span> === <span class="string">&#x27;https://example.com&#x27;</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">data</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>优势：支持跨域通信，安全性高（需验证 event.origin）。<br>
+局限：需预先建立窗口引用关系，无法广播消息。</p>]]>
     </summary>
-    
-    
-      <category term="浏览器" scheme="https://liuqinh2s.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
+    <title>浏览器跨窗口通信总结</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>常用 react hooks 总结</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="react" scheme="https://liuqinh2s.github.io/tags/react/"/>
+    <id>https://liuqinh2s.github.io/2025/07/21/%E5%B8%B8%E7%94%A8%20react%20hooks%20%E6%80%BB%E7%BB%93/</id>
     <link href="https://liuqinh2s.github.io/2025/07/21/%E5%B8%B8%E7%94%A8%20react%20hooks%20%E6%80%BB%E7%BB%93/"/>
-    <id>https://liuqinh2s.github.io/2025/07/21/常用 react hooks 总结/</id>
     <published>2025-07-21T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.395Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>最近又开始面试了，然后发现基础还是不牢固，工作中用到的技术确实是比较有限的，平常还要多夯实基础，查漏补缺，不然面试的时候很多东西答不上来。今天面试官问 useCallback，我发现平常不用它，加上好久没复习，我已经全然不记得了。</p>]]>
     </summary>
-    
-    
-      <category term="react" scheme="https://liuqinh2s.github.io/tags/react/"/>
-    
+    <title>常用 react hooks 总结</title>
+    <updated>2026-07-30T10:00:34.516Z</updated>
   </entry>
-  
   <entry>
-    <title>我的互联网生活</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="日记" scheme="https://liuqinh2s.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    <id>https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB/</id>
     <link href="https://liuqinh2s.github.io/2025/06/23/%E6%88%91%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E7%94%9F%E6%B4%BB/"/>
-    <id>https://liuqinh2s.github.io/2025/06/23/我的互联网生活/</id>
     <published>2025-06-23T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;经常打开手机漫无目的的刷着算法推荐的东西，有的时候觉得太过无聊粗俗。还是得认真审视一下自己的信息源。另外就是博客，尤其是个人博客的流量实在太低了，约等于 0，我打算还是把每天写的东西同步到流量大的平台。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>经常打开手机漫无目的的刷着算法推荐的东西，有的时候觉得太过无聊粗俗。还是得认真审视一下自己的信息源。另外就是博客，尤其是个人博客的流量实在太低了，约等于 0，我打算还是把每天写的东西同步到流量大的平台。</p>]]>
     </summary>
-    
-    
-      <category term="日记" scheme="https://liuqinh2s.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
+    <title>我的互联网生活</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>重新整理博客</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="方法论" scheme="https://liuqinh2s.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    <category term="观点" scheme="https://liuqinh2s.github.io/tags/%E8%A7%82%E7%82%B9/"/>
+    <category term="做笔记" scheme="https://liuqinh2s.github.io/tags/%E5%81%9A%E7%AC%94%E8%AE%B0/"/>
+    <id>https://liuqinh2s.github.io/2024/11/12/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E5%8D%9A%E5%AE%A2/</id>
     <link href="https://liuqinh2s.github.io/2024/11/12/%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://liuqinh2s.github.io/2024/11/12/重新整理博客/</id>
     <published>2024-11-12T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;记录信息最好的方式还是日志，就是按时间编排的意思。检索的最好方式是搜索，统计归纳最好的方式是标签（目录是树状，而标签是网状）。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>记录信息最好的方式还是日志，就是按时间编排的意思。检索的最好方式是搜索，统计归纳最好的方式是标签（目录是树状，而标签是网状）。</p>]]>
     </summary>
-    
-    
-      <category term="方法论" scheme="https://liuqinh2s.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-      <category term="观点" scheme="https://liuqinh2s.github.io/tags/%E8%A7%82%E7%82%B9/"/>
-    
-      <category term="做笔记" scheme="https://liuqinh2s.github.io/tags/%E5%81%9A%E7%AC%94%E8%AE%B0/"/>
-    
+    <title>重新整理博客</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>囚徒健身实践</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="健身" scheme="https://liuqinh2s.github.io/tags/%E5%81%A5%E8%BA%AB/"/>
+    <id>https://liuqinh2s.github.io/2024/11/11/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB%E5%AE%9E%E8%B7%B5/</id>
     <link href="https://liuqinh2s.github.io/2024/11/11/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB%E5%AE%9E%E8%B7%B5/"/>
-    <id>https://liuqinh2s.github.io/2024/11/11/囚徒健身实践/</id>
     <published>2024-11-11T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;长期不运动的危害：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;筋膜粘连，肌肉活动受限，关节活动受限&lt;/li&gt;
-&lt;li&gt;拮抗肌肉失衡，肌肉老损和退化，各处酸痛&lt;/li&gt;
-&lt;li&gt;没有体能和力量&lt;/li&gt;
-&lt;li&gt;很容易疲惫，精神萎靡&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;分三个方面：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;体能（有氧：跑步，跳绳）&lt;/li&gt;
-&lt;li&gt;身体灵活度，柔韧性（拉伸）&lt;/li&gt;
-&lt;li&gt;力量&lt;/li&gt;
-&lt;/ol&gt;
-    
+    <summary>
+      <![CDATA[<p>长期不运动的危害：</p>
+<ol>
+<li>筋膜粘连，肌肉活动受限，关节活动受限</li>
+<li>拮抗肌肉失衡，肌肉老损和退化，各处酸痛</li>
+<li>没有体能和力量</li>
+<li>很容易疲惫，精神萎靡</li>
+</ol>
+<p>分三个方面：</p>
+<ol>
+<li>体能（有氧：跑步，跳绳）</li>
+<li>身体灵活度，柔韧性（拉伸）</li>
+<li>力量</li>
+</ol>]]>
     </summary>
-    
-    
-      <category term="健身" scheme="https://liuqinh2s.github.io/tags/%E5%81%A5%E8%BA%AB/"/>
-    
+    <title>囚徒健身实践</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>我对读书的看法</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="观点" scheme="https://liuqinh2s.github.io/tags/%E8%A7%82%E7%82%B9/"/>
+    <id>https://liuqinh2s.github.io/2024/08/26/%E6%88%91%E5%AF%B9%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%9C%8B%E6%B3%95/</id>
     <link href="https://liuqinh2s.github.io/2024/08/26/%E6%88%91%E5%AF%B9%E8%AF%BB%E4%B9%A6%E7%9A%84%E7%9C%8B%E6%B3%95/"/>
-    <id>https://liuqinh2s.github.io/2024/08/26/我对读书的看法/</id>
     <published>2024-08-26T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一直以来确实有点读书读傻了，如果我有小孩，我希望他价值观不要出问题。学校的价值观太有问题了。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.xiaohongshu.com/explore/6670e747000000000e032612&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;清华录取通知书和一个亿，小朋友如何选？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1Gf421z7Px/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;高考失败=人生完蛋？复读考上交大，进入社会才发现学历只是一张纸，985 根本配不上学生的优秀&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;钱，财富那不是肮脏的东西。视金钱如粪是错的&lt;/li&gt;
-&lt;li&gt;仁义礼智信，在贵族身上，那是大加成。在穷人身上，那是大枷锁。底层人敢闯敢拼低道德厚脸皮是大加成。&lt;/li&gt;
-&lt;li&gt;社会是人跟人的社会。人际关系，比什么都重要。玩到极致，就是政治&lt;/li&gt;
-&lt;li&gt;利益决定脑袋。也叫屁股决定脑袋。别人说什么都是站在自己的利益（或者志向）立场上说话的。&lt;/li&gt;
-&lt;li&gt;高考是留给最底层孩子的通道。有实力的别去卷，或者花样卷。奶茶妹妹（刘强东老婆章泽天）健美操上清华，顾森（matrix67）信息竞赛银牌上北大，哪怕孙割（孙宇晨）也是自主招生加了分（虽然孙割分数并不低，离北大分数线还差几分）。&lt;/li&gt;
-&lt;/ol&gt;
-    
+    <summary>
+      <![CDATA[<p>一直以来确实有点读书读傻了，如果我有小孩，我希望他价值观不要出问题。学校的价值观太有问题了。</p>
+<ul>
+<li><a href="https://www.xiaohongshu.com/explore/6670e747000000000e032612">清华录取通知书和一个亿，小朋友如何选？</a></li>
+<li><a href="https://www.bilibili.com/video/BV1Gf421z7Px/">高考失败=人生完蛋？复读考上交大，进入社会才发现学历只是一张纸，985 根本配不上学生的优秀</a></li>
+</ul>
+<ol>
+<li>钱，财富那不是肮脏的东西。视金钱如粪是错的</li>
+<li>仁义礼智信，在贵族身上，那是大加成。在穷人身上，那是大枷锁。底层人敢闯敢拼低道德厚脸皮是大加成。</li>
+<li>社会是人跟人的社会。人际关系，比什么都重要。玩到极致，就是政治</li>
+<li>利益决定脑袋。也叫屁股决定脑袋。别人说什么都是站在自己的利益（或者志向）立场上说话的。</li>
+<li>高考是留给最底层孩子的通道。有实力的别去卷，或者花样卷。奶茶妹妹（刘强东老婆章泽天）健美操上清华，顾森（matrix67）信息竞赛银牌上北大，哪怕孙割（孙宇晨）也是自主招生加了分（虽然孙割分数并不低，离北大分数线还差几分）。</li>
+</ol>]]>
     </summary>
-    
-    
-      <category term="观点" scheme="https://liuqinh2s.github.io/tags/%E8%A7%82%E7%82%B9/"/>
-    
+    <title>我对读书的看法</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>投资总结</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="投资" scheme="https://liuqinh2s.github.io/tags/%E6%8A%95%E8%B5%84/"/>
+    <id>https://liuqinh2s.github.io/2024/08/14/%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/</id>
     <link href="https://liuqinh2s.github.io/2024/08/14/%E6%8A%95%E8%B5%84%E6%80%BB%E7%BB%93/"/>
-    <id>https://liuqinh2s.github.io/2024/08/14/投资总结/</id>
     <published>2024-08-14T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;投资要做的是两方面的工作：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;价格低&lt;/li&gt;
-&lt;li&gt;质量好&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;如果你的投资标的，具备以上两个特征，那就可以赚到钱。这两个都做好了会不会亏钱，也会，因为很多人会受市场波动的影响，认为自己判断错了，从而割肉离场。所以优秀的投资人不光要学习基本的市场经济知识，还要有调查精神，还要有自信。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>投资要做的是两方面的工作：</p>
+<ol>
+<li>价格低</li>
+<li>质量好</li>
+</ol>
+<p>如果你的投资标的，具备以上两个特征，那就可以赚到钱。这两个都做好了会不会亏钱，也会，因为很多人会受市场波动的影响，认为自己判断错了，从而割肉离场。所以优秀的投资人不光要学习基本的市场经济知识，还要有调查精神，还要有自信。</p>]]>
     </summary>
-    
-    
-      <category term="投资" scheme="https://liuqinh2s.github.io/tags/%E6%8A%95%E8%B5%84/"/>
-    
+    <title>投资总结</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>免费数字资源</title>
-    <link href="https://liuqinh2s.github.io/2024/08/13/free-resource/"/>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="信息差" scheme="https://liuqinh2s.github.io/tags/%E4%BF%A1%E6%81%AF%E5%B7%AE/"/>
     <id>https://liuqinh2s.github.io/2024/08/13/free-resource/</id>
+    <link href="https://liuqinh2s.github.io/2024/08/13/free-resource/"/>
     <published>2024-08-13T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;互联网时代发展到现在，什么都要收费了，而且不光要收费，使用体验还越来越差。比如听歌，看视频，往往都要下载好几个 APP，在好几个平台充会员。有没有什么办法可以免费获得这些资源呢？有的，下面分享一下我的经验。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>互联网时代发展到现在，什么都要收费了，而且不光要收费，使用体验还越来越差。比如听歌，看视频，往往都要下载好几个 APP，在好几个平台充会员。有没有什么办法可以免费获得这些资源呢？有的，下面分享一下我的经验。</p>]]>
     </summary>
-    
-    
-      <category term="信息差" scheme="https://liuqinh2s.github.io/tags/%E4%BF%A1%E6%81%AF%E5%B7%AE/"/>
-    
+    <title>免费数字资源</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>作品版权证券化</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="思考" scheme="https://liuqinh2s.github.io/tags/%E6%80%9D%E8%80%83/"/>
+    <id>https://liuqinh2s.github.io/2024/08/03/%E4%BD%9C%E5%93%81%E7%89%88%E6%9D%83%E8%AF%81%E5%88%B8%E5%8C%96/</id>
     <link href="https://liuqinh2s.github.io/2024/08/03/%E4%BD%9C%E5%93%81%E7%89%88%E6%9D%83%E8%AF%81%E5%88%B8%E5%8C%96/"/>
-    <id>https://liuqinh2s.github.io/2024/08/03/作品版权证券化/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.393Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简单描述&quot;&gt;&lt;a href=&quot;#简单描述&quot; class=&quot;headerlink&quot; title=&quot;简单描述&quot;&gt;&lt;/a&gt;简单描述&lt;/h1&gt;&lt;p&gt;痛点描述：某人为了听某首喜爱的歌或观看喜爱的视频，给音乐，视频平台充了月会员，一个月后却听不了歌，甚至有些歌即便下载了还不让听。如果换做一本纸质书，我买了，就是我的，甚至我还可以借给别人看，所有权明明白白，我不是想听平台那么多歌，我就是想听我爱听的而已，很少的几首。所以能不能别再用租赁的形式听歌了！而且平台那么多，我甚至要充好几个平台，才能凑齐这些歌。&lt;/p&gt;
-&lt;p&gt;把作品的版权上市证券化，举例：周杰伦的一首新歌，估值 500 万，上市分成 500 万股，每一股 1 块钱，但凡持有一股，即可听歌（观看权），但没有所有权（拿这首歌传播盈利）。所有持有者共同享受这首歌的收益。比如某个视频引用拿这首歌做 BGM，电视剧拿这首歌做片头曲等等，产生的收益按比例分红给所有持有者。建立一个平台，可以上架交易，平台不靠网易云音乐等收会员听歌的模式，而是靠交易手续费（比如千分之二的手续费）。&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<h1>简单描述</h1>
+<p>痛点描述：某人为了听某首喜爱的歌或观看喜爱的视频，给音乐，视频平台充了月会员，一个月后却听不了歌，甚至有些歌即便下载了还不让听。如果换做一本纸质书，我买了，就是我的，甚至我还可以借给别人看，所有权明明白白，我不是想听平台那么多歌，我就是想听我爱听的而已，很少的几首。所以能不能别再用租赁的形式听歌了！而且平台那么多，我甚至要充好几个平台，才能凑齐这些歌。</p>
+<p>把作品的版权上市证券化，举例：周杰伦的一首新歌，估值 500 万，上市分成 500 万股，每一股 1 块钱，但凡持有一股，即可听歌（观看权），但没有所有权（拿这首歌传播盈利）。所有持有者共同享受这首歌的收益。比如某个视频引用拿这首歌做 BGM，电视剧拿这首歌做片头曲等等，产生的收益按比例分红给所有持有者。建立一个平台，可以上架交易，平台不靠网易云音乐等收会员听歌的模式，而是靠交易手续费（比如千分之二的手续费）。</p>]]>
     </summary>
-    
-    
-      <category term="思考" scheme="https://liuqinh2s.github.io/tags/%E6%80%9D%E8%80%83/"/>
-    
+    <title>作品版权证券化</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>星露谷物语</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="游戏" scheme="https://liuqinh2s.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    <id>https://liuqinh2s.github.io/2024/08/03/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/</id>
     <link href="https://liuqinh2s.github.io/2024/08/03/%E6%98%9F%E9%9C%B2%E8%B0%B7%E7%89%A9%E8%AF%AD/"/>
-    <id>https://liuqinh2s.github.io/2024/08/03/星露谷物语/</id>
     <published>2024-08-03T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.394Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近两年深度体验了一把星露谷物语，一直玩的是安卓版盗版的星露谷，上周末没忍住，终于还是买了 steam 上的正版星露谷物语，也算是向作者致敬，支持了一下作者。&lt;/p&gt;
-&lt;p&gt;单机游戏玩通关了基本上就不会再想玩了，星露谷也一样。但玩下来之后发现，其实星露谷物语是个彩蛋类游戏，彩蛋实在是太多了，等待玩家去挖掘。&lt;/p&gt;
-&lt;p&gt;我是一边看攻略一边玩的，基本上只有第一年累一点，第一年财富自由之后，后面就是开始搞各种乱七八糟的探索了。我是用上古水果酿酒实现财富自由的，这也是这个游戏最推荐的赚钱流派。&lt;/p&gt;
-&lt;p&gt;下面按照我自己的理解写一下这个游戏的攻略：&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>最近两年深度体验了一把星露谷物语，一直玩的是安卓版盗版的星露谷，上周末没忍住，终于还是买了 steam 上的正版星露谷物语，也算是向作者致敬，支持了一下作者。</p>
+<p>单机游戏玩通关了基本上就不会再想玩了，星露谷也一样。但玩下来之后发现，其实星露谷物语是个彩蛋类游戏，彩蛋实在是太多了，等待玩家去挖掘。</p>
+<p>我是一边看攻略一边玩的，基本上只有第一年累一点，第一年财富自由之后，后面就是开始搞各种乱七八糟的探索了。我是用上古水果酿酒实现财富自由的，这也是这个游戏最推荐的赚钱流派。</p>
+<p>下面按照我自己的理解写一下这个游戏的攻略：</p>]]>
     </summary>
-    
-    
-      <category term="游戏" scheme="https://liuqinh2s.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
+    <title>星露谷物语</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>JavaScript如何实现节流和防抖函数</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="JavaScript" scheme="https://liuqinh2s.github.io/tags/JavaScript/"/>
+    <id>https://liuqinh2s.github.io/2023/12/05/JavaScript%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/</id>
     <link href="https://liuqinh2s.github.io/2023/12/05/JavaScript%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96%E5%87%BD%E6%95%B0/"/>
-    <id>https://liuqinh2s.github.io/2023/12/05/JavaScript如何实现节流和防抖函数/</id>
     <published>2023-12-05T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.393Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;节流：throttle&lt;br&gt;防抖：debounce&lt;/p&gt;
-&lt;p&gt;这两个是 JavaScript 开发中两个经常需要用到的工具函数，主要用于解决性能问题。节流的意思是针对某函数的连续调用，在一定时间内每隔一小段时间调用一次目标函数；防抖的意思是针对某函数的连续调用，只在一小段时间间隔后执行最后一次调用。&lt;/p&gt;
-&lt;p&gt;常用的场景有：浏览器高频 DOM 事件的回调函数，比如 scroll，mousemove，resize 等&lt;/p&gt;
-    
+    <summary>
+      <![CDATA[<p>节流：throttle<br>
+防抖：debounce</p>
+<p>这两个是 JavaScript 开发中两个经常需要用到的工具函数，主要用于解决性能问题。节流的意思是针对某函数的连续调用，在一定时间内每隔一小段时间调用一次目标函数；防抖的意思是针对某函数的连续调用，只在一小段时间间隔后执行最后一次调用。</p>
+<p>常用的场景有：浏览器高频 DOM 事件的回调函数，比如 scroll，mousemove，resize 等</p>]]>
     </summary>
-    
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/tags/JavaScript/"/>
-    
+    <title>JavaScript如何实现节流和防抖函数</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
   <entry>
-    <title>JavaScript的var,let,const的区别</title>
+    <author>
+      <name>liuqinh2s</name>
+    </author>
+    <category term="JavaScript" scheme="https://liuqinh2s.github.io/tags/JavaScript/"/>
+    <id>https://liuqinh2s.github.io/2023/11/23/JavaScript%E7%9A%84var,let,const%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
     <link href="https://liuqinh2s.github.io/2023/11/23/JavaScript%E7%9A%84var,let,const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>https://liuqinh2s.github.io/2023/11/23/JavaScript的var,let,const的区别/</id>
     <published>2023-11-23T00:00:00.000Z</published>
-    <updated>2026-07-29T08:45:00.393Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先&lt;code&gt;var&lt;/code&gt;,&lt;code&gt;let&lt;/code&gt;,&lt;code&gt;const&lt;/code&gt;都是用于定义变量，这是它们的共同点，那么它们的区别呢？&lt;/p&gt;
-&lt;p&gt;其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.a);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
+    <summary>
+      <![CDATA[<p>首先<code>var</code>,<code>let</code>,<code>const</code>都是用于定义变量，这是它们的共同点，那么它们的区别呢？</p>
+<p>其实还可以什么都不用，直接给变量赋值，这样的话，就是赋值给了全局对象（在浏览器上就是 window 对象）:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">a</span>);</span><br></pre></td></tr></table></figure>]]>
     </summary>
-    
-    
-      <category term="JavaScript" scheme="https://liuqinh2s.github.io/tags/JavaScript/"/>
-    
+    <title>JavaScript的var,let,const的区别</title>
+    <updated>2026-07-30T10:00:34.515Z</updated>
   </entry>
-  
 </feed>

@@ -1,467 +1,361 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon.ico">
+  <link rel="mask-icon" href="/blog/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"liuqinh2s.github.io","root":"/blog/","images":"/blog/images","scheme":"Pisces","darkmode":true,"version":"8.28.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/blog/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js" defer></script>
 
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicon.ico?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicon.ico?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="编程基础,">
-
-
-
-
-
-  <link rel="alternate" href="/blog/atom.xml" title="liuqinh2s' blog" type="application/atom+xml">
-
-
-
-
-
-
-<meta name="description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
-<meta name="keywords" content="编程基础">
+    <meta name="description" content="从编译 C 语言文件说起 1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#en">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《CSAPP》 -- 程序的机器级表示">
-<meta property="og:url" content="https://liuqinh2s.github.io/2018/10/08/程序的机器级表示/index.html">
+<meta property="og:url" content="https://liuqinh2s.github.io/2018/10/08/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/index.html">
 <meta property="og:site_name" content="liuqinh2s&#39; blog">
-<meta property="og:description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/反汇编.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/链接之后的反汇编代码1.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/链接之后的反汇编代码2.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/数据格式.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/IA32寄存器.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/x86-64寄存器.jpg">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/操作数指示符.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/mov指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/汇编栈操作.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/算术和逻辑操作指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/扩展乘除操作.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/流程控制指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/set指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/跳转指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/while的汇编形式.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/状态表达式.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/状态转移指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/switch汇编代码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/switch跳转表1.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/switch跳转表2.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/程序栈内存结构.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/转移控制指令.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/程序调用模型.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/过程调用内存模型.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/过程调用汇编代码.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/gets缓冲区溢出.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/缓冲区溢出内存模型.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/缓冲区攻击范围.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/金丝雀值.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/含金丝雀值汇编码1.png">
-<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/含金丝雀值汇编码2.png">
-<meta property="og:updated_time" content="2026-07-29T08:45:00.389Z">
+<meta property="og:description" content="从编译 C 语言文件说起 1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#en">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E5%8F%8D%E6%B1%87%E7%BC%96.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E7%9A%84%E5%8F%8D%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%811.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E7%9A%84%E5%8F%8D%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%812.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/IA32%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/x86-64%E5%AF%84%E5%AD%98%E5%99%A8.jpg">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8C%87%E7%A4%BA%E7%AC%A6.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/mov%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E6%B1%87%E7%BC%96%E6%A0%88%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%AE%97%E6%9C%AF%E5%92%8C%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E6%89%A9%E5%B1%95%E4%B9%98%E9%99%A4%E6%93%8D%E4%BD%9C.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/set%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/while%E7%9A%84%E6%B1%87%E7%BC%96%E5%BD%A2%E5%BC%8F.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%8A%B6%E6%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/switch%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/switch%E8%B7%B3%E8%BD%AC%E8%A1%A81.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/switch%E8%B7%B3%E8%BD%AC%E8%A1%A82.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%A8%8B%E5%BA%8F%E6%A0%88%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E8%BD%AC%E7%A7%BB%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%94%A8%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/gets%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%94%BB%E5%87%BB%E8%8C%83%E5%9B%B4.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E9%87%91%E4%B8%9D%E9%9B%80%E5%80%BC.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E5%90%AB%E9%87%91%E4%B8%9D%E9%9B%80%E5%80%BC%E6%B1%87%E7%BC%96%E7%A0%811.png">
+<meta property="og:image" content="https://liuqinh2s.github.io/images/2018/%E5%90%AB%E9%87%91%E4%B8%9D%E9%9B%80%E5%80%BC%E6%B1%87%E7%BC%96%E7%A0%812.png">
+<meta property="article:published_time" content="2018-10-08T00:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-30T10:00:34.511Z">
+<meta property="article:author" content="liuqinh2s">
+<meta property="article:tag" content="编程基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《CSAPP》 -- 程序的机器级表示">
-<meta name="twitter:description" content="从编译 C 语言文件说起1$ gcc -01 -o p p1.c p2.c 使用了 gcc 命令来编译，也可以简单写作：cc。 优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。 编译的流程是：  预处理器（preprocessor）把诸如：#include、#define、#if、#else、#elif、#ifdef、#end">
-<meta name="twitter:image" content="https://liuqinh2s.github.io/images/2018/反汇编.png">
+<meta name="twitter:image" content="https://liuqinh2s.github.io/images/2018/%E5%8F%8D%E6%B1%87%E7%BC%96.png">
 
 
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/blog/',
-    scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+<link rel="canonical" href="https://liuqinh2s.github.io/2018/10/08/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">
 
 
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://liuqinh2s.github.io/2018/10/08/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/","path":"2018/10/08/程序的机器级表示/","title":"《CSAPP》 -- 程序的机器级表示"}</script>
 
-  <link rel="canonical" href="https://liuqinh2s.github.io/2018/10/08/程序的机器级表示/">
-
-
-
-
-
-  <title>《CSAPP》 -- 程序的机器级表示 | liuqinh2s' blog</title>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>《CSAPP》 -- 程序的机器级表示 | liuqinh2s' blog</title>
   
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKEL3MWXN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JKEL3MWXN4');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKEL3MWXN4"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-JKEL3MWXN4","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/blog/js/third-party/analytics/google-analytics.js" defer></script>
 
 
 
 
 
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+<script src="/blog/js/utils.js" defer></script><script src="/blog/js/motion.js" defer></script><script src="/blog/js/sidebar.js" defer></script><script src="/blog/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/blog/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/blog/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/blog/atom.xml" title="liuqinh2s' blog" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/blog/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">liuqinh2s' blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-      
-        <h1 class="site-subtitle" itemprop="description">Do something cool!</h1>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">liuqinh2s' blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Do something cool!</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
   </div>
 </div>
+
+
 
 <nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/blog/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/blog/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/blog/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-日记">
-          <a href="/blog/diary/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br>
-            
-            日记
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-前端面试">
-          <a href="/blog/interview/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-bank"></i> <br>
-            
-            前端面试
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-导航">
-          <a href="/blog/navigation/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-compass"></i> <br>
-            
-            导航
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-日记"><a href="/blog/diary/" rel="section"><i class="fa fa-pencil fa-fw"></i>日记</a></li><li class="menu-item menu-item-前端面试"><a href="/blog/interview/" rel="section"><i class="fa fa-briefcase fa-fw"></i>前端面试</a></li><li class="menu-item menu-item-导航"><a href="/blog/navigation/" rel="section"><i class="fa fa-compass fa-fw"></i>导航</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 </nav>
 
 
 
- </div>
-    </header>
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+</header>
+        
+  
+  <aside class="sidebar">
 
-  <div id="posts" class="posts-expand">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E7%BC%96%E8%AF%91-C-%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%E8%AF%B4%E8%B5%B7"><span class="nav-number">1.</span> <span class="nav-text">从编译 C 语言文件说起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">汇编代码的格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ATT-%E5%92%8C-intel-%E6%B1%87%E7%BC%96%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">ATT 和 intel 汇编格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE"><span class="nav-number">5.</span> <span class="nav-text">访问数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8C%87%E7%A4%BA%E7%AC%A6"><span class="nav-number">5.1.</span> <span class="nav-text">操作数指示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mov-%E6%8C%87%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">mov 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E5%92%8C%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">算术和逻辑操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%8D%E7%A7%BB%E6%93%8D%E4%BD%9C"><span class="nav-number">6.1.</span> <span class="nav-text">位移操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E4%B9%98%E9%99%A4%E6%8C%87%E4%BB%A4"><span class="nav-number">6.2.</span> <span class="nav-text">扩展乘除指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">7.1.</span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">7.2.</span> <span class="nav-text">访问状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">7.3.</span> <span class="nav-text">跳转指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BF%BB%E8%AF%91%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF"><span class="nav-number">7.4.</span> <span class="nav-text">翻译条件分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.5.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#do-while"><span class="nav-number">7.5.1.</span> <span class="nav-text">do while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while"><span class="nav-number">7.5.2.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for"><span class="nav-number">7.5.3.</span> <span class="nav-text">for</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4"><span class="nav-number">7.6.</span> <span class="nav-text">状态转移指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">7.7.</span> <span class="nav-text">switch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8"><span class="nav-number">8.</span> <span class="nav-text">过程调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%A7%BB%E6%8E%A7%E5%88%B6"><span class="nav-number">8.1.</span> <span class="nav-text">转移控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E4%BD%BF%E7%94%A8%E4%BC%A0%E7%BB%9F"><span class="nav-number">8.2.</span> <span class="nav-text">寄存器使用传统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E4%BE%8B%E5%AD%90"><span class="nav-number">8.3.</span> <span class="nav-text">过程调用例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">9.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%BC%95%E7%94%A8%E8%B6%8A%E7%95%8C%E5%92%8C%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA"><span class="nav-number">10.</span> <span class="nav-text">内存引用越界和缓冲区溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E6%94%BB%E5%87%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">10.1.</span> <span class="nav-text">对抗缓冲区溢出攻击的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%88%E9%9A%8F%E6%9C%BA%E5%8C%96"><span class="nav-number">10.1.1.</span> <span class="nav-text">栈随机化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%88%E7%A0%B4%E5%9D%8F%E6%A3%80%E6%B5%8B"><span class="nav-number">10.1.2.</span> <span class="nav-text">栈破坏检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%90%E5%88%B6%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9F%9F"><span class="nav-number">10.1.3.</span> <span class="nav-text">限制可执行代码区域</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="liuqinh2s"
+      src="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+  <p class="site-author-name" itemprop="name">liuqinh2s</p>
+  <div class="site-description" itemprop="description">Computer Science is not a magic <br /> To be a hacker</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags/">
+        <span class="site-state-item-count">54</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liuqinh2s" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liuqinh2s" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://x.com/liuqinh2s" title="Twitter → https:&#x2F;&#x2F;x.com&#x2F;liuqinh2s" rel="noopener me" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/blog/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:liuqinh2s@gmail.com" title="E-Mail → mailto:liuqinh2s@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
     
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://lianera.github.io/" title="https:&#x2F;&#x2F;lianera.github.io" rel="noopener" target="_blank">liam</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://jiyanggg.github.io/" title="https:&#x2F;&#x2F;jiyanggg.github.io&#x2F;" rel="noopener" target="_blank">jiyanggg</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://zengyuxin.com/" title="https:&#x2F;&#x2F;zengyuxin.com&#x2F;" rel="noopener" target="_blank">曾小乱</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/blog/2018/10/08/程序的机器级表示/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2018/10/08/%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9C%BA%E5%99%A8%E7%BA%A7%E8%A1%A8%E7%A4%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="liuqinh2s">
-      <meta itemprop="description" content>
       <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+      <meta itemprop="name" content="liuqinh2s">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="liuqinh2s' blog">
+      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
     </span>
 
-    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="《CSAPP》 -- 程序的机器级表示 | liuqinh2s' blog">
+      <meta itemprop="description" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《CSAPP》 -- 程序的机器级表示
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">《CSAPP》 -- 程序的机器级表示</h2>
-        
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T00:00:00+00:00">
-                2018-10-08
-              </time>
-            
+      <time title="创建时间：2018-10-08 00:00:00" itemprop="dateCreated datePublished" datetime="2018-10-08T00:00:00+00:00">2018-10-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-30 10:00:34" itemprop="dateModified" datetime="2026-07-30T10:00:34+00:00">2026-07-30</time>
+    </span>
 
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2026-07-29T08:45:00+00:00">
-                2026-07-29
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-eye"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  6,290
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>22 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="从编译-C-语言文件说起"><a href="#从编译-C-语言文件说起" class="headerlink" title="从编译 C 语言文件说起"></a>从编译 C 语言文件说起</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc <span class="number">-01</span> -o p p1.c p2.c</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><h2 id="从编译-C-语言文件说起">从编译 C 语言文件说起</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc <span class="number">-01</span> -o p p1.c p2.c</span><br></pre></td></tr></table></figure>
 <p>使用了 gcc 命令来编译，也可以简单写作：<code>cc</code>。</p>
 <p>优化层级为 1，1 级是最低的，层级越高程序优化越好，但增加了编译时间，也使调试变得更难，且跟源程序差异很大不便于理解。</p>
 <p>编译的流程是：</p>
@@ -471,7 +365,7 @@
 <li>汇编器（assembler）把汇编代码文件转换成相应的二进制目标文件<code>.o</code>，目标文件已经是机器码了，只是没有填入全局变量的地址。</li>
 <li>链接器（linker），把多目标文件和库函数链接在一起，形成可执行文件。</li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 <p><strong>instruction set architecture，ISA，指令集体系结构</strong>，定义了处理器状态，指令的格式和行为。intel 的指令集包括 32 位的：IA32，以及 64 位的：x86-64。</p>
 <p>编译器做了整个编译流程的大部分工作，汇编代码几乎就是机器码的供人阅读版。所以看懂汇编代码是关键。</p>
 <p>IA32 程序代码和 C 语言很不相同，一些在 C 语言下看不到的处理器状态可以在这里看到：</p>
@@ -481,19 +375,20 @@
 <li>状态码寄存器，可以用来实现条件控制代码如：if 和 while</li>
 <li>浮点寄存器，用来计算浮点数</li>
 </ul>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> accum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = x + y;</span><br><span class="line">    accum += t;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="例子">例子</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> accum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span>&#123;</span><br><span class="line">    <span class="type">int</span> t = x + y;</span><br><span class="line">    accum += t;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果要看到编译出的汇编代码，可以使用<code>-S</code>选项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -S code.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -S code.c</span><br></pre></td></tr></table></figure>
 <p>这样就会使编译流程停留在 <strong>预处理-&gt;编译</strong> 阶段，而不是继续进行接下来的汇编和链接，生成的文件是：<code>.s</code>汇编文件。编译后的汇编代码中会包含如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum:</span><br><span class="line">    pushl %ebp</span><br><span class="line">    movl %esp, %ebp</span><br><span class="line">    movl 12(%ebp), %eax</span><br><span class="line">    addl 8(%ebp), %eax</span><br><span class="line">    addl %eax, accum</span><br><span class="line">    popl %ebp</span><br><span class="line">    ret</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sum:</span><br><span class="line">    pushl %ebp</span><br><span class="line">    movl %esp, %ebp</span><br><span class="line">    movl 12(%ebp), %eax</span><br><span class="line">    addl 8(%ebp), %eax</span><br><span class="line">    addl %eax, accum</span><br><span class="line">    popl %ebp</span><br><span class="line">    ret</span><br></pre></td></tr></table></figure>
 <p>这段代码中的每一句都对应一个机器指令，比如 pushl 这句的意思就是把寄存器%ebp 的内容 push 到程序栈（内存中）上。<strong>在汇编代码里所有的局部变量都不见了，全局变量还可以看到，因为编译器还没有决定这个变量在内存中的存储位置。</strong></p>
 <p>如果我们使用<code>-c</code>选项，GCC 就会既编译又汇编：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -c code.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -c code.c</span><br></pre></td></tr></table></figure>
 <p>这样就生成了目标文件<code>code.o</code>，在 800bytes 的 code.o 文件中，有 17bytes 是对应上面的汇编代码的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">55 89 e5 8b 45 0c 03 45 08 01 05 00 00 00 00 5d c3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">55 89 e5 8b 45 0c 03 45 08 01 05 00 00 00 00 5d c3</span><br></pre></td></tr></table></figure>
 <p>可以使用反汇编将难懂的目标文件代码转成汇编代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ objdump -d code.o</span><br></pre></td></tr></table></figure>
-<p><img src="../../../../images/2018/反汇编.png" alt="反汇编"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ objdump -d code.o</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../images/2018/%E5%8F%8D%E6%B1%87%E7%BC%96.png" alt="反汇编"></p>
 <ul>
 <li>IA32 指令的长度是 1 到 15 字节，越常用的，操作数越少的指令越短，反之则越长。</li>
 <li>给定一个开始的位置，只对应一种机器指令，比如只有<code>pushl %ebp</code>指令是以 55 开头的</li>
@@ -501,29 +396,31 @@
 <li>反汇编出来的文件跟直接编译的汇编文件有些不一样，比如所有指令都省略了后缀<code>l</code>。<code>l</code>是大小指示符，而大多数情况下是可以省略 l 的。</li>
 </ul>
 <blockquote>
-<p>头两个属性跟<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" target="_blank" rel="noopener">哈夫曼编码</a>的原理是一致的，可以说这是一种通用的编码原则，第一条用来保证节省字节空间，第二条则保证编码的唯一性。</p>
+<p>头两个属性跟<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81">哈夫曼编码</a>的原理是一致的，可以说这是一种通用的编码原则，第一条用来保证节省字节空间，第二条则保证编码的唯一性。</p>
 </blockquote>
 <p>生成真正可执行的文件还需要链接操作，而且必须包含 main 函数。假设我们的<code>main.c</code>文件如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们可以使用如下指令生成可执行文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -o prog code.o main.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -o prog code.o main.c</span><br></pre></td></tr></table></figure>
 <p>prog 文件增长到了 9123bytes，因为它不仅包含我们写的代码，而且包含了用来开始和结束的程序，以及与操作系统进行交互的程序。</p>
-<p><img src="../../../../images/2018/链接之后的反汇编代码1.png" alt="链接之后的反汇编代码1"></p>
-<p><img src="../../../../images/2018/链接之后的反汇编代码2.png" alt="链接之后的反汇编代码2"></p>
+<p><img src="../../../../images/2018/%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E7%9A%84%E5%8F%8D%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%811.png" alt="链接之后的反汇编代码1"></p>
+<p><img src="../../../../images/2018/%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E7%9A%84%E5%8F%8D%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%812.png" alt="链接之后的反汇编代码2"></p>
 <p>可以看到第 6 行，全局变量在链接的时候定址。</p>
-<h2 id="汇编代码的格式"><a href="#汇编代码的格式" class="headerlink" title="汇编代码的格式"></a>汇编代码的格式</h2><p>假设我们有一个 C 语言文件<code>simple.c</code>：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">simple</span><span class="params">(<span class="keyword">int</span> *xp, <span class="keyword">int</span> y)</span> 2</span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = *xp + y;</span><br><span class="line">    *xp = t;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="汇编代码的格式">汇编代码的格式</h2>
+<p>假设我们有一个 C 语言文件<code>simple.c</code>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">simple</span><span class="params">(<span class="type">int</span> *xp, <span class="type">int</span> y)</span> 2&#123;</span><br><span class="line">    <span class="type">int</span> t = *xp + y;</span><br><span class="line">    *xp = t;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以得到如下汇编代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.file   &quot;simple.c&quot;</span><br><span class="line">  .text</span><br><span class="line">.globl simple</span><br><span class="line">  .type   simple, @function</span><br><span class="line">simple:</span><br><span class="line">  pushl   %ebp</span><br><span class="line">  movl    %esp, %ebp</span><br><span class="line">  movl    8(%ebp), %edx</span><br><span class="line">  movl    12(%ebp), %eax</span><br><span class="line">  addl    (%edx), %eax</span><br><span class="line">  movl    %eax, (%edx)</span><br><span class="line">  popl    %ebp</span><br><span class="line">  ret</span><br><span class="line">  .size   simple, .-simple</span><br><span class="line">  .ident  &quot;GCC: (Ubuntu 4.3.2-1ubuntu11) 4.3.2&quot;</span><br><span class="line">  .section        .note.GNU-stack,&quot;&quot;,@progbits</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.file   &quot;simple.c&quot;</span><br><span class="line">  .text</span><br><span class="line">.globl simple</span><br><span class="line">  .type   simple, @function</span><br><span class="line">simple:</span><br><span class="line">  pushl   %ebp</span><br><span class="line">  movl    %esp, %ebp</span><br><span class="line">  movl    8(%ebp), %edx</span><br><span class="line">  movl    12(%ebp), %eax</span><br><span class="line">  addl    (%edx), %eax</span><br><span class="line">  movl    %eax, (%edx)</span><br><span class="line">  popl    %ebp</span><br><span class="line">  ret</span><br><span class="line">  .size   simple, .-simple</span><br><span class="line">  .ident  &quot;GCC: (Ubuntu 4.3.2-1ubuntu11) 4.3.2&quot;</span><br><span class="line">  .section        .note.GNU-stack,&quot;&quot;,@progbits</span><br></pre></td></tr></table></figure>
 <p>所有以<code>.</code>开头的行都是用来指导汇编器和链接器的，我们不用去管。而这段代码的大概意思如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">simple:</span><br><span class="line">    pushl %ebp           保存帧指针</span><br><span class="line">    movl  %esp, %ebp     创建新的帧指针</span><br><span class="line">    movl  8(%ebp), %edx  从内存中读取xp</span><br><span class="line">    movl  12(%ebp), %eax 从内存中读取y</span><br><span class="line">    addl  (%edx), %eax   *xp+y=t</span><br><span class="line">    movl  %eax, (%edx)   把t存到xp指向的地址中</span><br><span class="line">    popl  %ebp           重新获取帧指针</span><br><span class="line">    ret                  返回</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">simple:</span><br><span class="line">    pushl %ebp           保存帧指针</span><br><span class="line">    movl  %esp, %ebp     创建新的帧指针</span><br><span class="line">    movl  8(%ebp), %edx  从内存中读取xp</span><br><span class="line">    movl  12(%ebp), %eax 从内存中读取y</span><br><span class="line">    addl  (%edx), %eax   *xp+y=t</span><br><span class="line">    movl  %eax, (%edx)   把t存到xp指向的地址中</span><br><span class="line">    popl  %ebp           重新获取帧指针</span><br><span class="line">    ret                  返回</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这段代码对%ebp 和%esp 的操作涉及到了程序栈模型，看不懂很正常，文章下面会有讲解的。</p>
 </blockquote>
-<h3 id="ATT-和-intel-汇编格式"><a href="#ATT-和-intel-汇编格式" class="headerlink" title="ATT 和 intel 汇编格式"></a>ATT 和 intel 汇编格式</h3><p>ATT 即 AT&amp;T，是贝尔实验室旗下的公司。</p>
+<h3 id="ATT-和-intel-汇编格式">ATT 和 intel 汇编格式</h3>
+<p>ATT 即 AT&amp;T，是贝尔实验室旗下的公司。</p>
 <p>GCC 和 OBJDUMP 默认生成 ATT 格式的汇编代码，微软和因特尔的编程工具则默认生成 intel 格式的汇编代码。</p>
 <p>使用如下命令可以让 GCC 生成 intel 格式的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -S -masm=intel code.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -01 -S -masm=intel code.c</span><br></pre></td></tr></table></figure>
 <p>两者的区别如下：</p>
 <ul>
 <li>intel 代码省略了用来指定大小的后缀，比如使用<code>mov</code>而不是<code>movl</code></li>
@@ -532,11 +429,13 @@
 <li>intel 代码多操作数指令的操作数顺序跟 ATT 相反</li>
 </ul>
 <p>由于是由 16bit 架构扩展到 32bit 架构的，intel 管 16bit 数据类型叫：<code>word</code>，32bit 数据类型叫：<code>double words</code>，64bit 数据类型叫：<code>quad words</code>。</p>
-<h2 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h2><p><img src="../../../../images/2018/数据格式.png" alt="数据格式"></p>
-<h2 id="访问数据"><a href="#访问数据" class="headerlink" title="访问数据"></a>访问数据</h2><p>IA32 CPU 包含了 8 个寄存器，每个有 32bit 存储空间，用来存储整形值以及指针。</p>
-<p><img src="../../../../images/2018/IA32寄存器.png" alt="IA32寄存器"></p>
+<h2 id="数据格式">数据格式</h2>
+<p><img src="../../../../images/2018/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.png" alt="数据格式"></p>
+<h2 id="访问数据">访问数据</h2>
+<p>IA32 CPU 包含了 8 个寄存器，每个有 32bit 存储空间，用来存储整形值以及指针。</p>
+<p><img src="../../../../images/2018/IA32%E5%AF%84%E5%AD%98%E5%99%A8.png" alt="IA32寄存器"></p>
 <p>x86-64 则进一步扩展了这些寄存器：</p>
-<p><img src="../../../../images/2018/x86-64寄存器.jpg" alt="x86-64寄存器"></p>
+<p><img src="../../../../images/2018/x86-64%E5%AF%84%E5%AD%98%E5%99%A8.jpg" alt="x86-64寄存器"></p>
 <p>前六个寄存器称为通用寄存器，有其特定的用途：</p>
 <ul>
 <li>%rax(%eax) 用于做累加，过程调用返回值</li>
@@ -546,43 +445,51 @@
 <li>%rsi(%esi) 用于保存源索引值</li>
 <li>%rdi(%edi) 用于保存目标索引值</li>
 </ul>
-<h3 id="操作数指示符"><a href="#操作数指示符" class="headerlink" title="操作数指示符"></a>操作数指示符</h3><p><img src="../../../../images/2018/操作数指示符.png" alt="操作数指示符"></p>
+<h3 id="操作数指示符">操作数指示符</h3>
+<p><img src="../../../../images/2018/%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8C%87%E7%A4%BA%E7%AC%A6.png" alt="操作数指示符"></p>
 <p>有三种类型的操作数，立即数(Imm)、寄存器值(Reg)、内存值(Mem)。</p>
-<h3 id="mov-指令"><a href="#mov-指令" class="headerlink" title="mov 指令"></a>mov 指令</h3><p><img src="../../../../images/2018/mov指令.png" alt="mov指令"></p>
-<p><img src="../../../../images/2018/汇编栈操作.png" alt="汇编栈操作"></p>
+<h3 id="mov-指令">mov 指令</h3>
+<p><img src="../../../../images/2018/mov%E6%8C%87%E4%BB%A4.png" alt="mov指令"></p>
+<p><img src="../../../../images/2018/%E6%B1%87%E7%BC%96%E6%A0%88%E6%93%8D%E4%BD%9C.png" alt="汇编栈操作"></p>
 <p><code>pushl %ebp</code>指令等价于下面的指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subl $4,%esp     减小栈指针</span><br><span class="line">movl %ebp,(%esp) 把%ebp中的数据写到%esp指向的内存中</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">subl $4,%esp     减小栈指针</span><br><span class="line">movl %ebp,(%esp) 把%ebp中的数据写到%esp指向的内存中</span><br></pre></td></tr></table></figure>
 <p><code>popl %eax</code>指令等价于下面的指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl (%esp), %ebp  把%esp指向的内存地址中的值读到%eax中</span><br><span class="line">addl $4, %esp      增加栈指针</span><br></pre></td></tr></table></figure>
-<h2 id="算术和逻辑操作"><a href="#算术和逻辑操作" class="headerlink" title="算术和逻辑操作"></a>算术和逻辑操作</h2><p>load effective address，leal 指令，实际上是一个 movl 指令。</p>
-<p><img src="../../../../images/2018/算术和逻辑操作指令.png" alt="算术和逻辑操作指令"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl (%esp), %ebp  把%esp指向的内存地址中的值读到%eax中</span><br><span class="line">addl $4, %esp      增加栈指针</span><br></pre></td></tr></table></figure>
+<h2 id="算术和逻辑操作">算术和逻辑操作</h2>
+<p>load effective address，leal 指令，实际上是一个 movl 指令。</p>
+<p><img src="../../../../images/2018/%E7%AE%97%E6%9C%AF%E5%92%8C%E9%80%BB%E8%BE%91%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4.png" alt="算术和逻辑操作指令"></p>
 <p>多个操作数的指令，注意一下两个操作数的顺序即可</p>
-<h3 id="位移操作"><a href="#位移操作" class="headerlink" title="位移操作"></a>位移操作</h3><p>位移的值是用一个单字节来表示，且数值只能是 0 到 31，所以这个字节只有低五位才会被考虑。</p>
-<h3 id="扩展乘除指令"><a href="#扩展乘除指令" class="headerlink" title="扩展乘除指令"></a>扩展乘除指令</h3><p><img src="../../../../images/2018/扩展乘除操作.png" alt="扩展乘除操作"></p>
-<h2 id="控制"><a href="#控制" class="headerlink" title="控制"></a>控制</h2><h3 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h3><p>使用单比特的状态码来描述算数和逻辑运算的状态。最常用的状态码如下：</p>
+<h3 id="位移操作">位移操作</h3>
+<p>位移的值是用一个单字节来表示，且数值只能是 0 到 31，所以这个字节只有低五位才会被考虑。</p>
+<h3 id="扩展乘除指令">扩展乘除指令</h3>
+<p><img src="../../../../images/2018/%E6%89%A9%E5%B1%95%E4%B9%98%E9%99%A4%E6%93%8D%E4%BD%9C.png" alt="扩展乘除操作"></p>
+<h2 id="控制">控制</h2>
+<h3 id="状态码">状态码</h3>
+<p>使用单比特的状态码来描述算数和逻辑运算的状态。最常用的状态码如下：</p>
 <ul>
 <li>CF: carry flag 进位符，用来表示最高位的进位。通常用来检测无符号运算的溢出</li>
 <li>ZF: zero flag，零标志符，最近的操作产生了 0</li>
 <li>SF: sign flag，符号位，最近的操作产生了负数</li>
 <li>OF: overflow flag，溢出符，补码溢出，正负都可以，表示有符号溢出</li>
 </ul>
-<p><img src="../../../../images/2018/流程控制指令.png" alt="流程控制指令"></p>
+<p><img src="../../../../images/2018/%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4.png" alt="流程控制指令"></p>
 <p>举个例子：t=a+b，a、b、t 都是整形数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CF: (unsigned)t&lt;(unsigned)a       无符号溢出</span><br><span class="line">ZF: (t==0)                        零</span><br><span class="line">SF: (t&lt;0)                         负数</span><br><span class="line">OF: (a&lt;0 == b&lt;0) &amp;&amp; (t&lt;0 != a&lt;0)  有符号溢出</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CF: (unsigned)t&lt;(unsigned)a       无符号溢出</span><br><span class="line">ZF: (t==0)                        零</span><br><span class="line">SF: (t&lt;0)                         负数</span><br><span class="line">OF: (a&lt;0 == b&lt;0) &amp;&amp; (t&lt;0 != a&lt;0)  有符号溢出</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>OF 的表达式也可以写作：(a&lt;0 &amp;&amp; b<0 && t>0) || (a&gt;0 &amp;&amp; b&gt;0 &amp;&amp; t&lt;0)，也就是说 a、b 都是负数相加却是正数，或者 a、b 都是正数相加却是负数，这两种情况就代表溢出了。</0></p>
+<p>OF 的表达式也可以写作：(a&lt;0 &amp;&amp; b&lt;0 &amp;&amp; t&gt;0) || (a&gt;0 &amp;&amp; b&gt;0 &amp;&amp; t&lt;0)，也就是说 a、b 都是负数相加却是正数，或者 a、b 都是正数相加却是负数，这两种情况就代表溢出了。</p>
 </blockquote>
 <p>leal 操作不会改变状态码，因为这个指令只是用来计算地址。除此之外表 3.7 中的所有操作都可能改变状态码。例如逻辑操作：XOR，会使 CF 和 OF 置零，移位操作会使 CF 置为最后一个移位出去的 bit，但 OF 要置零。自增和自减指令会设置 OF 和 ZF，不设置 CF。</p>
 <p>CMP 指令类似于 SUB 指令，但只修改状态码而不改变其他寄存器，如果两个操作数相等，ZF 就会被设置；TEST 指令类似于 AND 指令，但只修改状态码而不改变其他寄存器，如果两个操作数是重复的： testl %eax,%eax，作用是检测%eax 是 0，还是正数，还是负数。</p>
-<h3 id="访问状态码"><a href="#访问状态码" class="headerlink" title="访问状态码"></a>访问状态码</h3><p>有三种常用的方式访问状态码：</p>
+<h3 id="访问状态码">访问状态码</h3>
+<p>有三种常用的方式访问状态码：</p>
 <ol>
 <li>根据几个状态码的逻辑组合，设置单个字节为 0 或 1，也就是 set 指令</li>
 <li>根据状态码，跳转到程序的其他分支</li>
 <li>根据状态码传送数据</li>
 </ol>
-<p><img src="../../../../images/2018/set指令.png" alt="set指令"></p>
+<p><img src="../../../../images/2018/set%E6%8C%87%E4%BB%A4.png" alt="set指令"></p>
 <p>举个例子：计算<code>a&lt;b</code>，a 和 b 都是 int 型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a is in %edx, b is in %eax</span><br><span class="line">cmpl   %eax, %edx       Compare a:b</span><br><span class="line">setl   %al              Set low order byte of %eax to 0 or 1</span><br><span class="line">movzbl %al, %eax        Set remaining byte of %eax to 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a is in %edx, b is in %eax</span><br><span class="line">cmpl   %eax, %edx       Compare a:b</span><br><span class="line">setl   %al              Set low order byte of %eax to 0 or 1</span><br><span class="line">movzbl %al, %eax        Set remaining byte of %eax to 0</span><br></pre></td></tr></table></figure>
 <p>setl 指令是：<code>D &lt;- SF^OF</code>，也就是有两种情况代表 <code>a-b&lt;0</code>：</p>
 <ol>
 <li>OF=0（a-b 没有发生溢出），且 SF=1（a-b 结果为负）</li>
@@ -590,12 +497,335 @@
 </ol>
 <p>第二种情况比较复杂，需要简单分析一下。a-b 发生了溢出，有两种情况：<strong>正溢出和负溢出</strong>。负溢出：a 是负数，b 是正数，但 a-b 结果为正（结果小于了最小的负数，发生溢出）；正溢出：a 是正数，b 是负数，但 a-b 结果为负（结果大于了最大的正数，发生溢出）。</p>
 <p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-128： 1000 0000</span><br><span class="line">127:   0111 1111</span><br><span class="line">-127:  1000 0001</span><br></pre></td></tr></table></figure>
-<p>a=-128, b=127, a-b=-128-127= $(1 0000 0001)_2$ , 从结果上来看就变成了 1（正数），这就是负溢出</p>
-<p>a=127, b=-127, a-b=127-(-127) = $(1111 1110)_2$ , 从结果上来看就变成了 -2（负数），这就是正溢出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-128： 1000 0000</span><br><span class="line">127:   0111 1111</span><br><span class="line">-127:  1000 0001</span><br></pre></td></tr></table></figure>
+<p>a=-128, b=127, a-b=-128-127= 
+    <span id="mjx-0fff975">
+      <style>
+      #mjx-0fff975{
+        display:contents;
+        mjx-assistive-mml {
+          user-select: text !important;
+          clip: auto !important;
+          color: rgba(0,0,0,0);
+        }
+        
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+      }
+      </style>
+      <mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="12.929ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5714.6 1000" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(389,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mn" transform="translate(889,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1500,0)"></path></g><g data-mml-node="mn" transform="translate(2889,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000,0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1500,0)"></path></g><g data-mml-node="msub" transform="translate(4889,0)"><g data-mml-node="mo"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mn" transform="translate(422,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>1</mn><mn>0000</mn><mn>0001</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container>
+    </span>
+   , 从结果上来看就变成了 1（正数），这就是负溢出</p>
+<p>a=127, b=-127, a-b=127-(-127) = 
+    <span id="mjx-8098133">
+      <style>
+      #mjx-8098133{
+        display:contents;
+        mjx-assistive-mml {
+          user-select: text !important;
+          clip: auto !important;
+          color: rgba(0,0,0,0);
+        }
+        
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+      }
+      </style>
+      <mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="11.798ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5214.6 1000" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mn" transform="translate(389,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1000,0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1500,0)"></path></g><g data-mml-node="mn" transform="translate(2389,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(1000,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1500,0)"></path></g><g data-mml-node="msub" transform="translate(4389,0)"><g data-mml-node="mo"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mn" transform="translate(422,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>1111</mn><mn>1110</mn><msub><mo stretchy="false">)</mo><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container>
+    </span>
+   , 从结果上来看就变成了 -2（负数），这就是正溢出</p>
 <p>OF=1, SF=0，就是负溢出，而负溢出代表着 a 是负数，b 是正数，也就是<code>a&lt;b</code></p>
 <p>其他三个有符号比较以此类推。</p>
-<h3 id="跳转指令"><a href="#跳转指令" class="headerlink" title="跳转指令"></a>跳转指令</h3><p><img src="../../../../images/2018/跳转指令.png" alt="跳转指令"></p>
+<h3 id="跳转指令">跳转指令</h3>
+<p><img src="../../../../images/2018/%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4.png" alt="跳转指令"></p>
 <p>可以看到条件跳转必须是直接的，而无条件跳转可以使用操作数。</p>
 <p>跳转位置的编码有两种：</p>
 <ol>
@@ -603,52 +833,60 @@
 <li>使用绝对定位</li>
 </ol>
 <p>实例如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">jle .L2                  if &lt;=, goto dest2</span><br><span class="line">  .L5:                   dest1:</span><br><span class="line">  movl %edx, %eax</span><br><span class="line">  sarl %eax</span><br><span class="line">  subl %eax, %edx</span><br><span class="line">  leal (%edx,%edx,2), %edx</span><br><span class="line">  testl %edx, %edx</span><br><span class="line">jg .L5                   if &gt;, goto dest1</span><br><span class="line">  .L2:                   dest2:</span><br><span class="line">   movl %edx, %eax</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">jle .L2                  if &lt;=, goto dest2</span><br><span class="line">  .L5:                   dest1:</span><br><span class="line">  movl %edx, %eax</span><br><span class="line">  sarl %eax</span><br><span class="line">  subl %eax, %edx</span><br><span class="line">  leal (%edx,%edx,2), %edx</span><br><span class="line">  testl %edx, %edx</span><br><span class="line">jg .L5                   if &gt;, goto dest1</span><br><span class="line">  .L2:                   dest2:</span><br><span class="line">   movl %edx, %eax</span><br></pre></td></tr></table></figure>
 <p>目标文件和汇编文件对应如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">8: 7e 0d                 jle 17 &lt;silly+0x17&gt; Target = dest2</span><br><span class="line">a: 89 d0                 mov %edx,%eax dest1:</span><br><span class="line">c: d1 f8                 sar %eax</span><br><span class="line">e: 29 c2                 sub %eax,%edx</span><br><span class="line">10: 8d 14 52             lea (%edx,%edx,2),%edx</span><br><span class="line">13: 85 d2                test %edx,%edx</span><br><span class="line">15: 7f f3                jg a &lt;silly+0xa&gt; Target = dest1</span><br><span class="line">17: 89 d0                mov %edx,%eax dest2:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">8: 7e 0d                 jle 17 &lt;silly+0x17&gt; Target = dest2</span><br><span class="line">a: 89 d0                 mov %edx,%eax dest1:</span><br><span class="line">c: d1 f8                 sar %eax</span><br><span class="line">e: 29 c2                 sub %eax,%edx</span><br><span class="line">10: 8d 14 52             lea (%edx,%edx,2),%edx</span><br><span class="line">13: 85 d2                test %edx,%edx</span><br><span class="line">15: 7f f3                jg a &lt;silly+0xa&gt; Target = dest1</span><br><span class="line">17: 89 d0                mov %edx,%eax dest2:</span><br></pre></td></tr></table></figure>
 <p>对应的关系是：<code>0xd+0xa=0x17</code>，<code>0xf3+0x17=0xa</code>，为什么是加下一条指令的地址而不是当前指令呢？这个传统要追溯到计算机的早期实现，当时的处理器会在执行每一条指令之前先更新一下 PC（program counter）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">804839c: 7e 0d           jle 80483ab &lt;silly+0x17&gt;</span><br><span class="line">804839e: 89 d0           mov %edx,%eax</span><br><span class="line">80483a0: d1 f8           sar %eax</span><br><span class="line">80483a2: 29 c2           sub %eax,%edx</span><br><span class="line">80483a4: 8d 14           52 lea (%edx,%edx,2),%edx</span><br><span class="line">80483a7: 85 d2           test %edx,%edx</span><br><span class="line">80483a9: 7f f3           jg 804839e &lt;silly+0xa&gt;</span><br><span class="line">80483ab: 89 d0           mov %edx,%eax</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">804839c: 7e 0d           jle 80483ab &lt;silly+0x17&gt;</span><br><span class="line">804839e: 89 d0           mov %edx,%eax</span><br><span class="line">80483a0: d1 f8           sar %eax</span><br><span class="line">80483a2: 29 c2           sub %eax,%edx</span><br><span class="line">80483a4: 8d 14           52 lea (%edx,%edx,2),%edx</span><br><span class="line">80483a7: 85 d2           test %edx,%edx</span><br><span class="line">80483a9: 7f f3           jg 804839e &lt;silly+0xa&gt;</span><br><span class="line">80483ab: 89 d0           mov %edx,%eax</span><br></pre></td></tr></table></figure>
 <p>从反汇编代码来看，<strong>跳转如果使用 PC 相对地址，则不管代码存储到内存中的哪个位置，跳转的地址都不需要修改，且需要的编码更短</strong>。</p>
-<h3 id="翻译条件分支"><a href="#翻译条件分支" class="headerlink" title="翻译条件分支"></a>翻译条件分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(test-expr)</span><br><span class="line">  then-statement</span><br><span class="line">else</span><br><span class="line">  else-statement</span><br></pre></td></tr></table></figure>
+<h3 id="翻译条件分支">翻译条件分支</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(test-expr)</span><br><span class="line">  then-statement</span><br><span class="line">else</span><br><span class="line">  else-statement</span><br></pre></td></tr></table></figure>
 <p>先写成等价的 goto 版本，然后就可以很轻松的转成汇编了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t=test-expr;</span><br><span class="line">if(!t)</span><br><span class="line">  goto false;</span><br><span class="line">  then-statement</span><br><span class="line">  goto done;</span><br><span class="line">false:</span><br><span class="line">  else-statement</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">t=test-expr;</span><br><span class="line">if(!t)</span><br><span class="line">  goto false;</span><br><span class="line">  then-statement</span><br><span class="line">  goto done;</span><br><span class="line">false:</span><br><span class="line">  else-statement</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
 <p>从汇编的角度看 <code>&amp;&amp;短路</code> 原理：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void cond(int a, int *p)</span><br><span class="line">&#123;</span><br><span class="line">  if (p &amp;&amp; a &gt; 0)</span><br><span class="line">  *p += a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a %ebp +8, p at %ebp +12</span><br><span class="line"></span><br><span class="line">movl 8(%ebp), %edx</span><br><span class="line">movl 12(%ebp), %eax</span><br><span class="line">testl %eax, %eax</span><br><span class="line">je .L3</span><br><span class="line">testl %edx, %edx</span><br><span class="line">jle .L3</span><br><span class="line">addl %edx, (%eax)</span><br><span class="line">.L3:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void cond(int a, int *p)</span><br><span class="line">&#123;</span><br><span class="line">  if (p &amp;&amp; a &gt; 0)</span><br><span class="line">  *p += a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a %ebp +8, p at %ebp +12</span><br><span class="line"></span><br><span class="line">movl 8(%ebp), %edx</span><br><span class="line">movl 12(%ebp), %eax</span><br><span class="line">testl %eax, %eax</span><br><span class="line">je .L3</span><br><span class="line">testl %edx, %edx</span><br><span class="line">jle .L3</span><br><span class="line">addl %edx, (%eax)</span><br><span class="line">.L3:</span><br></pre></td></tr></table></figure>
 <p>可以看到第一个条件通不过的时候就跳过了第二个条件判断。</p>
-<h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><h4 id="do-while"><a href="#do-while" class="headerlink" title="do while"></a>do while</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">do</span><br><span class="line">  body-statement</span><br><span class="line">  while(test-expr)</span><br></pre></td></tr></table></figure>
+<h3 id="循环">循环</h3>
+<h4 id="do-while">do while</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">do</span><br><span class="line">  body-statement</span><br><span class="line">  while(test-expr)</span><br></pre></td></tr></table></figure>
 <p>goto 版本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">  body-statement</span><br><span class="line">  t = test-expr;</span><br><span class="line">  if (t)</span><br><span class="line">goto loop;</span><br></pre></td></tr></table></figure>
-<p><img src="../../../../images/2018/while的汇编形式.png" alt="while的汇编形式"></p>
-<h4 id="while"><a href="#while" class="headerlink" title="while"></a>while</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while (test-expr)</span><br><span class="line">  body-statement</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loop:</span><br><span class="line">  body-statement</span><br><span class="line">  t = test-expr;</span><br><span class="line">  if (t)</span><br><span class="line">goto loop;</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../images/2018/while%E7%9A%84%E6%B1%87%E7%BC%96%E5%BD%A2%E5%BC%8F.png" alt="while的汇编形式"></p>
+<h4 id="while">while</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">while (test-expr)</span><br><span class="line">  body-statement</span><br></pre></td></tr></table></figure>
 <p>先转成 do while 形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (!test-expr)</span><br><span class="line">  goto done;</span><br><span class="line">do</span><br><span class="line">  body-statement</span><br><span class="line">  while (test-expr);</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (!test-expr)</span><br><span class="line">  goto done;</span><br><span class="line">do</span><br><span class="line">  body-statement</span><br><span class="line">  while (test-expr);</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
 <p>在把 do while 转成 goto 版：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t = test-expr;</span><br><span class="line">if (!t)</span><br><span class="line">  goto done;</span><br><span class="line">loop:</span><br><span class="line">  body-statement</span><br><span class="line">  t = test-expr;</span><br><span class="line">  if (t)</span><br><span class="line">    goto loop;</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
-<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for (init-expr; test-expr; update-expr)</span><br><span class="line">  body-statement</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t = test-expr;</span><br><span class="line">if (!t)</span><br><span class="line">  goto done;</span><br><span class="line">loop:</span><br><span class="line">  body-statement</span><br><span class="line">  t = test-expr;</span><br><span class="line">  if (t)</span><br><span class="line">    goto loop;</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
+<h4 id="for">for</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for (init-expr; test-expr; update-expr)</span><br><span class="line">  body-statement</span><br></pre></td></tr></table></figure>
 <p>先转成 while 形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">while (test-expr) &#123;</span><br><span class="line">  body-statement</span><br><span class="line">  update-expr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">while (test-expr) &#123;</span><br><span class="line">  body-statement</span><br><span class="line">  update-expr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后转成 do while 形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">if (!test-expr)</span><br><span class="line">  goto done;</span><br><span class="line">do &#123;</span><br><span class="line">  body-statement</span><br><span class="line">  update-expr;</span><br><span class="line">&#125; while (test-expr);</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">if (!test-expr)</span><br><span class="line">  goto done;</span><br><span class="line">do &#123;</span><br><span class="line">  body-statement</span><br><span class="line">  update-expr;</span><br><span class="line">&#125; while (test-expr);</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
 <p>最后转成 do while 的 goto 版本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">t = test-expr;</span><br><span class="line">if (!t)</span><br><span class="line">  goto done;</span><br><span class="line">loop:</span><br><span class="line">  body-statement</span><br><span class="line">  update-expr;</span><br><span class="line">  t = test-expr;</span><br><span class="line">  if (t)</span><br><span class="line">    goto loop;</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
-<h3 id="状态转移指令"><a href="#状态转移指令" class="headerlink" title="状态转移指令"></a>状态转移指令</h3><p><img src="../../../../images/2018/状态表达式.png" alt="状态表达式"></p>
-<p><img src="../../../../images/2018/状态转移指令.png" alt="状态转移指令"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v = test-expr ? then-expr : else-expr;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">init-expr;</span><br><span class="line">t = test-expr;</span><br><span class="line">if (!t)</span><br><span class="line">  goto done;</span><br><span class="line">loop:</span><br><span class="line">  body-statement</span><br><span class="line">  update-expr;</span><br><span class="line">  t = test-expr;</span><br><span class="line">  if (t)</span><br><span class="line">    goto loop;</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
+<h3 id="状态转移指令">状态转移指令</h3>
+<p><img src="../../../../images/2018/%E7%8A%B6%E6%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" alt="状态表达式"></p>
+<p><img src="../../../../images/2018/%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A4.png" alt="状态转移指令"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v = test-expr ? then-expr : else-expr;</span><br></pre></td></tr></table></figure>
 <p>goto 版：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (!test-expr)</span><br><span class="line">  goto false;</span><br><span class="line">v = true-expr;</span><br><span class="line">goto done;</span><br><span class="line">false:</span><br><span class="line">  v = else-expr;</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
-<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><p>switch 主要使用了跳转表：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">switch_eg</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result = x;</span><br><span class="line">  <span class="keyword">switch</span> (n) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>:</span><br><span class="line">      result *= <span class="number">13</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">102</span>:</span><br><span class="line">      result += <span class="number">10</span>;</span><br><span class="line">      <span class="comment">/* Fall through */</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">103</span>:</span><br><span class="line">      result += <span class="number">11</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">104</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">106</span>:</span><br><span class="line">      result *= result;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      result = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">switch_eg_impl</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="comment">/* Table of code pointers */</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">void</span> *jt[<span class="number">7</span>] = &#123;</span><br><span class="line">    &amp;&amp;loc_A, &amp;&amp;loc_def, &amp;&amp;loc_B,</span><br><span class="line">    &amp;&amp;loc_C, &amp;&amp;loc_D, &amp;&amp;loc_def,</span><br><span class="line">    &amp;&amp;loc_D</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">unsigned</span> index = n - <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">int</span> result;</span><br><span class="line">  <span class="keyword">if</span> (index &gt; <span class="number">6</span>)</span><br><span class="line">    <span class="keyword">goto</span> loc_def;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Multiway branch */</span></span><br><span class="line">  <span class="keyword">goto</span> *jt[index];</span><br><span class="line"></span><br><span class="line">  loc_def: <span class="comment">/* Default case*/</span></span><br><span class="line">    result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">goto</span> done;</span><br><span class="line"></span><br><span class="line">  loc_C: <span class="comment">/* Case 103 */</span></span><br><span class="line">    result = x;</span><br><span class="line">    <span class="keyword">goto</span> rest;</span><br><span class="line"></span><br><span class="line">  loc_A: <span class="comment">/* Case 100 */</span></span><br><span class="line">    result = x * <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">goto</span> done;</span><br><span class="line"></span><br><span class="line">  loc_B: <span class="comment">/* Case 102 */</span></span><br><span class="line">    result = x + <span class="number">10</span>;</span><br><span class="line">    <span class="comment">/* Fall through */</span></span><br><span class="line"></span><br><span class="line">  rest: <span class="comment">/* Finish case 103 */</span></span><br><span class="line">    result += <span class="number">11</span>;</span><br><span class="line">    <span class="keyword">goto</span> done;</span><br><span class="line"></span><br><span class="line">  loc_D: <span class="comment">/* Cases 104, 106 */</span></span><br><span class="line">    result = x * x;</span><br><span class="line">    <span class="comment">/* Fall through */</span></span><br><span class="line"></span><br><span class="line">  done:</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (!test-expr)</span><br><span class="line">  goto false;</span><br><span class="line">v = true-expr;</span><br><span class="line">goto done;</span><br><span class="line">false:</span><br><span class="line">  v = else-expr;</span><br><span class="line">done:</span><br></pre></td></tr></table></figure>
+<h3 id="switch">switch</h3>
+<p>switch 主要使用了跳转表：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">switch_eg</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="type">int</span> result = x;</span><br><span class="line">  <span class="keyword">switch</span> (n) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">100</span>:</span><br><span class="line">      result *= <span class="number">13</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">102</span>:</span><br><span class="line">      result += <span class="number">10</span>;</span><br><span class="line">      <span class="comment">/* Fall through */</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">103</span>:</span><br><span class="line">      result += <span class="number">11</span>;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">104</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">106</span>:</span><br><span class="line">      result *= result;</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      result = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">switch_eg_impl</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="comment">/* Table of code pointers */</span></span><br><span class="line">  <span class="type">static</span> <span class="type">void</span> *jt[<span class="number">7</span>] = &#123;</span><br><span class="line">    &amp;&amp;loc_A, &amp;&amp;loc_def, &amp;&amp;loc_B,</span><br><span class="line">    &amp;&amp;loc_C, &amp;&amp;loc_D, &amp;&amp;loc_def,</span><br><span class="line">    &amp;&amp;loc_D</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="type">unsigned</span> index = n - <span class="number">100</span>;</span><br><span class="line">  <span class="type">int</span> result;</span><br><span class="line">  <span class="keyword">if</span> (index &gt; <span class="number">6</span>)</span><br><span class="line">    <span class="keyword">goto</span> loc_def;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Multiway branch */</span></span><br><span class="line">  <span class="keyword">goto</span> *jt[index];</span><br><span class="line"></span><br><span class="line">  loc_def: <span class="comment">/* Default case*/</span></span><br><span class="line">    result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">goto</span> done;</span><br><span class="line"></span><br><span class="line">  loc_C: <span class="comment">/* Case 103 */</span></span><br><span class="line">    result = x;</span><br><span class="line">    <span class="keyword">goto</span> rest;</span><br><span class="line"></span><br><span class="line">  loc_A: <span class="comment">/* Case 100 */</span></span><br><span class="line">    result = x * <span class="number">13</span>;</span><br><span class="line">    <span class="keyword">goto</span> done;</span><br><span class="line"></span><br><span class="line">  loc_B: <span class="comment">/* Case 102 */</span></span><br><span class="line">    result = x + <span class="number">10</span>;</span><br><span class="line">    <span class="comment">/* Fall through */</span></span><br><span class="line"></span><br><span class="line">  rest: <span class="comment">/* Finish case 103 */</span></span><br><span class="line">    result += <span class="number">11</span>;</span><br><span class="line">    <span class="keyword">goto</span> done;</span><br><span class="line"></span><br><span class="line">  loc_D: <span class="comment">/* Cases 104, 106 */</span></span><br><span class="line">    result = x * x;</span><br><span class="line">    <span class="comment">/* Fall through */</span></span><br><span class="line"></span><br><span class="line">  done:</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>汇编代码如下：</p>
-<p><img src="../../../../images/2018/switch汇编代码.png" alt="switch汇编代码"></p>
-<p><img src="../../../../images/2018/switch跳转表1.png" alt="switch跳转表1"></p>
-<p><img src="../../../../images/2018/switch跳转表2.png" alt="switch跳转表2"></p>
+<p><img src="../../../../images/2018/switch%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81.png" alt="switch汇编代码"></p>
+<p><img src="../../../../images/2018/switch%E8%B7%B3%E8%BD%AC%E8%A1%A81.png" alt="switch跳转表1"></p>
+<p><img src="../../../../images/2018/switch%E8%B7%B3%E8%BD%AC%E8%A1%A82.png" alt="switch跳转表2"></p>
 <p>跳转表的步长是 4</p>
 <blockquote>
 <p>.rodata 的意思是：read only data</p>
 </blockquote>
-<h2 id="过程调用"><a href="#过程调用" class="headerlink" title="过程调用"></a>过程调用</h2><p><img src="../../../../images/2018/程序栈内存结构.png" alt="程序栈内存结构"></p>
+<h2 id="过程调用">过程调用</h2>
+<p><img src="../../../../images/2018/%E7%A8%8B%E5%BA%8F%E6%A0%88%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.png" alt="程序栈内存结构"></p>
 <p>有以下几个要点：</p>
 <ol>
 <li>栈是倒着长的</li>
@@ -663,16 +901,19 @@
 <li>局部变量是数组或者结构体，必须用到引用</li>
 <li>局部变量使用了取址符<code>&amp;</code>，所以我们必须给它生成地址</li>
 </ol>
-<h3 id="转移控制"><a href="#转移控制" class="headerlink" title="转移控制"></a>转移控制</h3><p><img src="../../../../images/2018/转移控制指令.png" alt="转移控制指令"></p>
+<h3 id="转移控制">转移控制</h3>
+<p><img src="../../../../images/2018/%E8%BD%AC%E7%A7%BB%E6%8E%A7%E5%88%B6%E6%8C%87%E4%BB%A4.png" alt="转移控制指令"></p>
 <p>call 指令的效果是：把返回地址 push 到栈中，然后跳到调用程序的地址（也就是把 PC 设置一下）。<strong>返回地址</strong>是汇编代码中 call 指令后面那条指令的地址。</p>
 <p>ret 指令把栈顶的返回地址 pop 出来，并跳转到这个地址。</p>
-<p><img src="../../../../images/2018/程序调用模型.png" alt="程序调用模型"></p>
-<h3 id="寄存器使用传统"><a href="#寄存器使用传统" class="headerlink" title="寄存器使用传统"></a>寄存器使用传统</h3><p>%eax, %edx, %ecx 是调用者保存寄存器。也就是说当过程 Q 被过程 P 调用，过程 Q 可以随意的写这三个寄存器，因为在调用 Q 之前 P 必须保存这三个寄存器的值。</p>
+<p><img src="../../../../images/2018/%E7%A8%8B%E5%BA%8F%E8%B0%83%E7%94%A8%E6%A8%A1%E5%9E%8B.png" alt="程序调用模型"></p>
+<h3 id="寄存器使用传统">寄存器使用传统</h3>
+<p>%eax, %edx, %ecx 是调用者保存寄存器。也就是说当过程 Q 被过程 P 调用，过程 Q 可以随意的写这三个寄存器，因为在调用 Q 之前 P 必须保存这三个寄存器的值。</p>
 <p>%ebx, %esi, %edi 是被调用者保存寄存器。也就是说在过程 Q 写这些寄存器之前，必须保存里面的值，并在 return 之前恢复原样。</p>
-<h3 id="过程调用例子"><a href="#过程调用例子" class="headerlink" title="过程调用例子"></a>过程调用例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int swap_add(int *xp, int *yp)</span><br><span class="line">&#123;</span><br><span class="line">  int x = *xp;</span><br><span class="line">  int y = *yp;</span><br><span class="line"></span><br><span class="line">  *xp = y;</span><br><span class="line">  *yp = x;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int caller()</span><br><span class="line">&#123;</span><br><span class="line">  int arg1 = 534;</span><br><span class="line">  int arg2 = 1057;</span><br><span class="line"></span><br><span class="line">  int sum = swap_add(&amp;arg1, &amp;arg2);</span><br><span class="line">  int diff = arg1 - arg2;</span><br><span class="line">  return sum * diff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="../../../../images/2018/过程调用内存模型.png" alt="过程调用内存模型"></p>
+<h3 id="过程调用例子">过程调用例子</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int swap_add(int *xp, int *yp)</span><br><span class="line">&#123;</span><br><span class="line">  int x = *xp;</span><br><span class="line">  int y = *yp;</span><br><span class="line"></span><br><span class="line">  *xp = y;</span><br><span class="line">  *yp = x;</span><br><span class="line">  return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int caller()</span><br><span class="line">&#123;</span><br><span class="line">  int arg1 = 534;</span><br><span class="line">  int arg2 = 1057;</span><br><span class="line"></span><br><span class="line">  int sum = swap_add(&amp;arg1, &amp;arg2);</span><br><span class="line">  int diff = arg1 - arg2;</span><br><span class="line">  return sum * diff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="../../../../images/2018/%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png" alt="过程调用内存模型"></p>
 <p>一些编程语言，比如 Pascal，提供了值传参和引用传参。但 C 语言只有值传参，C++提供了引用传参。C 语言可以通过指针来实现引用传参。</p>
-<p><img src="../../../../images/2018/过程调用汇编代码.png" alt="过程调用汇编代码"></p>
+<p><img src="../../../../images/2018/%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81.png" alt="过程调用汇编代码"></p>
 <p>总共申请了 24 字节的空间，8 字节用来存局部变量，8 字节用来存参数，还有 8 字节未使用。</p>
 <blockquote>
 <p>为什么要浪费 8 字节，原因是：内存对齐。GCC 遵循一个 x86 编程方针：栈空间必须是 16 的整数倍，包括保存%ebp 的 4 字节和返回地址的 4 字节。这里总共加起来是 24 字节，所以需要额外的 8 字节填充成 32 字节。</p>
@@ -680,18 +921,18 @@
 <p>swap_add 的汇编代码如下：</p>
 <p>分为三个部分：setup、body、finish</p>
 <p>setup:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">swap_add:</span><br><span class="line">  pushl %ebp                  Save old %ebp</span><br><span class="line">  movl %esp, %ebp             Set %ebp as frame pointer</span><br><span class="line">  pushl %ebx                  Save %ebx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">swap_add:</span><br><span class="line">  pushl %ebp                  Save old %ebp</span><br><span class="line">  movl %esp, %ebp             Set %ebp as frame pointer</span><br><span class="line">  pushl %ebx                  Save %ebx</span><br></pre></td></tr></table></figure>
 <p>首先要保存调用者的帧基指针，然后重新设置当前帧基指针，然后如果用到%ebx,%esi,%edi 等寄存器就需要保存。</p>
 <p>body:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">movl 8(%ebp), %edx            Get xp</span><br><span class="line">movl 12(%ebp), %ecx           Get yp</span><br><span class="line">movl (%edx), %ebx             Get x</span><br><span class="line">movl (%ecx), %eax             Get y</span><br><span class="line">movl %eax, (%edx)             Store y at xp</span><br><span class="line">movl %ebx, (%ecx)             Store x at yp</span><br><span class="line">addl %ebx, %eax               Return value = x+y</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">movl 8(%ebp), %edx            Get xp</span><br><span class="line">movl 12(%ebp), %ecx           Get yp</span><br><span class="line">movl (%edx), %ebx             Get x</span><br><span class="line">movl (%ecx), %eax             Get y</span><br><span class="line">movl %eax, (%edx)             Store y at xp</span><br><span class="line">movl %ebx, (%ecx)             Store x at yp</span><br><span class="line">addl %ebx, %eax               Return value = x+y</span><br></pre></td></tr></table></figure>
 <p>获取参数，进行计算。</p>
 <p>finish:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">popl %ebx                     Restore %ebx</span><br><span class="line">popl %ebp                     Restore %ebp</span><br><span class="line">ret                           Return</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">popl %ebx                     Restore %ebx</span><br><span class="line">popl %ebp                     Restore %ebp</span><br><span class="line">ret                           Return</span><br></pre></td></tr></table></figure>
 <p>恢复两个寄存器，同时%esp 回到了上一个帧的栈顶，指向了返回地址，然后 ret 指令就可以把 PC 置为返回地址了，这样就完成了控制权的转移。</p>
 <p>然后执行调用完 swap_add 之后的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">movl -4(%ebp), %edx</span><br><span class="line">subl -8(%ebp), %edx</span><br><span class="line">imull %edx, %eax</span><br><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">movl -4(%ebp), %edx</span><br><span class="line">subl -8(%ebp), %edx</span><br><span class="line">imull %edx, %eax</span><br><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
 <p>leave 指令的作用是重置栈指针和帧指针，也可以使用 popl 来重置，很简单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//使%esp指向%ebp的地址（也就是Saved %ebp那里）</span><br><span class="line">movl %ebp, %esp</span><br><span class="line">//popl指令会导致%esp+4，所以%esp之后会指向上一帧的帧尾（也就是Return Address那里），popl的内容则放到了%ebp里面</span><br><span class="line">popl %ebp</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//使%esp指向%ebp的地址（也就是Saved %ebp那里）</span><br><span class="line">movl %ebp, %esp</span><br><span class="line">//popl指令会导致%esp+4，所以%esp之后会指向上一帧的帧尾（也就是Return Address那里），popl的内容则放到了%ebp里面</span><br><span class="line">popl %ebp</span><br></pre></td></tr></table></figure>
 <p>而之后的<code>ret</code>指令继续将<code>Return Address</code> pop 出来，并将<code>Return Address</code>放到 PC 中。</p>
 <p>从这个例子我们可以看出，编译器遵循一组简单的惯例来管理栈结构。</p>
 <ol>
@@ -703,886 +944,256 @@
 <blockquote>
 <p>要注意的点：只有 call 才会 push 一个返回地址，所以 swap_add 的栈帧中并没有返回地址，说明它没有调用其他函数</p>
 </blockquote>
-<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>每种数据类型都有对应的指针类型，但指针类型不是机器码的一部分，只是 C 语言提供的一种抽象，帮助程序员避免犯错。</p>
-<h2 id="内存引用越界和缓冲区溢出"><a href="#内存引用越界和缓冲区溢出" class="headerlink" title="内存引用越界和缓冲区溢出"></a>内存引用越界和缓冲区溢出</h2><p>我们可以看到 C 语言对数组引用没有任何边界检查，而且栈里面既保存了局部变量又保存了寄存器值以及返回地址。所以一旦数组越界写就会破坏整个程序的运行。</p>
+<h2 id="指针">指针</h2>
+<p>每种数据类型都有对应的指针类型，但指针类型不是机器码的一部分，只是 C 语言提供的一种抽象，帮助程序员避免犯错。</p>
+<h2 id="内存引用越界和缓冲区溢出">内存引用越界和缓冲区溢出</h2>
+<p>我们可以看到 C 语言对数组引用没有任何边界检查，而且栈里面既保存了局部变量又保存了寄存器值以及返回地址。所以一旦数组越界写就会破坏整个程序的运行。</p>
 <p>看下面这个例子：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Sample implementation of library function gets() */</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">gets</span><span class="params">(<span class="keyword">char</span> *s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> c;</span><br><span class="line">  <span class="keyword">char</span> *dest = s;</span><br><span class="line">  <span class="keyword">int</span> gotchar = <span class="number">0</span>; <span class="comment">/* Has at least one character been read? */</span></span><br><span class="line">  <span class="keyword">while</span> ((c = getchar()) != <span class="string">'\n'</span> &amp;&amp; c != EOF) &#123;</span><br><span class="line">    *dest++ = c; <span class="comment">/* No bounds checking! */</span></span><br><span class="line">    gotchar = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  *dest++ = <span class="string">'\0'</span>; <span class="comment">/* Terminate string */</span></span><br><span class="line">  <span class="keyword">if</span> (c == EOF &amp;&amp; !gotchar)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">NULL</span>; <span class="comment">/* End of file or error */</span></span><br><span class="line">  <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Read input line and write it back */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">echo</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> buf[<span class="number">8</span>]; <span class="comment">/* Way too small! */</span></span><br><span class="line">  gets(buf);</span><br><span class="line">  <span class="built_in">puts</span>(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Sample implementation of library function gets() */</span></span><br><span class="line"><span class="type">char</span> *<span class="title function_">gets</span><span class="params">(<span class="type">char</span> *s)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> c;</span><br><span class="line">  <span class="type">char</span> *dest = s;</span><br><span class="line">  <span class="type">int</span> gotchar = <span class="number">0</span>; <span class="comment">/* Has at least one character been read? */</span></span><br><span class="line">  <span class="keyword">while</span> ((c = getchar()) != <span class="string">&#x27;\n&#x27;</span> &amp;&amp; c != EOF) &#123;</span><br><span class="line">    *dest++ = c; <span class="comment">/* No bounds checking! */</span></span><br><span class="line">    gotchar = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  *dest++ = <span class="string">&#x27;\0&#x27;</span>; <span class="comment">/* Terminate string */</span></span><br><span class="line">  <span class="keyword">if</span> (c == EOF &amp;&amp; !gotchar)</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">NULL</span>; <span class="comment">/* End of file or error */</span></span><br><span class="line">  <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Read input line and write it back */</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">echo</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> buf[<span class="number">8</span>]; <span class="comment">/* Way too small! */</span></span><br><span class="line">  gets(buf);</span><br><span class="line">  <span class="built_in">puts</span>(buf);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这段 C 语言代码对应的汇编代码如下：</p>
-<p><img src="../../../../images/2018/gets缓冲区溢出.png" alt="gets缓冲区溢出"></p>
+<p><img src="../../../../images/2018/gets%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA.png" alt="gets缓冲区溢出"></p>
 <p>分配数组空间的时候是直接固定了 8 字节，这里给 buf 分配的空间也是 8 字节：<code>leal -12(%ebp), %ebx</code>，并把 buf 作为参数放置于栈顶。</p>
-<p><img src="../../../../images/2018/缓冲区溢出内存模型.png" alt="缓冲区溢出内存模型"></p>
+<p><img src="../../../../images/2018/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.png" alt="缓冲区溢出内存模型"></p>
 <p>我们可以看到，当读写 buf[8]的时候，实际上是在读写<code>Saved %ebx</code>。</p>
-<p><img src="../../../../images/2018/缓冲区攻击范围.png" alt="缓冲区攻击范围"></p>
+<p><img src="../../../../images/2018/%E7%BC%93%E5%86%B2%E5%8C%BA%E6%94%BB%E5%87%BB%E8%8C%83%E5%9B%B4.png" alt="缓冲区攻击范围"></p>
 <p>通常给被攻击的程序输入一个字符串，这个字符串包含了可执行代码的字节编码，如果我们通过缓冲区溢出修改了返回地址，那么 ret 指令就可以跳转到我们攻击代码的位置。</p>
 <blockquote>
 <p>蠕虫（worms）和病毒（viruses）的区别：相同点：都可以复制和传播自身，不同点：蠕虫可以自己运行，病毒是把自己加入到其他程序中，包括操作系统代码，病毒是不能独立运行的。</p>
 </blockquote>
-<h3 id="对抗缓冲区溢出攻击的方法"><a href="#对抗缓冲区溢出攻击的方法" class="headerlink" title="对抗缓冲区溢出攻击的方法"></a>对抗缓冲区溢出攻击的方法</h3><h4 id="栈随机化"><a href="#栈随机化" class="headerlink" title="栈随机化"></a>栈随机化</h4><p>攻击者需要插入攻击代码（一个字符串），并知道攻击代码的位置（也就是字符串存放的栈地址），而且指向这段字符串的指针也是这个字符串的一部分。如果栈的位置是固定的，那么就很容易猜到攻击代码的存放位置。用如下代码可以检测栈的位置：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> local;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"local at %p\n"</span>, &amp;local);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="对抗缓冲区溢出攻击的方法">对抗缓冲区溢出攻击的方法</h3>
+<h4 id="栈随机化">栈随机化</h4>
+<p>攻击者需要插入攻击代码（一个字符串），并知道攻击代码的位置（也就是字符串存放的栈地址），而且指向这段字符串的指针也是这个字符串的一部分。如果栈的位置是固定的，那么就很容易猜到攻击代码的存放位置。用如下代码可以检测栈的位置：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> local;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;local at %p\n&quot;</span>, &amp;local);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>只需要打印一个局部变量的地址。</p>
 <p>栈随机化的思想是程序每次运行时栈的位置都不一样，实现方式是：程序开始时，在栈上分配一段 0~n 字节之间的随机大小的空间，例如使用<code>alloca</code>可以在栈上分配空间。程序不使用这段空间，它的作用是使后续栈的位置发生变化。分配的 n 必须足够大，这样才能有足够多的变化，但又必须足够小，这样才不会浪费空间。</p>
 <p>栈随机化是更大一类技术的一种，这类技术称为：Address-Space Layout Randomization，ASLR，地址空间布局随机化。但攻击者还是可以采取一定措施来增加攻击成功率，一种常见的手段就是在攻击代码前中插入很长一段的<code>nop</code>指令，这个指令只会使程序计数器（PC）加一，除此之外没有任何副作用。只要攻击者能够猜中这段序列中的某个地址，就可以顺利到达攻击代码。这个序列的常用术语是：<strong>nop sled 空操作雪橇</strong>。</p>
-<h4 id="栈破坏检测"><a href="#栈破坏检测" class="headerlink" title="栈破坏检测"></a>栈破坏检测</h4><p>在局部缓冲区和栈状态之间插入一个随机的金丝雀值（也叫哨兵值），一旦发现这个值被改变，就说明缓冲区溢出了，那么就可以将程序异常中止。</p>
+<h4 id="栈破坏检测">栈破坏检测</h4>
+<p>在局部缓冲区和栈状态之间插入一个随机的金丝雀值（也叫哨兵值），一旦发现这个值被改变，就说明缓冲区溢出了，那么就可以将程序异常中止。</p>
 <blockquote>
 <p>攻击者只有输入局部缓冲区变量的权限，所以无从得知金丝雀值。</p>
 </blockquote>
-<p><img src="../../../../images/2018/金丝雀值.png" alt="金丝雀值"></p>
+<p><img src="../../../../images/2018/%E9%87%91%E4%B8%9D%E9%9B%80%E5%80%BC.png" alt="金丝雀值"></p>
 <p>GCC 默认就会插入金丝雀值，如果不想要可以使用参数：<code>-fno-stack-protector</code>来阻止 GCC 产生这种代码。当不使用此参数时，产生代码如下：</p>
-<p><img src="../../../../images/2018/含金丝雀值汇编码1.png" alt="含金丝雀值汇编码1"></p>
-<p><img src="../../../../images/2018/含金丝雀值汇编码2.png" alt="含金丝雀值汇编码2"></p>
+<p><img src="../../../../images/2018/%E5%90%AB%E9%87%91%E4%B8%9D%E9%9B%80%E5%80%BC%E6%B1%87%E7%BC%96%E7%A0%811.png" alt="含金丝雀值汇编码1"></p>
+<p><img src="../../../../images/2018/%E5%90%AB%E9%87%91%E4%B8%9D%E9%9B%80%E5%80%BC%E6%B1%87%E7%BC%96%E7%A0%812.png" alt="含金丝雀值汇编码2"></p>
 <p>指令参数<code>%gs20, %eax</code>指明金丝雀值使用 segmented addressing（段寻址）从存储器中读入。将段标志为只读，这样攻击者就不能同时修改段中的金丝雀值。最后使用<code>xorl</code>比较段和栈中的金丝雀值，如果不相等则<code>call __stack_chk_fail</code>。</p>
 <p>这种做法可以带来很小的性能损失。</p>
-<h4 id="限制可执行代码区域"><a href="#限制可执行代码区域" class="headerlink" title="限制可执行代码区域"></a>限制可执行代码区域</h4><p>在典型的程序中，只有保存编译器产生的代码的那一部分存储空间才需要是可执行的。其他部分可以被限制为只允许读写。虚拟存储器空间在逻辑上分成了页（page），典型的每页是 2048 或者 4096 字节。由硬件提供存储器保护。以前，x86 体系结构将读和执行访问控制合并成一个 1 位标志，所以任何被标记为可读的部分也是可执行的，当然也有很多机制可以限制一些页是可读的但是不可执行，然而这些机制都很消耗性能。最近，AMD（Advanced Micro Devices）为它的 64 位处理器的内存加入了 NX, No-eXecute，不可执行位，intel 也跟进了，检查页是否可执行由硬件来完成，效率上没有任何损失。</p>
+<h4 id="限制可执行代码区域">限制可执行代码区域</h4>
+<p>在典型的程序中，只有保存编译器产生的代码的那一部分存储空间才需要是可执行的。其他部分可以被限制为只允许读写。虚拟存储器空间在逻辑上分成了页（page），典型的每页是 2048 或者 4096 字节。由硬件提供存储器保护。以前，x86 体系结构将读和执行访问控制合并成一个 1 位标志，所以任何被标记为可读的部分也是可执行的，当然也有很多机制可以限制一些页是可读的但是不可执行，然而这些机制都很消耗性能。最近，AMD（Advanced Micro Devices）为它的 64 位处理器的内存加入了 NX, No-eXecute，不可执行位，intel 也跟进了，检查页是否可执行由硬件来完成，效率上没有任何损失。</p>
 
-      
     </div>
-    
-    
-    
 
     
-
     
-
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/blog/tags/编程基础/" rel="tag"># 编程基础</a>
-          
-        </div>
-      
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
 
-      
-      
-      
+  <div class="social-list">
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/blog/2018/09/27/浮点数原理/" rel="next" title="浮点数原理">
-                <i class="fa fa-chevron-left"></i> 浮点数原理
-              </a>
-            
-          </div>
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="https://x.com/liuqinh2s">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
 
-          <span class="post-nav-divider"></span>
+            <span class="label">Twitter</span>
+          </a>
+      </div>
 
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2018/10/13/处理器体系结构/" rel="prev" title="《CSAPP》 -- 处理器体系结构">
-                《CSAPP》 -- 处理器体系结构 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
+      <div class="social-item">
+          <a target="_blank" class="social-link" href="/blog/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
 
-      
-      
-    </footer>
+            <span class="label">RSS</span>
+          </a>
+      </div>
   </div>
-  
-  
-  
+</div>
+
+          <div class="post-tags">
+              <a href="/blog/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/" rel="tag"># 编程基础</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2018/09/27/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8E%9F%E7%90%86/" rel="prev" title="浮点数原理">
+                  <i class="fa fa-angle-left"></i> 浮点数原理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2018/10/13/%E5%A4%84%E7%90%86%E5%99%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/" rel="next" title="《CSAPP》 -- 处理器体系结构">
+                  《CSAPP》 -- 处理器体系结构 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="utterance-container"></div>
-    </div>
-  
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/05/20/5ce257002370387784.jpg" alt="liuqinh2s">
-            
-              <p class="site-author-name" itemprop="name">liuqinh2s</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/blog/archives/">
-              
-                  <span class="site-state-item-count">115</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">54</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-            <div class="feed-link motion-element">
-              <a href="/blog/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/liuqinh2s" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://x.com/liuqinh2s" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-link"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://lianera.github.io" title="liam" target="_blank">liam</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://jiyanggg.github.io/" title="jiyanggg" target="_blank">jiyanggg</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://zengyuxin.com/" title="曾小乱 – 在描绘他的生活倒影" target="_blank">曾小乱 – 在描绘他的生活倒影</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从编译-C-语言文件说起"><span class="nav-number">1.</span> <span class="nav-text">从编译 C 语言文件说起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#汇编代码的格式"><span class="nav-number">3.</span> <span class="nav-text">汇编代码的格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ATT-和-intel-汇编格式"><span class="nav-number">3.1.</span> <span class="nav-text">ATT 和 intel 汇编格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据格式"><span class="nav-number">4.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问数据"><span class="nav-number">5.</span> <span class="nav-text">访问数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作数指示符"><span class="nav-number">5.1.</span> <span class="nav-text">操作数指示符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mov-指令"><span class="nav-number">5.2.</span> <span class="nav-text">mov 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算术和逻辑操作"><span class="nav-number">6.</span> <span class="nav-text">算术和逻辑操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位移操作"><span class="nav-number">6.1.</span> <span class="nav-text">位移操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展乘除指令"><span class="nav-number">6.2.</span> <span class="nav-text">扩展乘除指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制"><span class="nav-number">7.</span> <span class="nav-text">控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#状态码"><span class="nav-number">7.1.</span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问状态码"><span class="nav-number">7.2.</span> <span class="nav-text">访问状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跳转指令"><span class="nav-number">7.3.</span> <span class="nav-text">跳转指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#翻译条件分支"><span class="nav-number">7.4.</span> <span class="nav-text">翻译条件分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环"><span class="nav-number">7.5.</span> <span class="nav-text">循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#do-while"><span class="nav-number">7.5.1.</span> <span class="nav-text">do while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while"><span class="nav-number">7.5.2.</span> <span class="nav-text">while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#for"><span class="nav-number">7.5.3.</span> <span class="nav-text">for</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态转移指令"><span class="nav-number">7.6.</span> <span class="nav-text">状态转移指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch"><span class="nav-number">7.7.</span> <span class="nav-text">switch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程调用"><span class="nav-number">8.</span> <span class="nav-text">过程调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#转移控制"><span class="nav-number">8.1.</span> <span class="nav-text">转移控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寄存器使用传统"><span class="nav-number">8.2.</span> <span class="nav-text">寄存器使用传统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过程调用例子"><span class="nav-number">8.3.</span> <span class="nav-text">过程调用例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针"><span class="nav-number">9.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存引用越界和缓冲区溢出"><span class="nav-number">10.</span> <span class="nav-text">内存引用越界和缓冲区溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对抗缓冲区溢出攻击的方法"><span class="nav-number">10.1.</span> <span class="nav-text">对抗缓冲区溢出攻击的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈随机化"><span class="nav-number">10.1.1.</span> <span class="nav-text">栈随机化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈破坏检测"><span class="nav-number">10.1.2.</span> <span class="nav-text">栈破坏检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#限制可执行代码区域"><span class="nav-number">10.1.3.</span> <span class="nav-text">限制可执行代码区域</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2026</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">liuqinh2s</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">131.7k</span>
-  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
 
-  
-    <span class="site-uv">
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2017 – 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
       <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
     </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
+    <span class="author" itemprop="copyrightHolder">liuqinh2s</span>
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-(function(){
-    var e=document.createElement("script");
-    e.type="text/javascript",
-    e.async=!0,
-    e.setAttribute("issue-term","pathname"),
-    e.setAttribute("theme","github-light"),
-    e.setAttribute("repo","liuqinh2s/blog-comment"),
-    e.crossorigin="anonymous",
-    e.src="https://utteranc.es/client.js";
-    var utterance_container = document.getElementById("utterance-container");
-    utterance_container && utterance_container.appendChild(e);
-    })()
-</script>
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/blog/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
-
-  
-
-  
-
-   
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">128k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:45</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
 <script>
-  function timer() {
-    var ages = moment.preciseDiff(moment(),moment(20170101,"YYYYMMDD"));
-    ages = ages.replace(/years?/, "年");
-    ages = ages.replace(/months?/, "月");
-    ages = ages.replace(/days?/, "天");
-    ages = ages.replace(/hours?/, "小时");
-    ages = ages.replace(/minutes?/, "分");
-    ages = ages.replace(/seconds?/, "秒");
-    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
-    div.innerHTML = `本站已运行 ${ages}`;
-  }
-  var div = document.createElement("div");
-  //插入到copyright之后
-  var copyright = document.querySelector(".copyright");
-  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
-  timer();
-  setInterval("timer()",1000)
+  (function() {
+    const birthdayStr = '20170101';
+    if (!birthdayStr || birthdayStr.length < 8) return;
+
+    // 创建运行时间元素
+    var runtimeDiv = document.createElement("div");
+
+    function updateRuntime() {
+      const birthday = moment(birthdayStr.substring(0, 4) + '-' + birthdayStr.substring(4, 6) + '-' + birthdayStr.substring(6, 8), 'YYYY-MM-DD');
+      const now = moment();
+      const ages = moment.preciseDiff(birthday, now);
+
+      let formatted = ages
+        .replace('years', '年')
+        .replace('year', '年')
+        .replace('months', '月')
+        .replace('month', '月')
+        .replace('days', '天')
+        .replace('day', '天')
+        .replace('hours', '小时')
+        .replace('hour', '小时')
+        .replace('minutes', '分')
+        .replace('minute', '分')
+        .replace('seconds', '秒')
+        .replace('second', '秒')
+        .replace(/\d+/g, '<span style="color: #1890ff;">$&</span>');
+
+      runtimeDiv.innerHTML = '本站已运行 ' + formatted;
+    }
+
+    // 插入到 copyright 之后
+    var copyright = document.querySelector(".copyright");
+    if (copyright && copyright.parentNode) {
+      copyright.parentNode.insertBefore(runtimeDiv, copyright.nextSibling);
+      updateRuntime();
+      setInterval(updateRuntime, 1000);
+    }
+  })();
 </script>
 
-</body>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/liuqinh2s" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"liuqinh2s/blog-comment","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/blog/js/third-party/comments/utterances.js" defer></script>
+
+<!-- hexo injector body_end start -->
+<style>
+/* 只处理块公式 display=true 的公式容器 */
+mjx-container.MathJax[jax="SVG"][display="true"] {
+  display: block !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 6px 0;
+  text-align: left !important;
+}
+
+/* 行内公式保持原样，禁止块展示、禁止滚动 */
+mjx-container.MathJax[jax="SVG"]:not([display="true"]) {
+  display: inline-block !important;
+}
+
+/* 兜底：限制内部svg基础宽度，防止无限扩张 */
+mjx-container.MathJax[jax="SVG"][display="true"] > svg {
+  min-width: unset;
+}
+
+/* 美化移动端横向滚动条（可选） */
+mjx-container.MathJax[jax="SVG"][display="true"]::-webkit-scrollbar {
+  height: 4px;
+}
+mjx-container.MathJax[jax="SVG"][display="true"]::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.post-body {
+  text-align: left !important;
+}
+</style>
+<!-- hexo injector body_end end --></body>
 </html>
