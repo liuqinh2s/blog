@@ -1,6 +1,7 @@
 ---
 title: JavaScript词法作用域
 tags: [JavaScript]
+categories: [编程]
 ---
 
 有两种作用域：

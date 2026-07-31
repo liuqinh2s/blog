@@ -1,6 +1,7 @@
 ---
 title: 扁平数组嵌套化（flat to nest）
 tags: [编程题]
+categories: [编程]
 ---
 
 ## 扁平数组嵌套化(flat to nest)

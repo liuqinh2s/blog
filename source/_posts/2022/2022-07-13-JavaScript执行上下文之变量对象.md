@@ -1,6 +1,7 @@
 ---
 title: JavaScript执行上下文之变量对象
 tags: [JavaScript]
+categories: [编程]
 ---
 
 # 执行上下文中包含哪些东西

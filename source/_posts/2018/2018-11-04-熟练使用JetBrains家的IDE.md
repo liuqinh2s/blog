@@ -1,6 +1,7 @@
 ---
 title: 熟练使用JetBrains家的IDE
 tags: [工具]
+categories: [编程]
 ---
 
 ## 通用快捷键

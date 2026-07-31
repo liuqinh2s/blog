@@ -1,6 +1,7 @@
 ---
 title: wsl oh my zsh 字符乱码问题
 tags: [wsl]
+categories: [编程]
 ---
 
 ## 安装 oh my zsh

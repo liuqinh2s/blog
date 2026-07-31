@@ -1,6 +1,7 @@
 ---
 title: JavaScript 闭包
 tags: [JavaScript]
+categories: [编程]
 ---
 
 # 闭包是干什么用的

@@ -1,6 +1,7 @@
 ---
 title: C++ map的remove函数实现
 tags: [C++]
+categories: [编程]
 ---
 
 今天同学群里面讨论了这样一段代码，说是产品出了 bug，现场急着修复。

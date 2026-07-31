@@ -1,6 +1,7 @@
 ---
 title: border-radius详解
 tags: [css]
+categories: [编程]
 ---
 
 看《CSS 解密》的时候遇到 border-radius 不是很懂，有个例子如下：

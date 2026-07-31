@@ -1,6 +1,7 @@
 ---
 title: type 和 interface 的区别
 tags: [typescript]
+categories: [编程]
 ---
 
 ## 相同点

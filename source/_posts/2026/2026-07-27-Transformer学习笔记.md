@@ -1,8 +1,7 @@
 ---
 title: Transformer学习笔记
 tags: [AI, 学习笔记]
-categories: [学习笔记, AI]
-mathjax: true
+categories: [AI]
 ---
 
 # 大模型自学笔记

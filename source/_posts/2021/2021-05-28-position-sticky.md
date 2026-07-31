@@ -1,6 +1,7 @@
 ---
 title: position sticky
 tags: [css]
+categories: [编程]
 ---
 
 > 在做公司项目的过程中遇到一个问题：让表头固定，同时其宽度必须占满整个父元素。用 fixed，可以固定但是宽度无法撑开。最终用`position: sticky`解决了问题。

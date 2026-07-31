@@ -1,6 +1,7 @@
 ---
 title: JavaScript原型和原型链
 tags: [JavaScript]
+categories: [编程]
 ---
 
 # 原型链是干什么用的

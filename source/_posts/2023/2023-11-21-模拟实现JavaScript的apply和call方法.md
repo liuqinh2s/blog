@@ -1,6 +1,7 @@
 ---
 title: 模拟实现JavaScript的apply和call方法
 tags: [JavaScript]
+categories: [编程]
 ---
 
 apply 和 call 的相同点是：

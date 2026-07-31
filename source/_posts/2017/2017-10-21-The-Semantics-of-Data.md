@@ -1,6 +1,7 @@
 ---
 title: Inside the C++ Object Model 系列笔记 三 -- The Semantics of Data
 tags: [C++]
+categories: [编程]
 ---
 
 C++对象模型的细节，讨论了 data members 的处理。

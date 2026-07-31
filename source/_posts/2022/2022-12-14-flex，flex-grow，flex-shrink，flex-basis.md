@@ -1,6 +1,7 @@
 ---
 title: flex，flex-grow，flex-shrink，flex-basis
 tags: [前端, css]
+categories: [编程]
 ---
 
 面试官问：flex: 2 有用过吗？多列布局怎么实现？

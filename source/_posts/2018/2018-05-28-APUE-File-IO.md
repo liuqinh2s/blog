@@ -1,6 +1,7 @@
 ---
 title: 《APUE-3rd》 读书笔记 -- File I/O
 tags: [操作系统]
+categories: [编程]
 ---
 
 ## 前言

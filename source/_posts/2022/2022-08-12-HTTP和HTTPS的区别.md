@@ -1,6 +1,7 @@
 ---
 title: HTTP 和 HTTPS 的区别
 tags: [计算机网络]
+categories: [编程]
 ---
 
 1. HTTP 使用 80 端口，HTTPS 使用 443 端口

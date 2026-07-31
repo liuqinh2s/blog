@@ -1,6 +1,7 @@
 ---
 title: 实现一个高效的deepClone
 tags: [js]
+categories: [编程]
 ---
 
 ## 先来实现一个最简版的 deepClone

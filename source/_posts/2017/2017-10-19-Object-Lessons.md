@@ -1,6 +1,7 @@
 ---
 title: Inside the C++ Object Model 系列笔记 一 -- Object Lessons
 tags: [C++]
+categories: [编程]
 ---
 
 > 多态：统一的接口，不同的实现

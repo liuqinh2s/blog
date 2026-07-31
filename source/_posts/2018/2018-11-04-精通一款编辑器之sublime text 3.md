@@ -1,6 +1,7 @@
 ---
 title: 精通一款编辑器之sublime text 3
 tags: [工具]
+categories: [编程]
 ---
 
 ## 编辑器常用功能

@@ -1,6 +1,7 @@
 ---
 title: JavaScript的var,let,const的区别
 tags: [JavaScript]
+categories: [编程]
 ---
 
 首先`var`,`let`,`const`都是用于定义变量，这是它们的共同点，那么它们的区别呢？

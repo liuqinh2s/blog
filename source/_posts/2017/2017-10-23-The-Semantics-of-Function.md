@@ -1,6 +1,7 @@
 ---
 title: Inside the C++ Object Model 系列笔记 四 -- The Semantics of Function
 tags: [C++]
+categories: [编程]
 ---
 
 > c++支持三种类型的成员函数，分别为 static,nostatic,virtual。每一种调用方式都不尽相同。

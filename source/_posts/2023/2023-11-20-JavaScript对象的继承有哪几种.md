@@ -1,6 +1,7 @@
 ---
 title: JavaScript对象的继承有哪几种
 tags: [javascript]
+categories: [编程]
 ---
 
 javascript 高级程序设计中有写，对象的继承总共有六种:

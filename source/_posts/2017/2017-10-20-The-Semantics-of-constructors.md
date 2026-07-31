@@ -1,6 +1,7 @@
 ---
 title: Inside the C++ Object Model 系列笔记 二 -- The Semantics of constructors
 tags: [C++]
+categories: [编程]
 ---
 
 这一章详细的讨论了 constructor 如何工作，讨论构造一个对象的过程以及构造一个对象给程序带来的影响。

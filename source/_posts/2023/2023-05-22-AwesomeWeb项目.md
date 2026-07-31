@@ -1,6 +1,7 @@
 ---
 title: AwesomeWeb项目
 tags: [前端, 项目]
+categories: [编程]
 ---
 
 github 仓库：[liuqinh2s/AwesomeWeb](https://github.com/liuqinh2s/AwesomeWeb)

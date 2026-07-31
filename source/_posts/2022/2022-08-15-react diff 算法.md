@@ -1,6 +1,7 @@
 ---
 title: React Diff 算法
 tags: [React]
+categories: [编程]
 ---
 
 每次面试问到了解 React Diff 算法吗？我都不知道说什么，这次总结一下，该怎么说。

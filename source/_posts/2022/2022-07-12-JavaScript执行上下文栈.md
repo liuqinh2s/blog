@@ -1,6 +1,7 @@
 ---
 title: JavaScript执行上下文栈
 tags: [JavaScript]
+categories: [编程]
 ---
 
 # 顺序执行？

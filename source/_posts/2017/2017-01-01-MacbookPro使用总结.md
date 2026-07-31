@@ -1,6 +1,7 @@
 ---
 title: Macbook Pro 使用总结
 tags: [工具]
+categories: [编程]
 ---
 
 ## 前言
