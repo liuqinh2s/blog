@@ -7,9 +7,9 @@ date: 2019-02-20 20:30:09
 
 最终我打算做成一个网站和 APP，聚焦的点在于指引，比如入门指引，我会把最富盛名的入门教材列出。
 
-# 个人博客
+## 个人博客
 
-## 中文
+### 中文
 
 - [阮一峰的博客](http://www.ruanyifeng.com/blog/)
 - [槽边往事](https://www.hecaitou.com/)，[槽边往事](https://www.hecaitou.info/)
@@ -37,8 +37,13 @@ date: 2019-02-20 20:30:09
 - [山月行](https://shanyue.tech/)
 - [卢昌海个人主页](https://www.changhai.org/index.php)
 - [Wang Jie - Biofy](https://biofy.cn/wangjiegulu)
+- [YYsuni](https://www.yysuni.com/)
+- [Josh W. Comeau](https://www.joshwcomeau.com/about-josh/)
+- [Nathan Chen](https://nathanchen.me/)：网上很火的17岁 kimi 少年陈广宇的博客
+- [Fabrice Bellard's Home Page](https://bellard.org/)：神级程序员的博客
+- [大米饭🍚](https://kuraa.cc/)
 
-## English
+### English
 
 - [meyerweb](https://meyerweb.com/)
 - [dogatekin](https://www.dogatekin.com/)
@@ -47,32 +52,56 @@ date: 2019-02-20 20:30:09
 - [stuffwithstuff](https://journal.stuffwithstuff.com/)
 - [Anish Athalye](https://anishathalye.com/)
 
-# 我的工具
+## 我的工具
 
 - [liqi - 利器](https://liqi.io)
+- [腾讯云服务器控制台](https://console.cloud.tencent.com/lighthouse/instance/detail?rid=18&id=lhins-cbvo13su&tab=command&action=DescribeInstanceLogin)
+- [微信 Markdown 编辑器 | Doocs](https://md.doocs.org/)
+- [Markdown | 让排版变 Nice](https://editor.mdnice.com/)
+- [作业部落](https://www.zybuluo.com/)：一款在线markdown笔记网站
+- [Release 1.4.8 · rustdesk/rustdesk](https://github.com/rustdesk/rustdesk/releases/tag/1.4.8)：一款免费开源的远程桌面软件，可以替代 Teamviewer 和 ToDesk
 
-## 综合资源
+### 综合资源
 
 - [Internet Archive: Digital Library of Free & Borrowable Books, Movies, Music & Wayback Machine](https://archive.org/)
 
-## 新闻热点
+### 新闻热点
 
 - [今日热榜](https://tophub.today/)
 - [摸摸鱼热榜](https://momoyu.cc/)
 - [知微事见](https://ef.zhiweidata.com/)
 - [果汁排行榜 - 各类榜单排名大全](http://guozhivip.com/rank/)
 
-## 导航
+### 导航
 
 - [影视导航](https://ys.urlsdh.com/)
 - [AI 导航](https://ai.nancheng.fun/)
 
-## 开源项目
+### 开源项目
 
 - [HelloGitHub](https://hellogithub.com/)
 
-## AI
+### 我的氛围编程作品
 
+- [藏友](https://u9766hf3.mule.page/)
+- [Markdown → 微信公众号](https://scrv353y.mule.page/)
+- [挖掘加密货币最近消息面](https://liuqinh2s.github.io/crypto-mint/)
+- [bitget 自动交易](https://liuqinh2s.github.io/coin-trader/)
+
+### 别人的氛围编程作品
+
+- [Cell Architecture Studio](https://cell-architecture-studio.lanshuagent.com/)：在网上流传很火的细胞生物学可视化学习网站
+- [Everything a child learns · Marble](https://withmarble.com/curriculum/)
+- [彩虹屁墙 | XiaoHu.AI 学院](https://www.xiaohu.ai/c/vip)
+- [懒猫微服](https://lazycat.cloud/)
+- [学习下围棋](https://online-go.com/learn-to-play-go)
+- [Scroll-driven Animations](https://scroll-driven-animations.style/)
+- [How to Draw: Easy Step-by-Step Drawing Tutorials for Beginners](https://www.howtodraw.ai/)
+- [Bento Slides Showcase — bento/slides](https://bento.page/slides/)
+
+### AI
+
+- [仪表板 - NEW CLI](https://foxcode.rjj.cc/dashboard)：AI中转站，强烈推荐，便宜好用
 - [ChatGPT](https://chat.openai.com/)
 - [openprompt](https://openprompt.co/)
 - AI 解读一张照片内包含的信息：[They See Your Photos](https://theyseeyourphotos.com/)
@@ -89,9 +118,11 @@ date: 2019-02-20 20:30:09
   - [mengxi-ream/read-frog: 🐸 Read Frog - Open Source Immersive Translate | 🐸 陪读蛙 - 开源沉浸式翻译](https://github.com/mengxi-ream/read-frog)
 - 硅基流动 API 控制台：[SiliconCloud](https://cloud.siliconflow.cn/sft-d1f3c9bk20jc73cq6pv0/models)
 - [MCP 市场 - 收录 20,000+ MCP Servers 的全球最大平台](https://mcpmarket.cn/)
+- [Transformer Explainer: LLM Transformer Model Visually Explained](https://poloclub.github.io/transformer-explainer/)
 
-## 软件
+### 软件
 
+- [Orion Browser by Kagi](https://orionbrowser.com/)：一款浏览器
 - [daily.dev | Where developers grow together](https://app.daily.dev/)
 - [Everything - 基于名称快速定位文件和文件夹。](https://www.voidtools.com/zh-cn/)
 - 局域网传输：[landrop](https://landrop.app/)
@@ -104,12 +135,12 @@ date: 2019-02-20 20:30:09
 - [墨刀 - 适合产品经理的原型设计及协作平台](https://modao.cc/)：我曾经想做一款社交媒体软件，用墨刀画的原型
 - [Dribbble - Discover the World’s Top Designers & Creative Professionals](https://dribbble.com/)
 
-## 配色
+### 配色
 
 - [Color Leap - 色彩时光机](https://colorleap.app/home)
 - [中国传统颜色](http://zhongguose.com/)
 
-## 图片
+### 图片
 
 - [unsplash](https://unsplash.com/)
 - 农作物数据库：[National Agricultural Library Digital Collections](https://naldc.nal.usda.gov/usda_pomological_watercolor?q=&search_field=all_fields)
@@ -117,7 +148,7 @@ date: 2019-02-20 20:30:09
 - [拾光壁纸](https://snake.timeline.ink/)
 - [梗图微缩世界](https://floor796.com/)
 
-## 视频
+### 视频
 
 - 影视网站：
   - [努努影视](https://www.nunuyy5.org/)
@@ -127,13 +158,13 @@ date: 2019-02-20 20:30:09
 - 纪录片：[Documentaries - watch free online documentaries - ihavenotv.com](https://ihavenotv.com/)
 - 剧本桥段：[TV Tropes](https://tvtropes.org/)
 
-## 音乐
+### 音乐
 
 - [无损生活 - 全网无损音乐免费下载，音乐搜索,音乐在线试听,下载,在线解析网](https://flac.life/)
 - [自己收集的几个可用源 · Issue #1769 · lyswhut/lx-music-desktop · GitHub](https://github.com/lyswhut/lx-music-desktop/issues/1769)
 - [六音软件永久地址发布页，收藏我回家不迷路！](https://6yso.com/)
 
-## 书籍
+### 书籍
 
 - 书籍工具：
   - [Calibre](https://calibre-ebook.com/)
@@ -196,23 +227,25 @@ date: 2019-02-20 20:30:09
 - [AutoCut: 通过字幕来剪切视频](https://github.com/mli/autocut)
 - [Metaphor](https://metaphor.systems/)
 - [90's Cursor Effects](https://tholman.com/cursor-effects/)
+- [storage-book/chapters at master · Lularible/storage-book](https://github.com/Lularible/storage-book/tree/master/chapters)
 
-## 视频
+### 视频
 
 - [量子资源网](https://lzizy8.com/)
 - [艾旦影视-免费福利影院](https://www.lovedan.net/)
+- [laoma2053/awesome-zhuiju-free: 免费无广告的追剧资源导航与影视工具指南，收录无广告在线影视、影视App、网盘搜索、磁力与 BT、字幕、TVBox、影视仓配置地址、IPTV 订阅源和会员拼团，每日可用性检测。](https://github.com/laoma2053/awesome-zhuiju-free)
 
-## 网盘
+### 网盘
 
 - [PanSearch | 网盘资源搜索 | 网盘搜索引擎](https://www.pansearch.me/)
 - [超能搜 - 百度网盘搜索神器](https://www.chaonengsou.com/)
 - [搜索盘](http://uukk6.cn/app/index.html?id=test)
 
-## 字体
+### 字体
 
 - [jaywcjlove/free-font: 收录商用免费汉字字体，还包括开源英文字体 Free Font](https://github.com/jaywcjlove/free-font)
 
-## 图片编辑
+### 图片编辑
 
 - 图片编辑：[Edit • Photo - The Free Online Photo Editor In Your Browser](https://edit.photo/)
 - 擦除图片中不需要的部分：[Magic Eraser](https://www.magiceraser.io/)
@@ -220,16 +253,16 @@ date: 2019-02-20 20:30:09
 - 老照片恢复网站：[Baseten](https://app.baseten.co/apps/QPp4nPE/operator_views/RqgOnqV)
 - [AI 根据照片生成头像](https://www.strmr.com/)
 
-## 编辑 - 输出
+### 编辑 - 输出
 
 - 图床：[sm.ms](https://sm.ms)
 - 数学作图软件：[GeoGebra](https://www.geogebra.org/)
 - 视频下载器：[Youtube 视频下载 - 免费在线 YouTube 下载器](https://zh.savefrom.net/126/)
 - [DeepL 翻译：全世界最准确的翻译](https://www.deepl.com/translator)
 
-## 编程
+### 编程
 
-### 编程项目
+#### 编程项目
 
 - 电子书阅读器：[KOReader](https://koreader.rocks/)
 - Run Python in Your HTML：[PyScript | Run Python in your HTML](https://pyscript.net/)
@@ -286,7 +319,7 @@ date: 2019-02-20 20:30:09
   - [yft-design](https://yft.design/)
   - [pointless](https://github.com/kkoomen/pointless)
 
-### 编程工具
+#### 编程工具
 
 - [C++ Online IDE - AI-Powered Compiler](https://www.adacpp.com/)
 - MongoDB Atlas 提供免费的 500M 云数据库：[MongoDB Atlas | 多云开发者数据平台 | MongoDB](https://www.mongodb.com/zh-cn/atlas)
@@ -318,7 +351,7 @@ date: 2019-02-20 20:30:09
 - [Vercel](https://vercel.com/)
 - [arnog/mathlive: A web component for easy math input](https://github.com/arnog/mathlive)
 
-### 编程学习
+#### 编程学习
 
 - [leetcode](https://leetcode.cn/)
 - [IO Wiki](https://oi-wiki.org/)
@@ -383,8 +416,11 @@ date: 2019-02-20 20:30:09
 - [The Illustrated TLS 1.3 Connection](https://tls13.xargs.org/)
 - [Three Pillars of Observability | Datadog](https://www.datadoghq.com/three-pillars-of-observability/)
 - [What is WebAuthn and why should you care? - FusionAuth](https://fusionauth.io/blog/2022/09/13/what-is-webauthn-why-do-you-care)
+- [Getting Started with Anchor Positioning • Josh W. Comeau](https://www.joshwcomeau.com/css/anchor-positioning/)
+- [为什么 Emoji 来自日本？](https://mp.weixin.qq.com/s/TyVxvHtTyDjmR2L8IXZCdw)
+- [The story of Bram Cohen and the BitTorrent protocol](https://www.xda-developers.com/the-story-of-bram-cohen-and-the-bittorrent-protocol/)
 
-### 前端面试
+#### 前端面试
 
 - [腾讯 IVWeb（一面）](https://www.yuque.com/tuture/interview/wrzl64)
 - [九种跨域方式实现原理（完整版） - 掘金](https://juejin.cn/post/6844903767226351623)
@@ -417,7 +453,7 @@ date: 2019-02-20 20:30:09
 - [理解 js 原型、原型链和继承 | Jiuto's blog](https://jiuto.github.io/jiuto_blog/guide/js/proto.html)
 - [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog/issues/2)
 
-## UI 设计
+### UI 设计
 
 - icon：
   - [Font Awesome](https://fontawesome.com/icons?d=gallery)
@@ -425,25 +461,28 @@ date: 2019-02-20 20:30:09
   - [Iconic — Free “do wtf you want with” pixel-perfect icons](https://iconic.app/)
   - [iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)
 - UI 颜色选择网站：[Khroma - The AI color tool for designers](http://khroma.co/train/)
+- [Color Hunt - Color Palettes for Designers and Artists](https://colorhunt.co/)
+- [Open Design —— 最佳 Claude Design 开源替代](https://open-design.ai/zh/)
 
-## 数据
+### 数据
 
 - 股票数据：[单只股票数据](http://50.push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.000597&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58&klt=101&fqt=0&end=20500101&lmt=100000)
 
-## 加密货币
+### 加密货币
 
 - [门罗币矿池 - heromiers](https://monero.herominers.com/#)
 - [门罗币网页版钱包 - mymonero](https://wallet.mymonero.com/)
 - [AXS Staking Dashboard](https://stake.axieinfinity.com/)
 - [axie 市场](https://app.axieinfinity.com/marketplace/axies/)
 
-## 加密货币交易所 API 文档
+### 加密货币交易所 API 文档
 
 - [基本信息 | Binance Open Platform](https://developers.binance.com/docs/zh-CN/derivatives/usds-margined-futures/general-info)
 - [简介 | Bitget API](https://www.bitget.com/zh-CN/api-doc/common/intro)
 
-## 博客文章
+### 博客文章
 
+- [Write-Only Code | Heavybit](https://www.heavybit.com/library/article/write-only-code)
 - 做互联网上的房东而不是租客：[Be A Property Owner And Not A Renter On The Internet · Den Delimarsky](https://den.dev/blog/be-a-property-owner-not-a-renter-on-the-internet/)
 - [如何测试电梯 – 韩师傅就是我](http://hanzilu.com/wordpress/?p=239)
 - [7 reasons to use Canva over PowerPoint for better presentation design](https://www.xda-developers.com/tips-for-canva-presentations-vs-powerpoint/)
@@ -458,17 +497,21 @@ date: 2019-02-20 20:30:09
 - [Is the 10,000-Year-Old Yonaguni Monument a Man-Made Marvel or Nature's Art?](https://www.ancientoriginsunleashed.com/p/is-the-10000-year-old-yonaguni-monument)
 - 这篇文章讲了一些误用布尔的例子：[Booleans Are a Trap](https://katafrakt.me/2024/11/09/booleans-are-a-trap/)
 
-## 电子杂志
+### 电子杂志
 
 - [bestblogs.dev - 汇集顶级编程、人工智能、产品、科技文章，大语言模型摘要评分辅助阅读，探索编程和技术未来](https://www.bestblogs.dev/#subscribe)
 - [ThoughtCo.com is the World's Largest Education Resource](https://www.thoughtco.com/)
 
-## 英语学习资源
+### 英语学习资源
 
 - [BBC Learning English - Learn English vocabulary](https://www.bbc.co.uk/learningenglish/english/vocabulary)
 - [田间小站 - 高级英语学习](https://www.tjxz.cc/)
 
-## 其他
+### 政府网站
+
+- 深圳公租房：[公共住房保障](https://zjj.sz.gov.cn/zfxx/bzfsq/index.html#/dist/mine)
+
+### 其他
 
 - 数学雕塑：[Sculpture by Zachary Abel](http://zacharyabel.com/sculpture/)
 - [Google 艺术与文化](https://artsandculture.google.com/?hl=zh-cn)
@@ -515,3 +558,9 @@ date: 2019-02-20 20:30:09
 - [Gold Price History Chart | Gold Price Trends | Goldhub](https://china.gold.org/goldhub/data/gold-prices)
 - [Hexo NexT主题最新官方博客](https://theme-next.js.org/)
 - [ESLPOD](https://tv.eslpod.com/p/blog-daily-english-26)
+- [Starter Story — The Researched Database of Real, Profitable Businesses](https://www.starterstory.com/)
+- [Tamachi — Yamanote.fun](https://www.yamanote.fun/jy27-tamachi-outer/)：可以听东京地铁的语音播报，界面设计不错
+- [PaperModL2](https://adityatelange.github.io/hugo-PaperMod/fr/)：Hugo 生态中不错的主题
+- [Expressive Code Example - Fuwari](https://fuwari.vercel.app/posts/expressive-code/)：Astro 生态中不错的主题
+- [AstroPaper](https://astro-paper.pages.dev/)：Astro 生态中不错的主题
+- [NexT - Theme for Hexo](https://theme-next.js.org/)：Hexo 生态中不错的主题
