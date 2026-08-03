@@ -104,8 +104,8 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/liuqinh2s/liuqinh2s.github.io
-  branch: master
+  repo: https://github.com/liuqinh2s/blog
+  branch: main
 
 markdown:
   preset: 'default'
