@@ -4,7 +4,7 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
-# 2026-06-12
+## 2026-06-12
 
 我还是打算把所有笔记都搬到notion上。我在wolai上写了不少内容，而且今年充了一年的会员，但是明年我不打算续费了，因为我用notion完全可以满足我的所有需求，另外就是notion这个平台更为可靠（更有名气，用户更多），wolai感觉都要倒闭了。遇到的一个问题就是如果人手动搬运的话，太累人了。如果AI能来完成这个搬运，那就再好不过了。我打算让Marvis或者Codex这类类似小龙虾的工具来实现，要模仿人手动复制粘贴的方式来实现，而不是用程序导入导出。以后我的内容管理完全就两种形式：
 
@@ -16,7 +16,7 @@ title: 日记
 日记我不会公开，手稿也不会公开，我会自己保存在notion上。自媒体内容会公开出来给大家看。当然我的博客是个例外，反正暂时也没有人看。
 我每天阅读的内容，产生共鸣的，或者有价值的，会记录进日记。不过依旧是那句话，少看社交媒体上的低质量内容，多啃经典内容，出版物，有口碑的那些。
 
-# 2026-06-11
+## 2026-06-11
 
 今天遇到一个bug是移动了dom元素的位置，导致observer失效。用以下代码解决：
 
@@ -27,7 +27,7 @@ observer.observe(target, options)
 
 但unobserve换成disconnect却不行
 
-# 2026-06-09
+## 2026-06-09
 
 今天用骡子快跑实现了昨天说的生成的封面中11个LOGO不正确的问题。骡子快跑确实还是有两把刷子，是我用过的最好的AI工具。
 
@@ -35,15 +35,15 @@ observer.observe(target, options)
 
 19 【推荐11款好用的AI工具 - 90后小镇做题家程序员奶爸 | 小红书 - 你的生活兴趣社区】 😆 0p1GTGdo5fT51Y8 😆 https://www.xiaohongshu.com/discovery/item/6a27b06c0000000007012f18?source=webshare&xhsshare=pc_web&xsec_token=ABf7voukP4JBMHi82e97lx_qC5gL5u9mtJnO212vVCdjw=&xsec_source=pc_share
 
-# 2026-06-08
+## 2026-06-08
 
 我发现现在的AI依旧是抽奖式的，而且还完全拿不到自己想要的结果。就比如说今天我做一个小红书笔记，推荐11款好用的AI工具，结果AI死活不能生成正确的封面（用这11个AI工具的正确的LOGO），老是画错LOGO。试了好多个AI工具，均失败了：骡子快跑、Manus、扣子、豆包，最后无奈只得放弃。虽然作图不是我的强项，但这也根本没法借助AI来落地啊。
 
-# 2026-06-05
+## 2026-06-05
 
 - [Starguard](https://github.com/m-ahmed-elbeskeri/Starguard)：这个项目可以发现github项目中的star有多少是假的
 
-## 人生这个游戏的两种模式
+### 人生这个游戏的两种模式
 
 今天中午想到，其实人生跟星露谷物语是一样的，星露谷物语中最大的分叉是选择用祝尼魔修复鹈鹕镇社区中心还是用JOJA超市修复，如果用JOJA超市的话，虽然任务做起来简单，但是少了对游戏的理解，所以新手一般都推荐用祝尼魔来修复，不然就少了很多趣味。其实人生也一样，从小就应该选择是低欲望生活还是高欲望生活，高欲望生活意味着要付出很多辛劳，因为你需要消费，那就需要收入来源，而收入来源就是要创造要为他人服务来换取收入，反过来也有了让他人为你服务的权力（钱）；而低欲望生活，不需要拼命劳作，也不怎么消费。高欲望对应着用祝尼魔方式来修复鹈鹕镇，低欲望则对应着用JOJA超市来修复鹈鹕镇。这两种生活方式没有孰对孰错，主要看个人的选择和心气。我曾经是个高欲望的人，而现在心气不足是个低欲望的人。
 
@@ -54,11 +54,11 @@ observer.observe(target, options)
 1. 高级打工仔，年薪60万起。需要高端的技能，名校毕业光环，名企工作经历，高端的人脉资源，蓬勃向上发展的行业。
 2. 个体户。需要深刻的洞察人心人性，对市场极为了解，做出对他人有价值的东西，让他人付费。
 
-# 2026-06-04
+## 2026-06-04
 
 失踪人口回归，距离上次记录又过了3个月了。这个栏目我思来想去还是改为：**日记**了，不单独给每日记录的东西分那么多栏目了，以前的新闻、收藏、编程笔记、思考等等全部归为日记。因为这个编排方式，让我很有表达欲，分享欲，记录欲，虽然没有什么人看我的博客，但恰恰是没啥人审视，所以我更加自由的表达。每天记录些什么，这样在我离世后，就会留下一些我来过的痕迹。之前做过一次AI博客的尝试，就是自己只管写东西，在Notion上，然后会每15分钟自动同步到github pages上（用的Notion的API），然后让AI自动总结出：日报、周刊、月刊、季刊、年刊。这样做的好处是我可以随时随地写东西，并同步到博客上了，而且回顾过去，可以直接看AI的总结。但坏处是我好像变得不怎么爱写了。另外看AI生硬的总结，看久了也特别的腻。所以又回到这种记录方式了。至少这边的版面是由我自由控制，这么多年维护这个博客的样式我也轻车熟路了。
 
-## git rebase 用法
+### git rebase 用法
 
 用惯了我那套git工作流，我发现我连git rebase都没怎么用过，今天试了一下。当远端还有提交未拉取时，本地没有先拉取远端，而是直接提交了，那就会没法直接git pull或git push了，需要先git fetch，然后git merge，最后git push。这一步骤比较麻烦，但是必须的。但有一个更方便的方法是git rebase。
 
@@ -66,16 +66,16 @@ observer.observe(target, options)
 
 ```
 git rebase origin/main
-# 或者如果你的分支不是main，而是其他分支，比如dev，那需要指定分支，比如：git rebase origin/dev 
-# 我这里是 master 分支，直接 git rebase origin/master
+## 或者如果你的分支不是main，而是其他分支，比如dev，那需要指定分支，比如：git rebase origin/dev 
+## 我这里是 master 分支，直接 git rebase origin/master
 ```
 
 这里要注意的是origin/main这种格式，而不是 origin main 。origin是远程仓库名，main是远程分支名，中间用斜杠而非空格隔开。远程分支名不一定是main，远程仓库名也可以不是origin，比如当你有多个远程仓库时（当你同时在github和gitee存储了这个项目时，你需要指定远程仓库名），你需要把代码同时推送到GitHub + Gitee，就需要切换远程仓库名了。用 git remote -v 查看当前远程仓库名。用 git brach -r 查看远程分支名。
 
 ```
-# 先同步远程最新分支列表（必执行，不然看不到新建/已删分支）
+## 先同步远程最新分支列表（必执行，不然看不到新建/已删分支）
 git fetch origin --prune
-# 只展示远程分支，格式 origin/main、origin/dev
+## 只展示远程分支，格式 origin/main、origin/dev
 git branch -r
 ```
 
@@ -85,11 +85,11 @@ git branch -r
 
 >原理：branch -r读本地缓存，不联网；远程刚新建分支，必须先fetch才看得见。
 
-## 重大新闻挖掘器
+### 重大新闻挖掘器
 
 最近我最得意的Vibe Coding作品莫过于[重大新闻挖掘器](https://liuqinh2s.github.io/news/)了，这个作品聚焦于社会上发生的重大新闻，侧重点在社会热度、科技、经济等方面。社会热度，比如张雪机车，张雪峰死亡等引起社会各界广泛关注和讨论的出圈新闻，是一定不会错过的。经济方面，像：霍尔木兹海峡封禁导致石油价格飙升，油煤比近10年新高，中国猪肉价格10年新低国家下场收购猪肉冷冻存储等等重要新闻，都可以帮助我赚钱。
 
-## 做自媒体的一些思考
+### 做自媒体的一些思考
 
 干货带来高收藏，但是点赞不一定高。创意带来高点赞，但是收藏不一定高。争议性话题带来评论，共鸣性话题带来转发，关注则是因为主页全是有价值的东西（干活）。其中只有高点赞能快速带来站内流量，这跟算法的机制有关，平台也想把人们喜爱的内容推给更多的人，从而提高用户粘性。破圈则主要靠转发，特别是转发到站外，能够引起流量二次裂变。所以最好的做法是在输出干货的同时，带点有创意的东西，最后再加点能引起共鸣和人的分享欲的东西。比如每10篇内容里面，2篇是创意性的。
 
@@ -97,7 +97,7 @@ git branch -r
 
 所以总结一句话就是，依托于创意，因为创意带来流量；获益于价值，因为价值带来关注；根植于专注，因为专注带来信任。
 
-## 整理一下书签栏
+### 整理一下书签栏
 
 - [Markdown转换为PDF - 100%免费且在线 - PDF24](https://tools.pdf24.org/zh/markdown-to-pdf)
 - [fox AI中转站](https://foxcode.rjj.cc/dashboard)：这个站的token挺便宜的
@@ -106,15 +106,15 @@ git branch -r
 - [欧洲各国2026年度树冠军](https://nicenews.com/environment/european-tree-of-the-year-winners-2026/)
 - [中国卷烟博物馆 · Chinese Cigarette Museum](https://www.ciggies.app/#collection)
 
-# 2026-03-08
+## 2026-03-08
 
 现在有了AI，大部分落地的能力都靠AI了，人的工作上升到提问，给任务，做决策，这些更高层面的工作。给AI提供问题，目的，对AI的工作进行审核。现在已经是个探索，和想法为王的时代了。
 
-# 2025-09-19
+## 2025-09-19
 
 今天遇到两个很奇怪的打包问题，首先是 webpack 打包，相对路径打包填了 output.publicPath 根本没用，一看 dist 中的 js 的 src 没有添加相对路径。然后是用 vite 打包，居然会在 src 目录中给每个 tsx 生成一个对应的 js 文件，原因是 tsc 没有加`—noEmit`，或者在 tsconfig.json 中配置“noEmit”: true，也可以。
 
-# 2025-08-25
+## 2025-08-25
 
 如果遇到`window.open(imgUrl)`打开新窗口的时候不是预览图片，而是下载，怎么办？
 
@@ -130,7 +130,7 @@ Content-Type: application/octet-stream  // 导致下载
 Content-Type: image/jpeg                 // 正常预览
 ```
 
-# 2025-08-18
+## 2025-08-18
 
 最近测试提了一个奇葩的 bug，起因是一个 textArea 的换行被产品从 Enter 改为了`Ctrl/Shift/Alt+Enter`，而 Enter 则改为输入结束。然后测试表示，换行后，按`Ctrl+Z`没法撤销换行了，原因是换行是通过直接修改 textArea.value 属性实现的，而浏览器撤销堆栈仅记录用户直接输入的操作。通过 textarea.value = newValue 直接赋值会**清空撤销堆栈** ，导致 Ctrl+Z 失效。
 
@@ -160,23 +160,23 @@ const historyMap = new WeakMap();function initUndoStack(textarea) {
 });
 ```
 
-# 2025-07-23
+## 2025-07-23
 
 今天突然博客构建失败了，看了日志是因为有个 npm 包安装不了，链接：https://registry.npmjs.org/stylus/-/stylus-0.54.8.tgz ，404。然后查了一下 stylus，发现它已经从 npm 下架了：https://www.npmjs.com/package/stylus?activeTab=readme ，原因是包含恶意代码被 npm 安全团队移除了。
 
 然后我看了一下我博客的依赖，应该是`"hexo-renderer-stylus": "^0.3.1"`这个库依赖了 stylus，这个是 hexo 样式的核心库，删了的话，main.css 都不会生成了。在网上搜了一下，已经有人开始吐槽了：https://juejin.cn/post/7529903134296653839
 
-# 2025-07-02
+## 2025-07-02
 
 [MCP 市场 - 收录 20,000+ MCP Servers 的全球最大平台](https://mcpmarket.cn/)
 
-## react input 组件表情符号问题
+### react input 组件表情符号问题
 
 发现一个奇怪的现象，react input 组件的 onChange 的 evt.target.value 里面可以有表情符号，但是 onBlur 的 evt.target.value 里面会过滤掉表情符号。
 
 [react 的 input 组件，onChange 的 e.target.value 里包含了表情符号，但是 onBlur 的 e.target.value 里没有包含表情符号，这是为啥](https://yuanbao.tencent.com/bot/app/share/chat/F2GTivbitbKn)
 
-## 编程概念 – 事务
+### 编程概念 – 事务
 
 EDA 引入了比较粗暴的事务机制后，今天发现了一个问题：在连续放置器件的时候，修改上一个放置的器件的属性，然后取消当前放置器件操作，就会把修改属性也当作当前放置事务的一部分给回退了，但修改的属性其实不是当前待放置的器件的属性。
 
@@ -184,11 +184,11 @@ EDA 引入了比较粗暴的事务机制后，今天发现了一个问题：在�
 
 事务这个概念是为了解决原子性和一致性问题，比如金融领域，转账必须是一次扣款+一次入账，扣款没成功或者入账没成功都是不行的，需要回滚。但不是任何一个扣款和入账都被绑在一起，它们必须是同一个事务 ID。
 
-# 2025-06-30
+## 2025-06-30
 
 今天突然想怎么把一个 JavaScript number 类型的数字转进制，于是打开控制台敲下：`8.toString(2)`，我记得好像是这样写，但是报错了。不得不问一下 AI，没想到还真是这样写，但是要加圆括号：`(8).toString(2)`，可能是为了避免英文句号被当作小数点，从而引起语法上的冲突。
 
-# 2025-06-26
+## 2025-06-26
 
 今天翻看《JavaScript 高级程序设计第 4 版》突然发现了这个议题：**选择 Object 还是 Map**，这个问题我以前也想到过，不过没有深究
 
@@ -198,7 +198,7 @@ EDA 引入了比较粗暴的事务机制后，今天发现了一个问题：在�
 
 总的来说差别不大，我个人喜欢用 Object，因为感觉写起来更简单。
 
-# 2025-06-25
+## 2025-06-25
 
 昨天整理 chrome 书签的时候，看到一篇文章很感兴趣：[Ideas from “A Philosophy of Software Design”](https://www.16elt.com/2024/09/25/first-book-of-byte-sized-tech/index.html)，算是一本书的读书笔记，这本书也很不错：[A Philosophy of Software Design](https://book.douban.com/subject/30218046/)。
 
@@ -208,13 +208,13 @@ EDA 引入了比较粗暴的事务机制后，今天发现了一个问题：在�
 
 以前就觉得 Windows 的这个设计非常的恶心，经常就是删文件和目录删不掉，提示正被占用，但是也不知道是哪个程序在占用，总是莫名其妙，遇到这种情况我一般是重启系统后再删，体验是非常的差。
 
-# 2025-06-24
+## 2025-06-24
 
 今天抽空解决了一下，博客搜索不能搜索栏目的问题(在 hexo 里面栏目叫做 page)。因为我开了比较多的栏目，如果不能在 search 里面统一搜索，还要点开每个栏目单独用浏览器的搜索功能，就会非常麻烦。这可能也是我以前想要放弃栏目的原因，但栏目又真的很好用，所以还是动手解决此问题了。
 
 说起来挺简单的，打开 hexo 和主题的两个`_config.yml`文件，搜了一下 search，看看配置是否支持，顺藤摸瓜找到了这个：[hexo-generator-search](https://github.com/theme-next/hexo-generator-search)。这个项目的 readme 里面写的很清楚，修改`field: all`，就可以搜索所有 posts 和 pages 了。
 
-# 2025-06-23
+## 2025-06-23
 
 什么是 MCP，Model Context Protocal，模型上下文协议？
 
@@ -222,23 +222,23 @@ EDA 引入了比较粗暴的事务机制后，今天发现了一个问题：在�
 
 这个人很擅长经营履历的样子：https://www.guofei.site/
 
-## 快捷编辑技巧
+### 快捷编辑技巧
 
 经常写代码或者写博客，有的时候会有一些快捷编辑的需要，比如：
 
 - 向上或向下移动一行：alt + ↑/↓
 
-### 🎯 2. 高级多光标操作
+#### 🎯 2. 高级多光标操作
 
 1. 非连续行编辑：Alt + 鼠标点击 或 Ctrl + Alt + ↑/↓
 2. 垂直添加光标 ：Ctrl + Alt + ↑/↓（Windows/Linux）或 Cmd + Option + ↑/↓（Mac），在选中行的上方或下方逐行添加光标。
 3. 全行末尾添加光标 ：选中多行后按 Shift + Alt + I，在所有行的行尾插入光标。适用场景：在多行末尾统一添加分号、逗号等。
 
-## 杏仁和巴旦木的区别
+### 杏仁和巴旦木的区别
 
 [杏仁和巴旦木的区别](https://www.sohu.com/a/470202440_120168933)
 
-# 2025-01-03
+## 2025-01-03
 
 修改 location.search，但不刷新可以做到吗？
 
@@ -257,11 +257,11 @@ history.replaceState(null, "", url);
 console.log(location.search); // 输出:?newParam=newValue
 ```
 
-# 2024-12-27
+## 2024-12-27
 
 vscode 上移下移一行代码快捷键：`alt+上下方向键`
 
-# 2024-12-26
+## 2024-12-26
 
 前端样式: resize: both
 
@@ -269,7 +269,7 @@ vscode 上移下移一行代码快捷键：`alt+上下方向键`
 
 官方文档: [resize - CSS: Cascading Style Sheets - MDN Web Docs - Mozilla](https://developer.mozilla.org/zh-CN/docs/Web/CSS/resize)
 
-# 2024-12-13
+## 2024-12-13
 
 js 的 attribute 和 property 的区别：
 
@@ -277,17 +277,17 @@ js 的 attribute 和 property 的区别：
 
 结论是，系统自带的一些特殊属性 attribute 和 property 是可以同步的，比如 input.title=‘111’和 input.setAttribute(’title’, ‘111’)。自定义的属性就要小心修改了，因为不能同步，比如你 input.setAttribute(‘aaa’, ‘111’)，用 input.aaa 是获取不到的，input.bbb = ‘222’，用 input.getAttribute(‘bbb’)也是获取不到的。还有就是要记忆一下哪些属性是可以同步的，比如上面的 value 就是个坑。
 
-# 2024-12-10
+## 2024-12-10
 
 clientWidth 获取的是整数，有一定误差，缩放的时候尤为明显，可能会导致一些布局排版的 bug，所以最好是用 getBoundingClientRect().width，它可以返回浮点数，就可以用来解决以上 bug
 
-# 2024-10-21
+## 2024-10-21
 
 什么情况下不会进 try finally 的 finally 部分？
 
 今天遇到一个异步卡在 pending 的情况，导致不会进 finally。具体情况是，一个异步的弹框，没有写 onClose，要在 onClose 里面 resolve(false)
 
-# 2024-10-16
+## 2024-10-16
 
 最近遇到一个：
 
@@ -299,7 +299,7 @@ white-space: nowrap;
 
 失效的问题。最终查明原因是：`display: flex;`引起的
 
-# 2024-10-10
+## 2024-10-10
 
 今天遇到一个问题是，同一张图片资源，图片发生了更新。但如果 URL 不变的话，就不会去访问新的图片（除非刷新浏览器）。解决办法是给 URL 加时间戳。
 
@@ -309,14 +309,14 @@ backgroundImage: `url(${content + "?" + Date.now()})`;
 
 这个是不需要后端配合改什么东西的，后端只要无视这个时间戳参数即可
 
-# 2024-09-23
+## 2024-09-23
 
 从一到无穷大真的讲了蛮多这个世界的底层知识的。
 
 原子摄影术这一小节讲到：
 不要以为给原子拍照是件容易的事，因为在给这么小的物体照相时，**如果所用的照明光线的波长比被拍摄物体的尺寸大，照片就会模糊得一塌糊涂**。你总不能用刷墙的排笔来画工笔画吧！和微小的显微组织打过交道的生物学家都很明白这种困难，因为**细菌的大小（约 0.000 1 厘米）和可见光的波长相仿。如果要使细菌呈现出清晰的像，就得用紫外线给细菌摄影，才能获得较好的结果**。但是分子的尺寸及其在晶格中的间隔是如此之小（0.000 000 01 厘米），无论是可见光还是紫外线都无法充当画具。如果想要看到单个原子，非用波长比可见光短几千倍的射线——X 光——不可。但这么一来，又会遇到一个似乎无法克服的困难：**X 光可以穿透物体而不发生折射**，因此，无论是放大镜还是显微镜，都不会使 X 光聚焦。这种性质再加上 X 光的强大穿透力，在医学上当然是很有用的，**因为 X 光如果在穿透人体时发生折射，就会把 X 光底片弄成一片模糊。但就是这个性质，似乎又排除了得到任何一张放大的 X 光照片的可能性！**
 
-# 2024-09-11
+## 2024-09-11
 
 最近在玩两个游戏：factorio（异星工场）和 terraria（泰拉瑞亚）
 在看的书：从一到无穷大
@@ -333,7 +333,7 @@ backgroundImage: `url(${content + "?" + Date.now()})`;
 2. 费马大定理
 3. 四色问题
 
-# 2024-09-09
+## 2024-09-09
 
 那天跟九源在路上讨论过，这个世界变得极强的方式，不是个人能力，而是人际关系网络。成为一个领袖或者教主，拥有一批粉丝，或者信徒。能够调动百万人的力量，才是强者。因为这个世界，一个人的力量终究是很有限的，它不像动漫，修仙或者武侠里描述的异世界，人可以以一敌百，以一敌百万。但它可以一领导一百万，以一指挥一百万。
 
@@ -341,15 +341,15 @@ backgroundImage: `url(${content + "?" + Date.now()})`;
 
 而达成这些，需要有个人魅力，塑造共识。
 
-# 2024-09-06
+## 2024-09-06
 
 今天同事遇到一个 position: relative 的元素，宽度设置了 16px，但一直显示是 0px，原因是 relative 在宽高不够的时候会被挤掉。可以用 position: absolute，这个不会被挤掉。
 
-# 2024-09-03
+## 2024-09-03
 
 今天同事问我关于`visibility: hidden`的父元素，子元素是`visibility: visible`，显示出了子元素的问题。以前面试的时候我写过一篇总结，但是找不到了。之后会补一篇。可以先参考一下这篇文章：[CSS 中用 opacity、visibility、display 属性将 元素隐藏 的 对比分析](https://segmentfault.com/a/1190000015116392)
 
-## 多行文本显示末尾省略号
+### 多行文本显示末尾省略号
 
 [多行文字 text-overflow: ellipsis 省略号失效问题](https://blog.csdn.net/qq_51978639/article/details/128862967)
 
@@ -361,23 +361,23 @@ display: -webkit-box; //特别显示模式-webkit-line-clamp: 8; //行数-webkit
 
 不用限定高度，因为已经限定了行数
 
-# 2024-09-02
+## 2024-09-02
 
 亿万富翁指的是身价在一亿美元以上的富豪。而不是身价在一万亿美元以上的富豪。万元户，百万富翁，千万富翁这些都是写实。亿万富翁是个虚数。理应叫亿富翁。
 
-# 2024-08-30
+## 2024-08-30
 
 今日阮一峰周报感兴趣的东西：
 
 - [现代文转古文](https://modelscope.cn/studios/chostem/ancient_Chinese_text_generator)
 
-# 2024-08-29
+## 2024-08-29
 
-## position: fixed 一定基于视口吗
+### position: fixed 一定基于视口吗
 
 不一定，如果祖先的 transform 不为 none，就会基于祖先而非视口：[不受控制的 position:fixed](https://www.cnblogs.com/coco1s/p/7358830.html)
 
-## git 合并冲突
+### git 合并冲突
 
 今天在 git rebase 的过程中遇到一个问题，阻断了我的 rebase 解决冲突流程：
 
@@ -391,13 +391,13 @@ Git: 'pro-api/' does not have a commit checked out
 
 合并的时候，最好用 rebase，但该出问题的地方还是会出问题。比如我从`2.2.C`分支基础上新建一个`liuqin/updateCBB/2.2.C`分支，然后开发到一半，领导基于`2.2.C`分支开出了`2.2.D`分支，然后一些同事，在`2.2.D`分支和`liuqin/updateCBB/2.2.C`分支，修改了同一块代码，而且由于我的分支没有对应的构建发布（我自己在本地测），以至于修改出了问题，也没有人察觉（我们构建发布的分支，一旦构建报错，就会通知到内网聊天账号上，所以会第一时间得到解决）。最后合并的时候（从`liuqin/updateCBB/2.2.C`分支合并到`2.2.D`分支），一堆报错。
 
-## 历史的变迁
+### 历史的变迁
 
 - [让我们认真讨论一下“AI 霸权”时代人类的命运](https://www.woshipm.com/share/6106012.html)，这篇文章帮助我回顾了大量消失在历史中的职业，也让我更加清醒的认识到时代都在变化，更何况人呢，人怎么能一尘不变呢，你不变，时代就强迫你变。还有消失在历史中的物品：磁带，光盘，U 盘，MP3，有线耳机，收音机，广播台。
 
-## 新旧事物对比
+### 新旧事物对比
 
-### 旧事物
+#### 旧事物
 
 - **传呼机（BP 机）**，曾经是重要的通讯工具，人们通过传呼机接收简短的信息，然后寻找固定电话回电。但随着手机的迅速发展，传呼机很快被淘汰，如今已几乎不见其踪影。我曾有幸在我舅舅家楼上翻出过一个 BP 机，可惜没搞懂怎么用。
 - **软盘**，在早期计算机存储中发挥过重要作用，但存储容量小，且容易损坏。随着 U 盘、移动硬盘等存储设备的出现，软盘迅速退出历史舞台。软盘我是真没见过。
@@ -415,7 +415,7 @@ Git: 'pro-api/' does not have a commit checked out
 - **电梯操作员**
 - **电话接线员**
 
-### 新事物
+#### 新事物
 
 - **共享单车，共享充电宝**：实际上是租赁，不是群众的物资，也配叫共享吗？从最开始的烧钱抢占市场，到最后的获得定价权后，疯狂提价。我现在都不用共享单车和充电宝，除非逼不得已，因为真的贵得离谱。
 - **外卖**：外卖也是一样从最开始的烧钱抢占市场，到最后的获得定价权后，疯狂提价。
@@ -426,11 +426,11 @@ Git: 'pro-api/' does not have a commit checked out
 - **直播和短视频平台**：为人们提供了展示自我、分享生活的新渠道。无论是普通人还是专业创作者，都可以通过直播和短视频平台获得关注和收益。同时，也为企业提供了新的营销方式。
 - **自动驾驶**：百度旗下的萝卜快跑出租车正在全国铺开。其实自动驾驶的技术已经成熟，只是相应的法律法规没有成熟，最重要的一条是，如果是自动驾驶汽车出了车祸，负责任的应该是汽车厂商，但另一个问题随之而来，怎么证明出事的时候是车自己开的，而不是人开的。自动驾驶一旦普及，司机也会跟电梯操作员和电话接线员一样成为历史中消失的职业了。
 
-# 2024-08-28
+## 2024-08-28
 
 - [Open Source Intelligence Techniques](https://inteltechniques.com/book1.html)：全书都是在教你如何在网上搜索定位公开信息（严格来说，我觉得应该算半公开信息）。作者是一位受雇于美国政府的电脑犯罪调查员。
 
-## 创业
+### 创业
 
 关于资产我的看法很简单，找到那些开了很久的线下餐馆，如果是老板自己不来，雇了人打工的餐馆，找个合理的价格盘下来，那就是妥妥的资产，现金流。甚至都不用自己费劲的经营，直接原班人马继续搞就行。哪管上面老板是谁呢
 
@@ -447,7 +447,7 @@ Git: 'pro-api/' does not have a commit checked out
 - 我有朋友在卖壮阳药，用短信销售和顺丰速递货到付款的方式。赚了蛮多钱的，这是一个赚钱的实例，可惜对方不愿意跟我分享。
 - 另一个朋友在搞电商，短信销售+积分代金的形式。这也是一个赚钱的实例，都雇了一个小型团队了。而且搞了好几年的这个了。
 
-# 2024-08-26
+## 2024-08-26
 
 - [Putting the “You” in CPU](https://cpu.land/)，讲解 CPU 工作原理的
 - [Fake Insects](https://huggingface.co/spaces/victor/fake-insects)，一个小游戏，两张照片中，判断哪张是 AI 生成的昆虫
@@ -457,7 +457,7 @@ Git: 'pro-api/' does not have a commit checked out
 [Hugging Face](https://huggingface.co/)社区有点意思，AI 爱好者的社区
 [core77](https://www.core77.com/)，工业设计爱好者网站
 
-# 2024-08-18
+## 2024-08-18
 
 我一直有看斗破苍穹和斗罗大陆的习惯，每周六都会收看。但是又不想充腾讯视频的会员，据说现在好像有会员也看不了最新一集，要付费才行，真是越来越狗了。刚刚去看了一下，是斗破苍穹年番必须要 SVIP 才能看，VIP 看不了最新一集。我一直觉得这种租赁的模式持续不了太多年了，平台也捞不到好，用户也捞不到好（那么谁捞到好？我觉得应该是那些烂作品捞到了好）。言归正传，今天我想分享的是如何免费看视频，我通常是这几个地方：
 
@@ -472,15 +472,15 @@ Git: 'pro-api/' does not have a commit checked out
 
 > IINA 是 mac os 上独有的视频播放器，非常棒的播放器
 
-# 2024-08-13
+## 2024-08-13
 
-## chrome 离线下载
+### chrome 离线下载
 
 工欲善其事必先利其器，最近公司项目开发上，chrome 浏览器（版本：127.0.6533.100）的 devtool 经常性卡死，真的把我的耐心磨没了，真的是越做越烂了。打算装回旧版本的 chrome。那么如何安装旧版本的 chrome 呢，找离线安装包也挺费劲的：
 
 - [Chromium 历史版本离线安装包 - 下载方法](https://github.com/vikyd/note/blob/master/chrome_offline_download.md)
 
-## 前端打包工具一览
+### 前端打包工具一览
 
 - [webpack](https://webpack.js.org/)
 - [esbuild](https://esbuild.github.io/)
@@ -489,7 +489,7 @@ Git: 'pro-api/' does not have a commit checked out
 - [rolldown](https://github.com/rolldown/rolldown)
 - [rspack](https://rspack.dev/)
 
-# 2024-08-07
+## 2024-08-07
 
 公司的前端项目，经常需要用到表格，而且需要相当丰富的功能。但我们之前做的表格实在是拉跨，代码量大，API 设计一般，还有许多业务层的代码渗透进了组件代码，功能也不是十分完善（比如单元格合并就没有）。
 
@@ -497,17 +497,17 @@ Git: 'pro-api/' does not have a commit checked out
 
 - [最好的 6 个 React Table 组件详细亲测推荐](https://segmentfault.com/a/1190000041585593)：作者最推荐 [React Table](https://tanstack.com/table/v7)
 
-# 2024-08-06
+## 2024-08-06
 
-## font awesome
+### font awesome
 
 本地的 node 版本不适配 hexo 版本，所以不能在本地调试博客，但需要快速确认哪些 font awesome icon 能用。一个简单的办法是查看 network，找到 font-awesome 的版本。我看了一下是 4.6.2，上网搜了一下这个版本的所有可用图标：https://fontawesome.com/v4/icons/
 
-## 文件夹命名规范
+### 文件夹命名规范
 
 改了一下博客文件夹的首字母大小写，然后发现 git 并不能把这种变化推送到云端。
 
-## 有条件的数组
+### 有条件的数组
 
 开发过程中经常遇到一些有条件的数组元素，一般我是用一个空数组起头，然后罗列各种条件下 push 什么：
 
@@ -536,7 +536,7 @@ if (xxx1) {
 
 当然这种写法是针对元素顺序固定，但元素不一定有的情况。如果元素顺序不固定，那这种写法就不够灵活
 
-## substring
+### substring
 
 js 如何截取子字符串，用`substring(startIndex, endIndex)`：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring 。在控制台输入的时候，还有一个 api：`substr(startIndex, subStrLength)`，这个 api 已经废弃了：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr
 
@@ -544,7 +544,7 @@ js 如何截取子字符串，用`substring(startIndex, endIndex)`：https://dev
 
 [substring，substr，slice 三者的区别](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring#substring_%E5%92%8C_substr_%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB)
 
-## [setProperty](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
+### [setProperty](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
 
 这个 api 的用处在于，可以给 css 设置`!important`。否则就跟 style.height 一样。
 
@@ -559,17 +559,17 @@ style.setProperty("height", "calc(100% - 24px)");
 style.height = "calc(100% - 24px)";
 ```
 
-# 2024-08-05
+## 2024-08-05
 
 最近推送博客到 github 老是出问题：`git connection reset by 20.205.243.160 port 443`，于是查了一下：
 
 https://www.v2ex.com/t/841032
 
-## eslint
+### eslint
 
 同事建议的 eslint 规则：https://github.com/zengxiaoluan/eslint-plugin-jlc
 
-## window.open
+### window.open
 
 公司项目有个需求是有个属性叫：数据手册，然后点击后要跳转到用户指定的链接，但这个链接可能是本地链接。如果是在客户端环境，就能绕过浏览器的安全策略，打开本地链接，如果是浏览器环境，就要阻止打开。但很可惜的是，在某些版本的 chrome 浏览器上，会自动拼接当前域名。比如本地链接是：`C:\Users\win10\Pictures\1.png`，当前域名是：`www.baidu.com`，就会打开链接：`https://www.baidu.com/C:\Users\win10\Pictures\1.png`。解决方案是：加个点击事件监听，然后写`window.open('C:\Users\win10\Pictures\1.png')`
 
@@ -577,11 +577,11 @@ https://www.v2ex.com/t/841032
 
 虽然浏览器禁止打开本地文件，但可以打开本地软件，比如：`mailto://xxx`或者`vscode://xxx`
 
-# 2024-08-01
+## 2024-08-01
 
 github 总是抽风，push 不上去，实在受不了了，又来搞代理了，记不住命令，每次都要上网查实在不方便，还是记录到自己博客上吧
 
-## git 查看、设置、取消代理
+### git 查看、设置、取消代理
 
 查看代理：
 
@@ -604,16 +604,16 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-## 观察者细粒度 onChange 的解决方案
+### 观察者细粒度 onChange 的解决方案
 
 1. 如果只涉及到显示问题，则用 debounce 解决即可
 2. 如果涉及到数据，则必须要求时序正确性，必须用事务+粗粒度 onChange
 
-## side project
+### side project
 
 什么样的 side project 是好的，首先要 **工作量小**，虽然一般来说工作量小意味着没有护城河，但没关系，可以用 **质量精或者小众蓝海** 来解决。工作量大一定是不行的，因为本来就不是主职，根本没有那么多时间精力去做。谁打完一天工，还想搞东搞西啊。
 
-# 2024-07-31
+## 2024-07-31
 
 加了 disabled 的 input，点击的时候是不会接受 onClick 事件的：https://developer.mozilla.org/zh-CN/docs/Web/HTML/Attributes/disabled
 
@@ -621,7 +621,7 @@ git config --global --unset https.proxy
 - [事件冒泡](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Event_bubbling)
 - [event.stopPropagation](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation)
 
-## 编程思考
+### 编程思考
 
 做新需求主要看两个方面：
 
@@ -646,13 +646,13 @@ git config --global --unset https.proxy
 
 原子化是基础，组合原子化的 API 形成丰富的组合功能是下一步。
 
-# 2024-07-30
+## 2024-07-30
 
-## 文本超长省略号
+### 文本超长省略号
 
 把文本改成链接，还要实现`text-overflow:ellipsis`效果，要怎么搞？
 
-## typescript 函数重载。
+### typescript 函数重载。
 
 在开发的时候，经常遇到这样一种情况，如果数据是多层级的对象，想用一个函数来实现多种策略下获取不同层级的数据，但是呢又不想在调用的时候强制转换类型（因为不同层级的数据类型是不一样的），这个时候，就可以用到函数重载：
 
@@ -663,7 +663,7 @@ get(): BatchInstanceAttr;get(tabId: string): InstanceAttr;get(tabId: string, eid
 
 因为不管你使用哪一种参数，都有具体的返回类型对应，所以调用方就不用手动注明类型了。
 
-# 2024-07-29
+## 2024-07-29
 
 很久没有做记录，并非是没有东西要写，而是之前服务器和域名过期，导致 github pages 访问不了，一时半会儿我没弄好，然后就去 wolai 上面记录了。结果发现 wolai （要付费才能分享笔记）和 notion（要观看方先注册 notion 才能看） 居然没法很好的分享笔记了。大为恼火。还是回到用 githubs pages 记录这种古老的方法来。之前探讨过：由于博客没人看，而且不方便记录，所以，实际上用博客记录+分享是一种不好的方式，缺点是既不好记录，也不好分享，优点是结合了记录和分享，all in one，一站式服务。算是一种折中吧。最好的方式仍然是用一个好的笔记工具记录，然后再弄到流量很大的网站（小红书，抖音，知乎，微博，B 站等等）。但现在居然连一个很好的笔记工具都没有了。之后我会考虑自己做一个，要做的东西其实蛮多的：
 
@@ -672,13 +672,13 @@ get(): BatchInstanceAttr;get(tabId: string): InstanceAttr;get(tabId: string, eid
 3. 作品版权证券化
 4. all in one
 
-## 事件监听
+### 事件监听
 
 公司项目中遇到一个问题是，用户正在编辑中文，然后按 esc 退出了一个 iframe 内的 textarea，查看代码后发现 window.top 对 textarea 是有一套 compositionstart 的监听的，但 iframe 里面没有监听。
 
 document 上加监听是监听不到其内 iframe 内的元素的。如果要监听 iframe 内的元素的事件，则必须要再对 iframe 的 document 再做监听。
 
-## 国内 github 月经问题
+### 国内 github 月经问题
 
 刚刚 github 又出问题，提示 Git: connection reset by xxxip xxxport。解决办法：`git config --global --unset-all remote.origin.proxy`
 
@@ -686,7 +686,7 @@ document 上加监听是监听不到其内 iframe 内的元素的。如果要监
 
 > https://stackoverflow.com/questions/71571965/openssl-ssl-connect-connection-was-reset-in-connection-to-github-com443-while
 
-## 编程的设计模式
+### 编程的设计模式
 
 1. 简单的业务用命令式编程
 2. 复杂的用 react，只关注数据，不关心 DOM 操作。即：声明式编程
@@ -702,7 +702,7 @@ document 上加监听是监听不到其内 iframe 内的元素的。如果要监
 
 防抖比较简单，就不讲了。实现粗粒度，也就是一组操作一个 onChange。实际上把这组操作放入事务，事务结束后发出 onChange，就能达到目的。
 
-# 2024-05-20
+## 2024-05-20
 
 最近在看怎样写好 react：
 
@@ -712,19 +712,19 @@ document 上加监听是监听不到其内 iframe 内的元素的。如果要监
 - [如何写出优雅的 react 组件？](https://juejin.cn/post/7012260002895233055)
 - [React 最佳实践–如何写出更好的 React 代码（2022 年版）](https://www.freecodecamp.org/chinese/news/best-practices-for-react/)
 
-# 2024-05-17
+## 2024-05-17
 
 最近实现 react Table 组件遇到不少问题，所以打算多学点 react，这篇文章讲`useReducer`，讲得很好:
 
 [这一次彻底搞定 useReducer-使用篇](https://juejin.cn/post/6844903869604986888)
 
-# 2024-04-17
+## 2024-04-17
 
 hmr invalidate
 
 https://www.lcs.show/blog/common/vite-hmr
 
-# 2024-04-09
+## 2024-04-09
 
 react 组件在写成函数的时候，是会引起父组件渲染的：
 
@@ -787,7 +787,7 @@ export default function App() {
 
 https://www.zhihu.com/question/448269343
 
-# 2024-03-24
+## 2024-03-24
 
 怎么简化大量的 if else 结构，可以用 map 来实现：
 
@@ -812,9 +812,9 @@ function f2(x) {
 }
 ```
 
-# 2024-03-23
+## 2024-03-23
 
-## eslint 配置
+### eslint 配置
 
 在文件头部写如下注释，即可让 eslint 某部分检查跳过此文件：
 
@@ -827,7 +827,7 @@ function f2(x) {
 
 这样的设计真是蛮好用的
 
-## scrollWidth, offsetWidth, clientWidth 的区别
+### scrollWidth, offsetWidth, clientWidth 的区别
 
 - scrollWidth 是元素真实的宽度（但不包含 border 和滚动条，但包含 padding）
 - offsetWidth 也是真实的元素宽度（但包含 border 和滚动条）
@@ -891,11 +891,11 @@ scrollHeight，offsetHeight，clientHeight 同理
 </html>
 ```
 
-## useCallback 的实践例子
+### useCallback 的实践例子
 
 https://replit.com/@liuqinh2s/useCallback#README.md
 
-# 2024-03-09
+## 2024-03-09
 
 react 开发过程中，经常遇到一些奇怪的问题。最近解决的这个尤为奇怪，报错：`rendered fewer hooks than expected. this may be caused by an accidental early return statement`。但我并没有把 hooks 写道条件语句里面。最终从这篇文章找到了我想要的答案：[https://medium.com/@jonchurch/how-to-fix-react-error-rendered-fewer-hooks-than-expected-e6a378985d3c](https://medium.com/@jonchurch/how-to-fix-react-error-rendered-fewer-hooks-than-expected-e6a378985d3c)
 
@@ -930,7 +930,7 @@ export const Component1 = () => {
 
 > 注意 React 组件首字母要大写
 
-# 2024-02-18
+## 2024-02-18
 
 如何实现毛玻璃效果，css:
 
@@ -938,15 +938,15 @@ export const Component1 = () => {
 filter: blur(5px);
 ```
 
-# 2023-01-30
+## 2023-01-30
 
 最近实现了一个拖拽条组件，发现拖拽的时候会选中一些文本，从而导致下一次拖拽时 pointerup 监听不到。解决办法是：拖拽的时候设置样式`user-select: none;`到 document.body 上，禁止选中，从而解决问题。
 
-# 2023-12-08
+## 2023-12-08
 
 在网上看到写的很好的人工智能入门文章：[Neural Networks From Scratch](https://victorzhou.com/series/neural-networks-from-scratch/)
 
-# 2023-11-28
+## 2023-11-28
 
 如何让超出的文字显示：`...`
 
@@ -956,7 +956,7 @@ white-space: nowrap;
 text-overflow: ellipsis;
 ```
 
-# 2023-11-22
+## 2023-11-22
 
 今日话题：
 
@@ -965,7 +965,7 @@ text-overflow: ellipsis;
 
 新的 api，`await window.queryLocalFonts()`可以加载本地所有字体。参看文档：[window: queryLocalFonts() method - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/queryLocalFonts)
 
-# 2023-11-21
+## 2023-11-21
 
 今日话题：
 
@@ -1026,7 +1026,7 @@ console.timeEnd("loop getValue2");
 1. 如果值在这 500ms 内更新了，那么就会遇到没获取到最新值的问题
 2. 如果`loop getValue`整体时长超过了 500ms，那么缓存会失效并进行重建
 
-# 2023-11-14
+## 2023-11-14
 
 今日需求
 
@@ -1040,7 +1040,7 @@ I had a dream that I speak English in any situation all the night.
 
 但确实可以做到其实，现在有了 chatgpt 就相当于有了一个随身的英语老师，它甚至可以帮我零成本的同声传译。
 
-# 2023-11-13
+## 2023-11-13
 
 今日发现的 bug：
 
@@ -1054,16 +1054,16 @@ I had a dream that I speak English in any situation all the night.
 1. 二维表格：画一个笛卡尔积（二位表格）的时候发现，二维表格用 markdown 很不好画，想要在一个单元格里面画一根斜线更是难（画斜线其实可以直接敲个字符`\`，毕竟是给人看的，人能懂就行）。于是我用 eda 画了一个二位表格
 2. 查找项目中的一个文件的某个函数中的历史代码（想看演变过程），发现没有很好的工具，只能看到文件的提交历史。能否自己做一个出来
 
-## window location href 和 hash（#）
+### window location href 和 hash（#）
 
 1. 修改了 hash 不会刷新，修改了非 hash 会刷新
 2. 有`#`的情况下，自己等于自己不会刷新，**没带`#`的情况下，自己等于自己会刷新**
 3. 去掉`#`会刷新
 4. 加上`#`不会刷新
 
-# 2023-10-23
+## 2023-10-23
 
-## ts 项目使用 js 包
+### ts 项目使用 js 包
 
 ts 项目引入 js 包会报错，我们只需要在项目的任意位置新建一个`xxx.d.ts`文件，内容填入：
 
@@ -1075,7 +1075,7 @@ declare module '【import 的第三方库名】';
 
 > TODO: 发布一个 typescript 的 npm 包
 
-## nginx 同一端口不同路径映射到不同项目
+### nginx 同一端口不同路径映射到不同项目
 
 ```
 location /project1 {
@@ -1089,7 +1089,7 @@ location /project2 {
 }
 ```
 
-# 2023-10-20
+## 2023-10-20
 
 发现一个问题 Object.defineProperty 一旦设置了 set 方法，就没办法设置值到该属性上了，只能通过 get 的时候返回对应值来达到不影响原来代码的目的。比如：
 
@@ -1111,9 +1111,9 @@ console.log(a.a);
 
 尝试在 set 里面写`this.a = x;`会导致死循环，而写`return x;`则依旧没有设置上 a.a
 
-# 2023-10-18
+## 2023-10-18
 
-## 如何发布自己的 npm 包？
+### 如何发布自己的 npm 包？
 
 1. 到`https://www.npmjs.com/`注册账号
 2. `npm init -y`新建一个项目
@@ -1122,11 +1122,11 @@ console.log(a.a);
 
 > 注意事项，新建项目的目录不能是中文会报错，如果没充钱--access public 是必须的，包名可能会跟已有的包名冲突，可以通过 npm search xxx 查询
 
-## npm 依赖包版本号
+### npm 依赖包版本号
 
 [npm 语义版本(npm 依赖包版本的~、>、^符号各代表什么？)](https://blog.51cto.com/u_15127697/3633383)
 
-# 2023-10-17
+## 2023-10-17
 
 SVG 默认开了抗锯齿，会把 1 像素的线条用 2 像素显示
 
@@ -1144,7 +1144,7 @@ canvas 可以通过以下方法来达到目的：
 
 [canvas 图像重叠处理 - Kaiqisan](https://blog.csdn.net/qq_33933205/article/details/107337882)
 
-# 2023-10-16
+## 2023-10-16
 
 在 disabled 的 input 上面，右键，父级 div 的 onMouseDown 进不了，要怎么办？可以在事件的捕获阶段监听：
 
@@ -1163,7 +1163,7 @@ DOM 事件标准描述了事件传播的 3 个阶段：
 
 不过最后发现依然不行，要用 onPointerDownCapture 才可以。
 
-# 2023-08-11
+## 2023-08-11
 
 [Systems, math and explosions (in no particular order)](https://pjonori.blog/posts/systems-math-explosions/)
 
@@ -1171,13 +1171,13 @@ DOM 事件标准描述了事件传播的 3 个阶段：
 
 [PJ Onori’s blog](https://pjonori.blog/)
 
-# 2023-08-10
+## 2023-08-10
 
 [JavaScript 模块的循环加载](https://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)
 
-# 2023-08-07
+## 2023-08-07
 
-## html 空格自动合并的问题
+### html 空格自动合并的问题
 
 HTML 提供了 5 种空格实体（space entity），它们拥有不同的宽度，非断行空格( )是常规空格的宽度，可运行于所有主流浏览器。其他几种空格( `&ensp;&emsp;&thinsp;&zwnj;&zwj;`）在不同浏览器中宽度各异。
 
@@ -1197,7 +1197,7 @@ HTML 提供了 5 种空格实体（space entity），它们拥有不同的宽度
 
 > 用 tspan 标签和 xml:space="preserve"也可以解决
 
-# 2023-08-02
+## 2023-08-02
 
 最近想把某个消息放在组件文件中进行监听，但发现消息总线可能还没注册好，这个时候可以用`DOMContentLoaded`这个事件。
 
@@ -1209,9 +1209,9 @@ HTML 提供了 5 种空格实体（space entity），它们拥有不同的宽度
 
 所以一般来说，如果脚本与 HTML 有关，就用 defer，无关就用 async
 
-# 2023-07-26
+## 2023-07-26
 
-## localeCompare
+### localeCompare
 
 js 自然排序：[localeCompare](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 
@@ -1221,7 +1221,7 @@ js 自然排序：[localeCompare](https://developer.mozilla.org/en-US/docs/Web/J
 arr.sort((a, b) => b.localeCompare(a));
 ```
 
-## 对象遍历的速度比较
+### 对象遍历的速度比较
 
 `Object.keys()`，`Object.values()`，`Object.entries()`的性能差异如何呢？
 
@@ -1285,7 +1285,7 @@ for (let i = 0, keys = Object.keys(a || {}); i < keys.length; i++) {
 console.timeEnd("b");
 ```
 
-## `for of` 和 `for in`
+### `for of` 和 `for in`
 
 `for of`用于遍历可迭代对象（数组之类的），`for in`用于遍历对象
 
@@ -1309,7 +1309,7 @@ for (let k of Object.keys(bb || {})) {
 - [for of](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...of)
 - [for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
-## `for of`和 C 语言语法的遍历速度比较
+### `for of`和 C 语言语法的遍历速度比较
 
 ```jsx
 let res = new Array(100_0000);
@@ -1329,7 +1329,7 @@ console.timeEnd("b");
 
 大概有 6 倍的差距
 
-# 2023-07-19
+## 2023-07-19
 
 消息总线和函数调用的区别：消息总线用了一个集合来收集事件回调函数，导致了消息总线可以在外部零散的注册回调，而函数调用则相当于是在消息发出的地方集中注册消息监听。**所以消息总线很好的对依赖进行了倒置，因为，是事件回调函数依赖了事件，而不是事件依赖了事件的响应函数**。
 
@@ -1344,7 +1344,7 @@ window1.postMessage("hello", "*");window2.addEventListener("message", (event) =>
 
 异步的不是消息总线，而是 postMessage。
 
-# 2023-07-17
+## 2023-07-17
 
 移动 iframe 元素会造成 iframe 重新加载 src，所以如果想移动 iframe 而不引起刷新就只能用 css。
 
@@ -1356,7 +1356,7 @@ window1.postMessage("hello", "*");window2.addEventListener("message", (event) =>
 
 另外就是我发现移动 dom 元素只需要 appendChild 到新的位置即可，并不需要删除原 dom。
 
-## importmap
+### importmap
 
 javascript 现在支持跨脚本 import 了：[JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
 
@@ -1381,7 +1381,7 @@ javascript 现在支持跨脚本 import 了：[JavaScript import maps are now su
 </script>
 ```
 
-# 2023-07-08
+## 2023-07-08
 
 关于 iframe 的基本知识：
 
@@ -1390,14 +1390,14 @@ javascript 现在支持跨脚本 import 了：[JavaScript import maps are now su
 3. 获取当前文档所在的 iframe 元素: `window.frameElement`
 4. 获取当前文档内所有的 iframe: `window.frames`，这是个可迭代对象，可以像数组一样使用
 
-# 2023-07-07
+## 2023-07-07
 
 在立创 EDA 的编程中经常遇到的问题：
 
 1. 公用混乱，代码腐烂（参数无约定，随意修改）
 2. 某些地方没有同步更新（比如修改名称，需要同步更新属性面板，底部库，tab 页，画布等等诸多地方）
 
-# 2023-07-06
+## 2023-07-06
 
 最近同事遇到一个 react 的坑，他把 root 缓存了起来，然后发现整个组件不更新：
 
@@ -1414,13 +1414,13 @@ root.render(<App {...props}></App>);
 
 父组件重新初始化，子组件也会重新初始化，且一定会用 useState 里面的值
 
-# 2023-06-15
+## 2023-06-15
 
 [如何在 win7 上安装 obsidian](https://forum-zh.obsidian.md/t/topic/19728/3)
 
 简而言之就是去 github 上下载 1.1.x 的老版本的 obsidian，我下载的是 1.1.16
 
-# 2023-06-13
+## 2023-06-13
 
 搞定了 obsidian 多端同步，通过 git 插件自动和远端 github 同步。可以愉快的在手机上码博客了。而且据说 obsidian 挺好用的，应该比 vscode 写博客强吧。
 
@@ -1443,7 +1443,7 @@ root.render(<App {...props}></App>);
 
 [谷歌分析看板](https://analytics.google.com/analytics/web/#/p383781563/reports/intelligenthome)
 
-# 2023-06-10
+## 2023-06-10
 
 搞了两天 kcptun，最后发现居然更新一下版本就解决了问题
 
@@ -1462,13 +1462,13 @@ root.render(<App {...props}></App>);
 
 结论，以后出问题，第一解决方案应该是，**确保所有软件版本都是最新的**。
 
-## 使用 VPS 挖矿挖点本回来
+### 使用 VPS 挖矿挖点本回来
 
 乌龟币迁移到了 FTM，而且感觉这个项目已经死亡了，服务器还是继续挖门罗币吧，说真的虚拟货币的生命力才是最重要的
 
 如何避免 CPU 占满：https://www.azurew.com/life/%E6%8C%96%E7%9F%BF/7650.html，我采用的是加-t参数，限制线程数
 
-## 下载 github release 文件
+### 下载 github release 文件
 
 链接格式如下：
 
@@ -1478,7 +1478,7 @@ wget --no-check-certificate --content-disposition https://github.com/xmrig/xmrig
 curl -LJO https://github.com/ctripcorp/apollo/releases/download/v1.5.1/apollo-adminservice-1.5.1-github.zip
 ```
 
-# 2023-06-08
+## 2023-06-08
 
 有这样一个 bug，在拖动一个三角图标（专门用于拖拽的组件）的时候，光标要显示`col-resize`：
 
@@ -1494,25 +1494,25 @@ cursor: col-resize;
 
 想要弄清楚原生的表现，其实可以写个简单的例子，或者你的组件足够简单，你就可以自信的认为，问题不出在你这边，转而开始思考其他的可能性。
 
-# 2023-06-07
+## 2023-06-07
 
-## vite 打包使用相对路径
+### vite 打包使用相对路径
 
 坑爹的 vite 打包默认使用绝对路径，想要使用相对路径可以在配置中填：`base: './'`
 
 [为什么 vite 打包后 dist 文件无法直接运行](http://www.oceanpresent.art/posts/hard-boiled-wonderland/viteassetpath)
 
-## ResizeObserver
+### ResizeObserver
 
 监听 dom 的宽高变化：[ResizeObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver)
 
 比如我做一个 scrollButton 组件（用来替代鼠标滚轮，实现点击触发 scroll），就要监听滚动对象父级的宽高变化来控制这个 scrollButton 组件的显示隐藏
 
-## nginx
+### nginx
 
 nginx 的配置位置：`/etc/nginx`中，在该目录下，主要的配置文件是 nginx.conf
 
-# 2023-06-06
+## 2023-06-06
 
 买了国外的域名和服务器，这样就可以避免国内特别麻烦的备案了，话说国外的域名和服务器真是便宜啊：
 
@@ -1559,7 +1559,7 @@ systemctl restart firewalld.service
 firewall-cmd --reload
 ```
 
-## centos 安装 nginx
+### centos 安装 nginx
 
 yum install 没有可用软件包 nginx。
 
@@ -1594,7 +1594,7 @@ yum update
 yum install -y nginx
 ```
 
-## 显卡挖矿
+### 显卡挖矿
 
 币安现在也有矿池了：[币安矿池](https://pool.binance.com/zh-CN)
 
@@ -1604,19 +1604,19 @@ yum install -y nginx
 
 电费都收不回来
 
-## hexo 部署后，CNAME 会被自动删除，怎么办？
+### hexo 部署后，CNAME 会被自动删除，怎么办？
 
 将需要上传至 github 的内容放在 source 文件夹，例如 CNAME、favicon.ico、images 等。
 
 [hexo 部署后，CNAME 会被自动删除，怎么办？ - 沉简的回答 - 知乎](https://www.zhihu.com/question/28814437/answer/44207790)
 
-## 拿图片生成 icon
+### 拿图片生成 icon
 
 [免费 Favicon.ico 图标在线生成器](https://www.logosc.cn/logo/favicon)
 
-# 2023-06-05
+## 2023-06-05
 
-## utterances
+### utterances
 
 把博客的评论插件从来必力换成了 github issues，用的是 utterances 插件，主要参考了这篇文章：https://blog.lanweihong.com/posts/24011/，他的文章有一处错误导致我一开始没有成功：
 
@@ -1653,11 +1653,11 @@ yum install -y nginx
 
 我的博客一直是零评论，而且浏览量也不高，这方面需要改善一下了，主要是 SEO 做的不好，还有就是平常也没有宣传过，再就是文章更新的比较少，虽然 notes 更新很频繁。
 
-## 网格布局
+### 网格布局
 
 最近搞 AwesomeWeb 项目，发现用 flex 布局没法满足这样一个需求：多行的情况下，既均匀，又从左开始，比如第一行四个元素，第二行三个元素。要实现这种布局就只能用 grid 布局了，flex 布局确实只适合一维的情况，但 grid 布局可以很自由的搞定二维布局。
 
-# 2023-06-02
+## 2023-06-02
 
 react router 用的比较少，参考以下几篇文章：
 
@@ -1665,9 +1665,9 @@ react router 用的比较少，参考以下几篇文章：
 - [5 分钟内了解 React Router——初学者教程](https://www.freecodecamp.org/chinese/news/react-router-in-5-minutes-2/)
 - [React 路由使用](https://juejin.cn/post/7102047013818073096)
 
-# 2023-06-01
+## 2023-06-01
 
-## 正则表达式的坑
+### 正则表达式的坑
 
 ![正则表达式的坑1](../images/2023/正则表达式的坑1.png)
 
@@ -1681,11 +1681,11 @@ react router 用的比较少，参考以下几篇文章：
 
 实际上我觉得 js 应该在使用 test 时，屏蔽掉`g`
 
-## UI 美学
+### UI 美学
 
 我发现 UI 就是要匀称才好看，比如要均匀的平铺界面，留足缝隙（padding 和 margin），就是好看的关键要素，挤在一起就不好看了。人体也是如此，可以说匀称是个试金石。
 
-## 雪碧图
+### 雪碧图
 
 根据雪碧图+`background-position`+固定的图片宽高，可以从雪碧图中抽取某个图片。
 
@@ -1724,15 +1724,15 @@ Copy code .icon {
 
 使用雪碧图可以提高网页加载速度和性能，减少 HTTP 请求次数，并且对于移动设备和低带宽环境尤其有益。
 
-# 2023-05-30
+## 2023-05-30
 
 如何白嫖到免费的 office 官方软件：[Word、Excel、Pointpot 最强免费安装教程！ | 零度解说](https://www.youtube.com/watch?v=VSjRx7Hoa60&ab_channel=%E9%9B%B6%E5%BA%A6%E8%A7%A3%E8%AF%B4)
 
-# 2023-05-29
+## 2023-05-29
 
 电脑不够轻巧便携，手机的系统不够有生产力，对于编程开发来说甚至都没有 chrome 调试工具，当然手机屏幕太小也是个问题，但我还是搞了个 aidlux 来折腾一番。想要在 aidlux 里面用上电脑版的 chrome，就要通过 xfce4 来运行，一进去就让选是 wayland 还是 vnc 方式，那么这两个方式有何区别呢？
 
-## Wayland 与 VNC 有什么区别呢
+### Wayland 与 VNC 有什么区别呢
 
 建议在平板和手机上面使用 Wayland，启动的过程需要一点时间，但是启动过后不过是 xfce 本身还是里面的程序运行的速度更快，但是 wayland 也有一些缺点，就是有部分较老的应用程序不支持，例如谷歌拼音需要 fcitx5 以后的版本。
 
@@ -1744,11 +1744,11 @@ VNC 的速度虽然慢一点,但是兼容性更好，几乎支持所有的 Linux
 
 参考：[AidLux 中正确使用 Wayland 的方式 - 知乎](https://zhuanlan.zhihu.com/p/584177202)
 
-# 2023-05-27
+## 2023-05-27
 
 一直都想测一下新买的火影 t6a 的跑分，我朋友写了个奇怪的测试 CPU 的程序：[最小生成树 kruskal 算法 js 实现](http://118.190.10.34/mini-span-tree-kruskal-js/)，测试结果是插电源开 balance 模式，118ms。还行
 
-# 2023-05-26
+## 2023-05-26
 
 怎么用按钮控制滚动效果（产品经理说某些用户没有鼠标滚轮），其实跟滚轮的代码是一样的：
 
@@ -1756,7 +1756,7 @@ VNC 的速度虽然慢一点,但是兼容性更好，几乎支持所有的 Linux
 targetElem.scrollLeft += evt.deltaY; // 把evt.deltaY替换成每次点击按钮，要滚动的距离
 ```
 
-# 2023-05-24
+## 2023-05-24
 
 公司项目遇到一个表情符号导致打开图页失败的问题，原因是转码错误：
 
@@ -1792,23 +1792,23 @@ console.log("😁".length); // 2console.log(Array.from("😁").length); // 1
 new DOMParser().parseFromString('<a value="😁">😁</a>', "text/xml");
 ```
 
-# 2023-05-20
+## 2023-05-20
 
 很少自己搭建项目，我发现我可能连搭建项目都不是很熟练，最近想自己做一个视频 app，视频资源用努努的，那么如何搭建一个 react+typescript+webpack 的应用呢？
 
 [Creating a React app with Webpack](https://jsramblings.com/creating-a-react-app-with-webpack/)[Create a React and Typescript app with Webpack](https://jsramblings.com/create-a-react-and-typescript-app-with-webpack/)
 
-# 2023-05-18
+## 2023-05-18
 
 安卓系统可以安装 linux 啦:aidlux，各大应用商店都有下载。安卓平板配合这个 app，生产力甩 iPad 几条街呀，我这条信息就是用 aidlux 里面的 vscode 编辑并发布的。
 
-# 2023-05-15
+## 2023-05-15
 
 测试 replit+githubpages，比较难搞，replit 的控制台环境并非完全可用的 linux 环境，连安装软件都不让。
 
 有些链接是在本页打开，有些是新开一页，新开一页需要给标签填属性：`target="_blank"`
 
-# 2023-05-14
+## 2023-05-14
 
 之前看零度解说的时候，经常看到一个软件：IDM，今天我也下载了这个软件，下载网址：https://www.internetdownloadmanager.cn/download
 
@@ -1816,19 +1816,19 @@ new DOMParser().parseFromString('<a value="😁">😁</a>', "text/xml");
 
 脚本我也存了一份：[IDM 激活工具.cmd](../assets/IDM%20激活工具.cmd)
 
-# 2023-05-10
+## 2023-05-10
 
-## express use next
+### express use next
 
 前端搭建本地开发环境，一般都用 node 的 express 框架，其中 app use 中的 next 函数的含义是，当对同一个路径定义了多个回调函数，要调用 next()才会执行下一个回调函数。
 
 参考：[What is the use of next() function in Express.js ? - GeeksforGeeks](https://www.geeksforgeeks.org/what-is-the-use-of-next-function-in-express-js/)
 
-## vscode 上移一行代码的快捷键
+### vscode 上移一行代码的快捷键
 
 `alt+up/down`
 
-# 2023-05-03
+## 2023-05-03
 
 最近开始用 rider 开发 unity 游戏，很多编辑器的习惯跟 vscode 不一样，比如 vscode 打开文件左侧目录树会自动定位到相应的文件，感觉还是很方便的，在 rider 可以进行相应的设置：
 
@@ -1836,11 +1836,11 @@ new DOMParser().parseFromString('<a value="😁">😁</a>', "text/xml");
 
 rider 目录树自动定位到文件
 
-# 2023-05-02
+## 2023-05-02
 
 最近买了一台火影 t6a 笔记本，性价比很高，重新部署博客的时候遇到报错：`bash: hexo: command not found`，需要安装`hexo-cli`，最好是全局：`npm i hexo-cli -g`
 
-# 2023-04-28
+## 2023-04-28
 
 以前一直是用一个公共的 ChatGPT 账号，由于每次用都要登录很麻烦，今天终于自己创建了一个账号，创建账号有两个必要条件：
 
@@ -1849,20 +1849,20 @@ rider 目录树自动定位到文件
 
 国外手机号我一直没弄过，这次买了一个 2 美元的服务：https://sms-activate.org/
 
-# 2023-04-21
+## 2023-04-21
 
 useEffect 的变量监听有什么坑？useEffect 的变量监听是用的 Object.is()，对于对象是没法深入对比的，只比较两个对象的地址
 
 试验 demo：[useEffect - Replit](https://replit.com/@liuqinh2s/useEffect#src/App.tsx)
 
-# 2023-04-18
+## 2023-04-18
 
 最近养了多肉，在看多肉的养殖常识的时候，看到多肉必须要照紫外线而非普通的阳光，特别是不能隔着玻璃晒太阳，就在网上搜了一下玻璃隔离紫外线，结果还真涨知识了：
 
 - [透过窗户玻璃照射进来的阳光会把你晒黑么？\_中国经济网](http://m.ce.cn/bwzg/202007/16/t20200716_35335869.shtml)
 - [紫外线-维基百科](https://zh.wikipedia.org/wiki/%E7%B4%AB%E5%A4%96%E7%BA%BF)
 
-## scrollbar 的研究
+### scrollbar 的研究
 
 chrome 的 scrollbar 可定制性比较高：
 
@@ -1874,11 +1874,11 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width
 
 鼠标滚轮横向滚动：https://codepen.io/zxuqian/pen/KKWyxja，就是把deltaY加到scrollLeft上
 
-# 2023-03-20
+## 2023-03-20
 
 为什么要保持饱满的精力，因为我发现，在精神状态不好的时候，人更加容易失控，比如精神状态不佳的时候，会去玩游戏，看抖音。而想要学习，或者做些比较复杂，枯燥，有难度的事情，是需要消耗大量精力的，这些事只能在精神状态好的时候才能做好。
 
-# 2023-03-08
+## 2023-03-08
 
 怎么获取 window 下的 iframe：`window.frames`
 
@@ -1886,11 +1886,11 @@ https://developer.mozilla.org/zh-CN/docs/Web/CSS/scrollbar-width
 
 怎么判断当前的执行环境是不是在 iframe 里面，如果是，则 `console.log(window.frameElement)` 一定可以打印出当前 iframe 的。
 
-# 2023-03-02
+## 2023-03-02
 
 useRef 今天又学会了一点，对于非原生组件，必须要写 useImperativeHandle，否则拿不到东西，原生组件则不用写这个，默认拿到的 ref.current 就是 dom 对象
 
-# 2023-02-28
+## 2023-02-28
 
 一直以来都对 useEffect 有个误解，以为它的作用范围是全局的，我的意思是在组件外部改了某个变量，我可以在组件内监听到，实际上是不行的。
 
@@ -1916,7 +1916,7 @@ setTimeout(() => {
 
 如果要实现全局的监听，就要自己实现一个 useWatch 了，自己实现一个 useWatch 比较复杂，先埋个坑，以后再填。
 
-# 2023-02-23
+## 2023-02-23
 
 刚 commit 的代码想撤回到工作区：
 
@@ -1946,7 +1946,7 @@ git reset --hard HEAD^
 git reset --soft HEAD~1
 ```
 
-# 2023-02-14
+## 2023-02-14
 
 js 最简单的打包是用 rollup.js：
 
@@ -1958,7 +1958,7 @@ rollup main.js --file bundle.js
 
 比 webpack 简单易用
 
-# 2023-02-10
+## 2023-02-10
 
 最近想自己做些软件的想法越来越强烈，感觉一直为公司打工不是出路，必须要另寻出路：
 
@@ -1972,7 +1972,7 @@ rollup main.js --file bundle.js
 
 接下来我打算研究一下数独的生成，自己做一个数独小游戏
 
-## useContext 的使用
+### useContext 的使用
 
 用起来很简单就是一句：
 
@@ -1986,7 +1986,7 @@ const context = useContext(xxxContext);
 // 先定义一个全局变量export const xxxContext = React.createContext < xxxType > {};// 然后用这个.Provider包裹起来，再传入一个value<xxxContext.Provider value={{}}>...</xxxContext.Provider>;
 ```
 
-# 2023-02-09
+## 2023-02-09
 
 svg use 可以用来复制一个 svg 元素：
 
@@ -1994,7 +1994,7 @@ svg use 可以用来复制一个 svg 元素：
 
 AI 学习：https://zhuanlan.zhihu.com/p/414450099
 
-# 2023-02-08
+## 2023-02-08
 
 切角效果：
 
@@ -2015,7 +2015,7 @@ div {
 
 [效果演示](https://codepen.io/liuqinh2s/pen/XWBKvEe)
 
-# 2023-02-07
+## 2023-02-07
 
 一月份的目标：金铲铲之战打上大师段位，并写一份游戏攻略，已经完成了。2 月份我打算看完这本《CSS 揭秘》，因为已经拖了很久了，虽然说前面看的不少内容已经忘了，但是先完整的看完一遍再说。
 
@@ -2027,15 +2027,15 @@ clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 
 [效果演示](https://codepen.io/liuqinh2s/pen/mdjOgvz?editors=1111)
 
-# 2023-01-30
+## 2023-01-30
 
 遇到一个`cannot access "xxx" before initialization`的问题，xxx 是一个抽象类，如果这个抽象类没有 import 任何其他的东西应该不会报错才对，所以问题是出在它的引用上。最后查到是循环引用了。
 
-# 2023-01-12
+## 2023-01-12
 
 今早上尝试给多看 app 导入 mobi 格式的电子书，才发现 mobi 格式原来竟是 kindle 自己家的格式，不过也被后来的 azw 系列替代了，现在都是 azw3 格式。于是我只好转成 epub 格式，然后我发现多看 app 的看书体验比 kindle app 还好。只能说 kindle 不思进取吧。而且人家已经退出了中国，另外我的 kindle paper white3 用了 9 年也在前几日终于寿终正寝了（估计是主板坏了），另外为了贯彻我的一个手机一台电脑的极简主义风格，不打算修或者买个新的 kindle 了。以后都不会再用 kindle，电脑上看电子书用 calibre，手机上用多看。
 
-# 2023-01-10
+## 2023-01-10
 
 css 如何生成一个椭圆？
 
@@ -2064,15 +2064,15 @@ border-radius: 100% 0 0 100% / 50%;
 border-radius: 100% 0 0 0;
 ```
 
-# 2023-01-09
+## 2023-01-09
 
 之前看过一篇文章，讲中国的每个朝代差不多都活不过 300 年，因为持续不断的贫富分化（土地兼并），让整个社会民不聊生，社会动荡，重新洗牌。现在是建国 74 周年，150 年后达到当朝的顶峰，也就是 2099 年，我们这一代还能活的比较滋润，后面几代基本上是活的不像人样了。每一代人都有每一代人的宿命。这是历史的进程。
 
-# 2023-01-08
+## 2023-01-08
 
 中午吃饭的时候，讨论到春节的车票问题，突然发现我没有很好的利用区间来解决车票问题，**众所周知：区间选得越大，放的票越多，越容易买到票**。我抢到的是一等座，一等座比二等座贵了 200 块，如果我加点区间抢二等座，说不定比我一等座要便宜。以后一定要记住这一点，高铁公司是希望所有人都从始发站做到终点站的，这样它才能赚得最多，所以故意把区间越大的票弄得越多，据说始发站到终点站的票，是其他区间的三倍。
 
-# 2023-01-07
+## 2023-01-07
 
 怎么防止重复添加同一个事件回调函数？
 
@@ -2102,11 +2102,11 @@ for (let i = 0; i < n; i++) {
 }
 ```
 
-## calibre 分享电子书到 kindle，书名自动变拼音
+### calibre 分享电子书到 kindle，书名自动变拼音
 
 解决办法：https://bookfere.com/post/1042.html
 
-# 2023-01-06
+## 2023-01-06
 
 年度计划基本上是这样：
 
@@ -2116,7 +2116,7 @@ for (let i = 0; i < n; i++) {
 
 要看的书有哪些？今年的第一本书是：《CSS 揭秘》
 
-## CSS 揭秘读书笔记
+### CSS 揭秘读书笔记
 
 ```css
 background: repeating-linear-gradient(
@@ -2132,7 +2132,7 @@ green 0 的意思是什么？
 
 > 为了避免每次改动条纹宽度时都要修改两个数字，我们可以再次从规范那里找到捷径。“如果某个色标的位置值比整个列表中在它之前的色标的位置值都要小，则该色标的位置值会被设置为它前面所有色标位置值的最大值。”这意味着，如果我们把第二个色标的位置值设置为 0，那它的位置就总是会被浏览器调整为前一个色标的位置值，这个结果正是我们想要的。
 
-# 2023-01-05
+## 2023-01-05
 
 发现 react 里面用不了 dispatchEvent，有个需求是对输入框按 enter 触发跟 onBlur 一样的效果，我在 onKeyUp 里面这么写：
 
@@ -2156,7 +2156,7 @@ onKeyDown={e => {
 
 target 和 currentTarget 的区别：target 是注册事件的 dom，但不一定是真正触发事件的 dom，currentTarget 是真正触发事件的 dom。有一种很常见的做法是在祖先节点上注册事件，然后再在事件里面分辨具体是哪个子节点，这就叫：事件委托，可以有效减少事件注册的数量
 
-# 2023-01-03
+## 2023-01-03
 
 新的一年又开始了，麻木了，但还是寻求着改变。我跟我堂弟说了一些东西，我自己觉得很有道理，便写在这里吧：
 
@@ -2167,13 +2167,13 @@ target 和 currentTarget 的区别：target 是注册事件的 dom，但不一�
 
 不管怎么说，我觉得我新的一年必须要戒网络游戏，短视频。同时要看书，看长视频。别人戒毒都可以成功，我戒个这个怎么就不可以。
 
-## CSS 解密读书笔记
+### CSS 解密读书笔记
 
 目前还在看背景与边框，书中提得比较多的是 DRY（Do not Repeat Yourself），就是尽量少的减少重复，因为重复意味着改动不方便。
 
 书似乎是按一个个难题进行编排的，比如半透明边框，多重边框，灵活背景定位。
 
-# 2022-12-21
+## 2022-12-21
 
 如何给女朋友拍照
 
@@ -2193,9 +2193,9 @@ target 和 currentTarget 的区别：target 是注册事件的 dom，但不一�
 
 1. 后期：磨皮，美白，背景虚化
 
-# 2022-12-14
+## 2022-12-14
 
-## 搜索引擎小技巧
+### 搜索引擎小技巧
 
 努努视频的搜索从昨天开始就挂了，遇到这种情况我们怎么搜索呢？其实可以用谷歌的搜索引擎来完成这个需求：
 
@@ -2205,9 +2205,9 @@ target 和 currentTarget 的区别：target 是注册事件的 dom，但不一�
 
 `filetype:pdf "Vue.js设计与实现"`
 
-# 2022-12-12
+## 2022-12-12
 
-## 深入对比对象
+### 深入对比对象
 
 怎么深入比较两个对象是否相等（不管引用是否相等，只看值），最简单的办法就是使用`JSON.stringify`。
 
@@ -2217,7 +2217,7 @@ target 和 currentTarget 的区别：target 是注册事件的 dom，但不一�
 NaN === NaN; // falseObject.is(NaN, NaN); // true-0 === +0; // trueObject.is(-0, +0); // false
 ```
 
-## 文本溢出常用处理手段
+### 文本溢出常用处理手段
 
 ```css
 .ellipsis {
@@ -2227,13 +2227,13 @@ NaN === NaN; // falseObject.is(NaN, NaN); // true-0 === +0; // trueObject.is(-0,
 }
 ```
 
-## width 100%和 auto 的区别
+### width 100%和 auto 的区别
 
 [difference between width auto and width 100 percent](https://stackoverflow.com/questions/17468733/difference-between-width-auto-and-width-100-percent)
 
 实验:https://replit.com/@liuqinh2s1/css-textOverflow#src/App.tsx
 
-## 一个单词是不会换行的
+### 一个单词是不会换行的
 
 发现行内元素居然不会换行，原来是因为被当成一个单词了
 
@@ -2246,9 +2246,9 @@ word-break: break-all;
 word-wrap: break-word;
 ```
 
-# 2022-12-09
+## 2022-12-09
 
-## Http 请求的数据格式
+### Http 请求的数据格式
 
 Http 请求中，dataType 和 ContentType 的区别
 
@@ -2259,7 +2259,7 @@ http 的头其实是可以随意书写的，只要服务器能适配就行，当
 1. `application/json`
 2. `application/x-www-form-urlencoded`
 
-## flex，flex-grow，flex-shrink，flex-basis
+### flex，flex-grow，flex-shrink，flex-basis
 
 这个东西的计算公式官网没有公布，导致只能查别人写的资料，或者自己推导。经过多次实验后，结论如下：
 
@@ -2283,9 +2283,9 @@ flex-basis 就是宽高的意思，但比宽高优先级高，比如定义了 wi
 
 实验地址：https://replit.com/@liuqinh2s1/css-flex#src/App.tsx
 
-# 2022-12-08
+## 2022-12-08
 
-## react 怎么区分父组件发起的渲染，还是子组件自身发起的渲染
+### react 怎么区分父组件发起的渲染，还是子组件自身发起的渲染
 
 用 react 的过程中遇到一个需求：子组件渲染的时候，需要知道是父组件发起的，还是子组件自身发起的渲染。如果是父组件发起的，就用父组件传过来的数据，如果是子组件发起的，就用子组件自身的数据。
 
@@ -2311,13 +2311,13 @@ useEffect(() => {
 
 测试案例：https://replit.com/@liuqinh2s1/whereIsRerenderComeFrom#src/Sub.tsx
 
-## 如何打包 chrome 扩展程序
+### 如何打包 chrome 扩展程序
 
 在 chrome 扩展程序管理中找到了，开发者模式->打包扩展程序，但是提示我：`打包扩展程序错误 指定扩展程序的私有密钥已存在。请重复使用该密钥，或者先删除它。`
 
 上网查了一下，都说已经打包过了，要我找到第一次打包的位置，鬼记得啊，但最后还是借助一定的手段找到了。扩展程序都有自己的 id，然后我用 everything（一个很好用的搜文件软件支持 Windows 系统）搜索一下这个 id，居然真的找到了，是个目录名，还好我没有手贱去改目录名。
 
-# 2022-12-07
+## 2022-12-07
 
 没想到疫情说放开就放开了，现在开始准备个人防控，但药物却买不到，以前没有做准备，从别处抄了个清单：
 
@@ -2335,7 +2335,7 @@ useEffect(() => {
 咳嗽吃：消炎止咳片
 ```
 
-# 2022-12-06
+## 2022-12-06
 
 [react 父组件调用子组件的函数](https://juejin.cn/post/6844903937468792846)：`useImperativeHandle`
 
@@ -2361,9 +2361,9 @@ return <children ref={childrenRef} />;
 
 试验基地：[react-practice](https://replit.com/@liuqinh2s/react-practice#README.md)
 
-# 2022-12-05
+## 2022-12-05
 
-## css 两种盒模型
+### css 两种盒模型
 
 ```css
 box-sizing: border-box; // 这个会把边框的宽度，以及padding计入width和heightbox-sizing: content-box; // 这个不会把边框的宽度，以及padding计入width和height，且这个是默认值
@@ -2371,7 +2371,7 @@ box-sizing: border-box; // 这个会把边框的宽度，以及padding计入widt
 
 > 注意 margin 在两种盒模型都是不计入宽高的
 
-## react 受控组件和非受控组件
+### react 受控组件和非受控组件
 
 使用 react 的过程中发现，有的时候需要写很多的更新代码，比如 Input 标签，需要在 onBlur 的时候更新 value，需要在 onKeyUp（按 enter）的时候更新 value，如此会非常麻烦，远不如以前用 jquery 的时候，直接获取 dom 的值。
 
@@ -2381,7 +2381,7 @@ box-sizing: border-box; // 这个会把边框的宽度，以及padding计入widt
 
 官方文档：https://zh-hans.reactjs.org/docs/uncontrolled-components.html
 
-# 2022-12-02
+## 2022-12-02
 
 react 怎么获取 children，比如`<Button><span>AA</span></Button>`
 
@@ -2395,19 +2395,19 @@ https://reactjs.org/docs/glossary.html#propschildren
 
 顺带说一句 replit.com 是真好用啊，比 codepen 强太多了。
 
-# 2022-12-01
+## 2022-12-01
 
 安装免费的正版的激活的 office，官方提供的白嫖渠道：
 
 https://www.youtube.com/watch?v=VSjRx7Hoa60&t=319s&ab_channel=%E9%9B%B6%E5%BA%A6%E8%A7%A3%E8%AF%B4
 
-# 2022-11-27
+## 2022-11-27
 
 用了 7 年的 macbook pro A1398 款，最近想换个屏幕以及键帽，F 键帽被磨掉漆了。尝试自己拆了一下键帽，还真是复杂，开机键的键帽支架差点装不回去了。上淘宝搜了一下价格，单 F 键帽和下面的软垫就要 20 块，F 键帽+开机键键帽要 30，胶水要 5 块。但是一个键盘带 C 壳总成才 130，加上我装回 F 键后，发现这个键的手感和其他键居然不一样。仔细试了一下，F 键的手感最软榻，感觉几乎快要坏了。据说要给软垫下面涂胶水固定，不过我也不清楚是不是涂了胶水，手感就好了，或者换了软垫就好了。
 
 还是换键盘吧，最稳妥的决定。
 
-# 2022-11-26
+## 2022-11-26
 
 最近发现 surface 上推送的 blog，内容居然是空的，经过调查发现，是生成的 index.html 内容为空，再上网查发现了原来是 node 版本太高，hexo 版本太低，不匹配。我选择了升级 hexo 到 4.2.1。
 
@@ -2441,7 +2441,7 @@ FATAL {
 
 但是在用了 hexo 最新版后各种问题，而且 next 新版主题我也不喜欢，为了避免折腾，还是决定保留 hexo 旧版，把 node 切回低版本：12.22.12。使用 nvm 可以很方便的切换版本，下载 node 等操作。
 
-# 2022-11-25
+## 2022-11-25
 
 安装 Android 子系统：https://www.cnblogs.com/frank-link/p/16390714.html
 
@@ -2466,15 +2466,15 @@ FATAL {
 
 - https://www.kali.org/docs/troubleshooting/common-minimum-setup/
 
-# 2022-11-24
+## 2022-11-24
 
-## 安装 win11 arm64 位
+### 安装 win11 arm64 位
 
 我拿到的 surface pro x 默认装的是 win10，但是 arm 版的 win10 不支持 x64 程序，导致很多软件都无法使用，经过一番上网查找发现 win11 是可以支持 x64 程序的模拟的，而且还支持安卓模拟，简直太棒。搞了一晚上终于安装好了 win11，我没有使用 U 盘来安装，而是直接下载 ISO 文件，然后点击 setup.exe 直接安装。安装完后，原先的程序和设置全都在，非常的方便（这样都不用管驱动的问题了，一直听说 surface pro x 的驱动不好找）。
 
 windows11 arm64 版下载地址：https://next.itellyou.cn/，这么多年一直是在itellyou下载正版软件的，真的非常方便。如果觉得下载慢，可以使用迅雷。
 
-## 激活 jetbrains 家的软件
+### 激活 jetbrains 家的软件
 
 - https://www.cnblogs.com/nihaorz/p/16517730.html
 - https://www.binfoo.com/2820
@@ -2491,7 +2491,7 @@ windows11 arm64 版下载地址：https://next.itellyou.cn/，这么多年一直
 
 可以愉快的开始编程了
 
-# 2022-11-23
+## 2022-11-23
 
 新买了个 surface pro x，发现 windows 商店挂代理访问不了，解决办法：
 
@@ -2511,7 +2511,7 @@ npm i 之后遇到 hexo 找不到的问题：`bash: hexo: command not found`
 
 还可以使用 npx 来执行，这样就不用全局安装了：`npx hexo`，npx 会自动下载缺失的模块，但是用完就删了，不会留下痕迹，下次再用还是要联网下载该模块。
 
-# 2022-11-22
+## 2022-11-22
 
 如何通过局域网把电子书传输到 kindle 呢？
 
@@ -2519,7 +2519,7 @@ npm i 之后遇到 hexo 找不到的问题：`bash: hexo: command not found`
 
 答案是使用 calibre，通过这个软件搭建一个局域网服务器，然后用 kindle 的浏览器功能访问服务器网址，就可以下载电子书啦，非常的方便实用。我原先一直是通过发送到邮箱的方式来传输电子书的，这个是要走公网的，但这种方式对文件大小有限制，必须要小于 50M，而且传输速度也大不如局域网。
 
-# 2022-11-17
+## 2022-11-17
 
 js 中??是什么表达式
 
@@ -2537,9 +2537,9 @@ alert(isUndef(username) ? "Guest" : username);
 
 终于可以不用自己实现一个函数来做这件事了。
 
-# 2022-11-16
+## 2022-11-16
 
-## trigger 和 Event
+### trigger 和 Event
 
 jquery 写法：
 
@@ -2553,7 +2553,7 @@ $("xxx").trigger("blur");
 dom.dispatchEvent(new Event("blur"));
 ```
 
-# 2022-11-15
+## 2022-11-15
 
 try catch 能捕获异步的错误吗，答案是不能。但如果用 await 就可以。
 
@@ -2583,7 +2583,7 @@ async function f() {
 f();
 ```
 
-# 2022-11-14
+## 2022-11-14
 
 一直以来都只会 import 和 export 的语法，但是不会 require 的。今天学习了一下：
 
@@ -2608,9 +2608,9 @@ let { test } = require("./module.js");
 test("this is a test");
 ```
 
-# 2022-11-07
+## 2022-11-07
 
-## clientHeight
+### clientHeight
 
 最近 eda 项目在进行两个重构，重构完就是 2.0 版了，一个是原理图的数据驱动重构，一个是 UI 的 react 重构，我打算做个 List 组件，需要上虚拟滚动。
 
@@ -2618,7 +2618,7 @@ test("this is a test");
 
 clientHeight = CSS height + CSS padding - 水平滚动条高度（如果存在）
 
-## 连续点击鼠标次数
+### 连续点击鼠标次数
 
 在写 onClick 事件的时候，学到一个东西：`event.detail`，这个是个 number 类型，代表连续点击鼠标的次数，学习资料如下：
 
@@ -2648,7 +2648,7 @@ const handleClick = (event) => {
 };
 ```
 
-## useState 的坑
+### useState 的坑
 
 ```jsx
 import React, { useState, useEffect } from "https://esm.sh/react@18";import ReactDOM from "https://esm.sh/react-dom@18";const obj = { text: "2" };const Hello = ({ props }) => {
@@ -2663,7 +2663,7 @@ import React, { useState, useEffect } from "https://esm.sh/react@18";import Reac
 
 如果 useState 传入的对象的引用没有发生变化，它就不会更新。所以修改对象就只能深拷贝了。
 
-# 2022-11-06
+## 2022-11-06
 
 github 突然抽风，push 的时候报错：
 
@@ -2689,7 +2689,7 @@ Port 443
 
 当然这次是它自己又好了
 
-# 2022-11-05
+## 2022-11-05
 
 [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)，[WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)是什么？
 
@@ -2697,7 +2697,7 @@ Port 443
 2. 键如果没有被引用的话，会被回收（容器本身的引用不算），防止内存泄露
 3. 键都不可遍历（因为随时会被回收）
 
-# 2022-11-02
+## 2022-11-02
 
 同事分享了一个案例，返回的是值类型，但依旧可以修改属性：
 
@@ -2740,7 +2740,7 @@ const profile = Object.create(null);
 
 这样就让 profile 的原型是 null 了，要让 profile 的原型是 Object.prototype 则这样写：`const profile = Object.create(Object.prototype);`
 
-# 2022-10-27
+## 2022-10-27
 
 遇到一个比较难的题目，看了答案才解出来。先是看了讨论里面的提示说用前缀和+单调队列，但其实跟单调队列没啥关系，毕竟队列本身存的是下标 `i`，却要转换成 `preSum[i]` 再去讨论单调性。而且这题一定要经过精妙的分析才能维护好这个查询队列（用于替代暴力解法中的第二层 for 循环，减少查找范围），最后才勉强发现这个查询队列类似单调队列，如果先直接写好单调队列的数据结构再去解题，怕是根本就想不清题目了。
 
@@ -2748,7 +2748,7 @@ const profile = Object.create(null);
 
 发现原来是因为搜索的时候，固定从前往后搜导致的，但像头尾操作的时候，应该直接指定节点根本就不用搜索，解决掉这个问题后，速度非常快了。
 
-# 2022-10-26
+## 2022-10-26
 
 .then 的优先级比 await 高，所以这样写是有区别的：
 
@@ -2757,13 +2757,13 @@ await func().then(); // 先执行.then
 (await func()).then(); // 先执行await
 ```
 
-# 2022-10-19
+## 2022-10-19
 
 AI 作画现在很火，我也小玩了一把：https://6pen.art/
 
 AI 作画网站收集：https://github.com/hua1995116/awesome-ai-painting
 
-# 2022-10-17
+## 2022-10-17
 
 怎么验证，浏览器的 localStorage 是单个字段限制为 5M，还是整个 localStorage 限制为 5M。可以自己写代码验证：
 
@@ -2796,7 +2796,7 @@ localStorage.setItem(
 
 另外我们还顺带验证了 js 的’0’是 1 字节大小。
 
-# 2022-10-13
+## 2022-10-13
 
 js 中的字符都是两字节的，怎么查看一个字符的编码呢，用`str.charCodeAt(0)`，从编码变字符用：`String.fromCharCode(code)`
 
@@ -2812,7 +2812,7 @@ js 字符编码的故事：[Unicode 与 JavaScript 详解 - 阮一峰的网络�
 > 什么情况下 charCodeAt 和 codePointAt 会得到不一样的值
 > 在 BMP（基本多文种平面）里面的字符就是一样的结果，不在 BMP 里面就不一样
 
-# 2022-10-11
+## 2022-10-11
 
 正则表达式中，圆括号是捕获里面的匹配项的意思，那么怎么不捕获呢？这样写：
 
@@ -2822,7 +2822,7 @@ js 字符编码的故事：[Unicode 与 JavaScript 详解 - 阮一峰的网络�
 
 官方文档：[正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
 
-# 2022-10-10
+## 2022-10-10
 
 昨天做了一道 leetcode，最后需要用 eval 来解析四则运算：[856. 括号的分数](https://leetcode.cn/problems/score-of-parentheses/)
 
@@ -2832,7 +2832,7 @@ js 字符编码的故事：[Unicode 与 JavaScript 详解 - 阮一峰的网络�
 
 了解了一下[window.parent](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/parent)
 
-# 2022-09-21
+## 2022-09-21
 
 拉远端分支 git 命令：
 
@@ -2847,7 +2847,7 @@ git checkout -b pro-ui/dev origin/pro-ui/dev
 git branch -D pro-ui/dev
 ```
 
-# 2022-09-15
+## 2022-09-15
 
 最近感觉自己 git 方面的知识还是比较少，今天看到一个–no-track 参数，不懂什么意思。
 
@@ -2864,7 +2864,7 @@ git branch -D pro-ui/dev
 git pull origin pro-ui/dev:pro-ui/dev
 ```
 
-# 2022-09-14
+## 2022-09-14
 
 关于 git 工作流，我们团队推了一个工作流方式，采用：
 
@@ -2875,11 +2875,11 @@ git pull origin pro-ui/dev:pro-ui/dev
 
 之前一直都没用过 git rebase（不了解不敢用），今天抽空看了这篇文章：https://morningspace.github.io/tech/git-merge-stories-6/ ，对 git rebase 算是基本理解了。
 
-# 2022-09-06
+## 2022-09-06
 
 看零度解说的时候，他讲到一个语音转文字的网站，我突然想起来微信好像自带了一个这个功能，于是试了一下，真的很方便，在输入语音的时候说完话往右上滑动就能以文字的形式发送出去了。而且微信好像还有自带的翻译，可以翻译英文，韩文什么的。微信都这么方便了，那就没有必要用其他的网站工具了。
 
-## 关于 git 工作习惯
+### 关于 git 工作习惯
 
 最好的习惯是开自己的分支，合并用 merge request。
 
@@ -2896,7 +2896,7 @@ git pull origin pro-ui/dev:pro-ui/dev
 
 今天发生了一个合并事故，我先 git commit，然后 pull 发现有冲突，但看起来很奇怪（多了 100 多个文件需要提交），我就想哪里出问题了，就 git revert 了一下，然后再 git pull，git cherry-pick 之前的 commit，然后 git push。最终导致的结果是另一位同事在 merge 时删除了某位同事的代码。总之这套做法很不好，以后还是用回上面提到的流程。
 
-# 2022-09-01
+## 2022-09-01
 
 当 cherry-pick 产生冲突，怎么退出 cherry-pick？
 
@@ -2935,7 +2935,7 @@ usage: git cherry-pick [<options>] <commit-ish>...
                           keep redundant, empty commits
 ```
 
-# 2022-08-31
+## 2022-08-31
 
 git 合并的时候，如果本地代码过旧（比如本地代码是两个月前的），可能会发生一些意想不到的问题，合并的时候抛弃了线上分支的许多代码和文件，但 commit 记录里面却没有体现。这个时候想要 revert 发现报错了：
 
@@ -2951,13 +2951,13 @@ git 合并的时候，如果本地代码过旧（比如本地代码是两个月�
 
 这样的话就能成功 revert 了，虽然找回了之前 mainline2 的代码，但这种做法的缺点是 mainline1 和 mainline2 的所有不同的代码行的 commit 信息全部变成 revert 这个 commit 的信息了
 
-# 2022-08-25
+## 2022-08-25
 
 > 原理：const 限定引用不可更改，as const 限定内容不可更改，当内容可以改的时候，显然 typeof 无法准确限定（只能限定到 string,number 这些通用的类型，没办法限定到’a’, 1 这些具体的值），当内容不可改了，自然会帮你缩减到具体值。
 
 typescript 的一些常见用法：
 
-## 使用数组中限定的 string
+### 使用数组中限定的 string
 
 ```tsx
 let a = ["a", "b"] as const;
@@ -2977,7 +2977,7 @@ let b: (typeof a)[number] = "c";
 
 但这个要写两遍数组，看起来不太好看
 
-## 使用对象中限定的 string
+### 使用对象中限定的 string
 
 ```tsx
 let obj = {
@@ -3004,7 +3004,7 @@ let b: keyof typeof obj = "d";
 
 而且这个是不用 as const 也可以的
 
-## 限定一个对象的 key 与另一个对象的 key 完全匹配
+### 限定一个对象的 key 与另一个对象的 key 完全匹配
 
 ```tsx
 const enum DOCTYPE {
@@ -3022,7 +3022,7 @@ let b: Record<DOCTYPE, string> = {
 
 这个 Record 的作用就是新建一个对象，对象的 key 完全沿用旧对象的。
 
-## 如果不想限定完全一致，要怎么写
+### 如果不想限定完全一致，要怎么写
 
 ```tsx
 const enum DOCTYPE {
@@ -3039,7 +3039,7 @@ let a: aa = {
 
 只需要在 key 后面加个问号，就跟其他的任意 key 一样处理（今天被这么一个简单的问题难住了，说明不会举一反三）
 
-## 怎么获取 enum 的 key 和 value 类型
+### 怎么获取 enum 的 key 和 value 类型
 
 ```tsx
 export const enum Direction {
@@ -3051,7 +3051,7 @@ type v = `${Direction}`;
 type v1 = Item<typeof Direction>; // 这样不行，Item只能获取对象，数组，Map，Set的值类型
 ```
 
-# 2022-08-23
+## 2022-08-23
 
 没什么用，但用起来很爽的快捷键，Vscode 清除没有用到的 import 语句：
 
@@ -3063,24 +3063,24 @@ Alt+shift+O
 
 > 这样做非常危险，清理完没有用到的 import 后，可能打破某种循环引用的奇妙平衡，从而导致项目根本跑不起来。所以清理完引用后，一定要记得跑一下项目，看是否能跑起来，再提交代码。
 
-## 高内聚，低耦合
+### 高内聚，低耦合
 
 - 高内聚是减少了代码量，增加复用，避免改了这里还要改那里
 - 低耦合是增加了代码量，减少复用，避免改了这里却动到了那里
 
 本质上都是为了少修改代码，减少工作量
 
-# 2022-08-01
+## 2022-08-01
 
 重新做了一遍这个 CSS 选择器训练：[CSS Speedrun | Test your CSS Skills](https://css-speedrun.netlify.app/)
 
 有些我还是用的挺少的，比如`:nth-child(2n+3)`，`img ~ p`，`a + span`，`:enable`，平常用的最多的应该就是属性选择器了，都还是靠加属性来标记的
 
-# 2022-07-25
+## 2022-07-25
 
 HTTP3.0 居然都有了，而且居然放弃了 TCP 作为传输层协议：[HTTP 3.0 彻底放弃 TCP，TCP 到底做错了什么？](https://mp.weixin.qq.com/s/LMjVtUshf67i1gbJI2zDSA)
 
-## npm 的依赖版本问题: `^`，`~`，以及不带前缀的区别
+### npm 的依赖版本问题: `^`，`~`，以及不带前缀的区别
 
 - `~`会匹配最近的小版本依赖包，比如~1.2.3 会匹配所有 1.2.x 版本，但是不包括 1.3.0
 - `^`会匹配最新的大版本依赖包，比如^1.2.3 会匹配所有 1.x.x 的包，包括 1.3.0，但是不包括 2.0.0
@@ -3089,7 +3089,7 @@ HTTP3.0 居然都有了，而且居然放弃了 TCP 作为传输层协议：[HTT
 
 最后 package-lock.json 会锁住版本，所以如果想要重新安装，要删掉里面的相关配置
 
-# 2022-07-22
+## 2022-07-22
 
 翻自己的豆列发现收藏了 15 篇文章，但没啥印象，于是一个一个打开看，其中有一篇是讲消费品味的，一直觉得自己在穿衣打扮方面注意得比较晚，上面推荐的几款东西，看起来还不错，到时候挑一些买。
 
@@ -3097,7 +3097,7 @@ HTTP3.0 居然都有了，而且居然放弃了 TCP 作为传输层协议：[HTT
 
 [活动–CHH 第三届桌面 Show 活动](https://www.chiphell.com/article-25725-1.html)
 
-# 2022-07-21
+## 2022-07-21
 
 帮组员解决一个 tinymce.js 在 nextjs 中报错的问题，原因是 tinymc.js 中使用了 navigator，服务端没有这个对象。
 
@@ -3109,7 +3109,7 @@ if (typeof window !== "undefined") {
 }
 ```
 
-# 2022-07-17
+## 2022-07-17
 
 猫砂要怎么选？今天做了一下功课
 
@@ -3132,14 +3132,14 @@ if (typeof window !== "undefined") {
 
 如果不考虑直接冲厕所的话，肯定是膨润土和混合猫砂最好。
 
-## 参考资料
+### 参考资料
 
 - [新手膨润土猫砂推荐（含详细清单攻略）](https://zhuanlan.zhihu.com/p/308486564)
 - [2022 年猫砂选购推荐（膨润土、豆腐砂、混合砂）- 知乎](https://zhuanlan.zhihu.com/p/437674365)
 
 第二篇文章的测试手法挺有意思的。
 
-# 2022-07-06
+## 2022-07-06
 
 目前 lceda 的原理图和面板项目都还是用的 svg 来做画布，但对于 svg 的很多东西其实我并不熟悉，今天看了一篇文章了解了一下 text 和 tspan 的 dx 和 dy 的用法：
 
@@ -3147,13 +3147,13 @@ if (typeof window !== "undefined") {
 
 dx 和 dy 可以是一串以空格分界的数字，这样就可以微调每个字符了，每个数字会影响之后的所有字符，而且多个 tspan 的 dx 和 dy 前一个 tspan 会影响后面的。这个设计看起来还不错。
 
-# 2022-07-05
+## 2022-07-05
 
 crypto.subtle 在不安全的上下文中是 undefined，比如当网站是 http 的时候。
 
 [How to use SubtleCrypto in chrome (window.crypto.subtle is undefined)](https://stackoverflow.com/questions/46468104/how-to-use-subtlecrypto-in-chrome-window-crypto-subtle-is-undefined)
 
-# 2022-06-30
+## 2022-06-30
 
 textarea 中按住 ctrl，alt，shift 以及 win 这几个键，再按 enter，有的能换行有的不能：
 
@@ -3169,9 +3169,9 @@ textarea 中按住 ctrl，alt，shift 以及 win 这几个键，再按 enter，�
 
 > 怎么控制光标位置：让输入框的 selectionStart 等于 selectionEnd
 
-# 2022-06-23
+## 2022-06-23
 
-## 异或交换
+### 异或交换
 
 ```jsx
 function swapTwoNumber(a, b) {
@@ -3183,27 +3183,27 @@ function swapTwoNumber(a, b) {
 
 异或交换在交换同一个数（内存地址相同，而非仅仅数值相同）的时候，会把这个数变成 0，由于执行第一步`a ^= b;`的时候，已经让 x 变成了 0，所以后面再执行剩下两步的时候也变不回来了。
 
-# 2022-06-17
+## 2022-06-17
 
-## 弹框等待用户交互
+### 弹框等待用户交互
 
 如何实现：在一个弹框的回调（用户点击是或者否）之后才执行接下来的逻辑？
 
 答案是：**用 Promise 就可以阻断代码流程**，弹框之后的逻辑必须等待弹框的回调函数中的 resolve 或 reject 被执行，才能接着执行，而回调函数则必须等待用户的点击，这样就实现了一个等待用户交互的逻辑。
 
-## TS 表达一个对象类型
+### TS 表达一个对象类型
 
 TS 我一直用的比较少，之前还想一个对象 key 和 value 都是 string，用 ts 怎么表示：`let v: {[key:string]:string}`
 
-# 2022-06-16
+## 2022-06-16
 
 在使用 [HTMLInputElement.setSelectionRange()](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLInputElement/setSelectionRange)时发现一个问题，超出 input 的宽度的位置无法被定位到，也就是说它不会滚动文本，如果想滚动到指定位置怎么办呢？目前还不知道怎么解决。
 
-# 2022-06-15
+## 2022-06-15
 
 最近工作很杂乱，事情很多，今天了解了一下斜切是什么，我原先以为是平移+旋转，没想到根本不是，斜切其实是倾斜。最近同事在做斜切椭圆的四点控制，这是他写的关于图形变换的基础的博客：https://zengxiaoluan.com/matrix-image 。从今天开始打算把之前 wordpress 被黑丢失的博客补一补了，主要是一些前端的面试考察点以及工作中遇到的问题和解决方案，大部分可能都想不起来了，能补多少是多少吧。浏览器书签和我来笔记都有点乱，有空也要整理一下。
 
-# 2022-06-12
+## 2022-06-12
 
 今早上一起来发现服务器居然连不上了，试了一下居然 ping 不通了，估计是这个 ip 又被墙了。为了尽快弄好翻墙的，我试了朋友发给我的 clashX 以及翻墙配置，真的不错，速度非常快。
 
@@ -3231,9 +3231,9 @@ ClashX 默认配置
 
 我是在 github 的 issue 里面搜到的，反正万事解决不了提 issue。
 
-# 2022-06-11
+## 2022-06-11
 
-## wordpress 博客被黑
+### wordpress 博客被黑
 
 最近想把 wordpress 上的文章迁移到 github.io。今天一打开我的 wordpress 博客，突然直接跳到 wordpress 的安装界面，我感觉挺奇怪的，有种不好的预感。打开数据库一看果然又被黑了，除了 wordpress 数据库，顺带其他几个 mysql 的数据库也被黑了。因为我还在我服务器上跑着我自己写的量化交易的脚本，mysql 的某个数据库里面有币安的 api key，吓得我立马去币安删 api。我担心可能 linux 服务器的账号密码都被黑了，而且也有可能在我服务器放了什么其他可怕的病毒，干脆还是重置一下服务器，以及相关的所有账号密码。
 
@@ -3256,7 +3256,7 @@ image.png
 
 可惜我写了这么多文章都还没有备份
 
-## 办理身份证
+### 办理身份证
 
 今天顺带把身份证重新办了一下，办理身份证前首先需要去照相馆照一张身份证证件照，然后再去派出所户政室办理。证件照需要上传到一个照片质量检测网站上进行核对，并产生一个编号。去户政室的时候提供这个编号他们就可以找到这个照片了。
 
@@ -3266,11 +3266,11 @@ http://m.bendibao.com/bsy616684.html
 
 景田的户政室已经从原来的地方搬到香蜜湖了，在高德地图上可以搜得到香蜜湖的户政室地址：`福田公安分局香蜜湖户政服务中心`，另外他们的办公时间也改了，下午 4 点就收摊了。
 
-# 2022-06-10
+## 2022-06-10
 
 今天发现一个 bug 跟 tagName 有关，原因是 document 没有 tagName，**document.tagName 是 undefined**，导致代码报错。
 
-## toJSON()方法
+### toJSON()方法
 
 一个对象定义了 toJSON 方法的话，JSON.stringify 就会去调用这个方法，返回定制化的字符串。
 
@@ -3293,7 +3293,7 @@ JSON.stringify(bonnie);// Returns '{"name":"Bonnie Washington","class":"Wisdom",
 // Returns '[{"name":"Bonnie Washington","class":"Wisdom","year":5,"code":"0"}]'
 ```
 
-## 大型软件的设计很重要
+### 大型软件的设计很重要
 
 为 EDA 写了快三年代码了，我的感觉就是对于稍微复杂一点的软件，设计真的很重要。在新加某个需求后，可能因为不好的设计产生很多 bug，也有可能因为原先存在的代码设计不合理，导致新需求很难写，到处都要埋点。
 
@@ -3301,7 +3301,7 @@ JSON.stringify(bonnie);// Returns '{"name":"Bonnie Washington","class":"Wisdom",
 
 > 很多糟糕的设计隶属于某个更大的糟糕设计，而这个更大的糟糕设计可以被一两行精妙的代码整个代替掉，你在局部优化半天毫无意义。
 
-# 2019-02-27
+## 2019-02-27
 
 Java 反射，反射的作用包括，在运行时判断一个对象所属的类，给某个未知的类新建一个对象，获取任意一个类的成员变量和方法，并调用。如果你是初学反射，这么说你一定不知道我在说什么。但举个例子就比较容易理解了。那就是用配置文件动态控制程序要加载的类：
 
@@ -3309,7 +3309,7 @@ Java 反射，反射的作用包括，在运行时判断一个对象所属的类
 
 在使用 Python 的时候我就通过用配置来控制代码。体验非常棒。其实反射的作用就是通过配置控制代码。
 
-## 是否要传数组长度的问题
+### 是否要传数组长度的问题
 
 Java 中数组是一个对象而非像 C++一样的原始类型，所以可以对数组求长度的时候是这么写：`arr.length()`，而 C++则没有这么方便的东西，所以传参的时候，Java 可以不传数组长度，C++必须要传：
 
@@ -3317,7 +3317,7 @@ Java 中数组是一个对象而非像 C++一样的原始类型，所以可以�
 func(arr, lengthOfArr);
 ```
 
-## spring boot
+### spring boot
 
 随着计算机的发展，在应用程序开发中，很多东西都慢慢工具化了，大量简单重复的工作直接交给计算机就好了，留给人们的只是业务逻辑跟架构调优。spring boot 2 就是一个非常好用的 Java web 集成框架。学习最好的方法就是通过 **例子** 来领悟和体会到其中抽象的知识（共性）。对于工具的使用则更加强调动手实践。
 
@@ -3326,7 +3326,7 @@ func(arr, lengthOfArr);
 - [知乎：Spring Boot 要如何学习？](https://www.zhihu.com/question/53729800)
 - [bilibili：【自用】尚硅谷 spring boot 全套视频教程](https://www.bilibili.com/video/av44560321?from=search&seid=7097190869964471137)
 
-### 第一步快速入门
+#### 第一步快速入门
 
 如果对 spring boot 一点都不了解的话，要先了解一下 spring boot 是什么，它的发展历程，从而建立起一个简单的印象。可以先看 B 站的教学视频的前几个概要介绍的视频。然后大致浏览一下需要学习的内容，你会发现都是按模块划分的，比如：工程配置、日志管理、数据库、缓存等等。
 
@@ -3343,7 +3343,7 @@ func(arr, lengthOfArr);
 
 > 编程思想中有一条很重要的原则就是：尽量少的改动已有的代码，原因有很多，比如改动一个被多处使用的函数有可能会对很多地方造成影响。所以我们就要 尽量让我们的代码灵活起来，可重复用起来，Java 的反射就起到了这个作用，Spring 框架最重要的作用就是让灵活的部分变成配置，程序动态加载配置就能改变代码的行为。回调也同样是在贯彻这一思想。可重用 是编程思想的精髓之一，甚至所有的抽象就都是为了这一目的，无论是变量、函数、对象、数据结构、库、API 都是把死的代码变成活的，把不能重复使用的代码变成可以重复使用的代码。阿里和蚂蚁八荣八耻
 
-## 阿里和蚂蚁八荣八耻
+### 阿里和蚂蚁八荣八耻
 
 以动手实践为荣，以只看不练为耻。
 
@@ -3377,11 +3377,11 @@ func(arr, lengthOfArr);
 
 以无人值守为荣，以人工值班为耻
 
-# 2019-02-20
+## 2019-02-20
 
 今天联合查询一个 40 万和 1 万的表，发现弄了索引都没啥效果，最后发现是字符集不同导致的。把两个索引的字符集弄成一样的就行了。还有一个问题，mysql8 没有缓存导致查询很慢，mysql5.7 有缓存第二次查询快的飞起。还有同一个语句 mysql8 花了 100 秒，mysql5.7 只花了 10 秒，原因可能是对语句的解释不一样。在将数据库导入到 mysql5.7 的时候遇到一个错误：`2006: mysql server has gone away`。使用：`set global max_allowed_packet=268435456;`解决了。应该是单笔 insert 太大导致的，把配置设高一点就 OK 了。
 
-# 2019-02-19
+## 2019-02-19
 
 今天终于解决了一个困扰我一年之久的问题，网易云音乐和知乎账号的登陆异常。我对比了不同的网络环境（IP），不同的账号（别人的知乎账号），不同的浏览器。组合测试最后发现既不是 IP 的单方面的问题，也不是账号的单方面问题，也不是浏览器的单方面的问题。而当我使用无痕浏览的时候并没有任何问题，所以应该是 chrome 浏览器记住了某些东西。最后发现问题出在 chrome 浏览器的账号同步上，可能是因为我的谷歌账号在历史上曾记录了一次知乎异常登陆的 cookie，所以之后的每一次登陆都使用这个 cookie，而且清空都是无效的，在你登陆的时候又会给你自动添加。之后我先登出 chrome 账号，并同时清空所有数据，然后再登陆知乎账号，然后再登陆 chrome 账号同步一次正确的知乎登陆。问题就得到了解决。
 
@@ -3392,11 +3392,11 @@ func(arr, lengthOfArr);
 
 答案就是：发现一个在开启 IPFS 伴侣时，知乎的大部分接口都会报请求参数异常的 BUG。。
 
-# 2019-01-17
+## 2019-01-17
 
 一个奇怪的问题，我配置好了 github 的 ssh key，但每次 push 都跟我索要账号密码。原因是我 clone 的时候用的 http 模式，在项目的.git/config 里面可以修改，改为 ssh 模式即可。感谢 stackoverflow 的小哥：[Why is Github asking for username/password when following the instructions on screen and pushing a new repo?](https://stackoverflow.com/questions/10909221/why-is-github-asking-for-username-password-when-following-the-instructions-on-sc)
 
-# 2018-11-28
+## 2018-11-28
 
 一切为了可重用。
 
@@ -3412,7 +3412,7 @@ func(arr, lengthOfArr);
 
 继承则是赤裸裸的在重用代码。
 
-# 2018-11-19
+## 2018-11-19
 
 看了某人的 spring boot 代码，发现后台的错误码和错误信息管理的一个优雅的做法：使用一个枚举类封装这两个属性，并使构造函数私有化。代码如下：
 
@@ -3455,7 +3455,7 @@ public enum ExceptionMsg {
 }
 ```
 
-# 2018-11-03
+## 2018-11-03
 
 No programming language is perfect. There is not even a single best language; there are only languages well suited or perhaps poorly suited for particular purposes.
 
