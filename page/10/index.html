@@ -284,7 +284,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-01 00:11:17" itemprop="dateModified" datetime="2026-08-01T00:11:17+00:00">2026-08-01</time>
+      <time title="修改时间：2026-08-03 03:35:18" itemprop="dateModified" datetime="2026-08-03T03:35:18+00:00">2026-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -418,6 +418,118 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/GET%E8%AF%B7%E6%B1%82%E5%92%8CPOST%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
+      <meta itemprop="name" content="liuqinh2s">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="liuqinh2s' blog">
+      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | liuqinh2s' blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/blog/2022/08/12/GET%E8%AF%B7%E6%B1%82%E5%92%8CPOST%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">GET 请求和 POST 请求的区别</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-12T00:00:00+00:00">2022-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-08-03 03:35:18" itemprop="dateModified" datetime="2026-08-03T03:35:18+00:00">2026-08-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>302</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1>使用上的区别</h1>
+<ul>
+<li>GET 请求参数放在 URL 上，POST 请求参数放在请求体里</li>
+<li>GET 请求参数长度有限制，POST 请求的参数长度可以非常大</li>
+<li>POST 请求相对 GET 请求来说安全一点，因为 GET 请求参数在 URL 上，而且有历史记录</li>
+<li>GET 请求能缓存，POST 请求不能</li>
+</ul>
+<h1>本质区别</h1>
+<p>其实 HTTP 协议并没有要求 GET/POST 请求参数必须放在 URL 上或请求体里，也没有规定 GET 请求的长度，目前对 URL 的长度限制，是各家浏览器设置的限制。<strong>GET 和 POST 的根本区别在于：GET 请求是幂等的，而 POST 请求不是。</strong></p>
+<blockquote>
+<p>幂等性，指的是对某一个资源进行一次或多次请求都具有相同的副作用。例如搜索就是一个幂等的操作，而删除、新增则不是一个幂等操作。</p>
+</blockquote>
+<p>由于 GET 请求是幂等的，在网络不好的环境中，GET 请求可能会重复尝试，造成重复操作数据的风险，因此，GET 请求一般用于无副作用的操作（如搜索），新增/删除等操作适用于 POST。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/HTTP%E5%92%8CHTTPS%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -454,7 +566,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-01 00:11:17" itemprop="dateModified" datetime="2026-08-01T00:11:17+00:00">2026-08-01</time>
+      <time title="修改时间：2026-08-03 03:35:18" itemprop="dateModified" datetime="2026-08-03T03:35:18+00:00">2026-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -546,118 +658,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/GET%E8%AF%B7%E6%B1%82%E5%92%8CPOST%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2019/05/20/5ce257002370387784.jpg">
-      <meta itemprop="name" content="liuqinh2s">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="liuqinh2s' blog">
-      <meta itemprop="description" content="Computer Science is not a magic <br /> To be a hacker">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | liuqinh2s' blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/blog/2022/08/12/GET%E8%AF%B7%E6%B1%82%E5%92%8CPOST%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">GET 请求和 POST 请求的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-08-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-12T00:00:00+00:00">2022-08-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-01 00:11:17" itemprop="dateModified" datetime="2026-08-01T00:11:17+00:00">2026-08-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>302</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1>使用上的区别</h1>
-<ul>
-<li>GET 请求参数放在 URL 上，POST 请求参数放在请求体里</li>
-<li>GET 请求参数长度有限制，POST 请求的参数长度可以非常大</li>
-<li>POST 请求相对 GET 请求来说安全一点，因为 GET 请求参数在 URL 上，而且有历史记录</li>
-<li>GET 请求能缓存，POST 请求不能</li>
-</ul>
-<h1>本质区别</h1>
-<p>其实 HTTP 协议并没有要求 GET/POST 请求参数必须放在 URL 上或请求体里，也没有规定 GET 请求的长度，目前对 URL 的长度限制，是各家浏览器设置的限制。<strong>GET 和 POST 的根本区别在于：GET 请求是幂等的，而 POST 请求不是。</strong></p>
-<blockquote>
-<p>幂等性，指的是对某一个资源进行一次或多次请求都具有相同的副作用。例如搜索就是一个幂等的操作，而删除、新增则不是一个幂等操作。</p>
-</blockquote>
-<p>由于 GET 请求是幂等的，在网络不好的环境中，GET 请求可能会重复尝试，造成重复操作数据的风险，因此，GET 请求一般用于无副作用的操作（如搜索），新增/删除等操作适用于 POST。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://liuqinh2s.github.io/2022/08/12/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -694,7 +694,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-01 00:11:17" itemprop="dateModified" datetime="2026-08-01T00:11:17+00:00">2026-08-01</time>
+      <time title="修改时间：2026-08-03 03:35:18" itemprop="dateModified" datetime="2026-08-03T03:35:18+00:00">2026-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -809,7 +809,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-08-01 00:11:17" itemprop="dateModified" datetime="2026-08-01T00:11:17+00:00">2026-08-01</time>
+      <time title="修改时间：2026-08-03 03:35:18" itemprop="dateModified" datetime="2026-08-03T03:35:18+00:00">2026-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
