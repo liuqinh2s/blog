@@ -15,5 +15,5 @@ date: 2018-04-17 17:00:10
 
 个人作品：
 
-- [重大新闻挖掘器](https://liuqinh2s.github.io/news/)
+- [拾闻](https://liuqinh2s.github.io/news/)
 - [AwesomeWeb](https://liuqinh2s.github.io/AwesomeWeb/)
