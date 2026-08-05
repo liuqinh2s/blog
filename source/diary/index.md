@@ -4,6 +4,56 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-05
+
+### ESLPOD 第34课 Doing Hair
+
+- gel /dʒel/ n. 发胶、造型啫喱
+- hairdryer 吹风机
+- hot curlers 热卷发筒、电热卷发棒（同义 hot rollers）
+- bangs /bæŋz/ n. 刘海（永远复数，美式；英式 fringe）
+- hairspray 定型喷雾、发蜡喷雾
+- closet /ˈklɒzɪt/ n. 衣柜（美式；wardrobe 英式）
+- skirt 半身裙
+- blouse /blaʊz/ n. 女士衬衫
+- casual 随意 
+  - informal 非正式的 
+  - formal 正式的
+- suit 西装套装
+- jeans 牛仔裤（恒复数）
+- sweaters 毛衣
+- shorts 短裤（恒复数）
+- dresser 梳妆台
+- pantyhose /ˈpæntihəʊz/ n. 连裤袜（美式；tights 英式）
+- heels 高跟鞋
+- do one's hair 打理 / 做头发（**重点：不用 make hair**）
+  - 同义：fix one's hair
+- finish doing sth. 做完某事（finish 后接动名词）
+  - finish doing my hair 把头发打理完
+- brush through sth. 梳理开（卷发）
+- finish sth. off with… 最后用… 收尾、定型
+  - finish it off with hairspray 最后喷定型喷雾
+- look in + 地点 + for sth. 在某处寻找某物
+  - look in my closet for a skirt 在衣柜里找裙子
+- show up in + 衣物 穿着… 露面、到场
+
+#### do vs make 易混辨析（本课核心考点）
+
+do one's hair ✅ 打理头发（对已有物品做修饰、整理）
+do homework、do the dishes
+make ❌ make hair 不成立
+make 侧重 **从无到有创造**：make dinner、make a cake
+
+#### 名词复数特殊规则（本课高频）
+
+bangs、jeans、shorts、heels、pantyhose：只有复数，无单数
+表达 “一条 / 一双”：a pair of jeans /a pair of heels
+
+那如果要表示一只高跟鞋，难道也要用 heels 吗？
+答：特指单只高跟鞋必须加量词：one heel
+One heel is broken. 有一只高跟鞋坏掉了。
+I lost one heel. 我弄丢了一只高跟鞋。
+
 ## 2026-06-12
 
 我还是打算把所有笔记都搬到notion上。我在wolai上写了不少内容，而且今年充了一年的会员，但是明年我不打算续费了，因为我用notion完全可以满足我的所有需求，另外就是notion这个平台更为可靠（更有名气，用户更多），wolai感觉都要倒闭了。遇到的一个问题就是如果人手动搬运的话，太累人了。如果AI能来完成这个搬运，那就再好不过了。我打算让Marvis或者Codex这类类似小龙虾的工具来实现，要模仿人手动复制粘贴的方式来实现，而不是用程序导入导出。以后我的内容管理完全就两种形式：
