@@ -17,3 +17,4 @@ date: 2018-04-17 17:00:10
 
 - [拾闻](https://liuqinh2s.github.io/news/)
 - [AwesomeWeb](https://liuqinh2s.github.io/AwesomeWeb/)
+- [仓鼠导航](https://hbmw5wwh.mule.page/)
