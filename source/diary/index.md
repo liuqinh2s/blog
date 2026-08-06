@@ -6,6 +6,46 @@ title: 日记
 
 ## 2026-08-06
 
+### 128. 最长连续序列
+
+[128. 最长连续序列](https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题一开始我的想法是：去重+排序。但这样的话时间复杂度是 $O(n\cdot\log n)$。而题目中明确规定了必须要 $O(n)$ 的时间复杂度。
+
+你别说算法题还真就是这样，没有思路的时候可以直接放弃思考，请教 AI 老师了。好在 AI 老师教的好，仅一遍我就看懂了。
+
+核心思路是，用一个哈希表存数据，这样至少保证查询数据是 $O(1)$ 的复杂度，这里选用 Set 来充当哈希表，然后遍历此 Set，遇到区间起点，就展开内循环，加1逐次遍历，遇到非区间起点，就跳过内循环，这样的话很容易看出起点数字只会被访问一次，而非起点数字会被访问两次，最终时间复杂度锁定在 $O(n)$，哦对了，**判断是否是起点数字的技巧：看当前从 Set 中遍历到的数字-1是否在 Set 中**
+
+总结为：**哈希集合 + 剪枝（只从序列起点遍历）**
+
+```typescript
+function longestConsecutive(nums: number[]): number {
+    const a = new Set(nums);
+    let max = 0;
+    for(let x of a){
+        if(!a.has(x-1)){
+            let c = x+1;
+            while(a.has(c)){
+                c++;
+            }
+            if(max<c-x){
+                max = c-x;
+            }
+        }
+    }
+    return max;
+};
+```
+
+### ESLPOD 第35课 Taking Public Transportation
+
+- turnstile /ˈtɜːrnstaɪl/ 闸机
+- handrail n. 扶手
+- monthly pass 月卡；bus pass 公交卡
+- pull up to the next stop （公交车）停靠到站
+- morning hours 早高峰时段
+- downtown n. 市中心
+
 ### 3345. 最小可整除数位乘积 I
 
 [3345. 最小可整除数位乘积 I](https://leetcode.cn/problems/smallest-divisible-digit-product-i/description/?envType=daily-question&envId=2026-08-06)
