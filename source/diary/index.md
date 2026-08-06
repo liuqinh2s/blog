@@ -4,6 +4,136 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-06
+
+### 3345. 最小可整除数位乘积 I
+
+[3345. 最小可整除数位乘积 I](https://leetcode.cn/problems/smallest-divisible-digit-product-i/description/?envType=daily-question&envId=2026-08-06)
+
+```typescript
+function smallestNumber(n: number, t: number): number {
+    while (!check(n, t)) {
+        n += 1;
+    }
+    return n;
+};
+
+function check(n: number, t: number): boolean {
+    const list = getNumList(n);
+    let a = 1;
+    list.forEach(x=>a=a*x);
+    return a % t === 0;
+}
+
+function getNumList(n: number): number[] {
+    let res = [];
+    while (n > 0) {
+        const a = n % 10;
+        n = Math.floor(n / 10);
+        res.push(a);
+    }
+    return res;
+}
+```
+
+### 49. 字母异位词分组
+
+[49. 字母异位词分组](https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked)
+
+```typescript
+function groupAnagrams(strs: string[]): string[][] {
+    const map = build(strs);
+    let res=[];
+    for(let x of map.values()){
+        res.push(x);
+    }
+    return res;
+};
+
+function build(strs: string[]): Map<Map<string, number>, string[]>{
+    let res: Map<Map<string, number>, string[]> = new Map();
+    strs.forEach(x=>{
+        let a = new Map<string, number>();
+        for(let i=0;i<x.length;i++){
+            const num = a.get(x[i]);
+            if(num){
+                a.set(x[i], num+1)
+            }else {
+                a.set(x[i], 1)
+            }
+        }
+        let isEqual = false;
+        for(let k of res.keys()){
+            const e = isMapEqual(k, a);
+            if(e){
+                const v = res.get(k)
+                if(v){
+                    v.push(x);
+                }else {
+                    res.set(k, [x])
+                }
+                isEqual = true;
+                break;
+            }
+        }
+        if(!isEqual){
+            res.set(a, [x])
+        }
+    })
+    return res
+}
+
+function isMapEqual(a: Map<string, number>, b: Map<string, number>): boolean{
+    for(let x of a.keys()){
+        if(!b.has(x) || b.get(x)!==a.get(x)){
+            return false;
+        }
+    }
+    for(let x of b.keys()){
+        if(!a.has(x) || b.get(x)!==a.get(x)){
+            return false;
+        }
+    }
+    return true;
+}
+```
+
+以上是最不讨巧的写法，没有利用题目的特征，时间复杂度极高，达到了 $O(n^2\cdot k)$（$n$ 是字符串序列长度，$k$ 是单个字符串长度），因为最坏情况下每个字符串都要跟所有字符串对比一遍。
+
+利用题干中：字符串中的字符限定为小写字母。那么可以采用字符串做键，就可以直接匹配不用挨个对比了，字符串做键有两种技巧：
+
+1. 把字符串排序。排序时间复杂度：$O(k\cdot \log k)$，总时间复杂度：$O(n\cdot k\cdot\log k)$
+2. 用数组当哈希表计数，然后把数组转成字符串。时间复杂度：$O(k)$，总时间复杂度：$O(n\cdot k)$
+
+```typescript
+function groupAnagrams(strs: string[]): string[][] {
+    const map = build(strs);
+    let res = [];
+    for (let x of map.values()) {
+        res.push(x);
+    }
+    return res;
+};
+
+function build(strs: string[]): Map<string, string[]> {
+    const res: Map<string, string[]> = new Map();
+    strs.forEach(x => {
+        const a = new Array(26).fill(0);
+        for (let i = 0; i < x.length; i++) {
+            a[x.charCodeAt(i) - 'a'.charCodeAt(0)] += 1;
+        }
+        const aStr = a.join(',');
+        const v = res.get(aStr);
+        if (v) {
+            v.push(x);
+        } else {
+            res.set(aStr, [x]);
+        }
+    })
+    return res
+}
+```
+
 ## 2026-08-05
 
 ### ESLPOD 第34课 Doing Hair
