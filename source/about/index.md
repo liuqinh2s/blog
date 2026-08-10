@@ -9,7 +9,7 @@ date: 2018-04-17 17:00:10
 
 兴趣爱好：喜欢科幻、喜欢探究事物的本质，对人类文明和世界的未来很感兴趣。
 
-[简历](../assets/liuqin-resume-2025.pdf)
+Give me an offer：[简历](../assets/liuqin-resume-2025.pdf)
 
 公司项目：[嘉立创 EDA](https://pro.lceda.cn/editor)
 
