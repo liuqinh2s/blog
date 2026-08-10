@@ -6,6 +6,46 @@ title: 日记
 
 ## 2026-08-10
 
+### leetcode 热题100 之 15. 三数之和
+
+[15. 三数之和](https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题我一开始就想到了先排序，再用双指针，额，主要还是因为题目被归类到双指针，相当于知道了答案。但在做题的过程中还是遇到了卡壳的地方，主要是最外层循环，我尝试用双指针，里层也用双指针（或者不用也行），然后我发现我外层收缩边界的时候，在 sum 是0的时候不知道怎么收缩，看了评论区答案，才知道，外层应该用单指针遍历。
+
+时间复杂度是 $O(n^2)$，因为里层双指针拼起来是 n。排序的时间复杂度是 $O(n\log n)$，两者相加取大的就行。
+
+暴力遍历三个数是 $O(n^3)$
+
+```typescript
+function threeSum(nums: number[]): number[][] {
+    nums = nums.sort((a,b)=>{
+        return a-b;
+    });
+    console.log(nums)
+    const res = new Set<string>();
+    for (let i = 0; i < nums.length; i++) {
+        if(i>0 && nums[i]===nums[i-1]){
+            continue;
+        }
+        let left = i+1;
+        let right = nums.length - 1;
+        while (left < right) {
+            if (nums[left] + nums[right] + nums[i] > 0) {
+                right--;
+            } else if (nums[left] + nums[right] + nums[i] < 0) {
+                left++;
+            } else {
+                res.add([nums[i], nums[left], nums[right]].join(','));
+                right--;
+                left++;
+            }
+        }
+    }
+    
+    return Array.from(res).map(x => x.split(',').map(Number));
+};
+```
+
 ### leetcode 热题100 之 11. 盛最多水的容器
 
 [11. 盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-100-liked)
