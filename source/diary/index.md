@@ -4,6 +4,42 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-07
+
+### ESLPOD 第36课 At My Desk
+
+[Daily English 36 | ESLPod.com](https://tv.eslpod.com/p/blog-daily-english-36)
+
+- cubicle /ˈkjuːbɪkl/ n. 办公室隔间、工位
+- agenda n. 日程表、当日待办
+- inbox n. 邮箱收件箱；纸质收件篮
+- inter-office paperwork 部门间（跨部门）内部文件
+  - intra-office	同一个办公室内部
+- conference call 电话会议
+- head office 总部
+- supervisor /ˈsuːpəvaɪzə(r)/ n. 主管、直属领导
+- hostess 女迎宾
+  - host 男迎宾
+  - waiter 男桌前服务员
+  - waitress 女桌前服务员
+- entree /ˈɑːntreɪ/ 谐音参考：昂吹（重音在最前面）主菜
+- appetizer 开胃小菜
+  -  dessert 甜点
+- quitting time 下班时间
+- boot up 启动（电脑、设备）
+- get in each other’s way 互相碍事、彼此干扰
+  - don’t usually get in each other’s way 平时互不打扰
+- start in on sth. 着手开始做某事
+- pack a lunch 自带午餐、自备便当
+- head down + 地点 朝…… 走去
+- wave sb. down 挥手招呼（服务员、车辆）
+- split the check AA 制、分摊账单
+- by 1:00 不迟于 1 点（by + 时间：截止时间）
+- Before long 没过多久、很快
+- right away 立刻、马上 = immediately
+- a little later 稍后、晚一点
+
+
 ## 2026-08-06
 
 ### 128. 最长连续序列
