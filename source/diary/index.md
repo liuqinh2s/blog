@@ -6,6 +6,55 @@ title: 日记
 
 ## 2026-08-10
 
+### leetcode 热题100 之 283. 移动零
+
+[283. 移动零](https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&envId=top-100-liked)
+
+上周做每日一题遇到一个[困难题](https://leetcode.cn/problems/smallest-divisible-digit-product-ii/?envType=daily-question&envId=2026-08-10)，连豆包和chatgpt都做不出来，后来我看了答案，看懂了并自己写了一遍，提交通过，但心里上总感觉还没有完全吃透，可能过不了多久就会又做不出来。我目前的水平，我自我感觉应该是中等水平能做出来，困难题目做不出来的阶段。索性不做每日一题了，先把热题100和面试150都做了吧。
+
+好，回到这题，这题明确说了不允许用空间换时间，要求原地操作。我第一个想到的是冒泡：
+
+```typescript
+/**
+ Do not return anything, modify nums in-place instead.
+ */
+function moveZeroes(nums: number[]): void {
+    for (let i = nums.length - 1; i >= 0; i--) {
+        if (nums[i] !== 0) {
+            continue;
+        }
+        for (let j = i; j + 1 < nums.length && nums[j + 1] !== 0; j++) {
+            const temp = nums[j + 1];
+            nums[j + 1] = nums[j];
+            nums[j] = temp;
+        }
+    }
+};
+```
+
+能AC，但是速度垫底了，题目后面有个进阶：你能尽量减少完成的操作次数吗？说明这题显然有更好的算法来完成。但是我一时半会儿没想到。我看了一下评论区，有个评论瞬间点醒了我。
+
+我自己总结是这样做：反正0不用专门花空间记忆，那干脆粗暴覆盖，后面全部补0。简单说就是一个数前面有几个0就往前移几位。但是移的时候，切记从左往右遍历，这样才不会覆盖掉非0数。
+
+```typescript
+/**
+ Do not return anything, modify nums in-place instead.
+ */
+function moveZeroes(nums: number[]): void {
+    let count=0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            count++;
+            continue;
+        }
+        nums[i-count] = nums[i];
+    }
+    for(let i=nums.length-count;i<nums.length;i++){
+        nums[i]=0;
+    }
+};
+```
+
 ### ESLPOD 第37课 Bank and Market
 
 - deposit /dɪˈpɑːzɪt/
