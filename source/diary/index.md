@@ -10,7 +10,7 @@ title: 日记
 
 [53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/description/?envType=study-plan-v2&envId=top-100-liked)
 
-这题感觉挺简单的，算中等难度偏下吧。抓住题干：和要最大，而不是数组长度要最大。那么很自然的想到一旦和小于0，就不连通，重新积累。
+这题感觉挺简单的，算中等难度偏下吧。抓住题干：**和要最大，而不是数组长度要最大**。那么很自然的想到一旦和小于0，就不连通，重新积累。
 
 ```typescript
 function maxSubArray(nums: number[]): number {
