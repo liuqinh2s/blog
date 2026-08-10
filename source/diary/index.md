@@ -6,6 +6,31 @@ title: 日记
 
 ## 2026-08-10
 
+### leetcode 热题100 之 53. 最大子数组和
+
+[53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题感觉挺简单的，算中等难度偏下吧。抓住题干：和要最大，而不是数组长度要最大。那么很自然的想到一旦和小于0，就不连通，重新积累。
+
+```typescript
+function maxSubArray(nums: number[]): number {
+    let max = nums[0];
+    for (let i = 0; i < nums.length;) {
+        let sum = 0;
+        let j = i
+        for (; j < nums.length; j++) {
+            sum += nums[j];
+            max = Math.max(max, sum)
+            if (sum < 0) {
+                break;
+            }
+        }
+        i = j + 1;
+    }
+    return max;
+};
+```
+
 ### leetcode 热题100 之 239. 滑动窗口最大值
 
 [239. 滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/?envType=study-plan-v2&envId=top-100-liked)
