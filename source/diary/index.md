@@ -99,6 +99,21 @@ function moveZeroes(nums: number[]): void {
 };
 ```
 
+但这题被归入双指针，是有原因的，因为它还可以用双指针来解：
+
+```typescript
+function moveZeroes(nums: number[]): void {
+  let slow = 0;
+  // fast遍历，slow指向待放置非零的位置
+  for (let fast = 0; fast < nums.length; fast++) {
+    if (nums[fast] !== 0) {
+      [nums[slow], nums[fast]] = [nums[fast], nums[slow]];
+      slow++;
+    }
+  }
+}
+```
+
 ### ESLPOD 第37课 Bank and Market
 
 - deposit /dɪˈpɑːzɪt/
