@@ -6,6 +6,12 @@ title: 日记
 
 ## 2026-08-10
 
+### leetcode 热题100 之 239. 滑动窗口最大值
+
+[239. 滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题可以用优先队列来解题，时间复杂度从 $O(nk)$，减小到 $O(n\log k)$。但是 JavaScript 没有内置的优先队列，要自己实现。我曾经实现过一遍：[手写优先队列](../2023/10/09/手写优先队列/)
+
 ### leetcode 热题100 之 15. 三数之和
 
 [15. 三数之和](https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-100-liked)
