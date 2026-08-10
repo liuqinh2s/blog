@@ -6,6 +6,50 @@ title: 日记
 
 ## 2026-08-10
 
+### leetcode 热题100 之 11. 盛最多水的容器
+
+[11. 盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-100-liked)
+
+首先想到的是暴力法，遍历所有两两一组的计算结果，时间复杂度：$O(n^2)$
+
+```typescript
+function maxArea(height: number[]): number {
+    let max = 0;
+    for(let i=0;i<height.length;i++){
+        for(let j=i;j<height.length;j++){
+            max = Math.max(Math.min(height[i], height[j])*(j-i), max);
+        }
+    }
+    return max;
+};
+```
+
+但要注意，这个代码没法AC，会超时。
+
+想了一会儿，思路停留在每根柱子的贡献分上：
+
+1. 高度
+2. 距离
+
+但距离是双向的，但越靠近两边，距离贡献分应该是越高才对。算了，想不出来，索性看答案，看完答案后发现，其实这题是贪心策略。先贪宽度，用两根指针从最左左右开始遍历，每次仅移动其中一根指针，另一根固定（相当于每次只考虑一个变量），往中间走发现高度优势比距离损失更大，就记录下这个更优解。关于具体应该移哪个指针：应该移动更矮的柱子的指针（因为移动更长柱子的指针，高度不会增益，被矮柱子锁死了）
+
+```typescript
+function maxArea(height: number[]): number {
+    let left = 0;
+    let right = height.length-1;
+    let max = Math.min(height[left], height[right])*(right-left)
+    while(left!==right){
+        if(height[left]<height[right]){
+            left++;
+        }else {
+            right--;
+        }
+        max = Math.max(max, Math.min(height[left], height[right])*(right-left));
+    }
+    return max;
+};
+```
+
 ### leetcode 热题100 之 283. 移动零
 
 [283. 移动零](https://leetcode.cn/problems/move-zeroes/description/?envType=study-plan-v2&envId=top-100-liked)
