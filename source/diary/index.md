@@ -4,6 +4,56 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-10
+
+### ESLPOD 第37课 Bank and Market
+
+- deposit /dɪˈpɑːzɪt/
+  - n. 存款；deposit envelope 存款信封（存工资支票专用）
+  - v. 存钱 make a deposit 办理存款
+- paycheck /ˈpeɪtʃek/ n. 工资支票（美式，公司发放纸质薪资凭证）
+- teller /ˈtelər/ n. 银行柜员（柜台工作人员）
+- receipt /rɪˈsiːt/n. 回执、小票（业务办理凭证）
+- cart /kɑːrt/ n. 购物手推车
+- produce department 生鲜区（produce 统称生鲜果蔬，不可数）
+- cooked foods 熟食区
+- checkout stands 收银台（复数）
+- cashier /kæˈʃɪr/ n. 收银员
+- bagger /ˈbæɡər/ n. 装袋员（美式超市专职打包员工，英美差异大）
+- change /tʃeɪndʒ/ n. 找零
+- stand in line 排队 = get in line（美式最常用）
+- wait one's turn 等候轮到自己
+- fill out 填写（表格、信封、单据）fill out a form/envelope
+- make it to + 地点 及时赶到某地
+  - 例句：make it to the bank before closing 赶在银行关门前去
+- load up on sth 大量采购 / 囤货（生鲜、食物专用）
+- head for + 地点 朝某地走去
+- ring sb up （收银员）扫码结账（美式超市核心短语；ring up 单独用也可指打电话）
+- sort out/arrange 整理
+
+#### 美式文化差异补充
+
+1. paycheck 纸质工资支票
+  现代美国极少使用，大多电子转账 direct deposit，课文是传统线下存款场景。
+2. bagger 装袋员
+  美国大中型超市标配；英国、欧洲超市无此岗位，顾客自己装袋。我印象中最深的是肖申克的救赎里面，从监狱出来的图书管理员老头，出来后去做装袋员，最终上吊死了。
+3. market ≠ 露天集市
+  美式口语中 market 直接指社区生鲜超市（grocery store）；露天市集多用 farmer’s market。
+4. ring me up
+  来源老式收银机结算会发出 “铃响 ring”，现专指扫码收银。
+5. block 街区
+  美国城市规划方正，常用 block 描述步行距离，two blocks 步行两分钟左右。
+
+#### 同义替换拓展（口语升级）
+
+- stand in line = queue up（英式）
+- make it to = arrive at in time
+- fill out = complete (a form)
+- balance = available funds（账户可用余额）
+- ring sb up = check sb out（超市结账）
+- load up on = stock up on 大量囤货
+
+
 ## 2026-08-07
 
 ### ESLPOD 第36课 At My Desk
