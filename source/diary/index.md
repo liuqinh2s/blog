@@ -4,6 +4,46 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-11
+
+### ESLPOD 第38课 Dinner and Making Dessert
+
+- napkin /ˈnæpkɪn/ n. 餐巾纸，餐垫纸巾
+- dining room table 餐桌
+  - dining /ˈdaɪnɪŋ/ （动名词 / 定语）用于吃饭的… → dining room 饭厅
+  - dine /daɪn/ v. 进餐，吃饭
+  - dinner /ˈdɪnər/ n. 晚餐
+- place mats 餐垫（复数固定搭配）
+  - bath mat 浴室防滑垫
+  - door mat 门口脚垫
+  - mat：薄垫子（餐垫、脚垫）
+  - carpet：大面积地毯
+  - rug：小块厚地毯
+- geography /dʒiˈɑːɡrəfi/ n. 地理
+  - geometry 几何
+  - geometric 几何的  geometric shapes 几何图形
+- Tupperware container 特百惠密封保鲜盒（美式口语代指塑料保鲜盒）
+- dessert /dɪˈzɜːrt/ n. 餐后甜点（区分 desert /ˈdezərt/ 沙漠）
+- oven /ˈʌvn/ n. 烤箱
+- cookie sheet 烤盘，曲奇烤盘
+- aluminum foil 铝箔纸，锡纸
+- dough /doʊ/ n. 面团
+- oven mitts 隔热烤箱手套（复数常用）
+  - mitt 拇指独立，四指合一，很厚很硬。烤箱、棒球、干活防护
+    - baseball mitt 棒球接球手套
+    - boxing mitts 拳击手套
+  - mitten 拇指独立，四指合一，针织薄软。冬天御寒
+    - wool mittens 毛线连指手套（冬天戴）
+  - glove	5根手指各自分开。普通冬天手套、皮手套
+- ready-made cookies 预制曲奇半成品
+- casual clothes 休闲家居服
+- change into 换上（衣服）
+- throw away 扔掉
+- do dishes 洗碗（美式口语，不加 the）
+- haven’t learned a thing 什么都没学会
+- make the day go by faster 让一天过得快一点（地道口语，打发时间）
+
+
 ## 2026-08-10
 
 ### leetcode 热题100 之 53. 最大子数组和
