@@ -6,6 +6,39 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之 189. 轮转数组
+
+[189. 轮转数组](https://leetcode.cn/problems/rotate-array/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题很有意思，因为我早年在《编程珠玑》中看到过题解技巧：**对两段数组分别旋转，然后再旋转整个数组，就可以达到偏移效果。**
+
+但是实际上并没有直接AC，比较容易踩的两个坑全被我踩了：
+
+1. 忘记限定 `left>=0` 和 `right<nums.length`，数组越界。通不过测试用例：`nums=[-1],k=2`
+2. 忘记给k取模长 `k = k%nums.length`
+
+```typescript
+/**
+ Do not return anything, modify nums in-place instead.
+ */
+function rotate(nums: number[], k: number): void {
+    k = k%nums.length;
+    reverse(nums, 0, nums.length-1-k);
+    reverse(nums, nums.length-k, nums.length-1);
+    reverse(nums, 0, nums.length-1);
+};
+
+function reverse(nums: number[], left: number, right: number){
+    while(left>=0 && left<right && right<nums.length){
+        const temp = nums[left];
+        nums[left] = nums[right]
+        nums[right]=temp;
+        left++;
+        right--;
+    }
+}
+```
+
 ### ESLPOD 第38课 Dinner and Making Dessert
 
 - napkin /ˈnæpkɪn/ n. 餐巾纸，餐垫纸巾
