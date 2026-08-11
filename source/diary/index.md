@@ -15,7 +15,7 @@ title: 日记
 但是实际上并没有直接AC，比较容易踩的两个坑全被我踩了：
 
 1. 忘记限定 `left>=0` 和 `right<nums.length`，数组越界。通不过测试用例：`nums=[-1],k=2`
-2. 忘记给k取模长 `k = k%nums.length`
+2. 忘记给k取模长 `k = k%nums.length`。通不过测试用例：`nums=[1,2,3],k=4`
 
 ```typescript
 /**
