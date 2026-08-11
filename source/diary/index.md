@@ -6,6 +6,89 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之 leetcode 热题100 之 189. 轮转数组
+
+[leetcode 热题100 之 189. 轮转数组](https://leetcode.cn/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题答案明确说了不可以用除法，那我们偏要想一下，如果用除法，该怎么做。如果是数组中没有0，用除法可以说是非常简单了。但是如果数组中有0，还要区分情况：
+
+1. 如果有两个及以上的0，那么整个answer必定是全0
+2. 如果只有一个0
+  - 除0外的其他位置，answer是0
+  - 0这个位置的answer要挨个乘一遍
+
+```typescript
+function productExceptSelf(nums: number[]): number[] {
+    let zeroCount = 0;
+    let temp = 1;
+    let res = [];
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            zeroCount++;
+        } else {
+            temp *= nums[i];
+        }
+    }
+    if (zeroCount >= 2) {
+        return new Array(nums.length).fill(0);
+    } else if (zeroCount === 0) {
+        for (let i = 0; i < nums.length; i++) {
+            res.push(temp / nums[i]);
+        }
+    } else {
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] === 0) {
+                res.push(temp);
+            } else {
+                res.push(0);
+            }
+        }
+    }
+    return res;
+};
+```
+
+但题目说了，不能用除法，而且已经明确提示了用前缀积后缀积，那我们构造前缀积数组、后缀积数组，就能拼凑出任意位置的乘积：
+
+```typescript
+function productExceptSelf(nums: number[]): number[] {
+    let prefixArr = [1];
+    let suffixArr = [1];
+    for(let i=1;i<nums.length;i++){
+        prefixArr.push(prefixArr[prefixArr.length-1]*nums[i-1]);
+    }
+    for(let i=nums.length-2;i>=0;i--){
+        suffixArr.push(suffixArr[suffixArr.length-1]*nums[i+1]);
+    }
+    console.log(prefixArr, suffixArr)
+    let answer = [];
+    for(let i=0;i<nums.length;i++){
+        answer.push(prefixArr[i]*suffixArr[suffixArr.length-1-i]);
+    }
+    return answer;
+};
+```
+
+**进阶**：你可以在 $O(1)$ 的额外空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组 **不被视为** 额外空间。）
+
+用 answer 充当前缀积数组，然后后缀积数组实际上可以用一个变量代替，因为从右往左遍历的过程中，只需要记住当前的后缀积，及时的算出答案后就可以抛弃掉记录，并不需要把整个后缀积数组记录下来。
+
+```typescript
+function productExceptSelf(nums: number[]): number[] {
+    let answer = [1];
+    for(let i=1;i<nums.length;i++){
+        answer.push(answer[answer.length-1]*nums[i-1]);
+    }
+    console.log(answer)
+    let R = 1;
+    for(let i=nums.length-2;i>=0;i--){
+        R = R*nums[i+1];
+        answer[i] = answer[i]*R;
+    }
+    return answer;
+};
+```
+
 ### leetcode 热题100 之 189. 轮转数组
 
 [189. 轮转数组](https://leetcode.cn/problems/rotate-array/description/?envType=study-plan-v2&envId=top-100-liked)
