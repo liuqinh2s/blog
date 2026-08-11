@@ -54,16 +54,16 @@ function productExceptSelf(nums: number[]): number[] {
 function productExceptSelf(nums: number[]): number[] {
     let prefixArr = [1];
     let suffixArr = [1];
-    for(let i=1;i<nums.length;i++){
-        prefixArr.push(prefixArr[prefixArr.length-1]*nums[i-1]);
+    for (let i = 1; i < nums.length; i++) {
+        prefixArr.push(prefixArr[prefixArr.length - 1] * nums[i - 1]);
     }
-    for(let i=nums.length-2;i>=0;i--){
-        suffixArr.push(suffixArr[suffixArr.length-1]*nums[i+1]);
+    for (let i = nums.length - 2; i >= 0; i--) {
+        suffixArr.push(suffixArr[suffixArr.length - 1] * nums[i + 1]);
     }
     console.log(prefixArr, suffixArr)
     let answer = [];
-    for(let i=0;i<nums.length;i++){
-        answer.push(prefixArr[i]*suffixArr[suffixArr.length-1-i]);
+    for (let i = 0; i < nums.length; i++) {
+        answer.push(prefixArr[i] * suffixArr[suffixArr.length - 1 - i]);
     }
     return answer;
 };
@@ -76,14 +76,14 @@ function productExceptSelf(nums: number[]): number[] {
 ```typescript
 function productExceptSelf(nums: number[]): number[] {
     let answer = [1];
-    for(let i=1;i<nums.length;i++){
-        answer.push(answer[answer.length-1]*nums[i-1]);
+    for (let i = 1; i < nums.length; i++) {
+        answer.push(answer[answer.length - 1] * nums[i - 1]);
     }
     console.log(answer)
     let R = 1;
-    for(let i=nums.length-2;i>=0;i--){
-        R = R*nums[i+1];
-        answer[i] = answer[i]*R;
+    for (let i = nums.length - 2; i >= 0; i--) {
+        R = R * nums[i + 1];
+        answer[i] = answer[i] * R;
     }
     return answer;
 };
