@@ -22,17 +22,17 @@ title: 日记
  Do not return anything, modify nums in-place instead.
  */
 function rotate(nums: number[], k: number): void {
-    k = k%nums.length;
-    reverse(nums, 0, nums.length-1-k);
-    reverse(nums, nums.length-k, nums.length-1);
-    reverse(nums, 0, nums.length-1);
+    k = k % nums.length;
+    reverse(nums, 0, nums.length - 1 - k);
+    reverse(nums, nums.length - k, nums.length - 1);
+    reverse(nums, 0, nums.length - 1);
 };
 
-function reverse(nums: number[], left: number, right: number){
-    while(left>=0 && left<right && right<nums.length){
+function reverse(nums: number[], left: number, right: number) {
+    while (left >= 0 && left < right && right < nums.length) {
         const temp = nums[left];
         nums[left] = nums[right]
-        nums[right]=temp;
+        nums[right] = temp;
         left++;
         right--;
     }
