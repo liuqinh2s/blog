@@ -6,6 +6,130 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之  73. 矩阵置零
+
+[73. 矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/description/?envType=study-plan-v2&envId=top-100-liked)
+
+**进阶：**
+
+- 一个直观的解决方案是使用  $O(mn)$ 的额外空间，但这并不是一个好的解决方案。
+- 一个简单的改进方案是使用 $O(m + n)$ 的额外空间，但这仍然不是最好的解决方案。
+- 你能想出一个仅使用常量空间的解决方案吗？
+
+题干说了要用原地，进阶只是给人一点提醒，直接做没有思路的时候，可以先想想暴力解法怎么解，再逐步优化。计算机算法题大多数题目都可以用这套方法得到灵感。
+
+空间复杂度：$O(mn)$，时间复杂度：$O(mn(m+n))$
+
+```typescript
+/**
+ Do not return anything, modify matrix in-place instead.
+ */
+function setZeroes(matrix: number[][]): void {
+    let res = [];
+    for (let i = 0; i < matrix.length; i++) {
+        let temp = [];
+        for (let j = 0; j < matrix[0].length; j++) {
+            temp.push(matrix[i][j]);
+        }
+        res.push(temp);
+    }
+    for (let i = 0; i < res.length; i++) {
+        for (let j = 0; j < res[0].length; j++) {
+            if (res[i][j] === 0) {
+                for (let n = 0; n < matrix[0].length; n++) {
+                    matrix[i][n] = 0;
+                }
+                for (let n = 0; n < matrix.length; n++) {
+                    matrix[n][j] = 0;
+                }
+            }
+        }
+    }
+};
+```
+
+但以上代码AC通不过，会检测到用了额外空间😂。
+
+接下来，试试更低的空间复杂度：
+
+空间复杂度：$O(m+n)$，时间复杂度：$O(mn)$
+
+```typescript
+/**
+ Do not return anything, modify matrix in-place instead.
+ */
+function setZeroes(matrix: number[][]): void {
+    let row = new Array(matrix.length).fill(1);
+    let column = new Array(matrix[0].length).fill(1);
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] === 0) {
+                row[i] = 0;
+                column[j] = 0;
+            }
+        }
+    }
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            if (row[i] === 0 || column[j] === 0) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+};
+```
+
+以上代码可以AC，这就奇怪了，明明空间复杂度也不是常数😂。
+
+真正常数空间的技巧是：把矩阵的第一行和第一列拿来当存储空间，并先记录好第一行和第一列是否需要清零。然后要注意：**先把其他行列处理好，再处理第一行和第一列的清零操作**
+
+```typescript
+/**
+ Do not return anything, modify matrix in-place instead.
+ */
+function setZeroes(matrix: number[][]): void {
+    let isFirstRowHasZero = false;
+    let isFirstColumnHasZero = false;
+    for (let i = 0; i < matrix[0].length; i++) {
+        if (matrix[0][i] === 0) {
+            isFirstRowHasZero = true;
+            break;
+        }
+    }
+    for (let i = 0; i < matrix.length; i++) {
+        if (matrix[i][0] === 0) {
+            isFirstColumnHasZero = true;
+            break;
+        }
+    }
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] === 0) {
+                matrix[0][j] = 0;
+                matrix[i][0] = 0;
+            }
+        }
+    }
+    for (let i = 1; i < matrix.length; i++) {
+        for (let j = 1; j < matrix[0].length; j++) {
+            if (matrix[i][0] === 0 || matrix[0][j] === 0) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
+    if (isFirstRowHasZero) {
+        for (let i = 0; i < matrix[0].length; i++) {
+            matrix[0][i] = 0
+        }
+    }
+    if (isFirstColumnHasZero) {
+        for (let i = 0; i < matrix.length; i++) {
+            matrix[i][0] = 0
+        }
+    }
+};
+```
+
 ### leetcode 热题100 之 41. 缺失的第一个正数
 
 [41. 缺失的第一个正数](https://leetcode.cn/problems/first-missing-positive/description/?envType=study-plan-v2&envId=top-100-liked)
