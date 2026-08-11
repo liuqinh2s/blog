@@ -6,6 +6,61 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之 41. 缺失的第一个正数
+
+[41. 缺失的第一个正数](https://leetcode.cn/problems/first-missing-positive/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题如果不限制空间复杂度的话，其实特别简单。就是用一个哈希表存起来
+
+```typescript
+function firstMissingPositive(nums: number[]): number {
+    const arr = new Array(nums.length).fill(0);
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0 && nums[i] < nums.length + 1) {
+            arr[nums[i] - 1] = 1;
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0) {
+            return i + 1;
+        }
+    }
+    return nums.length + 1;
+};
+```
+
+但题目要求用常数级别额外空间。我看了题解后才学会的技巧：
+
+利用原数组空间做哈希表，通过打标记的方式记录。我首先想到的是，把数组元素变为一个对象，但这样还是会增加额外开销。更好的技巧如下：
+
+1. 把 `<=0` 的数，赶到 `>=n+1` 的区间（比如直接改为 `n+1`）
+2. 遍历数组，当遇到 `1` 到 `n` 之间的数时，假设它是 `x`，将下标为 `x` 的数标记为负数
+3. 再遍历数组，找出第一个非负数的下标，就表示缺少这个最小正整数。如果找不到，那说明最小缺失正整数是 `n+1`
+
+> 需要注意的是，第2步可能会影响到第1步，所以要保证第1步先做完，不要把两个遍历合并成一个。举个例子：`[3,4,-1,1]`，遍历到4时会把后面的数1改为-1，而-1如果被第1步解读成n+1就不好了。
+
+```typescript
+function firstMissingPositive(nums: number[]): number {
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] <= 0) {
+            nums[i] = nums.length + 1;
+        }
+    }
+    for (let i = 0; i < nums.length; i++) {
+        const temp = Math.abs(nums[i])
+        if (temp < nums.length + 1) {
+            nums[temp - 1] = -Math.abs(nums[temp - 1]);
+        }
+    }
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+            return i + 1;
+        }
+    }
+    return nums.length + 1;
+};
+```
+
 ### leetcode 热题100 之 leetcode 热题100 之 189. 轮转数组
 
 [leetcode 热题100 之 189. 轮转数组](https://leetcode.cn/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=top-100-liked)
