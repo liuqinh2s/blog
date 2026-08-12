@@ -6,6 +6,37 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之 48. 旋转图像
+
+[48. 旋转图像](https://leetcode.cn/problems/rotate-image/description/?envType=study-plan-v2&envId=top-100-liked)
+
+```typescript
+/**
+ Do not return anything, modify matrix in-place instead.
+ */
+function rotate(matrix: number[][]): void {
+    let count = 0
+    let n = matrix.length;
+    while (n > 1) {
+        let left = count;
+        let right = matrix.length - 1 - count;
+        let top = count;
+        let bottom = matrix.length - 1 - count;
+        for (let i = 0; i < n - 1; i++) {
+            let temp = matrix[top][left + i];
+            matrix[top][left + i] = matrix[bottom - i][left];
+            matrix[bottom - i][left] = matrix[bottom][right - i];
+            matrix[bottom][right - i] = matrix[top + i][right];
+            matrix[top + i][right] = temp;
+        }
+        count++;
+        n -= 2;
+    }
+};
+```
+
+又是击败100%😂
+
 ### ESLPOD 第39课 Cleaning and Relaxing
 
 - filthy adj. 极脏的（程度远重于 dirty）
