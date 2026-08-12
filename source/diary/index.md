@@ -6,6 +6,147 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之 142. 环形链表 II
+
+[142. 环形链表 II](https://leetcode.cn/problems/linked-list-cycle-ii/description/?envType=study-plan-v2&envId=top-100-liked)
+
+单链表环的问题感觉也不是第一次做了，应该也是在《剑指offer》或者牛客网上做过。
+
+如果可以用额外空间，依旧用哈希表解决：
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function detectCycle(head: ListNode | null): ListNode | null {
+    const hash = new Set<ListNode>();
+    let index = head;
+    while (index) {
+        if (hash.has(index)) {
+            return index;
+        }
+        hash.add(index);
+        index = index.next;
+    }
+    return null;
+};
+```
+
+如果不能用额外空间，就要深入研究快慢指针之间的数学关系：
+
+设慢指针经过 a 个节点才到达环入口，然后又走了 b 个节点才与快指针相遇。快指针在环内跑了 n 圈，但要注意的是慢指针在环内一圈都没跑完就与快指针相遇了，为什么我敢这么说，因为快指针每次才走2步，不可能从慢指针头上越过去落点不重合。设圈内还有 c 个节点慢指针还没走。那么公式是：$2(a+b) = a+b+n(b+c)$，得 $a=(n-1)(b+c)+c$，这个公式意味着，如果再放一个一次走1步的慢指针进来走，刚好可以与原来的慢指针在环入口重逢。
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function detectCycle(head: ListNode | null): ListNode | null {
+    let fast = head;
+    let slow = head;
+    let slow2 = head;
+    while (fast && slow) {
+        fast = fast.next;
+        if (fast) {
+            fast = fast.next;
+        }
+        slow = slow.next;
+        if (fast && slow && fast === slow) {
+            while (slow && slow2) {
+                if (slow && slow2 && slow === slow2) {
+                    return slow;
+                }
+                slow = slow.next;
+                slow2 = slow2.next;
+            }
+        }
+    }
+    return null;
+};
+```
+
+### leetcode 热题100 之 141. 环形链表
+
+[141. 环形链表](https://leetcode.cn/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-100-liked)
+
+用哈希表记录访问过的节点，空间复杂度：$O(n)$
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function hasCycle(head: ListNode | null): boolean {
+    let index = head;
+    const arr = new Set<ListNode>();
+    while (index) {
+        if (arr.has(index)) {
+            return true;
+        }
+        arr.add(index);
+        index = index.next;
+    }
+    return false;
+};
+```
+
+快慢指针法，空间复杂度：$O(1)$
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function hasCycle(head: ListNode | null): boolean {
+    let fast = head;
+    let slow = head;
+    while (fast && slow) {
+        fast = fast.next;
+        if (fast) {
+            fast = fast.next;
+        }
+        slow = slow.next;
+        if (fast !== null && slow !== null && fast === slow) {
+            return true;
+        }
+    }
+    return fast !== null && slow !== null && fast === slow;
+};
+```
+
 ### leetcode 热题100 之 234. 回文链表
 
 [234. 回文链表](https://leetcode.cn/problems/palindrome-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
