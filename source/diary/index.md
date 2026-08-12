@@ -6,6 +6,328 @@ title: 日记
 
 ## 2026-08-11
 
+### leetcode 热题100 之 234. 回文链表
+
+[234. 回文链表](https://leetcode.cn/problems/palindrome-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
+
+转成数组再判断，时间复杂度：$O(n)$，空间复杂度：$O(n)$
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function isPalindrome(head: ListNode | null): boolean {
+    let arr = [];
+    let index = head;
+    while (index) {
+        arr.push(index.val);
+        index = index.next;
+    }
+    for (let i = 0; i <= Math.floor(arr.length / 2); i++) {
+        if (arr[i] !== arr[arr.length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+};
+```
+
+**进阶**：你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+
+看了题解才知道，原来可以修改链表，只需要反转一下另一半链表，然后做完判断后再反转回来就行。
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function isPalindrome(head: ListNode | null): boolean {
+    let fast = head;
+    let slow = head;
+    while (fast) {
+        fast = fast.next
+        if (fast) {
+            fast = fast.next;
+        }
+        slow = slow.next;
+    }
+    let newHead = reverse(slow);
+    let index = head;
+    let res = true;
+    while (index && newHead) {
+        if (index.val !== newHead.val) {
+            res = false;
+            break;
+        }
+        index = index.next;
+        newHead = newHead.next;
+    }
+    reverse(newHead);
+    return res;
+};
+
+function reverse(head: ListNode | null): ListNode | null {
+    let index = head;
+    let newHead = null;
+    while (index) {
+        const next = index.next;
+        index.next = newHead;
+        newHead = index;
+        index = next;
+    }
+    return newHead;
+}
+```
+
+### leetcode 热题100 之 206. 反转链表
+
+[206. 反转链表](https://leetcode.cn/problems/reverse-linked-list/description/?envType=study-plan-v2&envId=top-100-liked)
+
+终于也是到了能直接一遍过反转单链表的年纪：
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function reverseList(head: ListNode | null): ListNode | null {
+    let index = head;
+    let newHead = null;
+    while (index) {
+        const next = index.next;
+        index.next = newHead;
+        newHead = index;
+        index = next;
+    }
+    return newHead;
+};
+```
+
+**进阶**：链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
+
+上面已经写了迭代的写法，下面改成递归写法：
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function reverseList(head: ListNode | null): ListNode | null {
+    return recursion(null, head);
+};
+
+function recursion(newHead: ListNode | null, index: ListNode | null) {
+    if (index) {
+        const next = index.next;
+        index.next = newHead;
+        newHead = index;
+        index = next;
+        return recursion(newHead, index);
+    }
+    return newHead
+}
+```
+
+### leetcode 热题100 之 240. 搜索二维矩阵 II
+
+[240. 搜索二维矩阵 II](https://leetcode.cn/problems/search-a-2d-matrix-ii/description/?envType=study-plan-v2&envId=top-100-liked)
+
+递归斜对角线搜索（自创）：
+
+```typescript
+function searchMatrix(matrix: number[][], target: number): boolean {
+    return searchMatrix1(matrix, { left: 0, right: matrix[0].length - 1, top: 0, bottom: matrix.length - 1 }, target)
+};
+
+function searchMatrix1(matrix: number[][], rect: { left: number; right: number; top: number; bottom: number }, target: number): boolean {
+    let i = 0;
+    const { left, right, top, bottom } = rect;
+    let len = Math.min(right - left, bottom - top)
+    for (; i <= len; i++) {
+        if (target === matrix[top + i][left + i]) {
+            return true;
+        }
+        if (target < matrix[top + i][left + i]) {
+            break;
+        }
+    }
+    if(i === 0){
+        return false;
+    }
+    if (left + i > right && top + i > bottom) {
+        return false;
+    }
+    if (left + i <= right) {
+        if (searchMatrix1(matrix, { left: left + i, right, top, bottom: top + i - 1 }, target)) {
+            return true;
+        }
+    }
+    if (top + i <= bottom) {
+        if (searchMatrix1(matrix, { left, right: left + i - 1, top: top + i, bottom }, target)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+```
+
+以上代码看起来很不错，但实际上并非高效算法，最坏情况下依旧是：$O(mn)$ 的时间复杂度。甚至 AC 击败率还不如下面这个半成品：
+
+```typescript
+function searchMatrix(matrix: number[][], target: number): boolean {
+    let i = 0;
+    let len = Math.min(matrix.length, matrix[0].length)
+    for (; i < len; i++) {
+        if (target === matrix[i][i]) {
+            return true;
+        }
+        if (target < matrix[i][i]) {
+            break;
+        }
+    }
+    if(i === 0){
+        return false;
+    }
+    if (i >= matrix.length && i >= matrix[0].length) {
+        return false;
+    }
+    if (i < matrix.length) {
+        let k = i;
+        while (k < matrix.length) {
+            for (let j = i - 1; j >= 0; j--) {
+                if (target === matrix[k][j]) {
+                    return true;
+                }
+                if (target > matrix[k][j]) {
+                    break;
+                }
+            }
+            k++;
+        }
+
+    }
+    if (i < matrix[0].length) {
+        let k = i;
+        while (k < matrix[0].length) {
+            for (let j = i - 1; j >= 0; j--) {
+                if (target === matrix[j][k]) {
+                    return true;
+                }
+                if (target > matrix[j][k]) {
+                    break;
+                }
+            }
+            k++;
+        }
+    }
+
+    return false;
+}; 
+```
+
+暴力法：
+
+```typescript
+function searchMatrix(matrix: number[][], target: number): boolean {
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[0].length; j++) {
+            if (target === matrix[i][j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+};
+```
+
+行内做二分查找：
+
+```typescript
+function searchMatrix(matrix: number[][], target: number): boolean {
+    for (let i = 0; i < matrix.length; i++) {
+        if (binarySearch(matrix[i], target)) {
+            return true;
+        }
+    }
+    return false;
+};
+
+function binarySearch(nums: number[], target: number): boolean {
+    let left = 0;
+    let right = nums.length;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (target === nums[mid]) {
+            return true;
+        }
+        if (target < nums[mid]) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    return false;
+}
+```
+
+时间复杂度：$O(m\log n)$
+
+看了题解后，我才发现这一题我好像在《剑指offer》还是《编程之美》中做过😂，只不过我已经忘记了要这样解。
+
+这个解法非常优美，时间复杂度：$O(m+n)$，可以理解为比较极致的 **剪枝**，每一步都可以剪掉一行或者一列。
+
+```typescript
+function searchMatrix(matrix: number[][], target: number): boolean {
+    let x = matrix[0].length - 1;
+    let y = 0;
+    while (x >= 0 && y <= matrix.length - 1) {
+        if (target === matrix[y][x]) {
+            return true;
+        }
+        if (target > matrix[y][x]) {
+            y++;
+        } else {
+            x--;
+        }
+    }
+    return false;
+};
+```
+
 ### leetcode 热题100 之 48. 旋转图像
 
 [48. 旋转图像](https://leetcode.cn/problems/rotate-image/description/?envType=study-plan-v2&envId=top-100-liked)
