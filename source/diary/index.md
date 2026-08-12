@@ -6,6 +6,33 @@ title: 日记
 
 ## 2026-08-11
 
+### ESLPOD 第39课 Cleaning and Relaxing
+
+- filthy adj. 极脏的（程度远重于 dirty）
+- rag n. 抹布、碎布（专用清洁布，区别于毛巾 towel）
+- rug n. 小块地毯（floor carpet 大地毯）
+- dust v. 掸灰；n. 灰尘 仅指扫干灰，无水清洁：dust the TV 擦电视浮灰
+- wipe v. 擦拭（可沾水，擦污渍）对比 dust：dust 去浮灰，wipe 擦水渍、脏印
+- vacuum v. 用吸尘器吸地，vacuum是真空的意思，vaccum cleaner 吸尘器，也可以直接说vacuum
+- mop v. 拖地；mop the floor 拖地
+- scrub v. 用力刷洗、搓洗（用力刷顽固污垢）
+- pick up 收拾散落杂物
+- put things away 把物品归位、收好
+- newscast n. 新闻播报（电视新闻节目）
+- national news 全国新闻
+- commercial n. 电视广告（美式主流说法）
+- remote (control) n. 遥控器（口语直接说 remote）
+- flip through channels 换台、快速切频道
+- thumb through 快速翻阅（杂志、书本）
+- finish my three cookies 吃完三块饼干
+- living room 客厅
+- have to wait for another day 只能改天再做
+- by this time 到这时
+- half an hour 半小时（固定搭配），而不是 an half hour
+- There’s nothing like… 没有什么比得上…（经典口语句型）
+- for another hour 还要一小时 doesn’t come on for another hour 还要一小时才开播
+- chores 家务
+
 ### leetcode 热题100 之 54. 螺旋矩阵 
 
 [54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-100-liked)
