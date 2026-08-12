@@ -6,7 +6,59 @@ title: 日记
 
 ## 2026-08-11
 
-### leetcode 热题100 之  73. 矩阵置零
+### leetcode 热题100 之 54. 螺旋矩阵 
+
+[54. 螺旋矩阵](https://leetcode.cn/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题可以 **按圈层遍历，关键在于记录左上和右下坐标**。另外就是要注意把res铺满了就立刻停止外层循环，因为并不是每一层都可以凑齐四条边，可能会出现最里层仅一条或一个的情况。
+
+```typescript
+function spiralOrder(matrix: number[][]): number[] {
+    let res = [];
+    let len = matrix.length * matrix[0].length;
+    let left = 0;
+    let right = matrix[0].length - 1;
+    let top = 0;
+    let bottom = matrix.length - 1;
+    while (left <= right && top <= bottom) {
+        for (let i = left; i <= right; i++) {
+            res.push(matrix[top][i]);
+        }
+        if (res.length === len) {
+            return res;
+        }
+        for (let i = top + 1; i <= bottom; i++) {
+            res.push(matrix[i][right]);
+        }
+        if (res.length === len) {
+            return res;
+        }
+        for (let i = right - 1; i >= left; i--) {
+            res.push(matrix[bottom][i]);
+        }
+        if (res.length === len) {
+            return res;
+        }
+        for (let i = bottom - 1; i >= top + 1; i--) {
+            res.push(matrix[i][left]);
+        }
+        if (res.length === len) {
+            return res;
+        }
+        left++;
+        right--;
+        top++;
+        bottom--;
+    }
+    return res;
+};
+```
+
+以上代码执行速度竟然击败了100%：
+
+![leetcode 热题100 之 54. 螺旋矩阵 击败100%](../images/2026/leetcode 热题100 之 54. 螺旋矩阵 击败100%.png)
+
+### leetcode 热题100 之 73. 矩阵置零
 
 [73. 矩阵置零](https://leetcode.cn/problems/set-matrix-zeroes/description/?envType=study-plan-v2&envId=top-100-liked)
 
