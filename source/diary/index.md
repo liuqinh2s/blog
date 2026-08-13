@@ -6,6 +6,93 @@ title: 日记
 
 ## 2026-08-13
 
+### leetcode 热题100 之 19. 删除链表的倒数第 N 个结点
+
+[19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-100-liked)
+
+双指针，一个指针先走 n 步，另一个指针再开始走，前一个指针到达链表尾部时，后一个指针刚好指向倒数第 n 个节点：
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
+    const preHead = new ListNode(0, head);
+    let index1 = preHead;
+    let index2 = preHead;
+    while (n >= 0 && index1) {
+        index1 = index1.next;
+        n--;
+    }
+    while (index1 && index2) {
+        index1 = index1.next;
+        index2 = index2.next;
+    }
+    index2.next = index2.next.next;
+    return preHead.next;
+};
+```
+
+考虑到边界条件问题（删空了链表），以上代码自建了一个新节点放在头节点之前来解决。
+
+### leetcode 热题100 之 21. 合并两个有序链表
+
+[21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/description/?envType=study-plan-v2&envId=top-100-liked)
+
+这题其实就是归并排序的子步骤，一遍过：
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+    let index1 = list1;
+    let index2 = list2;
+    let newHead = new ListNode(0, null);
+    let p = newHead;
+    while (index1 && index2) {
+        if (index1.val < index2.val) {
+            p.next = index1;
+            p = p.next;
+            index1 = index1.next;
+        } else {
+            p.next = index2;
+            p = p.next;
+            index2 = index2.next;
+        }
+    }
+    while (index1) {
+        p.next = index1;
+        p = p.next;
+        index1 = index1.next;
+    }
+    while (index2) {
+        p.next = index2;
+        p = p.next;
+        index2 = index2.next;
+    }
+    return newHead.next;
+};
+```
+
 ### ESLPOD 第40课 Getting Ready for Bed and Going to Sleep
 
 - make-up 化妆 take off my make-up 卸妆
