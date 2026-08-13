@@ -4,6 +4,35 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-13
+
+### ESLPOD 第40课 Getting Ready for Bed and Going to Sleep
+
+- make-up 化妆 take off my make-up 卸妆
+- cleanser /ˈklenzər/ n. 洗面奶
+- toner /ˈtoʊnər/ n. 爽肤水；词根 tone（调理、紧致肌肤）
+- moisturizer /ˈmɔɪstʃəraɪzər/ n. 保湿霜、润肤乳；词根 moist（湿润的，反义词 dry 干燥）
+- floss /flɔːs/ v.&n. 用牙线清洁牙齿；牙线
+- hamper /ˈhæmpər/ n. 脏衣篮（放换洗衣物）
+- pajamas /pəˈdʒæməz/ n. 睡衣（永远复数）pajamas 只用复数，不能说 a pajama
+- slippers /ˈslɪpərz/ n. 拖鞋（复数）
+- covers /ˈkʌvərz/ n. 被子、床罩（美式口语，代替 quilt/blanket）
+  - pull back the covers 掀开被子
+  - covers 美式口语专指床上盖的被子，blanket 单条毛毯，quilt 厚棉被
+- ritual /ˈrɪtʃuəl/ n. 固定习惯、每日例行流程
+  - My nightly ritual 每晚固定睡前流程
+- comb /koʊm/ v. 梳头发 n. 梳子
+- tie it back 把头发扎起来
+- get undressed = take off clothes 脱衣服
+- pull back 拉开、掀开
+- fall asleep 入睡、睡着
+- fast asleep 熟睡（固定搭配）✅ **fast asleep = 熟睡、睡得很沉**（状态）❌ 不是 “快速入睡” 这个动作。
+  - sound asleep = fast asleep 完全同义，睡得酣熟（更常用）
+  - drop off：口语，**快速进入睡着的动作**
+    - I dropped off as soon as my head hit the pillow. 头一沾枕头我就睡着了。
+- 俚语 beat = exhausted，疲惫（非正式日常），beat 形容词仅口语表 “累”，正式用 exhausted /worn out
+- put skincare products on face 往脸上涂护肤品
+
 ## 2026-08-12
 
 ### leetcode 热题100 之 142. 环形链表 II
