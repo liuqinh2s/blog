@@ -4,7 +4,7 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
-## 2026-08-11
+## 2026-08-12
 
 ### leetcode 热题100 之 142. 环形链表 II
 
@@ -526,6 +526,8 @@ function rotate(matrix: number[][]): void {
 - There’s nothing like… 没有什么比得上…（经典口语句型）
 - for another hour 还要一小时 doesn’t come on for another hour 还要一小时才开播
 - chores 家务
+
+## 2026-08-11
 
 ### leetcode 热题100 之 54. 螺旋矩阵 
 
@@ -3896,7 +3898,7 @@ https://zhuanlan.zhihu.com/p/55906778
 foreach ($n in (get-appxpackage).packagefamilyname) {checknetisolation loopbackexempt -a -n="$n"}
 ```
 
-如果只想对某个特定 UWP 应用设置代理，用 $n=(get-appxpackage *应用名的独特部分，比如邮件应用是commu*).packagefamilyname | checknetisolation loopbackexempt -a -n="$n”
+如果只想对某个特定 UWP 应用设置代理，用 `$n=(get-appxpackage *应用名的独特部分，比如邮件应用是commu*).packagefamilyname | checknetisolation loopbackexempt -a -n="$n”`
 
 npm i 之后遇到 hexo 找不到的问题：`bash: hexo: command not found`
 
