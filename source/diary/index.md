@@ -6,6 +6,40 @@ title: 日记
 
 ## 2026-08-13
 
+### leetcode 热题100 之 24. 两两交换链表中的节点
+
+[24. 两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs/description/?envType=study-plan-v2&envId=top-100-liked)
+
+纯考察链表操作，不是特别难，想清楚了一遍过：
+
+```typescript
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function swapPairs(head: ListNode | null): ListNode | null {
+    const preHead = new ListNode(0, head);
+    let index = preHead;
+    while (index.next?.next) {
+        const nextIndex = index.next.next.next;
+        const temp = index.next;
+        index.next = index.next.next;
+        index.next.next = temp;
+        index.next.next.next = nextIndex;
+        index = index.next.next;
+    }
+    return preHead.next;
+};
+```
+
 ### leetcode 热题100 之 19. 删除链表的倒数第 N 个结点
 
 [19. 删除链表的倒数第 N 个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list/description/?envType=study-plan-v2&envId=top-100-liked)
