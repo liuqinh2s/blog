@@ -548,8 +548,6 @@ date: 2019-02-20 20:30:09
 - 健身：[DAREBEE 1800+ Workouts](https://darebee.com/workouts.html)
 - 数学：[Doga Tekin's Blog | The Hypnotic World of Degenerate Spirals](https://www.dogatekin.com/blog/hypnotic-degenerate-spirals/)
 - 物理：[Motion](https://landgreen.github.io/physics/notes/motion/motion/)
-- 女优收集网站：[JAV Model listing](https://xslist.org/)
-- AV 资源：[AVHD101](https://avhd101.com)
 - bt 资源网站：[bt4g](https://bt4g.org)
 - [爱发电](https://afdian.com/)
 - 制乐：[开始 | Learning Synths](https://learningsynths.ableton.com/zh-Hans)
