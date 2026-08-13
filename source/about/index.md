@@ -16,7 +16,6 @@ Give me an offer：[简历](../assets/liuqin-resume-2025.pdf)
 个人作品：
 
 - [拾闻](https://liuqinh2s.github.io/news/)
-- [AwesomeWeb](https://liuqinh2s.github.io/AwesomeWeb/)
 - [仓鼠导航](https://hbmw5wwh.mule.page/)
 
 leetcode：[刘钦 - 力扣（LeetCode）](https://leetcode.cn/u/liuqinh2s/)
