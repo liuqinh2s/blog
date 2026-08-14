@@ -4,6 +4,21 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-14
+
+### ESLPOD 第41课 Understanding men and women
+
+- chick flick 【口语】女性向爱情文艺片、小妞电影（chick 口语代指年轻女性，非正式）
+  - chick 小鸡，年轻女性
+  - flick 电影 flick	非常口语、非正式	只搭配类型：chick flick /action flick；英式老说法 the flicks（电影院）；几乎不单独用
+    - flick 本义动词：轻弹、轻甩
+    - flick the switch 轻按开关。名词引申：一闪；早年电影画面一闪一闪，所以引申出 “影片”，属于老派俚语遗留。
+  - movie	中性口语（美式主流）	一切日常场景，最通用
+  - film	偏正式	艺术电影、学术、影评，英式日常也常用
+- idealized adj. 理想化的（ideal 理想 + -ized 后缀，表 “被理想化的”）
+- let sb down 让某人失望
+- in my book 在我看来、依我的观点（替代 in my opinion，口语更地道）
+
 ## 2026-08-13
 
 ### leetcode 热题100 之 24. 两两交换链表中的节点
