@@ -4,6 +4,20 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-15
+
+### ESLPOD 第42课 Talking to a Professor
+
+- due adj. 到期的、截止 It’s due in two weeks. 两周后截止提交。
+- guidelines n. 要求、准则（论文）
+- syllabus n. 课程大纲（美国大学非常重要）
+- assignments n. 作业（复数）
+- extra credit n. 额外学分
+- keep up 跟上（课程进度）
+- pull up your grade 提高你的成绩
+- have a seat 请坐（办公室礼貌用语，=please sit down）
+- go over 复习、讲解过（课程）
+
 ## 2026-08-14
 
 ### ESLPOD 第41课 Understanding men and women
