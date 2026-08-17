@@ -17,5 +17,11 @@ Give me an offer：[简历](../assets/liuqin-resume-2025.pdf)
 
 - [拾闻](https://liuqinh2s.github.io/news/)
 - [仓鼠导航](https://hbmw5wwh.mule.page/)
+- [BSC代币筛选器](https://liuqinh2s.github.io/token_trader/)
+- [Bitget代币筛选器](https://liuqinh2s.github.io/coin-trader/)
+- [藏友](https://u9766hf3.mule.page/)
+- [Markdown → 微信公众号](https://scrv353y.mule.page/)
+- [挖掘加密货币最近消息面](https://liuqinh2s.github.io/crypto-mint/)
+- [meme 词云](https://liuqinh2s.github.io/breaking_news/)
 
 leetcode：[刘钦 - 力扣（LeetCode）](https://leetcode.cn/u/liuqinh2s/)
