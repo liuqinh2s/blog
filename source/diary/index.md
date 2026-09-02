@@ -4,6 +4,23 @@ title: 日记
 
 这里主要用来记录我生活中的所思所想。这些想法或者摘抄比较短小，不足以形成一篇文章，但仍然值得记录下来反复品味，回顾。它们的编排方式是按日期倒序来的。
 
+## 2026-08-24
+
+### ESLPOD 第43课 A Trip to the Library
+
+- hours of operation 营业时间
+- call number 索书号（找书编号）
+- parking lot 停车场
+- **check it out**
+  - 本文两层含义：①去看一看、实地探访；②（图书馆）借出（书 / 碟片）
+  - 例句：I wanted to check it out. 我想去看一看（这家新图书馆）。
+  - check out a book 借一本书；be checked out 已经被借走
+- **Monday through Saturday** 周一到周六（美式，=from Monday to Saturday）
+- **step up to the counter** 走到柜台前
+- **as it turns out** 结果是，事实证明（口语高频插入语）
+- loan period 借阅期限
+- due date 到期日
+
 ## 2026-08-15
 
 ### ESLPOD 第42课 Talking to a Professor
